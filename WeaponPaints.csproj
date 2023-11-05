@@ -4,14 +4,16 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nexd.MySQL" Version="1.0.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="CounterStrikeSharp.API">
       <HintPath>deps\CounterStrikeSharp.API.dll</HintPath>
-    </Reference>
-    <Reference Include="MySqlConnector">
-      <HintPath>deps\MySqlConnector.dll</HintPath>
     </Reference>
   </ItemGroup>
 
