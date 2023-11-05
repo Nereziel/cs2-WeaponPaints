@@ -1,0 +1,16 @@
+.bg-primary {
+  padding: 15px;
+}
+
+.card-title item-name{
+	//text-align:center;
+	font-weight:bold;
+}
+
+.skin-image {
+	margin: 0 auto;
+	display:block;
+	text-align:center;
+	width:50%;
+	//border-bottom: solid 1px #eee;
+}
