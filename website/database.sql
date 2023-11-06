@@ -19,16 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `cs2server`
---
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `wp_player_skins`
---
-
 CREATE TABLE `wp_player_skins` (
-  --`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `steamid` varchar(64) NOT NULL,
   `weapon_defindex` int(6) NOT NULL,
   `weapon_paint_id` int(6) NOT NULL
@@ -42,8 +35,9 @@ CREATE TABLE `wp_player_skins` (
 -- Table structure for table `wp_weapons`
 --
 
+-- Table structure for table `wp_weapons_paints`
 CREATE TABLE `wp_weapons_paints` (
-  --`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `weapon_defindex` int(6) NOT NULL,
   `weapon_name` varchar(60) NOT NULL,
   `paint` int(6) NOT NULL,
@@ -56,15 +50,13 @@ CREATE TABLE `wp_weapons_paints` (
 
 --
 -- Indexes for table `wp_player_skins`
---
---ALTER TABLE `wp_player_skins`
-  --ADD PRIMARY KEY (`id`);
+ALTER TABLE `wp_player_skins`
+ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `wp_weapons_paints`
---
---ALTER TABLE `wp_weapons_paints`
-  --ADD PRIMARY KEY (`id`);
+ALTER TABLE `wp_weapons_paints`
+ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -72,15 +64,13 @@ CREATE TABLE `wp_weapons_paints` (
 
 --
 -- AUTO_INCREMENT for table `wp_player_skins`
---
---ALTER TABLE `wp_player_skins`
-  --MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `wp_player_skins`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
   
 --
 -- AUTO_INCREMENT for table `wp_weapons_paints`
---
---ALTER TABLE `wp_weapons_paints`
-  --MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `wp_weapons_paints`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
