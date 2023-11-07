@@ -9,7 +9,7 @@ public class WeaponPaints : BasePlugin
     public override string ModuleName => "WeaponPaints";
     public override string ModuleDescription => "Connector for web-based player chosen wepaon paints.";
     public override string ModuleAuthor => "Nereziel";
-    public override string ModuleVersion => "0.3";
+    public override string ModuleVersion => "0.4";
     MySqlDb? MySql = null;
 
     public override void Load(bool hotReload)
@@ -22,22 +22,24 @@ public class WeaponPaints : BasePlugin
     private void OnEntitySpawned(CEntityInstance entity)
     {
         var designerName = entity.DesignerName;
-
         if (!designerName.Contains("weapon_")) return;
         if (designerName.Contains("knife")) return;
-
+        if (designerName.Contains("bayonet")) return;
         var weapon = new CBasePlayerWeapon(entity.Handle);
-        if (!weapon.IsValid) return;
-        var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex((int)weapon.OwnerEntity.Value.EntityIndex!.Value.Value));
-        var playerIndex = (int)pawn.Controller.Value.EntityIndex!.Value.Value;
-
-        int weaponPaint = GetPlayersWeaponPaint(playerIndex, weapon.AttributeManager.Item.ItemDefinitionIndex);
-        if (weaponPaint == 0) return;
-        weapon.AttributeManager.Item.ItemIDLow = unchecked((uint)-1);
-        weapon.AttributeManager.Item.ItemIDHigh = unchecked((uint)-1);
-        weapon.FallbackPaintKit = weaponPaint;
-        weapon.FallbackSeed = 0;
-        weapon.FallbackWear = 0.0001f;
+        Server.NextFrame(() =>
+        {
+            if (!weapon.IsValid) return;
+            var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex((int)weapon.OwnerEntity.Value.EntityIndex!.Value.Value));
+            if (!pawn.IsValid) return;
+            var playerIndex = (int)pawn.Controller.Value.EntityIndex!.Value.Value;
+            int weaponPaint = GetPlayersWeaponPaint(playerIndex, weapon.AttributeManager.Item.ItemDefinitionIndex);
+            if (weaponPaint == 0) return;
+            weapon.AttributeManager.Item.ItemIDLow = unchecked((uint)-1);
+            weapon.AttributeManager.Item.ItemIDHigh = unchecked((uint)-1);
+            weapon.FallbackPaintKit = weaponPaint;
+            weapon.FallbackSeed = 0;
+            weapon.FallbackWear = 0.0001f;
+        });
     }
     private static void Log(string message)
     {
