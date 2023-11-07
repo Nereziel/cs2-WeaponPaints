@@ -46,11 +46,11 @@ public class WeaponPaints : BasePlugin
         Console.WriteLine(message);
         Console.ResetColor();
     }
-    public int GetPlayersWeaponPaint(int playerSlot, int weaponDefIndex)
+    public int GetPlayersWeaponPaint(int playerIndex, int weaponDefIndex)
     {
         try
         {
-            CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
+            CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
             if (player == null || !player.IsValid)
                 return 0;
 
