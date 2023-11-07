@@ -28,59 +28,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `wp_player_skins` (
-  --`id` int(11) NOT NULL,
   `steamid` varchar(64) NOT NULL,
   `weapon_defindex` int(6) NOT NULL,
   `weapon_paint_id` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
--- Dumping data for table `wp_player_skins`
---
-
---
 -- Table structure for table `wp_weapons`
 --
 
 CREATE TABLE `wp_weapons_paints` (
-  --`id` int(11) NOT NULL,
   `weapon_defindex` int(6) NOT NULL,
   `weapon_name` varchar(60) NOT NULL,
   `paint` int(6) NOT NULL,
   `image` varchar(255) NOT NULL,
   `paint_name` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `wp_player_skins`
---
---ALTER TABLE `wp_player_skins`
-  --ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `wp_weapons_paints`
---
---ALTER TABLE `wp_weapons_paints`
-  --ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `wp_player_skins`
---
---ALTER TABLE `wp_player_skins`
-  --MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-  
---
--- AUTO_INCREMENT for table `wp_weapons_paints`
---
---ALTER TABLE `wp_weapons_paints`
-  --MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
@@ -445,34 +408,34 @@ INSERT INTO `wp_weapons_paints` (`weapon_name`, `weapon_defindex`, `paint`, `ima
 ('weapon_famas', 10, 1127, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_famas_gs_famas_rapid_eyes_light.png', 'FAMAS | Rapid Eye Movement'),
 ('weapon_famas', 10, 1146, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_famas_gs_famas_corp_meow_light.png', 'FAMAS | Meow 36'),
 ('weapon_famas', 10, 1241, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_famas_cu_famas_holo_ocean_light.png', 'FAMAS | Waters of Nephthys'),
-('weapon_g3sg1', 10, 6, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_arctic_light.png', 'G3SG1 | Arctic Camo'),
-('weapon_g3sg1', 10, 8, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_desert_light.png', 'G3SG1 | Desert Storm'),
-('weapon_g3sg1', 10, 46, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_so_pmc_light.png', 'G3SG1 | Contractor'),
-('weapon_g3sg1', 10, 72, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_mesh_tan_light.png', 'G3SG1 | Safari Mesh'),
-('weapon_g3sg1', 10, 74, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_arctic_contrast_light.png', 'G3SG1 | Polar Camo'),
-('weapon_g3sg1', 10, 147, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_tape_short_jungle_light.png', 'G3SG1 | Jungle Dashed'),
-('weapon_g3sg1', 10, 195, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_bluepolygon_bravo_light.png', 'G3SG1 | Demeter'),
-('weapon_g3sg1', 10, 229, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_zebracam_blue_light.png', 'G3SG1 | Azure Zebra'),
-('weapon_g3sg1', 10, 235, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_varicamo_light.png', 'G3SG1 | VariCamo'),
-('weapon_g3sg1', 10, 294, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_so_green_light.png', 'G3SG1 | Green Apple'),
-('weapon_g3sg1', 10, 382, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_am_g3sg1_murky_light.png', 'G3SG1 | Murky'),
-('weapon_g3sg1', 10, 438, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_chronos_g3sg1_light.png', 'G3SG1 | Chronos'),
-('weapon_g3sg1', 10, 465, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_kimono_diamonds_orange_light.png', 'G3SG1 | Orange Kimono'),
-('weapon_g3sg1', 10, 493, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_flux_purple_light.png', 'G3SG1 | Flux'),
-('weapon_g3sg1', 10, 511, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_g3sg1_executioner_light.png', 'G3SG1 | The Executioner'),
-('weapon_g3sg1', 10, 545, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_g3sg1_militiaorange_light.png', 'G3SG1 | Orange Crash'),
-('weapon_g3sg1', 10, 606, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_ventilator_light.png', 'G3SG1 | Ventilator'),
-('weapon_g3sg1', 10, 628, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_viper_yellow_light.png', 'G3SG1 | Stinger'),
-('weapon_g3sg1', 10, 677, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_cetme_redux_light.png', 'G3SG1 | Hunter'),
-('weapon_g3sg1', 10, 712, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_buccaneer_light.png', 'G3SG1 | High Seas'),
-('weapon_g3sg1', 10, 739, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_am_murano_violet_light.png', 'G3SG1 | Violet Murano'),
-('weapon_g3sg1', 10, 806, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_savage_light.png', 'G3SG1 | Scavenger'),
-('weapon_g3sg1', 10, 891, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_g3sg1_blacksand_light.png', 'G3SG1 | Black Sand'),
-('weapon_g3sg1', 10, 930, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_moro_carving_lightblue_light.png', 'G3SG1 | New Roots'),
-('weapon_g3sg1', 10, 980, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_disrupt_light.png', 'G3SG1 | Digital Mesh'),
-('weapon_g3sg1', 10, 1034, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_am_ancient_wine_light.png', 'G3SG1 | Ancient Ritual'),
-('weapon_g3sg1', 10, 1095, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_g3sg1_tacticalmap_light.png', 'G3SG1 | Keeping Tabs'),
-('weapon_g3sg1', 10, 1129, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_g3sg1_glade_light.png', 'G3SG1 | Dream Glade'),
+('weapon_g3sg1', 11, 6, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_arctic_light.png', 'G3SG1 | Arctic Camo'),
+('weapon_g3sg1', 11, 8, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_desert_light.png', 'G3SG1 | Desert Storm'),
+('weapon_g3sg1', 11, 46, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_so_pmc_light.png', 'G3SG1 | Contractor'),
+('weapon_g3sg1', 11, 72, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_mesh_tan_light.png', 'G3SG1 | Safari Mesh'),
+('weapon_g3sg1', 11, 74, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_arctic_contrast_light.png', 'G3SG1 | Polar Camo'),
+('weapon_g3sg1', 11, 147, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_tape_short_jungle_light.png', 'G3SG1 | Jungle Dashed'),
+('weapon_g3sg1', 11, 195, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_bluepolygon_bravo_light.png', 'G3SG1 | Demeter'),
+('weapon_g3sg1', 11, 229, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_zebracam_blue_light.png', 'G3SG1 | Azure Zebra'),
+('weapon_g3sg1', 11, 235, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_varicamo_light.png', 'G3SG1 | VariCamo'),
+('weapon_g3sg1', 11, 294, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_so_green_light.png', 'G3SG1 | Green Apple'),
+('weapon_g3sg1', 11, 382, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_am_g3sg1_murky_light.png', 'G3SG1 | Murky'),
+('weapon_g3sg1', 11, 438, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_chronos_g3sg1_light.png', 'G3SG1 | Chronos'),
+('weapon_g3sg1', 11, 465, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_hy_kimono_diamonds_orange_light.png', 'G3SG1 | Orange Kimono'),
+('weapon_g3sg1', 11, 493, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_flux_purple_light.png', 'G3SG1 | Flux'),
+('weapon_g3sg1', 11, 511, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_g3sg1_executioner_light.png', 'G3SG1 | The Executioner'),
+('weapon_g3sg1', 11, 545, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_g3sg1_militiaorange_light.png', 'G3SG1 | Orange Crash'),
+('weapon_g3sg1', 11, 606, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_ventilator_light.png', 'G3SG1 | Ventilator'),
+('weapon_g3sg1', 11, 628, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_viper_yellow_light.png', 'G3SG1 | Stinger'),
+('weapon_g3sg1', 11, 677, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_cetme_redux_light.png', 'G3SG1 | Hunter'),
+('weapon_g3sg1', 11, 712, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_buccaneer_light.png', 'G3SG1 | High Seas'),
+('weapon_g3sg1', 11, 739, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_am_murano_violet_light.png', 'G3SG1 | Violet Murano'),
+('weapon_g3sg1', 11, 806, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_savage_light.png', 'G3SG1 | Scavenger'),
+('weapon_g3sg1', 11, 891, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_g3sg1_blacksand_light.png', 'G3SG1 | Black Sand'),
+('weapon_g3sg1', 11, 930, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_sp_moro_carving_lightblue_light.png', 'G3SG1 | New Roots'),
+('weapon_g3sg1', 11, 980, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_gs_g3sg1_disrupt_light.png', 'G3SG1 | Digital Mesh'),
+('weapon_g3sg1', 11, 1034, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_am_ancient_wine_light.png', 'G3SG1 | Ancient Ritual'),
+('weapon_g3sg1', 11, 1095, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_g3sg1_tacticalmap_light.png', 'G3SG1 | Keeping Tabs'),
+('weapon_g3sg1', 11, 1129, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_g3sg1_cu_g3sg1_glade_light.png', 'G3SG1 | Dream Glade'),
 ('weapon_galilar', 13, 76, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_galilar_hy_forest_winter_light.png', 'Galil AR | Winter Forest'),
 ('weapon_galilar', 13, 83, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_galilar_hy_ddpat_orange_light.png', 'Galil AR | Orange DDPAT'),
 ('weapon_galilar', 13, 101, 'https://raw.githubusercontent.com/ByMykel/CSGO-API/4fdf048a2b6c21494df4fe915f5fdea5accc6a61/public/images/econ/default_generated/weapon_galilar_so_tornado_light.png', 'Galil AR | Tornado'),
