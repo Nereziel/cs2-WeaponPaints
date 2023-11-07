@@ -1,12 +1,18 @@
 <?php
-include 'class/DataBase.php';
+require_once 'class/config.php';
+require_once 'class/database.php';
+require_once 'steamauth/steamauth.php';
+# You would uncomment the line beneath to make it refresh the data every time the page is loaded
+// unset($_SESSION['steam_uptodate']);
+
 $db = new DataBase();
 
-if(!isset($_GET['steamid'])) {
-    die("ERROR - Player is not found! Please add steam id to view this page! :)");
+//$steamid = $_GET['steamid'];
+if(isset($_SESSION['steamid']))
+{
+	include ('steamauth/userInfo.php');
+	$steamid = $steamprofile['steamid'];
 }
-
-$steamid = $_GET['steamid'];
 
 
 if(isset($_POST['forma'])) {
@@ -37,11 +43,20 @@ if(isset($_POST['forma'])) {
 </head>
 <body>
 
-<div class="bg-primary">Your current weapon skin loadout.</div>
-<div class="card-group">
+
 <?php
-$query = $db->select("SELECT * FROM wp_weapons_paints GROUP BY weapon_defindex ORDER BY weapon_defindex");
-foreach($query as $key) { ?>
+if(!isset($_SESSION['steamid']))
+{
+	echo "<div class='bg-primary'><h2>To choose weapon paints loadout, you need to ";
+	loginbutton("rectangle");
+	echo "</h2></div>";
+}
+else
+{
+	echo "<div class='bg-primary'>Your current weapon skin loadout<form action='' method='get'><button class='btn btn-secondary' name='logout' type='submit'>Logout</button></form></div>";
+	echo "<div class='card-group'>";
+	$query = $db->select("SELECT * FROM wp_weapons_paints GROUP BY weapon_defindex ORDER BY weapon_defindex");
+	foreach($query as $key) { ?>
     <div class="col-sm-2">
         <div class="card text-center mb-3">
 			<div class="card-body">
@@ -77,8 +92,10 @@ foreach($query as $key) { ?>
 			</div>
         </div>
     </div>
+	<?php } ?>
+	</div>
 <?php } ?>
-</div>
+
 
 </body>
 </html>
