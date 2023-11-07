@@ -2,34 +2,29 @@
 require_once 'class/config.php';
 require_once 'class/database.php';
 require_once 'steamauth/steamauth.php';
-# You would uncomment the line beneath to make it refresh the data every time the page is loaded
-// unset($_SESSION['steam_uptodate']);
 
 $db = new DataBase();
 
-//$steamid = $_GET['steamid'];
 if(isset($_SESSION['steamid']))
 {
 	include ('steamauth/userInfo.php');
 	$steamid = $steamprofile['steamid'];
-}
-
-
-if(isset($_POST['forma'])) {
-	$ex = explode("-", $_POST['forma']);
 	
-	$query2 = $db->select("SELECT * FROM wp_weapons_paints WHERE weapon_defindex = :weapon_defindex AND paint = :paint", ["weapon_defindex" => $ex[0], "paint" => $ex[1]]);
-
-	if($query2) {
-		$check = $db->select("SELECT * FROM wp_weapons_paints LEFT JOIN wp_player_skins ON wp_player_skins.weapon_paint_id = wp_weapons_paints.paint WHERE wp_weapons_paints.weapon_defindex = :weapon_defindex AND wp_player_skins.steamid = :steamid", ["weapon_defindex" => $ex[0], "steamid" => $steamid]);
-		if($check) {
-			$db->query("UPDATE wp_player_skins SET weapon_paint_id = :weapon_paint_id WHERE steamid = :steamid AND weapon_defindex = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $query2[0]['paint']]);
-		} else {
-			$db->query("INSERT INTO wp_player_skins (`steamid`, `weapon_defindex`, `weapon_paint_id`) VALUES (:steamid, :weapon_defindex, :weapon_paint_id)", ["steamid" => $steamid, "weapon_defindex" => $ex[0],"weapon_paint_id" => $query2[0]["paint"]]);
+	if(isset($_POST['forma'])) {
+		$ex = explode("-", $_POST['forma']);
+		
+		$query2 = $db->select("SELECT * FROM wp_weapons_paints WHERE weapon_defindex = :weapon_defindex AND paint = :paint", ["weapon_defindex" => $ex[0], "paint" => $ex[1]]);
+		
+		if($query2) {
+			$check = $db->select("SELECT * FROM wp_weapons_paints LEFT JOIN wp_player_skins ON wp_player_skins.weapon_paint_id = wp_weapons_paints.paint AND wp_player_skins.weapon_defindex = wp_weapons_paints.weapon_defindex WHERE wp_weapons_paints.weapon_defindex = :weapon_defindex AND wp_player_skins.steamid = :steamid", ["weapon_defindex" => $ex[0], "steamid" => $steamid]);
+			if($check) {
+				$db->query("UPDATE wp_player_skins SET weapon_paint_id = :weapon_paint_id WHERE steamid = :steamid AND weapon_defindex = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $query2[0]['paint']]);
+			} else {
+				$db->query("INSERT INTO wp_player_skins (`steamid`, `weapon_defindex`, `weapon_paint_id`) VALUES (:steamid, :weapon_defindex, :weapon_paint_id)", ["steamid" => $steamid, "weapon_defindex" => $ex[0],"weapon_paint_id" => $query2[0]["paint"]]);
+			}
 		}
 	}
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +37,6 @@ if(isset($_POST['forma'])) {
 	<title>CS2 Simple Weapon Paints</title>
 </head>
 <body>
-
 
 <?php
 if(!isset($_SESSION['steamid']))
@@ -61,7 +55,7 @@ else
         <div class="card text-center mb-3">
 			<div class="card-body">
 				<?php
-				if($query3 = $db->select("SELECT * FROM wp_weapons_paints LEFT JOIN wp_player_skins ON wp_player_skins.weapon_paint_id = wp_weapons_paints.paint WHERE wp_player_skins.steamid = :steamid AND wp_weapons_paints.weapon_defindex = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $key['weapon_defindex']]))
+				if($query3 = $db->select("SELECT * FROM wp_weapons_paints LEFT JOIN wp_player_skins ON wp_player_skins.weapon_paint_id = wp_weapons_paints.paint AND wp_player_skins.weapon_defindex = wp_weapons_paints.weapon_defindex WHERE wp_player_skins.steamid = :steamid AND wp_weapons_paints.weapon_defindex = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $key['weapon_defindex']]))
 				{
 					echo "<div class='card-header'>";
 					echo"<h5 class='card-title item-name'>{$query3[0]["paint_name"]}</h5>";
