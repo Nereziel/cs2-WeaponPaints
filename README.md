@@ -1,6 +1,6 @@
 # cs2-WeaponPaints
 
-Unfinished, unoptimized and not fully functional demo weapon paints plugin for [CSSharp](https://docs.cssharp.dev/).
+Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for [CSSharp](https://docs.cssharp.dev/).
 
 ### CS2 server:
 - Compile and copy plugin to plugins. Info here [https://docs.cssharp.dev/guides/hello-world-plugin/](https://docs.cssharp.dev/guides/hello-world-plugin/)
