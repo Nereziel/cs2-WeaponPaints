@@ -1,5 +1,6 @@
-﻿using CounterStrikeSharp.API.Core;
-using MySqlConnector;
+﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Modules.Entities;
 using Nexd.MySQL;
 
 namespace WeaponPaints;
@@ -8,7 +9,7 @@ public class WeaponPaints : BasePlugin
     public override string ModuleName => "WeaponPaints";
     public override string ModuleDescription => "Connector for web-based player chosen wepaon paints.";
     public override string ModuleAuthor => "Nereziel";
-    public override string ModuleVersion => "0.2";
+    public override string ModuleVersion => "0.3";
     MySqlDb? MySql = null;
 
     public override void Load(bool hotReload)
@@ -27,26 +28,16 @@ public class WeaponPaints : BasePlugin
 
         var weapon = new CBasePlayerWeapon(entity.Handle);
         if (!weapon.IsValid) return;
-        if (weapon.AttributeManager.Item.AccountID < 0) return;
-        
-        //Log($"AccountID {weapon.AttributeManager.Item.AccountID}");
-        //Log($"playerSteam {playerId}");
-        var playerId = ConvertToSteam64(weapon.AttributeManager.Item.AccountID);
-        int weaponPaint = GetPlayersWeaponPaint(playerId.ToString(), weapon.AttributeManager.Item.ItemDefinitionIndex);
-        if (playerId == 0) return;
+        var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex((int)weapon.OwnerEntity.Value.EntityIndex!.Value.Value));
+        var playerIndex = (int)pawn.Controller.Value.EntityIndex!.Value.Value;
+
+        int weaponPaint = GetPlayersWeaponPaint(playerIndex, weapon.AttributeManager.Item.ItemDefinitionIndex);
         if (weaponPaint == 0) return;
-        weapon.AttributeManager.Item.AccountID = unchecked((uint)271098320);
         weapon.AttributeManager.Item.ItemIDLow = unchecked((uint)-1);
         weapon.AttributeManager.Item.ItemIDHigh = unchecked((uint)-1);
         weapon.FallbackPaintKit = weaponPaint;
         weapon.FallbackSeed = 0;
         weapon.FallbackWear = 0.0001f;
-    }
-    private Int64 ConvertToSteam64(uint id)
-    {
-        uint account_type = id % 2;
-        uint account_id = (id - account_type) / 2;
-        return 76561197960265728L + (account_id * 2) + account_type;
     }
     private static void Log(string message)
     {
@@ -55,12 +46,18 @@ public class WeaponPaints : BasePlugin
         Console.WriteLine(message);
         Console.ResetColor();
     }
-    public int GetPlayersWeaponPaint(string steamId, int weaponDefIndex)
+    public int GetPlayersWeaponPaint(int playerSlot, int weaponDefIndex)
     {
         try
         {
+            CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
+            if (player == null || !player.IsValid)
+                return 0;
+
+            var steamId = new SteamID(player.SteamID);
+
             MySqlQueryCondition conditions = new MySqlQueryCondition()
-                .Add("steamid", "=", steamId)
+                .Add("steamid", "=", steamId.SteamId64.ToString())
                 .Add("weapon_defindex", "=", weaponDefIndex);
 
             MySqlQueryResult result = MySql!.Table("wp_player_skins").Where(conditions).Select();
