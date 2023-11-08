@@ -46,7 +46,7 @@ public class WeaponPaints : BasePlugin
         var weapon = new CBasePlayerWeapon(entity.Handle);
         Server.NextFrame(() =>
         {
-            if (!weapon.IsValid) return;
+            if (!weapon.IsValid || !weapon.OwnerEntity.IsValid) return;
             var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex((int)weapon.OwnerEntity.Value.EntityIndex!.Value.Value));
             if (!pawn.IsValid) return;
             var playerIndex = (int)pawn.Controller.Value.EntityIndex!.Value.Value;
@@ -114,8 +114,7 @@ public class WeaponPaints : BasePlugin
                 }
 
                 g_playersSkins[steamId.SteamId64][weaponId] = weaponPaint;
-            }
-            );
+            });
         }
         catch (Exception)
         {
