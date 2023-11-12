@@ -60,7 +60,7 @@ public class WeaponPaints : BasePlugin
         RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
         RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
     }
-    private void private void OnClientAuthorized(int playerSlot, SteamID steamId)
+    private void OnClientAuthorized(int playerSlot, SteamID steamId)
     {
         int slot = playerSlot;
         Server.NextFrame(() =>
