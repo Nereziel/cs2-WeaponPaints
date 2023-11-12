@@ -12,7 +12,7 @@ public class WeaponPaints : BasePlugin
     public override string ModuleName => "WeaponPaints";
     public override string ModuleDescription => "Connector for web-based player chosen wepaon paints.";
     public override string ModuleAuthor => "Nereziel";
-    public override string ModuleVersion => "0.6";
+    public override string ModuleVersion => "0.7";
     MySqlDb? MySql = null;
     public DateTime[] commandCooldown = new DateTime[Server.MaxPlayers];
     private Dictionary<ulong, Dictionary<nint, int>> g_playersSkins = new Dictionary<ulong, Dictionary<nint, int>>();
@@ -49,12 +49,7 @@ public class WeaponPaints : BasePlugin
         "weapon_sawedoff",        "weapon_tec9",        "weapon_hkp2000",        "weapon_mp7",
         "weapon_mp9",        "weapon_nova",        "weapon_p250",        "weapon_scar20",
         "weapon_sg556",        "weapon_ssg08",        "weapon_m4a1_silencer",        "weapon_usp_silencer",
-        "weapon_cz75a",        "weapon_revolver",        "weapon_bayonet",        "weapon_knife_css",
-        "weapon_knife_flip",        "weapon_knife_gut",        "weapon_knife_karambit",        "weapon_knife_m9_bayonet",
-        "weapon_knife_tactical",        "weapon_knife_falchion",        "weapon_knife_survival_bowie",        "weapon_knife_butterfly",
-        "weapon_knife_push",        "weapon_knife_cord",        "weapon_knife_canis",        "weapon_knife_ursus",
-        "weapon_knife_gypsy_jackknife",        "weapon_knife_outdoor",        "weapon_knife_stiletto",        "weapon_knife_widowmaker",
-        "weapon_knife_skeleton"
+        "weapon_cz75a",        "weapon_revolver",        "weapon_bayonet",        "weapon_knife"
     };
 
     public override void Load(bool hotReload)
@@ -62,10 +57,10 @@ public class WeaponPaints : BasePlugin
         new Cfg().CheckConfig(ModuleDirectory);
         MySql = new MySqlDb(Cfg.config.DatabaseHost!, Cfg.config.DatabaseUser!, Cfg.config.DatabasePassword!, Cfg.config.DatabaseName!, (int)Cfg.config.DatabasePort);
         RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
-        RegisterListener<Listeners.OnClientConnect>(OnClientConnect);
+        RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
         RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
     }
-    private void OnClientConnect(int playerSlot, string name, string ipAddress)
+    private void private void OnClientAuthorized(int playerSlot, SteamID steamId)
     {
         int slot = playerSlot;
         Server.NextFrame(() =>
