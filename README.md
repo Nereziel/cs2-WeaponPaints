@@ -8,7 +8,8 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 ### Features
 - changes only paint, seed, wear on weapons
 - mysql base
-- data sync on player connect or player can type !wp to refresh skins (command has hardcoded 2 minute cooldown for now)
+- data sync on player connect or player can type !wp to refresh skins (cooldown in second can be configured)
+- Added command !ws to show website
 
 ### CS2 server:
 - Compile and copy plugin to plugins. Info here [https://docs.cssharp.dev/guides/hello-world-plugin/](https://docs.cssharp.dev/guides/hello-world-plugin/)
