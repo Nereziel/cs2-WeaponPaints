@@ -1,5 +1,8 @@
 # cs2-WeaponPaints
 
+# Use this plugin at your own risk! Using this may lead to GSLT ban or something else Valve come with. [Valve Server guidelines](https://blog.counter-strike.net/index.php/server_guidelines/)
+
+### Description
 Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for [CSSharp](https://docs.cssharp.dev/).
 
 ### Features
@@ -10,6 +13,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 ### CS2 server:
 - Compile and copy plugin to plugins. Info here [https://docs.cssharp.dev/guides/hello-world-plugin/](https://docs.cssharp.dev/guides/hello-world-plugin/)
 - setup config.json with database credentials
+- in addons/counterstrikesharp/configs/core.json set FollowCS2ServerGuidelines to false
 
 ### Web install:
 - copy website to web server
