@@ -19,7 +19,9 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
     MySqlDb? MySql = null;
     public DateTime[] commandCooldown = new DateTime[Server.MaxPlayers];
-    private Dictionary<ulong, Dictionary<nint, int>> g_playersSkins = new Dictionary<ulong, Dictionary<nint, int>>();
+    private Dictionary<ulong, Dictionary<nint, int>> gPlayerWeaponPaints = new Dictionary<ulong, Dictionary<nint, int>>();
+    private Dictionary<ulong, Dictionary<nint, int>> gPlayerWeaponSeed = new Dictionary<ulong, Dictionary<nint, int>>();
+    private Dictionary<ulong, Dictionary<nint, float>> gPlayerWeaponWear = new Dictionary<ulong, Dictionary<nint, float>>();
     private static Dictionary<string, string> knifeTypes = new Dictionary<string, string>()
     {
         { "m9", "weapon_knife_m9_bayonet" },
@@ -92,28 +94,27 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         }
         Server.NextFrame(() =>
         {
-            if (!weapon.IsValid || !weapon.OwnerEntity.IsValid) return;
-            var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex((int)weapon.OwnerEntity.Value.EntityIndex!.Value.Value));
-            if (!pawn.IsValid || !pawn.Controller.Value.IsValid) return;
+            if (!weapon.IsValid) return;
+            if (weapon.OwnerEntity.Value == null) return;
+            if (!weapon.OwnerEntity.Value.EntityIndex.HasValue) return;
+            int weaponOwner = (int)weapon.OwnerEntity.Value.EntityIndex.Value.Value;
+            var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex(weaponOwner));
+            if (!pawn.IsValid) return;
             var playerIndex = (int)pawn.Controller.Value.EntityIndex!.Value.Value;
-            CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
-            if (player == null || !player.IsValid) return;
+            var player = Utilities.GetPlayerFromIndex(playerIndex);
+            if (player == null || !player.IsValid || player.IsBot) return;
             var steamId = new SteamID(player.SteamID);
-            if (g_playersSkins.TryGetValue(steamId.SteamId64, out var weaponIDs))
+            if (!gPlayerWeaponPaints.ContainsKey(steamId.SteamId64)) return;
+            if (!gPlayerWeaponPaints[steamId.SteamId64].ContainsKey(weapon.AttributeManager.Item.ItemDefinitionIndex)) return;
+            weapon.AttributeManager.Item.ItemIDLow = unchecked((uint)-1);
+            weapon.AttributeManager.Item.ItemIDHigh = unchecked((uint)-1);
+            weapon.FallbackPaintKit = gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex];
+            weapon.FallbackSeed = gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex];
+            weapon.FallbackWear = gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex];
+            if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
             {
-                if (weaponIDs.TryGetValue(weapon.AttributeManager.Item.ItemDefinitionIndex, out var weaponPaint))
-                {
-                    weapon.AttributeManager.Item.ItemIDLow = unchecked((uint)-1);
-                    weapon.AttributeManager.Item.ItemIDHigh = unchecked((uint)-1);
-                    weapon.FallbackPaintKit = weaponPaint;
-                    weapon.FallbackSeed = 0;
-                    weapon.FallbackWear = 0.0001f;
-                    if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
-                    {
-                        var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-                        skeleton.ModelState.MeshGroupMask = 2;
-                    }
-                }
+                var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
+                skeleton.ModelState.MeshGroupMask = 2;
             }
         });
     }
@@ -143,12 +144,12 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         Func<nint, nint> GetSkeletonInstance = VirtualFunction.Create<nint, nint>(node.Handle, 8);
         return new CSkeletonInstance(GetSkeletonInstance(node.Handle));
     }
-    private async Task GetWeaponPaintsFromDatabase(int playerSlot)
+    private async Task GetWeaponPaintsFromDatabase(int playerIndex)
     {
         try
         {
-            CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
-            if (player == null || !player.IsValid || player.IsBot) return;
+            CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
+            if (player == null || !player.IsValid) return;
             var steamId = new SteamID(player.SteamID);
 
             MySqlQueryCondition conditions = new MySqlQueryCondition()
@@ -158,15 +159,27 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
             result.ToList().ForEach(pair =>
             {
-                int weaponId = result.Get<int>(pair.Key, "weapon_defindex");
-                int weaponPaint = result.Get<int>(pair.Key, "weapon_paint_id");
+                int WeaponDefIndex = result.Get<int>(pair.Key, "weapon_defindex");
+                int PaintId = result.Get<int>(pair.Key, "weapon_paint_id");
+                float Wear = result.Get<float>(pair.Key, "weapon_wear");
+                int Seed = result.Get<int>(pair.Key, "weapon_seed");
 
-                if (!g_playersSkins.ContainsKey(steamId.SteamId64))
+                if (!gPlayerWeaponPaints.ContainsKey(steamId.SteamId64))
                 {
-                    g_playersSkins[steamId.SteamId64] = new Dictionary<nint, int>();
+                    gPlayerWeaponPaints[steamId.SteamId64] = new Dictionary<nint, int>();
+                }
+                if (!gPlayerWeaponWear.ContainsKey(steamId.SteamId64))
+                {
+                    gPlayerWeaponWear[steamId.SteamId64] = new Dictionary<nint, float>();
+                }
+                if (!gPlayerWeaponSeed.ContainsKey(steamId.SteamId64))
+                {
+                    gPlayerWeaponSeed[steamId.SteamId64] = new Dictionary<nint, int>();
                 }
 
-                g_playersSkins[steamId.SteamId64][weaponId] = weaponPaint;
+                gPlayerWeaponPaints[steamId.SteamId64][WeaponDefIndex] = PaintId;
+                gPlayerWeaponWear[steamId.SteamId64][WeaponDefIndex] = Wear;
+                gPlayerWeaponSeed[steamId.SteamId64][WeaponDefIndex] = Seed;
             });
         }
         catch (Exception)

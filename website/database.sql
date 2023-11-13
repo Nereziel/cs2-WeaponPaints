@@ -30,8 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `wp_player_skins` (
   `steamid` varchar(64) NOT NULL,
   `weapon_defindex` int(6) NOT NULL,
-  `weapon_paint_id` int(6) NOT NULL
+  `weapon_paint_id` int(6) NOT NULL,
+  `weapon_wear` float NOT NULL DEFAULT 0.0001,
+  `weapon_seed` int(16) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+--
+-- Table structure for table `wp_player_knife`
+--
+
+CREATE TABLE `wp_player_knife` (
+  `steamid` VARCHAR NOT NULL,
+  `knife` VARCHAR NOT NULL,
+  UNIQUE (`steamid`)
+) ENGINE = InnoDB;
 
 --
 -- Table structure for table `wp_weapons`
