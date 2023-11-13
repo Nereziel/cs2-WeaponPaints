@@ -6,13 +6,13 @@
 Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for [CSSharp](https://docs.cssharp.dev/).
 
 ### Features
-- changes only paint on weapons
+- changes only paint, seed, wear on weapons
 - mysql base
 - data sync on player connect or player can type !wp to refresh skins (command has hardcoded 2 minute cooldown for now)
 
 ### CS2 server:
 - Compile and copy plugin to plugins. Info here [https://docs.cssharp.dev/guides/hello-world-plugin/](https://docs.cssharp.dev/guides/hello-world-plugin/)
-- setup config.json with database credentials
+- setup addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json with database credentials
 - in addons/counterstrikesharp/configs/core.json set FollowCS2ServerGuidelines to false
 
 ### Web install:
