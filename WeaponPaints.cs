@@ -4,15 +4,19 @@ using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Memory;
+using CounterStrikeSharp.API.Modules.Utils;
 using Nexd.MySQL;
+using static CounterStrikeSharp.API.Core.Listeners;
 
 namespace WeaponPaints;
-public class WeaponPaints : BasePlugin
+public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
     public override string ModuleName => "WeaponPaints";
     public override string ModuleDescription => "Connector for web-based player chosen wepaon paints.";
     public override string ModuleAuthor => "Nereziel";
     public override string ModuleVersion => "0.7";
+    public WeaponPaintsConfig Config { get; set; } = new();
+
     MySqlDb? MySql = null;
     public DateTime[] commandCooldown = new DateTime[Server.MaxPlayers];
     private Dictionary<ulong, Dictionary<nint, int>> g_playersSkins = new Dictionary<ulong, Dictionary<nint, int>>();
@@ -54,13 +58,17 @@ public class WeaponPaints : BasePlugin
 
     public override void Load(bool hotReload)
     {
-        new Cfg().CheckConfig(ModuleDirectory);
-        MySql = new MySqlDb(Cfg.config.DatabaseHost!, Cfg.config.DatabaseUser!, Cfg.config.DatabasePassword!, Cfg.config.DatabaseName!, (int)Cfg.config.DatabasePort);
+        MySql = new MySqlDb(Config.DatabaseHost!, Config.DatabaseUser!, Config.DatabasePassword!, Config.DatabaseName!, Config.DatabasePort);
         RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
         RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
         RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
     }
+    public void OnConfigParsed(WeaponPaintsConfig config)
+    {
+        Config = config;
+    }
     private void OnClientAuthorized(int playerSlot, SteamID steamId)
+
     {
         int slot = playerSlot;
         Server.NextFrame(() =>
@@ -109,12 +117,19 @@ public class WeaponPaints : BasePlugin
             }
         });
     }
+    [ConsoleCommand("css_ws", "weaponskins")]
+    public void OnCommandWS(CCSPlayerController? player, CommandInfo command)
+    {
+        if (player == null) return;
+        player.PrintToChat($"Change weapon skins at {ChatColors.Purple}{Config.WebSite}");
+        player.PrintToChat($"To synchronize weapon paints type {ChatColors.Purple}!wp");
+    }
     [ConsoleCommand("css_wp", "refreshskins")]
     public void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
     {
         if (player == null) return;
         int playerSlot = (int)player.EntityIndex!.Value.Value - 1;
-        if (DateTime.UtcNow >= commandCooldown[playerSlot].AddMinutes(2))
+        if (DateTime.UtcNow >= commandCooldown[playerSlot].AddSeconds(Config.CmdRefreshCooldownSeconds))
         {
             commandCooldown[playerSlot] = DateTime.UtcNow;
             Task.Run(async () => await GetWeaponPaintsFromDatabase(playerSlot));
