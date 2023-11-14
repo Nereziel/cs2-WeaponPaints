@@ -8,11 +8,13 @@
 Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for [CSSharp](https://docs.cssharp.dev/).
 
 ### Features
-- changes only paint, seed, wear on weapons
+- changes only paint, seed and wear on weapons and knives
 - mysql based
-- data sync on player connect or playe
+- data sync on player connect
 - Added command `!wp` to refresh skins (with cooldown in second can be configured)
 - Added command `!ws` to show website
+- Added command `!knife` to show menu with knives
+- Knife change is now limited to have these cvars empty `mp_t_default_melee ""` and `mp_ct_default_melee ""`
 
 ### CS2 server:
 - compile and copy plugin to plugins. Info here [https://docs.cssharp.dev/guides/hello-world-plugin/](https://docs.cssharp.dev/guides/hello-world-plugin/)
