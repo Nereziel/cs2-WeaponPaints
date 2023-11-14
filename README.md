@@ -22,6 +22,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - in `addons/counterstrikesharp/configs/core.json` set **FollowCS2ServerGuidelines** to **false**
 
 ### Web install:
+- requires PHP (tested on php ver `8.2.3` and nginx webserver)
 - copy website to web server
 - import `database.sql` to mysql
 - get steam api key [https://steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey)
