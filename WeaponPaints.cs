@@ -131,8 +131,13 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
     {
         var player = @event.Userid;
-        if (!player.IsValid || !player.PlayerPawn.IsValid || player.IsBot)
+        if (!player.IsValid || !player.PlayerPawn.IsValid)
         {
+            return HookResult.Continue;
+        }
+        if (player.IsBot) 
+        { 
+            player.GiveNamedItem("weapon_knife");
             return HookResult.Continue;
         }
         if (!PlayerHasKnife(player)) player.GiveNamedItem(g_playersKife[(int)player.EntityIndex!.Value.Value]);
