@@ -26,7 +26,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     private Dictionary<ulong, Dictionary<nint, int>> gPlayerWeaponPaints = new();
     private Dictionary<ulong, Dictionary<nint, int>> gPlayerWeaponSeed = new();
     private Dictionary<ulong, Dictionary<nint, float>> gPlayerWeaponWear = new();
-    private Dictionary<int, string> g_playersKife = new();
+    private Dictionary<int, string> g_playersKnife = new();
     private static readonly Dictionary<string, string> knifeTypes = new()
     {
         { "m9", "weapon_knife_m9_bayonet" },
@@ -77,6 +77,11 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     public void OnConfigParsed(WeaponPaintsConfig config)
     {
+        if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
+        {
+            throw new Exception("You need to setup Database credentials in config!");
+        }
+
         Config = config;
     }
     // TODO: fix for map which change mp_t_default_melee
@@ -126,12 +131,13 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     private void OnClientDisconnect(int playerSlot)
     {
         // TODO: Clean up after player
+        g_playersKnife.Remove(playerSlot+1);
     }
 
     private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
     {
         var player = @event.Userid;
-        if (!player.IsValid || !player.PlayerPawn.IsValid)
+        if (!player.IsValid || !player.PlayerPawn.IsValid || !player.PawnIsAlive)
         {
             return HookResult.Continue;
         }
@@ -140,18 +146,18 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             player.GiveNamedItem("weapon_knife");
             return HookResult.Continue;
         }
-        
-        if (!PlayerHasKnife(player)) 
+
+        if (!PlayerHasKnife(player))
         {
-            if (g_playersKife.ContainsKey((int)player.EntityIndex!.Value.Value))
+            if (g_playersKnife.TryGetValue((int)player.EntityIndex!.Value.Value, out var knife))
             {
-                player.GiveNamedItem(g_playersKife[(int)player.EntityIndex!.Value.Value]);
+                player.GiveNamedItem(knife);
             }
             else
             {
                 player.GiveNamedItem("weapon_knife");
             }
-        } 
+        }
 
         return HookResult.Continue;
     }
@@ -178,7 +184,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             var player = Utilities.GetPlayerFromIndex(playerIndex);
             if (player == null || !player.IsValid || player.IsBot) return;
             // TODO: Remove knife crashes here, needs another solution
-            /*if (isKnife && g_playersKife[(int)player.EntityIndex!.Value.Value] != "weapon_knife" && (weapon.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.AttributeManager.Item.ItemDefinitionIndex == 59))
+            /*if (isKnife && g_playersKnife[(int)player.EntityIndex!.Value.Value] != "weapon_knife" && (weapon.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.AttributeManager.Item.ItemDefinitionIndex == 59))
             {
                 RemoveKnifeFromPlayer(player);
                 return;
@@ -203,7 +209,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     public void RemoveKnifeFromPlayer(CCSPlayerController player)
     {
         if (!player.PawnIsAlive) return;
-        if (!g_playersKife.ContainsKey((int)player.EntityIndex!.Value.Value)) return;
+        if (!g_playersKnife.ContainsKey((int)player.EntityIndex!.Value.Value)) return;
         var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
         foreach (var weapon in weapons)
         {
@@ -213,7 +219,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
                 if (weapon.Value.DesignerName.Contains("knife"))
                 {
                     weapon.Value.Remove();
-                    player.GiveNamedItem(g_playersKife[(int)player.EntityIndex!.Value.Value]);
+                    player.GiveNamedItem(g_playersKnife[(int)player.EntityIndex!.Value.Value]);
                     break;
                 }
             }
@@ -243,7 +249,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             if (knifeTypes.TryGetValue(option.Text, out var knife))
             {
                 Task.Run(() => SyncKnifeToDatabase((int)player.EntityIndex!.Value.Value, knife));
-                g_playersKife[(int)player.EntityIndex!.Value.Value] = knifeTypes[option.Text];
+                g_playersKnife[(int)player.EntityIndex!.Value.Value] = knifeTypes[option.Text];
                 player.PrintToChat($"You have chosen {option.Text} as your knife.");
                 RemoveKnifeFromPlayer(player);
             }
@@ -293,7 +299,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
                  .Add("steamid", "=", steamId.SteamId64.ToString());
 
             MySqlQueryResult result = await MySql!.Table("wp_player_skins").Where(conditions).SelectAsync();
-
+            if (result.Rows < 1) return;
             result.ToList().ForEach(pair =>
             {
                 int WeaponDefIndex = result.Get<int>(pair.Key, "weapon_defindex");
@@ -337,12 +343,18 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
             MySqlQueryResult result = await MySql!.Table("wp_player_knife").Where(conditions).SelectAsync();
 
+            if (result.Rows < 1)
+            {
+                //g_playersKnife[playerIndex] = "weapon_knife";
+                return;
+            }
+
             string knife = result.Get<string>(0, "knife");
             if (knife != null)
             {
-                g_playersKife[playerIndex] = knife;
+                g_playersKnife[playerIndex] = knife;
             }
-            //Log($"{player.PlayerName} has this knife -> {g_playersKife[playerIndex]}");
+            //Log($"{player.PlayerName} has this knife -> {g_playersKnife[playerIndex]}");
         }
         catch (Exception e)
         {

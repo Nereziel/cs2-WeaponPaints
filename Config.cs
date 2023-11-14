@@ -8,19 +8,19 @@ namespace WeaponPaints
         public override int Version { get; set; } = 1;
 
         [JsonPropertyName("DatabaseHost")]
-        public string DatabaseHost { get; set; } = "localhost";
+        public string DatabaseHost { get; set; } = "";
 
         [JsonPropertyName("DatabasePort")]
         public int DatabasePort { get; set; } = 3306;
 
         [JsonPropertyName("DatabaseUser")]
-        public string DatabaseUser { get; set; } = "dbuser";
+        public string DatabaseUser { get; set; } = "";
 
         [JsonPropertyName("DatabasePassword")]
-        public string DatabasePassword { get; set; } = "dbuserpw";
+        public string DatabasePassword { get; set; } = "";
 
         [JsonPropertyName("DatabaseName")]
-        public string DatabaseName { get; set; } = "dbname";
+        public string DatabaseName { get; set; } = "";
 
         [JsonPropertyName("CmdRefreshCooldownSeconds")]
         public int CmdRefreshCooldownSeconds { get; set; } = 60;
