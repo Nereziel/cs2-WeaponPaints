@@ -40,8 +40,8 @@ CREATE TABLE `wp_player_skins` (
 --
 
 CREATE TABLE `wp_player_knife` (
-  `steamid` VARCHAR NOT NULL,
-  `knife` VARCHAR NOT NULL,
+  `steamid` varchar(64) NOT NULL,
+  `knife` varchar(64) NOT NULL,
   UNIQUE (`steamid`)
 ) ENGINE = InnoDB;
 
