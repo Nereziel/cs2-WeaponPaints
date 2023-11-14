@@ -140,7 +140,18 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             player.GiveNamedItem("weapon_knife");
             return HookResult.Continue;
         }
-        if (!PlayerHasKnife(player)) player.GiveNamedItem(g_playersKife[(int)player.EntityIndex!.Value.Value]);
+        
+        if (!PlayerHasKnife(player)) 
+        {
+            if (g_playersKife.ContainsKey((int)player.EntityIndex!.Value.Value))
+            {
+                player.GiveNamedItem(g_playersKife[(int)player.EntityIndex!.Value.Value]);
+            }
+            else
+            {
+                player.GiveNamedItem("weapon_knife");
+            }
+        } 
 
         return HookResult.Continue;
     }
@@ -192,6 +203,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     public void RemoveKnifeFromPlayer(CCSPlayerController player)
     {
         if (!player.PawnIsAlive) return;
+        if (!g_playersKife.ContainsKey((int)player.EntityIndex!.Value.Value)) return;
         var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
         foreach (var weapon in weapons)
         {
@@ -330,10 +342,6 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             {
                 g_playersKife[playerIndex] = knife;
             }
-            else
-            {
-                g_playersKife[playerIndex] = "weapon_knife";
-            }
             //Log($"{player.PlayerName} has this knife -> {g_playersKife[playerIndex]}");
         }
         catch (Exception e)
@@ -357,7 +365,6 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             return;
         }
     }
-
     private static void Log(string message)
     {
         Console.BackgroundColor = ConsoleColor.DarkGray;
