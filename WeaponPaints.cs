@@ -301,8 +301,9 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
                 gPlayerWeaponSeed[steamId.SteamId64][WeaponDefIndex] = Seed;
             });
         }
-        catch (Exception)
+        catch (Exception e)
         {
+            Log(e.Message);
             return;
         }
     }
@@ -331,7 +332,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
+            Log(e.Message);
             return;
         }
     }
@@ -344,9 +345,9 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             var steamId = new SteamID(player.SteamID);
             await MySql!.ExecuteNonQueryAsync($"INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES('{steamId.SteamId64}', '{knife}') ON DUPLICATE KEY UPDATE `knife` = '{knife}';");
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            Log(ex.Message);
+            Log(e.Message);
             return;
         }
     }
