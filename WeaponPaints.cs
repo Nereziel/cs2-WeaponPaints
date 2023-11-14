@@ -62,15 +62,14 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     {
         MySql = new MySqlDb(Config.DatabaseHost!, Config.DatabaseUser!, Config.DatabasePassword!, Config.DatabaseName!, Config.DatabasePort);
         RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
-        RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
+        RegisterListener<Listeners.OnClientPutInServer>(OnClientPutInServer);
         RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
     }
     public void OnConfigParsed(WeaponPaintsConfig config)
     {
         Config = config;
     }
-    private void OnClientAuthorized(int playerSlot, SteamID steamId)
-
+    private void OnClientPutInServer(int playerSlot)
     {
         int slot = playerSlot;
         Server.NextFrame(() =>
@@ -144,11 +143,11 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         Func<nint, nint> GetSkeletonInstance = VirtualFunction.Create<nint, nint>(node.Handle, 8);
         return new CSkeletonInstance(GetSkeletonInstance(node.Handle));
     }
-    private async Task GetWeaponPaintsFromDatabase(int playerIndex)
+    private async Task GetWeaponPaintsFromDatabase(int playerSlot)
     {
         try
         {
-            CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
+            CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
             if (player == null || !player.IsValid) return;
             var steamId = new SteamID(player.SteamID);
 
