@@ -1,4 +1,4 @@
-﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Commands;
@@ -8,6 +8,7 @@ using CounterStrikeSharp.API.Modules.Menu;
 using CounterStrikeSharp.API.Modules.Utils;
 using Nexd.MySQL;
 using System.Runtime.ExceptionServices;
+using static CounterStrikeSharp.API.Core.Listeners;
 
 namespace WeaponPaints;
 public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
@@ -67,7 +68,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         SetGlobalExceptionHandler();
         MySql = new MySqlDb(Config.DatabaseHost, Config.DatabaseUser, Config.DatabasePassword, Config.DatabaseName!, Config.DatabasePort);
         RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
-        RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
+        RegisterListener<Listeners.OnClientPutInServer>(OnClientPutInServer);
         RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
         RegisterListener<Listeners.OnMapStart>(OnMapStart);
         RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
@@ -113,7 +114,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         });
     }
 
-    private void OnClientAuthorized(int playerSlot, SteamID steamId)
+    private void OnClientPutInServer(int playerSlot)
     {
         int playerIndex = playerSlot + 1;
         Task.Run(async () =>
