@@ -182,8 +182,9 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
                 gPlayerWeaponSeed[steamId.SteamId64][WeaponDefIndex] = Seed;
             });
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            Console.WriteLine(ex);
             return;
         }
     }
