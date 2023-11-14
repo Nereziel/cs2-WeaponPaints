@@ -77,8 +77,11 @@ else
 					<option>Select skin</option>
 					<?php
 					$list = $db->select("SELECT * FROM wp_weapons_paints WHERE weapon_defindex = \"{$key["weapon_defindex"]}\"");
-					foreach($list as $list){
-						echo "<option value=\"{$list['weapon_defindex']}-{$list['paint']}\">{$list['paint_name']}</option>";
+					foreach ($list as $list) {
+						if ($list['paint_name'] == $query3[0]["paint_name"])
+							echo "<option selected value=\"{$list['weapon_defindex']}-{$list['paint']}\">{$list['paint_name']}</option>";
+						else
+							echo "<option value=\"{$list['weapon_defindex']}-{$list['paint']}\">{$list['paint_name']}</option>";
 					}
 					?>
 					</select>
