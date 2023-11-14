@@ -159,6 +159,11 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             }
         }
 
+        // Check the best slot and set it. Weird solution but works xD
+        AddTimer(0.1f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3"));
+        AddTimer(0.1f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
+        AddTimer(0.1f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
+
         return HookResult.Continue;
     }
     private void OnEntitySpawned(CEntityInstance entity)
