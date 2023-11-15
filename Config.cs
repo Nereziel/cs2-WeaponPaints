@@ -21,9 +21,24 @@ namespace WeaponPaints
         public string KnifeMenuTitle { get; set; } = "Knife Menu.";
     }
 
+    public class Additional
+    {
+        [JsonPropertyName("SkinVisibilityFix")]
+        public bool SkinVisibilityFix { get; set; } = true;
+
+        [JsonPropertyName("KnifeEnabled")]
+        public bool KnifeEnabled { get; set; } = true;
+
+        [JsonPropertyName("SkinEnabled")]
+        public bool SkinEnabled { get; set; } = true;
+
+        [JsonPropertyName("CommandWpEnabled")]
+        public bool CommandWpEnabled { get; set; } = true;
+    }
+
     public class WeaponPaintsConfig : BasePluginConfig
     {
-        public override int Version { get; set; } = 2;
+        public override int Version { get; set; } = 3;
 
         [JsonPropertyName("DatabaseHost")]
         public string DatabaseHost { get; set; } = "";
@@ -51,6 +66,9 @@ namespace WeaponPaints
 
         [JsonPropertyName("Messages")]
         public Messages Messages { get; set; } = new Messages();
+
+        [JsonPropertyName("Additional")]
+        public Additional Additional { get; set; } = new Additional();
     }
     
 }
