@@ -1,0 +1,57 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  BUILD_NUMBER: ${{ github.run_number }}
+  PROJECT_PATH: "WeaponPaints.csproj"
+  PROJECT_NAME: "WeaponPaints"
+  OUTPUT_PATH: "./WeaponPaints"
+
+
+jobs:
+  build:
+    permissions: write-all
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore
+      run: dotnet restore
+    - name: Build
+      run: dotnet build ${{ env.PROJECT_PATH }} -c WeaponPaints -o ${{ env.OUTPUT_PATH }}
+    - name: Clean files
+      run: |
+        rm -f \
+          ${{ env.OUTPUT_PATH }}/CounterStrikeSharp.API.dll \
+          ${{ env.OUTPUT_PATH }}/McMaster.NETCore.Plugins.dll \
+          ${{ env.OUTPUT_PATH }}/Microsoft.DotNet.PlatformAbstractions.dll \
+          ${{ env.OUTPUT_PATH }}/Microsoft.Extensions.DependencyModel.dll 
+    - name: Zip
+      uses: thedoctor0/zip-release@0.7.5
+      with:
+        type: 'zip'
+        filename: '${{ env.PROJECT_NAME }}.zip'
+        path: ${{ env.OUTPUT_PATH }}
+    - name: Zip
+      uses: thedoctor0/zip-release@0.7.5
+      with:
+        type: 'zip'
+        filename: '${{ env.PROJECT_NAME }}-Website.zip'
+        path: website
+    - name: WeaponPaints
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        artifacts: "${{ env.PROJECT_NAME }}.zip,${{ env.PROJECT_NAME }}-Website.zip"
+        name: "Build ${{ env.BUILD_NUMBER }}"
+        tag: "build-${{ env.BUILD_NUMBER }}"
+        body: |
+          Place the plugin in game/csgo/addons/counterstrikesharp/plugins/WeaponPaints

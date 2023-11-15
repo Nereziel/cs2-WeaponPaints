@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CounterStrikeSharp.API" Version="1.0.30" />
+    <PackageReference Include="CounterStrikeSharp.API" Version="*" />
     <PackageReference Include="Nexd.MySQL" Version="1.0.1" />
   </ItemGroup>
 

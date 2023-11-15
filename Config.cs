@@ -1,59 +1,32 @@
-﻿using CounterStrikeSharp.API.Modules.Utils;
-using System.Reflection;
-using System.Text.Json;
+﻿using CounterStrikeSharp.API.Core;
+using System.Text.Json.Serialization;
 
 namespace WeaponPaints
 {
-    internal class Cfg
+    public class WeaponPaintsConfig : BasePluginConfig
     {
-        public static Config config = new();
-        public void CheckConfig(string moduleDirectory)
-        {
-            string path = Path.Join(moduleDirectory, "config.json");
+        public override int Version { get; set; } = 1;
 
-            if (!File.Exists(path))
-            {
-                CreateAndWriteFile(path);
-            }
+        [JsonPropertyName("DatabaseHost")]
+        public string DatabaseHost { get; set; } = "";
 
-            using FileStream fs = new(path, FileMode.Open, FileAccess.Read);
-            using StreamReader sr = new(fs);
-            // Deserialize the JSON from the file and load the configuration.
-            config = JsonSerializer.Deserialize<Config>(sr.ReadToEnd());
-        }
-        private static void CreateAndWriteFile(string path)
-        {
+        [JsonPropertyName("DatabasePort")]
+        public int DatabasePort { get; set; } = 3306;
 
-            using (FileStream fs = File.Create(path))
-            {
-                // File is created, and fs will automatically be disposed when the using block exits.
-            }
+        [JsonPropertyName("DatabaseUser")]
+        public string DatabaseUser { get; set; } = "";
 
-            Console.WriteLine($"File created: {File.Exists(path)}");
+        [JsonPropertyName("DatabasePassword")]
+        public string DatabasePassword { get; set; } = "";
 
-            config = new Config
-            {
-                DatabaseHost = "localhost",
-                DatabasePort = 3306,
-                DatabaseUser = "dbuser",
-                DatabasePassword = "dbpassword",
-                DatabaseName = "database"
-            };
+        [JsonPropertyName("DatabaseName")]
+        public string DatabaseName { get; set; } = "";
 
-            // Serialize the config object to JSON and write it to the file.
-            string jsonConfig = JsonSerializer.Serialize(config, new JsonSerializerOptions()
-            {
-                WriteIndented = true
-            });
-            File.WriteAllText(path, jsonConfig);
-        }
-    }
-    internal class Config
-    {
-        public string? DatabaseHost { get; set; }
-        public uint DatabasePort { get; set; }
-        public string? DatabaseUser { get; set; }
-        public string? DatabasePassword { get; set; }
-        public string? DatabaseName { get; set; }
+        [JsonPropertyName("CmdRefreshCooldownSeconds")]
+        public int CmdRefreshCooldownSeconds { get; set; } = 60;
+
+        [JsonPropertyName("WebSite")]
+        public string WebSite { get; set; } = "http://wp.example.com";
+        
     }
 }
