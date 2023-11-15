@@ -201,7 +201,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     {
         if (player.IsBot) 
         { 
-            player.GiveNamedItem("weapon_knife");
+            player.GiveNamedItem((CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife");
             return;
         }
 
@@ -213,7 +213,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             }
             else
             {
-                player.GiveNamedItem("weapon_knife");
+                player.GiveNamedItem((CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife");
             }
         }
     }
