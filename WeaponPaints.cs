@@ -9,6 +9,8 @@ using CounterStrikeSharp.API.Modules.Utils;
 using Nexd.MySQL;
 using System.Runtime.ExceptionServices;
 using static CounterStrikeSharp.API.Core.Listeners;
+using System.Reflection;
+
 
 namespace WeaponPaints;
 public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
@@ -22,7 +24,6 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
     MySqlDb? MySql = null;
     private DateTime[] commandCooldown = new DateTime[Server.MaxPlayers];
-    private static string PluginPrefix = $" {ChatColors.Green}[WeaponPaints]{ChatColors.White}";
     private Dictionary<ulong, Dictionary<nint, int>> gPlayerWeaponPaints = new();
     private Dictionary<ulong, Dictionary<nint, int>> gPlayerWeaponSeed = new();
     private Dictionary<ulong, Dictionary<nint, float>> gPlayerWeaponWear = new();
@@ -243,14 +244,17 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     private void SetupMenus()
     {
-        var giveItemMenu = new ChatMenu("Knife Menu");
+        var giveItemMenu = new ChatMenu(ReplaceTags(Config.Messages.KnifeMenuTitle));
         var handleGive = (CCSPlayerController player, ChatMenuOption option) =>
         {
             if (knifeTypes.TryGetValue(option.Text, out var knife))
             {
                 Task.Run(() => SyncKnifeToDatabase((int)player.EntityIndex!.Value.Value, knife));
                 g_playersKnife[(int)player.EntityIndex!.Value.Value] = knifeTypes[option.Text];
-                player.PrintToChat($"You have chosen {option.Text} as your knife.");
+                if (!string.IsNullOrEmpty(Config.Messages.ChosenKnifeMenu)) {
+                    string temp = $"{Config.Prefix} {Config.Messages.ChosenKnifeMenu}".Replace("{KNIFE}", option.Text);
+                    player.PrintToChat(ReplaceTags(temp));
+                }
                 RemoveKnifeFromPlayer(player);
             }
         };
@@ -264,23 +268,42 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     public void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
     {
         if (player == null) return;
+        string temp = "";
         int playerIndex = (int)player.EntityIndex!.Value.Value;
         if (DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
         {
             commandCooldown[playerIndex] = DateTime.UtcNow;
             Task.Run(async () => await GetWeaponPaintsFromDatabase(playerIndex));
-            player.PrintToChat($"{PluginPrefix} Refreshing weapon paints.");
+            if (!string.IsNullOrEmpty(Config.Messages.SuccessRefreshCommand)) {
+                temp = $"{Config.Prefix} {Config.Messages.SuccessRefreshCommand}";
+                player.PrintToChat(ReplaceTags(temp));
+            }
             return;
         }
-        player.PrintToChat($"{PluginPrefix} You can't refresh weapon paints right now.");
+        if (!string.IsNullOrEmpty(Config.Messages.CooldownRefreshCommand)) {
+            temp = $"{Config.Prefix} {Config.Messages.CooldownRefreshCommand}";
+            player.PrintToChat(ReplaceTags(temp));
+        }
     }
     [ConsoleCommand("css_ws", "weaponskins")]
     public void OnCommandWS(CCSPlayerController? player, CommandInfo command)
     {
         if (player == null) return;
-        player.PrintToChat($"{PluginPrefix} Visit {ChatColors.Purple}{Config.WebSite} {ChatColors.White}where you can change skins.");
-        player.PrintToChat($"{PluginPrefix} Type {ChatColors.Purple}!wp  {ChatColors.White}in chat to synchronize chosen skins.");
-        player.PrintToChat($"{PluginPrefix} Type {ChatColors.Purple}!knife {ChatColors.White}in chat to open knife menu.");
+
+        string temp = "";
+
+        if (!string.IsNullOrEmpty(Config.Messages.WebsiteMessageCommand)) {
+            temp = $"{Config.Prefix} {Config.Messages.WebsiteMessageCommand}";
+            player.PrintToChat(ReplaceTags(temp));
+        }
+        if (!string.IsNullOrEmpty(Config.Messages.SynchronizeMessageCommand)) {
+            temp = $"{Config.Prefix} {Config.Messages.SynchronizeMessageCommand}";
+            player.PrintToChat(ReplaceTags(temp));
+        }
+        if (!string.IsNullOrEmpty(Config.Messages.KnifeMessageCommand)) {
+            temp = $"{Config.Prefix} {Config.Messages.KnifeMessageCommand}";
+            player.PrintToChat(ReplaceTags(temp));
+        }
     }
     public static CSkeletonInstance GetSkeletonInstance(CGameSceneNode node)
     {
@@ -377,6 +400,27 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             return;
         }
     }
+
+    private string ReplaceTags(string message)
+    {
+        if (message.Contains('{'))
+        {
+            string modifiedValue = message;
+            modifiedValue = modifiedValue.Replace("{WEBSITE}", Config.Website);
+            foreach (FieldInfo field in typeof(ChatColors).GetFields())
+            {
+                string pattern = $"{{{field.Name}}}";
+                if (message.Contains(pattern, StringComparison.OrdinalIgnoreCase))
+                {
+                    modifiedValue = modifiedValue.Replace(pattern, field.GetValue(null)!.ToString(), StringComparison.OrdinalIgnoreCase);
+                }
+            }
+            return modifiedValue;
+        }
+
+        return message;
+    }
+
     private static void Log(string message)
     {
         Console.BackgroundColor = ConsoleColor.DarkGray;
