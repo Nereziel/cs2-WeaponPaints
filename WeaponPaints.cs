@@ -138,32 +138,17 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
     {
         var player = @event.Userid;
-        if (!player.IsValid || !player.PlayerPawn.IsValid || !player.PawnIsAlive)
+        if (!player.IsValid || !player.PlayerPawn.IsValid)
         {
-            return HookResult.Continue;
-        }
-        if (player.IsBot) 
-        { 
-            player.GiveNamedItem("weapon_knife");
             return HookResult.Continue;
         }
 
-        if (!PlayerHasKnife(player))
-        {
-            if (g_playersKnife.TryGetValue((int)player.EntityIndex!.Value.Value, out var knife))
-            {
-                player.GiveNamedItem(knife);
-            }
-            else
-            {
-                player.GiveNamedItem("weapon_knife");
-            }
-        }
+        GiveKnifeToPlayer(player);
 
         // Check the best slot and set it. Weird solution but works xD
         AddTimer(0.1f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3"));
-        AddTimer(0.1f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
-        AddTimer(0.1f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
+        AddTimer(0.25f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
+        AddTimer(0.35f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
 
         return HookResult.Continue;
     }
@@ -212,9 +197,28 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             }
         });
     }
+    public void GiveKnifeToPlayer(CCSPlayerController player)
+    {
+        if (player.IsBot) 
+        { 
+            player.GiveNamedItem("weapon_knife");
+            return;
+        }
+
+        if (!PlayerHasKnife(player))
+        {
+            if (g_playersKnife.TryGetValue((int)player.EntityIndex!.Value.Value, out var knife))
+            {
+                player.GiveNamedItem(knife);
+            }
+            else
+            {
+                player.GiveNamedItem("weapon_knife");
+            }
+        }
+    }
     public void RemoveKnifeFromPlayer(CCSPlayerController player)
     {
-        if (!player.PawnIsAlive) return;
         if (!g_playersKnife.ContainsKey((int)player.EntityIndex!.Value.Value)) return;
         var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
         foreach (var weapon in weapons)
@@ -225,7 +229,6 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
                 if (weapon.Value.DesignerName.Contains("knife"))
                 {
                     weapon.Value.Remove();
-                    player.GiveNamedItem(g_playersKnife[(int)player.EntityIndex!.Value.Value]);
                     break;
                 }
             }
@@ -233,7 +236,6 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     public static bool PlayerHasKnife(CCSPlayerController player)
     {
-        if (!player.PawnIsAlive) return false;
         var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
         foreach (var weapon in weapons)
         {
@@ -261,6 +263,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
                     player.PrintToChat(ReplaceTags(temp));
                 }
                 RemoveKnifeFromPlayer(player);
+                GiveKnifeToPlayer(player);
             }
         };
         foreach (var knife in knifeTypes)
