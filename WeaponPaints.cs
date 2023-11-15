@@ -74,7 +74,8 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         RegisterListener<Listeners.OnMapStart>(OnMapStart);
         RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
         //RegisterEventHandler<EventRoundPrestart>(OnRoundPreStart);
-        SetupMenus();
+        if (Config.Additional.KnifeEnabled)
+            SetupMenus();
     }
     public void OnConfigParsed(WeaponPaintsConfig config)
     {
@@ -112,6 +113,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     private void OnMapStart(string mapName)
     {
+        if (!Config.Additional.KnifeEnabled) return;
         // TODO
         // needed for now
         base.AddTimer(2.0f, () => {
@@ -124,15 +126,17 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     {
         int playerIndex = playerSlot + 1;
         Task.Run(async () =>
-        {
-            await GetKnifeFromDatabase(playerIndex);
+        {   
+            if (Config.Additional.KnifeEnabled)
+                await GetKnifeFromDatabase(playerIndex);
             await GetWeaponPaintsFromDatabase(playerIndex);
         });
     }
     private void OnClientDisconnect(int playerSlot)
     {
         // TODO: Clean up after player
-        g_playersKnife.Remove(playerSlot+1);
+        if (Config.Additional.KnifeEnabled)
+            g_playersKnife.Remove(playerSlot+1);
     }
 
     private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
@@ -143,17 +147,22 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             return HookResult.Continue;
         }
 
-        GiveKnifeToPlayer(player);
+        if (Config.Additional.KnifeEnabled)
+            GiveKnifeToPlayer(player);
 
-        // Check the best slot and set it. Weird solution but works xD
-        AddTimer(0.1f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3"));
-        AddTimer(0.25f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
-        AddTimer(0.35f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
+        if (Config.Additional.SkinVisibilityFix)
+        {
+            // Check the best slot and set it. Weird solution but works xD
+            AddTimer(0.1f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3"));
+            AddTimer(0.25f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
+            AddTimer(0.35f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
+        }
 
         return HookResult.Continue;
     }
     private void OnEntitySpawned(CEntityInstance entity)
     {
+        if (!Config.Additional.SkinEnabled) return;
         var designerName = entity.DesignerName;
         if (!weaponList.Contains(designerName)) return;
         bool isKnife = false;
@@ -199,6 +208,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     public void GiveKnifeToPlayer(CCSPlayerController player)
     {
+        if (!Config.Additional.KnifeEnabled) return;
         if (player.IsBot) 
         { 
             player.GiveNamedItem((CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife");
@@ -219,6 +229,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     public void RemoveKnifeFromPlayer(CCSPlayerController player)
     {
+        if (!Config.Additional.KnifeEnabled) return;
         if (!g_playersKnife.ContainsKey((int)player.EntityIndex!.Value.Value)) return;
         var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
         foreach (var weapon in weapons)
@@ -234,8 +245,9 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             }
         }
     }
-    public static bool PlayerHasKnife(CCSPlayerController player)
+    public bool PlayerHasKnife(CCSPlayerController player)
     {
+        if (!Config.Additional.KnifeEnabled) return true;
         var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
         foreach (var weapon in weapons)
         {
@@ -251,6 +263,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     private void SetupMenus()
     {
+        if (!Config.Additional.KnifeEnabled) return;
         var giveItemMenu = new ChatMenu(ReplaceTags(Config.Messages.KnifeMenuTitle));
         var handleGive = (CCSPlayerController player, ChatMenuOption option) =>
         {
@@ -275,6 +288,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     [ConsoleCommand("css_wp", "refreshskins")]
     public void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
     {
+        if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled) return;
         if (player == null) return;
         string temp = "";
         int playerIndex = (int)player.EntityIndex!.Value.Value;
@@ -296,6 +310,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     [ConsoleCommand("css_ws", "weaponskins")]
     public void OnCommandWS(CCSPlayerController? player, CommandInfo command)
     {
+        if (!Config.Additional.SkinEnabled) return;
         if (player == null) return;
 
         string temp = "";
@@ -308,6 +323,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             temp = $"{Config.Prefix} {Config.Messages.SynchronizeMessageCommand}";
             player.PrintToChat(ReplaceTags(temp));
         }
+        if (!Config.Additional.KnifeEnabled) return;
         if (!string.IsNullOrEmpty(Config.Messages.KnifeMessageCommand)) {
             temp = $"{Config.Prefix} {Config.Messages.KnifeMessageCommand}";
             player.PrintToChat(ReplaceTags(temp));
@@ -320,6 +336,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     private async Task GetWeaponPaintsFromDatabase(int playerIndex)
     {
+        if (!Config.Additional.SkinEnabled) return;
         try
         {
             CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
@@ -364,6 +381,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     private async Task GetKnifeFromDatabase(int playerIndex)
     {
+        if (!Config.Additional.KnifeEnabled) return;
         try
         {
             CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
@@ -395,6 +413,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     private async Task SyncKnifeToDatabase(int playerIndex, string knife)
     {
+        if (!Config.Additional.KnifeEnabled) return;
         try
         {
             CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
