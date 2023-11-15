@@ -1,5 +1,6 @@
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Entities;
@@ -13,6 +14,7 @@ using System.Reflection;
 
 
 namespace WeaponPaints;
+[MinimumApiVersion(52)]
 public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
     public override string ModuleName => "WeaponPaints";
