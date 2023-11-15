@@ -7,6 +7,8 @@
 ### Description
 Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for [CSSharp](https://docs.cssharp.dev/).
 
+### Created [Discord server](https://discord.gg/mwEQppJ5AT) where you can discus about plugin.
+
 ### Features
 - changes only paint, seed and wear on weapons and knives
 - mysql based
