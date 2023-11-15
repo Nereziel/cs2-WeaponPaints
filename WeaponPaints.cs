@@ -282,6 +282,8 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         {
             commandCooldown[playerIndex] = DateTime.UtcNow;
             Task.Run(async () => await GetWeaponPaintsFromDatabase(playerIndex));
+            if (Config.Additional.KnifeEnabled)
+                Task.Run(async () => await GetKnifeFromDatabase(playerIndex));
             if (!string.IsNullOrEmpty(Config.Messages.SuccessRefreshCommand)) {
                 temp = $"{Config.Prefix} {Config.Messages.SuccessRefreshCommand}";
                 player.PrintToChat(ReplaceTags(temp));
