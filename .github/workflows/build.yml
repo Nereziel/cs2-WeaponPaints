@@ -43,7 +43,7 @@ jobs:
         path: ${{ env.OUTPUT_PATH }}
     - name: Clean files Website
       run: |
-        rm -d website/img/
+        rm -rf website/img/
     - name: Zip
       uses: thedoctor0/zip-release@0.7.5
       with:
