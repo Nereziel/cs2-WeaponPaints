@@ -47,7 +47,7 @@ namespace WeaponPaints
         public string CommandSkin { get; set; } = "ws";
 
         [JsonPropertyName("CommandRefresh")]
-        public string CommandRefresh { get; set; } = "refresh";
+        public string CommandRefresh { get; set; } = "wp";
 
         [JsonPropertyName("CommandKill")]
         public string CommandKill { get; set; } = "kill";
