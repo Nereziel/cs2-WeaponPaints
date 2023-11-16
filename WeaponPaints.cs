@@ -195,37 +195,39 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         }
         Server.NextFrame(() =>
         {
-            if (!weapon.IsValid) return;
-            if (weapon.OwnerEntity.Value == null) return;
-            if (!weapon.OwnerEntity.Value.EntityIndex.HasValue) return;
-            int weaponOwner = (int)weapon.OwnerEntity.Value.EntityIndex.Value.Value;
-            var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex(weaponOwner));
-            if (!pawn.IsValid) return;
-            var playerIndex = (int)pawn.Controller.Value.EntityIndex!.Value.Value;
-            var player = Utilities.GetPlayerFromIndex(playerIndex);
-            if (player == null || !player.IsValid || player.IsBot) return;
-            // TODO: Remove knife crashes here, needs another solution
-            /*if (isKnife && g_playersKnife[(int)player.EntityIndex!.Value.Value] != "weapon_knife" && (weapon.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.AttributeManager.Item.ItemDefinitionIndex == 59))
-            {
-                RemoveKnifeFromPlayer(player);
-                return;
-            }*/
-            var steamId = new SteamID(player.SteamID);
-            if (!gPlayerWeaponPaints.ContainsKey(steamId.SteamId64)) return;
-            if (!gPlayerWeaponPaints[steamId.SteamId64].ContainsKey(weapon.AttributeManager.Item.ItemDefinitionIndex)) return;
-            //Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
-            weapon.AttributeManager.Item.ItemID = 16384;
-            weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
-            weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
-            weapon.FallbackPaintKit = gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex];
-            weapon.FallbackSeed = gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex];
-            weapon.FallbackWear = gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex];
-            if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
-            {
-                var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-                skeleton.ModelState.MeshGroupMask = 2;
-            }
-        });
+            try {
+                if (!weapon.IsValid) return;
+                if (weapon.OwnerEntity.Value == null) return;
+                if (!weapon.OwnerEntity.Value.EntityIndex.HasValue) return;
+                int weaponOwner = (int)weapon.OwnerEntity.Value.EntityIndex.Value.Value;
+                var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex(weaponOwner));
+                if (!pawn.IsValid) return;
+                var playerIndex = (int)pawn.Controller.Value.EntityIndex!.Value.Value;
+                var player = Utilities.GetPlayerFromIndex(playerIndex);
+                if (player == null || !player.IsValid || player.IsBot) return;
+                // TODO: Remove knife crashes here, needs another solution
+                /*if (isKnife && g_playersKnife[(int)player.EntityIndex!.Value.Value] != "weapon_knife" && (weapon.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.AttributeManager.Item.ItemDefinitionIndex == 59))
+                {
+                    RemoveKnifeFromPlayer(player);
+                    return;
+                }*/
+                var steamId = new SteamID(player.SteamID);
+                if (!gPlayerWeaponPaints.ContainsKey(steamId.SteamId64)) return;
+                if (!gPlayerWeaponPaints[steamId.SteamId64].ContainsKey(weapon.AttributeManager.Item.ItemDefinitionIndex)) return;
+                //Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
+                weapon.AttributeManager.Item.ItemID = 16384;
+                weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
+                weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
+                weapon.FallbackPaintKit = gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex];
+                weapon.FallbackSeed = gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex];
+                weapon.FallbackWear = gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex];
+                if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
+                {
+                    var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
+                    skeleton.ModelState.MeshGroupMask = 2;
+                }
+                } catch(Exception) {}
+            });
     }
     public void GiveKnifeToPlayer(CCSPlayerController player)
     {
@@ -267,6 +269,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     public void RefreshPlayerKnife(CCSPlayerController player)
     {
+        if (!player.IsValid || !player.PawnIsAlive) return;
         if (!PlayerHasKnife(player))
             GiveKnifeToPlayer(player);   
     }
@@ -320,11 +323,11 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
     public bool PlayerHasKnife(CCSPlayerController player)
     {
-        if (!Config.Additional.KnifeEnabled) return true;
+        if (!Config.Additional.KnifeEnabled) return false;
 
-        if (!player.IsValid || !player.PlayerPawn.IsValid)
+        if (!player.IsValid || !player.PawnIsAlive)
         {
-            return true;
+            return false;
         }
 
         var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
