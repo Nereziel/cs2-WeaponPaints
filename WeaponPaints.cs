@@ -226,8 +226,8 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
                     var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
                     skeleton.ModelState.MeshGroupMask = 2;
                 }
+                } catch(Exception) {}
             });
-        } catch(Exception) {}
     }
     public void GiveKnifeToPlayer(CCSPlayerController player)
     {
