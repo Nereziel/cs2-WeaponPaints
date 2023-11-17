@@ -7,14 +7,14 @@ using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Menu;
 using CounterStrikeSharp.API.Modules.Utils;
-using Nexd.MySQL;
+using MySqlConnector;
+using Dapper;
 using System.Runtime.ExceptionServices;
-using static CounterStrikeSharp.API.Core.Listeners;
 using System.Reflection;
 
 
 namespace WeaponPaints;
-[MinimumApiVersion(50)]
+[MinimumApiVersion(54)]
 public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
     public override string ModuleName => "WeaponPaints";
@@ -24,7 +24,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
     public WeaponPaintsConfig Config { get; set; } = new();
 
-    MySqlDb? MySql = null;
+    private string DatabaseConnectionString = string.Empty;
     private DateTime[] commandCooldown = new DateTime[Server.MaxPlayers];
     private Dictionary<ulong, Dictionary<nint, int>> gPlayerWeaponPaints = new();
     private Dictionary<ulong, Dictionary<nint, int>> gPlayerWeaponSeed = new();
@@ -67,9 +67,11 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     };
     public override void Load(bool hotReload)
     {
-        base.Load(hotReload);
+		base.Load(hotReload);
+        BuildDatabaseConnectionString();
+        TestDatabaseConnection();
         SetGlobalExceptionHandler();
-        MySql = new MySqlDb(Config.DatabaseHost, Config.DatabaseUser, Config.DatabasePassword, Config.DatabaseName!, Config.DatabasePort);
+        //MySql = new MySqlDb(Config.DatabaseHost, Config.DatabaseUser, Config.DatabasePassword, Config.DatabaseName!, Config.DatabasePort);
         RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
         RegisterListener<Listeners.OnClientPutInServer>(OnClientPutInServer);
         RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
@@ -90,15 +92,80 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
         Config = config;
     }
-    // TODO: fix for map which change mp_t_default_melee
-    /*private HookResult OnRoundPreStart(EventRoundPrestart @event, GameEventInfo info)
+
+    private void BuildDatabaseConnectionString()
     {
-        NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
-        NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
-        return HookResult.Continue;
+        var builder = new MySqlConnectionStringBuilder
+        {
+            Server = Config.DatabaseHost,
+            UserID = Config.DatabaseUser,
+            Password = Config.DatabasePassword,
+            Database = Config.DatabaseName,
+            Port = (uint)Config.DatabasePort,
+        };
+
+        DatabaseConnectionString = builder.ConnectionString;
     }
-    */
-    public override void Unload(bool hotReload)
+
+    private void TestDatabaseConnection()
+    {
+        try
+        {
+            using var connection = new MySqlConnection(DatabaseConnectionString);
+            connection.Open();
+
+            if (connection.State != System.Data.ConnectionState.Open)
+            {
+                throw new Exception("Unable connect to database!");
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Unknown mysql exception! " + ex.Message);
+        }
+
+        CheckDatabaseTables();
+    }
+
+    private void CheckDatabaseTables()
+    {
+        try
+        {
+            using var connection = new MySqlConnection(DatabaseConnectionString);
+            connection.OpenAsync();
+
+            using var transaction = connection.BeginTransaction();
+
+            try
+            {
+                string createTable1 = "CREATE TABLE IF NOT EXISTS `wp_player_skins` (`steamid` varchar(64) NOT NULL, `weapon_defindex` int(6) NOT NULL, `weapon_paint_id` int(6) NOT NULL, `weapon_wear` float NOT NULL DEFAULT 0.0001, `weapon_seed` int(16) NOT NULL DEFAULT 0) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;";
+                string createTable2 = "CREATE TABLE IF NOT EXISTS `wp_player_knife` (`steamid` varchar(64) NOT NULL, `knife` varchar(64) NOT NULL, UNIQUE (`steamid`)) ENGINE = InnoDB;";
+
+                connection.ExecuteAsync(createTable1);
+                connection.ExecuteAsync(createTable2);
+
+                transaction.Commit();
+            }
+            catch (Exception)
+            {
+                transaction.RollbackAsync();
+                throw new Exception("Unable to create tables!");
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Unknown mysql exception! " + ex.Message);
+        }
+    }
+// TODO: fix for map which change mp_t_default_melee
+/*private HookResult OnRoundPreStart(EventRoundPrestart @event, GameEventInfo info)
+{
+	NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
+	NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
+	return HookResult.Continue;
+}
+*/
+public override void Unload(bool hotReload)
     {
         RemoveGlobalExceptionHandler();
         base.Unload(hotReload);
@@ -152,12 +219,16 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     }
     private void OnClientDisconnect(int playerSlot)
     {
-        // TODO: Clean up after player
-        if (Config.Additional.KnifeEnabled)
+        CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
+		// TODO: Clean up after player
+		if (Config.Additional.KnifeEnabled)
             g_playersKnife.Remove(playerSlot+1);
-    }
+		if (Config.Additional.SkinEnabled)
+			gPlayerWeaponPaints.Remove(new SteamID(player.SteamID).SteamId64);
 
-    private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
+	}
+
+	private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
     {
         var player = @event.Userid;
         if (!player.IsValid || !player.PlayerPawn.IsValid)
@@ -174,9 +245,6 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         if (Config.Additional.SkinVisibilityFix)
         {
             // Check the best slot and set it. Weird solution but works xD
-            AddTimer(0.2f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3"));
-            AddTimer(0.32f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
-            AddTimer(0.42f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
         }
 
         return HookResult.Continue;
@@ -271,57 +339,61 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     {
         if (!player.IsValid || !player.PawnIsAlive) return;
         if (!PlayerHasKnife(player))
-            GiveKnifeToPlayer(player);   
-    }
-    // Unused method, only for testing
-    // public void RefreshPlayerKnife(CCSPlayerController player)
-    // {
-    //     if (!Config.Additional.KnifeEnabled) return;
-    //     // if (!g_playersKnife.ContainsKey((int)player.EntityIndex!.Value.Value)) return;
+            GiveKnifeToPlayer(player);
 
-    //     // if (!PlayerHasKnife(player))
-    //     //     player.GiveNamedItem((CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife");
-            
-    //     var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
-    //     foreach (var weapon in weapons)
-    //     {
-    //         if (weapon.IsValid && weapon.Value.IsValid)
-    //         {
-    //             //if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
-    //             if (weapon.Value.DesignerName.Contains("knife"))
-    //             {
-    //                 weapon.Value.Remove();
-    //                 break;
-    //             }
-    //         }
-    //     }
+		AddTimer(0.2f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3"));
+		AddTimer(0.32f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
+		AddTimer(0.42f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
+	}
+	// Unused method, only for testing
+	// public void RefreshPlayerKnife(CCSPlayerController player)
+	// {
+	//     if (!Config.Additional.KnifeEnabled) return;
+	//     // if (!g_playersKnife.ContainsKey((int)player.EntityIndex!.Value.Value)) return;
 
-    //     weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
-    //     foreach (var weapon in weapons)
-    //     {
-    //         if (weapon.IsValid && weapon.Value.IsValid)
-    //         {
-    //             //if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
-    //             if (weapon.Value.DesignerName.Contains("knife"))
-    //             {
-    //                 var temp = weapon.Value;
-    //                 var steamId = new SteamID(player.SteamID);
-    //                 if (!gPlayerWeaponPaints.ContainsKey(steamId.SteamId64)) return;
-    //                 if (!gPlayerWeaponPaints[steamId.SteamId64].ContainsKey(temp.AttributeManager.Item.ItemDefinitionIndex)) return;
-    //                 //Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
-    //                 temp.AttributeManager.Item.ItemID = 16384;
-    //                 temp.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
-    //                 temp.AttributeManager.Item.ItemIDHigh = temp.AttributeManager.Item.ItemIDLow >> 32;
-    //                 temp.FallbackPaintKit = gPlayerWeaponPaints[steamId.SteamId64][temp.AttributeManager.Item.ItemDefinitionIndex];
-    //                 temp.FallbackSeed = gPlayerWeaponSeed[steamId.SteamId64][temp.AttributeManager.Item.ItemDefinitionIndex];
-    //                 temp.FallbackWear = gPlayerWeaponWear[steamId.SteamId64][temp.AttributeManager.Item.ItemDefinitionIndex];
-    //                 break;
-    //             }
-    //         }
-    //     }
-    // }
+	//     // if (!PlayerHasKnife(player))
+	//     //     player.GiveNamedItem((CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife");
 
-    public bool PlayerHasKnife(CCSPlayerController player)
+	//     var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
+	//     foreach (var weapon in weapons)
+	//     {
+	//         if (weapon.IsValid && weapon.Value.IsValid)
+	//         {
+	//             //if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
+	//             if (weapon.Value.DesignerName.Contains("knife"))
+	//             {
+	//                 weapon.Value.Remove();
+	//                 break;
+	//             }
+	//         }
+	//     }
+
+	//     weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
+	//     foreach (var weapon in weapons)
+	//     {
+	//         if (weapon.IsValid && weapon.Value.IsValid)
+	//         {
+	//             //if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
+	//             if (weapon.Value.DesignerName.Contains("knife"))
+	//             {
+	//                 var temp = weapon.Value;
+	//                 var steamId = new SteamID(player.SteamID);
+	//                 if (!gPlayerWeaponPaints.ContainsKey(steamId.SteamId64)) return;
+	//                 if (!gPlayerWeaponPaints[steamId.SteamId64].ContainsKey(temp.AttributeManager.Item.ItemDefinitionIndex)) return;
+	//                 //Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
+	//                 temp.AttributeManager.Item.ItemID = 16384;
+	//                 temp.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
+	//                 temp.AttributeManager.Item.ItemIDHigh = temp.AttributeManager.Item.ItemIDLow >> 32;
+	//                 temp.FallbackPaintKit = gPlayerWeaponPaints[steamId.SteamId64][temp.AttributeManager.Item.ItemDefinitionIndex];
+	//                 temp.FallbackSeed = gPlayerWeaponSeed[steamId.SteamId64][temp.AttributeManager.Item.ItemDefinitionIndex];
+	//                 temp.FallbackWear = gPlayerWeaponWear[steamId.SteamId64][temp.AttributeManager.Item.ItemDefinitionIndex];
+	//                 break;
+	//             }
+	//         }
+	//     }
+	// }
+
+	public bool PlayerHasKnife(CCSPlayerController player)
     {
         if (!Config.Additional.KnifeEnabled) return false;
 
@@ -430,38 +502,40 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         try
         {
             CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
-            if (player == null || !player.IsValid) return;
+            if (player == null || !player.IsValid || player.IsBot) return;
             var steamId = new SteamID(player.SteamID);
 
-            MySqlQueryCondition conditions = new MySqlQueryCondition()
-                 .Add("steamid", "=", steamId.SteamId64.ToString());
-
-            MySqlQueryResult result = await MySql!.Table("wp_player_skins").Where(conditions).SelectAsync();
-            if (result.Rows < 1) return;
-            result.ToList().ForEach(pair =>
+            using (var connection = new MySqlConnection(DatabaseConnectionString))
             {
-                int WeaponDefIndex = result.Get<int>(pair.Key, "weapon_defindex");
-                int PaintId = result.Get<int>(pair.Key, "weapon_paint_id");
-                float Wear = result.Get<float>(pair.Key, "weapon_wear");
-                int Seed = result.Get<int>(pair.Key, "weapon_seed");
+                await connection.OpenAsync();
 
-                if (!gPlayerWeaponPaints.ContainsKey(steamId.SteamId64))
-                {
-                    gPlayerWeaponPaints[steamId.SteamId64] = new Dictionary<nint, int>();
-                }
-                if (!gPlayerWeaponWear.ContainsKey(steamId.SteamId64))
-                {
-                    gPlayerWeaponWear[steamId.SteamId64] = new Dictionary<nint, float>();
-                }
-                if (!gPlayerWeaponSeed.ContainsKey(steamId.SteamId64))
-                {
-                    gPlayerWeaponSeed[steamId.SteamId64] = new Dictionary<nint, int>();
-                }
+                string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
 
-                gPlayerWeaponPaints[steamId.SteamId64][WeaponDefIndex] = PaintId;
-                gPlayerWeaponWear[steamId.SteamId64][WeaponDefIndex] = Wear;
-                gPlayerWeaponSeed[steamId.SteamId64][WeaponDefIndex] = Seed;
-            });
+                IEnumerable<dynamic> PlayerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = steamId.SteamId64.ToString() });
+
+				if (PlayerSkins != null && PlayerSkins.AsList().Count > 0)
+                {
+					gPlayerWeaponPaints[steamId.SteamId64] = new Dictionary<nint, int>();
+					gPlayerWeaponWear[steamId.SteamId64] = new Dictionary<nint, float>();
+					gPlayerWeaponSeed[steamId.SteamId64] = new Dictionary<nint, int>();
+
+					PlayerSkins.ToList().ForEach(row =>
+                    {
+						int weaponDefIndex = row.weapon_defindex ?? default(int);
+						int weaponPaintId = row.weapon_paint_id ?? default(int);
+						float weaponWear = row.weapon_wear ?? default(float);
+						int weaponSeed = row.weapon_seed ?? default(int);
+
+						gPlayerWeaponPaints[steamId.SteamId64][weaponDefIndex] = weaponPaintId;
+						gPlayerWeaponWear[steamId.SteamId64][weaponDefIndex] = weaponWear;
+						gPlayerWeaponSeed[steamId.SteamId64][weaponDefIndex] = weaponSeed;
+					});
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
         catch (Exception e)
         {
@@ -475,23 +549,23 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         try
         {
             CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
-            if (player == null || !player.IsValid) return;
+            if (player == null || !player.IsValid || player.IsBot) return;
             var steamId = new SteamID(player.SteamID);
-            MySqlQueryCondition conditions = new MySqlQueryCondition()
-                 .Add("steamid", "=", steamId.SteamId64.ToString());
 
-            MySqlQueryResult result = await MySql!.Table("wp_player_knife").Where(conditions).SelectAsync();
-
-            if (result.Rows < 1)
+            using (var connection = new MySqlConnection(DatabaseConnectionString))
             {
-                //g_playersKnife[playerIndex] = "weapon_knife";
-                return;
-            }
+                await connection.OpenAsync();
+                string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
+                string? PlayerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = steamId.SteamId64.ToString() });
 
-            string knife = result.Get<string>(0, "knife");
-            if (knife != null)
-            {
-                g_playersKnife[playerIndex] = knife;
+                if (PlayerKnife != null)
+                {
+					g_playersKnife[playerIndex] = PlayerKnife;
+				}
+                else
+                {
+                    return;
+                }
             }
             //Log($"{player.PlayerName} has this knife -> {g_playersKnife[playerIndex]}");
         }
@@ -509,7 +583,11 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
             CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
             if (player == null || !player.IsValid) return;
             var steamId = new SteamID(player.SteamID);
-            await MySql!.ExecuteNonQueryAsync($"INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES('{steamId.SteamId64}', '{knife}') ON DUPLICATE KEY UPDATE `knife` = '{knife}';");
+
+			using var connection = new MySqlConnection(DatabaseConnectionString);
+			await connection.OpenAsync();
+			string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
+			await connection.ExecuteAsync(query, new { steamid = steamId.SteamId64.ToString(), newKnife = knife });
         }
         catch (Exception e)
         {

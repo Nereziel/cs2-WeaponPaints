@@ -9,7 +9,8 @@
 
   <ItemGroup>
     <PackageReference Include="CounterStrikeSharp.API" Version="*" />
-    <PackageReference Include="Nexd.MySQL" Version="1.0.1" />
+    <PackageReference Include="Dapper" Version="2.1.21" />
+    <PackageReference Include="MySqlConnector" Version="2.3.1" />
   </ItemGroup>
 
   <ItemGroup>
