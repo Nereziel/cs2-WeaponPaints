@@ -32,26 +32,16 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     private Dictionary<int, string> g_playersKnife = new();
     private static readonly Dictionary<string, string> knifeTypes = new()
     {
-        { "m9", "weapon_knife_m9_bayonet" },
-        { "karambit", "weapon_knife_karambit" },
-        { "bayonet", "weapon_bayonet" },
-        { "bowie", "weapon_knife_survival_bowie" },
-        { "butterfly", "weapon_knife_butterfly" },
-        { "falchion", "weapon_knife_falchion" },
-        { "flip", "weapon_knife_flip" },
-        { "gut", "weapon_knife_gut" },
-        { "tactical", "weapon_knife_tactical" },
-        { "shadow", "weapon_knife_push" },
-        { "navaja", "weapon_knife_gypsy_jackknife" },
-        { "stiletto", "weapon_knife_stiletto" },
-        { "talon", "weapon_knife_widowmaker" },
-        { "ursus", "weapon_knife_ursus" },
-        { "css", "weapon_knife_css" },
-        { "paracord", "weapon_knife_cord" },
-        { "survival", "weapon_knife_canis" },
-        { "nomad", "weapon_knife_outdoor" },
-        { "skeleton", "weapon_knife_skeleton" },
-        { "default", "weapon_knife" }
+        { "m9", "weapon_knife_m9_bayonet" },        { "karambit", "weapon_knife_karambit" },
+        { "bayonet", "weapon_bayonet" },        { "bowie", "weapon_knife_survival_bowie" },
+        { "butterfly", "weapon_knife_butterfly" },        { "falchion", "weapon_knife_falchion" },
+        { "flip", "weapon_knife_flip" },        { "gut", "weapon_knife_gut" },
+        { "tactical", "weapon_knife_tactical" },        { "shadow", "weapon_knife_push" },
+        { "navaja", "weapon_knife_gypsy_jackknife" },        { "stiletto", "weapon_knife_stiletto" },
+        { "talon", "weapon_knife_widowmaker" },        { "ursus", "weapon_knife_ursus" },
+        { "css", "weapon_knife_css" },        { "paracord", "weapon_knife_cord" },
+        { "survival", "weapon_knife_canis" },        { "nomad", "weapon_knife_outdoor" },
+        { "skeleton", "weapon_knife_skeleton" },        { "default", "weapon_knife" }
     };
     private static readonly List<string> weaponList = new()
     {
@@ -67,7 +57,6 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
     };
     public override void Load(bool hotReload)
     {
-		base.Load(hotReload);
         BuildDatabaseConnectionString();
         TestDatabaseConnection();
         SetGlobalExceptionHandler();
@@ -77,11 +66,23 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
         RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
         RegisterListener<Listeners.OnMapStart>(OnMapStart);
         RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
-        //RegisterEventHandler<EventRoundPrestart>(OnRoundPreStart);
         if (Config.Additional.KnifeEnabled)
             SetupMenus();
 
         RegisterCommands();
+        if (hotReload)
+        {
+            Task.Run(async () =>
+            {
+                for (int i = 1; i <= Server.MaxPlayers; i++)
+                {
+                    if (Config.Additional.KnifeEnabled)
+                        await GetKnifeFromDatabase(i);
+                    if (Config.Additional.SkinEnabled)
+                        await GetWeaponPaintsFromDatabase(i);
+                }
+            });
+        }
     }
     public void OnConfigParsed(WeaponPaintsConfig config)
     {
