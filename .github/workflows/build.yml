@@ -28,6 +28,21 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build ${{ env.PROJECT_PATH }} -c WeaponPaints -o ${{ env.OUTPUT_PATH }}
+
+  publish:
+    permissions: write-all
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore
+      run: dotnet restore
+    - name: Build
+      run: dotnet build ${{ env.PROJECT_PATH }} -c WeaponPaints -o ${{ env.OUTPUT_PATH }}
     - name: Clean files
       run: |
         rm -f \
