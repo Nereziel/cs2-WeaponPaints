@@ -220,12 +220,12 @@ public override void Unload(bool hotReload)
     private void OnClientDisconnect(int playerSlot)
     {
         CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
-		// TODO: Clean up after player
-		if (Config.Additional.KnifeEnabled)
-            g_playersKnife.Remove(playerSlot+1);
-		if (Config.Additional.SkinEnabled)
-			gPlayerWeaponPaints.Remove(new SteamID(player.SteamID).SteamId64);
-
+	if (!player.IsValid || player.IsBot) return;
+ 
+	if (Config.Additional.KnifeEnabled)
+    		g_playersKnife.Remove(playerSlot+1);
+	if (Config.Additional.SkinEnabled)
+		gPlayerWeaponPaints.Remove(new SteamID(player.SteamID).SteamId64);
 	}
 
 	private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
