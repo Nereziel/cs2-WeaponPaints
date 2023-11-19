@@ -7,9 +7,7 @@ require_once 'class/utils.php';
 
 $db = new DataBase();
 if (isset($_SESSION['steamid'])) {
-
-	include('steamauth/userInfo.php');
-	$steamid = $steamprofile['steamid'];
+	$steamid = $_SESSION['steamid'];
 
 	$weapons = UtilsClass::getWeaponsFromArray();
 	$skins = UtilsClass::skinsFromJson();
