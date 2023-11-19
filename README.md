@@ -11,7 +11,7 @@ There will be a lot of frequent changes which may break functionality or compati
 
 ### Features
 - changes only paint, seed and wear on weapons and knives
-- mysql based
+- mysql based or global website at [weaponpaints.fun](https://weaponpaints.fun/), so you dont need mysql/website
 - data sync on player connect
 - Added command `!wp` to refresh skins (with cooldown in second can be configured)
 - Added command `!ws` to show website
@@ -20,16 +20,21 @@ There will be a lot of frequent changes which may break functionality or compati
 
 ### CS2 server:
 - compile and copy plugin to plugins. Info here [https://docs.cssharp.dev/guides/hello-world-plugin/](https://docs.cssharp.dev/guides/hello-world-plugin/)
-- setup `addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json` with database credentials
+- setup `addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json`
+  set `GlobalShare` to true for gloval, or include database credentials
 - in `addons/counterstrikesharp/configs/core.json` set **FollowCS2ServerGuidelines** to **false**
 
 ### Web install:
+- not needed if config `GlobalShare = true`
 - requires PHP min v7.3 (tested on php ver `8.2.3` and nginx webserver)
 - copy website to web server (img folder not needed)
 - import `database.sql` to mysql
 - get steam api key [https://steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey)
 - fill in database credentials and api key in `class/config.php`
 - visit website and login via steam
+
+### Known issues
+- Issue on Windows servers, no knives are given.
 
 ### Use this plugin at your own risk! Using this may lead to GSLT ban or something else Valve come with. [Valve Server guidelines](https://blog.counter-strike.net/index.php/server_guidelines/)
 
