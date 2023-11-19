@@ -21,7 +21,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	public override string ModuleName => "WeaponPaints";
 	public override string ModuleDescription => "Connector for web-based player chosen wepaon paints, and standalone for knife.";
 	public override string ModuleAuthor => "Nereziel";
-	public override string ModuleVersion => "0.9";
+	public override string ModuleVersion => "1.0";
 	public WeaponPaintsConfig Config { get; set; } = new();
 
 	private string DatabaseConnectionString = string.Empty;
