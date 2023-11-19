@@ -306,6 +306,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 			GiveKnifeToPlayer(player);
 		}
 
+
 		return HookResult.Continue;
 	}
 	private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
@@ -328,7 +329,9 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 				if (g_playersKnife.ContainsKey((int)player.EntityIndex!.Value.Value)
 					&&
 				   g_playersKnife[(int)player.EntityIndex!.Value.Value] != "weapon_knife")
+				{
 					RefreshPlayerKnife(player, true);
+				}
 			}
 		}
 		return HookResult.Continue;
@@ -431,7 +434,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 		if (remove == true)
 			RemoveKnifeFromPlayer(player);
 
-		AddTimer(0.1f, () =>
+		AddTimer(0.2f, () =>
 		{
 			if (!PlayerHasKnife(player))
 				GiveKnifeToPlayer(player);
@@ -440,8 +443,8 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 		if (Config.Additional.SkinVisibilityFix)
 		{
 			AddTimer(0.2f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3"));
-			AddTimer(0.32f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
-			AddTimer(0.42f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
+			AddTimer(0.3f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
+			AddTimer(0.36f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
 		}
 	}
 	public bool PlayerHasKnife(CCSPlayerController? player)
@@ -513,7 +516,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 			{
 				Task.Run(async () => await GetKnifeFromDatabase(playerIndex));
 				RemoveKnifeFromPlayer(player);
-				AddTimer(0.3f, () => GiveKnifeToPlayer(player));
+				AddTimer(0.2f, () => GiveKnifeToPlayer(player));
 			}
 			if (!string.IsNullOrEmpty(Config.Messages.SuccessRefreshCommand))
 			{
