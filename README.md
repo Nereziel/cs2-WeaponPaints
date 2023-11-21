@@ -3,9 +3,7 @@
 ## Description
 Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for **[CSSharp](https://docs.cssharp.dev/)**.
 
-***Note: There will be a lot of frequent changes which may break functionality or compatibility. You have been warned!***
-
-### Created [Discord server](https://discord.gg/EEg6qtNScq) where you can discus about plugin.
+## Created [Discord server](https://discord.gg/EEg6qtNScq) where you can discus about plugin.
 
 ### Consider to donate instead of buying from unknown sources.
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E2G0P2O) or [![Donate on Steam](https://github.com/Nereziel/cs2-WeaponPaints/assets/32937653/a0d53822-4ca7-4caf-83b4-e1a9b5f8c94e)](https://steamcommunity.com/tradeoffer/new/?partner=41515647&token=gW2W-nXE)
