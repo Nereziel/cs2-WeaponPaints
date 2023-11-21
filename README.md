@@ -65,7 +65,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
     
 ## Web install
 Disregard if the config is **`GlobalShare = true`**;
-- Requires PHP >= 7.3; ***(Tested on php ver **`8.2.3`** and nginx webserver)***
+- Requires PHP >= 7.4; ***(Tested on php ver **`8.2.3`** and nginx webserver)***
 - Copy website to web server; ***(Folder `img` not needed)***
 - Get [Steam API Key](https://steamcommunity.com/dev/apikey);
 - Fill in database credentials and api key in `class/config.php`;
