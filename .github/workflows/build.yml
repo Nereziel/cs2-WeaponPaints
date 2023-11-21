@@ -3,12 +3,16 @@ name: Build
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - '**/README.md'
+      - '**/.gitignore'
+      - '**/LICENSE'
   pull_request:
     branches: [ "main" ]
     paths-ignore:
-      - 'README.md'
-      - '.gitignore'
-      - 'LICENSE'
+      - '**/README.md'
+      - '**/.gitignore'
+      - '**/LICENSE'
 
 env:
   BUILD_NUMBER: ${{ github.run_number }}
