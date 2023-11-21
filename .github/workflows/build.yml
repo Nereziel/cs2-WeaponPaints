@@ -51,6 +51,7 @@ jobs:
           ${{ env.OUTPUT_PATH }}/McMaster.NETCore.Plugins.dll \
           ${{ env.OUTPUT_PATH }}/Microsoft.DotNet.PlatformAbstractions.dll \
           ${{ env.OUTPUT_PATH }}/Microsoft.Extensions.DependencyModel.dll \
+          cp website/data/skins.json ${{ env.OUTPUT_PATH }}/skins.json
     - name: Zip
       uses: thedoctor0/zip-release@0.7.5
       with:
