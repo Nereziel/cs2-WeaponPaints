@@ -342,7 +342,6 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 		{
 			if (!PlayerHasKnife(player))
 				GiveKnifeToPlayer(player);
-			AddTimer(0.2f, () => RefreshSkins(player));
 		}
 
 
@@ -508,7 +507,13 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 		if (player == null || !player.IsValid || !player.PawnIsAlive) return;
 
 		if (remove == true)
-			RemoveKnifeFromPlayer(player);
+		{
+			AddTimer(0.1f, () =>
+			{
+				if (PlayerHasKnife(player))
+					RemoveKnifeFromPlayer(player);
+			});
+		}
 
 		AddTimer(0.3f, () =>
 		{
@@ -573,7 +578,11 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 					temp = $"{Config.Prefix} {Config.Messages.ChosenKnifeMenuKill}";
 					player.PrintToChat(ReplaceTags(temp));
 				}
-				RefreshPlayerKnife(player, true);
+				if (player.PawnIsAlive)
+				{
+					RemoveKnifeFromPlayer(player);
+					RefreshPlayerKnife(player);
+				}
 				Task.Run(() => SyncKnifeToDatabase((int)player.EntityIndex!.Value.Value, knife));
 
 				/* Old way
