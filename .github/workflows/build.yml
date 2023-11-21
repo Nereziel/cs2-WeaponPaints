@@ -5,13 +5,16 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+      - 'LICENSE'
 
 env:
   BUILD_NUMBER: ${{ github.run_number }}
   PROJECT_PATH: "WeaponPaints.csproj"
   PROJECT_NAME: "WeaponPaints"
   OUTPUT_PATH: "./WeaponPaints"
-
 
 jobs:
   build:
