@@ -78,4 +78,3 @@ Disregard if the config is **`GlobalShare = true`**;
 
 ## Preview
 ![preview](https://github.com/Nereziel/cs2-WeaponPaints/blob/main/website/preview.png?raw=true)
-
