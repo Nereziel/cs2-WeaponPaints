@@ -4,7 +4,7 @@
 Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for [CSSharp](https://docs.cssharp.dev/).
 There will be a lot of frequent changes which may break functionality or compatibility. You have been warned!
 
-## Created [Discord server](https://discord.gg/mwEQppJ5AT) where you can discus about plugin.
+## Created [Discord server](https://discord.gg/EEg6qtNScq) where you can discus about plugin.
 
 ### Consider to donate instead of buying from unknown sources.
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E2G0P2O) or [Donate on Steam](https://steamcommunity.com/tradeoffer/new/?partner=41515647&token=gW2W-nXE)
