@@ -17,10 +17,16 @@ namespace WeaponPaints
 		public string SuccessRefreshCommand { get; set; } = "Refreshing weapon paints.";
 		[JsonPropertyName("ChosenKnifeMenu")]
 		public string ChosenKnifeMenu { get; set; } = "You have chosen {KNIFE} as your knife.";
+		[JsonPropertyName("ChosenSkinMenu")]
+		public string ChosenSkinMenu { get; set; } = "You have chosen {SKIN} as your skin.";
 		[JsonPropertyName("ChosenKnifeMenuKill")]
 		public string ChosenKnifeMenuKill { get; set; } = "To correctly apply skin for knife, you need to type !kill.";
 		[JsonPropertyName("KnifeMenuTitle")]
 		public string KnifeMenuTitle { get; set; } = "Knife Menu.";
+		[JsonPropertyName("WeaponMenuTitle")]
+		public string WeaponMenuTitle { get; set; } = "Weapon Menu.";
+		[JsonPropertyName("SkinMenuTitle")]
+		public string SkinMenuTitle { get; set; } = "Select skin for {WEAPON}";
 	}
 
 	public class Additional
@@ -46,6 +52,9 @@ namespace WeaponPaints
 		[JsonPropertyName("CommandSkin")]
 		public string CommandSkin { get; set; } = "ws";
 
+		[JsonPropertyName("CommandSkinSelection")]
+		public string CommandSkinSelection { get; set; } = "skins";
+
 		[JsonPropertyName("CommandRefresh")]
 		public string CommandRefresh { get; set; } = "wp";
 
@@ -54,6 +63,9 @@ namespace WeaponPaints
 
 		[JsonPropertyName("GiveRandomKnife")]
 		public bool GiveRandomKnife { get; set; } = false;
+
+		[JsonPropertyName("GiveRandomSkin")]
+		public bool GiveRandomSkin { get; set; } = false;
 	}
 
 	public class WeaponPaintsConfig : BasePluginConfig
