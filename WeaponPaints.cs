@@ -340,16 +340,24 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
 		if (Config.Additional.KnifeEnabled)
 		{
+			/*
 			if (!PlayerHasKnife(player))
 				GiveKnifeToPlayer(player);
+			*/
+			RemoveKnifeFromPlayer(player);
+			AddTimer(0.2f, () =>
+			{
+				GiveKnifeToPlayer(player);
+			});
 		}
-
 
 		return HookResult.Continue;
 	}
 	private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
 	{
+		/*
 		if (!IsMatchZy) return HookResult.Continue;
+		*/
 
 		NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
 		NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
@@ -360,16 +368,18 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	{
 		if (@event.Defindex == 42 || @event.Defindex == 59)
 		{
-			CCSPlayerController player = @event.Userid;
+			CCSPlayerController? player = @event.Userid;
+			if (player == null || !player.IsValid || player.IsBot || !player.PawnIsAlive) return HookResult.Continue;
 
-			if (player.IsValid && !player.IsBot && @event.Item == "knife")
+			if (g_playersKnife.ContainsKey((int)player.EntityIndex!.Value.Value)
+				&&
+			   g_playersKnife[(int)player.EntityIndex!.Value.Value] != "weapon_knife")
 			{
-				if (g_playersKnife.ContainsKey((int)player.EntityIndex!.Value.Value)
-					&&
-				   g_playersKnife[(int)player.EntityIndex!.Value.Value] != "weapon_knife")
+				RemoveKnifeFromPlayer(player);
+				AddTimer(0.2f, () =>
 				{
-					RefreshPlayerKnife(player, true);
-				}
+					GiveKnifeToPlayer(player);
+				});
 			}
 		}
 		return HookResult.Continue;
@@ -463,9 +473,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	private void GiveKnifeToPlayer(CCSPlayerController? player)
 	{
 		if (!Config.Additional.KnifeEnabled) return;
-		if (player == null || !player.IsValid) return;
-
-		if (PlayerHasKnife(player)) return;
+		if (player == null || !player.IsValid || !player.PawnIsAlive) return;
 
 		if (g_playersKnife.TryGetValue((int)player.EntityIndex!.Value.Value, out var knife))
 		{
@@ -489,47 +497,47 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	{
 		if (player == null || !player.IsValid || !player.PawnIsAlive) return;
 		var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
-		foreach (var weapon in weapons)
+		if (weapons != null && weapons.Count > 0)
 		{
-			if (weapon.IsValid && weapon.Value.IsValid)
+			foreach (var weapon in weapons)
 			{
-				//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
-				if (weapon.Value.DesignerName.Contains("knife"))
+				if (weapon.IsValid && weapon.Value.IsValid)
 				{
-					weapon.Value.Remove();
-					return;
+					//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
+					if (weapon.Value.DesignerName.Contains("knife"))
+					{
+						weapon.Value.Remove();
+						return;
+					}
 				}
 			}
 		}
 	}
+	/* Causing crashes
 	private void RefreshPlayerKnife(CCSPlayerController? player, bool remove = false)
 	{
-		if (player == null || !player.IsValid || !player.PawnIsAlive) return;
+		if (player == null || !player.IsValid || player.IsBot || !player.PawnIsAlive) return;
 
-		if (remove == true)
+		AddTimer(0.1f, () =>
 		{
-			AddTimer(0.1f, () =>
+			if (remove == true)
 			{
 				if (PlayerHasKnife(player))
 					RemoveKnifeFromPlayer(player);
-			});
-		}
+			}
 
-		AddTimer(0.3f, () =>
-		{
-			if (!PlayerHasKnife(player))
-				GiveKnifeToPlayer(player);
+			GiveKnifeToPlayer(player);
 		});
 
 		if (Config.Additional.SkinVisibilityFix)
 		{
-			AddTimer(0.3f, () => RefreshSkins(player));
+			AddTimer(0.25f, () => RefreshSkins(player));
 		}
 	}
+	*/
 	private void RefreshSkins(CCSPlayerController? player)
 	{
-		if (player == null || !player.IsValid || !player.PawnIsAlive) return;
-
+		if (player == null || !player.IsValid || player.IsBot || !player.PawnIsAlive) return;
 
 		AddTimer(0.18f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3"));
 		AddTimer(0.25f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
@@ -545,7 +553,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 		}
 
 		var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
-		if (weapons == null) return false;
+		if (weapons == null || weapons.Count <= 0) return false;
 		foreach (var weapon in weapons)
 		{
 			if (weapon.IsValid && weapon.Value.IsValid)
@@ -562,33 +570,39 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	{
 		if (!Config.Additional.KnifeEnabled) return;
 		var giveItemMenu = new ChatMenu(ReplaceTags(Config.Messages.KnifeMenuTitle));
-		var handleGive = (CCSPlayerController player, ChatMenuOption option) =>
+		var handleGive = (CCSPlayerController? player, ChatMenuOption option) =>
 		{
-			string temp = "";
-			if (knifeTypes.TryGetValue(option.Text, out var knife))
+			if (player != null && player.IsValid)
 			{
-				g_playersKnife[(int)player.EntityIndex!.Value.Value] = knifeTypes[option.Text];
-				if (!string.IsNullOrEmpty(Config.Messages.ChosenKnifeMenu))
+				string temp = "";
+				if (knifeTypes.TryGetValue(option.Text, out var knife))
 				{
-					temp = $"{Config.Prefix} {Config.Messages.ChosenKnifeMenu}".Replace("{KNIFE}", option.Text);
-					player.PrintToChat(ReplaceTags(temp));
-				}
-				if (!string.IsNullOrEmpty(Config.Messages.ChosenKnifeMenuKill) && Config.Additional.CommandKillEnabled)
-				{
-					temp = $"{Config.Prefix} {Config.Messages.ChosenKnifeMenuKill}";
-					player.PrintToChat(ReplaceTags(temp));
-				}
-				if (player.PawnIsAlive)
-				{
-					RemoveKnifeFromPlayer(player);
-					RefreshPlayerKnife(player);
-				}
-				Task.Run(() => SyncKnifeToDatabase((int)player.EntityIndex!.Value.Value, knife));
+					g_playersKnife[(int)player.EntityIndex!.Value.Value] = knifeTypes[option.Text];
+					if (!string.IsNullOrEmpty(Config.Messages.ChosenKnifeMenu))
+					{
+						temp = $"{Config.Prefix} {Config.Messages.ChosenKnifeMenu}".Replace("{KNIFE}", option.Text);
+						player.PrintToChat(ReplaceTags(temp));
+					}
+					if (!string.IsNullOrEmpty(Config.Messages.ChosenKnifeMenuKill) && Config.Additional.CommandKillEnabled)
+					{
+						temp = $"{Config.Prefix} {Config.Messages.ChosenKnifeMenuKill}";
+						player.PrintToChat(ReplaceTags(temp));
+					}
+					if (player.PawnIsAlive)
+					{
+						RemoveKnifeFromPlayer(player);
+						AddTimer(0.2f, () =>
+						{
+							GiveKnifeToPlayer(player);
+						});
+					}
+					Task.Run(() => SyncKnifeToDatabase((int)player.EntityIndex!.Value.Value, knife));
 
-				/* Old way
-				RemoveKnifeFromPlayer(player);
-				AddTimer(0.1f, () => GiveKnifeToPlayer(player));
-				*/
+					/* Old way
+					RemoveKnifeFromPlayer(player);
+					AddTimer(0.1f, () => GiveKnifeToPlayer(player));
+					*/
+				}
 			}
 		};
 		foreach (var knife in knifeTypes)
@@ -604,8 +618,10 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 		var weaponSelectionMenu = new ChatMenu(ReplaceTags(Config.Messages.WeaponMenuTitle));
 
 		// Function to handle skin selection for a specific weapon
-		var handleWeaponSelection = (CCSPlayerController player, ChatMenuOption option) =>
+		var handleWeaponSelection = (CCSPlayerController? player, ChatMenuOption option) =>
 		{
+			if (player == null || !player.IsValid) return;
+
 			int playerIndex = (int)player.EntityIndex!.Value.Value;
 			string selectedWeapon = option.Text;
 			if (classNamesByWeapon.TryGetValue(selectedWeapon, out string? selectedWeaponClassname))
@@ -620,8 +636,10 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 				var skinSubMenu = new ChatMenu(ReplaceTags(Config.Messages.SkinMenuTitle).Replace("{WEAPON}", selectedWeapon));
 
 				// Function to handle skin selection for the chosen weapon
-				var handleSkinSelection = (CCSPlayerController p, ChatMenuOption opt) =>
+				var handleSkinSelection = (CCSPlayerController? p, ChatMenuOption opt) =>
 				{
+					if (p == null || !p.IsValid) return;
+
 					var steamId = new SteamID(player.SteamID);
 					var firstSkin = skinsList?.FirstOrDefault(skin =>
 					{
@@ -713,7 +731,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	private void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
 	{
 		if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled) return;
-		if (player == null) return;
+		if (player == null || !player.IsValid || player.IsBot) return;
 		string temp = "";
 		int playerIndex = (int)player.EntityIndex!.Value.Value;
 		if (commandCooldown != null && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
@@ -722,9 +740,17 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 			Task.Run(async () => await GetWeaponPaintsFromDatabase(playerIndex));
 			if (Config.Additional.KnifeEnabled)
 			{
+				RemoveKnifeFromPlayer(player);
+				AddTimer(0.2f, () =>
+				{
+					GiveKnifeToPlayer(player);
+				});
+
 				Task.Run(async () => await GetKnifeFromDatabase(playerIndex));
+				/*
 				RemoveKnifeFromPlayer(player);
 				AddTimer(0.2f, () => GiveKnifeToPlayer(player));
+				*/
 			}
 			if (!string.IsNullOrEmpty(Config.Messages.SuccessRefreshCommand))
 			{
