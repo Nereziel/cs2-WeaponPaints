@@ -29,7 +29,7 @@ namespace WeaponPaints
 		public string SkinMenuTitle { get; set; } = "Select skin for {WEAPON}";
 	}
 
-	public class Additional
+	public class AdditionalSettings
 	{
 		[JsonPropertyName("SkinVisibilityFix")]
 		public bool SkinVisibilityFix { get; set; } = true;
@@ -66,11 +66,14 @@ namespace WeaponPaints
 
 		[JsonPropertyName("GiveRandomSkin")]
 		public bool GiveRandomSkin { get; set; } = false;
-	}
+
+        [JsonPropertyName("CommandRebuildTables")]
+        public bool CommandRebuildTables { get; set; } = false;
+    }
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-		public override int Version { get; set; } = 4;
+		public override int Version { get; set; } = 5;
 
 		[JsonPropertyName("DatabaseHost")]
 		public string DatabaseHost { get; set; } = "";
@@ -102,8 +105,8 @@ namespace WeaponPaints
 		[JsonPropertyName("Messages")]
 		public Messages Messages { get; set; } = new Messages();
 
-		[JsonPropertyName("Additional")]
-		public Additional Additional { get; set; } = new Additional();
+		[JsonPropertyName("AdditionalSettings")]
+		public AdditionalSettings AdditionalSettings { get; set; } = new AdditionalSettings();
 	}
 
 }
