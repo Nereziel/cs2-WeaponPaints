@@ -113,10 +113,11 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 			{
 				for (int i = 1; i <= Server.MaxPlayers; i++)
 				{
-					if (Config.Additional.KnifeEnabled)
-						await GetKnifeFromDatabase(i);
 					if (Config.Additional.SkinEnabled)
 						await GetWeaponPaintsFromDatabase(i);
+
+					if (Config.Additional.KnifeEnabled)
+						await GetKnifeFromDatabase(i);
 				}
 			});
 		}
@@ -340,15 +341,8 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
 		if (Config.Additional.KnifeEnabled)
 		{
-			/*
 			if (!PlayerHasKnife(player))
 				GiveKnifeToPlayer(player);
-			*/
-			RemoveKnifeFromPlayer(player);
-			AddTimer(0.2f, () =>
-			{
-				GiveKnifeToPlayer(player);
-			});
 		}
 
 		return HookResult.Continue;
@@ -376,10 +370,17 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 			   g_playersKnife[(int)player.EntityIndex!.Value.Value] != "weapon_knife")
 			{
 				RemoveKnifeFromPlayer(player);
-				AddTimer(0.2f, () =>
+
+				AddTimer(0.1f, () =>
 				{
-					GiveKnifeToPlayer(player);
+					if (!PlayerHasKnife(player))
+						GiveKnifeToPlayer(player);
 				});
+
+				if (Config.Additional.SkinVisibilityFix)
+				{
+					AddTimer(0.25f, () => RefreshSkins(player));
+				}
 			}
 		}
 		return HookResult.Continue;
@@ -472,25 +473,23 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	}
 	private void GiveKnifeToPlayer(CCSPlayerController? player)
 	{
-		if (!Config.Additional.KnifeEnabled) return;
-		if (player == null || !player.IsValid || !player.PawnIsAlive) return;
+		if (!Config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
 
 		if (g_playersKnife.TryGetValue((int)player.EntityIndex!.Value.Value, out var knife))
 		{
 			player.GiveNamedItem(knife);
 		}
+		else if (Config.Additional.GiveRandomKnife)
+		{
+			Random random = new Random();
+			int index = random.Next(knifeTypes.Count);
+			var randomKnife = knifeTypes.Values.ElementAt(index);
+			player.GiveNamedItem(randomKnife);
+		}
 		else
 		{
-			if (Config.Additional.GiveRandomKnife)
-			{
-				Random random = new Random();
-				int index = random.Next(knifeTypes.Count);
-				player.GiveNamedItem(knifeTypes.Values.ElementAt(index));
-			}
-			else
-			{
-				player.GiveNamedItem((CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife");
-			}
+			var defaultKnife = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
+			player.GiveNamedItem(defaultKnife);
 		}
 	}
 	private void RemoveKnifeFromPlayer(CCSPlayerController? player)
