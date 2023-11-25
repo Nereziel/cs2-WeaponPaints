@@ -91,7 +91,6 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	};
 	public override void Load(bool hotReload)
 	{
-		SetGlobalExceptionHandler();
 		if (!Config.GlobalShare)
 		{
 			BuildDatabaseConnectionString();
@@ -219,20 +218,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	*/
 	public override void Unload(bool hotReload)
 	{
-		RemoveGlobalExceptionHandler();
 		base.Unload(hotReload);
-	}
-	private void GlobalExceptionHandler(object? sender, FirstChanceExceptionEventArgs @event)
-	{
-		Log(@event.Exception.ToString());
-	}
-	private void SetGlobalExceptionHandler()
-	{
-		AppDomain.CurrentDomain.FirstChanceException += this.GlobalExceptionHandler;
-	}
-	private void RemoveGlobalExceptionHandler()
-	{
-		AppDomain.CurrentDomain.FirstChanceException -= this.GlobalExceptionHandler;
 	}
 	private void RegisterCommands()
 	{
