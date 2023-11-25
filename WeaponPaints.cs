@@ -219,6 +219,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 	*/
 	public override void Unload(bool hotReload)
 	{
+
 		/*RemoveGlobalExceptionHandler();*/
 		base.Unload(hotReload);
 	}
@@ -236,6 +237,8 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 		AppDomain.CurrentDomain.FirstChanceException -= this.GlobalExceptionHandler;
 	}
 	*/
+	}
+
 	private void RegisterCommands()
 	{
 		AddCommand($"css_{Config.Additional.CommandSkin}", "Skins info", (player, info) =>
