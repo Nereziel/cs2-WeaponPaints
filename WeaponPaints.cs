@@ -345,6 +345,11 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 				GiveKnifeToPlayer(player);
 		}
 
+		if (Config.Additional.SkinVisibilityFix)
+		{
+			AddTimer(0.3f, () => RefreshSkins(player));
+		}
+
 		return HookResult.Continue;
 	}
 	private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
