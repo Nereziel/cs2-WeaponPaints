@@ -1,4 +1,6 @@
-﻿using CounterStrikeSharp.API.Modules.Utils;
+﻿using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Modules.Entities;
+using CounterStrikeSharp.API.Modules.Utils;
 using System.Reflection;
 
 namespace WeaponPaints
@@ -6,6 +8,11 @@ namespace WeaponPaints
 	public static class Utility
 	{
 		public static WeaponPaintsConfig? Config { get; set; }
+
+		public static bool IsPlayerValid(CCSPlayerController? player)
+		{
+			return (player != null && player.IsValid && !player.IsBot && !player.IsHLTV);
+		}
 
 		public static string ReplaceTags(string message)
 		{
