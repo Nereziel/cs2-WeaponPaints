@@ -111,6 +111,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 		RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 		RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
 		RegisterEventHandler<EventItemPickup>(OnItemPickup, HookMode.Pre);
+		RegisterEventHandler<EventItemRemove>(OnItemRemove);
 
 		if (hotReload)
 		{
@@ -137,6 +138,13 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
 		LoadSkinsFromFile(ModuleDirectory + "/skins.json");
 	}
+
+	private HookResult OnItemRemove(EventItemRemove @event, GameEventInfo info)
+	{
+		Console.WriteLine(@event.Defindex);
+		return HookResult.Continue;
+	}
+
 	public void OnConfigParsed(WeaponPaintsConfig config)
 	{
 		if (!config.GlobalShare)
@@ -330,8 +338,8 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 
 	private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
 	{
-		var player = @event.Userid;
-		if (!player.IsValid || !player.PlayerPawn.IsValid)
+		CCSPlayerController? player = @event.Userid;
+		if (player == null || !player.IsValid || !player.PlayerPawn.IsValid)
 		{
 			return HookResult.Continue;
 		}
@@ -528,7 +536,7 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 		if (weapons != null && weapons.Count > 0)
 		{
 			CCSPlayer_ItemServices service = new CCSPlayer_ItemServices(player.PlayerPawn.Value.ItemServices.Handle);
-			var dropWeapon = VirtualFunction.CreateVoid<nint, nint>(service.Handle, GameData.GetOffset("CCSPlayer_ItemServices_DropActivePlayerWeapon"));
+			//var dropWeapon = VirtualFunction.CreateVoid<nint, nint>(service.Handle, GameData.GetOffset("CCSPlayer_ItemServices_DropActivePlayerWeapon"));
 
 			foreach (var weapon in weapons)
 			{
@@ -538,12 +546,16 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 					if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
 					{
 						NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3");
-						AddTimer(0.2f, () =>
-						{
-							CEntityInstance knife = new(weapon.Value.Handle);
-							dropWeapon(service.Handle, weapon.Handle);
-							AddTimer(0.3f, () => knife.Remove());
+						AddTimer(0.5f, () => service.DropActivePlayerWeapon(weapon.Value));
+
+						/*
+						CEntityInstance knife = new(weapon.Value.Handle);
+						AddTimer(1.0f, () => {
+								knife.Remove();
+							if (knife != null && knife.IsValid && player.PawnIsAlive)
 						});
+						*/
+
 						break;
 					}
 				}
@@ -639,7 +651,9 @@ public class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 					if (player!.PawnIsAlive)
 					{
 						if (PlayerHasKnife(player))
+						{
 							RemoveKnifeFromPlayer(player);
+						}
 
 						g_changedKnife.Add((int)player.EntityIndex!.Value.Value);
 						GiveKnifeToPlayer(player);
