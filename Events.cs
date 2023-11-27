@@ -17,15 +17,39 @@ namespace WeaponPaints
 		private void RegisterEvents()
 		{
 			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
-			RegisterEventHandler<EventItemPurchase>(OnEventItemPurchasePost);
-			RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
+			/*RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);*/
 			RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
+			RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
+			RegisterEventHandler<EventItemPurchase>(OnEventItemPurchasePost);
 			RegisterEventHandler<EventItemPickup>(OnItemPickup);
 
 		}
+
+		private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
+		{
+			CCSPlayerController? player = @event.Userid;
+
+			if (player == null || !player.IsValid || !player.EntityIndex.HasValue || player.IsHLTV) return HookResult.Continue;
+
+			int playerIndex = (int)player.EntityIndex.Value.Value;
+			if (Config.Additional.SkinEnabled && weaponSync != null)
+				_ = weaponSync.GetWeaponPaintsFromDatabase(playerIndex);
+			if (Config.Additional.KnifeEnabled && weaponSync != null)
+				_ = weaponSync.GetKnifeFromDatabase(playerIndex);
+			/*
+			Task.Run(async () =>
+			{
+				if (Config.Additional.SkinEnabled && weaponSync != null)
+				if (Config.Additional.KnifeEnabled && weaponSync != null)
+			});
+			*/
+
+			return HookResult.Continue;
+		}
+
 		private void OnMapStart(string mapName)
 		{
 			if (!Config.Additional.KnifeEnabled) return;
@@ -42,10 +66,10 @@ namespace WeaponPaints
 			int playerIndex = playerSlot + 1;
 			Task.Run(async () =>
 			{
-				if (Config.Additional.KnifeEnabled && weaponSync != null)
-					await weaponSync.GetKnifeFromDatabase(playerIndex);
 				if (Config.Additional.SkinEnabled && weaponSync != null)
 					await weaponSync.GetWeaponPaintsFromDatabase(playerIndex);
+				if (Config.Additional.KnifeEnabled && weaponSync != null)
+					await weaponSync.GetKnifeFromDatabase(playerIndex);
 			});
 		}
 		private void OnClientDisconnect(int playerSlot)

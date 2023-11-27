@@ -15,7 +15,7 @@ namespace WeaponPaints
 
 		internal static bool IsPlayerValid(CCSPlayerController? player)
 		{
-			return (player != null && player.IsValid && !player.IsBot && !player.IsHLTV);
+			return (player != null && player.IsValid && !player.IsBot && !player.IsHLTV && player.SteamID.ToString() != "0");
 		}
 
 		internal static string BuildDatabaseConnectionString()

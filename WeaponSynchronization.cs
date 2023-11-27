@@ -124,10 +124,9 @@ namespace WeaponPaints
 			CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
 			if (!Utility.IsPlayerValid(player)) return;
 
-
 			var steamId = new SteamID(player.SteamID);
 
-			if (!WeaponPaints.gPlayerWeaponsInfo.ContainsKey(playerIndex))
+			if (!WeaponPaints.gPlayerWeaponsInfo.TryGetValue(playerIndex, out _))
 			{
 				WeaponPaints.gPlayerWeaponsInfo[playerIndex] = new Dictionary<int, WeaponInfo>();
 			}

@@ -151,10 +151,12 @@ namespace WeaponPaints
 							string temp = $" {Config.Prefix} {Config.Messages.ChosenSkinMenu}".Replace("{SKIN}", selectedSkin);
 							p.PrintToChat(Utility.ReplaceTags(temp));
 
-							if (!gPlayerWeaponsInfo[playerIndex].ContainsKey(weaponDefIndex))
+							/*
+							 if (!gPlayerWeaponsInfo[playerIndex].ContainsKey(weaponDefIndex))
 							{
 								gPlayerWeaponsInfo[playerIndex][weaponDefIndex] = new WeaponInfo();
 							}
+							*/
 
 							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Paint = paintID;
 							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Wear = 0.0f;
@@ -223,15 +225,16 @@ namespace WeaponPaints
 			if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled) return;
 			if (!Utility.IsPlayerValid(player)) return;
 			string temp = "";
+			if (!player!.EntityIndex.HasValue) return;
 			int playerIndex = (int)player!.EntityIndex!.Value.Value;
-			if (commandCooldown != null && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
+			if (playerIndex != 0 && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
 			{
 				commandCooldown[playerIndex] = DateTime.UtcNow;
 				if (weaponSync != null)
 					Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerIndex));
 				if (Config.Additional.KnifeEnabled)
 				{
-					if (PlayerHasKnife(player))
+					/*if (PlayerHasKnife(player))
 						RefreshPlayerKnife(player);
 					/*
 					AddTimer(1.0f, () =>
@@ -264,8 +267,7 @@ namespace WeaponPaints
 			if (!Config.Additional.SkinEnabled) return;
 			if (!Utility.IsPlayerValid(player)) return;
 
-			string temp = "";
-
+			string temp;
 			if (!string.IsNullOrEmpty(Config.Messages.WebsiteMessageCommand))
 			{
 				temp = $" {Config.Prefix} {Config.Messages.WebsiteMessageCommand}";

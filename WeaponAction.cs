@@ -113,6 +113,7 @@ namespace WeaponPaints
 				}
 			}
 		}
+
 		internal void RefreshPlayerKnife(CCSPlayerController? player)
 		{
 			if (player == null || !player.IsValid || !player.PawnIsAlive) return;
@@ -134,17 +135,28 @@ namespace WeaponPaints
 							if (!weapon.Value.EntityIndex.HasValue) return;
 							int weaponEntityIndex = (int)weapon.Value.EntityIndex!.Value.Value;
 							NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3");
-							AddTimer(0.35f, () => service.DropActivePlayerWeapon(weapon.Value));
+							AddTimer(0.22f, () =>
+							{
+								if (player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value.DesignerName.Contains("knife")
+								||
+								player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value.DesignerName.Contains("bayonet")
+								)
+								{
+									if (player.PawnIsAlive)
+									{
+										NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3");
+										service.DropActivePlayerWeapon(weapon.Value);
+										GiveKnifeToPlayer(player);
+									}
+								}
+							});
 
-							AddTimer(1.0f, () =>
+							AddTimer(2.5f, () =>
 							{
 								CEntityInstance? knife = Utilities.GetEntityFromIndex<CEntityInstance>(weaponEntityIndex);
-								if (knife != null && knife.IsValid)
+								if (knife != null && knife.IsValid && knife.EntityIndex.HasValue)
 								{
 									knife.Remove();
-
-									if (player.PawnIsAlive)
-										GiveKnifeToPlayer(player);
 								}
 							});
 
@@ -165,14 +177,17 @@ namespace WeaponPaints
 		}
 		internal static bool PlayerHasKnife(CCSPlayerController? player)
 		{
-			if (!WeaponPaints._config.Additional.KnifeEnabled) return false;
+			if (!_config.Additional.KnifeEnabled) return false;
 
 			if (player == null || !player.IsValid)
 			{
 				return false;
 			}
 
-			var weapons = player.PlayerPawn.Value.WeaponServices!.MyWeapons;
+			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
+				return false;
+
+			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
 			if (weapons == null || weapons.Count <= 0) return false;
 			foreach (var weapon in weapons)
 			{
