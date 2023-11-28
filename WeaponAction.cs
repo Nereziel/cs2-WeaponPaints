@@ -75,7 +75,7 @@ namespace WeaponPaints
 				player.GiveNamedItem(defaultKnife);
 			}
 		}
-		internal void RemovePlayerKnife(CCSPlayerController? player)
+		internal void RemovePlayerKnife(CCSPlayerController? player, bool force = false)
 		{
 			if (player == null || !player.IsValid || !player.PawnIsAlive) return;
 			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null) return;
@@ -93,19 +93,26 @@ namespace WeaponPaints
 						//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
 						if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
 						{
-							if (!weapon.Value.EntityIndex.HasValue) return;
-							int weaponEntityIndex = (int)weapon.Value.EntityIndex!.Value.Value;
-							NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3");
-							AddTimer(0.35f, () => service.DropActivePlayerWeapon(weapon.Value));
-
-							AddTimer(1.0f, () =>
+							if (!force)
 							{
-								CEntityInstance? knife = Utilities.GetEntityFromIndex<CEntityInstance>(weaponEntityIndex);
-								if (knife != null && knife.IsValid)
+								if (!weapon.Value.EntityIndex.HasValue) return;
+								int weaponEntityIndex = (int)weapon.Value.EntityIndex!.Value.Value;
+								NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3");
+								AddTimer(0.35f, () => service.DropActivePlayerWeapon(weapon.Value));
+
+								AddTimer(1.0f, () =>
 								{
-									knife.Remove();
-								}
-							});
+									CEntityInstance? knife = Utilities.GetEntityFromIndex<CEntityInstance>(weaponEntityIndex);
+									if (knife != null && knife.IsValid)
+									{
+										knife.Remove();
+									}
+								});
+							}
+							else
+							{
+								weapon.Value.Remove();
+							}
 
 							break;
 						}
@@ -151,13 +158,18 @@ namespace WeaponPaints
 								}
 							});
 
-							AddTimer(2.5f, () =>
+							Task.Delay(TimeSpan.FromSeconds(3.5)).ContinueWith(_ =>
 							{
-								CEntityInstance? knife = Utilities.GetEntityFromIndex<CEntityInstance>(weaponEntityIndex);
-								if (knife != null && knife.IsValid && knife.EntityIndex.HasValue)
+								try
 								{
-									knife.Remove();
+									CEntityInstance? knife = Utilities.GetEntityFromIndex<CEntityInstance>(weaponEntityIndex);
+
+									if (knife != null && knife.IsValid && knife.Handle != -1 && knife.EntityIndex.HasValue)
+									{
+										knife.Remove();
+									}
 								}
+								catch (Exception) { }
 							});
 
 							break;
