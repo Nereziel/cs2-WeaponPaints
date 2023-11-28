@@ -54,8 +54,8 @@ namespace WeaponPaints
 		}
 		internal static void GiveKnifeToPlayer(CCSPlayerController? player)
 		{
-			if (!_config.Additional.KnifeEnabled || player == null || !player.EntityIndex.HasValue || !player.IsValid) return;
-			if (g_playersKnife.TryGetValue((int)player.EntityIndex.Value.Value, out var knife))
+			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
+			if (g_playersKnife.TryGetValue((int)player.EntityIndex!.Value.Value, out var knife))
 			{
 				player.GiveNamedItem(knife);
 			}
