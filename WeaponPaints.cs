@@ -11,7 +11,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleName => "WeaponPaints";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleAuthor => "Nereziel & daffyy";
-	public override string ModuleVersion => "1.2a";
+	public override string ModuleVersion => "1.3a";
 	public WeaponPaintsConfig Config { get; set; } = new();
 	internal static WeaponPaintsConfig _config = new WeaponPaintsConfig();
 
