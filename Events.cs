@@ -1,5 +1,6 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Modules.Entities;
 
 namespace WeaponPaints
 {
@@ -8,17 +9,17 @@ namespace WeaponPaints
 		private void RegisterEvents()
 		{
 			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
-			/*RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);*/
+			RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
 			RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
-			RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
+			//RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
 			RegisterEventHandler<EventItemPurchase>(OnEventItemPurchasePost);
 			RegisterEventHandler<EventItemPickup>(OnItemPickup);
 		}
 
-		private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
+		/*private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;
 
@@ -29,17 +30,16 @@ namespace WeaponPaints
 				_ = weaponSync.GetWeaponPaintsFromDatabase(playerIndex);
 			if (Config.Additional.KnifeEnabled && weaponSync != null)
 				_ = weaponSync.GetKnifeFromDatabase(playerIndex);
-			/*
+
 			Task.Run(async () =>
 			{
 				if (Config.Additional.SkinEnabled && weaponSync != null)
 				if (Config.Additional.KnifeEnabled && weaponSync != null)
 			});
-			*/
 
 			return HookResult.Continue;
 		}
-
+	*/
 		private void OnMapStart(string mapName)
 		{
 			if (!Config.Additional.KnifeEnabled) return;
@@ -52,10 +52,22 @@ namespace WeaponPaints
 				NativeAPI.IssueServerCommand("mp_equipment_reset_rounds 0");
 			});
 		}
-		/*
+		
 		private void OnClientAuthorized(int playerSlot, SteamID steamID)
 		{
 			int playerIndex = playerSlot + 1;
+
+			CCSPlayerController? player = Utilities.GetPlayerFromIndex(playerIndex);
+
+			if (player == null || !player.IsValid || player.IsHLTV) return;
+
+			if (Config.Additional.SkinEnabled && weaponSync != null)
+				_ = weaponSync.GetWeaponPaintsFromDatabase(playerIndex);
+			if (Config.Additional.KnifeEnabled && weaponSync != null)
+				_ = weaponSync.GetKnifeFromDatabase(playerIndex);
+
+
+			/*
 			Task.Run(async () =>
 			{
 				if (Config.Additional.SkinEnabled && weaponSync != null)
@@ -63,8 +75,9 @@ namespace WeaponPaints
 				if (Config.Additional.KnifeEnabled && weaponSync != null)
 					await weaponSync.GetKnifeFromDatabase(playerIndex);
 			});
+			*/
 		}
-		*/
+		
 		private void OnClientDisconnect(int playerSlot)
 		{
 			CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
