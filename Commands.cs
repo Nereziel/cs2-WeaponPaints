@@ -248,6 +248,8 @@ namespace WeaponPaints
 					RemoveKnifeFromPlayer(player);
 					AddTimer(0.2f, () => GiveKnifeToPlayer(player));
 					*/
+
+					RefreshWeapons(player);
 				}
 				if (!string.IsNullOrEmpty(Config.Messages.SuccessRefreshCommand))
 				{

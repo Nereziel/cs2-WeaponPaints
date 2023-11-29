@@ -187,6 +187,52 @@ namespace WeaponPaints
 			AddTimer(0.25f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
 			AddTimer(0.38f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
 		}
+
+		internal void RefreshWeapons(CCSPlayerController? player)
+		{
+			if (player == null || !player.IsValid || !player.PawnIsAlive) return;
+			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null) return;
+
+			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
+			if (weapons != null && weapons.Count > 0)
+			{
+				CCSPlayer_ItemServices service = new CCSPlayer_ItemServices(player.PlayerPawn.Value.ItemServices.Handle);
+				//var dropWeapon = VirtualFunction.CreateVoid<nint, nint>(service.Handle, GameData.GetOffset("CCSPlayer_ItemServices_DropActivePlayerWeapon"));
+
+				foreach (var weapon in weapons)
+				{
+					if (weapon != null && weapon.IsValid && weapon.Value.IsValid)
+					{
+						if (!weapon.Value.EntityIndex.HasValue || !weapon.Value.DesignerName.Contains("weapon_")) continue;
+						//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
+						if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
+						{
+							weapon.Value.Remove();
+							GiveKnifeToPlayer(player);
+						}
+						else
+						{
+							int clip1, reservedAmmo;
+
+							clip1 = weapon.Value.Clip1;
+							reservedAmmo = weapon.Value.ReserveAmmo[0];
+
+							weapon.Value.Remove();
+							CBasePlayerWeapon newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(weapon.Value.DesignerName));
+
+							Server.NextFrame(() =>
+							{ 
+								newWeapon.Clip1 = clip1;
+								newWeapon.ReserveAmmo[0] = reservedAmmo;
+							});
+							
+						}
+					}
+				}
+				RefreshSkins(player);
+			}
+		}
+
 		internal static bool PlayerHasKnife(CCSPlayerController? player)
 		{
 			if (!_config.Additional.KnifeEnabled) return false;
