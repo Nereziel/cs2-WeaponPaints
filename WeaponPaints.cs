@@ -5,7 +5,7 @@ using CounterStrikeSharp.API.Modules.Cvars;
 using Newtonsoft.Json.Linq;
 
 namespace WeaponPaints;
-[MinimumApiVersion(71)]
+[MinimumApiVersion(82)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	public override string ModuleName => "WeaponPaints";
@@ -32,6 +32,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
 	internal static Dictionary<int, string> g_playersKnife = new();
 	internal static List<int> g_changedKnife = new();
+	internal bool g_bCommandsAllowed = true;
 
 	internal static List<JObject> skinsList = new List<JObject>();
 	internal static readonly Dictionary<string, string> weaponList = new()

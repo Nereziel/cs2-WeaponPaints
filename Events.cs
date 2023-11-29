@@ -15,6 +15,7 @@ namespace WeaponPaints
 			//RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
+			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
 			RegisterEventHandler<EventItemPurchase>(OnEventItemPurchasePost);
 			RegisterEventHandler<EventItemPickup>(OnItemPickup);
 		}
@@ -65,7 +66,6 @@ namespace WeaponPaints
 				_ = weaponSync.GetWeaponPaintsFromDatabase(playerIndex);
 			if (Config.Additional.KnifeEnabled && weaponSync != null)
 				_ = weaponSync.GetKnifeFromDatabase(playerIndex);
-
 
 			/*
 			Task.Run(async () =>
@@ -118,8 +118,17 @@ namespace WeaponPaints
 			NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
 			NativeAPI.IssueServerCommand("mp_equipment_reset_rounds 0");
 
+			g_bCommandsAllowed = true;
+
 			return HookResult.Continue;
 		}
+
+		private HookResult OnRoundEnd(EventRoundEnd @event, GameEventInfo info)
+		{
+			g_bCommandsAllowed = false;
+			return HookResult.Continue;
+		}
+
 		private HookResult OnItemPickup(EventItemPickup @event, GameEventInfo info)
 		{
 			if (@event.Defindex == 42 || @event.Defindex == 59)

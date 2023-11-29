@@ -196,7 +196,7 @@ namespace WeaponPaints
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
 			if (weapons != null && weapons.Count > 0)
 			{
-				CCSPlayer_ItemServices service = new CCSPlayer_ItemServices(player.PlayerPawn.Value.ItemServices.Handle);
+				CCSPlayer_ItemServices service = new(player.PlayerPawn.Value.ItemServices.Handle);
 				//var dropWeapon = VirtualFunction.CreateVoid<nint, nint>(service.Handle, GameData.GetOffset("CCSPlayer_ItemServices_DropActivePlayerWeapon"));
 
 				foreach (var weapon in weapons)
@@ -205,31 +205,38 @@ namespace WeaponPaints
 					{
 						if (!weapon.Value.EntityIndex.HasValue || !weapon.Value.DesignerName.Contains("weapon_")) continue;
 						//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
-						if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
+						try
 						{
-							weapon.Value.Remove();
-							GiveKnifeToPlayer(player);
-						}
-						else
+							if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
+							{
+								weapon.Value.Remove();
+								GiveKnifeToPlayer(player);
+							}
+							else
+							{
+								int clip1, reservedAmmo;
+
+								clip1 = weapon.Value.Clip1;
+								reservedAmmo = weapon.Value.ReserveAmmo[0];
+
+								weapon.Value.Remove();
+								CBasePlayerWeapon newWeapon = new(player.GiveNamedItem(weapon.Value.DesignerName));
+
+								Server.NextFrame(() =>
+								{
+									newWeapon.Clip1 = clip1;
+									newWeapon.ReserveAmmo[0] = reservedAmmo;
+								});
+							}
+						} catch(Exception ex)
 						{
-							int clip1, reservedAmmo;
-
-							clip1 = weapon.Value.Clip1;
-							reservedAmmo = weapon.Value.ReserveAmmo[0];
-
-							weapon.Value.Remove();
-							CBasePlayerWeapon newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(weapon.Value.DesignerName));
-
-							Server.NextFrame(() =>
-							{ 
-								newWeapon.Clip1 = clip1;
-								newWeapon.ReserveAmmo[0] = reservedAmmo;
-							});
-							
+							Console.WriteLine("[WeaponPaints] Refreshing weapons exception");
+							Console.WriteLine(ex.Message);
 						}
 					}
 				}
-				RefreshSkins(player);
+				if (Config.Additional.SkinVisibilityFix)
+					RefreshSkins(player);
 			}
 		}
 
@@ -273,7 +280,7 @@ namespace WeaponPaints
 			if (WeaponPaints.skinsList != null)
 			{
 				// Filter weapons by the provided defindex
-				var filteredWeapons = WeaponPaints.skinsList.FindAll(w => w["weapon_defindex"]?.ToString() == defindex.ToString());
+				var filteredWeapons = skinsList.FindAll(w => w["weapon_defindex"]?.ToString() == defindex.ToString());
 
 				if (filteredWeapons.Count > 0)
 				{
