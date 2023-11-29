@@ -1,20 +1,101 @@
 ﻿using CounterStrikeSharp.API.Core;
-using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Utils;
+using Dapper;
+using MySqlConnector;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System.Reflection;
 
 namespace WeaponPaints
 {
-	public static class Utility
+	internal static class Utility
 	{
-		public static WeaponPaintsConfig? Config { get; set; }
+		internal static WeaponPaintsConfig? Config { get; set; }
 
-		public static bool IsPlayerValid(CCSPlayerController? player)
+		internal static bool IsPlayerValid(CCSPlayerController? player)
 		{
-			return (player != null && player.IsValid && !player.IsBot && !player.IsHLTV);
+			return (player != null && player.IsValid && !player.IsBot && !player.IsHLTV && player.SteamID.ToString() != "0");
 		}
 
-		public static string ReplaceTags(string message)
+		internal static string BuildDatabaseConnectionString()
+		{
+			if (Config == null) return String.Empty;
+			var builder = new MySqlConnectionStringBuilder
+			{
+				Server = Config.DatabaseHost,
+				UserID = Config.DatabaseUser,
+				Password = Config.DatabasePassword,
+				Database = Config.DatabaseName,
+				Port = (uint)Config.DatabasePort,
+			};
+
+			return builder.ConnectionString;
+		}
+
+		internal static void TestDatabaseConnection()
+		{
+			try
+			{
+				using var connection = new MySqlConnection(BuildDatabaseConnectionString());
+				connection.Open();
+
+				if (connection.State != System.Data.ConnectionState.Open)
+				{
+					throw new Exception("[WeaponPaints] Unable connect to database!");
+				}
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("[WeaponPaints] Unknown mysql exception! " + ex.Message);
+			}
+			CheckDatabaseTables();
+		}
+
+		internal static async void CheckDatabaseTables()
+		{
+			try
+			{
+				using var connection = new MySqlConnection(BuildDatabaseConnectionString());
+				await connection.OpenAsync();
+
+				using var transaction = await connection.BeginTransactionAsync();
+
+				try
+				{
+					string createTable1 = "CREATE TABLE IF NOT EXISTS `wp_player_skins` (`steamid` varchar(64) NOT NULL, `weapon_defindex` int(6) NOT NULL, `weapon_paint_id` int(6) NOT NULL, `weapon_wear` float NOT NULL DEFAULT 0.0001, `weapon_seed` int(16) NOT NULL DEFAULT 0) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci";
+					string createTable2 = "CREATE TABLE IF NOT EXISTS `wp_player_knife` (`steamid` varchar(64) NOT NULL, `knife` varchar(64) NOT NULL, UNIQUE (`steamid`)) ENGINE = InnoDB";
+
+					await connection.ExecuteAsync(createTable1, transaction: transaction);
+					await connection.ExecuteAsync(createTable2, transaction: transaction);
+
+					await transaction.CommitAsync();
+				}
+				catch (Exception)
+				{
+					await transaction.RollbackAsync();
+					throw new Exception("[WeaponPaints] Unable to create tables!");
+				}
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("[WeaponPaints] Unknown mysql exception! " + ex.Message);
+			}
+		}
+		internal static void LoadSkinsFromFile(string filePath)
+		{
+			if (File.Exists(filePath))
+			{
+				string json = File.ReadAllText(filePath);
+				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
+				WeaponPaints.skinsList = deserializedSkins ?? new List<JObject>();
+			}
+			else
+			{
+				throw new FileNotFoundException("File not found.", filePath);
+			}
+		}
+
+		internal static string ReplaceTags(string message)
 		{
 			if (message.Contains('{'))
 			{
@@ -37,14 +118,14 @@ namespace WeaponPaints
 			return message;
 		}
 
-		public static void Log(string message)
+		internal static void Log(string message)
 		{
 			Console.BackgroundColor = ConsoleColor.DarkGray;
 			Console.ForegroundColor = ConsoleColor.Cyan;
 			Console.WriteLine("[WeaponPaints] " + message);
 			Console.ResetColor();
 		}
-		public static void ShowAd(string moduleVersion)
+		internal static void ShowAd(string moduleVersion)
 		{
 			Console.WriteLine(" ");
 			Console.WriteLine(" _     _  _______  _______  _______  _______  __    _  _______  _______  ___   __    _  _______  _______ ");
