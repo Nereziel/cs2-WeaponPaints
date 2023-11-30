@@ -12,7 +12,7 @@ namespace WeaponPaints
 			RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
 			RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
-			//RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
+			RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
@@ -55,37 +55,75 @@ namespace WeaponPaints
 				if (Config.GlobalShare)
 					GlobalShareConnect();
 			});
+
+			g_hTimerCheckSkinsData = AddTimer(10.0f, () =>
+			{
+				List<CCSPlayerController> players = Utilities.GetPlayers();
+
+				foreach (CCSPlayerController player in players)
+				{
+					if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID == 0) continue;
+					if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
+
+					if (Config.Additional.SkinEnabled && weaponSync != null)
+						_ = weaponSync.GetWeaponPaintsFromDatabase((int)player.Index);
+					if (Config.Additional.KnifeEnabled && weaponSync != null)
+						_ = weaponSync.GetKnifeFromDatabase((int)player.Index);
+
+				}
+			}, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE | CounterStrikeSharp.API.Modules.Timers.TimerFlags.REPEAT);
 		}
-		
+
 		private void OnClientAuthorized(int playerSlot, SteamID steamID)
 		{
 			int playerIndex = playerSlot + 1;
 
 			CCSPlayerController? player = Utilities.GetPlayerFromIndex(playerIndex);
 
-			if (player == null || !player.IsValid || player.IsHLTV) return;
+			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV) return;
 
 			if (Config.Additional.SkinEnabled && weaponSync != null)
 				_ = weaponSync.GetWeaponPaintsFromDatabase(playerIndex);
 			if (Config.Additional.KnifeEnabled && weaponSync != null)
 				_ = weaponSync.GetKnifeFromDatabase(playerIndex);
-
-			/*
-			Task.Run(async () =>
-			{
-				if (Config.Additional.SkinEnabled && weaponSync != null)
-					await weaponSync.GetWeaponPaintsFromDatabase(playerIndex);
-				if (Config.Additional.KnifeEnabled && weaponSync != null)
-					await weaponSync.GetKnifeFromDatabase(playerIndex);
-			});
-			*/
 		}
-		
+
+		/* WORKAROUND FOR CLIENTS WITHOUT STEAMID ON AUTHORIZATION */
+		private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
+		{
+			CCSPlayerController? player = @event.Userid;
+			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV) return HookResult.Continue;
+
+			if (!gPlayerWeaponsInfo.ContainsKey((int)player.Index))
+			{
+				Console.WriteLine($"[WeaponPaints] Retrying to retrieve player {player.PlayerName} skins");
+				if (Config.Additional.SkinEnabled && weaponSync != null)
+					_ = weaponSync.GetWeaponPaintsFromDatabase((int)player.Index);
+				if (Config.Additional.KnifeEnabled && weaponSync != null)
+					_ = weaponSync.GetKnifeFromDatabase((int)player.Index);
+
+				/*
+				AddTimer(2.0f, () =>
+				{
+					if (!gPlayerWeaponsInfo.ContainsKey((int)player.Index))
+					{
+						Console.WriteLine($"[WeaponPaints] Last try to retrieve player {player.PlayerName} skins");
+						if (Config.Additional.SkinEnabled && weaponSync != null)
+							_ = weaponSync.GetWeaponPaintsFromDatabase((int)player.Index);
+						if (Config.Additional.KnifeEnabled && weaponSync != null)
+							_ = weaponSync.GetKnifeFromDatabase((int)player.Index);
+					}
+				});
+				*/
+			}
+
+			return HookResult.Continue;
+		}
 		private void OnClientDisconnect(int playerSlot)
 		{
 			CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
 
-			if (player == null || !player.IsValid || player.IsHLTV) return;
+			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV) return;
 
 			if (Config.Additional.KnifeEnabled)
 				g_playersKnife.Remove((int)player.Index);
@@ -146,7 +184,7 @@ namespace WeaponPaints
 					g_knifePickupCount[(int)player.Index]++;
 
 					RemovePlayerKnife(player, true);
-					AddTimer(0.3f, ()=> GiveKnifeToPlayer(player));
+					AddTimer(0.3f, () => GiveKnifeToPlayer(player));
 
 					//RefreshPlayerKnife(player);
 					/*

@@ -17,6 +17,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	internal static WeaponSynchronization? weaponSync;
 
+	private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
+
 	/*
 	private Dictionary<int, Dictionary<int, int>> gPlayerWeaponPaints = new();
 	private Dictionary<int, Dictionary<int, int>> gPlayerWeaponSeed = new();
