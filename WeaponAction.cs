@@ -224,11 +224,18 @@ namespace WeaponPaints
 
 								Server.NextFrame(() =>
 								{
-									newWeapon.Clip1 = clip1;
-									newWeapon.ReserveAmmo[0] = reservedAmmo;
+									if (newWeapon == null) return;
+									try
+									{
+										newWeapon.Clip1 = clip1;
+										newWeapon.ReserveAmmo[0] = reservedAmmo;
+									}
+									catch (Exception)
+									{ }
 								});
 							}
-						} catch(Exception ex)
+						}
+						catch (Exception ex)
 						{
 							Console.WriteLine("[WeaponPaints] Refreshing weapons exception");
 							Console.WriteLine(ex.Message);
