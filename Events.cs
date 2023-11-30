@@ -85,9 +85,9 @@ namespace WeaponPaints
 			if (player == null || !player.IsValid || player.IsHLTV) return;
 
 			if (Config.Additional.KnifeEnabled)
-				g_playersKnife.Remove((int)player.EntityIndex!.Value.Value);
+				g_playersKnife.Remove((int)player.Index);
 			if (Config.Additional.SkinEnabled)
-				gPlayerWeaponsInfo.Remove((int)player.EntityIndex!.Value.Value);
+				gPlayerWeaponsInfo.Remove((int)player.Index);
 		}
 
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
@@ -100,7 +100,7 @@ namespace WeaponPaints
 
 			if (Config.Additional.KnifeEnabled)
 			{
-				g_knifePickupCount[(int)player.EntityIndex!.Value.Value] = 0;
+				g_knifePickupCount[(int)player.Index] = 0;
 				if (!PlayerHasKnife(player))
 					GiveKnifeToPlayer(player);
 			}
@@ -134,13 +134,13 @@ namespace WeaponPaints
 			if (@event.Defindex == 42 || @event.Defindex == 59)
 			{
 				CCSPlayerController? player = @event.Userid;
-				if (!Utility.IsPlayerValid(player) || !player.PawnIsAlive || g_knifePickupCount[(int)player.EntityIndex!.Value.Value] >= 2) return HookResult.Continue;
+				if (!Utility.IsPlayerValid(player) || !player.PawnIsAlive || g_knifePickupCount[(int)player.Index] >= 2) return HookResult.Continue;
 
-				if (g_playersKnife.ContainsKey((int)player.EntityIndex!.Value.Value)
+				if (g_playersKnife.ContainsKey((int)player.Index)
 					&&
-				   g_playersKnife[(int)player.EntityIndex!.Value.Value] != "weapon_knife")
+				   g_playersKnife[(int)player.Index] != "weapon_knife")
 				{
-					g_knifePickupCount[(int)player.EntityIndex!.Value.Value]++;
+					g_knifePickupCount[(int)player.Index]++;
 
 					RemovePlayerKnife(player, true);
 					AddTimer(0.3f, ()=> GiveKnifeToPlayer(player));
@@ -176,29 +176,32 @@ namespace WeaponPaints
 			{
 				try
 				{
+
 					if (!weapon.IsValid) return;
 					if (weapon.OwnerEntity.Value == null) return;
-					if (!weapon.OwnerEntity.Value.EntityIndex.HasValue)
+					/*
+					if (weapon.OwnerEntity.Index > 0)
 					{
 						for (int i = 1; i <= Server.MaxPlayers; i++)
 						{
 							CCSPlayerController? ghostPlayer = Utilities.GetPlayerFromIndex(i);
 							if (!Utility.IsPlayerValid(ghostPlayer)) continue;
-							if (g_changedKnife.Contains((int)ghostPlayer.EntityIndex!.Value.Value))
+							if (g_changedKnife.Contains((int)ghostPlayer.Index))
 							{
 								ChangeWeaponAttributes(weapon, ghostPlayer, isKnife);
-								g_changedKnife.Remove((int)ghostPlayer.EntityIndex!.Value.Value);
+								g_changedKnife.Remove((int)ghostPlayer.Index);
 								break;
 							}
 						}
-						return;
+						
 					}
-
-					if (!weapon.OwnerEntity.Value.EntityIndex.HasValue) return;
-					int weaponOwner = (int)weapon.OwnerEntity.Value.EntityIndex.Value.Value;
+					*/
+					if (weapon.OwnerEntity.Index <= 0) return;
+					int weaponOwner = (int)weapon.OwnerEntity.Index;
 					var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex(weaponOwner));
 					if (!pawn.IsValid) return;
-					var playerIndex = (int)pawn.Controller.Value.EntityIndex!.Value.Value;
+
+					var playerIndex = (int)pawn.Controller.Index;
 					var player = Utilities.GetPlayerFromIndex(playerIndex);
 					if (!Utility.IsPlayerValid(player)) return;
 

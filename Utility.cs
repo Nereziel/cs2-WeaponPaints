@@ -19,7 +19,7 @@ namespace WeaponPaints
 
 		internal static string BuildDatabaseConnectionString()
 		{
-			if (Config == null) return String.Empty;
+			if (Config == null) return string.Empty;
 			var builder = new MySqlConnectionStringBuilder
 			{
 				Server = Config.DatabaseHost,

@@ -31,7 +31,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static Dictionary<int, Dictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new Dictionary<int, Dictionary<int, WeaponInfo>>();
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
 	internal static Dictionary<int, string> g_playersKnife = new();
-	internal static List<int> g_changedKnife = new();
+	//internal static List<int> g_changedKnife = new();
 	internal bool g_bCommandsAllowed = true;
 
 	internal static List<JObject> skinsList = new List<JObject>();
