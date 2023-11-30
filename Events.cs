@@ -51,6 +51,9 @@ namespace WeaponPaints
 				NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
 				NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
 				NativeAPI.IssueServerCommand("mp_equipment_reset_rounds 0");
+
+				if (Config.GlobalShare)
+					GlobalShareConnect();
 			});
 		}
 		
