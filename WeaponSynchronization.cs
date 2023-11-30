@@ -229,9 +229,9 @@ namespace WeaponPaints
 
 		internal async Task SyncWeaponPaintsToDatabase(CCSPlayerController? player)
 		{
-			if (!Utility.IsPlayerValid(player)) return;
+			if (player == null || !Utility.IsPlayerValid(player)) return;
 
-			int playerIndex = (int)player!.EntityIndex!.Value.Value;
+			int playerIndex = (int)player.Index;
 			string steamId = new SteamID(player.SteamID).SteamId64.ToString();
 
 			using var connection = new MySqlConnection(_databaseConnectionString);

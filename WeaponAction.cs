@@ -9,9 +9,9 @@ namespace WeaponPaints
 	{
 		internal static void ChangeWeaponAttributes(CBasePlayerWeapon? weapon, CCSPlayerController? player, bool isKnife = false)
 		{
-			if (weapon == null || !weapon.IsValid || !Utility.IsPlayerValid(player)) return;
+			if (player == null || weapon == null || !weapon.IsValid || !Utility.IsPlayerValid(player)) return;
 
-			int playerIndex = (int)player!.EntityIndex!.Value.Value;
+			int playerIndex = (int)player.Index;
 
 			if (!gPlayerWeaponsInfo.ContainsKey(playerIndex)) return;
 
@@ -55,7 +55,7 @@ namespace WeaponPaints
 		internal static void GiveKnifeToPlayer(CCSPlayerController? player)
 		{
 			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
-			if (g_playersKnife.TryGetValue((int)player.EntityIndex!.Value.Value, out var knife))
+			if (g_playersKnife.TryGetValue((int)player.Index, out var knife))
 			{
 				player.GiveNamedItem(knife);
 			}
@@ -77,7 +77,7 @@ namespace WeaponPaints
 		}
 		internal void RemovePlayerKnife(CCSPlayerController? player, bool force = false)
 		{
-			if (player == null || !player.IsValid || !player.PawnIsAlive) return;
+			if (player == null || !player.IsValid || player.PlayerPawn.Value == null || !player.PawnIsAlive) return;
 			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null) return;
 
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
@@ -88,16 +88,16 @@ namespace WeaponPaints
 
 				foreach (var weapon in weapons)
 				{
-					if (weapon != null && weapon.IsValid && weapon.Value.IsValid)
+					if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid)
 					{
 						//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
 						if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
 						{
 							if (!force)
 							{
-								if (!weapon.Value.EntityIndex.HasValue) return;
-								int weaponEntityIndex = (int)weapon.Value.EntityIndex!.Value.Value;
-								NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3");
+								if ((int)weapon.Index <= 0) return;
+								int weaponEntityIndex = (int)weapon.Index;
+								NativeAPI.IssueClientCommand((int)player.Index - 1, "slot3");
 								AddTimer(0.35f, () => service.DropActivePlayerWeapon(weapon.Value));
 
 								AddTimer(1.0f, () =>
@@ -123,35 +123,35 @@ namespace WeaponPaints
 
 		internal void RefreshPlayerKnife(CCSPlayerController? player)
 		{
-			if (player == null || !player.IsValid || !player.PawnIsAlive) return;
+			if (player == null || !player.IsValid || player.PlayerPawn.Value == null || !player.PawnIsAlive) return;
 			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null) return;
 
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
 			if (weapons != null && weapons.Count > 0)
 			{
-				CCSPlayer_ItemServices service = new CCSPlayer_ItemServices(player.PlayerPawn.Value.ItemServices.Handle);
+				CCSPlayer_ItemServices service = new(player.PlayerPawn.Value.ItemServices.Handle);
 				//var dropWeapon = VirtualFunction.CreateVoid<nint, nint>(service.Handle, GameData.GetOffset("CCSPlayer_ItemServices_DropActivePlayerWeapon"));
 
 				foreach (var weapon in weapons)
 				{
-					if (weapon != null && weapon.IsValid && weapon.Value.IsValid)
+					if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid)
 					{
 						//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
 						if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
 						{
-							if (!weapon.Value.EntityIndex.HasValue) return;
-							int weaponEntityIndex = (int)weapon.Value.EntityIndex!.Value.Value;
-							NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3");
+							if (weapon.Index <= 0) return;
+							int weaponEntityIndex = (int)weapon.Index;
+							NativeAPI.IssueClientCommand((int)player.Index - 1, "slot3");
 							AddTimer(0.22f, () =>
 							{
-								if (player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value.DesignerName.Contains("knife")
+								if (player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value!.DesignerName.Contains("knife")
 								||
-								player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value.DesignerName.Contains("bayonet")
+								player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value!.DesignerName.Contains("bayonet")
 								)
 								{
 									if (player.PawnIsAlive)
 									{
-										NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3");
+										NativeAPI.IssueClientCommand((int)player.Index - 1, "slot3");
 										service.DropActivePlayerWeapon(weapon.Value);
 										GiveKnifeToPlayer(player);
 									}
@@ -164,7 +164,7 @@ namespace WeaponPaints
 								{
 									CEntityInstance? knife = Utilities.GetEntityFromIndex<CEntityInstance>(weaponEntityIndex);
 
-									if (knife != null && knife.IsValid && knife.Handle != -1 && knife.EntityIndex.HasValue)
+									if (knife != null && knife.IsValid && knife.Handle != -1 && knife.Index > 0)
 									{
 										knife.Remove();
 									}
@@ -183,14 +183,14 @@ namespace WeaponPaints
 		{
 			if (!Utility.IsPlayerValid(player) || !player!.PawnIsAlive) return;
 
-			AddTimer(0.18f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot3"));
-			AddTimer(0.25f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot2"));
-			AddTimer(0.38f, () => NativeAPI.IssueClientCommand((int)player.EntityIndex!.Value.Value - 1, "slot1"));
+			AddTimer(0.18f, () => NativeAPI.IssueClientCommand((int)player.Index - 1, "slot3"));
+			AddTimer(0.25f, () => NativeAPI.IssueClientCommand((int)player.Index - 1, "slot2"));
+			AddTimer(0.38f, () => NativeAPI.IssueClientCommand((int)player.Index - 1, "slot1"));
 		}
 
 		internal void RefreshWeapons(CCSPlayerController? player)
 		{
-			if (player == null || !player.IsValid || !player.PawnIsAlive) return;
+			if (player == null || !player.IsValid || player.PlayerPawn.Value == null || !player.PawnIsAlive) return;
 			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null) return;
 
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
@@ -201,9 +201,9 @@ namespace WeaponPaints
 
 				foreach (var weapon in weapons)
 				{
-					if (weapon != null && weapon.IsValid && weapon.Value.IsValid)
+					if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid)
 					{
-						if (!weapon.Value.EntityIndex.HasValue || !weapon.Value.DesignerName.Contains("weapon_")) continue;
+						if (weapon.Index <= 0 || !weapon.Value.DesignerName.Contains("weapon_")) continue;
 						//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
 						try
 						{
@@ -249,14 +249,14 @@ namespace WeaponPaints
 				return false;
 			}
 
-			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
+			if (player.PlayerPawn.Value == null || player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
 				return false;
 
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
 			if (weapons == null || weapons.Count <= 0) return false;
 			foreach (var weapon in weapons)
 			{
-				if (weapon != null && weapon.IsValid && weapon.Value.IsValid)
+				if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid)
 				{
 					if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
 					{

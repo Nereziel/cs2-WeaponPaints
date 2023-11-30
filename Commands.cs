@@ -23,7 +23,7 @@ namespace WeaponPaints
 			{
 				AddCommand($"css_{Config.Additional.CommandKill}", "kill yourself", (player, info) =>
 				{
-					if (!Utility.IsPlayerValid(player) || !player!.PlayerPawn.IsValid) return;
+					if (player == null || !Utility.IsPlayerValid(player) || player.PlayerPawn.Value == null || !player!.PlayerPawn.IsValid) return;
 
 					player.PlayerPawn.Value.CommitSuicide(true, false);
 				});
@@ -60,11 +60,11 @@ namespace WeaponPaints
 							player!.PrintToChat(Utility.ReplaceTags(temp));
 						}
 
-						g_playersKnife[(int)player!.EntityIndex!.Value.Value] = knifeKey;
+						g_playersKnife[(int)player!.Index] = knifeKey;
 
 						if (player!.PawnIsAlive && g_bCommandsAllowed)
 						{
-							g_changedKnife.Add((int)player.EntityIndex!.Value.Value);
+							//g_changedKnife.Add((int)player.Index);
 							RefreshWeapons(player);
 							//RefreshPlayerKnife(player);
 
@@ -73,7 +73,7 @@ namespace WeaponPaints
 							*/
 						}
 						if (weaponSync != null)
-							Task.Run(() => weaponSync.SyncKnifeToDatabase((int)player.EntityIndex!.Value.Value, knifeKey));
+							Task.Run(() => weaponSync.SyncKnifeToDatabase((int)player.Index, knifeKey));
 					}
 				}
 			};
@@ -84,7 +84,7 @@ namespace WeaponPaints
 			AddCommand($"css_{Config.Additional.CommandKnife}", "Knife Menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
-				int playerIndex = (int)player!.EntityIndex!.Value.Value;
+				int playerIndex = (int)player!.Index;
 
 				if (commandCooldown != null && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds) && playerIndex > 0 && playerIndex < commandCooldown.Length)
 				{
@@ -110,7 +110,7 @@ namespace WeaponPaints
 			{
 				if (!Utility.IsPlayerValid(player)) return;
 
-				int playerIndex = (int)player!.EntityIndex!.Value.Value;
+				int playerIndex = (int)player!.Index;
 				string selectedWeapon = option.Text;
 				if (classNamesByWeapon.TryGetValue(selectedWeapon, out string? selectedWeaponClassname))
 				{
@@ -126,9 +126,9 @@ namespace WeaponPaints
 					// Function to handle skin selection for the chosen weapon
 					var handleSkinSelection = (CCSPlayerController? p, ChatMenuOption opt) =>
 					{
-						if (p == null || !p.IsValid || !p.EntityIndex.HasValue) return;
+						if (p == null || !p.IsValid || p.Index <= 0) return;
 
-						playerIndex = (int)p.EntityIndex.Value.Value;
+						playerIndex = (int)p.Index;
 
 						var steamId = new SteamID(p.SteamID);
 						var firstSkin = skinsList?.FirstOrDefault(skin =>
@@ -204,7 +204,7 @@ namespace WeaponPaints
 			AddCommand($"css_{Config.Additional.CommandSkinSelection}", "Skins selection menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player)) return;
-				int playerIndex = (int)player!.EntityIndex!.Value.Value;
+				int playerIndex = (int)player!.Index;
 
 				if (commandCooldown != null && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds) && playerIndex > 0 && playerIndex < commandCooldown.Length)
 				{
@@ -226,8 +226,8 @@ namespace WeaponPaints
 			if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
 			if (!Utility.IsPlayerValid(player)) return;
 			string temp = "";
-			if (!player!.EntityIndex.HasValue) return;
-			int playerIndex = (int)player!.EntityIndex!.Value.Value;
+			if (player == null || player.Index <= 0) return;
+			int playerIndex = (int)player!.Index;
 			if (playerIndex != 0 && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
 			{
 				commandCooldown[playerIndex] = DateTime.UtcNow;
