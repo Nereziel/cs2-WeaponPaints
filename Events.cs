@@ -1,7 +1,6 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Entities;
-using CounterStrikeSharp.API.Core.Attributes.Registration;
 
 namespace WeaponPaints
 {
@@ -13,14 +12,13 @@ namespace WeaponPaints
 			RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
 			RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
-			/*
+		
 			RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
 			RegisterEventHandler<EventItemPurchase>(OnEventItemPurchasePost);
 			RegisterEventHandler<EventItemPickup>(OnItemPickup);
-			*/
 		}
 
 		/*private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
@@ -65,7 +63,7 @@ namespace WeaponPaints
 
 				foreach (CCSPlayerController player in players)
 				{
-					if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID == 0) continue;
+					if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.AuthorizedSteamID == null) continue;
 					if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
 
 					if (Config.Additional.SkinEnabled && weaponSync != null)
@@ -92,7 +90,6 @@ namespace WeaponPaints
 		}
 
 		/* WORKAROUND FOR CLIENTS WITHOUT STEAMID ON AUTHORIZATION */
-		[GameEventHandler]
 		private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;
@@ -135,11 +132,10 @@ namespace WeaponPaints
 				gPlayerWeaponsInfo.Remove((int)player.Index);
 		}
 
-		[GameEventHandler]
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;
-			if (player == null || !player.IsValid || !player.PlayerPawn.IsValid)
+			if (player == null || !player.IsValid)
 			{
 				return HookResult.Continue;
 			}
@@ -158,7 +154,7 @@ namespace WeaponPaints
 
 			return HookResult.Continue;
 		}
-		[GameEventHandler(HookMode.Pre)]
+
 		private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
 		{
 			NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
@@ -170,14 +166,12 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
-		[GameEventHandler]
 		private HookResult OnRoundEnd(EventRoundEnd @event, GameEventInfo info)
 		{
 			g_bCommandsAllowed = false;
 			return HookResult.Continue;
 		}
 
-		[GameEventHandler]
 		private HookResult OnItemPickup(EventItemPickup @event, GameEventInfo info)
 		{
 			if (@event.Defindex == 42 || @event.Defindex == 59)
@@ -266,7 +260,6 @@ namespace WeaponPaints
 			});
 		}
 
-		[GameEventHandler]
 		private HookResult OnEventItemPurchasePost(EventItemPurchase @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;

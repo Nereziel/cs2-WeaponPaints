@@ -130,7 +130,9 @@ namespace WeaponPaints
 
 						playerIndex = (int)p.Index;
 
-						var steamId = new SteamID(p.SteamID);
+						if (p.AuthorizedSteamID == null) return;
+
+						string steamId = p.AuthorizedSteamID.SteamId64.ToString();
 						var firstSkin = skinsList?.FirstOrDefault(skin =>
 						{
 							if (skin != null && skin.TryGetValue("weapon_name", out var weaponName))

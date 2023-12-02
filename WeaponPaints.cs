@@ -5,7 +5,7 @@ using CounterStrikeSharp.API.Modules.Cvars;
 using Newtonsoft.Json.Linq;
 
 namespace WeaponPaints;
-[MinimumApiVersion(82)]
+[MinimumApiVersion(90)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	public override string ModuleName => "WeaponPaints";
