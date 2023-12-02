@@ -251,7 +251,7 @@ namespace WeaponPaints
 		{
 			if (!_config.Additional.KnifeEnabled) return false;
 
-			if (player == null || !player.IsValid)
+			if (player == null || !player.IsValid || !player.Pawn.IsValid)
 			{
 				return false;
 			}
@@ -260,7 +260,7 @@ namespace WeaponPaints
 				return false;
 
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
-			if (weapons == null || weapons.Count <= 0) return false;
+			if (weapons == null) return false;
 			foreach (var weapon in weapons)
 			{
 				if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid)

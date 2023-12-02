@@ -86,7 +86,7 @@ namespace WeaponPaints
 				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
 				int playerIndex = (int)player!.Index;
 
-				if (commandCooldown != null && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds) && playerIndex > 0 && playerIndex < commandCooldown.Length)
+				if (commandCooldown != null && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
 				{
 					commandCooldown[playerIndex] = DateTime.UtcNow;
 					ChatMenus.OpenMenu(player, giveItemMenu);
