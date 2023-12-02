@@ -251,15 +251,15 @@ namespace WeaponPaints
 		{
 			if (!_config.Additional.KnifeEnabled) return false;
 
-			if (player == null || !player.IsValid || !player.Pawn.IsValid)
+			if (player == null || !player.IsValid || !player.PlayerPawn.IsValid)
 			{
 				return false;
 			}
 
-			if (player.PlayerPawn.Value == null || player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
+			if (player.PlayerPawn?.Value == null || player.PlayerPawn?.Value.WeaponServices == null || player.PlayerPawn?.Value.ItemServices == null)
 				return false;
 
-			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
+			var weapons = player.PlayerPawn.Value.WeaponServices?.MyWeapons;
 			if (weapons == null) return false;
 			foreach (var weapon in weapons)
 			{

@@ -31,14 +31,15 @@ namespace WeaponPaints
 			{
 				CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
 				if (!Utility.IsPlayerValid(player)) return;
-				var steamId = new SteamID(player.SteamID);
+				if (player.AuthorizedSteamID == null) return;
+				string steamId = player.AuthorizedSteamID.SteamId64.ToString();
 
 				if (_config.GlobalShare)
 				{
 					var values = new Dictionary<string, string>
 				{
 				   { "server_id", _globalShareServerId.ToString() },
-				   { "steamid", steamId.SteamId64.ToString() },
+				   { "steamid", steamId },
 				   { "knife", "1" }
 				};
 					UriBuilder builder = new UriBuilder(_globalShareApi);
@@ -75,7 +76,7 @@ namespace WeaponPaints
 				{
 					await connection.OpenAsync();
 					string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
-					string? PlayerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = steamId.SteamId64.ToString() });
+					string? PlayerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = steamId });
 					if (PlayerKnife != null)
 					{
 						WeaponPaints.g_playersKnife[playerIndex] = PlayerKnife;
@@ -102,12 +103,13 @@ namespace WeaponPaints
 			{
 				CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
 				if (player == null || !player.IsValid) return;
-				var steamId = new SteamID(player.SteamID);
+				if (player.AuthorizedSteamID == null) return;
+				string steamId = player.AuthorizedSteamID.SteamId64.ToString();
 
 				using var connection = new MySqlConnection(_databaseConnectionString);
 				await connection.OpenAsync();
 				string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
-				await connection.ExecuteAsync(query, new { steamid = steamId.SteamId64.ToString(), newKnife = knife });
+				await connection.ExecuteAsync(query, new { steamid = steamId, newKnife = knife });
 				await connection.CloseAsync();
 			}
 			catch (Exception e)
@@ -124,7 +126,9 @@ namespace WeaponPaints
 			CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
 			if (!Utility.IsPlayerValid(player)) return;
 
-			var steamId = new SteamID(player.SteamID);
+			if (player.AuthorizedSteamID == null) return;
+
+			string steamId = player.AuthorizedSteamID.SteamId64.ToString();
 
 			if (!WeaponPaints.gPlayerWeaponsInfo.TryGetValue(playerIndex, out _))
 			{
@@ -137,7 +141,7 @@ namespace WeaponPaints
 					var values = new Dictionary<string, string>
 				{
 				   { "server_id", _globalShareServerId.ToString() },
-				   { "steamid", steamId.SteamId64.ToString() },
+				   { "steamid", steamId },
 				   { "skins", "1" }
 				};
 					UriBuilder builder = new UriBuilder(_globalShareApi);
@@ -193,7 +197,7 @@ namespace WeaponPaints
 					await connection.OpenAsync();
 
 					string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
-					IEnumerable<dynamic> PlayerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = steamId.SteamId64.ToString() });
+					IEnumerable<dynamic> PlayerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = steamId });
 
 					if (PlayerSkins != null && PlayerSkins.AsList().Count > 0)
 					{
@@ -232,7 +236,8 @@ namespace WeaponPaints
 			if (player == null || !Utility.IsPlayerValid(player)) return;
 
 			int playerIndex = (int)player.Index;
-			string steamId = new SteamID(player.SteamID).SteamId64.ToString();
+			if (player.AuthorizedSteamID == null) return;
+			string steamId = player.AuthorizedSteamID.SteamId64.ToString();
 
 			using var connection = new MySqlConnection(_databaseConnectionString);
 			await connection.OpenAsync();
