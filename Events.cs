@@ -1,23 +1,26 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Entities;
+using CounterStrikeSharp.API.Core.Attributes.Registration;
 
 namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
-		private void RegisterEvents()
+		private void RegisterListeners()
 		{
 			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
 			RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
 			RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
+			/*
 			RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
 			RegisterEventHandler<EventItemPurchase>(OnEventItemPurchasePost);
 			RegisterEventHandler<EventItemPickup>(OnItemPickup);
+			*/
 		}
 
 		/*private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
@@ -89,6 +92,7 @@ namespace WeaponPaints
 		}
 
 		/* WORKAROUND FOR CLIENTS WITHOUT STEAMID ON AUTHORIZATION */
+		[GameEventHandler]
 		private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;
@@ -131,6 +135,7 @@ namespace WeaponPaints
 				gPlayerWeaponsInfo.Remove((int)player.Index);
 		}
 
+		[GameEventHandler]
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;
@@ -153,6 +158,7 @@ namespace WeaponPaints
 
 			return HookResult.Continue;
 		}
+		[GameEventHandler(HookMode.Pre)]
 		private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
 		{
 			NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
@@ -164,12 +170,14 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
+		[GameEventHandler]
 		private HookResult OnRoundEnd(EventRoundEnd @event, GameEventInfo info)
 		{
 			g_bCommandsAllowed = false;
 			return HookResult.Continue;
 		}
 
+		[GameEventHandler]
 		private HookResult OnItemPickup(EventItemPickup @event, GameEventInfo info)
 		{
 			if (@event.Defindex == 42 || @event.Defindex == 59)
@@ -257,6 +265,8 @@ namespace WeaponPaints
 				catch (Exception) { }
 			});
 		}
+
+		[GameEventHandler]
 		private HookResult OnEventItemPurchasePost(EventItemPurchase @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;

@@ -126,7 +126,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		if (Config.Additional.SkinEnabled)
 			SetupSkinsMenu();
 
-		RegisterEvents();
+		RegisterListeners();
 		RegisterCommands();
 
 		Utility.LoadSkinsFromFile(ModuleDirectory + "/skins.json");
