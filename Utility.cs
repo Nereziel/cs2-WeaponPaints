@@ -12,11 +12,6 @@ namespace WeaponPaints
 	{
 		internal static WeaponPaintsConfig? Config { get; set; }
 
-		internal static bool IsPlayerValid(CCSPlayerController? player)
-		{
-			return (player != null && player.IsValid && !player.IsBot && !player.IsHLTV && player.AuthorizedSteamID != null);
-		}
-
 		internal static string BuildDatabaseConnectionString()
 		{
 			if (Config == null) return string.Empty;
@@ -30,25 +25,6 @@ namespace WeaponPaints
 			};
 
 			return builder.ConnectionString;
-		}
-
-		internal static void TestDatabaseConnection()
-		{
-			try
-			{
-				using var connection = new MySqlConnection(BuildDatabaseConnectionString());
-				connection.Open();
-
-				if (connection.State != System.Data.ConnectionState.Open)
-				{
-					throw new Exception("[WeaponPaints] Unable connect to database!");
-				}
-			}
-			catch (Exception ex)
-			{
-				throw new Exception("[WeaponPaints] Unknown mysql exception! " + ex.Message);
-			}
-			CheckDatabaseTables();
 		}
 
 		internal static async void CheckDatabaseTables()
@@ -81,6 +57,11 @@ namespace WeaponPaints
 				throw new Exception("[WeaponPaints] Unknown mysql exception! " + ex.Message);
 			}
 		}
+
+		internal static bool IsPlayerValid(CCSPlayerController? player)
+		{
+			return (player != null && player.IsValid && !player.IsBot && !player.IsHLTV && player.AuthorizedSteamID != null);
+		}
 		internal static void LoadSkinsFromFile(string filePath)
 		{
 			if (File.Exists(filePath))
@@ -93,6 +74,14 @@ namespace WeaponPaints
 			{
 				throw new FileNotFoundException("File not found.", filePath);
 			}
+		}
+
+		internal static void Log(string message)
+		{
+			Console.BackgroundColor = ConsoleColor.DarkGray;
+			Console.ForegroundColor = ConsoleColor.Cyan;
+			Console.WriteLine("[WeaponPaints] " + message);
+			Console.ResetColor();
 		}
 
 		internal static string ReplaceTags(string message)
@@ -118,13 +107,6 @@ namespace WeaponPaints
 			return message;
 		}
 
-		internal static void Log(string message)
-		{
-			Console.BackgroundColor = ConsoleColor.DarkGray;
-			Console.ForegroundColor = ConsoleColor.Cyan;
-			Console.WriteLine("[WeaponPaints] " + message);
-			Console.ResetColor();
-		}
 		internal static void ShowAd(string moduleVersion)
 		{
 			Console.WriteLine(" ");
@@ -138,6 +120,25 @@ namespace WeaponPaints
 			Console.WriteLine("						>> Version: " + moduleVersion);
 			Console.WriteLine("			>> GitHub: https://github.com/Nereziel/cs2-WeaponPaints");
 			Console.WriteLine(" ");
+		}
+
+		internal static void TestDatabaseConnection()
+		{
+			try
+			{
+				using var connection = new MySqlConnection(BuildDatabaseConnectionString());
+				connection.Open();
+
+				if (connection.State != System.Data.ConnectionState.Open)
+				{
+					throw new Exception("[WeaponPaints] Unable connect to database!");
+				}
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("[WeaponPaints] Unknown mysql exception! " + ex.Message);
+			}
+			CheckDatabaseTables();
 		}
 	}
 }
