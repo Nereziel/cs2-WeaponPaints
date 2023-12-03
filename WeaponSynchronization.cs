@@ -1,6 +1,5 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
-using CounterStrikeSharp.API.Modules.Entities;
 using Dapper;
 using MySqlConnector;
 using Newtonsoft.Json.Linq;
@@ -9,12 +8,10 @@ namespace WeaponPaints
 {
 	internal class WeaponSynchronization
 	{
-		private readonly string _databaseConnectionString;
 		private readonly WeaponPaintsConfig _config;
-
+		private readonly string _databaseConnectionString;
 		private readonly Uri _globalShareApi;
 		private readonly int _globalShareServerId;
-
 
 		internal WeaponSynchronization(string databaseConnectionString, WeaponPaintsConfig config, Uri globalShareApi, int globalShareServerId)
 		{
@@ -62,7 +59,6 @@ namespace WeaponPaints
 							{
 								return;
 							}
-
 						}
 						else
 						{
@@ -87,30 +83,6 @@ namespace WeaponPaints
 					}
 					await connection.CloseAsync();
 				}
-				//Log($"{player.PlayerName} has this knife -> {g_playersKnife[playerIndex]}");
-			}
-			catch (Exception e)
-			{
-				Utility.Log(e.Message);
-				return;
-			}
-		}
-
-		internal async Task SyncKnifeToDatabase(int playerIndex, string knife)
-		{
-			if (!_config.Additional.KnifeEnabled) return;
-			try
-			{
-				CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
-				if (player == null || !player.IsValid) return;
-				if (player.AuthorizedSteamID == null) return;
-				string steamId = player.AuthorizedSteamID.SteamId64.ToString();
-
-				using var connection = new MySqlConnection(_databaseConnectionString);
-				await connection.OpenAsync();
-				string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
-				await connection.ExecuteAsync(query, new { steamid = steamId, newKnife = knife });
-				await connection.CloseAsync();
 			}
 			catch (Exception e)
 			{
@@ -170,16 +142,11 @@ namespace WeaponPaints
 									{
 										WeaponInfo weaponInfo = new WeaponInfo
 										{
-											Paint = weaponPaintId.Value, // Example paint value
-											Seed = weaponSeed.Value, // Example seed value
-											Wear = weaponWear.Value // Example wear value
+											Paint = weaponPaintId.Value,
+											Seed = weaponSeed.Value,
+											Wear = weaponWear.Value
 										};
 										WeaponPaints.gPlayerWeaponsInfo[playerIndex][weaponDefIndex.Value] = weaponInfo;
-										/*
-										gPlayerWeaponPaints[playerIndex][weaponDefIndex.Value] = weaponPaintId.Value;
-										gPlayerWeaponWear[playerIndex][weaponDefIndex.Value] = weaponWear.Value;
-										gPlayerWeaponSeed[playerIndex][weaponDefIndex.Value] = weaponSeed.Value;
-										*/
 									}
 								}
 							}
@@ -231,6 +198,28 @@ namespace WeaponPaints
 			}
 		}
 
+		internal async Task SyncKnifeToDatabase(int playerIndex, string knife)
+		{
+			if (!_config.Additional.KnifeEnabled) return;
+			try
+			{
+				CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
+				if (player == null || !player.IsValid) return;
+				if (player.AuthorizedSteamID == null) return;
+				string steamId = player.AuthorizedSteamID.SteamId64.ToString();
+
+				using var connection = new MySqlConnection(_databaseConnectionString);
+				await connection.OpenAsync();
+				string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
+				await connection.ExecuteAsync(query, new { steamid = steamId, newKnife = knife });
+				await connection.CloseAsync();
+			}
+			catch (Exception e)
+			{
+				Utility.Log(e.Message);
+				return;
+			}
+		}
 		internal async Task SyncWeaponPaintsToDatabase(CCSPlayerController? player)
 		{
 			if (player == null || !Utility.IsPlayerValid(player)) return;

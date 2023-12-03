@@ -1,12 +1,68 @@
 ﻿using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
-using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Menu;
 
 namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
+		private void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
+		{
+			if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
+			if (!Utility.IsPlayerValid(player)) return;
+			string temp = "";
+			if (player == null || player.Index <= 0) return;
+			int playerIndex = (int)player!.Index;
+			if (playerIndex != 0 && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
+			{
+				commandCooldown[playerIndex] = DateTime.UtcNow;
+				if (weaponSync != null)
+					Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerIndex));
+				if (Config.Additional.KnifeEnabled)
+				{
+					if (weaponSync != null)
+						Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerIndex));
+
+					RefreshWeapons(player);
+				}
+				if (!string.IsNullOrEmpty(Config.Messages.SuccessRefreshCommand))
+				{
+					temp = $" {Config.Prefix} {Config.Messages.SuccessRefreshCommand}";
+					player.PrintToChat(Utility.ReplaceTags(temp));
+				}
+				return;
+			}
+			if (!string.IsNullOrEmpty(Config.Messages.CooldownRefreshCommand))
+			{
+				temp = $" {Config.Prefix} {Config.Messages.CooldownRefreshCommand}";
+				player.PrintToChat(Utility.ReplaceTags(temp));
+			}
+		}
+
+		private void OnCommandWS(CCSPlayerController? player, CommandInfo command)
+		{
+			if (!Config.Additional.SkinEnabled) return;
+			if (!Utility.IsPlayerValid(player)) return;
+
+			string temp;
+			if (!string.IsNullOrEmpty(Config.Messages.WebsiteMessageCommand))
+			{
+				temp = $" {Config.Prefix} {Config.Messages.WebsiteMessageCommand}";
+				player!.PrintToChat(Utility.ReplaceTags(temp));
+			}
+			if (!string.IsNullOrEmpty(Config.Messages.SynchronizeMessageCommand))
+			{
+				temp = $" {Config.Prefix} {Config.Messages.SynchronizeMessageCommand}";
+				player!.PrintToChat(Utility.ReplaceTags(temp));
+			}
+			if (!Config.Additional.KnifeEnabled) return;
+			if (!string.IsNullOrEmpty(Config.Messages.KnifeMessageCommand))
+			{
+				temp = $" {Config.Prefix} {Config.Messages.KnifeMessageCommand}";
+				player!.PrintToChat(Utility.ReplaceTags(temp));
+			}
+		}
+
 		private void RegisterCommands()
 		{
 			AddCommand($"css_{Config.Additional.CommandSkin}", "Skins info", (player, info) =>
@@ -29,6 +85,7 @@ namespace WeaponPaints
 				});
 			}
 		}
+
 		private void SetupKnifeMenu()
 		{
 			if (!Config.Additional.KnifeEnabled || !g_bCommandsAllowed) return;
@@ -64,13 +121,7 @@ namespace WeaponPaints
 
 						if (player!.PawnIsAlive && g_bCommandsAllowed)
 						{
-							//g_changedKnife.Add((int)player.Index);
 							RefreshWeapons(player);
-							//RefreshPlayerKnife(player);
-
-							/*
-							AddTimer(1.0f, () => GiveKnifeToPlayer(player));
-							*/
 						}
 						if (weaponSync != null)
 							Task.Run(() => weaponSync.SyncKnifeToDatabase((int)player.Index, knifeKey));
@@ -219,76 +270,7 @@ namespace WeaponPaints
 					string temp = $"{Config.Prefix} {Config.Messages.CooldownRefreshCommand}";
 					player.PrintToChat(Utility.ReplaceTags(temp));
 				}
-
 			});
-		}
-
-		private void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
-		{
-			if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
-			if (!Utility.IsPlayerValid(player)) return;
-			string temp = "";
-			if (player == null || player.Index <= 0) return;
-			int playerIndex = (int)player!.Index;
-			if (playerIndex != 0 && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
-			{
-				commandCooldown[playerIndex] = DateTime.UtcNow;
-				if (weaponSync != null)
-					Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerIndex));
-				if (Config.Additional.KnifeEnabled)
-				{
-					/*if (PlayerHasKnife(player))
-						RefreshPlayerKnife(player);
-					/*
-					AddTimer(1.0f, () =>
-					{
-						GiveKnifeToPlayer(player);
-					});
-					*/
-					if (weaponSync != null)
-						Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerIndex));
-					/*
-					RemoveKnifeFromPlayer(player);
-					AddTimer(0.2f, () => GiveKnifeToPlayer(player));
-					*/
-
-					RefreshWeapons(player);
-				}
-				if (!string.IsNullOrEmpty(Config.Messages.SuccessRefreshCommand))
-				{
-					temp = $" {Config.Prefix} {Config.Messages.SuccessRefreshCommand}";
-					player.PrintToChat(Utility.ReplaceTags(temp));
-				}
-				return;
-			}
-			if (!string.IsNullOrEmpty(Config.Messages.CooldownRefreshCommand))
-			{
-				temp = $" {Config.Prefix} {Config.Messages.CooldownRefreshCommand}";
-				player.PrintToChat(Utility.ReplaceTags(temp));
-			}
-		}
-		private void OnCommandWS(CCSPlayerController? player, CommandInfo command)
-		{
-			if (!Config.Additional.SkinEnabled) return;
-			if (!Utility.IsPlayerValid(player)) return;
-
-			string temp;
-			if (!string.IsNullOrEmpty(Config.Messages.WebsiteMessageCommand))
-			{
-				temp = $" {Config.Prefix} {Config.Messages.WebsiteMessageCommand}";
-				player!.PrintToChat(Utility.ReplaceTags(temp));
-			}
-			if (!string.IsNullOrEmpty(Config.Messages.SynchronizeMessageCommand))
-			{
-				temp = $" {Config.Prefix} {Config.Messages.SynchronizeMessageCommand}";
-				player!.PrintToChat(Utility.ReplaceTags(temp));
-			}
-			if (!Config.Additional.KnifeEnabled) return;
-			if (!string.IsNullOrEmpty(Config.Messages.KnifeMessageCommand))
-			{
-				temp = $" {Config.Prefix} {Config.Messages.KnifeMessageCommand}";
-				player!.PrintToChat(Utility.ReplaceTags(temp));
-			}
 		}
 	}
 }
