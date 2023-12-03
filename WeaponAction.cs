@@ -28,7 +28,7 @@ namespace WeaponPaints
 				weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
 				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
 				weapon.FallbackSeed = 0;
-				weapon.FallbackWear = 0.0f;
+				weapon.FallbackWear = 0.000001f;
 				if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 				{
 					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
