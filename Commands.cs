@@ -13,29 +13,39 @@ namespace WeaponPaints
 			string temp = "";
 			if (player == null || player.Index <= 0) return;
 			int playerIndex = (int)player!.Index;
+
+			PlayerInfo playerInfo = new PlayerInfo
+			{
+				UserId = player.UserId,
+				Index = (int)player.Index,
+				SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+				Name = player?.PlayerName,
+				IpAddress = player?.IpAddress?.Split(":")[0]
+			};
+
 			if (playerIndex != 0 && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
 			{
 				commandCooldown[playerIndex] = DateTime.UtcNow;
 				if (weaponSync != null)
-					Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerIndex));
+					Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
 				if (Config.Additional.KnifeEnabled)
 				{
 					if (weaponSync != null)
-						Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerIndex));
+						Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
 
 					RefreshWeapons(player);
 				}
 				if (!string.IsNullOrEmpty(Config.Messages.SuccessRefreshCommand))
 				{
 					temp = $" {Config.Prefix} {Config.Messages.SuccessRefreshCommand}";
-					player.PrintToChat(Utility.ReplaceTags(temp));
+					player!.PrintToChat(Utility.ReplaceTags(temp));
 				}
 				return;
 			}
 			if (!string.IsNullOrEmpty(Config.Messages.CooldownRefreshCommand))
 			{
 				temp = $" {Config.Prefix} {Config.Messages.CooldownRefreshCommand}";
-				player.PrintToChat(Utility.ReplaceTags(temp));
+				player!.PrintToChat(Utility.ReplaceTags(temp));
 			}
 		}
 
