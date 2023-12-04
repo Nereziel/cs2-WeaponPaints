@@ -12,12 +12,25 @@ namespace WeaponPaints
 
 			CCSPlayerController? player = Utilities.GetPlayerFromIndex(playerIndex);
 
-			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV) return;
+			PlayerInfo playerInfo = new PlayerInfo
+			{
+				UserId = player.UserId,
+				Index = (int)player.Index,
+				SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+				Name = player?.PlayerName,
+				IpAddress = player?.IpAddress?.Split(":")[0]
+			};
 
-			if (Config.Additional.SkinEnabled && weaponSync != null)
-				_ = weaponSync.GetWeaponPaintsFromDatabase(playerIndex);
-			if (Config.Additional.KnifeEnabled && weaponSync != null)
-				_ = weaponSync.GetKnifeFromDatabase(playerIndex);
+			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || weaponSync == null) return;
+
+			Task.Run(async () =>
+			{
+				if (Config.Additional.SkinEnabled)
+					await weaponSync.GetKnifeFromDatabase(playerInfo);
+			});
+
+			//if (Config.Additional.KnifeEnabled && weaponSync != null)
+			//_ = weaponSync.GetKnifeFromDatabase(playerIndex);
 		}
 
 		private void OnClientDisconnect(int playerSlot)
@@ -92,7 +105,6 @@ namespace WeaponPaints
 
 					RemovePlayerKnife(player, true);
 					AddTimer(0.3f, () => GiveKnifeToPlayer(player));
-
 				}
 			}
 			return HookResult.Continue;
@@ -111,6 +123,8 @@ namespace WeaponPaints
 
 				if (Config.GlobalShare)
 					GlobalShareConnect();
+
+				weaponSync = new WeaponSynchronization(DatabaseConnectionString, Config, GlobalShareApi, GlobalShareServerId);
 			});
 
 			g_hTimerCheckSkinsData = AddTimer(10.0f, () =>
@@ -122,27 +136,49 @@ namespace WeaponPaints
 					if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.AuthorizedSteamID == null) continue;
 					if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
 
+					PlayerInfo playerInfo = new PlayerInfo
+					{
+						UserId = player.UserId,
+						Index = (int)player.Index,
+						SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+						Name = player?.PlayerName,
+						IpAddress = player?.IpAddress?.Split(":")[0]
+					};
+
 					if (Config.Additional.SkinEnabled && weaponSync != null)
-						_ = weaponSync.GetWeaponPaintsFromDatabase((int)player.Index);
+						_ = weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
 					if (Config.Additional.KnifeEnabled && weaponSync != null)
-						_ = weaponSync.GetKnifeFromDatabase((int)player.Index);
+						_ = weaponSync.GetKnifeFromDatabase(playerInfo);
 				}
 			}, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE | CounterStrikeSharp.API.Modules.Timers.TimerFlags.REPEAT);
+
 		}
 
 		private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;
-			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV) return HookResult.Continue;
 
-			if (!gPlayerWeaponsInfo.ContainsKey((int)player.Index))
+			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || weaponSync == null) return HookResult.Continue;
+
+			PlayerInfo playerInfo = new PlayerInfo
+			{
+				UserId = player.UserId,
+				Index = (int)player.Index,
+				SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+				Name = player?.PlayerName,
+				IpAddress = player?.IpAddress?.Split(":")[0]
+			};
+
+			if (!gPlayerWeaponsInfo.ContainsKey((int)player!.Index))
 			{
 				Console.WriteLine($"[WeaponPaints] Retrying to retrieve player {player.PlayerName} skins");
-				if (Config.Additional.SkinEnabled && weaponSync != null)
-					_ = weaponSync.GetWeaponPaintsFromDatabase((int)player.Index);
-				if (Config.Additional.KnifeEnabled && weaponSync != null)
-					_ = weaponSync.GetKnifeFromDatabase((int)player.Index);
-
+				Task.Run(async () =>
+				{
+					if (Config.Additional.SkinEnabled)
+						await weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
+					if (Config.Additional.KnifeEnabled)
+						await weaponSync.GetKnifeFromDatabase(playerInfo);
+				});
 			}
 
 			return HookResult.Continue;

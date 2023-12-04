@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(90)]
+[MinimumApiVersion(101)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static readonly Dictionary<string, string> weaponList = new()
@@ -156,22 +156,34 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			Utility.TestDatabaseConnection();
 		}
 
-		weaponSync = new WeaponSynchronization(DatabaseConnectionString, Config, GlobalShareApi, GlobalShareServerId);
-
 		if (hotReload)
 		{
 			OnMapStart(string.Empty);
-			Task.Run(async () =>
-			{
-				for (int i = 1; i <= Server.MaxPlayers; i++)
-				{
-					if (Config.Additional.SkinEnabled && weaponSync != null)
-						await weaponSync.GetWeaponPaintsFromDatabase(i);
 
-					if (Config.Additional.KnifeEnabled && weaponSync != null)
-						await weaponSync.GetKnifeFromDatabase(i);
-				}
-			});
+			List<CCSPlayerController> players = Utilities.GetPlayers();
+
+			foreach (CCSPlayerController player in players)
+			{
+				if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.AuthorizedSteamID == null) continue;
+				if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
+
+				PlayerInfo playerInfo = new PlayerInfo
+				{
+					UserId = player.UserId,
+					Index = (int)player.Index,
+					SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+					Name = player?.PlayerName,
+					IpAddress = player?.IpAddress?.Split(":")[0]
+				};
+
+				if (Config.Additional.SkinEnabled && weaponSync != null)
+					_ = weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
+				if (Config.Additional.KnifeEnabled && weaponSync != null)
+					_ = weaponSync.GetKnifeFromDatabase(playerInfo);
+			}
+
+			RegisterListeners();
+			RegisterCommands();
 		}
 
 		if (Config.Additional.KnifeEnabled)
@@ -237,6 +249,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				throw new Exception("[WeaponPaints] Unable to retrieve serverid from GlobalShare!");
 			}
 		}
+
 		Console.WriteLine("[WeaponPaints] GlobalShare ONLINE");
 	}
 }

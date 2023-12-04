@@ -21,24 +21,21 @@ namespace WeaponPaints
 			_globalShareServerId = globalShareServerId;
 		}
 
-		internal async Task GetKnifeFromDatabase(int playerIndex)
+		internal async Task GetKnifeFromDatabase(PlayerInfo player)
 		{
 			if (!_config.Additional.KnifeEnabled) return;
+			if (player.SteamId == null || player.Index == 0) return;
 			try
 			{
-				CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
-				if (!Utility.IsPlayerValid(player)) return;
-				if (player.AuthorizedSteamID == null) return;
-				string steamId = player.AuthorizedSteamID.SteamId64.ToString();
-
 				if (_config.GlobalShare)
 				{
 					var values = new Dictionary<string, string>
 				{
 				   { "server_id", _globalShareServerId.ToString() },
-				   { "steamid", steamId },
+				   { "steamid", player.SteamId },
 				   { "knife", "1" }
 				};
+
 					UriBuilder builder = new UriBuilder(_globalShareApi);
 					builder.Query = string.Join("&", values.Select(p => $"{Uri.EscapeDataString(p.Key)}={Uri.EscapeDataString(p.Value)}"));
 
@@ -53,7 +50,7 @@ namespace WeaponPaints
 							string result = await response.Content.ReadAsStringAsync();
 							if (!string.IsNullOrEmpty(result))
 							{
-								WeaponPaints.g_playersKnife[playerIndex] = result;
+								WeaponPaints.g_playersKnife[player.Index] = result;
 							}
 							else
 							{
@@ -72,10 +69,11 @@ namespace WeaponPaints
 				{
 					await connection.OpenAsync();
 					string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
-					string? PlayerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = steamId });
+					string? PlayerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = player.SteamId });
+
 					if (PlayerKnife != null)
 					{
-						WeaponPaints.g_playersKnife[playerIndex] = PlayerKnife;
+						WeaponPaints.g_playersKnife[player.Index] = PlayerKnife;
 					}
 					else
 					{
@@ -91,20 +89,14 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task GetWeaponPaintsFromDatabase(int playerIndex)
+		internal async Task GetWeaponPaintsFromDatabase(PlayerInfo player)
 		{
 			if (!_config.Additional.SkinEnabled) return;
+			if (player.SteamId == null || player.Index == 0) return;
 
-			CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
-			if (!Utility.IsPlayerValid(player)) return;
-
-			if (player.AuthorizedSteamID == null) return;
-
-			string steamId = player.AuthorizedSteamID.SteamId64.ToString();
-
-			if (!WeaponPaints.gPlayerWeaponsInfo.TryGetValue(playerIndex, out _))
+			if (!WeaponPaints.gPlayerWeaponsInfo.TryGetValue(player.Index, out _))
 			{
-				WeaponPaints.gPlayerWeaponsInfo[playerIndex] = new Dictionary<int, WeaponInfo>();
+				WeaponPaints.gPlayerWeaponsInfo[player.Index] = new Dictionary<int, WeaponInfo>();
 			}
 			try
 			{
@@ -113,7 +105,7 @@ namespace WeaponPaints
 					var values = new Dictionary<string, string>
 				{
 				   { "server_id", _globalShareServerId.ToString() },
-				   { "steamid", steamId },
+				   { "steamid", player.SteamId },
 				   { "skins", "1" }
 				};
 					UriBuilder builder = new UriBuilder(_globalShareApi);
@@ -146,7 +138,7 @@ namespace WeaponPaints
 											Seed = weaponSeed.Value,
 											Wear = weaponWear.Value
 										};
-										WeaponPaints.gPlayerWeaponsInfo[playerIndex][weaponDefIndex.Value] = weaponInfo;
+										WeaponPaints.gPlayerWeaponsInfo[player.Index][weaponDefIndex.Value] = weaponInfo;
 									}
 								}
 							}
@@ -164,7 +156,7 @@ namespace WeaponPaints
 					await connection.OpenAsync();
 
 					string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
-					IEnumerable<dynamic> PlayerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = steamId });
+					IEnumerable<dynamic> PlayerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = player.SteamId });
 
 					if (PlayerSkins != null && PlayerSkins.AsList().Count > 0)
 					{
@@ -181,7 +173,7 @@ namespace WeaponPaints
 								Seed = weaponSeed,
 								Wear = weaponWear
 							};
-							WeaponPaints.gPlayerWeaponsInfo[playerIndex][weaponDefIndex] = weaponInfo;
+							WeaponPaints.gPlayerWeaponsInfo[player.Index][weaponDefIndex] = weaponInfo;
 						});
 					}
 					else
