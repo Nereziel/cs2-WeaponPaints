@@ -3,6 +3,7 @@ using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Modules.Cvars;
 using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace WeaponPaints;
 
@@ -142,7 +143,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.3c";
+	public override string ModuleVersion => "1.3d";
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
 		return _config;
@@ -203,6 +204,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{
 			if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
 			{
+				Logger.LogError("You need to setup Database credentials in config!");
 				throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
 			}
 		}
@@ -246,10 +248,12 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			}
 			else
 			{
+				Logger.LogError("Unable to retrieve serverid from GlobalShare!");
 				throw new Exception("[WeaponPaints] Unable to retrieve serverid from GlobalShare!");
 			}
 		}
 
+		Logger.LogInformation("GlobalShare ONLINE!");
 		Console.WriteLine("[WeaponPaints] GlobalShare ONLINE");
 	}
 }

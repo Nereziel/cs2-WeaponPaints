@@ -105,6 +105,7 @@ namespace WeaponPaints
 
 					RemovePlayerKnife(player, true);
 					AddTimer(0.3f, () => GiveKnifeToPlayer(player));
+
 				}
 			}
 			return HookResult.Continue;
@@ -206,6 +207,7 @@ namespace WeaponPaints
 
 			return HookResult.Continue;
 		}
+
 
 		private HookResult OnRoundEnd(EventRoundEnd @event, GameEventInfo info)
 		{
