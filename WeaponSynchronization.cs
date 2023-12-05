@@ -190,20 +190,17 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task SyncKnifeToDatabase(int playerIndex, string knife)
+		internal async Task SyncKnifeToDatabase(PlayerInfo player, string knife)
 		{
 			if (!_config.Additional.KnifeEnabled) return;
 			try
 			{
-				CCSPlayerController player = Utilities.GetPlayerFromIndex(playerIndex);
-				if (player == null || !player.IsValid) return;
-				if (player.AuthorizedSteamID == null) return;
-				string steamId = player.AuthorizedSteamID.SteamId64.ToString();
+				if (player.SteamId == null || player.Index == 0) return;
 
 				using var connection = new MySqlConnection(_databaseConnectionString);
 				await connection.OpenAsync();
 				string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
-				await connection.ExecuteAsync(query, new { steamid = steamId, newKnife = knife });
+				await connection.ExecuteAsync(query, new { steamid = player.SteamId, newKnife = knife });
 				await connection.CloseAsync();
 			}
 			catch (Exception e)

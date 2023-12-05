@@ -109,6 +109,7 @@ namespace WeaponPaints
 			{
 				if (Utility.IsPlayerValid(player))
 				{
+					if (player == null) return;
 					var knifeName = option.Text;
 					var knifeKey = knivesOnly.FirstOrDefault(x => x.Value == knifeName).Key;
 					if (!string.IsNullOrEmpty(knifeKey))
@@ -127,14 +128,24 @@ namespace WeaponPaints
 							player!.PrintToChat(Utility.ReplaceTags(temp));
 						}
 
+						PlayerInfo playerInfo = new PlayerInfo
+						{
+							UserId = player.UserId,
+							Index = (int)player.Index,
+							SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+							Name = player?.PlayerName,
+							IpAddress = player?.IpAddress?.Split(":")[0]
+						};
+
 						g_playersKnife[(int)player!.Index] = knifeKey;
 
 						if (player!.PawnIsAlive && g_bCommandsAllowed)
 						{
 							RefreshWeapons(player);
 						}
+
 						if (weaponSync != null)
-							Task.Run(() => weaponSync.SyncKnifeToDatabase((int)player.Index, knifeKey));
+							Task.Run(async () => await weaponSync.SyncKnifeToDatabase(playerInfo, knifeKey));
 					}
 				}
 			};

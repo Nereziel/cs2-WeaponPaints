@@ -2,6 +2,7 @@
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Utils;
+using Microsoft.Extensions.Logging;
 
 namespace WeaponPaints
 {
@@ -81,7 +82,7 @@ namespace WeaponPaints
 		{
 			if (!_config.Additional.KnifeEnabled) return false;
 
-			if (player == null || !player.IsValid || !player.PlayerPawn.IsValid)
+			if (player == null || !player.IsValid || player.PlayerPawn == null || !player.PlayerPawn.IsValid || !player.PawnIsAlive)
 			{
 				return false;
 			}
@@ -221,6 +222,7 @@ namespace WeaponPaints
 						}
 						catch (Exception ex)
 						{
+							Logger.LogWarning("Refreshing weapons exception");
 							Console.WriteLine("[WeaponPaints] Refreshing weapons exception");
 							Console.WriteLine(ex.Message);
 						}
@@ -240,6 +242,7 @@ namespace WeaponPaints
 			if (weapons != null && weapons.Count > 0)
 			{
 				CCSPlayer_ItemServices service = new CCSPlayer_ItemServices(player.PlayerPawn.Value.ItemServices.Handle);
+				//var dropWeapon = VirtualFunction.CreateVoid<nint, nint>(service.Handle, GameData.GetOffset("CCSPlayer_ItemServices_DropActivePlayerWeapon"));
 
 				foreach (var weapon in weapons)
 				{
