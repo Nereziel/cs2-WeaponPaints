@@ -10,6 +10,7 @@ namespace WeaponPaints;
 [MinimumApiVersion(101)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
+	internal static ILogger? logger;
 	internal static readonly Dictionary<string, string> weaponList = new()
 	{
 		{"weapon_deagle", "Desert Eagle"},
@@ -77,7 +78,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	//internal static List<int> g_changedKnife = new();
 	internal bool g_bCommandsAllowed = true;
 
-	internal Uri GlobalShareApi = new Uri("https://weaponpaints.fun/api.php");
+	internal Uri GlobalShareApi = new("https://weaponpaints.fun/api.php");
 	internal int GlobalShareServerId = 0;
 	private DateTime[] commandCooldown = new DateTime[Server.MaxPlayers];
 	private string DatabaseConnectionString = string.Empty;
@@ -143,7 +144,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.3d";
+	public override string ModuleVersion => "1.3f";
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
 		return _config;
@@ -213,6 +214,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		_config = config;
 		Utility.Config = config;
 		Utility.ShowAd(ModuleVersion);
+		Task.Run(async () => await Utility.CheckVersion(ModuleVersion));
 	}
 
 	public override void Unload(bool hotReload)

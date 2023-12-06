@@ -209,21 +209,17 @@ namespace WeaponPaints
 				return;
 			}
 		}
-		internal async Task SyncWeaponPaintsToDatabase(CCSPlayerController? player)
+		internal async Task SyncWeaponPaintsToDatabase(PlayerInfo player)
 		{
-			if (player == null || !Utility.IsPlayerValid(player)) return;
-
-			int playerIndex = (int)player.Index;
-			if (player.AuthorizedSteamID == null) return;
-			string steamId = player.AuthorizedSteamID.SteamId64.ToString();
+			if (player == null || player.Index <= 0 || player.SteamId == null) return;
 
 			using var connection = new MySqlConnection(_databaseConnectionString);
 			await connection.OpenAsync();
 
-			if (!WeaponPaints.gPlayerWeaponsInfo.ContainsKey(playerIndex))
+			if (!WeaponPaints.gPlayerWeaponsInfo.ContainsKey(player.Index))
 				return;
 
-			foreach (var weaponInfoPair in WeaponPaints.gPlayerWeaponsInfo[playerIndex])
+			foreach (var weaponInfoPair in WeaponPaints.gPlayerWeaponsInfo[player.Index])
 			{
 				int weaponDefIndex = weaponInfoPair.Key;
 				WeaponInfo weaponInfo = weaponInfoPair.Value;
@@ -236,7 +232,7 @@ namespace WeaponPaints
 								   "`weapon_wear` = @wear, `weapon_seed` = @seed WHERE `steamid` = @steamid " +
 								   "AND `weapon_defindex` = @weaponDefIndex";
 
-				var updateParams = new { paintId, wear, seed, steamid = steamId, weaponDefIndex };
+				var updateParams = new { paintId, wear, seed, steamid = player.SteamId, weaponDefIndex };
 				int rowsAffected = await connection.ExecuteAsync(updateSql, updateParams);
 
 				if (rowsAffected == 0)
