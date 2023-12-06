@@ -133,6 +133,16 @@ if (isset($_SESSION['steamid'])) {
 								}
 								?>
 							</select>
+							<br></br>
+				     <div class="form-group">
+                                              <select class="form-select" id="wearSelect<?php echo $defindex ?>" name="wearSelect" onchange="updateWearValue<?php echo $defindex ?>(this.value)">
+                                                <option value="0.00">Factory New</option>
+                                                <option value="0.07">Minimal Wear</option>
+                                                <option value="0.15">Field-Tested</option>
+                                                <option value="0.38">Well-Worn</option>
+                                                <option value="0.45">Battle-Scarred</option>
+                                              </select>
+                                       </div>
                                        <div class="row">
                                          <div class="col-md-6">
                                            <div class="form-group">
@@ -154,6 +164,10 @@ if (isset($_SESSION['steamid'])) {
 				</div>
 			</div>
 		    <script>
+                      function updateWearValue<?php echo $defindex ?>(selectedValue) {
+                      document.getElementById("wear<?php echo $defindex ?>").value = selectedValue;
+                      document.getElementById("wearValue<?php echo $defindex ?>").innerText = selectedValue;
+                      }
                       // Add JavaScript to dynamically update the span with the current wear value
                      document.getElementById('wear<?php echo $defindex ?>').addEventListener('input', function () {
                      document.getElementById('wearValue<?php echo $defindex ?>').innerText = this.value;
