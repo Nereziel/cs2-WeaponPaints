@@ -95,7 +95,7 @@ namespace WeaponPaints
 			if (@event.Defindex == 42 || @event.Defindex == 59)
 			{
 				CCSPlayerController? player = @event.Userid;
-				if (!Utility.IsPlayerValid(player) || !player.PawnIsAlive || g_knifePickupCount[(int)player.Index] >= 2) return HookResult.Continue;
+				if (!Utility.IsPlayerValid(player) || !player.PawnIsAlive || g_knifePickupCount[(int)player.Index] >= 1) return HookResult.Continue;
 
 				if (g_playersKnife.ContainsKey((int)player.Index)
 					&&
@@ -105,7 +105,6 @@ namespace WeaponPaints
 
 					RemovePlayerKnife(player, true);
 					AddTimer(0.3f, () => GiveKnifeToPlayer(player));
-
 				}
 			}
 			return HookResult.Continue;

@@ -1,5 +1,7 @@
 ﻿using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
+using CounterStrikeSharp.API.Modules.Entities.Constants;
+using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Menu;
 
 namespace WeaponPaints
@@ -231,16 +233,22 @@ namespace WeaponPaints
 							}
 
 							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Paint = paintID;
-							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Wear = 0.0f;
+							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Wear = 0.01f;
 							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Seed = 0;
+
+							PlayerInfo playerInfo = new PlayerInfo
+							{
+								UserId = player.UserId,
+								Index = (int)player.Index,
+								SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+								Name = player?.PlayerName,
+								IpAddress = player?.IpAddress?.Split(":")[0]
+							};
 
 							if (!Config.GlobalShare)
 							{
-								if (weaponSync == null) return;
-								Task.Run(async () =>
-								{
-									await weaponSync.SyncWeaponPaintsToDatabase(p);
-								});
+								if (weaponSync != null)
+									Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
 							}
 						}
 					};
