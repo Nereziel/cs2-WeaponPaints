@@ -23,14 +23,15 @@ if (isset($_SESSION['steamid'])) {
         if ($ex[0] == "knife") {
             $db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(:steamid, :knife) ON DUPLICATE KEY UPDATE `knife` = :knife", ["steamid" => $steamid, "knife" => $knifes[$ex[1]]['weapon_name']]);
         } else {
-            if (array_key_exists($ex[1], $skins[$ex[0]]) && isset($_POST['wear']) && $_POST['wear'] >= 0.00 && $_POST['wear'] <= 1.00) {
-                $wear = floatval($_POST['wear']);
-                if (array_key_exists($ex[0], $selectedSkins)) {
-                    $db->query("UPDATE wp_player_skins SET weapon_paint_id = :weapon_paint_id, weapon_wear = :weapon_wear WHERE steamid = :steamid AND weapon_defindex = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear]);
-                } else {
-                    $db->query("INSERT INTO wp_player_skins (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`) VALUES (:steamid, :weapon_defindex, :weapon_paint_id, :weapon_wear)", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear]);
-                }
-            }
+			if (array_key_exists($ex[1], $skins[$ex[0]]) && isset($_POST['wear']) && $_POST['wear'] >= 0.00 && $_POST['wear'] <= 1.00 && isset($_POST['seed'])) {
+				$wear = floatval($_POST['wear']); // wear
+				$seed = intval($_POST['seed']); // seed
+				if (array_key_exists($ex[0], $selectedSkins)) {
+					$db->query("UPDATE wp_player_skins SET weapon_paint_id = :weapon_paint_id, weapon_wear = :weapon_wear, weapon_seed = :weapon_seed WHERE steamid = :steamid AND weapon_defindex = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
+				} else {
+					$db->query("INSERT INTO wp_player_skins (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) VALUES (:steamid, :weapon_defindex, :weapon_paint_id, :weapon_wear, :weapon_seed)", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
+				}
+			}
         }
         header("Location: index.php");
     }
@@ -132,11 +133,22 @@ if (isset($_SESSION['steamid'])) {
 								}
 								?>
 							</select>
-					        <div class="form-group">
-                                                  <label for="wear">Wear:</label>
-                                                   <input type="range" class="form-range" min="0.00" max="1.00" step="0.01" id="wear<?php echo $defindex ?>" name="wear" value="0.00">
-                                                    <span id="wearValue<?php echo $defindex ?>">0.00</span>
-                                                 </div>
+                                       <div class="row">
+                                         <div class="col-md-6">
+                                           <div class="form-group">
+                                                <label for="wear">Wear:</label>
+                                                <input type="range" class="form-range" min="0.00" max="1.00" step="0.01" id="wear<?php echo $defindex ?>" name="wear" value="0.00">
+                                                <span id="wearValue<?php echo $defindex ?>">0.00</span>
+                                          </div>
+                                          </div>
+                                         <div class="col-md-6">
+                                          <div class="form-group">
+                                               <label for="seed">Seed:</label>
+                                               <input type="range" class="form-range" min="0" max="1000" step="1" id="seed<?php echo $defindex ?>" name="seed" value="0">
+                                               <span id="seedValue<?php echo $defindex ?>">0</span>
+                                         </div>
+                                         </div>
+                                        </div>
 						</form>
 					</div>
 				</div>
@@ -146,6 +158,10 @@ if (isset($_SESSION['steamid'])) {
                      document.getElementById('wear<?php echo $defindex ?>').addEventListener('input', function () {
                      document.getElementById('wearValue<?php echo $defindex ?>').innerText = this.value;
                      });
+                      // seed
+		     document.getElementById('seed<?php echo $defindex ?>').addEventListener('input', function () {
+                     document.getElementById('seedValue<?php echo $defindex ?>').innerText = this.value;
+                     });	    
                  </script>
 		<?php } ?>
 	<?php } ?>
