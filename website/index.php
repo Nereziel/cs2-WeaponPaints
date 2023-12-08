@@ -154,8 +154,7 @@ if (isset($_SESSION['steamid'])) {
                                          <div class="col-md-6">
                                           <div class="form-group">
                                                <label for="seed">Seed:</label>
-                                               <input type="range" class="form-range" min="0" max="1000" step="1" id="seed<?php echo $defindex ?>" name="seed" value="0">
-                                               <span id="seedValue<?php echo $defindex ?>">0</span>
+                                               <input type="text" value="0" class="form-control" id="seed<?php echo $defindex ?>" name="seed" oninput="validateSeed(this)">
                                          </div>
                                          </div>
                                         </div>
@@ -173,9 +172,19 @@ if (isset($_SESSION['steamid'])) {
                      document.getElementById('wearValue<?php echo $defindex ?>').innerText = this.value;
                      });
                       // seed
-		     document.getElementById('seed<?php echo $defindex ?>').addEventListener('input', function () {
-                     document.getElementById('seedValue<?php echo $defindex ?>').innerText = this.value;
-                     });	    
+		     function validateSeed(input) {
+                         // Check entered value
+                      var inputValue = input.value.replace(/[^0-9]/g, ''); // Just get the numbers
+
+                       if (inputValue === "") {
+                        input.value = 0; // Set to 0 if empty or no numbers
+                       } else {
+                         var numericValue = parseInt(inputValue);
+                       numericValue = Math.min(1000, Math.max(1, numericValue)); // Interval control
+
+                       input.value = numericValue;
+                       }
+                   }	    
                  </script>
 		<?php } ?>
 	<?php } ?>
