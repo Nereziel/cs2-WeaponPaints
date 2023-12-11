@@ -133,46 +133,71 @@ if (isset($_SESSION['steamid'])) {
 								}
 								?>
 							</select>
-							<br></br>
-				     <div class="form-group">
-                                              <select class="form-select" id="wearSelect<?php echo $defindex ?>" name="wearSelect" onchange="updateWearValue<?php echo $defindex ?>(this.value)">
-                                                <option value="0.00">Factory New</option>
-                                                <option value="0.07">Minimal Wear</option>
-                                                <option value="0.15">Field-Tested</option>
-                                                <option value="0.38">Well-Worn</option>
-                                                <option value="0.45">Battle-Scarred</option>
-                                              </select>
-                                       </div>
-                                       <div class="row">
-                                         <div class="col-md-6">
-                                           <div class="form-group">
-                                                <label for="wear">Wear:</label>
-                                                <input type="range" class="form-range" min="0.00" max="1.00" step="0.01" id="wear<?php echo $defindex ?>" name="wear" value="0.00">
-                                                <span id="wearValue<?php echo $defindex ?>">0.00</span>
-                                          </div>
-                                          </div>
-                                         <div class="col-md-6">
-                                          <div class="form-group">
-                                               <label for="seed">Seed:</label>
-                                               <input type="text" value="0" class="form-control" id="seed<?php echo $defindex ?>" name="seed" oninput="validateSeed(this)">
-                                         </div>
-                                         </div>
-                                        </div>
-						</form>
-					</div>
-				</div>
-			</div>
+						<br></br>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#weaponModal<?php echo $defindex ?>">
+                    Settings
+                </button>
+		</div>
+		 <div class="modal fade" id="weaponModal<?php echo $defindex ?>" tabindex="-1" role="dialog" aria-labelledby="weaponModalLabel<?php echo $defindex ?>" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+			       <h5 class='card-title item-name'>
+				<?php
+				if (array_key_exists($defindex, $selectedSkins)) {
+                                     echo "{$skins[$defindex][$selectedSkins[$defindex]]["paint_name"]} Settings";
+                                    } else {
+                                     echo "{$default["paint_name"]} Settings";
+                                    }
+			         ?>
+                                </h5>
+                            </div>
+			<div class="modal-body">
+			 <div class="form-group">
+                              <select class="form-select" id="wearSelect<?php echo $defindex ?>" name="wearSelect" onchange="updateWearValue<?php echo $defindex ?>(this.value)">
+                              <option value="0.00">Factory New</option>
+                              <option value="0.07">Minimal Wear</option>
+                              <option value="0.15">Field-Tested</option>
+                              <option value="0.38">Well-Worn</option>
+                              <option value="0.45">Battle-Scarred</option>
+                              </select>
+                           </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                   <label for="wear">Wear:</label>
+                                    <input type="text" value="0" class="form-control" id="wear<?php echo $defindex ?>" name="wear">
+                           </div>
+                           </div>
+                           <div class="col-md-6">
+                             <div class="form-group">
+                                   <label for="seed">Seed:</label>
+                                   <input type="text" value="0" class="form-control" id="seed<?php echo $defindex ?>" name="seed" oninput="validateSeed(this)">
+                         </div>
+                        </div>
+                       </div>
+		       </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-danger">Use</button>
+                             // form end </form>
+                            </div>
+                        </div>
+                       </div>
+                      </div>
+	              </div>
+                   </div>
 		    <script>
-                      function updateWearValue<?php echo $defindex ?>(selectedValue) {
-                      document.getElementById("wear<?php echo $defindex ?>").value = selectedValue;
-                      document.getElementById("wearValue<?php echo $defindex ?>").innerText = selectedValue;
-                      }
-                      // Add JavaScript to dynamically update the span with the current wear value
-                     document.getElementById('wear<?php echo $defindex ?>').addEventListener('input', function () {
-                     document.getElementById('wearValue<?php echo $defindex ?>').innerText = this.value;
-                     });
-                      // seed
-		     function validateSeed(input) {
+				     //  wear
+                        function updateWearValue<?php echo $defindex ?>(selectedValue) {
+                             var wearInputElement = document.getElementById("wear<?php echo $defindex ?>");
+                             wearInputElement.value = selectedValue;
+                         }
+                          function validateWear(inputElement) {
+                        inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
+                        }
+                     // seed
+		               function validateSeed(input) {
                          // Check entered value
                       var inputValue = input.value.replace(/[^0-9]/g, ''); // Just get the numbers
 
@@ -184,7 +209,7 @@ if (isset($_SESSION['steamid'])) {
 
                        input.value = numericValue;
                        }
-                   }	    
+                   }	
                  </script>
 		<?php } ?>
 	<?php } ?>
