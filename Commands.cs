@@ -1,7 +1,5 @@
 ﻿using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
-using CounterStrikeSharp.API.Modules.Entities.Constants;
-using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Menu;
 
 namespace WeaponPaints
@@ -12,7 +10,6 @@ namespace WeaponPaints
 		{
 			if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
 			if (!Utility.IsPlayerValid(player)) return;
-			string temp = "";
 			if (player == null || player.Index <= 0) return;
 			int playerIndex = (int)player!.Index;
 
@@ -37,17 +34,15 @@ namespace WeaponPaints
 
 					RefreshWeapons(player);
 				}
-				if (!string.IsNullOrEmpty(Config.Messages.SuccessRefreshCommand))
+				if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
 				{
-					temp = $" {Config.Prefix} {Config.Messages.SuccessRefreshCommand}";
-					player!.PrintToChat(Utility.ReplaceTags(temp));
+					player!.Print(Localizer["wp_command_refresh_done"]);
 				}
 				return;
 			}
-			if (!string.IsNullOrEmpty(Config.Messages.CooldownRefreshCommand))
+			if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
 			{
-				temp = $" {Config.Prefix} {Config.Messages.CooldownRefreshCommand}";
-				player!.PrintToChat(Utility.ReplaceTags(temp));
+				player!.Print(Localizer["wp_command_cooldown"]);
 			}
 		}
 
@@ -56,22 +51,18 @@ namespace WeaponPaints
 			if (!Config.Additional.SkinEnabled) return;
 			if (!Utility.IsPlayerValid(player)) return;
 
-			string temp;
-			if (!string.IsNullOrEmpty(Config.Messages.WebsiteMessageCommand))
+			if (!string.IsNullOrEmpty(Localizer["wp_info_website"]))
 			{
-				temp = $" {Config.Prefix} {Config.Messages.WebsiteMessageCommand}";
-				player!.PrintToChat(Utility.ReplaceTags(temp));
+				player!.Print(Localizer["wp_info_website", Config.Website]);
 			}
-			if (!string.IsNullOrEmpty(Config.Messages.SynchronizeMessageCommand))
+			if (!string.IsNullOrEmpty(Localizer["wp_info_refresh"]))
 			{
-				temp = $" {Config.Prefix} {Config.Messages.SynchronizeMessageCommand}";
-				player!.PrintToChat(Utility.ReplaceTags(temp));
+				player!.Print(Localizer["wp_info_refresh"]);
 			}
 			if (!Config.Additional.KnifeEnabled) return;
-			if (!string.IsNullOrEmpty(Config.Messages.KnifeMessageCommand))
+			if (!string.IsNullOrEmpty(Localizer["wp_info_knife"]))
 			{
-				temp = $" {Config.Prefix} {Config.Messages.KnifeMessageCommand}";
-				player!.PrintToChat(Utility.ReplaceTags(temp));
+				player!.Print(Localizer["wp_info_knife"]);
 			}
 		}
 
@@ -106,7 +97,7 @@ namespace WeaponPaints
 				.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet"))
 				.ToDictionary(pair => pair.Key, pair => pair.Value);
 
-			var giveItemMenu = new ChatMenu(Utility.ReplaceTags($" {Config.Messages.KnifeMenuTitle}"));
+			var giveItemMenu = new ChatMenu(Localizer["wp_knife_menu_title"]);
 			var handleGive = (CCSPlayerController? player, ChatMenuOption option) =>
 			{
 				if (Utility.IsPlayerValid(player))
@@ -116,18 +107,14 @@ namespace WeaponPaints
 					var knifeKey = knivesOnly.FirstOrDefault(x => x.Value == knifeName).Key;
 					if (!string.IsNullOrEmpty(knifeKey))
 					{
-						string temp = "";
-
-						if (!string.IsNullOrEmpty(Config.Messages.ChosenKnifeMenu))
+						if (!string.IsNullOrEmpty(Localizer["wp_knife_menu_select"]))
 						{
-							temp = $" {Config.Prefix} {Config.Messages.ChosenKnifeMenu}".Replace("{KNIFE}", knifeName);
-							player!.PrintToChat(Utility.ReplaceTags(temp));
+							player!.Print(Localizer["wp_knife_menu_select", knifeName]);
 						}
 
-						if (!string.IsNullOrEmpty(Config.Messages.ChosenKnifeMenuKill) && Config.Additional.CommandKillEnabled)
+						if (!string.IsNullOrEmpty(Localizer["wp_knife_menu_kill"]) && Config.Additional.CommandKillEnabled)
 						{
-							temp = $" {Config.Prefix} {Config.Messages.ChosenKnifeMenuKill}";
-							player!.PrintToChat(Utility.ReplaceTags(temp));
+							player!.Print(Localizer["wp_knife_menu_kill"]);
 						}
 
 						PlayerInfo playerInfo = new PlayerInfo
@@ -166,10 +153,9 @@ namespace WeaponPaints
 					ChatMenus.OpenMenu(player, giveItemMenu);
 					return;
 				}
-				if (!string.IsNullOrEmpty(Config.Messages.CooldownRefreshCommand))
+				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
 				{
-					string temp = $" {Config.Prefix} {Config.Messages.CooldownRefreshCommand}";
-					player.PrintToChat(Utility.ReplaceTags(temp));
+					player!.Print(Localizer["wp_command_cooldown"]);
 				}
 			});
 		}
@@ -177,7 +163,7 @@ namespace WeaponPaints
 		private void SetupSkinsMenu()
 		{
 			var classNamesByWeapon = weaponList.ToDictionary(kvp => kvp.Value, kvp => kvp.Key);
-			var weaponSelectionMenu = new ChatMenu(Utility.ReplaceTags($" {Config.Messages.WeaponMenuTitle}"));
+			var weaponSelectionMenu = new ChatMenu(Localizer["wp_skin_menu_weapon_title"]);
 
 			// Function to handle skin selection for a specific weapon
 			var handleWeaponSelection = (CCSPlayerController? player, ChatMenuOption option) =>
@@ -195,7 +181,7 @@ namespace WeaponPaints
 					weaponName?.ToString() == selectedWeaponClassname
 				)?.ToList();
 
-					var skinSubMenu = new ChatMenu(Utility.ReplaceTags($" {Config.Messages.SkinMenuTitle}").Replace("{WEAPON}", selectedWeapon));
+					var skinSubMenu = new ChatMenu(Localizer["wp_skin_menu_skin_title", selectedWeapon]);
 
 					// Function to handle skin selection for the chosen weapon
 					var handleSkinSelection = (CCSPlayerController? p, ChatMenuOption opt) =>
@@ -224,8 +210,7 @@ namespace WeaponPaints
 							int.TryParse(weaponDefIndexObj.ToString(), out var weaponDefIndex) &&
 							int.TryParse(selectedPaintID, out var paintID))
 						{
-							string temp = $" {Config.Prefix} {Config.Messages.ChosenSkinMenu}".Replace("{SKIN}", selectedSkin);
-							p.PrintToChat(Utility.ReplaceTags(temp));
+							p!.Print(Localizer["f", selectedSkin]);
 
 							if (!gPlayerWeaponsInfo[playerIndex].ContainsKey(weaponDefIndex))
 							{
@@ -294,10 +279,9 @@ namespace WeaponPaints
 					ChatMenus.OpenMenu(player, weaponSelectionMenu);
 					return;
 				}
-				if (!string.IsNullOrEmpty(Config.Messages.CooldownRefreshCommand))
+				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
 				{
-					string temp = $"{Config.Prefix} {Config.Messages.CooldownRefreshCommand}";
-					player.PrintToChat(Utility.ReplaceTags(temp));
+					player!.Print(Localizer["wp_command_cooldown"]);
 				}
 			});
 		}

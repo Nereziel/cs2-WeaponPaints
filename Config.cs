@@ -3,32 +3,6 @@ using System.Text.Json.Serialization;
 
 namespace WeaponPaints
 {
-	public class Messages
-	{
-		[JsonPropertyName("WebsiteMessageCommand")]
-		public string WebsiteMessageCommand { get; set; } = "Visit {WEBSITE} where you can change skins.";
-		[JsonPropertyName("SynchronizeMessageCommand")]
-		public string SynchronizeMessageCommand { get; set; } = "Type !wp to synchronize chosen skins.";
-		[JsonPropertyName("KnifeMessageCommand")]
-		public string KnifeMessageCommand { get; set; } = "Type !knife to open knife menu.";
-		[JsonPropertyName("CooldownRefreshCommand")]
-		public string CooldownRefreshCommand { get; set; } = "You can't refresh weapon paints right now.";
-		[JsonPropertyName("SuccessRefreshCommand")]
-		public string SuccessRefreshCommand { get; set; } = "Refreshing weapon paints.";
-		[JsonPropertyName("ChosenKnifeMenu")]
-		public string ChosenKnifeMenu { get; set; } = "You have chosen {KNIFE} as your knife.";
-		[JsonPropertyName("ChosenSkinMenu")]
-		public string ChosenSkinMenu { get; set; } = "You have chosen {SKIN} as your skin.";
-		[JsonPropertyName("ChosenKnifeMenuKill")]
-		public string ChosenKnifeMenuKill { get; set; } = "To correctly apply skin for knife, you need to type !kill.";
-		[JsonPropertyName("KnifeMenuTitle")]
-		public string KnifeMenuTitle { get; set; } = "Knife Menu.";
-		[JsonPropertyName("WeaponMenuTitle")]
-		public string WeaponMenuTitle { get; set; } = "Weapon Menu.";
-		[JsonPropertyName("SkinMenuTitle")]
-		public string SkinMenuTitle { get; set; } = "Select skin for {WEAPON}";
-	}
-
 	public class Additional
 	{
 		[JsonPropertyName("SkinVisibilityFix")]
@@ -66,6 +40,8 @@ namespace WeaponPaints
 
 		[JsonPropertyName("GiveRandomSkin")]
 		public bool GiveRandomSkin { get; set; } = false;
+		[JsonPropertyName("GiveKnifeAfterRemove")]
+		public bool GiveKnifeAfterRemove { get; set; } = false;
 	}
 
 	public class WeaponPaintsConfig : BasePluginConfig
@@ -98,9 +74,6 @@ namespace WeaponPaints
 
 		[JsonPropertyName("Website")]
 		public string Website { get; set; } = "example.com/skins";
-
-		[JsonPropertyName("Messages")]
-		public Messages Messages { get; set; } = new Messages();
 
 		[JsonPropertyName("Additional")]
 		public Additional Additional { get; set; } = new Additional();
