@@ -136,7 +136,15 @@ if (isset($_SESSION['steamid'])) {
 								?>
 							</select>
 						<br></br>
-<?php if ($selectedSkinInfo !== null): ?>
+<?php
+$selectedSkinInfo = isset($selectedSkins[$defindex]) ? $selectedSkins[$defindex] : null;
+$steamid = $_SESSION['steamid'];
+$defindex = $defindex; // get defindex here, correct if not
+$queryCheck = $db->select("SELECT 1 FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` = :defindex", ["steamid" => $steamid, "defindex" => $defindex]);
+$hasSkinData = !empty($queryCheck);
+
+if ($selectedSkinInfo && $hasSkinData):
+?>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#weaponModal<?php echo $defindex ?>">
         Settings
     </button>
@@ -150,7 +158,6 @@ if (isset($_SESSION['steamid'])) {
         }
     </script>
 <?php endif; ?>
-		</div>
 
  <?php
 // wear value 
