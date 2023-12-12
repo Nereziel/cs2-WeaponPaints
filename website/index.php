@@ -158,7 +158,9 @@ if ($selectedSkinInfo && $hasSkinData):
         }
     </script>
 <?php endif; ?>
-
+							     
+</div>
+							
  <?php
 // wear value 
 $queryWear = $db->select("SELECT `weapon_wear` FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $defindex]);
