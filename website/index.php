@@ -140,6 +140,20 @@ if (isset($_SESSION['steamid'])) {
                     Settings
                 </button>
 		</div>
+
+ <?php
+// wear value 
+$queryWear = $db->select("SELECT `weapon_wear` FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $defindex]);
+$selectedSkinInfo = isset($selectedSkins[$defindex]) ? $selectedSkins[$defindex] : null;
+$initialWearValue = isset($selectedSkinInfo['weapon_wear']) ? $selectedSkinInfo['weapon_wear'] : (isset($queryWear[0]['weapon_wear']) ? $queryWear[0]['weapon_wear'] : 0);
+	
+// seed value 
+$querySeed = $db->select("SELECT `weapon_seed` FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $defindex]);
+$selectedSkinInfo = isset($selectedSkins[$defindex]) ? $selectedSkins[$defindex] : null;
+$initialSeedValue = isset($selectedSkinInfo['weapon_seed']) ? $selectedSkinInfo['weapon_seed'] : (isset($querySeed[0]['weapon_seed']) ? $querySeed[0]['weapon_seed'] : 0);
+?>
+
+							
 		 <div class="modal fade" id="weaponModal<?php echo $defindex ?>" tabindex="-1" role="dialog" aria-labelledby="weaponModalLabel<?php echo $defindex ?>" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -157,24 +171,26 @@ if (isset($_SESSION['steamid'])) {
 			<div class="modal-body">
 			 <div class="form-group">
                               <select class="form-select" id="wearSelect<?php echo $defindex ?>" name="wearSelect" onchange="updateWearValue<?php echo $defindex ?>(this.value)">
-                              <option value="0.00">Factory New</option>
-                              <option value="0.07">Minimal Wear</option>
-                              <option value="0.15">Field-Tested</option>
-                              <option value="0.38">Well-Worn</option>
-                              <option value="0.45">Battle-Scarred</option>
+                                  <option disabled>Select Wear</option>
+                                  <option value="0.00" <?php echo ($initialWearValue == 0.00) ? 'selected' : ''; ?>>Factory New</option>
+                                  <option value="0.07" <?php echo ($initialWearValue == 0.07) ? 'selected' : ''; ?>>Minimal Wear</option>
+                                  <option value="0.15" <?php echo ($initialWearValue == 0.15) ? 'selected' : ''; ?>>Field-Tested</option>
+                                  <option value="0.38" <?php echo ($initialWearValue == 0.38) ? 'selected' : ''; ?>>Well-Worn</option>
+                                  <option value="0.45" <?php echo ($initialWearValue == 0.45) ? 'selected' : ''; ?>>Battle-Scarred</option>
                               </select>
+
                            </div>
                           <div class="row">
                             <div class="col-md-6">
                               <div class="form-group">
                                    <label for="wear">Wear:</label>
-                                    <input type="text" value="0" class="form-control" id="wear<?php echo $defindex ?>" name="wear">
+                                    <input type="text" value="<?php echo $initialWearValue; ?>" class="form-control" id="wear<?php echo $defindex ?>" name="wear">
                            </div>
                            </div>
                            <div class="col-md-6">
                              <div class="form-group">
                                    <label for="seed">Seed:</label>
-                                   <input type="text" value="0" class="form-control" id="seed<?php echo $defindex ?>" name="seed" oninput="validateSeed(this)">
+                                   <input type="text" value="<?php echo $initialSeedValue; ?>" class="form-control" id="seed<?php echo $defindex ?>" name="seed" oninput="validateSeed(this)">
                          </div>
                         </div>
                        </div>
@@ -182,7 +198,7 @@ if (isset($_SESSION['steamid'])) {
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-danger">Use</button>
-                             // form end </form>
+                         </form>
                             </div>
                         </div>
                        </div>
