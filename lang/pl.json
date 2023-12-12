@@ -1,0 +1,14 @@
+{
+	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
+	"wp_info_website": "Odwiedź {lime}{0}{default} gdzie będziesz mógł ustawić skiny",
+	"wp_info_refresh": "Wpisz {lime}!wp{default} aby zsynchronizować swoje skiny",
+	"wp_info_knife": "Wpisz {lime}!knife{default} aby wy�wietlić menu no�y",
+	"wp_command_cooldown": "{lightred}Odczekaj chwilę przed wykonaniem tej komendy...",
+	"wp_command_refresh_done": "{lime}Pomyslnie zsynchronizowano twoje skiny",
+	"wp_knife_menu_select": "Wybrałeś {lime}{0}{default} jako swój nóż",
+	"wp_knife_menu_kill": "Do prawidłowego zastosowania noża użyj {lime}!kill{default}",
+	"wp_knife_menu_title": "Menu noży",
+	"wp_skin_menu_weapon_title": "Menu broni",
+	"wp_skin_menu_skin_title": "Wybierz skin dla {lime}{0}{default}",
+	"wp_skin_menu_select": "Wybrałeś {lime}{0}{default} jako swój skin"
+}

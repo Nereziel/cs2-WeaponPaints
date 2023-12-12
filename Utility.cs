@@ -108,13 +108,13 @@ namespace WeaponPaints
 			return message;
 		}
 
-		internal static async Task CheckVersion(string version)
+		internal static async Task CheckVersion(string version, ILogger logger)
 		{
 			using (HttpClient client = new HttpClient())
 			{
 				try
 				{
-					HttpResponseMessage response = await client.GetAsync("https://github.com/Nereziel/cs2-WeaponPaints/blob/main/VERSION");
+					HttpResponseMessage response = await client.GetAsync("https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/VERSION");
 
 					if (response.IsSuccessStatusCode)
 					{
@@ -125,24 +125,25 @@ namespace WeaponPaints
 
 						if (comparisonResult < 0)
 						{
-							WeaponPaints.logger!.LogWarning("Plugin is outdated! Check https://github.com/Nereziel/cs2-WeaponPaints");
+							logger.LogWarning("Plugin is outdated! Check https://github.com/Nereziel/cs2-WeaponPaints");
 						}
 						else if (comparisonResult > 0)
 						{
-							WeaponPaints.logger!.LogInformation("Probably dev version detected");
+							logger.LogInformation("Probably dev version detected");
 						}
 						else
 						{
-							WeaponPaints.logger!.LogInformation("Plugin is up to date");
+							logger.LogInformation("Plugin is up to date");
 						}
 					}
 					else
 					{
-						WeaponPaints.logger!.LogWarning("Failed to check version");
+						logger.LogWarning("Failed to check version");
 					}
 				}
-				catch (Exception)
+				catch (Exception ex)
 				{
+					Console.WriteLine(ex);
 				}
 			}
 		}

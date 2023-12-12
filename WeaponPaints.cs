@@ -4,13 +4,13 @@ using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Modules.Cvars;
 using Newtonsoft.Json.Linq;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Localization;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(101)]
+[MinimumApiVersion(121)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
-	internal static ILogger? logger;
 	internal static readonly Dictionary<string, string> weaponList = new()
 	{
 		{"weapon_deagle", "Desert Eagle"},
@@ -70,6 +70,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	};
 
 	internal static WeaponPaintsConfig _config = new WeaponPaintsConfig();
+	internal static IStringLocalizer? _localizer;
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
 	internal static Dictionary<int, string> g_playersKnife = new();
 	internal static Dictionary<int, Dictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new Dictionary<int, Dictionary<int, WeaponInfo>>();
@@ -144,7 +145,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.3f";
+	public override string ModuleVersion => "1.3g";
+
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
 		return _config;
@@ -182,10 +184,13 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					_ = weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
 				if (Config.Additional.KnifeEnabled && weaponSync != null)
 					_ = weaponSync.GetKnifeFromDatabase(playerInfo);
-			}
 
+				g_knifePickupCount[(int)player!.Index] = 0;
+			}
+			/*
 			RegisterListeners();
 			RegisterCommands();
+			*/
 		}
 
 		if (Config.Additional.KnifeEnabled)
@@ -212,9 +217,11 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 		Config = config;
 		_config = config;
+		_localizer = Localizer;
+
 		Utility.Config = config;
 		Utility.ShowAd(ModuleVersion);
-		Task.Run(async () => await Utility.CheckVersion(ModuleVersion));
+		Task.Run(async () => await Utility.CheckVersion(ModuleVersion, Logger));
 	}
 
 	public override void Unload(bool hotReload)

@@ -20,6 +20,11 @@ namespace WeaponPaints
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
+			if (isKnife)
+			{
+				weapon.AttributeManager.Item.EntityQuality = 3;
+			}
+
 			if (_config.Additional.GiveRandomSkin &&
 				 !gPlayerWeaponsInfo[playerIndex].ContainsKey(weaponDefIndex))
 			{
@@ -280,10 +285,10 @@ namespace WeaponPaints
 		}
 		private static int GetRandomPaint(int defindex)
 		{
-			Random rnd = new Random();
 
-			if (WeaponPaints.skinsList != null)
+			if (skinsList != null)
 			{
+				Random rnd = new Random();
 				// Filter weapons by the provided defindex
 				var filteredWeapons = skinsList.FindAll(w => w["weapon_defindex"]?.ToString() == defindex.ToString());
 
