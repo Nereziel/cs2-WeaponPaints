@@ -136,9 +136,20 @@ if (isset($_SESSION['steamid'])) {
 								?>
 							</select>
 						<br></br>
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#weaponModal<?php echo $defindex ?>">
-                    Settings
-                </button>
+<?php if ($selectedSkinInfo !== null): ?>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#weaponModal<?php echo $defindex ?>">
+        Settings
+    </button>
+<?php else: ?>
+    <button type="button" class="btn btn-primary" onclick="showSkinSelectionAlert()">
+        Settings
+    </button>
+    <script>
+        function showSkinSelectionAlert() {
+            alert("You need to select a skin first.");
+        }
+    </script>
+<?php endif; ?>
 		</div>
 
  <?php
