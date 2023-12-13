@@ -210,7 +210,7 @@ namespace WeaponPaints
 							int.TryParse(weaponDefIndexObj.ToString(), out var weaponDefIndex) &&
 							int.TryParse(selectedPaintID, out var paintID))
 						{
-							p!.Print(Localizer["f", selectedSkin]);
+							p!.Print(Localizer["wp_skin_menu_select", selectedSkin]);
 
 							if (!gPlayerWeaponsInfo[playerIndex].ContainsKey(weaponDefIndex))
 							{
