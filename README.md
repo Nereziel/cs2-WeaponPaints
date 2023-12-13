@@ -9,18 +9,19 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E2G0P2O) or [![Donate on Steam](https://github.com/Nereziel/cs2-WeaponPaints/assets/32937653/a0d53822-4ca7-4caf-83b4-e1a9b5f8c94e)](https://steamcommunity.com/tradeoffer/new/?partner=41515647&token=gW2W-nXE)
 
 ## Features
-- Changes only paint, seed and wear on weapons and knives;
-- MySQL based or global website at [weaponpaints.fun](https://weaponpaints.fun/), so you dont need MySQL/Website;
-- Data sync on player connect;
-- Added command **`!wp`** to refresh skins; ***(with cooldown in second can be configured)***
-- Added command **`!ws`** to show website;
-- Added command **`!knife`** to show menu with knives;
-- Knife change is now limited to have these cvars empty **`mp_t_default_melee ""`** and **`mp_ct_default_melee ""`**;
+- Changes only paint, seed and wear on weapons and knives
+- MySQL based or global website at [weaponpaints.fun](https://weaponpaints.fun/), so you dont need MySQL/Website
+- Data sync on player connect
+- Added command **`!wp`** to refresh skins ***(with cooldown in second can be configured)***
+- Added command **`!ws`** to show website
+- Added command **`!knife`** to show menu with knives
+- Knife change is now limited to have these cvars empty **`mp_t_default_melee ""`** and **`mp_ct_default_melee ""`**
+- Translations support, submit a PR if you want to share your translation
 
 ## CS2 Server
-- Compile and copy plugin to plugins, [more info here](https://docs.cssharp.dev/guides/hello-world-plugin/);
-- Setup **`addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json`** set **`GlobalShare`** to **`true`** for global, or include database credentials;
-- in **`addons/counterstrikesharp/configs/core.json`** set **FollowCS2ServerGuidelines** to **`false`**;
+- Compile and copy plugin to plugins, [more info here](https://docs.cssharp.dev/guides/hello-world-plugin/)
+- Setup **`addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json`** set **`GlobalShare`** to **`true`** for global, or include database credentials
+- in **`addons/counterstrikesharp/configs/core.json`** set **FollowCS2ServerGuidelines** to **`false`**
 
 ## Plugin Configuration
 <details>
@@ -69,12 +70,17 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 </details>
     
 ## Web install
-Disregard if the config is **`GlobalShare = true`**;
-- Requires PHP >= 7.4; ***(Tested on php ver **`8.2.3`** and nginx webserver)***
-- Copy website to web server; ***(Folder `img` not needed)***
-- Get [Steam API Key](https://steamcommunity.com/dev/apikey);
-- Fill in database credentials and api key in `class/config.php`;
-- Visit website and login via steam;
+Disregard if the config is **`GlobalShare = true`**
+- Requires PHP >= 7.4 ***(Tested on php ver **`8.2.3`** and nginx webserver)***
+- Copy website to web server ***(Folder `img` not needed)***
+- Get [Steam API Key](https://steamcommunity.com/dev/apikey)
+- Fill in database credentials and api key in `class/config.php`
+- Visit website and login via steam
+
+## Web Features
+- Basic website
+- Steam login/logout
+- Change knife, paint, seed and wear
 
 ## Known issues
 - Issue on Windows servers, no knives are given.
