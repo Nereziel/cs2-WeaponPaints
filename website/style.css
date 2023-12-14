@@ -14,3 +14,38 @@
 	width:50%;
 	//border-bottom: solid 1px #eee;
 }
+
+.tabcontent {
+    display: none;
+  }
+  
+.tablink {
+  background-color: #f2f2f2;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.tablink.active {
+  background-color: #ccc;
+}
+
+.tab {
+    display: flex;
+}
+
+.tab button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px !important;
+    transition: color 0.3s, border-bottom 0.3s;
+    color: white;
+}
+
+.tab button.active {
+    color: #516395; 
+    border-bottom: 2px solid #516395;
+}
