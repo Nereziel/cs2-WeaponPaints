@@ -55,14 +55,14 @@ if (isset($_SESSION['steamid'])) {
 <body>
 
 	<?php
-	if (!isset($_SESSION['steamid'])) {
-		echo "<div class='bg-primary'><h2>To choose weapon paints loadout, you need to ";
-		loginbutton("rectangle");
-		echo "</h2></div>";
-	} else {
-		echo "<div class='bg-primary'><h2>Your current weapon skin loadout <a class='btn btn-danger' href='{$_SERVER['PHP_SELF']}?logout'>Logout</a></h2> </div>";
-		echo "<div class=\"tab\">
-        <button class=\"tablinks active\" onclick=\"showCategory('all')\">All</button>
+if (!isset($_SESSION['steamid'])) {
+        echo "<div class='bg-primary p-3'><div class='avatar-name'><h2 class='login mb-0'>To choose weapon paints loadout, you need to </h2></div><button class='btn btn-secondary'>"; loginbutton("rectangle"); echo "</button></div>";
+} else {
+    include('steamauth/userInfo.php'); // Include this line to get user information
+    echo "<div class='bg-primary p-3'><div class='avatar-name'><img src='{$steamprofile['avatarmedium']}'><h2 class='username mb-0'>{$steamprofile['personaname']}</h2></div><form action='' method='get'><button class='btn btn-secondary' name='logout' type='submit'>Logout</button></form></div>";
+
+    echo "<div class='centered'><div class=\"tab\">
+        <button class=\"tablinks\" onclick=\"showCategory('all')\">All</button>
         <button class=\"tablinks\" onclick=\"showCategory('tablist1')\">Knives</button>
         <button class=\"tablinks\" onclick=\"showCategory('tablist2')\">Pistols</button>
         <button class=\"tablinks\" onclick=\"showCategory('tablist3')\">Rifles</button>
@@ -70,8 +70,8 @@ if (isset($_SESSION['steamid'])) {
         <button class=\"tablinks\" onclick=\"showCategory('tablist5')\">Machine Guns</button>
         <button class=\"tablinks\" onclick=\"showCategory('tablist6')\">Snipers</button>
         <button class=\"tablinks\" onclick=\"showCategory('tablist7')\">Shotguns</button>
-        </div>";
-		echo "<div class='card-group mt-2'>";
+        </div></div>";
+    echo "<div class='card-group mt-2'>";
 	?>
 
 		<div class="col-sm-2 skinlist knifelist" data-category="knifes">
