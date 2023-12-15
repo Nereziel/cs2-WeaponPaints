@@ -63,7 +63,7 @@ if (isset($_SESSION['steamid'])) {
 		echo "<div class='bg-primary'><h2>Your current weapon skin loadout <a class='btn btn-danger' href='{$_SERVER['PHP_SELF']}?logout'>Logout</a></h2> </div>";
 		echo "<div class=\"tab\">
         <button class=\"tablinks active\" onclick=\"showCategory('all')\">All</button>
-        <button class=\"tablinks\" onclick=\"showCategory('tablist1')\">Knifes</button>
+        <button class=\"tablinks\" onclick=\"showCategory('tablist1')\">Knives</button>
         <button class=\"tablinks\" onclick=\"showCategory('tablist2')\">Pistols</button>
         <button class=\"tablinks\" onclick=\"showCategory('tablist3')\">Rifles</button>
         <button class=\"tablinks\" onclick=\"showCategory('tablist4')\">SMGs</button>
