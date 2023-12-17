@@ -1,0 +1,14 @@
+{
+	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
+	"wp_info_website": "Відвідайте веб-сайт {lime}{0},{default} щоб вибрати скин",
+	"wp_info_refresh": "Напишіть у чат {lime}!wp{default} для синхронізації вибраних скинів",
+	"wp_info_knife": "Напишіть у чат {lime}!knife,{default} щоб вибрати ніж",
+	"wp_command_cooldown": "{lightred}Ви не можете вибрати зброю зараз",
+	"wp_command_refresh_done": "{lime}Оновлення скинів для зброї",
+	"wp_knife_menu_select": "Ви вибрали скин {lime}{0}{default} для ножа",
+	"wp_knife_menu_kill": "Щоб правильно застосувати скин для ножа, напишіть у чат {lime}!kill{default}",
+	"wp_knife_menu_title": "Меню ножів",
+	"wp_skin_menu_weapon_title": "Меню зброї",
+	"wp_skin_menu_skin_title": "Виберіть скин для {lime}{0}{default}",
+	"wp_skin_menu_select": "Ви вибрали скин {lime}{0}{default} для зброї"
+}
