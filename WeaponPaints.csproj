@@ -5,19 +5,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CounterStrikeSharp.API" Version="*" />
-    <PackageReference Include="Dapper" Version="2.1.21" />
+    <PackageReference Include="CounterStrikeSharp.API" Version="1.0.121" />
+    <PackageReference Include="Dapper" Version="2.1.24" />
     <PackageReference Include="MySqlConnector" Version="2.3.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="CounterStrikeSharp.API">
-      <HintPath>deps\CounterStrikeSharp.API.dll</HintPath>
-    </Reference>
+    <None Update="lang\**\*.*" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
-
 </Project>

@@ -1,0 +1,14 @@
+{
+	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
+	"wp_info_website": "Visite {lime}{0}{default} para mudar suas skins e faca",
+	"wp_info_refresh": "Digite {lime}!wp{default} para sincronizar as suas skins",
+	"wp_info_knife": "Digite {lime}!knife{default} para abrir o menu de facas",
+	"wp_command_cooldown": "{lightred}Você não pode atualizar as skins das armas agora",
+	"wp_command_refresh_done": "{lime}Sincronizando as suas skins",
+	"wp_knife_menu_select": "Você escolheu {lime}{0}{default} como sua faca",
+	"wp_knife_menu_kill": "Para aplicar corretamente a skin da faca, você precisa digitar {lime}!kill{default}",
+	"wp_knife_menu_title": "Menu de Facas",
+	"wp_skin_menu_weapon_title": "Menu de Armas",
+	"wp_skin_menu_skin_title": "Selecionou a skin para {lime}{0}{default}",
+	"wp_skin_menu_select": "Você escolheu {lime}{0}{default} como sua skin"
+}

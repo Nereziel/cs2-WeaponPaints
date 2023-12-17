@@ -1,0 +1,14 @@
+{
+	"wp_prefix": "{lightblue}[Ieroču Ādiņas] {default}",
+	"wp_info_website": "Apmeklē {lime}{0}{default} kur tu vari nomainīt skinus",
+	"wp_info_refresh": "Raksti {lime}!wp{default} lai sinhronizētu izvēlētos skinus",
+	"wp_info_knife": "Raksti {lime}!knife{default} lai atvērtu nažu izvēlni",
+	"wp_command_cooldown": "{lightred} Tu šobrīd nevari atjaunot ieroču skinus...",
+	"wp_command_refresh_done": "{lime}Izvēlētie skini tiek atjaunoti",
+	"wp_knife_menu_select": "Tu esi izvēlējies {lime}{0}{default} nazi",
+	"wp_knife_menu_kill": "Lai pareizi atjaunotu naža skinu, ieraksti čatā {lime}!kill{default}",
+	"wp_knife_menu_title": "Nažu Izvēlne",
+	"wp_skin_menu_weapon_title": "Ieroču Izvēlne",
+	"wp_skin_menu_skin_title": "Izvēlies skinu ierocim: {lime}{0}{default}",
+	"wp_skin_menu_select": "Tu esi izvēlējies {lime}{0}{default} kā savu skinu"
+}
