@@ -88,7 +88,11 @@ class UtilsClass
         $selected = [];
 
         foreach ($temp as $weapon) {
-            $selected[$weapon['weapon_defindex']] = $weapon['weapon_paint_id'];
+            $selected[$weapon['weapon_defindex']] =  [
+                'weapon_paint_id' => $weapon['weapon_paint_id'],
+                'weapon_seed' => $weapon['weapon_seed'],
+                'weapon_wear' => $weapon['weapon_wear'],
+            ];
         }
 
         return $selected;
