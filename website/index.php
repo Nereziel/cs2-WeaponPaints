@@ -7,14 +7,13 @@ require_once 'class/utils.php';
 $db = new DataBase();
 if (isset($_SESSION['steamid'])) {
 
-	include('steamauth/userInfo.php');
-	$steamid = $steamprofile['steamid'];
+	$steamid = $_SESSION['steamid'];
 
 	$weapons = UtilsClass::getWeaponsFromArray();
 	$skins = UtilsClass::skinsFromJson();
-	$querySelected = $query3 = $db->select("SELECT `weapon_defindex`, `weapon_paint_id`, `weapon_wear` FROM `wp_player_skins` WHERE `wp_player_skins`.`steamid` = :steamid", ["steamid" => $steamid]);
+	$querySelected = $db->select("SELECT `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed` FROM `wp_player_skins` WHERE `wp_player_skins`.`steamid` = :steamid", ["steamid" => $steamid]);
 	$selectedSkins = UtilsClass::getSelectedSkins($querySelected);
-	$selectedKnife = $db->select("SELECT * FROM `wp_player_knife` WHERE `wp_player_knife`.`steamid` = :steamid", ["steamid" => $steamid])[0];
+	$selectedKnife = $db->select("SELECT * FROM `wp_player_knife` WHERE `wp_player_knife`.`steamid` = :steamid", ["steamid" => $steamid]);
 	$knifes = UtilsClass::getKnifeTypes();
 
 	if (isset($_POST['forma'])) {
@@ -68,10 +67,13 @@ if (isset($_SESSION['steamid'])) {
 				<div class="card-body">
 					<?php
 					$actualKnife = $knifes[0];
-					foreach ($knifes as $knife) {
-						if ($selectedKnife['knife'] == $knife['weapon_name']) {
-							$actualKnife = $knife;
-							break;
+					if ($selectedKnife != null)
+					{
+						foreach ($knifes as $knife) {
+							if ($selectedKnife[0]['knife'] == $knife['weapon_name']) {
+								$actualKnife = $knife;
+								break;
+							}
 						}
 					}
 
@@ -88,7 +90,7 @@ if (isset($_SESSION['steamid'])) {
 							<option disabled>Select knife</option>
 							<?php
 							foreach ($knifes as $knifeKey => $knife) {
-								if ($selectedKnife['knife'] == $knife['weapon_name'])
+								if ($selectedKnife[0]['knife'] == $knife['weapon_name'])
 									echo "<option selected value=\"knife-{$knifeKey}\">{$knife['paint_name']}</option>";
 								else
 									echo "<option value=\"knife-{$knifeKey}\">{$knife['paint_name']}</option>";
@@ -108,9 +110,9 @@ if (isset($_SESSION['steamid'])) {
 						<?php
 						if (array_key_exists($defindex, $selectedSkins)) {
 							echo "<div class='card-header'>";
-							echo "<h5 class='card-title item-name'>{$skins[$defindex][$selectedSkins[$defindex]]["paint_name"]}</h5>";
+							echo "<h5 class='card-title item-name'>{$skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]["paint_name"]}</h5>";
 							echo "</div>";
-							echo "<img src='{$skins[$defindex][$selectedSkins[$defindex]]['image_url']}' class='skin-image'>";
+							echo "<img src='{$skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['image_url']}' class='skin-image'>";
 						} else {
 							echo "<div class='card-header'>";
 							echo "<h5 class='card-title item-name'>{$default["paint_name"]}</h5>";
@@ -125,7 +127,7 @@ if (isset($_SESSION['steamid'])) {
 								<option disabled>Select skin</option>
 								<?php
 								foreach ($skins[$defindex] as $paintKey => $paint) {
-									if (array_key_exists($defindex, $selectedSkins) && $selectedSkins[$defindex] == $paintKey)
+									if (array_key_exists($defindex, $selectedSkins) && $selectedSkins[$defindex]['weapon_paint_id'] == $paintKey)
 										echo "<option selected value=\"{$defindex}-{$paintKey}\">{$paint['paint_name']}</option>";
 									else
 										echo "<option value=\"{$defindex}-{$paintKey}\">{$paint['paint_name']}</option>";
@@ -136,11 +138,8 @@ if (isset($_SESSION['steamid'])) {
 							<?php
 							$selectedSkinInfo = isset($selectedSkins[$defindex]) ? $selectedSkins[$defindex] : null;
 							$steamid = $_SESSION['steamid'];
-							$defindex = $defindex; // get defindex here, correct if not
-							$queryCheck = $db->select("SELECT 1 FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` = :defindex", ["steamid" => $steamid, "defindex" => $defindex]);
-							$hasSkinData = !empty($queryCheck);
 
-							if ($selectedSkinInfo && $hasSkinData) :
+							if ($selectedSkinInfo) :
 							?>
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#weaponModal<?php echo $defindex ?>">
 									Settings
@@ -160,14 +159,13 @@ if (isset($_SESSION['steamid'])) {
 
 					<?php
 					// wear value 
-					$queryWear = $db->select("SELECT `weapon_wear` FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $defindex]);
-					$selectedSkinInfo = isset($selectedSkins[$defindex]) ? $selectedSkins[$defindex] : null;
-					$initialWearValue = isset($selectedSkinInfo['weapon_wear']) ? $selectedSkinInfo['weapon_wear'] : (isset($queryWear[0]['weapon_wear']) ? $queryWear[0]['weapon_wear'] : 0);
+					$selectedSkinInfo = isset($selectedSkins[$defindex]['weapon_paint_id']) ? $selectedSkins[$defindex] : null;
+					$queryWear = $selectedSkins[$defindex]['weapon_wear'] ?? 1.0;
+					$initialWearValue = isset($selectedSkinInfo['weapon_wear']) ? $selectedSkinInfo['weapon_wear'] : (isset($queryWear[0]['weapon_wear']) ? $queryWear[0] : 0.0);
 
 					// seed value 
-					$querySeed = $db->select("SELECT `weapon_seed` FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $defindex]);
-					$selectedSkinInfo = isset($selectedSkins[$defindex]) ? $selectedSkins[$defindex] : null;
-					$initialSeedValue = isset($selectedSkinInfo['weapon_seed']) ? $selectedSkinInfo['weapon_seed'] : (isset($querySeed[0]['weapon_seed']) ? $querySeed[0]['weapon_seed'] : 0);
+					$querySeed = $selectedSkins[$defindex]['weapon_seed'] ?? 0;
+					$initialSeedValue = isset($selectedSkinInfo['weapon_seed']) ? $selectedSkinInfo['weapon_seed'] : 0;
 					?>
 
 
@@ -178,7 +176,7 @@ if (isset($_SESSION['steamid'])) {
 									<h5 class='card-title item-name'>
 										<?php
 										if (array_key_exists($defindex, $selectedSkins)) {
-											echo "{$skins[$defindex][$selectedSkins[$defindex]]["paint_name"]} Settings";
+											echo "{$skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]["paint_name"]} Settings";
 										} else {
 											echo "{$default["paint_name"]} Settings";
 										}
