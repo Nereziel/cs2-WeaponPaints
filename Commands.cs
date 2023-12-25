@@ -22,9 +22,12 @@ namespace WeaponPaints
 				IpAddress = player?.IpAddress?.Split(":")[0]
 			};
 
-			if (playerIndex != 0 && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
+			if (player == null || player.UserId == null) return;
+
+			if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
+				DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 			{
-				commandCooldown[playerIndex] = DateTime.UtcNow;
+				commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 				if (weaponSync != null)
 					Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
 				if (Config.Additional.KnifeEnabled)
@@ -145,11 +148,13 @@ namespace WeaponPaints
 			AddCommand($"css_{Config.Additional.CommandKnife}", "Knife Menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
-				int playerIndex = (int)player!.Index;
 
-				if (commandCooldown != null && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds))
+				if (player == null || player.UserId == null) return;
+
+				if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
+					DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 				{
-					commandCooldown[playerIndex] = DateTime.UtcNow;
+					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 					ChatMenus.OpenMenu(player, giveItemMenu);
 					return;
 				}
@@ -271,11 +276,13 @@ namespace WeaponPaints
 			AddCommand($"css_{Config.Additional.CommandSkinSelection}", "Skins selection menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player)) return;
-				int playerIndex = (int)player!.Index;
 
-				if (commandCooldown != null && DateTime.UtcNow >= commandCooldown[playerIndex].AddSeconds(Config.CmdRefreshCooldownSeconds) && playerIndex > 0 && playerIndex < commandCooldown.Length)
+				if (player == null || player.UserId == null) return;
+
+				if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
+					DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 				{
-					commandCooldown[playerIndex] = DateTime.UtcNow;
+					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 					ChatMenus.OpenMenu(player, weaponSelectionMenu);
 					return;
 				}

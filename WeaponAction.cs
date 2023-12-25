@@ -197,7 +197,7 @@ namespace WeaponPaints
 						{
 							if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
 							{
-								weapon.Value.Remove();
+								player.RemoveItemByDesignerName(weapon.Value.DesignerName, true);
 								GiveKnifeToPlayer(player);
 							}
 							else
@@ -208,8 +208,8 @@ namespace WeaponPaints
 								clip1 = weapon.Value.Clip1;
 								reservedAmmo = weapon.Value.ReserveAmmo[0];
 
-								weapon.Value.Remove();
 								string weaponByDefindex = weaponDefindex[weapon.Value.AttributeManager.Item.ItemDefinitionIndex];
+								player.RemoveItemByDesignerName(weapon.Value.DesignerName, true);
 								CBasePlayerWeapon newWeapon = new(player.GiveNamedItem(weaponByDefindex));
 
 								Server.NextFrame(() =>
