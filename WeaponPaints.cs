@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(121)]
+[MinimumApiVersion(132)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static readonly Dictionary<string, string> weaponList = new()
@@ -81,7 +81,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	internal Uri GlobalShareApi = new("https://weaponpaints.fun/api.php");
 	internal int GlobalShareServerId = 0;
-	private DateTime[] commandCooldown = new DateTime[Server.MaxPlayers];
+	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
 	private string DatabaseConnectionString = string.Empty;
 	private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
 	public static Dictionary<int, string> weaponDefindex { get; } = new Dictionary<int, string>
@@ -145,7 +145,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.3g";
+	public override string ModuleVersion => "1.3h";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{

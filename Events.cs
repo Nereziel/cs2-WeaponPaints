@@ -37,12 +37,16 @@ namespace WeaponPaints
 		{
 			CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
 
-			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV) return;
+			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.UserId == null) return;
 
 			if (Config.Additional.KnifeEnabled)
 				g_playersKnife.Remove((int)player.Index);
 			if (Config.Additional.SkinEnabled)
 				gPlayerWeaponsInfo.Remove((int)player.Index);
+			if (commandsCooldown.ContainsKey((int)player.UserId))
+			{
+				commandsCooldown.Remove((int)player.UserId);
+			}
 		}
 
 		private void OnEntityCreated(CEntityInstance entity)
@@ -91,28 +95,22 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
+		/*
 		private HookResult OnItemPickup(EventItemPickup @event, GameEventInfo info)
 		{
 			if (@event.Defindex == 42 || @event.Defindex == 59)
 			{
-				Server.PrintToChatAll("test1");
-
 				CCSPlayerController? player = @event.Userid;
 				if (player == null || !player.IsValid || !g_knifePickupCount.ContainsKey((int)player.Index) || player.IsBot || !g_playersKnife.ContainsKey((int)player.Index))
 					return HookResult.Continue;
 
-				Server.PrintToChatAll("test2");
-
 
 				if (g_knifePickupCount[(int)player.Index] >= 2) return HookResult.Continue;
-				Server.PrintToChatAll("test3");
-
 
 				if (g_playersKnife.ContainsKey((int)player.Index)
 					&&
 				   g_playersKnife[(int)player.Index] != "weapon_knife")
 				{
-					Server.PrintToChatAll("usuwam noz");
 					g_knifePickupCount[(int)player.Index]++;
 
 					RemovePlayerKnife(player, true);
@@ -123,6 +121,7 @@ namespace WeaponPaints
 			}
 			return HookResult.Continue;
 		}
+		*/
 
 		public HookResult OnPickup(CEntityIOOutput output, string name, CEntityInstance activator, CEntityInstance caller, CVariant value, float delay)
 		{
@@ -145,14 +144,13 @@ namespace WeaponPaints
 			if (g_playersKnife[(int)player.Index] != "weapon_knife")
 			{
 				g_knifePickupCount[(int)player.Index]++;
-				weapon.Remove();
-				if (!PlayerHasKnife(player) && Config.Additional.GiveKnifeAfterRemove)
+				player.RemoveItemByDesignerName(weapon.DesignerName);
+				if (Config.Additional.GiveKnifeAfterRemove)
 					AddTimer(0.2f, () => GiveKnifeToPlayer(player));
 			}
 
 			return HookResult.Continue;
 		}
-
 
 		private void OnMapStart(string mapName)
 		{
@@ -236,7 +234,7 @@ namespace WeaponPaints
 				return HookResult.Continue;
 			}
 
-			if (Config.Additional.KnifeEnabled)
+			if (Config.Additional.KnifeEnabled && !PlayerHasKnife(player))
 			{
 				g_knifePickupCount[(int)player.Index] = 0;
 				AddTimer(0.1f, () => GiveKnifeToPlayer(player));
