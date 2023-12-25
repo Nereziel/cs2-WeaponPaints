@@ -8,7 +8,7 @@ using Microsoft.Extensions.Localization;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(121)]
+[MinimumApiVersion(132)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static readonly Dictionary<string, string> weaponList = new()
