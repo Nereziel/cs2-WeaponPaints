@@ -47,22 +47,33 @@ if (isset($_SESSION['steamid'])) {
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="style.css">
+	<script src="tabs.js"></script>
 	<title>CS2 Simple Weapon Paints</title>
 </head>
 
 <body>
 
 	<?php
-	if (!isset($_SESSION['steamid'])) {
-		echo "<div class='bg-primary'><h2>To choose weapon paints loadout, you need to ";
-		loginbutton("rectangle");
-		echo "</h2></div>";
-	} else {
-		echo "<div class='bg-primary'><h2>Your current weapon skin loadout <a class='btn btn-danger' href='{$_SERVER['PHP_SELF']}?logout'>Logout</a></h2> </div>";
-		echo "<div class='card-group mt-2'>";
+if (!isset($_SESSION['steamid'])) {
+        echo "<div class='bg-primary p-3'><div class='avatar-name'><h2 class='login mb-0'>To choose weapon paints loadout, you need to </h2></div><button class='btn btn-secondary'>"; loginbutton("rectangle"); echo "</button></div>";
+} else {
+    include('steamauth/userInfo.php'); // Include this line to get user information
+    echo "<div class='bg-primary p-3'><div class='avatar-name'><img src='{$steamprofile['avatarmedium']}'><h2 class='username mb-0'>{$steamprofile['personaname']}</h2></div><form action='' method='get'><button class='btn btn-secondary' name='logout' type='submit'>Logout</button></form></div>";
+
+    echo "<div class='centered'><div class=\"tab\">
+        <button class=\"tablinks\" onclick=\"showCategory('all')\">All</button>
+        <button class=\"tablinks\" onclick=\"showCategory('tablist1')\">Knives</button>
+        <button class=\"tablinks\" onclick=\"showCategory('tablist2')\">Pistols</button>
+        <button class=\"tablinks\" onclick=\"showCategory('tablist3')\">Rifles</button>
+        <button class=\"tablinks\" onclick=\"showCategory('tablist4')\">SMGs</button>
+        <button class=\"tablinks\" onclick=\"showCategory('tablist5')\">Machine Guns</button>
+        <button class=\"tablinks\" onclick=\"showCategory('tablist6')\">Snipers</button>
+        <button class=\"tablinks\" onclick=\"showCategory('tablist7')\">Shotguns</button>
+        </div></div>";
+    echo "<div class='card-group mt-2'>";
 	?>
 
-		<div class="col-sm-2">
+		<div class="col-sm-2 skinlist knifelist" data-category="knifes">
 			<div class="card text-center mb-3 border border-primary">
 				<div class="card-body">
 					<?php
@@ -104,7 +115,7 @@ if (isset($_SESSION['steamid'])) {
 
 		<?php
 		foreach ($weapons as $defindex => $default) { ?>
-			<div class="col-sm-2">
+			<div class="col-sm-2 skinlist" data-defindex="<?php echo $defindex ?>">
 				<div class="card text-center mb-3">
 					<div class="card-body">
 						<?php
@@ -222,29 +233,29 @@ if (isset($_SESSION['steamid'])) {
 			</div>
 			<script>
 				//  wear
-				function updateWearValue<?php echo $defindex ?>(selectedValue) {
-					var wearInputElement = document.getElementById("wear<?php echo $defindex ?>");
-					wearInputElement.value = selectedValue;
+				function updateWearValue < ? php echo $defindex ? > (selectedValue) {
+				    var wearInputElement = document.getElementById("wear<?php echo $defindex ?>");
+				    wearInputElement.value = selectedValue;
 				}
 
 				function validateWear(inputElement) {
-					inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
+				    inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
 				}
 				// seed
 				function validateSeed(input) {
-					// Check entered value
-					var inputValue = input.value.replace(/[^0-9]/g, ''); // Just get the numbers
+				    // Check entered value
+				    var inputValue = input.value.replace(/[^0-9]/g, ''); // Just get the numbers
 
-					if (inputValue === "") {
-						input.value = 0; // Set to 0 if empty or no numbers
-					} else {
-						var numericValue = parseInt(inputValue);
-						numericValue = Math.min(1000, Math.max(1, numericValue)); // Interval control
+				    if (inputValue === "") {
+				        input.value = 0; // Set to 0 if empty or no numbers
+				    } else {
+				        var numericValue = parseInt(inputValue);
+				        numericValue = Math.min(1000, Math.max(1, numericValue)); // Interval control
 
-						input.value = numericValue;
-					}
+				        input.value = numericValue;
+				    }
 				}
-			</script>
+                 </script>
 		<?php } ?>
 	<?php } ?>
 	</div>
