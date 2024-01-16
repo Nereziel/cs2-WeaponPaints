@@ -20,7 +20,11 @@ if (isset($_SESSION['steamid'])) {
 		$ex = explode("-", $_POST['forma']);
 
 		if ($ex[0] == "knife") {
-			$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(:steamid, :knife) ON DUPLICATE KEY UPDATE `knife` = :knife", ["steamid" => $steamid, "knife" => $knifes[$ex[1]]['weapon_name']]);
+        	if ($selectedKnife) {
+            	$db->query("UPDATE `wp_player_knife` SET `knife` = :knife WHERE `steamid` = :steamid", ["steamid" => $steamid, "knife" => $knifes[$ex[1]]['weapon_name']]);
+        	} else {
+            	$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(:steamid, :knife)", ["steamid" => $steamid, "knife" => $knifes[$ex[1]]['weapon_name']]);
+        	}
 		} else {
 			if (array_key_exists($ex[1], $skins[$ex[0]]) && isset($_POST['wear']) && $_POST['wear'] >= 0.00 && $_POST['wear'] <= 1.00 && isset($_POST['seed'])) {
 				$wear = floatval($_POST['wear']); // wear
