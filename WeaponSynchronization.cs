@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using MySqlConnector;
 using Newtonsoft.Json.Linq;
+using System.Collections.Concurrent;
 
 namespace WeaponPaints
 {
@@ -94,7 +95,7 @@ namespace WeaponPaints
 
 			if (!WeaponPaints.gPlayerWeaponsInfo.TryGetValue(player.Index, out _))
 			{
-				WeaponPaints.gPlayerWeaponsInfo[player.Index] = new Dictionary<int, WeaponInfo>();
+				WeaponPaints.gPlayerWeaponsInfo[player.Index] = new ConcurrentDictionary<int, WeaponInfo>();
 			}
 			try
 			{
