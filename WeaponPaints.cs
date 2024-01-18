@@ -2,13 +2,14 @@ using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Modules.Cvars;
-using Newtonsoft.Json.Linq;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
+using System.Collections.Concurrent;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(132)]
+[MinimumApiVersion(142)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static readonly Dictionary<string, string> weaponList = new()
@@ -72,11 +73,10 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static WeaponPaintsConfig _config = new WeaponPaintsConfig();
 	internal static IStringLocalizer? _localizer;
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
-	internal static Dictionary<int, string> g_playersKnife = new();
-	internal static Dictionary<int, Dictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new Dictionary<int, Dictionary<int, WeaponInfo>>();
+	internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
+	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>>();
 	internal static List<JObject> skinsList = new List<JObject>();
 	internal static WeaponSynchronization? weaponSync;
-	//internal static List<int> g_changedKnife = new();
 	internal bool g_bCommandsAllowed = true;
 
 	internal Uri GlobalShareApi = new("https://weaponpaints.fun/api.php");
@@ -145,7 +145,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.3h";
+	public override string ModuleVersion => "1.3i";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{

@@ -40,9 +40,14 @@ namespace WeaponPaints
 			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.UserId == null) return;
 
 			if (Config.Additional.KnifeEnabled)
-				g_playersKnife.Remove((int)player.Index);
+				g_playersKnife.TryRemove((int)player.Index, out _);
 			if (Config.Additional.SkinEnabled)
-				gPlayerWeaponsInfo.Remove((int)player.Index);
+			{
+				if (gPlayerWeaponsInfo.TryRemove((int)player.Index, out var innerDictionary))
+				{
+					innerDictionary.Clear();
+				}
+			}
 			if (commandsCooldown.ContainsKey((int)player.UserId))
 			{
 				commandsCooldown.Remove((int)player.UserId);
@@ -52,7 +57,8 @@ namespace WeaponPaints
 		private void OnEntityCreated(CEntityInstance entity)
 		{
 			if (!Config.Additional.SkinEnabled) return;
-			var designerName = entity.DesignerName;
+			if (entity == null || !entity.IsValid || string.IsNullOrEmpty(entity.DesignerName)) return;
+			string designerName = entity.DesignerName;
 			if (!weaponList.ContainsKey(designerName)) return;
 			bool isKnife = false;
 			var weapon = new CBasePlayerWeapon(entity.Handle);
@@ -229,7 +235,7 @@ namespace WeaponPaints
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;
-			if (player == null || !player.IsValid || player.IsBot)
+			if (player == null || !player.IsValid)
 			{
 				return HookResult.Continue;
 			}
