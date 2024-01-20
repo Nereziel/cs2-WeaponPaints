@@ -19,9 +19,9 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Translations support, submit a PR if you want to share your translation
 
 ## CS2 Server
-- Compile and copy plugin to plugins, [more info here](https://docs.cssharp.dev/guides/hello-world-plugin/)
+- Download from Release and copy plugin to plugins
 - Setup **`addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json`** set **`GlobalShare`** to **`true`** for global, or include database credentials
-- in **`addons/counterstrikesharp/configs/core.json`** set **FollowCS2ServerGuidelines** to **`false`**
+- In **`addons/counterstrikesharp/configs/core.json`** set **FollowCS2ServerGuidelines** to **`false`**
 
 ## Plugin Configuration
 <details>
