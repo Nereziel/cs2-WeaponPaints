@@ -23,6 +23,11 @@ namespace WeaponPaints
 			if (isKnife)
 			{
 				weapon.AttributeManager.Item.EntityQuality = 3;
+				if (weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
+				{
+					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
+					skeleton.ForceParentToBeNetworked = true;
+				}
 			}
 
 			if (_config.Additional.GiveRandomSkin &&
@@ -38,7 +43,8 @@ namespace WeaponPaints
 				if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 				{
 					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-					skeleton.ModelState.MeshGroupMask = 2;
+					//skeleton.ModelState.MeshGroupMask = 2;
+					skeleton.ForceParentToBeNetworked = true;
 				}
 				return;
 			}
@@ -52,10 +58,12 @@ namespace WeaponPaints
 			weapon.FallbackPaintKit = weaponInfo.Paint;
 			weapon.FallbackSeed = weaponInfo.Seed;
 			weapon.FallbackWear = weaponInfo.Wear;
+
 			if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 			{
 				var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-				skeleton.ModelState.MeshGroupMask = 2;
+				skeleton.ForceParentToBeNetworked = true;
+				//skeleton.ModelState.MeshGroupMask = 2;
 			}
 		}
 
@@ -171,6 +179,7 @@ namespace WeaponPaints
 
 		internal void RefreshSkins(CCSPlayerController? player)
 		{
+			return;
 			if (!Utility.IsPlayerValid(player) || !player!.PawnIsAlive) return;
 
 			AddTimer(0.18f, () => NativeAPI.IssueClientCommand((int)player.Index - 1, "slot3"));
@@ -234,8 +243,11 @@ namespace WeaponPaints
 						}
 					}
 				}
+
+				/*
 				if (Config.Additional.SkinVisibilityFix)
 					RefreshSkins(player);
+				*/
 			}
 		}
 

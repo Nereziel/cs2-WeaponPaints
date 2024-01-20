@@ -9,7 +9,7 @@ using System.Collections.Concurrent;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(142)]
+[MinimumApiVersion(144)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static readonly Dictionary<string, string> weaponList = new()
@@ -145,7 +145,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.3i";
+	public override string ModuleVersion => "1.4a";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{

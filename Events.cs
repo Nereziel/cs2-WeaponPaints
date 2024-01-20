@@ -95,8 +95,10 @@ namespace WeaponPaints
 
 			if (player == null || !player.IsValid) return HookResult.Continue;
 
+			/*
 			if (Config.Additional.SkinVisibilityFix)
 				AddTimer(0.2f, () => RefreshSkins(player));
+			*/
 
 			return HookResult.Continue;
 		}
@@ -243,13 +245,16 @@ namespace WeaponPaints
 			if (Config.Additional.KnifeEnabled && !PlayerHasKnife(player))
 			{
 				g_knifePickupCount[(int)player.Index] = 0;
-				AddTimer(0.1f, () => GiveKnifeToPlayer(player));
+				GiveKnifeToPlayer(player);
+				//AddTimer(0.1f, () => GiveKnifeToPlayer(player));
 			}
 
+			/*
 			if (Config.Additional.SkinVisibilityFix)
 			{
 				AddTimer(0.3f, () => RefreshSkins(player));
 			}
+			*/
 
 			return HookResult.Continue;
 		}
