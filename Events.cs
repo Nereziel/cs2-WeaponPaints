@@ -1,22 +1,19 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
-using CounterStrikeSharp.API.Modules.Entities;
 
 namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
-		private void OnClientAuthorized(int playerSlot, SteamID steamID)
+		private void OnClientPutInServer(int playerSlot)
 		{
-			int playerIndex = playerSlot + 1;
-
-			CCSPlayerController? player = Utilities.GetPlayerFromIndex(playerIndex);
+			CCSPlayerController? player = Utilities.GetPlayerFromSlot(playerSlot);
 
 			PlayerInfo playerInfo = new PlayerInfo
 			{
 				UserId = player.UserId,
 				Index = (int)player.Index,
-				SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+				SteamId = player.SteamID.ToString(),
 				Name = player?.PlayerName,
 				IpAddress = player?.IpAddress?.Split(":")[0]
 			};
@@ -138,7 +135,7 @@ namespace WeaponPaints
 			if (player == null || player.IsBot || player.IsHLTV)
 				return HookResult.Continue;
 
-			if (player == null || !player.IsValid || player.AuthorizedSteamID == null ||
+			if (player == null || !player.IsValid || player.SteamID.ToString() == "" ||
 				!g_knifePickupCount.ContainsKey((int)player.Index) || !g_playersKnife.ContainsKey((int)player.Index))
 				return HookResult.Continue;
 
@@ -184,14 +181,14 @@ namespace WeaponPaints
 
 				foreach (CCSPlayerController player in players)
 				{
-					if (player.IsBot || player.IsHLTV || player.AuthorizedSteamID == null) continue;
+					if (player.IsBot || player.IsHLTV || player.SteamID.ToString() == "") continue;
 					if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
 
 					PlayerInfo playerInfo = new PlayerInfo
 					{
 						UserId = player.UserId,
 						Index = (int)player.Index,
-						SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+						SteamId = player?.SteamID.ToString(),
 						Name = player?.PlayerName,
 						IpAddress = player?.IpAddress?.Split(":")[0]
 					};
@@ -214,7 +211,7 @@ namespace WeaponPaints
 			{
 				UserId = player.UserId,
 				Index = (int)player.Index,
-				SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+				SteamId = player?.SteamID.ToString(),
 				Name = player?.PlayerName,
 				IpAddress = player?.IpAddress?.Split(":")[0]
 			};
@@ -276,12 +273,52 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
+		private void OnTick()
+		{
+			foreach (var player in Utilities.GetPlayers())
+			{
+				try
+				{
+					if (player == null || !player.IsValid || !player.PawnIsAlive || player.IsBot || player.IsHLTV) continue;
+
+					var viewModels = GetPlayerViewModels(player);
+
+					if (viewModels == null) continue;
+
+					var viewModel = viewModels[0];
+					if (viewModel == null || viewModel.Value == null || viewModel.Value.Weapon == null || viewModel.Value.Weapon.Value == null) continue;
+					CBasePlayerWeapon weapon = viewModel.Value.Weapon.Value;
+
+					if (weapon == null || !weapon.IsValid) continue;
+
+					var isKnife = viewModel.Value.VMName.Contains("knife");
+
+					if (!isKnife)
+					{
+						if (
+							viewModel.Value.CBodyComponent != null
+							&& viewModel.Value.CBodyComponent.SceneNode != null
+						)
+						{
+							var skeleton = GetSkeletonInstance(viewModel.Value.CBodyComponent.SceneNode);
+							skeleton.ModelState.MeshGroupMask = 2;
+						}
+
+						Utilities.SetStateChanged(viewModel.Value, "CBaseEntity", "m_CBodyComponent");
+					}
+				}
+				catch (Exception)
+				{ }
+			}
+		}
+
 		private void RegisterListeners()
 		{
 			RegisterListener<Listeners.OnEntityCreated>(OnEntityCreated);
-			RegisterListener<Listeners.OnClientAuthorized>(OnClientAuthorized);
+			RegisterListener<Listeners.OnClientPutInServer>(OnClientPutInServer);
 			RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
+			RegisterListener<Listeners.OnTick>(OnTick);
 
 			RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
@@ -291,6 +328,7 @@ namespace WeaponPaints
 			//RegisterEventHandler<EventItemPickup>(OnItemPickup);
 			HookEntityOutput("weapon_knife", "OnPlayerPickup", OnPickup, HookMode.Pre);
 		}
+
 
 		/* WORKAROUND FOR CLIENTS WITHOUT STEAMID ON AUTHORIZATION */
 		/*private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)

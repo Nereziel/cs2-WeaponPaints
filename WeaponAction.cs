@@ -3,6 +3,7 @@ using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Utils;
 using Microsoft.Extensions.Logging;
+using System.Runtime.InteropServices;
 
 namespace WeaponPaints
 {
@@ -20,14 +21,10 @@ namespace WeaponPaints
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
+
 			if (isKnife)
 			{
 				weapon.AttributeManager.Item.EntityQuality = 3;
-				if (weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
-				{
-					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-					skeleton.ForceParentToBeNetworked = true;
-				}
 			}
 
 			if (_config.Additional.GiveRandomSkin &&
@@ -43,8 +40,10 @@ namespace WeaponPaints
 				if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 				{
 					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-					//skeleton.ModelState.MeshGroupMask = 2;
-					skeleton.ForceParentToBeNetworked = true;
+					if (skeleton.ModelState.MeshGroupMask != 2)
+					{
+						skeleton.ModelState.MeshGroupMask = 2;
+					}
 				}
 				return;
 			}
@@ -62,8 +61,10 @@ namespace WeaponPaints
 			if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 			{
 				var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-				skeleton.ForceParentToBeNetworked = true;
-				//skeleton.ModelState.MeshGroupMask = 2;
+				if (skeleton.ModelState.MeshGroupMask != 2)
+				{
+					skeleton.ModelState.MeshGroupMask = 2;
+				}
 			}
 		}
 
@@ -326,5 +327,27 @@ namespace WeaponPaints
 			Func<nint, nint> GetSkeletonInstance = VirtualFunction.Create<nint, nint>(node.Handle, 8);
 			return new CSkeletonInstance(GetSkeletonInstance(node.Handle));
 		}
+
+		private static unsafe CHandle<CBaseViewModel>[]? GetPlayerViewModels(CCSPlayerController player)
+		{
+			if (player.PlayerPawn.Value == null || player.PlayerPawn.Value.ViewModelServices == null) return null;
+			CCSPlayer_ViewModelServices viewModelServices = new CCSPlayer_ViewModelServices(player.PlayerPawn.Value.ViewModelServices!.Handle);
+			return GetFixedArray<CHandle<CBaseViewModel>>(viewModelServices.Handle, "CCSPlayer_ViewModelServices", "m_hViewModel", 3);
+		}
+
+		public static unsafe T[] GetFixedArray<T>(nint pointer, string @class, string member, int length) where T : CHandle<CBaseViewModel>
+		{
+			nint ptr = pointer + Schema.GetSchemaOffset(@class, member);
+			Span<nint> references = MemoryMarshal.CreateSpan<nint>(ref ptr, length);
+			T[] values = new T[length];
+
+			for (int i = 0; i < length; i++)
+			{
+				values[i] = (T)Activator.CreateInstance(typeof(T), references[i])!;
+			}
+
+			return values;
+		}
+
 	}
 }

@@ -145,7 +145,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.4a";
+	public override string ModuleVersion => "1.4b";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -168,14 +168,14 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 			foreach (CCSPlayerController player in players)
 			{
-				if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.AuthorizedSteamID == null) continue;
+				if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID.ToString() == "") continue;
 				if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
 
 				PlayerInfo playerInfo = new PlayerInfo
 				{
 					UserId = player.UserId,
 					Index = (int)player.Index,
-					SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+					SteamId = player?.SteamID.ToString(),
 					Name = player?.PlayerName,
 					IpAddress = player?.IpAddress?.Split(":")[0]
 				};
