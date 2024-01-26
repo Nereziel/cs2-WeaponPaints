@@ -1,9 +1,9 @@
 # CS2 Weapon Paints
 
 ## Description
-Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for **[CSSharp](https://docs.cssharp.dev/)**.
+Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for **[CSSharp](https://docs.cssharp.dev/docs/guides/getting-started.html)**. 
 
-## Created [Discord server](https://discord.gg/d9CvaYPSFe) where you can discus about plugin.
+## Created [Discord server](https://discord.gg/d9CvaYPSFe) where you can discuss about plugin.
 
 ### Consider to donate instead of buying from unknown sources.
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E2G0P2O) or [![Donate on Steam](https://github.com/Nereziel/cs2-WeaponPaints/assets/32937653/a0d53822-4ca7-4caf-83b4-e1a9b5f8c94e)](https://steamcommunity.com/tradeoffer/new/?partner=41515647&token=gW2W-nXE)
@@ -11,17 +11,18 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 ## Features
 - Changes only paint, seed and wear on weapons and knives
 - MySQL based or global website at [weaponpaints.fun](https://weaponpaints.fun/), so you dont need MySQL/Website
-- Data sync on player connect
-- Added command **`!wp`** to refresh skins ***(with cooldown in second can be configured)***
+- Data syncs on player connect
+- Added command **`!wp`** to refresh skins ***(with cooldown in seconds can be configured)***
 - Added command **`!ws`** to show website
 - Added command **`!knife`** to show menu with knives
 - Knife change is now limited to have these cvars empty **`mp_t_default_melee ""`** and **`mp_ct_default_melee ""`**
 - Translations support, submit a PR if you want to share your translation
 
 ## CS2 Server
+- Have working CounterStrikeSharp (**with RUNTIME!**)
 - Download from Release and copy plugin to plugins
-- Setup **`addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json`** set **`GlobalShare`** to **`true`** for global, or include database credentials
-- In **`addons/counterstrikesharp/configs/core.json`** set **FollowCS2ServerGuidelines** to **`false`**
+- Setup `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** set **`GlobalShare`** to **`true`** for global, or include database credentials
+- In `addons/counterstrikesharp/configs/`**`core.json`** set **FollowCS2ServerGuidelines** to **`false`**
 
 ## Plugin Configuration
 <details>
@@ -84,6 +85,17 @@ Disregard if the config is **`GlobalShare = true`**
 
 ## Known issues
 - Issue on Windows servers, no knives are given.
+- Can cause incompatibility with plugins which changes, removes
+
+## Troubleshooting
+**Skins are not changing:**
+Set FollowCSGOGuidelines to false in cssharp’s core.jcon config
+
+**Database error table does not exists:**
+Plugin is not loaded or configured with mysql credentials. Tables are auto-created by plugin.
+
+**Knives are disappearing:**
+Set in config GiveKnifeAfterRemove to true 
 
 ### Use this plugin at your own risk! Using this may lead to GSLT ban or something else Valve come with. [Valve Server guidelines](https://blog.counter-strike.net/index.php/server_guidelines/)
 
