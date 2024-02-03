@@ -83,7 +83,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal int GlobalShareServerId = 0;
 	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
 	private string DatabaseConnectionString = string.Empty;
-	private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
+	//private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
 	public static Dictionary<int, string> weaponDefindex { get; } = new Dictionary<int, string>
 	{
 		{ 1, "weapon_deagle" },
@@ -145,7 +145,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.4b";
+	public override string ModuleVersion => "1.4c";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -187,10 +187,6 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 				g_knifePickupCount[(int)player!.Index] = 0;
 			}
-			/*
-			RegisterListeners();
-			RegisterCommands();
-			*/
 		}
 
 		if (Config.Additional.KnifeEnabled)
@@ -253,7 +249,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				Task<string> responseBodyTask = response.Content.ReadAsStringAsync();
 				responseBodyTask.Wait();
 				string responseBody = responseBodyTask.Result;
-				GlobalShareServerId = Int32.Parse(responseBody);
+				GlobalShareServerId = int.Parse(responseBody);
 			}
 			else
 			{
