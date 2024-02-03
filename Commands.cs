@@ -10,7 +10,9 @@ namespace WeaponPaints
 		{
 			if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
 			if (!Utility.IsPlayerValid(player)) return;
-			if (player == null || player.Index <= 0) return;
+
+			if (player == null || !player.IsValid || player.UserId == null || player.IsBot) return;
+
 			int playerIndex = (int)player!.Index;
 
 			PlayerInfo playerInfo = new PlayerInfo
@@ -22,31 +24,35 @@ namespace WeaponPaints
 				IpAddress = player?.IpAddress?.Split(":")[0]
 			};
 
-			if (player == null || player.UserId == null) return;
+			if (player == null || !player.IsValid || player.UserId == null || player.IsBot) return;
 
-			if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
-				DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
+			try
 			{
-				commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
-				if (weaponSync != null)
-					Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
-				if (Config.Additional.KnifeEnabled)
+				if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
+	DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 				{
+					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 					if (weaponSync != null)
-						Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
+						Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
+					if (Config.Additional.KnifeEnabled)
+					{
+						if (weaponSync != null)
+							Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
 
-					RefreshWeapons(player);
+						RefreshWeapons(player);
+					}
+					if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
+					{
+						player!.Print(Localizer["wp_command_refresh_done"]);
+					}
+					return;
 				}
-				if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
+				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
 				{
-					player!.Print(Localizer["wp_command_refresh_done"]);
+					player!.Print(Localizer["wp_command_cooldown"]);
 				}
-				return;
 			}
-			if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
-			{
-				player!.Print(Localizer["wp_command_cooldown"]);
-			}
+			catch (Exception) { }
 		}
 
 		private void OnCommandWS(CCSPlayerController? player, CommandInfo command)
