@@ -19,15 +19,14 @@ namespace WeaponPaints
 
 			if (isKnife && !g_playersKnife.ContainsKey(playerIndex) || isKnife && g_playersKnife[playerIndex] == "weapon_knife") return;
 
-			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
-
+			ushort weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
 			if (isKnife)
 			{
 				weapon.AttributeManager.Item.EntityQuality = 3;
 			}
 
-			if (_config.Additional.GiveRandomSkin &&
+			if (_config.AdditionalSetting.GiveRandomSkin &&
 				 !gPlayerWeaponsInfo[playerIndex].ContainsKey(weaponDefIndex))
 			{
 				// Random skins
@@ -36,13 +35,12 @@ namespace WeaponPaints
 				weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
 				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
 				weapon.FallbackSeed = 0;
-				weapon.FallbackWear = 0.000001f;
+				weapon.FallbackWear = 0.00001f;
 				if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 				{
-					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-					if (skeleton.ModelState.MeshGroupMask != 2)
+					if (weapon.CBodyComponent!.SceneNode!.GetSkeletonInstance().ModelState.MeshGroupMask != 2)
 					{
-						skeleton.ModelState.MeshGroupMask = 2;
+						weapon.CBodyComponent!.SceneNode!.GetSkeletonInstance().ModelState.MeshGroupMask = 2;
 					}
 				}
 				return;
@@ -58,25 +56,25 @@ namespace WeaponPaints
 			weapon.FallbackSeed = weaponInfo.Seed;
 			weapon.FallbackWear = weaponInfo.Wear;
 
-			if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
+            if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 			{
-				var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-				if (skeleton.ModelState.MeshGroupMask != 2)
+                if (weapon.CBodyComponent!.SceneNode!.GetSkeletonInstance().ModelState.MeshGroupMask != 2)
 				{
-					skeleton.ModelState.MeshGroupMask = 2;
-				}
-			}
-		}
+                    weapon.CBodyComponent!.SceneNode!.GetSkeletonInstance().ModelState.MeshGroupMask = 2;
+                }
+            }
+            
+        }
 
 		internal static void GiveKnifeToPlayer(CCSPlayerController? player)
 		{
-			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
+			if (!_config.AdditionalSetting.KnifeEnabled || player == null || !player.IsValid) return;
 
 			if (g_playersKnife.TryGetValue((int)player.Index, out var knife))
 			{
 				player.GiveNamedItem(knife);
 			}
-			else if (_config.Additional.GiveRandomKnife)
+			else if (_config.AdditionalSetting.GiveRandomKnife)
 			{
 				var knifeTypes = weaponList.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet")).ToDictionary(pair => pair.Key, pair => pair.Value);
 
@@ -95,7 +93,7 @@ namespace WeaponPaints
 
 		internal static bool PlayerHasKnife(CCSPlayerController? player)
 		{
-			if (!_config.Additional.KnifeEnabled) return false;
+			if (!_config.AdditionalSetting.KnifeEnabled) return false;
 
 			if (player == null || !player.IsValid || player.PlayerPawn == null || !player.PlayerPawn.IsValid || !player.PawnIsAlive)
 			{
@@ -177,7 +175,7 @@ namespace WeaponPaints
 				}
 			}
 		}
-
+        /*
 		internal void RefreshSkins(CCSPlayerController? player)
 		{
 			return;
@@ -187,8 +185,8 @@ namespace WeaponPaints
 			AddTimer(0.25f, () => NativeAPI.IssueClientCommand((int)player.Index - 1, "slot2"));
 			AddTimer(0.38f, () => NativeAPI.IssueClientCommand((int)player.Index - 1, "slot1"));
 		}
-
-		internal void RefreshWeapons(CCSPlayerController? player)
+		*/
+        internal void RefreshWeapons(CCSPlayerController? player)
 		{
 			if (player == null || !player.IsValid || player.PlayerPawn.Value == null || !player.PawnIsAlive) return;
 			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null) return;
@@ -213,13 +211,13 @@ namespace WeaponPaints
 							}
 							else
 							{
-								if (!weaponDefindex.ContainsKey(weapon.Value.AttributeManager.Item.ItemDefinitionIndex)) continue;
+								if (!WeaponDefindex.ContainsKey(weapon.Value.AttributeManager.Item.ItemDefinitionIndex)) continue;
 								int clip1, reservedAmmo;
 
 								clip1 = weapon.Value.Clip1;
 								reservedAmmo = weapon.Value.ReserveAmmo[0];
 
-								string weaponByDefindex = weaponDefindex[weapon.Value.AttributeManager.Item.ItemDefinitionIndex];
+								string weaponByDefindex = WeaponDefindex[weapon.Value.AttributeManager.Item.ItemDefinitionIndex];
 								player.RemoveItemByDesignerName(weapon.Value.DesignerName, true);
 								CBasePlayerWeapon newWeapon = new(player.GiveNamedItem(weaponByDefindex));
 
@@ -246,7 +244,7 @@ namespace WeaponPaints
 				}
 
 				/*
-				if (Config.Additional.SkinVisibilityFix)
+				if (Config.AdditionalSetting.SkinVisibilityFix)
 					RefreshSkins(player);
 				*/
 			}
@@ -321,13 +319,6 @@ namespace WeaponPaints
 			}
 			return 0;
 		}
-
-		private static CSkeletonInstance GetSkeletonInstance(CGameSceneNode node)
-		{
-			Func<nint, nint> GetSkeletonInstance = VirtualFunction.Create<nint, nint>(node.Handle, 8);
-			return new CSkeletonInstance(GetSkeletonInstance(node.Handle));
-		}
-
 		private static unsafe CHandle<CBaseViewModel>[]? GetPlayerViewModels(CCSPlayerController player)
 		{
 			if (player.PlayerPawn.Value == null || player.PlayerPawn.Value.ViewModelServices == null) return null;
@@ -348,6 +339,5 @@ namespace WeaponPaints
 
 			return values;
 		}
-
 	}
 }

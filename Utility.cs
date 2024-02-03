@@ -27,8 +27,7 @@ namespace WeaponPaints
 
 			return builder.ConnectionString;
 		}
-
-		internal static async void CheckDatabaseTables()
+        internal static async void CheckDatabaseTables()
 		{
 			try
 			{
@@ -37,15 +36,22 @@ namespace WeaponPaints
 
 				using var transaction = await connection.BeginTransactionAsync();
 
-				try
+                // Minimal version for MySQL 5.6.5
+                string[] sqlCommands = new string[]
+                {
+					"CREATE TABLE IF NOT EXISTS `wp_users` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `steamid` BIGINT UNSIGNED NOT NULL, `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `unique_steamid` (`steamid`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+					"CREATE TABLE IF NOT EXISTS `wp_users_items` (`user_id` INT UNSIGNED NOT NULL, `weapon` SMALLINT UNSIGNED NOT NULL, `paint` SMALLINT UNSIGNED NOT NULL, `wear` FLOAT NOT NULL DEFAULT 0.00001, `seed` SMALLINT UNSIGNED NOT NULL DEFAULT 0, `nametag` VARCHAR(20) DEFAULT NULL, `stattrack` INT UNSIGNED NOT NULL DEFAULT 0, `stattrack_enabled` SMALLINT NOT NULL DEFAULT 0, `quality` SMALLINT UNSIGNED NOT NULL DEFAULT 0, PRIMARY KEY (`user_id`,`weapon`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+					"CREATE TABLE IF NOT EXISTS `wp_users_knife` (`user_id` INT UNSIGNED NOT NULL, `knife` VARCHAR(32) DEFAULT NULL, PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+					"CREATE TABLE IF NOT EXISTS `wp_users_music` (`user_id` INT UNSIGNED NOT NULL, `music` SMALLINT UNSIGNED DEFAULT NULL, PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;"
+				};
+                try
 				{
-					string createTable1 = "CREATE TABLE IF NOT EXISTS `wp_player_skins` (`steamid` varchar(64) NOT NULL, `weapon_defindex` int(6) NOT NULL, `weapon_paint_id` int(6) NOT NULL, `weapon_wear` float NOT NULL DEFAULT 0.000001, `weapon_seed` int(16) NOT NULL DEFAULT 0) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci";
-					string createTable2 = "CREATE TABLE IF NOT EXISTS `wp_player_knife` (`steamid` varchar(64) NOT NULL, `knife` varchar(64) NOT NULL, UNIQUE (`steamid`)) ENGINE = InnoDB";
+                    foreach (string command in sqlCommands)
+                    {
+                        await connection.ExecuteAsync(command, transaction: transaction);
+                    }
 
-					await connection.ExecuteAsync(createTable1, transaction: transaction);
-					await connection.ExecuteAsync(createTable2, transaction: transaction);
-
-					await transaction.CommitAsync();
+                    await transaction.CommitAsync();
 				}
 				catch (Exception)
 				{

@@ -9,7 +9,7 @@ using System.Collections.Concurrent;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(144)]
+[MinimumApiVersion(155)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static readonly Dictionary<string, string> weaponList = new()
@@ -69,12 +69,70 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ "weapon_knife_outdoor", "Nomad Knife" },
 		{ "weapon_knife_skeleton", "Skeleton Knife" }
 	};
+    public static Dictionary<int, string> WeaponDefindex { get; } = new Dictionary<int, string>
+    {
+        { 1, "weapon_deagle" },
+        { 2, "weapon_elite" },
+        { 3, "weapon_fiveseven" },
+        { 4, "weapon_glock" },
+        { 7, "weapon_ak47" },
+        { 8, "weapon_aug" },
+        { 9, "weapon_awp" },
+        { 10, "weapon_famas" },
+        { 11, "weapon_g3sg1" },
+        { 13, "weapon_galilar" },
+        { 14, "weapon_m249" },
+        { 16, "weapon_m4a1" },
+        { 17, "weapon_mac10" },
+        { 19, "weapon_p90" },
+        { 23, "weapon_mp5sd" },
+        { 24, "weapon_ump45" },
+        { 25, "weapon_xm1014" },
+        { 26, "weapon_bizon" },
+        { 27, "weapon_mag7" },
+        { 28, "weapon_negev" },
+        { 29, "weapon_sawedoff" },
+        { 30, "weapon_tec9" },
+        { 32, "weapon_hkp2000" },
+        { 33, "weapon_mp7" },
+        { 34, "weapon_mp9" },
+        { 35, "weapon_nova" },
+        { 36, "weapon_p250" },
+        { 38, "weapon_scar20" },
+        { 39, "weapon_sg556" },
+        { 40, "weapon_ssg08" },
+        { 60, "weapon_m4a1_silencer" },
+        { 61, "weapon_usp_silencer" },
+        { 63, "weapon_cz75a" },
+        { 64, "weapon_revolver" },
+        { 500, "weapon_bayonet" },
+        { 503, "weapon_knife_css" },
+        { 505, "weapon_knife_flip" },
+        { 506, "weapon_knife_gut" },
+        { 507, "weapon_knife_karambit" },
+        { 508, "weapon_knife_m9_bayonet" },
+        { 509, "weapon_knife_tactical" },
+        { 512, "weapon_knife_falchion" },
+        { 514, "weapon_knife_survival_bowie" },
+        { 515, "weapon_knife_butterfly" },
+        { 516, "weapon_knife_push" },
+        { 517, "weapon_knife_cord" },
+        { 518, "weapon_knife_canis" },
+        { 519, "weapon_knife_ursus" },
+        { 520, "weapon_knife_gypsy_jackknife" },
+        { 521, "weapon_knife_outdoor" },
+        { 522, "weapon_knife_stiletto" },
+        { 523, "weapon_knife_widowmaker" },
+        { 525, "weapon_knife_skeleton" }
+    };
 
-	internal static WeaponPaintsConfig _config = new WeaponPaintsConfig();
+    internal static WeaponPaintsConfig _config = new WeaponPaintsConfig();
 	internal static IStringLocalizer? _localizer;
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
-	internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
-	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>>();
+    internal static ConcurrentDictionary<int, int> g_playersDatabaseIndex = new ConcurrentDictionary<int, int>();
+    internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
+    internal static ConcurrentDictionary<int, int?> g_playersMusicKit = new ConcurrentDictionary<int, int?>();
+	internal static ConcurrentDictionary<int, ConcurrentDictionary<ushort, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<ushort, WeaponInfo>>();
 	internal static List<JObject> skinsList = new List<JObject>();
 	internal static WeaponSynchronization? weaponSync;
 	internal bool g_bCommandsAllowed = true;
@@ -84,68 +142,11 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
 	private string DatabaseConnectionString = string.Empty;
 	private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
-	public static Dictionary<int, string> weaponDefindex { get; } = new Dictionary<int, string>
-	{
-		{ 1, "weapon_deagle" },
-		{ 2, "weapon_elite" },
-		{ 3, "weapon_fiveseven" },
-		{ 4, "weapon_glock" },
-		{ 7, "weapon_ak47" },
-		{ 8, "weapon_aug" },
-		{ 9, "weapon_awp" },
-		{ 10, "weapon_famas" },
-		{ 11, "weapon_g3sg1" },
-		{ 13, "weapon_galilar" },
-		{ 14, "weapon_m249" },
-		{ 16, "weapon_m4a1" },
-		{ 17, "weapon_mac10" },
-		{ 19, "weapon_p90" },
-		{ 23, "weapon_mp5sd" },
-		{ 24, "weapon_ump45" },
-		{ 25, "weapon_xm1014" },
-		{ 26, "weapon_bizon" },
-		{ 27, "weapon_mag7" },
-		{ 28, "weapon_negev" },
-		{ 29, "weapon_sawedoff" },
-		{ 30, "weapon_tec9" },
-		{ 32, "weapon_hkp2000" },
-		{ 33, "weapon_mp7" },
-		{ 34, "weapon_mp9" },
-		{ 35, "weapon_nova" },
-		{ 36, "weapon_p250" },
-		{ 38, "weapon_scar20" },
-		{ 39, "weapon_sg556" },
-		{ 40, "weapon_ssg08" },
-		{ 60, "weapon_m4a1_silencer" },
-		{ 61, "weapon_usp_silencer" },
-		{ 63, "weapon_cz75a" },
-		{ 64, "weapon_revolver" },
-		{ 500, "weapon_bayonet" },
-		{ 503, "weapon_knife_css" },
-		{ 505, "weapon_knife_flip" },
-		{ 506, "weapon_knife_gut" },
-		{ 507, "weapon_knife_karambit" },
-		{ 508, "weapon_knife_m9_bayonet" },
-		{ 509, "weapon_knife_tactical" },
-		{ 512, "weapon_knife_falchion" },
-		{ 514, "weapon_knife_survival_bowie" },
-		{ 515, "weapon_knife_butterfly" },
-		{ 516, "weapon_knife_push" },
-		{ 517, "weapon_knife_cord" },
-		{ 518, "weapon_knife_canis" },
-		{ 519, "weapon_knife_ursus" },
-		{ 520, "weapon_knife_gypsy_jackknife" },
-		{ 521, "weapon_knife_outdoor" },
-		{ 522, "weapon_knife_stiletto" },
-		{ 523, "weapon_knife_widowmaker" },
-		{ 525, "weapon_knife_skeleton" }
-	};
-
-	public WeaponPaintsConfig Config { get; set; } = new();
+    public WeaponPaintsConfig Config { get; set; } = new();
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.4b";
+	public override string ModuleVersion => "1.5.0";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -169,23 +170,21 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			foreach (CCSPlayerController player in players)
 			{
 				if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID.ToString() == "") continue;
-				if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
-
-				PlayerInfo playerInfo = new PlayerInfo
+				if (g_playersDatabaseIndex.ContainsKey((int)player.Index)) continue;
+                
+                PlayerInfo playerInfo = new PlayerInfo
 				{
 					UserId = player.UserId,
 					Index = (int)player.Index,
-					SteamId = player?.SteamID.ToString(),
+					SteamId = player?.SteamID,
 					Name = player?.PlayerName,
 					IpAddress = player?.IpAddress?.Split(":")[0]
 				};
-
-				if (Config.Additional.SkinEnabled && weaponSync != null)
-					_ = weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
-				if (Config.Additional.KnifeEnabled && weaponSync != null)
-					_ = weaponSync.GetKnifeFromDatabase(playerInfo);
-
-				g_knifePickupCount[(int)player!.Index] = 0;
+				if (weaponSync != null)
+				{
+                    _ = weaponSync!.GetPlayerDatabaseIndex(playerInfo);
+				}
+                g_knifePickupCount[(int)player!.Index] = 0;
 			}
 			/*
 			RegisterListeners();
@@ -193,9 +192,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			*/
 		}
 
-		if (Config.Additional.KnifeEnabled)
+		if (Config.AdditionalSetting.KnifeEnabled)
 			SetupKnifeMenu();
-		if (Config.Additional.SkinEnabled)
+		if (Config.AdditionalSetting.SkinEnabled)
 			SetupSkinsMenu();
 
 		RegisterListeners();
@@ -210,16 +209,37 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{
 			if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
 			{
-				Logger.LogError("You need to setup Database credentials in config!");
-				throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
-			}
+				// maybe more spam to get attention?
+                for (int i = 1; i <= 30; i++)
+                {
+                    Console.WriteLine("[WeaponPaints] You need to setup Database credentials in config!");
+                }
+                Logger.LogError("You need to setup Database credentials in config!");
+                throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
+            }
 		}
+		else
+		{
+            // maybe more spam to get attention?
+            for (int i = 1; i <= 30; i++)
+            {
+                Console.WriteLine("[WeaponPaints] GLOBAL SHARE IS NOT SUPPORTED NOW !!");
+            }
+            Logger.LogError("GLOBAL SHARE IS NOT SUPPORTED NOW !!");
+            throw new Exception("[WeaponPaints] GLOBAL SHARE IS NOT SUPPORTED NOW !!");
+        }
 
 		Config = config;
 		_config = config;
 		_localizer = Localizer;
 
-		Utility.Config = config;
+        /*
+         * GLOBAL SHARE IS NOT SUPPORTED NOW!
+         */
+        if (Config.GlobalShare)
+            Config.GlobalShare = false;
+
+        Utility.Config = config;
 		Utility.ShowAd(ModuleVersion);
 		Task.Run(async () => await Utility.CheckVersion(ModuleVersion, Logger));
 	}

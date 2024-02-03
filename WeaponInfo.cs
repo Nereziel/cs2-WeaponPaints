@@ -2,8 +2,12 @@
 {
 	public class WeaponInfo
 	{
-		public int Paint { get; set; }
-		public int Seed { get; set; }
+		public ushort Paint { get; set; }
+		public ushort Seed { get; set; }
 		public float Wear { get; set; }
-	}
+        public string? NameTag { get; set; }
+        public ushort Quality { get; set; }
+        public uint StatTrack { get; set; }
+        public bool StatTrackEnabled { get; set; }
+    }
 }

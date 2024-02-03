@@ -8,7 +8,7 @@ namespace WeaponPaints
 	{
 		private void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
 		{
-			if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
+			if (!Config.AdditionalSetting.CommandWpEnabled || !Config.AdditionalSetting.SkinEnabled || !g_bCommandsAllowed) return;
 			if (!Utility.IsPlayerValid(player)) return;
 			if (player == null || player.Index <= 0) return;
 			int playerIndex = (int)player!.Index;
@@ -17,7 +17,7 @@ namespace WeaponPaints
 			{
 				UserId = player.UserId,
 				Index = (int)player.Index,
-				SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+				SteamId = player?.AuthorizedSteamID?.SteamId64,
 				Name = player?.PlayerName,
 				IpAddress = player?.IpAddress?.Split(":")[0]
 			};
@@ -30,7 +30,7 @@ namespace WeaponPaints
 				commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 				if (weaponSync != null)
 					Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
-				if (Config.Additional.KnifeEnabled)
+				if (Config.AdditionalSetting.KnifeEnabled)
 				{
 					if (weaponSync != null)
 						Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
@@ -51,7 +51,7 @@ namespace WeaponPaints
 
 		private void OnCommandWS(CCSPlayerController? player, CommandInfo command)
 		{
-			if (!Config.Additional.SkinEnabled) return;
+            if (!Config.AdditionalSetting.SkinEnabled) return;
 			if (!Utility.IsPlayerValid(player)) return;
 
 			if (!string.IsNullOrEmpty(Localizer["wp_info_website"]))
@@ -62,7 +62,7 @@ namespace WeaponPaints
 			{
 				player!.Print(Localizer["wp_info_refresh"]);
 			}
-			if (!Config.Additional.KnifeEnabled) return;
+			if (!Config.AdditionalSetting.KnifeEnabled) return;
 			if (!string.IsNullOrEmpty(Localizer["wp_info_knife"]))
 			{
 				player!.Print(Localizer["wp_info_knife"]);
@@ -71,19 +71,19 @@ namespace WeaponPaints
 
 		private void RegisterCommands()
 		{
-			AddCommand($"css_{Config.Additional.CommandSkin}", "Skins info", (player, info) =>
+			AddCommand($"css_{Config.AdditionalSetting.CommandSkin}", "Skins info", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player)) return;
 				OnCommandWS(player, info);
 			});
-			AddCommand($"css_{Config.Additional.CommandRefresh}", "Skins refresh", (player, info) =>
+			AddCommand($"css_{Config.AdditionalSetting.CommandRefresh}", "Skins refresh", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
 				OnCommandRefresh(player, info);
 			});
-			if (Config.Additional.CommandKillEnabled)
+			if (Config.AdditionalSetting.CommandKillEnabled)
 			{
-				AddCommand($"css_{Config.Additional.CommandKill}", "kill yourself", (player, info) =>
+				AddCommand($"css_{Config.AdditionalSetting.CommandKill}", "kill yourself", (player, info) =>
 				{
 					if (player == null || !Utility.IsPlayerValid(player) || player.PlayerPawn.Value == null || !player!.PlayerPawn.IsValid) return;
 
@@ -94,7 +94,7 @@ namespace WeaponPaints
 
 		private void SetupKnifeMenu()
 		{
-			if (!Config.Additional.KnifeEnabled || !g_bCommandsAllowed) return;
+			if (!Config.AdditionalSetting.KnifeEnabled || !g_bCommandsAllowed) return;
 
 			var knivesOnly = weaponList
 				.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet"))
@@ -115,7 +115,7 @@ namespace WeaponPaints
 							player!.Print(Localizer["wp_knife_menu_select", knifeName]);
 						}
 
-						if (!string.IsNullOrEmpty(Localizer["wp_knife_menu_kill"]) && Config.Additional.CommandKillEnabled)
+						if (!string.IsNullOrEmpty(Localizer["wp_knife_menu_kill"]) && Config.AdditionalSetting.CommandKillEnabled)
 						{
 							player!.Print(Localizer["wp_knife_menu_kill"]);
 						}
@@ -124,7 +124,7 @@ namespace WeaponPaints
 						{
 							UserId = player.UserId,
 							Index = (int)player.Index,
-							SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+							SteamId = player?.AuthorizedSteamID?.SteamId64,
 							Name = player?.PlayerName,
 							IpAddress = player?.IpAddress?.Split(":")[0]
 						};
@@ -145,7 +145,7 @@ namespace WeaponPaints
 			{
 				giveItemMenu.AddMenuOption(knifePair.Value, handleGive);
 			}
-			AddCommand($"css_{Config.Additional.CommandKnife}", "Knife Menu", (player, info) =>
+			AddCommand($"css_{Config.AdditionalSetting.CommandKnife}", "Knife Menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
 
@@ -212,25 +212,25 @@ namespace WeaponPaints
 						if (firstSkin != null &&
 							firstSkin.TryGetValue("weapon_defindex", out var weaponDefIndexObj) &&
 							weaponDefIndexObj != null &&
-							int.TryParse(weaponDefIndexObj.ToString(), out var weaponDefIndex) &&
-							int.TryParse(selectedPaintID, out var paintID))
+							ushort.TryParse(weaponDefIndexObj.ToString(), out var weaponDefIndex) &&
+                            ushort.TryParse(selectedPaintID, out var paintID))
 						{
 							p!.Print(Localizer["wp_skin_menu_select", selectedSkin]);
 
-							if (!gPlayerWeaponsInfo[playerIndex].ContainsKey(weaponDefIndex))
-							{
-								gPlayerWeaponsInfo[playerIndex][weaponDefIndex] = new WeaponInfo();
-							}
+                            if (!gPlayerWeaponsInfo[playerIndex].TryGetValue(weaponDefIndex, out _))
+                            {
+                                gPlayerWeaponsInfo[playerIndex][weaponDefIndex] = new WeaponInfo();
+                            }
 
-							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Paint = paintID;
-							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Wear = 0.01f;
+                            gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Paint = paintID;
+							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Wear = 0.00001f;
 							gPlayerWeaponsInfo[playerIndex][weaponDefIndex].Seed = 0;
 
 							PlayerInfo playerInfo = new PlayerInfo
 							{
 								UserId = player.UserId,
 								Index = (int)player.Index,
-								SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+								SteamId = player?.AuthorizedSteamID?.SteamId64,
 								Name = player?.PlayerName,
 								IpAddress = player?.IpAddress?.Split(":")[0]
 							};
@@ -238,7 +238,7 @@ namespace WeaponPaints
 							if (!Config.GlobalShare)
 							{
 								if (weaponSync != null)
-									Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
+									Task.Run(async () => await weaponSync.SyncWeaponPaintToDatabase(playerInfo, weaponDefIndex));
 							}
 						}
 					};
@@ -273,7 +273,7 @@ namespace WeaponPaints
 				weaponSelectionMenu.AddMenuOption(weaponName, handleWeaponSelection);
 			}
 			// Command to open the weapon selection menu for players
-			AddCommand($"css_{Config.Additional.CommandSkinSelection}", "Skins selection menu", (player, info) =>
+			AddCommand($"css_{Config.AdditionalSetting.CommandSkinSelection}", "Skins selection menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player)) return;
 

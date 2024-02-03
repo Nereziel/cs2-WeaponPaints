@@ -3,9 +3,13 @@ using System.Text.Json.Serialization;
 
 namespace WeaponPaints
 {
-	public class Additional
+	public class AdditionalSetting
 	{
-		[JsonPropertyName("SkinVisibilityFix")]
+        
+        [JsonPropertyName("UseMetamodAlwaysLegacyModel")]
+        public bool UseMetamodAlwaysLegacyModel { get; set; } = false;
+
+        [JsonPropertyName("SkinVisibilityFix")]
 		public bool SkinVisibilityFix { get; set; } = true;
 
 		[JsonPropertyName("KnifeEnabled")]
@@ -14,7 +18,13 @@ namespace WeaponPaints
 		[JsonPropertyName("SkinEnabled")]
 		public bool SkinEnabled { get; set; } = true;
 
-		[JsonPropertyName("CommandWpEnabled")]
+        [JsonPropertyName("MusicKitEnabled")]
+        public bool MusicKitEnabled { get; set; } = true;
+
+        [JsonPropertyName("NameTagEnabled")]
+        public bool NameTagEnabled { get; set; } = true;
+
+        [JsonPropertyName("CommandWpEnabled")]
 		public bool CommandWpEnabled { get; set; } = true;
 
 		[JsonPropertyName("CommandKillEnabled")]
@@ -46,7 +56,7 @@ namespace WeaponPaints
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-		public override int Version { get; set; } = 4;
+		public override int Version { get; set; } = 5;
 
 		[JsonPropertyName("DatabaseHost")]
 		public string DatabaseHost { get; set; } = "";
@@ -75,8 +85,8 @@ namespace WeaponPaints
 		[JsonPropertyName("Website")]
 		public string Website { get; set; } = "example.com/skins";
 
-		[JsonPropertyName("Additional")]
-		public Additional Additional { get; set; } = new Additional();
+		[JsonPropertyName("AdditionalSetting")]
+		public AdditionalSetting AdditionalSetting { get; set; } = new AdditionalSetting();
 	}
 
 }
