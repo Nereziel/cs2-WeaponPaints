@@ -22,7 +22,6 @@ namespace WeaponPaints
 
 			if (!gPlayerWeaponsInfo.ContainsKey((int)player.Index))
 			{
-				Console.WriteLine($"[WeaponPaints] Retrying to retrieve player {player.PlayerName} skins");
 				Task.Run(async () =>
 				{
 					if (Config.Additional.SkinEnabled)
