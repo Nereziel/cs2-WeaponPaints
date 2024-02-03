@@ -1,31 +1,50 @@
 <?php
+/**
+ * Class UtilsClass
+ *
+ * Provides utility methods for handling skin and weapon data.
+ */
 class UtilsClass
 {
+    /**
+     * Retrieve skins data from the JSON file.
+     *
+     * @return array An associative array containing skin data.
+     */
     public static function skinsFromJson(): array
     {
         $skins = [];
-        $json = json_decode(file_get_contents(__DIR__ . "/../data/skins.json"), true);
+        $jsonFilePath = __DIR__ . "/../data/skins.json";
 
-        foreach ($json as $skin) {
-            $skins[(int) $skin['weapon_defindex']][(int) $skin['paint']] = [
-                'weapon_name' => $skin['weapon_name'],
-                'paint_name' => $skin['paint_name'],
-                'image_url' => $skin['image'],
-            ];
+        if (file_exists($jsonFilePath) && is_readable($jsonFilePath)) {
+            $json = json_decode(file_get_contents($jsonFilePath), true);
+
+            foreach ($json as $skin) {
+                $skins[(int) $skin['weapon_defindex']][(int) $skin['paint']] = [
+                    'weapon_name' => $skin['weapon_name'],
+                    'paint_name' => $skin['paint_name'],
+                    'image_url' => $skin['image'],
+                ];
+            }
+        } else {
+            // Handle file not found or unreadable error
+            // You can throw an exception or log an error message
         }
 
         return $skins;
     }
 
-    public static function getWeaponsFromArray()
+    /**
+     * Retrieve weapons data from the skin data array.
+     *
+     * @return array An associative array containing weapon data.
+     */
+    public static function getWeaponsFromArray(): array
     {
         $weapons = [];
-        $temp = self::skinsFromJson();
+        $skinsData = self::skinsFromJson();
 
-        foreach ($temp as $key => $value) {
-            if (key_exists($key, $weapons))
-                continue;
-
+        foreach ($skinsData as $key => $value) {
             $weapons[$key] = [
                 'weapon_name' => $value[0]['weapon_name'],
                 'paint_name' => $value[0]['paint_name'],
@@ -36,65 +55,61 @@ class UtilsClass
         return $weapons;
     }
 
-    public static function getKnifeTypes()
+    /**
+     * Retrieve knife types from the weapon data array.
+     *
+     * @return array An associative array containing knife types data.
+     */
+    public static function getKnifeTypes(): array
     {
         $knifes = [];
-        $temp = self::getWeaponsFromArray();
+        $weaponsData = self::getWeaponsFromArray();
 
-        foreach ($temp as $key => $weapon) {
-            if (
-                !in_array($key, [
-                    500,
-                    503,
-                    505,
-                    506,
-                    507,
-                    508,
-                    509,
-                    512,
-                    514,
-                    515,
-                    516,
-                    517,
-                    518,
-                    519,
-                    520,
-                    521,
-                    522,
-                    523,
-                    525
-                ])
-            )
-                continue;
+        $allowedKnifeKeys = [
+            500, 503, 505, 506, 507, 508, 509, 512, 514, 515,
+            516, 517, 518, 519, 520, 521, 522, 523, 525
+        ];
 
-            $knifes[$key] = [
-                'weapon_name' => $weapon['weapon_name'],
-                'paint_name' => rtrim(explode("|", $weapon['paint_name'])[0]),
-                'image_url' => $weapon['image_url'],
-            ];
-            $knifes[0] = [
-                'weapon_name' => "weapon_knife",
-                'paint_name' => "Default knife",
-                'image_url' => "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife.png",
-            ];
+        foreach ($weaponsData as $key => $weapon) {
+            if (in_array($key, $allowedKnifeKeys)) {
+                $knifes[$key] = [
+                    'weapon_name' => $weapon['weapon_name'],
+                    'paint_name' => rtrim(explode("|", $weapon['paint_name'])[0]),
+                    'image_url' => $weapon['image_url'],
+                ];
+            }
         }
+
+        // Add default knife
+        $knifes[0] = [
+            'weapon_name' => "weapon_knife",
+            'paint_name' => "Default knife",
+            'image_url' => "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife.png",
+        ];
 
         ksort($knifes);
         return $knifes;
     }
 
-    public static function getSelectedSkins(array $temp)
+    /**
+     * Retrieve selected skins data from the database result.
+     *
+     * @param array $temp An array containing the selected skins data.
+     * @return array An associative array containing selected skins data.
+     */
+    public static function getSelectedSkins(array $temp): array
     {
         $selected = [];
 
         foreach ($temp as $weapon) {
-            $selected[$weapon['weapon_defindex']] =  [
-                'weapon_paint_id' => $weapon['weapon_paint_id'],
-                'weapon_seed' => $weapon['weapon_seed'],
-                'weapon_wear' => $weapon['weapon_wear'],
+            $selected[$weapon['weapon']] =  [
+                'weapon_paint_id' => $weapon['paint'],
+                'weapon_seed' => $weapon['seed'],
+                'weapon_wear' => $weapon['wear'],
             ];
         }
 
         return $selected;
     }
 }
+
