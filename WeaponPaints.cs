@@ -141,7 +141,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal int GlobalShareServerId = 0;
 	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
 	private string DatabaseConnectionString = string.Empty;
-	private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
+	//private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
     public WeaponPaintsConfig Config { get; set; } = new();
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
@@ -273,7 +273,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				Task<string> responseBodyTask = response.Content.ReadAsStringAsync();
 				responseBodyTask.Wait();
 				string responseBody = responseBodyTask.Result;
-				GlobalShareServerId = Int32.Parse(responseBody);
+				GlobalShareServerId = int.Parse(responseBody);
 			}
 			else
 			{

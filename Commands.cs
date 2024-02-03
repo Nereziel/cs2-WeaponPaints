@@ -10,8 +10,7 @@ namespace WeaponPaints
 		{
 			if (!Config.AdditionalSetting.CommandWpEnabled || !Config.AdditionalSetting.SkinEnabled || !g_bCommandsAllowed) return;
 			if (!Utility.IsPlayerValid(player)) return;
-			if (player == null || player.Index <= 0) return;
-			int playerIndex = (int)player!.Index;
+            if (player == null || !player.IsValid || player.UserId == null || player.Index <= 0 || player.IsBot) return;
 
 			PlayerInfo playerInfo = new PlayerInfo
 			{
@@ -21,8 +20,6 @@ namespace WeaponPaints
 				Name = player?.PlayerName,
 				IpAddress = player?.IpAddress?.Split(":")[0]
 			};
-
-			if (player == null || player.UserId == null) return;
 
 			if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
 				DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))

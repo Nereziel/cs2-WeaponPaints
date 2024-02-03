@@ -16,8 +16,8 @@ namespace WeaponPaints
 				UserId = player.UserId,
 				Index = (int)player.Index,
                 SteamId = player.SteamID,
-				Name = player?.PlayerName,
-				IpAddress = player?.IpAddress?.Split(":")[0]
+				Name = player.PlayerName,
+				IpAddress = player.IpAddress?.Split(":")[0]
 			};
 
             if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || weaponSync == null) return;
@@ -173,7 +173,7 @@ namespace WeaponPaints
 
 				weaponSync = new WeaponSynchronization(DatabaseConnectionString, Config, GlobalShareApi, GlobalShareServerId);
 			});
-
+			/*
 			g_hTimerCheckSkinsData = AddTimer(10.0f, () =>
 			{
 				List<CCSPlayerController> players = Utilities.GetPlayers();
@@ -196,6 +196,7 @@ namespace WeaponPaints
                         _ = weaponSync.GetKnifeFromDatabase(playerInfo);
                 }
 			}, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE | CounterStrikeSharp.API.Modules.Timers.TimerFlags.REPEAT);
+			*/
 		}
 
 		private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
@@ -273,7 +274,7 @@ namespace WeaponPaints
 			{
 				try
 				{
-					if (player == null || !player.IsValid || !player.PawnIsAlive || player.IsBot || player.IsHLTV) continue;
+					if (player == null || !player.IsValid || !player.PawnIsAlive || player.IsBot || player.IsHLTV || player.Connected == PlayerConnectedState.PlayerDisconnecting) continue;
 
 					var viewModels = GetPlayerViewModels(player);
 
