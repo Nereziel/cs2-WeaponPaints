@@ -10,7 +10,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 
 ## Features
 - Changes only paint, seed and wear on weapons and knives
-- MySQL based or global website, so you dont need MySQL/Website
+- MySQL(min. ver 5.6.5) based or global website, so you dont need MySQL/Website
 - Data syncs on player connect
 - Added command **`!wp`** to refresh skins ***(with cooldown in seconds can be configured)***
 - Added command **`!ws`** to show website
@@ -23,7 +23,8 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 ## CS2 Server
 - Have working CounterStrikeSharp (**with RUNTIME!**)
 - Download from Release and copy plugin to plugins
-- Setup `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** set **`GlobalShare`** to **`true`** for global, or include database credentials
+- Run server with plugin, it will generate config if installed correctly
+- Edit `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** set **`GlobalShare`** to **`true`** for global, or include database credentials
 - In `addons/counterstrikesharp/configs/`**`core.json`** set **FollowCS2ServerGuidelines** to **`false`**
 
 ## Plugin Configuration
@@ -73,8 +74,9 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 </details>
     
 ## Web install
-Disregard if the config is **`GlobalShare = true`**
-- Requires PHP >= 7.4 ***(Tested on php ver **`8.2.3`** and nginx webserver)***
+Ignore this section if you have in config **`GlobalShare = true`**
+- Minimum PHP version 5.5 (needs testing)
+- Minimum MySQL version 5.6.5
 - **Before using website, make sure the plugin is correctly loaded in cs2 server!** Mysql tables are created by plugin not by website.
 - Copy website to web server ***(Folder `img` not needed)***
 - Get [Steam API Key](https://steamcommunity.com/dev/apikey)
