@@ -21,7 +21,7 @@ namespace WeaponPaints
 				IpAddress = player?.IpAddress?.Split(":")[0]
 			};
 
-			if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
+			if (!commandsCooldown.TryGetValue((int)player!.UserId, out DateTime cooldownEndTime) ||
 				DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 			{
 				commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
