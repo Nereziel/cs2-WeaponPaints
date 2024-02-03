@@ -10,7 +10,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 
 ## Features
 - Changes only paint, seed and wear on weapons and knives
-- MySQL based or global website at [weaponpaints.fun](https://weaponpaints.fun/), so you dont need MySQL/Website
+- MySQL based or global website, so you dont need MySQL/Website
 - Data syncs on player connect
 - Added command **`!wp`** to refresh skins ***(with cooldown in seconds can be configured)***
 - Added command **`!ws`** to show website
@@ -18,10 +18,13 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Knife change is now limited to have these cvars empty **`mp_t_default_melee ""`** and **`mp_ct_default_melee ""`**
 - Translations support, submit a PR if you want to share your translation
 
+**GlobalShare** - global website accessible at [weaponpaints.fun](https://weaponpaints.fun/)
+
 ## CS2 Server
 - Have working CounterStrikeSharp (**with RUNTIME!**)
 - Download from Release and copy plugin to plugins
-- Setup `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** set **`GlobalShare`** to **`true`** for global, or include database credentials
+- Run server with plugin, **it will generate config if installed correctly!**
+- Edit `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** set **`GlobalShare`** to **`true`** for global, or include database credentials
 - In `addons/counterstrikesharp/configs/`**`core.json`** set **FollowCS2ServerGuidelines** to **`false`**
 
 ## Plugin Configuration
@@ -73,6 +76,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 ## Web install
 Disregard if the config is **`GlobalShare = true`**
 - Requires PHP >= 7.4 ***(Tested on php ver **`8.2.3`** and nginx webserver)***
+- **Before using website, make sure the plugin is correctly loaded in cs2 server!** Mysql tables are created by plugin not by website.
 - Copy website to web server ***(Folder `img` not needed)***
 - Get [Steam API Key](https://steamcommunity.com/dev/apikey)
 - Fill in database credentials and api key in `class/config.php`
@@ -85,9 +89,10 @@ Disregard if the config is **`GlobalShare = true`**
 
 ## Known issues
 - Issue on Windows servers, no knives are given.
-- Can cause incompatibility with plugins which changes, removes
+- Can cause incompatibility with plugins/maps which manipulates weapons and knives
 
 ## Troubleshooting
+<details>
 **Skins are not changing:**
 Set FollowCSGOGuidelines to false in cssharp’s core.jcon config
 
@@ -96,6 +101,7 @@ Plugin is not loaded or configured with mysql credentials. Tables are auto-creat
 
 **Knives are disappearing:**
 Set in config GiveKnifeAfterRemove to true 
+</details>
 
 ### Use this plugin at your own risk! Using this may lead to GSLT ban or something else Valve come with. [Valve Server guidelines](https://blog.counter-strike.net/index.php/server_guidelines/)
 
