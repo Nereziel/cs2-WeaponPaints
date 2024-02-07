@@ -161,7 +161,7 @@ namespace WeaponPaints
 					DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 				{
 					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
-					ChatMenus.OpenMenu(player, giveItemMenu);
+					MenuManager.OpenChatMenu(player, giveItemMenu);
 					return;
 				}
 				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
@@ -268,7 +268,7 @@ namespace WeaponPaints
 					}
 
 					// Open the submenu for skin selection of the chosen weapon
-					ChatMenus.OpenMenu(player, skinSubMenu);
+					MenuManager.OpenChatMenu(player, skinSubMenu);
 				}
 			};
 
@@ -289,7 +289,7 @@ namespace WeaponPaints
 					DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 				{
 					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
-					ChatMenus.OpenMenu(player, weaponSelectionMenu);
+					MenuManager.OpenChatMenu(player, weaponSelectionMenu);
 					return;
 				}
 				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))

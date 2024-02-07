@@ -31,7 +31,6 @@ namespace WeaponPaints
 				});
 			}
 		}
-
 		private void OnClientDisconnect(int playerSlot)
 		{
 			CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
