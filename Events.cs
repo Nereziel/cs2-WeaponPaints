@@ -22,34 +22,34 @@ namespace WeaponPaints
 
 			if (!gPlayerWeaponsInfo.ContainsKey((int)player.Index))
 			{
-				Task.Run(async () =>
+				_ = Task.Run(async () =>
 				{
 					if (Config.Additional.SkinEnabled)
 						await weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
+
 					if (Config.Additional.KnifeEnabled)
 						await weaponSync.GetKnifeFromDatabase(playerInfo);
 				});
 			}
 		}
+
 		private void OnClientDisconnect(int playerSlot)
 		{
 			CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
 
-			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.UserId == null) return;
+			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.UserId == null)
+				return;
 
 			if (Config.Additional.KnifeEnabled)
 				g_playersKnife.TryRemove((int)player.Index, out _);
-			if (Config.Additional.SkinEnabled)
+
+			if (Config.Additional.SkinEnabled && gPlayerWeaponsInfo.TryGetValue((int)player.Index, out var innerDictionary))
 			{
-				if (gPlayerWeaponsInfo.TryRemove((int)player.Index, out var innerDictionary))
-				{
-					innerDictionary.Clear();
-				}
+				innerDictionary.Clear();
+				gPlayerWeaponsInfo.TryRemove((int)player.Index, out _);
 			}
-			if (commandsCooldown.ContainsKey((int)player.UserId))
-			{
-				commandsCooldown.Remove((int)player.UserId);
-			}
+
+			commandsCooldown.Remove((int)player.UserId);
 		}
 
 		private void OnEntityCreated(CEntityInstance entity)
@@ -133,26 +133,34 @@ namespace WeaponPaints
 		{
 			CCSPlayerController? player = Utilities.GetEntityFromIndex<CCSPlayerPawn>((int)activator.Index).OriginalController.Value;
 
-			if (player == null || player.IsBot || player.IsHLTV)
+			if (player == null || player.IsBot || player.IsHLTV ||
+				player.SteamID.ToString() == "" || !g_knifePickupCount.TryGetValue((int)player.Index, out var pickupCount) ||
+				!g_playersKnife.ContainsKey((int)player.Index))
+			{
 				return HookResult.Continue;
-
-			if (player == null || !player.IsValid || player.SteamID.ToString() == "" ||
-				!g_knifePickupCount.ContainsKey((int)player.Index) || !g_playersKnife.ContainsKey((int)player.Index))
-				return HookResult.Continue;
+			}
 
 			CBasePlayerWeapon weapon = new(caller.Handle);
 
 			if (weapon.AttributeManager.Item.ItemDefinitionIndex != 42 && weapon.AttributeManager.Item.ItemDefinitionIndex != 59)
+			{
 				return HookResult.Continue;
+			}
 
-			if (g_knifePickupCount[(int)player.Index] >= 2) return HookResult.Continue;
+			if (pickupCount >= 2)
+			{
+				return HookResult.Continue;
+			}
 
 			if (g_playersKnife[(int)player.Index] != "weapon_knife")
 			{
-				g_knifePickupCount[(int)player.Index]++;
+				pickupCount++;
+				g_knifePickupCount[(int)player.Index] = pickupCount;
 				player.RemoveItemByDesignerName(weapon.DesignerName);
 				if (Config.Additional.GiveKnifeAfterRemove)
+				{
 					AddTimer(0.2f, () => GiveKnifeToPlayer(player));
+				}
 			}
 
 			return HookResult.Continue;
@@ -160,20 +168,21 @@ namespace WeaponPaints
 
 		private void OnMapStart(string mapName)
 		{
-			if (!Config.Additional.KnifeEnabled) return;
+			if (!Config.Additional.KnifeEnabled && !Config.Additional.SkinEnabled) return;
+
+			if (_database != null)
+				weaponSync = new WeaponSynchronization(_database, Config, GlobalShareApi, GlobalShareServerId);
+
 			// TODO
 			// needed for now
 			AddTimer(2.0f, () =>
 			{
-
 				NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
 				NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
 				NativeAPI.IssueServerCommand("mp_equipment_reset_rounds 0");
 
 				if (Config.GlobalShare)
 					GlobalShareConnect();
-
-				weaponSync = new WeaponSynchronization(DatabaseConnectionString, Config, GlobalShareApi, GlobalShareServerId);
 			});
 
 			/*
@@ -237,24 +246,13 @@ namespace WeaponPaints
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;
-			if (player == null || !player.IsValid)
+			if (player == null || !player.IsValid || !Config.Additional.KnifeEnabled || PlayerHasKnife(player))
 			{
 				return HookResult.Continue;
 			}
 
-			if (Config.Additional.KnifeEnabled && !PlayerHasKnife(player))
-			{
-				g_knifePickupCount[(int)player.Index] = 0;
-				GiveKnifeToPlayer(player);
-				//AddTimer(0.1f, () => GiveKnifeToPlayer(player));
-			}
-
-			/*
-			if (Config.Additional.SkinVisibilityFix)
-			{
-				AddTimer(0.3f, () => RefreshSkins(player));
-			}
-			*/
+			g_knifePickupCount[(int)player.Index] = 0;
+			GiveKnifeToPlayer(player);
 
 			return HookResult.Continue;
 		}
@@ -282,49 +280,51 @@ namespace WeaponPaints
 			{
 				try
 				{
-					if (player == null || !player.IsValid || !player.PawnIsAlive || player.IsBot || player.IsHLTV || player.Connected == PlayerConnectedState.PlayerDisconnecting) continue;
+					if (player is null || !player.IsValid || !player.PawnIsAlive || player.IsBot || player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
+						continue;
 
 					var viewModels = GetPlayerViewModels(player);
-
-					if (viewModels == null) continue;
+					if (viewModels == null || viewModels.Length == 0)
+						continue;
 
 					var viewModel = viewModels[0];
-					if (viewModel == null || viewModel.Value == null || viewModel.Value.Weapon == null || viewModel.Value.Weapon.Value == null) continue;
-					CBasePlayerWeapon weapon = viewModel.Value.Weapon.Value;
+					if (viewModel == null || viewModel.Value == null || viewModel.Value.Weapon == null || viewModel.Value.Weapon.Value == null)
+						continue;
 
-					if (weapon == null || !weapon.IsValid) continue;
+					var weapon = viewModel.Value.Weapon.Value;
+					if (weapon == null || !weapon.IsValid)
+						continue;
 
-					var isKnife = viewModel.Value.VMName.Contains("knife");
+					if (viewModel.Value.VMName.Contains("knife"))
+						continue;
 
-					if (!isKnife)
+					var sceneNode = viewModel.Value.CBodyComponent?.SceneNode;
+					if (sceneNode == null)
+						continue;
+
+					var skeleton = GetSkeletonInstance(sceneNode);
+					if (skeleton == null)
+						continue;
+
+					int[] knifePaintKits = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
+					if (knifePaintKits.Contains(weapon.FallbackPaintKit))
 					{
-						if (
-							viewModel.Value.CBodyComponent != null
-							&& viewModel.Value.CBodyComponent.SceneNode != null
-						)
-						{
-							var skeleton = GetSkeletonInstance(viewModel.Value.CBodyComponent.SceneNode);
-							int[] array = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
-							int fallbackPaintKit = weapon.FallbackPaintKit;
-							if (array.Contains(fallbackPaintKit))
-							{
-								skeleton.ModelState.MeshGroupMask = 1;
-							}
-							else
-							{
-								if (skeleton.ModelState.MeshGroupMask != 2)
-								{
-									skeleton.ModelState.MeshGroupMask = 2;
-								}
-							}
-
-						}
-
-						Utilities.SetStateChanged(viewModel.Value, "CBaseEntity", "m_CBodyComponent");
+						skeleton.ModelState.MeshGroupMask = 1;
 					}
+					else
+					{
+						if (skeleton.ModelState.MeshGroupMask != 2)
+						{
+							skeleton.ModelState.MeshGroupMask = 2;
+						}
+					}
+
+					Utilities.SetStateChanged(viewModel.Value, "CBaseEntity", "m_CBodyComponent");
 				}
 				catch (Exception)
-				{ }
+				{
+					// Handle exceptions silently
+				}
 			}
 		}
 

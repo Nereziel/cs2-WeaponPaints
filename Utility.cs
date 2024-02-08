@@ -1,11 +1,11 @@
 ﻿using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Utils;
 using Dapper;
-using MySqlConnector;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using System.Reflection;
 using Microsoft.Extensions.Logging;
+using MySqlConnector;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Reflection;
 
 namespace WeaponPaints
 {
@@ -23,6 +23,7 @@ namespace WeaponPaints
 				Password = Config.DatabasePassword,
 				Database = Config.DatabaseName,
 				Port = (uint)Config.DatabasePort,
+				Pooling = true
 			};
 
 			return builder.ConnectionString;
@@ -65,15 +66,15 @@ namespace WeaponPaints
 		}
 		internal static void LoadSkinsFromFile(string filePath)
 		{
-			if (File.Exists(filePath))
+			try
 			{
 				string json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
 				WeaponPaints.skinsList = deserializedSkins ?? new List<JObject>();
 			}
-			else
+			catch (FileNotFoundException)
 			{
-				throw new FileNotFoundException("File not found.", filePath);
+				throw;
 			}
 		}
 
@@ -114,11 +115,11 @@ namespace WeaponPaints
 			{
 				try
 				{
-					HttpResponseMessage response = await client.GetAsync("https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/VERSION");
+					HttpResponseMessage response = await client.GetAsync("https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/VERSION").ConfigureAwait(false);
 
 					if (response.IsSuccessStatusCode)
 					{
-						string remoteVersion = await response.Content.ReadAsStringAsync();
+						string remoteVersion = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 						remoteVersion = remoteVersion.Trim();
 
 						int comparisonResult = string.Compare(version, remoteVersion);
@@ -141,9 +142,13 @@ namespace WeaponPaints
 						logger.LogWarning("Failed to check version");
 					}
 				}
+				catch (HttpRequestException ex)
+				{
+					logger.LogError(ex, "Failed to connect to the version server.");
+				}
 				catch (Exception ex)
 				{
-					Console.WriteLine(ex);
+					logger.LogError(ex, "An error occurred while checking version.");
 				}
 			}
 		}

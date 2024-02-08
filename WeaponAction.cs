@@ -21,7 +21,6 @@ namespace WeaponPaints
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-
 			if (isKnife)
 			{
 				weapon.AttributeManager.Item.EntityQuality = 3;
@@ -91,25 +90,31 @@ namespace WeaponPaints
 		{
 			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
 
+			string knifeToGive;
 			if (g_playersKnife.TryGetValue((int)player.Index, out var knife))
 			{
-				player.GiveNamedItem(knife);
+				knifeToGive = knife;
 			}
 			else if (_config.Additional.GiveRandomKnife)
 			{
-				var knifeTypes = weaponList.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet")).ToDictionary(pair => pair.Key, pair => pair.Value);
+				var knifeTypes = weaponList.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet")).ToList();
+
+				if (knifeTypes.Count == 0)
+				{
+					Utility.Log("No valid knife types found.");
+					return;
+				}
 
 				Random random = new();
 				int index = random.Next(knifeTypes.Count);
-				var randomKnifeClass = knifeTypes.Keys.ElementAt(index);
-
-				player.GiveNamedItem(randomKnifeClass);
+				knifeToGive = knifeTypes[index].Key;
 			}
 			else
 			{
-				var defaultKnife = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
-				player.GiveNamedItem(defaultKnife);
+				knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
 			}
+
+			player.GiveNamedItem(knifeToGive);
 		}
 
 		internal static bool PlayerHasKnife(CCSPlayerController? player)
@@ -141,6 +146,7 @@ namespace WeaponPaints
 
 		internal void RefreshPlayerKnife(CCSPlayerController? player)
 		{
+			return;
 			if (player == null || !player.IsValid || player.PlayerPawn.Value == null || !player.PawnIsAlive) return;
 			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null) return;
 
@@ -209,65 +215,68 @@ namespace WeaponPaints
 
 		internal void RefreshWeapons(CCSPlayerController? player)
 		{
-			if (player == null || !player.IsValid || player.PlayerPawn.Value == null || !player.PawnIsAlive) return;
-			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null) return;
+			if (player == null || !player.IsValid || player.PlayerPawn?.Value == null || !player.PawnIsAlive)
+				return;
+
+			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
+				return;
 
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
-			if (weapons != null && weapons.Count > 0)
+			if (weapons == null || weapons.Count == 0)
+				return;
+
+			var itemServices = new CCSPlayer_ItemServices(player.PlayerPawn.Value.ItemServices.Handle);
+
+			foreach (var weapon in weapons)
 			{
-				CCSPlayer_ItemServices service = new(player.PlayerPawn.Value.ItemServices.Handle);
+				if (weapon == null || !weapon.IsValid || weapon.Value == null || !weapon.Value.IsValid || weapon.Index <= 0 || !weapon.Value.DesignerName.Contains("weapon_"))
+					continue;
 
-				foreach (var weapon in weapons)
+				try
 				{
-					if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid)
+					string? weaponByDefindex = null;
+
+					if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
 					{
-						if (weapon.Index <= 0 || !weapon.Value.DesignerName.Contains("weapon_")) continue;
-						//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
-						try
+						player.RemoveItemByDesignerName(weapon.Value.DesignerName, false);
+						GiveKnifeToPlayer(player);
+					}
+					else
+					{
+						if (weaponDefindex.TryGetValue(weapon.Value.AttributeManager.Item.ItemDefinitionIndex, out weaponByDefindex) && weaponByDefindex != null)
 						{
-							if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
+							int clip1 = weapon.Value.Clip1;
+							int reservedAmmo = weapon.Value.ReserveAmmo[0];
+
+							player.RemoveItemByDesignerName(weapon.Value.DesignerName, false);
+							var newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(weaponByDefindex));
+
+							Server.NextFrame(() =>
 							{
-								player.RemoveItemByDesignerName(weapon.Value.DesignerName, true);
-								GiveKnifeToPlayer(player);
-							}
-							else
-							{
-								if (!weaponDefindex.ContainsKey(weapon.Value.AttributeManager.Item.ItemDefinitionIndex)) continue;
-								int clip1, reservedAmmo;
-
-								clip1 = weapon.Value.Clip1;
-								reservedAmmo = weapon.Value.ReserveAmmo[0];
-
-								string weaponByDefindex = weaponDefindex[weapon.Value.AttributeManager.Item.ItemDefinitionIndex];
-								player.RemoveItemByDesignerName(weapon.Value.DesignerName, true);
-								CBasePlayerWeapon newWeapon = new(player.GiveNamedItem(weaponByDefindex));
-
-								Server.NextFrame(() =>
+								try
 								{
-									if (newWeapon == null) return;
-									try
+									if (newWeapon != null)
 									{
 										newWeapon.Clip1 = clip1;
 										newWeapon.ReserveAmmo[0] = reservedAmmo;
 									}
-									catch (Exception)
-									{ }
-								});
-							}
+								}
+								catch (Exception ex)
+								{
+									Logger.LogWarning("Error setting weapon properties: " + ex.Message);
+								}
+							});
 						}
-						catch (Exception ex)
+						else
 						{
-							Logger.LogWarning("Refreshing weapons exception");
-							Console.WriteLine("[WeaponPaints] Refreshing weapons exception");
-							Console.WriteLine(ex.Message);
+							Logger.LogWarning("Unable to find weapon by defindex.");
 						}
 					}
 				}
-
-				/*
-				if (Config.Additional.SkinVisibilityFix)
-					RefreshSkins(player);
-				*/
+				catch (Exception ex)
+				{
+					Logger.LogWarning("Refreshing weapons exception: " + ex.Message);
+				}
 			}
 		}
 
@@ -280,13 +289,11 @@ namespace WeaponPaints
 			if (weapons != null && weapons.Count > 0)
 			{
 				CCSPlayer_ItemServices service = new CCSPlayer_ItemServices(player.PlayerPawn.Value.ItemServices.Handle);
-				//var dropWeapon = VirtualFunction.CreateVoid<nint, nint>(service.Handle, GameData.GetOffset("CCSPlayer_ItemServices_DropActivePlayerWeapon"));
 
 				foreach (var weapon in weapons)
 				{
 					if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid)
 					{
-						//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
 						if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
 						{
 							if (!force)
@@ -318,26 +325,22 @@ namespace WeaponPaints
 		}
 		private static int GetRandomPaint(int defindex)
 		{
+			if (skinsList == null || skinsList.Count == 0)
+				return 0;
 
-			if (skinsList != null)
-			{
-				Random rnd = new Random();
-				// Filter weapons by the provided defindex
-				var filteredWeapons = skinsList.FindAll(w => w["weapon_defindex"]?.ToString() == defindex.ToString());
+			Random rnd = new Random();
 
-				if (filteredWeapons.Count > 0)
-				{
-					var randomWeapon = filteredWeapons[rnd.Next(filteredWeapons.Count)];
-					if (int.TryParse(randomWeapon["paint"]?.ToString(), out int paintValue))
-					{
-						return paintValue;
-					}
-					else
-					{
-						return 0;
-					}
-				}
-			}
+			// Filter weapons by the provided defindex
+			var filteredWeapons = skinsList.Where(w => w["weapon_defindex"]?.ToString() == defindex.ToString()).ToList();
+
+			if (filteredWeapons.Count == 0)
+				return 0;
+
+			var randomWeapon = filteredWeapons[rnd.Next(filteredWeapons.Count)];
+
+			if (int.TryParse(randomWeapon["paint"]?.ToString(), out int paintValue))
+				return paintValue;
+
 			return 0;
 		}
 
