@@ -31,7 +31,6 @@ namespace WeaponPaints
 				});
 			}
 		}
-
 		private void OnClientDisconnect(int playerSlot)
 		{
 			CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
@@ -305,7 +304,20 @@ namespace WeaponPaints
 						)
 						{
 							var skeleton = GetSkeletonInstance(viewModel.Value.CBodyComponent.SceneNode);
-							skeleton.ModelState.MeshGroupMask = 2;
+							int[] array = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
+							int fallbackPaintKit = weapon.FallbackPaintKit;
+							if (array.Contains(fallbackPaintKit))
+							{
+								skeleton.ModelState.MeshGroupMask = 1;
+							}
+							else
+							{
+								if (skeleton.ModelState.MeshGroupMask != 2)
+								{
+									skeleton.ModelState.MeshGroupMask = 2;
+								}
+							}
+
 						}
 
 						Utilities.SetStateChanged(viewModel.Value, "CBaseEntity", "m_CBodyComponent");

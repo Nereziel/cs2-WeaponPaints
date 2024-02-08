@@ -40,9 +40,19 @@ namespace WeaponPaints
 				if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 				{
 					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-					if (skeleton.ModelState.MeshGroupMask != 2)
+
+					int[] array = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
+					int fallbackPaintKit = weapon.FallbackPaintKit;
+					if (array.Contains(fallbackPaintKit))
 					{
-						skeleton.ModelState.MeshGroupMask = 2;
+						skeleton.ModelState.MeshGroupMask = 1;
+					}
+					else
+					{
+						if (skeleton.ModelState.MeshGroupMask != 2)
+						{
+							skeleton.ModelState.MeshGroupMask = 2;
+						}
 					}
 				}
 				return;
@@ -61,9 +71,18 @@ namespace WeaponPaints
 			if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 			{
 				var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-				if (skeleton.ModelState.MeshGroupMask != 2)
+				int[] array = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
+				int fallbackPaintKit = weapon.FallbackPaintKit;
+				if (array.Contains(fallbackPaintKit))
 				{
-					skeleton.ModelState.MeshGroupMask = 2;
+					skeleton.ModelState.MeshGroupMask = 1;
+				}
+				else
+				{
+					if (skeleton.ModelState.MeshGroupMask != 2)
+					{
+						skeleton.ModelState.MeshGroupMask = 2;
+					}
 				}
 			}
 		}

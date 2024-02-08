@@ -62,7 +62,8 @@ class UtilsClass
                     521,
                     522,
                     523,
-                    525
+                    525,
+                    526
                 ])
             )
                 continue;

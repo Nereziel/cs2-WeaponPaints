@@ -36,6 +36,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{"weapon_negev", "Negev"},
 		{"weapon_sawedoff", "Sawed-Off"},
 		{"weapon_tec9", "Tec-9"},
+		{"weapon_taser", "Zeus x27"},
 		{"weapon_hkp2000", "P2000"},
 		{"weapon_mp7", "MP7"},
 		{"weapon_mp9", "MP9"},
@@ -67,7 +68,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ "weapon_knife_cord", "Paracord Knife" },
 		{ "weapon_knife_canis", "Survival Knife" },
 		{ "weapon_knife_outdoor", "Nomad Knife" },
-		{ "weapon_knife_skeleton", "Skeleton Knife" }
+		{ "weapon_knife_skeleton", "Skeleton Knife" },
+		{ "weapon_knife_kukri", "Kukri Knife" }
 	};
 
 	internal static WeaponPaintsConfig _config = new WeaponPaintsConfig();
@@ -108,6 +110,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ 28, "weapon_negev" },
 		{ 29, "weapon_sawedoff" },
 		{ 30, "weapon_tec9" },
+		{ 31, "weapon_taser" },
 		{ 32, "weapon_hkp2000" },
 		{ 33, "weapon_mp7" },
 		{ 34, "weapon_mp9" },
@@ -138,14 +141,15 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ 521, "weapon_knife_outdoor" },
 		{ 522, "weapon_knife_stiletto" },
 		{ 523, "weapon_knife_widowmaker" },
-		{ 525, "weapon_knife_skeleton" }
+		{ 525, "weapon_knife_skeleton" },
+		{ 526, "weapon_knife_kukri" }
 	};
 
 	public WeaponPaintsConfig Config { get; set; } = new();
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.4c";
+	public override string ModuleVersion => "1.5a";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -168,8 +172,13 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 			foreach (CCSPlayerController player in players)
 			{
-				if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID.ToString() == "") continue;
-				if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
+				if (player == null || !player.IsValid || player.IsBot || player.IsHLTV) continue;
+				//if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
+
+				if (gPlayerWeaponsInfo.ContainsKey((int)player.Index))
+					gPlayerWeaponsInfo.TryRemove((int)player.Index, out _);
+				if (g_playersKnife.ContainsKey((int)player.Index))
+					g_playersKnife.TryRemove((int)player.Index, out _);
 
 				PlayerInfo playerInfo = new PlayerInfo
 				{
