@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using MySqlConnector;
 using Newtonsoft.Json.Linq;
 using System.Collections.Concurrent;
 
@@ -8,13 +7,13 @@ namespace WeaponPaints
 	internal class WeaponSynchronization
 	{
 		private readonly WeaponPaintsConfig _config;
-		private readonly string _databaseConnectionString;
+		private readonly Database _database;
 		private readonly Uri _globalShareApi;
 		private readonly int _globalShareServerId;
 
-		internal WeaponSynchronization(string databaseConnectionString, WeaponPaintsConfig config, Uri globalShareApi, int globalShareServerId)
+		internal WeaponSynchronization(Database database, WeaponPaintsConfig config, Uri globalShareApi, int globalShareServerId)
 		{
-			_databaseConnectionString = databaseConnectionString;
+			_database = database;
 			_config = config;
 			_globalShareApi = globalShareApi;
 			_globalShareServerId = globalShareServerId;
@@ -64,21 +63,16 @@ namespace WeaponPaints
 					return;
 				}
 
-				using (var connection = new MySqlConnection(_databaseConnectionString))
-				{
-					await connection.OpenAsync();
-					string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
-					string? PlayerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = player.SteamId });
 
-					if (PlayerKnife != null)
+				await using (var connection = await _database.GetConnectionAsync())
+				{
+					string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
+					string? playerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = player.SteamId });
+
+					if (playerKnife != null)
 					{
-						WeaponPaints.g_playersKnife[player.Index] = PlayerKnife;
+						WeaponPaints.g_playersKnife[player.Index] = playerKnife;
 					}
-					else
-					{
-						return;
-					}
-					await connection.CloseAsync();
 				}
 			}
 			catch (Exception e)
@@ -150,36 +144,26 @@ namespace WeaponPaints
 					}
 				}
 
-				using (var connection = new MySqlConnection(_databaseConnectionString))
+				await using (var connection = await _database.GetConnectionAsync())
 				{
-					await connection.OpenAsync();
-
 					string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
-					IEnumerable<dynamic> PlayerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = player.SteamId });
+					var playerSkins = await connection.QueryAsync(query, new { steamid = player.SteamId });
 
-					if (PlayerSkins != null && PlayerSkins.AsList().Count > 0)
+					foreach (var row in playerSkins)
 					{
-						PlayerSkins.ToList().ForEach(row =>
+						int weaponDefIndex = row.weapon_defindex ?? default;
+						int weaponPaintId = row.weapon_paint_id ?? default;
+						float weaponWear = row.weapon_wear ?? default;
+						int weaponSeed = row.weapon_seed ?? default;
+
+						WeaponInfo weaponInfo = new WeaponInfo
 						{
-							int weaponDefIndex = row.weapon_defindex ?? default(int);
-							int weaponPaintId = row.weapon_paint_id ?? default(int);
-							float weaponWear = row.weapon_wear ?? default(float);
-							int weaponSeed = row.weapon_seed ?? default(int);
-
-							WeaponInfo weaponInfo = new WeaponInfo
-							{
-								Paint = weaponPaintId,
-								Seed = weaponSeed,
-								Wear = weaponWear
-							};
-							WeaponPaints.gPlayerWeaponsInfo[player.Index][weaponDefIndex] = weaponInfo;
-						});
+							Paint = weaponPaintId,
+							Seed = weaponSeed,
+							Wear = weaponWear
+						};
+						WeaponPaints.gPlayerWeaponsInfo[player.Index][weaponDefIndex] = weaponInfo;
 					}
-					else
-					{
-						return;
-					}
-					await connection.CloseAsync();
 				}
 			}
 			catch (Exception e)
@@ -192,28 +176,24 @@ namespace WeaponPaints
 		internal async Task SyncKnifeToDatabase(PlayerInfo player, string knife)
 		{
 			if (!_config.Additional.KnifeEnabled) return;
+			if (player.SteamId == null || player.Index == 0) return;
+
 			try
 			{
-				if (player.SteamId == null || player.Index == 0) return;
-
-				using var connection = new MySqlConnection(_databaseConnectionString);
-				await connection.OpenAsync();
+				await using var connection = await _database.GetConnectionAsync();
 				string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
 				await connection.ExecuteAsync(query, new { steamid = player.SteamId, newKnife = knife });
-				await connection.CloseAsync();
 			}
 			catch (Exception e)
 			{
 				Utility.Log(e.Message);
-				return;
 			}
 		}
 		internal async Task SyncWeaponPaintsToDatabase(PlayerInfo player)
 		{
 			if (player == null || player.Index <= 0 || player.SteamId == null) return;
 
-			using var connection = new MySqlConnection(_databaseConnectionString);
-			await connection.OpenAsync();
+			await using var connection = await _database.GetConnectionAsync();
 
 			if (!WeaponPaints.gPlayerWeaponsInfo.ContainsKey(player.Index))
 				return;
@@ -227,23 +207,15 @@ namespace WeaponPaints
 				float wear = weaponInfo.Wear;
 				int seed = weaponInfo.Seed;
 
-				string updateSql = "UPDATE `wp_player_skins` SET `weapon_paint_id` = @paintId, " +
-								   "`weapon_wear` = @wear, `weapon_seed` = @seed WHERE `steamid` = @steamid " +
-								   "AND `weapon_defindex` = @weaponDefIndex";
+				string updateSql = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, " +
+								   "`weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
+								   "VALUES (@steamid, @weaponDefIndex, @paintId, @wear, @seed) " +
+								   "ON DUPLICATE KEY UPDATE `weapon_paint_id` = @paintId, " +
+								   "`weapon_wear` = @wear, `weapon_seed` = @seed";
 
-				var updateParams = new { paintId, wear, seed, steamid = player.SteamId, weaponDefIndex };
-				int rowsAffected = await connection.ExecuteAsync(updateSql, updateParams);
-
-				if (rowsAffected == 0)
-				{
-					string insertSql = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, " +
-									   "`weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
-									   "VALUES (@steamid, @weaponDefIndex, @paintId, @wear, @seed)";
-
-					await connection.ExecuteAsync(insertSql, updateParams);
-				}
+				var updateParams = new { steamid = player.SteamId, weaponDefIndex, paintId, wear, seed };
+				await connection.ExecuteAsync(updateSql, updateParams);
 			}
-			await connection.CloseAsync();
 		}
 	}
 }

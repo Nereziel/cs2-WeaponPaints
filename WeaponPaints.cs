@@ -4,6 +4,7 @@ using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Modules.Cvars;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
+using MySqlConnector;
 using Newtonsoft.Json.Linq;
 using System.Collections.Concurrent;
 
@@ -84,7 +85,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal Uri GlobalShareApi = new("https://weaponpaints.fun/api.php");
 	internal int GlobalShareServerId = 0;
 	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
-	private string DatabaseConnectionString = string.Empty;
+	internal static Database? _database;
 	//private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
 	public static Dictionary<int, string> weaponDefindex { get; } = new Dictionary<int, string>
 	{
@@ -149,7 +150,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.5a";
+	public override string ModuleVersion => "1.6a";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -158,27 +159,18 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	public override void Load(bool hotReload)
 	{
-		if (!Config.GlobalShare)
-		{
-			DatabaseConnectionString = Utility.BuildDatabaseConnectionString();
-			Utility.TestDatabaseConnection();
-		}
-
-		if (hotReload)
+		if (hotReload && weaponSync != null)
 		{
 			OnMapStart(string.Empty);
 
-			List<CCSPlayerController> players = Utilities.GetPlayers();
-
-			foreach (CCSPlayerController player in players)
+			foreach (var player in Utilities.GetPlayers())
 			{
-				if (player == null || !player.IsValid || player.IsBot || player.IsHLTV) continue;
-				//if (gPlayerWeaponsInfo.ContainsKey((int)player.Index)) continue;
+				if (weaponSync == null || player is null || !player.IsValid || !player.PawnIsAlive || player.IsBot || player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
+					continue;
 
-				if (gPlayerWeaponsInfo.ContainsKey((int)player.Index))
-					gPlayerWeaponsInfo.TryRemove((int)player.Index, out _);
-				if (g_playersKnife.ContainsKey((int)player.Index))
-					g_playersKnife.TryRemove((int)player.Index, out _);
+				g_knifePickupCount[(int)player.Index] = 0;
+				gPlayerWeaponsInfo.TryRemove((int)player.Index, out _);
+				g_playersKnife.TryRemove((int)player.Index, out _);
 
 				PlayerInfo playerInfo = new PlayerInfo
 				{
@@ -189,15 +181,12 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					IpAddress = player?.IpAddress?.Split(":")[0]
 				};
 
-				if (Config.Additional.SkinEnabled && weaponSync != null)
+				if (Config.Additional.SkinEnabled)
 					_ = weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
-				if (Config.Additional.KnifeEnabled && weaponSync != null)
+				if (Config.Additional.KnifeEnabled)
 					_ = weaponSync.GetKnifeFromDatabase(playerInfo);
-
-				g_knifePickupCount[(int)player!.Index] = 0;
 			}
 		}
-
 		if (Config.Additional.KnifeEnabled)
 			SetupKnifeMenu();
 		if (Config.Additional.SkinEnabled)
@@ -218,6 +207,22 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				Logger.LogError("You need to setup Database credentials in config!");
 				throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
 			}
+			/*
+			DatabaseConnectionString = Utility.BuildDatabaseConnectionString();
+			Utility.TestDatabaseConnection();
+			*/
+
+			var builder = new MySqlConnectionStringBuilder
+			{
+				Server = config.DatabaseHost,
+				UserID = config.DatabaseUser,
+				Password = config.DatabasePassword,
+				Database = config.DatabaseName,
+				Port = (uint)config.DatabasePort,
+				Pooling = true
+			};
+
+			_database = new(builder.ConnectionString);
 		}
 
 		Config = config;
