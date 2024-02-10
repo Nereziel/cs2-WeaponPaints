@@ -74,7 +74,8 @@ namespace WeaponPaints
 					if (weapon.OwnerEntity.Value == null) return;
 					if (weapon.OwnerEntity.Index <= 0) return;
 					int weaponOwner = (int)weapon.OwnerEntity.Index;
-					var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex(weaponOwner));
+					CBasePlayerPawn? pawn = Utilities.GetEntityFromIndex<CCSPlayerPawn>((int)weaponOwner);
+					//var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex(weaponOwner));
 					if (!pawn.IsValid) return;
 
 					var playerIndex = (int)pawn.Controller.Index;
@@ -109,7 +110,6 @@ namespace WeaponPaints
 				CCSPlayerController? player = @event.Userid;
 				if (player == null || !player.IsValid || !g_knifePickupCount.ContainsKey((int)player.Index) || player.IsBot || !g_playersKnife.ContainsKey((int)player.Index))
 					return HookResult.Continue;
-
 
 				if (g_knifePickupCount[(int)player.Index] >= 2) return HookResult.Continue;
 
@@ -344,7 +344,6 @@ namespace WeaponPaints
 			//RegisterEventHandler<EventItemPickup>(OnItemPickup);
 			HookEntityOutput("weapon_knife", "OnPlayerPickup", OnPickup, HookMode.Pre);
 		}
-
 
 		/* WORKAROUND FOR CLIENTS WITHOUT STEAMID ON AUTHORIZATION */
 		/*private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)

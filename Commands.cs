@@ -19,7 +19,7 @@ namespace WeaponPaints
 			{
 				UserId = player.UserId,
 				Index = (int)player.Index,
-				SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
+				SteamId = player?.SteamID.ToString(),
 				Name = player?.PlayerName,
 				IpAddress = player?.IpAddress?.Split(":")[0]
 			};
@@ -107,44 +107,39 @@ namespace WeaponPaints
 				.ToDictionary(pair => pair.Key, pair => pair.Value);
 
 			var giveItemMenu = new ChatMenu(Localizer["wp_knife_menu_title"]);
-			var handleGive = (CCSPlayerController? player, ChatMenuOption option) =>
+			var handleGive = (CCSPlayerController player, ChatMenuOption option) =>
 			{
-				if (Utility.IsPlayerValid(player))
+				if (!Utility.IsPlayerValid(player)) return;
+
+				var knifeName = option.Text;
+				var knifeKey = knivesOnly.FirstOrDefault(x => x.Value == knifeName).Key;
+				if (!string.IsNullOrEmpty(knifeKey))
 				{
-					if (player == null) return;
-					var knifeName = option.Text;
-					var knifeKey = knivesOnly.FirstOrDefault(x => x.Value == knifeName).Key;
-					if (!string.IsNullOrEmpty(knifeKey))
+					if (!string.IsNullOrEmpty(Localizer["wp_knife_menu_select"]))
 					{
-						if (!string.IsNullOrEmpty(Localizer["wp_knife_menu_select"]))
-						{
-							player!.Print(Localizer["wp_knife_menu_select", knifeName]);
-						}
-
-						if (!string.IsNullOrEmpty(Localizer["wp_knife_menu_kill"]) && Config.Additional.CommandKillEnabled)
-						{
-							player!.Print(Localizer["wp_knife_menu_kill"]);
-						}
-
-						PlayerInfo playerInfo = new PlayerInfo
-						{
-							UserId = player.UserId,
-							Index = (int)player.Index,
-							SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
-							Name = player?.PlayerName,
-							IpAddress = player?.IpAddress?.Split(":")[0]
-						};
-
-						g_playersKnife[(int)player!.Index] = knifeKey;
-
-						if (player!.PawnIsAlive && g_bCommandsAllowed)
-						{
-							RefreshWeapons(player);
-						}
-
-						if (weaponSync != null)
-							Task.Run(async () => await weaponSync.SyncKnifeToDatabase(playerInfo, knifeKey));
+						player!.Print(Localizer["wp_knife_menu_select", knifeName]);
 					}
+
+					if (!string.IsNullOrEmpty(Localizer["wp_knife_menu_kill"]) && Config.Additional.CommandKillEnabled)
+					{
+						player!.Print(Localizer["wp_knife_menu_kill"]);
+					}
+
+					PlayerInfo playerInfo = new PlayerInfo
+					{
+						UserId = player.UserId,
+						Index = (int)player.Index,
+						SteamId = player.SteamID.ToString(),
+						Name = player.PlayerName,
+						IpAddress = player.IpAddress?.Split(":")[0]
+					};
+
+					g_playersKnife[(int)player!.Index] = knifeKey;
+
+					if (g_bCommandsAllowed && (LifeState_t)player.LifeState == LifeState_t.LIFE_ALIVE)
+						RefreshKnife(player);
+
+					_ = weaponSync?.SyncKnifeToDatabase(playerInfo, knifeKey) ?? Task.CompletedTask;
 				}
 			};
 			foreach (var knifePair in knivesOnly)
@@ -195,15 +190,13 @@ namespace WeaponPaints
 					var skinSubMenu = new ChatMenu(Localizer["wp_skin_menu_skin_title", selectedWeapon]);
 
 					// Function to handle skin selection for the chosen weapon
-					var handleSkinSelection = (CCSPlayerController? p, ChatMenuOption opt) =>
+					var handleSkinSelection = (CCSPlayerController p, ChatMenuOption opt) =>
 					{
-						if (p == null || !p.IsValid || p.Index <= 0) return;
+						if (!Utility.IsPlayerValid(p)) return;
 
 						playerIndex = (int)p.Index;
 
-						if (p.AuthorizedSteamID == null) return;
-
-						string steamId = p.AuthorizedSteamID.SteamId64.ToString();
+						string steamId = p.SteamID.ToString();
 						var firstSkin = skinsList?.FirstOrDefault(skin =>
 						{
 							if (skin != null && skin.TryGetValue("weapon_name", out var weaponName))
@@ -234,12 +227,16 @@ namespace WeaponPaints
 
 							PlayerInfo playerInfo = new PlayerInfo
 							{
-								UserId = player.UserId,
-								Index = (int)player.Index,
-								SteamId = player?.AuthorizedSteamID?.SteamId64.ToString(),
-								Name = player?.PlayerName,
-								IpAddress = player?.IpAddress?.Split(":")[0]
+								UserId = p.UserId,
+								Index = (int)p.Index,
+								SteamId = p.SteamID.ToString(),
+								Name = p.PlayerName,
+								IpAddress = p.IpAddress?.Split(":")[0]
 							};
+
+							if (g_bCommandsAllowed && (LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE)
+								RefreshWeapons(p);
+
 
 							if (!Config.GlobalShare)
 							{

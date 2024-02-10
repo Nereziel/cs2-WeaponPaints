@@ -86,6 +86,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal int GlobalShareServerId = 0;
 	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
 	internal static Database? _database;
+
 	//private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
 	public static Dictionary<int, string> weaponDefindex { get; } = new Dictionary<int, string>
 	{
@@ -150,7 +151,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.6a";
+	public override string ModuleVersion => "1.6b";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -207,6 +208,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				Logger.LogError("You need to setup Database credentials in config!");
 				throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
 			}
+
 			/*
 			DatabaseConnectionString = Utility.BuildDatabaseConnectionString();
 			Utility.TestDatabaseConnection();
@@ -223,6 +225,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			};
 
 			_database = new(builder.ConnectionString);
+
+			_ = Utility.CheckDatabaseTables();
 		}
 
 		Config = config;
