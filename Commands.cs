@@ -107,6 +107,7 @@ namespace WeaponPaints
 				.ToDictionary(pair => pair.Key, pair => pair.Value);
 
 			var giveItemMenu = new ChatMenu(Localizer["wp_knife_menu_title"]);
+			giveItemMenu.PostSelectAction = PostSelectAction.Close;
 			var handleGive = (CCSPlayerController player, ChatMenuOption option) =>
 			{
 				if (!Utility.IsPlayerValid(player)) return;
@@ -188,6 +189,7 @@ namespace WeaponPaints
 				)?.ToList();
 
 					var skinSubMenu = new ChatMenu(Localizer["wp_skin_menu_skin_title", selectedWeapon]);
+					skinSubMenu.PostSelectAction = PostSelectAction.Close;
 
 					// Function to handle skin selection for the chosen weapon
 					var handleSkinSelection = (CCSPlayerController p, ChatMenuOption opt) =>
@@ -236,7 +238,6 @@ namespace WeaponPaints
 
 							if (g_bCommandsAllowed && (LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE)
 								RefreshWeapons(p);
-
 
 							if (!Config.GlobalShare)
 							{
@@ -287,6 +288,7 @@ namespace WeaponPaints
 				{
 					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 					MenuManager.OpenChatMenu(player, weaponSelectionMenu);
+					weaponSelectionMenu.PostSelectAction = PostSelectAction.Close;
 					return;
 				}
 				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
