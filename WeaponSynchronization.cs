@@ -63,7 +63,6 @@ namespace WeaponPaints
 					return;
 				}
 
-
 				await using (var connection = await _database.GetConnectionAsync())
 				{
 					string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
@@ -189,6 +188,7 @@ namespace WeaponPaints
 				Utility.Log(e.Message);
 			}
 		}
+
 		internal async Task SyncWeaponPaintsToDatabase(PlayerInfo player)
 		{
 			if (player == null || player.Index <= 0 || player.SteamId == null) return;

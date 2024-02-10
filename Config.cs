@@ -40,6 +40,7 @@ namespace WeaponPaints
 
 		[JsonPropertyName("GiveRandomSkin")]
 		public bool GiveRandomSkin { get; set; } = false;
+
 		[JsonPropertyName("GiveKnifeAfterRemove")]
 		public bool GiveKnifeAfterRemove { get; set; } = false;
 	}
@@ -78,5 +79,4 @@ namespace WeaponPaints
 		[JsonPropertyName("Additional")]
 		public Additional Additional { get; set; } = new Additional();
 	}
-
 }

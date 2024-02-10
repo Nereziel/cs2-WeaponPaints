@@ -29,22 +29,38 @@ namespace WeaponPaints
 			return builder.ConnectionString;
 		}
 
-		internal static async void CheckDatabaseTables()
+		internal static async Task CheckDatabaseTables()
 		{
+			if (WeaponPaints._database is null) return;
+
 			try
 			{
-				using var connection = new MySqlConnection(BuildDatabaseConnectionString());
-				await connection.OpenAsync();
+				await using var connection = await WeaponPaints._database.GetConnectionAsync();
 
-				using var transaction = await connection.BeginTransactionAsync();
+				await using var transaction = await connection.BeginTransactionAsync();
 
 				try
 				{
-					string createTable1 = "CREATE TABLE IF NOT EXISTS `wp_player_skins` (`steamid` varchar(64) NOT NULL, `weapon_defindex` int(6) NOT NULL, `weapon_paint_id` int(6) NOT NULL, `weapon_wear` float NOT NULL DEFAULT 0.000001, `weapon_seed` int(16) NOT NULL DEFAULT 0) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci";
-					string createTable2 = "CREATE TABLE IF NOT EXISTS `wp_player_knife` (`steamid` varchar(64) NOT NULL, `knife` varchar(64) NOT NULL, UNIQUE (`steamid`)) ENGINE = InnoDB";
+					string[] createTableQueries = new[]
+					{
+				@"CREATE TABLE IF NOT EXISTS `wp_player_skins` (
+                        `steamid` varchar(64) NOT NULL,
+                        `weapon_defindex` int(6) NOT NULL,
+                        `weapon_paint_id` int(6) NOT NULL,
+                        `weapon_wear` float NOT NULL DEFAULT 0.000001,
+                        `weapon_seed` int(16) NOT NULL DEFAULT 0
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci",
+				@"CREATE TABLE IF NOT EXISTS `wp_player_knife` (
+                        `steamid` varchar(64) NOT NULL,
+                        `knife` varchar(64) NOT NULL,
+                        UNIQUE (`steamid`)
+                    ) ENGINE = InnoDB"
+			};
 
-					await connection.ExecuteAsync(createTable1, transaction: transaction);
-					await connection.ExecuteAsync(createTable2, transaction: transaction);
+					foreach (var query in createTableQueries)
+					{
+						await connection.ExecuteAsync(query, transaction: transaction);
+					}
 
 					await transaction.CommitAsync();
 				}
@@ -56,14 +72,18 @@ namespace WeaponPaints
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("[WeaponPaints] Unknown mysql exception! " + ex.Message);
+				throw new Exception("[WeaponPaints] Unknown MySQL exception! " + ex.Message);
 			}
 		}
 
 		internal static bool IsPlayerValid(CCSPlayerController? player)
 		{
-			return (player != null && player.IsValid && !player.IsBot && !player.IsHLTV && player.AuthorizedSteamID != null);
+			if (player is null) return false;
+
+			return (player is not null && player.IsValid && !player.IsBot && !player.IsHLTV
+				&& WeaponPaints.weaponSync != null && player.Connected == PlayerConnectedState.PlayerConnected);
 		}
+
 		internal static void LoadSkinsFromFile(string filePath)
 		{
 			try
@@ -168,6 +188,7 @@ namespace WeaponPaints
 			Console.WriteLine(" ");
 		}
 
+		/*(
 		internal static void TestDatabaseConnection()
 		{
 			try
@@ -186,5 +207,6 @@ namespace WeaponPaints
 			}
 			CheckDatabaseTables();
 		}
+		*/
 	}
 }
