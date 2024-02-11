@@ -9,7 +9,8 @@ namespace WeaponPaints
 		{
 			CCSPlayerController? player = Utilities.GetPlayerFromSlot(playerSlot);
 
-			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || weaponSync == null || player.Connected == PlayerConnectedState.PlayerDisconnecting) return;
+			if (player is null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID.ToString().Length != 17 ||
+				weaponSync == null || player.Connected == PlayerConnectedState.PlayerDisconnecting) return;
 
 			PlayerInfo playerInfo = new PlayerInfo
 			{
@@ -37,8 +38,7 @@ namespace WeaponPaints
 		{
 			CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
 
-			if (player == null || !player.IsValid || player.IsBot || player.IsHLTV || player.UserId == null)
-				return;
+			if (player is null || !player.IsValid || !player.UserId.HasValue || player.IsBot || player.IsHLTV || player.SteamID.ToString().Length != 17) return;
 
 			if (Config.Additional.KnifeEnabled)
 				g_playersKnife.TryRemove((int)player.Index, out _);
@@ -134,7 +134,7 @@ namespace WeaponPaints
 			CCSPlayerController? player = Utilities.GetEntityFromIndex<CCSPlayerPawn>((int)activator.Index).OriginalController.Value;
 
 			if (player == null || player.IsBot || player.IsHLTV ||
-				player.SteamID.ToString() == "" || !g_knifePickupCount.TryGetValue((int)player.Index, out var pickupCount) ||
+				player.SteamID.ToString().Length != 17 || !g_knifePickupCount.TryGetValue((int)player.Index, out var pickupCount) ||
 				!g_playersKnife.ContainsKey((int)player.Index))
 			{
 				return HookResult.Continue;

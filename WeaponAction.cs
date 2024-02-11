@@ -358,11 +358,7 @@ namespace WeaponPaints
 
 							if (weapon.Value.DesignerName.Contains("knife") || weaponData?.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
 							{
-								player.RemoveItemByDesignerName(weapon.Value.DesignerName, false);
-								if (weapon.Value.Entity != null && weapon.Value.Entity.EntityInstance.IsValid)
-									weapon.Value.Remove();
-
-								AddTimer(0.2f, () => GiveKnifeToPlayer(player));
+								RefreshWeapons(player);
 								break;
 							}
 						}
