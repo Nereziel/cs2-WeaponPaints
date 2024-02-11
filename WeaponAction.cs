@@ -337,7 +337,7 @@ namespace WeaponPaints
 			}
 		}
 
-		internal void RefreshKnife(CCSPlayerController? player, bool force = false)
+		internal void RefreshKnife(CCSPlayerController? player)
 		{
 			if (player == null || !player.IsValid || player.PlayerPawn?.Value == null || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE)
 				return;
@@ -358,8 +358,7 @@ namespace WeaponPaints
 
 							if (weapon.Value.DesignerName.Contains("knife") || weaponData?.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
 							{
-								player.RemoveItemByDesignerName(weapon.Value.DesignerName, weapon.Value.Entity?.EntityInstance.IsValid ?? false);
-								AddTimer(0.2f, () => GiveKnifeToPlayer(player));
+								RefreshWeapons(player);
 								break;
 							}
 						}

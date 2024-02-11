@@ -151,7 +151,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.6b";
+	public override string ModuleVersion => "1.6c";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -166,7 +166,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 			foreach (var player in Utilities.GetPlayers())
 			{
-				if (weaponSync == null || player is null || !player.IsValid || !player.PawnIsAlive || player.IsBot || player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
+				if (weaponSync == null || player is null || !player.IsValid || player.SteamID.ToString().Length != 17 || !player.PawnIsAlive || player.IsBot ||
+					player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
 					continue;
 
 				g_knifePickupCount[(int)player.Index] = 0;
