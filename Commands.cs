@@ -207,6 +207,7 @@ namespace WeaponPaints
 							}
 							return false;
 						});
+
 						string selectedSkin = opt.Text;
 						string selectedPaintID = selectedSkin.Split('(')[1].Trim(')').Trim();
 
@@ -216,7 +217,19 @@ namespace WeaponPaints
 							int.TryParse(weaponDefIndexObj.ToString(), out var weaponDefIndex) &&
 							int.TryParse(selectedPaintID, out var paintID))
 						{
-							p!.Print(Localizer["wp_skin_menu_select", selectedSkin]);
+							if (Config.Additional.ShowSkinImage && skinsList != null)
+							{
+								var foundSkin = skinsList.FirstOrDefault(skin =>
+									((int?)skin?["weapon_defindex"] ?? 0) == weaponDefIndex &&
+									((int?)skin?["paint"] ?? 0) == paintID &&
+									skin?["image"] != null
+								);
+								string image = foundSkin?["image"]?.ToString() ?? "";
+								PlayerWeaponImage[p.Slot] = image;
+								AddTimer(2.0f, () => PlayerWeaponImage.Remove(p.Slot));
+							}
+
+							p.Print(Localizer["wp_skin_menu_select", selectedSkin]);
 
 							if (!gPlayerWeaponsInfo[playerIndex].ContainsKey(weaponDefIndex))
 							{
@@ -278,24 +291,23 @@ namespace WeaponPaints
 			}
 			// Command to open the weapon selection menu for players
 			AddCommand($"css_{Config.Additional.CommandSkinSelection}", "Skins selection menu", (player, info) =>
-			{
-				if (!Utility.IsPlayerValid(player)) return;
+					{
+						if (!Utility.IsPlayerValid(player)) return;
 
-				if (player == null || player.UserId == null) return;
+						if (player == null || player.UserId == null) return;
 
-				if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
+						if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
 					DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
-				{
-					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
-					MenuManager.OpenChatMenu(player, weaponSelectionMenu);
-					weaponSelectionMenu.PostSelectAction = PostSelectAction.Close;
-					return;
-				}
-				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
-				{
-					player!.Print(Localizer["wp_command_cooldown"]);
-				}
-			});
+						{
+							commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
+							MenuManager.OpenChatMenu(player, weaponSelectionMenu);
+							return;
+						}
+						if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
+						{
+							player!.Print(Localizer["wp_command_cooldown"]);
+						}
+					});
 		}
 	}
 }

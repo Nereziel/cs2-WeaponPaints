@@ -26,6 +26,8 @@ namespace WeaponPaints
 				weapon.AttributeManager.Item.EntityQuality = 3;
 			}
 
+			int fallbackPaintKit = weapon.FallbackPaintKit;
+
 			if (_config.Additional.GiveRandomSkin &&
 				 !gPlayerWeaponsInfo[playerIndex].ContainsKey(weaponDefIndex))
 			{
@@ -36,13 +38,29 @@ namespace WeaponPaints
 				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
 				weapon.FallbackSeed = 0;
 				weapon.FallbackWear = 0.000001f;
+
+				fallbackPaintKit = weapon.FallbackPaintKit;
+
+				if (fallbackPaintKit == 0)
+					return;
+
+				var foundSkin = skinsList.FirstOrDefault(skin =>
+					((int?)skin?["weapon_defindex"] ?? 0) == weaponDefIndex &&
+					((int?)skin?["paint"] ?? 0) == fallbackPaintKit &&
+					skin?["paint_name"] != null
+				);
+
+				string skinName = foundSkin?["paint_name"]?.ToString() ?? "";
+				if (!string.IsNullOrEmpty(skinName))
+					new SchemaString<CEconItemView>(weapon.AttributeManager.Item, "m_szCustomName").Set(skinName);
+
 				if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 				{
 					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
 
-					int[] array = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
-					int fallbackPaintKit = weapon.FallbackPaintKit;
-					if (array.Contains(fallbackPaintKit))
+					int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
+
+					if (newPaints.Contains(fallbackPaintKit))
 					{
 						skeleton.ModelState.MeshGroupMask = 1;
 					}
@@ -54,6 +72,17 @@ namespace WeaponPaints
 						}
 					}
 				}
+
+				var viewModels = GetPlayerViewModels(player);
+				if (viewModels == null || viewModels.Length == 0)
+					return;
+
+				var viewModel = viewModels[0];
+				if (viewModel == null || viewModel.Value == null || viewModel.Value.Weapon == null || viewModel.Value.Weapon.Value == null)
+					return;
+
+				Utilities.SetStateChanged(viewModel.Value, "CBaseEntity", "m_CBodyComponent");
+
 				return;
 			}
 
@@ -67,12 +96,26 @@ namespace WeaponPaints
 			weapon.FallbackSeed = weaponInfo.Seed;
 			weapon.FallbackWear = weaponInfo.Wear;
 
+			fallbackPaintKit = weapon.FallbackPaintKit;
+
+			if (fallbackPaintKit == 0)
+				return;
+
+			var foundSkin1 = skinsList.FirstOrDefault(skin =>
+			   ((int?)skin?["weapon_defindex"] ?? 0) == weaponDefIndex &&
+			   ((int?)skin?["paint"] ?? 0) == fallbackPaintKit &&
+			   skin?["paint_name"] != null
+		   );
+
+			var skinName1 = foundSkin1?["paint_name"]?.ToString() ?? "";
+			if (!string.IsNullOrEmpty(skinName1))
+				new SchemaString<CEconItemView>(weapon.AttributeManager.Item, "m_szCustomName").Set(skinName1);
+
 			if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
 			{
 				var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-				int[] array = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
-				int fallbackPaintKit = weapon.FallbackPaintKit;
-				if (array.Contains(fallbackPaintKit))
+				int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
+				if (newPaints.Contains(fallbackPaintKit))
 				{
 					skeleton.ModelState.MeshGroupMask = 1;
 				}
@@ -84,6 +127,16 @@ namespace WeaponPaints
 					}
 				}
 			}
+
+			var viewModels1 = GetPlayerViewModels(player);
+			if (viewModels1 == null || viewModels1.Length == 0)
+				return;
+
+			var viewModel1 = viewModels1[0];
+			if (viewModel1 == null || viewModel1.Value == null || viewModel1.Value.Weapon == null || viewModel1.Value.Weapon.Value == null)
+				return;
+
+			Utilities.SetStateChanged(viewModel1.Value, "CBaseEntity", "m_CBodyComponent");
 		}
 
 		internal static void GiveKnifeToPlayer(CCSPlayerController? player)
@@ -144,79 +197,6 @@ namespace WeaponPaints
 			return false;
 		}
 
-		/*
-		internal void RefreshPlayerKnife(CCSPlayerController? player)
-		{
-			return;
-			if (player == null || !player.IsValid || player.PlayerPawn.Value == null || !player.PawnIsAlive) return;
-			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null) return;
-
-			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
-			if (weapons != null && weapons.Count > 0)
-			{
-				CCSPlayer_ItemServices service = new(player.PlayerPawn.Value.ItemServices.Handle);
-				//var dropWeapon = VirtualFunction.CreateVoid<nint, nint>(service.Handle, GameData.GetOffset("CCSPlayer_ItemServices_DropActivePlayerWeapon"));
-
-				foreach (var weapon in weapons)
-				{
-					if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid)
-					{
-						//if (weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 42 || weapon.Value.AttributeManager.Item.ItemDefinitionIndex == 59)
-						if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
-						{
-							if (weapon.Index <= 0) return;
-							int weaponEntityIndex = (int)weapon.Index;
-							NativeAPI.IssueClientCommand((int)player.Index - 1, "slot3");
-							AddTimer(0.22f, () =>
-							{
-								if (player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value!.DesignerName.Contains("knife")
-								||
-								player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value!.DesignerName.Contains("bayonet")
-								)
-								{
-									if (player.PawnIsAlive)
-									{
-										NativeAPI.IssueClientCommand((int)player.Index - 1, "slot3");
-										service.DropActivePlayerWeapon(weapon.Value);
-										GiveKnifeToPlayer(player);
-									}
-								}
-							});
-
-							Task.Delay(TimeSpan.FromSeconds(3.5)).ContinueWith(_ =>
-							{
-								try
-								{
-									CEntityInstance? knife = Utilities.GetEntityFromIndex<CEntityInstance>(weaponEntityIndex);
-
-									if (knife != null && knife.IsValid && knife.Handle != -1 && knife.Index > 0)
-									{
-										knife.Remove();
-									}
-								}
-								catch (Exception) { }
-							});
-
-							break;
-						}
-					}
-				}
-			}
-		}
-		*/
-
-		/*
-		internal void RefreshSkins(CCSPlayerController? player)
-		{
-			return;
-			if (!Utility.IsPlayerValid(player) || !player!.PawnIsAlive) return;
-
-			AddTimer(0.18f, () => NativeAPI.IssueClientCommand((int)player.Index - 1, "slot3"));
-			AddTimer(0.25f, () => NativeAPI.IssueClientCommand((int)player.Index - 1, "slot2"));
-			AddTimer(0.38f, () => NativeAPI.IssueClientCommand((int)player.Index - 1, "slot1"));
-		}
-		*/
-
 		internal void RefreshWeapons(CCSPlayerController? player)
 		{
 			if (player == null || !player.IsValid || player.PlayerPawn?.Value == null || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE)
@@ -228,9 +208,6 @@ namespace WeaponPaints
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
 			if (weapons == null || weapons.Count == 0)
 				return;
-
-			// Dictionary to store weapons and their ammo
-
 
 			if (weapons != null && weapons.Count > 0)
 			{
@@ -270,7 +247,7 @@ namespace WeaponPaints
 							}
 						}
 
-						if (!weapon.Value.DesignerName.Contains("knife") && weaponDefindex.TryGetValue(weapon.Value.AttributeManager.Item.ItemDefinitionIndex, out weaponByDefindex) && weaponByDefindex != null)
+						if (!weapon.Value.DesignerName.Contains("knife") && WeaponDefindex.TryGetValue(weapon.Value.AttributeManager.Item.ItemDefinitionIndex, out weaponByDefindex) && weaponByDefindex != null)
 						{
 							int clip1 = weapon.Value.Clip1;
 							int reservedAmmo = weapon.Value.ReserveAmmo[0];
@@ -418,6 +395,5 @@ namespace WeaponPaints
 
 			return values;
 		}
-
 	}
 }
