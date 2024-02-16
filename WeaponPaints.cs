@@ -81,6 +81,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static List<JObject> skinsList = new List<JObject>();
 	internal static WeaponSynchronization? weaponSync;
 	internal bool g_bCommandsAllowed = true;
+	internal Dictionary<int, string> PlayerWeaponImage = new();
 
 	internal Uri GlobalShareApi = new("https://weaponpaints.fun/api.php");
 	internal int GlobalShareServerId = 0;
@@ -88,7 +89,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static Database? _database;
 
 	//private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
-	public static Dictionary<int, string> weaponDefindex { get; } = new Dictionary<int, string>
+	public static Dictionary<int, string> WeaponDefindex { get; } = new Dictionary<int, string>
 	{
 		{ 1, "weapon_deagle" },
 		{ 2, "weapon_elite" },
@@ -151,7 +152,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.6c";
+	public override string ModuleVersion => "1.7a";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -160,7 +161,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	public override void Load(bool hotReload)
 	{
-		if (hotReload && weaponSync != null)
+		if (hotReload)
 		{
 			OnMapStart(string.Empty);
 

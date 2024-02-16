@@ -43,6 +43,9 @@ namespace WeaponPaints
 
 		[JsonPropertyName("GiveKnifeAfterRemove")]
 		public bool GiveKnifeAfterRemove { get; set; } = false;
+
+		[JsonPropertyName("ShowSkinImage")]
+		public bool ShowSkinImage { get; set; } = true;
 	}
 
 	public class WeaponPaintsConfig : BasePluginConfig
