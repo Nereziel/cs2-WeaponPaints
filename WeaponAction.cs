@@ -268,8 +268,10 @@ namespace WeaponPaints
 				}
 
 				player.RemoveWeapons();
-				AddTimer(0.2f, () =>
+				AddTimer(0.35f, () =>
 				{
+					GiveKnifeToPlayer(player);
+
 					if (bomb)
 						player.GiveNamedItem("weapon_c4");
 
@@ -285,8 +287,6 @@ namespace WeaponPaints
 
 					if (healthshot)
 						player.GiveNamedItem("weapon_healtshot");
-
-					GiveKnifeToPlayer(player);
 
 					foreach (var entry in weaponsWithAmmo)
 					{
@@ -310,7 +310,7 @@ namespace WeaponPaints
 							});
 						}
 					}
-				});
+				}, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 			}
 		}
 
@@ -373,6 +373,18 @@ namespace WeaponPaints
 		{
 			Func<nint, nint> GetSkeletonInstance = VirtualFunction.Create<nint, nint>(node.Handle, 8);
 			return new CSkeletonInstance(GetSkeletonInstance(node.Handle));
+		}
+
+		public void SetOrAddAttributeValueByName(CAttributeList attr, string name, float f)
+		{
+			var SetAttr = VirtualFunction.Create<IntPtr, string, float, int>("\\x55\\x48\\x89\\xE5\\x41\\x57\\x41\\x56\\x49\\x89\\xFE\\x41\\x55\\x41\\x54\\x49\\x89\\xF4\\x53\\x48\\x83\\xEC\\x78");
+			SetAttr(attr.Handle, name, f);
+		}
+
+		public void SetPlayerBody(CCSPlayerController player, string model, int i)
+		{
+			var SetBody = VirtualFunction.Create<IntPtr, string, int, int>("\\x55\\x48\\x89\\xE5\\x41\\x56\\x49\\x89\\xF6\\x41\\x55\\x41\\x89\\xD5\\x41\\x54\\x49\\x89\\xFC\\x48\\x83\\xEC\\x08");
+			SetBody(player.PlayerPawn.Value!.Handle, model, i);
 		}
 
 		private static unsafe CHandle<CBaseViewModel>[]? GetPlayerViewModels(CCSPlayerController player)

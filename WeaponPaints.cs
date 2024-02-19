@@ -10,7 +10,7 @@ using System.Collections.Concurrent;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(163)]
+[MinimumApiVersion(167)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static readonly Dictionary<string, string> weaponList = new()
@@ -77,8 +77,10 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static IStringLocalizer? _localizer;
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
 	internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
+	internal static ConcurrentDictionary<uint, (ushort Definition, int Paint)> g_playersGlove = new ConcurrentDictionary<uint, (ushort Definition, int Paint)>();
 	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>>();
 	internal static List<JObject> skinsList = new List<JObject>();
+	internal static List<JObject> glovesList = new List<JObject>();
 	internal static WeaponSynchronization? weaponSync;
 	internal bool g_bCommandsAllowed = true;
 	internal Dictionary<int, string> PlayerWeaponImage = new();
@@ -88,7 +90,6 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
 	internal static Database? _database;
 
-	//private CounterStrikeSharp.API.Modules.Timers.Timer? g_hTimerCheckSkinsData = null;
 	public static Dictionary<int, string> WeaponDefindex { get; } = new Dictionary<int, string>
 	{
 		{ 1, "weapon_deagle" },
@@ -150,9 +151,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	public WeaponPaintsConfig Config { get; set; } = new();
 	public override string ModuleAuthor => "Nereziel & daffyy";
-	public override string ModuleDescription => "Skin and knife selector, standalone and web-based";
+	public override string ModuleDescription => "Skin, gloves and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.7a";
+	public override string ModuleVersion => "1.8a";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -188,17 +189,23 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					_ = weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
 				if (Config.Additional.KnifeEnabled)
 					_ = weaponSync.GetKnifeFromDatabase(playerInfo);
+				if (Config.Additional.GloveEnabled)
+					_ = weaponSync.GetGloveFromDatabase(playerInfo);
 			}
 		}
+
+		Utility.LoadSkinsFromFile(ModuleDirectory + "/skins.json");
+		Utility.LoadGlovesFromFile(ModuleDirectory + "/gloves.json");
+
 		if (Config.Additional.KnifeEnabled)
 			SetupKnifeMenu();
 		if (Config.Additional.SkinEnabled)
 			SetupSkinsMenu();
+		if (Config.Additional.GloveEnabled)
+			SetupGlovesMenu();
 
 		RegisterListeners();
 		RegisterCommands();
-
-		Utility.LoadSkinsFromFile(ModuleDirectory + "/skins.json");
 	}
 
 	public void OnConfigParsed(WeaponPaintsConfig config)
@@ -210,11 +217,6 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				Logger.LogError("You need to setup Database credentials in config!");
 				throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
 			}
-
-			/*
-			DatabaseConnectionString = Utility.BuildDatabaseConnectionString();
-			Utility.TestDatabaseConnection();
-			*/
 
 			var builder = new MySqlConnectionStringBuilder
 			{

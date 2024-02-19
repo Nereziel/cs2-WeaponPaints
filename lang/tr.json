@@ -1,14 +1,17 @@
 {
 	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
-	"wp_info_website": "Görünümleri değiştirebileceğiniz {lime}{0}{default} adresini ziyaret edin",
-	"wp_info_refresh": "Seçilen kaplamyı senkronize etmek için {lime}!wp{default} yazın",
+	"wp_info_website": "Ziyaret edin {lime}{0}{default}, burada skinleri değiştirebilirsiniz",
+	"wp_info_refresh": "Senkronize edilen skinleri görmek için {lime}!wp{default} yazın",
 	"wp_info_knife": "Bıçak menüsünü açmak için {lime}!knife{default} yazın",
-	"wp_command_cooldown": "{lightred}Şu anda silah kaplamasını yenileyemezsiniz",
-	"wp_command_refresh_done": "{lime}Silah kaplaması yenileniyor",
-	"wp_knife_menu_select": "Bıçağınız olarak {lime}{0}{default} seçtiniz",
-	"wp_knife_menu_kill": "Bıçak için doğru şekilde kaplama uygulamak için {lime}!kill{default} yazmanız gerekir",
+	"wp_info_glove": "Eldiven menüsünü açmak için {lime}!gloves{default} yazın",
+	"wp_command_cooldown": "{lightred}Şu anda silah skinlerini yenileyemezsiniz",
+	"wp_command_refresh_done": "{lime}Silah skinleri yenileniyor",
+	"wp_knife_menu_select": "{lime}{0}{default} olarak bıçağınızı seçtiniz",
+	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "Bıçak Menüsü",
+	"wp_glove_menu_select": "{lime}{0}{default} olarak eldiveninizi seçtiniz",
+	"wp_glove_menu_title": "Eldiven Menüsü",
 	"wp_skin_menu_weapon_title": "Silah Menüsü",
-	"wp_skin_menu_skin_title": "Select skin for {lime}{0}{default}",
-	"wp_skin_menu_select": "Teniniz olarak {lime}{0}{default} seçtiniz"
+	"wp_skin_menu_skin_title": "{lime}{0}{default} için bir skin seçin",
+	"wp_skin_menu_select": "{lime}{0}{default} olarak bir skin seçtiniz"
 }

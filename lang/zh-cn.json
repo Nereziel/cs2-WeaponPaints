@@ -1,14 +1,17 @@
 {
-	"wp_prefix": "{lightblue}[武器皮肤] {default}",
-	"wp_info_website": "在线访问 {lime}{0}{default} 更改你的武器皮肤",
-	"wp_info_refresh": "输入 {lime}!wp{default} 进行在线皮肤同步",
-	"wp_info_knife": "输入 {lime}!knife{default} 打开刀菜单",
-	"wp_command_cooldown": "{lightred}皮肤同步刷新冷却中",
-	"wp_command_refresh_done": "{lime}刷新武器皮肤中",
-	"wp_knife_menu_select": "你选择了 {lime}{0}{default} 作为你的刀",
-	"wp_knife_menu_kill": "如需完全应用皮肤到刀上, 你需要输入 {lime}!kill{default} 自杀来进行刷新",
-	"wp_knife_menu_title": "刀菜单",
+	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
+	"wp_info_website": "访问 {lime}{0}{default}，您可以更改皮肤",
+	"wp_info_refresh": "输入 {lime}!wp{default} 同步已选择的皮肤",
+	"wp_info_knife": "输入 {lime}!knife{default} 打开刀具菜单",
+	"wp_info_glove": "输入 {lime}!gloves{default} 打开手套菜单",
+	"wp_command_cooldown": "{lightred}您现在无法刷新武器皮肤",
+	"wp_command_refresh_done": "{lime}刷新武器皮肤",
+	"wp_knife_menu_select": "您已选择 {lime}{0}{default} 作为您的刀具",
+	"wp_knife_menu_kill": "",
+	"wp_knife_menu_title": "刀具菜单",
+	"wp_glove_menu_select": "您已选择 {lime}{0}{default} 作为您的手套",
+	"wp_glove_menu_title": "手套菜单",
 	"wp_skin_menu_weapon_title": "武器菜单",
-	"wp_skin_menu_skin_title": "选择 {lime}{0}{default} 的皮肤",
-	"wp_skin_menu_select": "你选择了 {lime}{0}{default} 作为你的皮肤"
+	"wp_skin_menu_skin_title": "为 {lime}{0}{default} 选择皮肤",
+	"wp_skin_menu_select": "您已选择 {lime}{0}{default} 作为您的皮肤"
 }

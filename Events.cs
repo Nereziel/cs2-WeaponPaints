@@ -10,7 +10,7 @@ namespace WeaponPaints
 			CCSPlayerController? player = Utilities.GetPlayerFromSlot(playerSlot);
 
 			if (player is null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID.ToString().Length != 17 ||
-				weaponSync == null || player.Connected == PlayerConnectedState.PlayerDisconnecting) return;
+				weaponSync == null) return;
 
 			PlayerInfo playerInfo = new PlayerInfo
 			{
@@ -21,17 +21,16 @@ namespace WeaponPaints
 				IpAddress = player.IpAddress?.Split(":")[0]
 			};
 
-			if (!gPlayerWeaponsInfo.ContainsKey((int)player.Index))
+			Task.Run(async () =>
 			{
-				_ = Task.Run(async () =>
-				{
-					if (Config.Additional.SkinEnabled)
-						await weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
+				if (Config.Additional.SkinEnabled)
+					await weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
 
-					if (Config.Additional.KnifeEnabled)
-						await weaponSync.GetKnifeFromDatabase(playerInfo);
-				});
-			}
+				if (Config.Additional.KnifeEnabled)
+					await weaponSync.GetKnifeFromDatabase(playerInfo);
+				if (Config.Additional.GloveEnabled)
+					await weaponSync.GetGloveFromDatabase(playerInfo);
+			});
 		}
 
 		private void OnClientDisconnect(int playerSlot)
@@ -42,6 +41,8 @@ namespace WeaponPaints
 
 			if (Config.Additional.KnifeEnabled)
 				g_playersKnife.TryRemove((int)player.Index, out _);
+			if (Config.Additional.GloveEnabled)
+				g_playersGlove.TryRemove(player.Index, out _);
 
 			if (Config.Additional.SkinEnabled && gPlayerWeaponsInfo.TryGetValue((int)player.Index, out var innerDictionary))
 			{
@@ -118,10 +119,9 @@ namespace WeaponPaints
 
 				if (Config.Additional.GiveKnifeAfterRemove)
 				{
-					AddTimer(0.37f, () =>
+					AddTimer(0.10f, () =>
 					{
-						player.RemoveItemByDesignerName(weapon.DesignerName, true);
-						GiveKnifeToPlayer(player);
+						RefreshWeapons(player);
 					});
 				}
 			}
@@ -131,7 +131,7 @@ namespace WeaponPaints
 
 		private void OnMapStart(string mapName)
 		{
-			if (!Config.Additional.KnifeEnabled && !Config.Additional.SkinEnabled) return;
+			if (!Config.Additional.KnifeEnabled && !Config.Additional.SkinEnabled && !Config.Additional.GloveEnabled) return;
 
 			if (_database != null)
 				weaponSync = new WeaponSynchronization(_database, Config, GlobalShareApi, GlobalShareServerId);
@@ -153,8 +153,26 @@ namespace WeaponPaints
 		{
 			CCSPlayerController? player = @event.Userid;
 
-			if (player is null || !player.IsValid || !Config.Additional.KnifeEnabled)
+			if (player is null || !player.IsValid || !Config.Additional.KnifeEnabled && !Config.Additional.GloveEnabled)
 				return HookResult.Continue;
+
+			if (g_playersGlove.TryGetValue(player.Index, out var gloveInfo) && gloveInfo.Paint != 0)
+			{
+				player.PlayerPawn!.Value!.EconGloves.ItemDefinitionIndex = gloveInfo.Definition;
+				player.PlayerPawn!.Value!.EconGloves.ItemIDLow = 16384 & 0xFFFFFFFF;
+				player.PlayerPawn!.Value!.EconGloves.ItemIDHigh = 16384 >> 32;
+				player.PlayerPawn!.Value!.EconGloves.EntityQuality = 3;
+				player.PlayerPawn!.Value!.EconGloves.EntityLevel = 1;
+
+				Server.NextFrame(() =>
+				{
+					player.PlayerPawn!.Value!.EconGloves.Initialized = true;
+					SetPlayerBody(player, "default_gloves", 1);
+					SetOrAddAttributeValueByName(player.PlayerPawn!.Value!.EconGloves.NetworkedDynamicAttributes, "set item texture prefab", gloveInfo.Paint);
+
+					Utilities.SetStateChanged(player.PlayerPawn.Value, "CCSPlayerPawn", "m_EconGloves");
+				});
+			}
 
 			g_knifePickupCount[(int)player.Index] = 0;
 			GiveKnifeToPlayer(player);

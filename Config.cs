@@ -11,6 +11,9 @@ namespace WeaponPaints
 		[JsonPropertyName("KnifeEnabled")]
 		public bool KnifeEnabled { get; set; } = true;
 
+		[JsonPropertyName("GloveEnabled")]
+		public bool GloveEnabled { get; set; } = true;
+
 		[JsonPropertyName("SkinEnabled")]
 		public bool SkinEnabled { get; set; } = true;
 
@@ -22,6 +25,9 @@ namespace WeaponPaints
 
 		[JsonPropertyName("CommandKnife")]
 		public string CommandKnife { get; set; } = "knife";
+
+		[JsonPropertyName("CommandGlove")]
+		public string CommandGlove { get; set; } = "gloves";
 
 		[JsonPropertyName("CommandSkin")]
 		public string CommandSkin { get; set; } = "ws";

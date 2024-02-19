@@ -1,14 +1,17 @@
 {
 	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
-	"wp_info_website": "Посетите сайт {lime}{0},{default} чтобы выбрать скин",
-	"wp_info_refresh": "Наберите в чат {lime}!wp{default} для синхронизации выбранных скинов",
-	"wp_info_knife": "Наберите в чат {lime}!knife,{default} чтобы выбрать нож",
-	"wp_command_cooldown": "{lightred}Вы не можете выбрать оружие прямо сейчас",
-	"wp_command_refresh_done": "{lime}Обновление скинов для оружия",
-	"wp_knife_menu_select": "Вы выбрали {lime}{0}{default} скин для ножа",
-	"wp_knife_menu_kill": "Чтобы правильно применить скин для ножа, набери в чат {lime}!kill{default}",
-	"wp_knife_menu_title": "Меню ножей",
-	"wp_skin_menu_weapon_title": "Меню оружия",
+	"wp_info_website": "Посетите {lime}{0}{default}, где вы можете изменить скины",
+	"wp_info_refresh": "Введите {lime}!wp{default}, чтобы синхронизировать выбранные скины",
+	"wp_info_knife": "Введите {lime}!knife{default}, чтобы открыть меню ножей",
+	"wp_info_glove": "Введите {lime}!gloves{default}, чтобы открыть меню перчаток",
+	"wp_command_cooldown": "{lightred}Вы не можете обновить скины оружия сейчас",
+	"wp_command_refresh_done": "{lime}Обновление скинов оружия",
+	"wp_knife_menu_select": "Вы выбрали {lime}{0}{default} в качестве вашего ножа",
+	"wp_knife_menu_kill": "",
+	"wp_knife_menu_title": "Меню Ножей",
+	"wp_glove_menu_select": "Вы выбрали {lime}{0}{default} в качестве ваших перчаток",
+	"wp_glove_menu_title": "Меню Перчаток",
+	"wp_skin_menu_weapon_title": "Меню Оружия",
 	"wp_skin_menu_skin_title": "Выберите скин для {lime}{0}{default}",
-	"wp_skin_menu_select": "Вы выбрали {lime}{0}{default} скина для оружия"
+	"wp_skin_menu_select": "Вы выбрали {lime}{0}{default} в качестве вашего скина"
 }
