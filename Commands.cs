@@ -32,8 +32,13 @@ namespace WeaponPaints
 	DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 				{
 					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
+
 					if (weaponSync != null)
 						Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
+
+					if (Config.Additional.GloveEnabled && weaponSync != null)
+						Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
+
 					if (Config.Additional.KnifeEnabled)
 					{
 						if (weaponSync != null)
@@ -68,11 +73,18 @@ namespace WeaponPaints
 			{
 				player!.Print(Localizer["wp_info_refresh"]);
 			}
-			if (!Config.Additional.KnifeEnabled) return;
-			if (!string.IsNullOrEmpty(Localizer["wp_info_knife"]))
-			{
-				player!.Print(Localizer["wp_info_knife"]);
-			}
+
+			if (Config.Additional.GloveEnabled)
+				if (!string.IsNullOrEmpty(Localizer["wp_info_glove"]))
+				{
+					player!.Print(Localizer["wp_info_glove"]);
+				}
+
+			if (Config.Additional.KnifeEnabled)
+				if (!string.IsNullOrEmpty(Localizer["wp_info_knife"]))
+				{
+					player!.Print(Localizer["wp_info_knife"]);
+				}
 		}
 
 		private void RegisterCommands()
@@ -107,7 +119,6 @@ namespace WeaponPaints
 				.ToDictionary(pair => pair.Key, pair => pair.Value);
 
 			var giveItemMenu = new ChatMenu(Localizer["wp_knife_menu_title"]);
-			giveItemMenu.PostSelectAction = PostSelectAction.Close;
 			var handleGive = (CCSPlayerController player, ChatMenuOption option) =>
 			{
 				if (!Utility.IsPlayerValid(player)) return;
@@ -138,7 +149,7 @@ namespace WeaponPaints
 					g_playersKnife[(int)player!.Index] = knifeKey;
 
 					if (g_bCommandsAllowed && (LifeState_t)player.LifeState == LifeState_t.LIFE_ALIVE)
-						RefreshKnife(player);
+						AddTimer(0.15f, () => RefreshWeapons(player), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 
 					_ = weaponSync?.SyncKnifeToDatabase(playerInfo, knifeKey) ?? Task.CompletedTask;
 				}
@@ -157,6 +168,7 @@ namespace WeaponPaints
 					DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 				{
 					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
+					giveItemMenu.PostSelectAction = PostSelectAction.Close;
 					MenuManager.OpenChatMenu(player, giveItemMenu);
 					return;
 				}
@@ -226,7 +238,7 @@ namespace WeaponPaints
 								);
 								string image = foundSkin?["image"]?.ToString() ?? "";
 								PlayerWeaponImage[p.Slot] = image;
-								AddTimer(2.0f, () => PlayerWeaponImage.Remove(p.Slot));
+								AddTimer(2.0f, () => PlayerWeaponImage.Remove(p.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 							}
 
 							p.Print(Localizer["wp_skin_menu_select", selectedSkin]);
@@ -250,7 +262,8 @@ namespace WeaponPaints
 							};
 
 							if (g_bCommandsAllowed && (LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE)
-								RefreshWeapons(p);
+								AddTimer(0.15f, () => RefreshWeapons(p), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+
 
 							if (!Config.GlobalShare)
 							{
@@ -301,6 +314,90 @@ namespace WeaponPaints
 						{
 							commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 							MenuManager.OpenChatMenu(player, weaponSelectionMenu);
+							return;
+						}
+						if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
+						{
+							player!.Print(Localizer["wp_command_cooldown"]);
+						}
+					});
+		}
+
+		private void SetupGlovesMenu()
+		{
+			var glovesSelectionMenu = new ChatMenu(Localizer["wp_glove_menu_title"]);
+
+			var handleGloveSelection = (CCSPlayerController? player, ChatMenuOption option) =>
+			{
+				if (!Utility.IsPlayerValid(player)) return;
+
+				uint playerIndex = player!.Index;
+				string selectedPaintName = option.Text;
+
+				var selectedGlove = glovesList.FirstOrDefault(g => g.ContainsKey("paint_name") && g["paint_name"]?.ToString() == selectedPaintName);
+				if (selectedGlove != null)
+				{
+					if (
+						selectedGlove != null &&
+						selectedGlove.ContainsKey("weapon_defindex") &&
+						selectedGlove.ContainsKey("paint") &&
+						int.TryParse(selectedGlove["weapon_defindex"]?.ToString(), out int weaponDefindex) &&
+						int.TryParse(selectedGlove["paint"]?.ToString(), out int paint)
+					)
+					{
+						if (Config.Additional.ShowSkinImage)
+						{
+							string image = selectedGlove["image"]?.ToString() ?? "";
+							PlayerWeaponImage[player.Slot] = image;
+							AddTimer(2.0f, () => PlayerWeaponImage.Remove(player.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+						}
+
+						PlayerInfo playerInfo = new PlayerInfo
+						{
+							UserId = player.UserId,
+							Index = (int)player.Index,
+							SteamId = player.SteamID.ToString(),
+							Name = player.PlayerName,
+							IpAddress = player.IpAddress?.Split(":")[0]
+						};
+
+						if (paint != 0)
+							g_playersGlove[playerIndex] = ((ushort)weaponDefindex, paint);
+						else
+							g_playersGlove.TryRemove(playerIndex, out _);
+
+						if (!string.IsNullOrEmpty(Localizer["wp_glove_menu_select"]))
+						{
+							player!.Print(Localizer["wp_glove_menu_select", selectedPaintName]);
+						}
+
+						_ = weaponSync?.SyncGloveToDatabase(playerInfo, (ushort)weaponDefindex, paint) ?? Task.CompletedTask;
+					}
+				};
+			};
+
+			// Add weapon options to the weapon selection menu
+			foreach (var gloveObject in glovesList)
+			{
+				string paintName = gloveObject["paint_name"]?.ToString() ?? "";
+
+				if (paintName.Length > 0)
+					glovesSelectionMenu.AddMenuOption(paintName, handleGloveSelection);
+			}
+
+			// Command to open the weapon selection menu for players
+			AddCommand($"css_{Config.Additional.CommandGlove}", "Gloves selection menu", (player, info) =>
+					{
+						if (!Utility.IsPlayerValid(player)) return;
+
+						if (player == null || player.UserId == null) return;
+
+						if (!commandsCooldown.TryGetValue((int)player.UserId, out DateTime cooldownEndTime) ||
+					DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
+						{
+							commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
+							glovesSelectionMenu.PostSelectAction = PostSelectAction.Close;
+							MenuManager.OpenChatMenu(player, glovesSelectionMenu);
 							return;
 						}
 						if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))

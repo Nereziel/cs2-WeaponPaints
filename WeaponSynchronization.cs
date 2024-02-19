@@ -63,15 +63,34 @@ namespace WeaponPaints
 					return;
 				}
 
-				await using (var connection = await _database.GetConnectionAsync())
-				{
-					string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
-					string? playerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = player.SteamId });
+				await using var connection = await _database.GetConnectionAsync();
+				string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
+				string? playerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = player.SteamId });
 
-					if (playerKnife != null)
-					{
-						WeaponPaints.g_playersKnife[player.Index] = playerKnife;
-					}
+				if (!string.IsNullOrEmpty(playerKnife))
+				{
+					WeaponPaints.g_playersKnife[player.Index] = playerKnife;
+				}
+			}
+			catch (Exception e)
+			{
+				Utility.Log(e.Message);
+				return;
+			}
+		}
+
+		internal async Task GetGloveFromDatabase(PlayerInfo player)
+		{
+			if (!_config.Additional.GloveEnabled) return;
+			try
+			{
+				await using var connection = await _database.GetConnectionAsync();
+				string query = "SELECT `weapon_defindex`, `paint` FROM `wp_player_gloves` WHERE `steamid` = @steamid";
+				var gloveData = await connection.QueryFirstOrDefaultAsync<(ushort Definition, int Paint)>(query, new { steamid = player.SteamId });
+
+				if (gloveData != default)
+				{
+					WeaponPaints.g_playersGlove[(uint)player.Index] = gloveData;
 				}
 			}
 			catch (Exception e)
@@ -84,7 +103,6 @@ namespace WeaponPaints
 		internal async Task GetWeaponPaintsFromDatabase(PlayerInfo player)
 		{
 			if (!_config.Additional.SkinEnabled) return;
-			if (player.SteamId == null || player.Index == 0) return;
 
 			if (!WeaponPaints.gPlayerWeaponsInfo.TryGetValue(player.Index, out _))
 			{
@@ -143,26 +161,25 @@ namespace WeaponPaints
 					}
 				}
 
-				await using (var connection = await _database.GetConnectionAsync())
+				await using var connection = await _database.GetConnectionAsync();
+				string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
+				var playerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = player.SteamId });
+
+				foreach (var row in playerSkins)
 				{
-					string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
-					var playerSkins = await connection.QueryAsync(query, new { steamid = player.SteamId });
+					int? weaponDefIndex = row.weapon_defindex;
+					int? weaponPaintId = row.weapon_paint_id;
+					float? weaponWear = row.weapon_wear;
+					int? weaponSeed = row.weapon_seed;
 
-					foreach (var row in playerSkins)
+					WeaponInfo weaponInfo = new WeaponInfo
 					{
-						int weaponDefIndex = row.weapon_defindex ?? default;
-						int weaponPaintId = row.weapon_paint_id ?? default;
-						float weaponWear = row.weapon_wear ?? default;
-						int weaponSeed = row.weapon_seed ?? default;
+						Paint = weaponPaintId.HasValue ? weaponPaintId.Value : 0,
+						Seed = weaponSeed.HasValue ? weaponSeed.Value : 0,
+						Wear = weaponWear.HasValue ? weaponWear.Value : 0f
+					};
 
-						WeaponInfo weaponInfo = new WeaponInfo
-						{
-							Paint = weaponPaintId,
-							Seed = weaponSeed,
-							Wear = weaponWear
-						};
-						WeaponPaints.gPlayerWeaponsInfo[player.Index][weaponDefIndex] = weaponInfo;
-					}
+					WeaponPaints.gPlayerWeaponsInfo[player.Index][weaponDefIndex.GetValueOrDefault()] = weaponInfo;
 				}
 			}
 			catch (Exception e)
@@ -175,13 +192,28 @@ namespace WeaponPaints
 		internal async Task SyncKnifeToDatabase(PlayerInfo player, string knife)
 		{
 			if (!_config.Additional.KnifeEnabled) return;
-			if (player.SteamId == null || player.Index == 0) return;
 
 			try
 			{
 				await using var connection = await _database.GetConnectionAsync();
 				string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
 				await connection.ExecuteAsync(query, new { steamid = player.SteamId, newKnife = knife });
+			}
+			catch (Exception e)
+			{
+				Utility.Log(e.Message);
+			}
+		}
+
+		internal async Task SyncGloveToDatabase(PlayerInfo player, ushort defindex, int paint)
+		{
+			if (!_config.Additional.GloveEnabled) return;
+
+			try
+			{
+				await using var connection = await _database.GetConnectionAsync();
+				string query = "INSERT INTO `wp_player_gloves` (`steamid`, `weapon_defindex`, `paint`) VALUES(@steamid, @weapon_defindex, @paint) ON DUPLICATE KEY UPDATE `weapon_defindex` = @weapon_defindex, `paint` = @paint";
+				await connection.ExecuteAsync(query, new { steamid = player.SteamId, weapon_defindex = defindex, paint });
 			}
 			catch (Exception e)
 			{

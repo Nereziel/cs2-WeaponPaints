@@ -60,6 +60,8 @@ jobs:
           ${{ env.OUTPUT_PATH }}/Microsoft.Extensions.DependencyModel.dll \
     - name: Copy skins.json
       run: cp website/data/skins.json ${{ env.OUTPUT_PATH }}/skins.json
+    - name: Copy gloves.json
+      run: cp website/data/gloves.json ${{ env.OUTPUT_PATH }}/gloves.json
     - name: Zip
       uses: thedoctor0/zip-release@0.7.5
       with:

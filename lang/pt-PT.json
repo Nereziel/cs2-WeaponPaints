@@ -1,14 +1,17 @@
 {
 	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
-	"wp_info_website": "Visita {lime}{0}{default} onde podes mudar as tuas skins",
-	"wp_info_refresh": "Digita {lime}!wp{default} para sincronizar as tuas skins",
-	"wp_info_knife": "Digita {lime}!knife{default} para abrir o menu de facas",
-	"wp_command_cooldown": "{lightred}Tu não podes sincronizar agora as tuas skins",
-	"wp_command_refresh_done": "{lime}Sincronizando as tuas skins",
-	"wp_knife_menu_select": "Tu escolheste {lime}{0}{default} como a tua faca",
-	"wp_knife_menu_kill": "Para aplicar corretamente a skins para a tua faca, digita {lime}!kill{default}",
-	"wp_knife_menu_title": "Menu Facas",
+	"wp_info_website": "Visite {lime}{0}{default}, onde pode alterar skins",
+	"wp_info_refresh": "Digite {lime}!wp{default} para sincronizar as skins selecionadas",
+	"wp_info_knife": "Digite {lime}!knife{default} para abrir o menu de facas",
+	"wp_info_glove": "Digite {lime}!gloves{default} para abrir o menu de luvas",
+	"wp_command_cooldown": "{lightred}Você não pode atualizar as skins de arma agora",
+	"wp_command_refresh_done": "{lime}Atualizando as skins de arma",
+	"wp_knife_menu_select": "Você escolheu {lime}{0}{default} como sua faca",
+	"wp_knife_menu_kill": "",
+	"wp_knife_menu_title": "Menu de Facas",
+	"wp_glove_menu_select": "Você escolheu {lime}{0}{default} como suas luvas",
+	"wp_glove_menu_title": "Menu de Luvas",
 	"wp_skin_menu_weapon_title": "Menu de Armas",
-	"wp_skin_menu_skin_title": "Escolhe a skin para {lime}{0}{default}",
-	"wp_skin_menu_select": "Tu escolheste {lime}{0}{default} como a tua skin"
+	"wp_skin_menu_skin_title": "Selecione uma skin para {lime}{0}{default}",
+	"wp_skin_menu_select": "Você escolheu {lime}{0}{default} como sua skin"
 }
