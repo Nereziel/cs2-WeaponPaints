@@ -311,7 +311,7 @@ namespace WeaponPaints
 							});
 						}
 					}
-				}, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+				}, TimerFlags.STOP_ON_MAPCHANGE);
 			}
 		}
 
@@ -351,6 +351,8 @@ namespace WeaponPaints
 
 		private static void RefreshGloves(CCSPlayerController player)
 		{
+			if (!Utility.IsPlayerValid(player) || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE) return;
+
 			CCSPlayerPawn? pawn = player.PlayerPawn.Value;
 			if (pawn == null || !pawn.IsValid || pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
 				return;
@@ -369,20 +371,22 @@ namespace WeaponPaints
 					if (!player.IsValid)
 						return;
 
-					if (g_playersGlove.TryGetValue(player.Index, out var gloveInfo) && gloveInfo.Paint != 0)
+					if (g_playersGlove.TryGetValue(player.Index, out var gloveInfo) && gloveInfo != 0)
 					{
 						CCSPlayerPawn? pawn = player.PlayerPawn.Value;
 						if (pawn == null || !pawn.IsValid || pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
 							return;
 
+						WeaponInfo weaponInfo = gPlayerWeaponsInfo[(int)player.Index][gloveInfo];
+
 						CEconItemView item = pawn.EconGloves;
-						item.ItemDefinitionIndex = gloveInfo.Definition;
+						item.ItemDefinitionIndex = gloveInfo;
 						item.ItemIDLow = 16384 & 0xFFFFFFFF;
 						item.ItemIDHigh = 16384;
 
-						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture prefab", gloveInfo.Paint);
-						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture seed", 0);
-						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture wear", 0.00f);
+						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weaponInfo.Paint);
+						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture seed", weaponInfo.Seed);
+						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture wear", weaponInfo.Wear);
 
 						item.Initialized = true;
 

@@ -46,6 +46,17 @@ namespace WeaponPaints
 			if (player is null || !player.IsValid || !player.UserId.HasValue || player.IsBot ||
 				player.IsHLTV || player.SteamID.ToString().Length != 17) return HookResult.Continue;
 
+			PlayerInfo playerInfo = new PlayerInfo
+			{
+				UserId = player.UserId,
+				Index = (int)player.Index,
+				SteamId = player.SteamID.ToString(),
+				Name = player.PlayerName,
+				IpAddress = player.IpAddress?.Split(":")[0]
+			};
+
+			if (weaponSync != null)
+				Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
 
 			if (Config.Additional.SkinEnabled)
 				gPlayerWeaponsInfo.TryRemove((int)player.Index, out _);
