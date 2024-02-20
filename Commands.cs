@@ -35,18 +35,19 @@ namespace WeaponPaints
 					commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 
 					if (weaponSync != null)
+					{
 						Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
 
-					if (Config.Additional.GloveEnabled && weaponSync != null)
-						Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
+						if (Config.Additional.GloveEnabled)
+							Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
 
-					if (Config.Additional.KnifeEnabled)
-					{
-						if (weaponSync != null)
+						if (Config.Additional.KnifeEnabled)
 							Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
 
 						RefreshWeapons(player);
+						RefreshGloves(player);
 					}
+
 					if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
 					{
 						player!.Print(Localizer["wp_command_refresh_done"]);
@@ -266,13 +267,6 @@ namespace WeaponPaints
 
 							if (g_bCommandsAllowed && (LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE)
 								AddTimer(0.15f, () => RefreshWeapons(p), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
-
-
-							if (!Config.GlobalShare)
-							{
-								if (weaponSync != null)
-									Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
-							}
 						}
 					};
 
@@ -366,9 +360,20 @@ namespace WeaponPaints
 						};
 
 						if (paint != 0)
-							g_playersGlove[playerIndex] = ((ushort)weaponDefindex, paint);
+						{
+							g_playersGlove[playerIndex] = (ushort)weaponDefindex;
+
+							if (!gPlayerWeaponsInfo[(int)playerIndex].ContainsKey(weaponDefindex))
+							{
+								WeaponInfo weaponInfo = new();
+								weaponInfo.Paint = paint;
+								gPlayerWeaponsInfo[(int)playerIndex][weaponDefindex] = weaponInfo;
+							}
+						}
 						else
+						{
 							g_playersGlove.TryRemove(playerIndex, out _);
+						}
 
 						if (!string.IsNullOrEmpty(Localizer["wp_glove_menu_select"]))
 						{
@@ -382,7 +387,7 @@ namespace WeaponPaints
 
 						if (weaponSync != null)
 						{
-							Task.Run(async () => await weaponSync.SyncGloveToDatabase(playerInfo, (ushort)weaponDefindex, paint));
+							Task.Run(async () => await weaponSync.SyncGloveToDatabase(playerInfo, (ushort)weaponDefindex));
 						}
 					}
 				};

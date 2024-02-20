@@ -58,7 +58,6 @@ namespace WeaponPaints
 				@"CREATE TABLE IF NOT EXISTS `wp_player_gloves` (
 					 `steamid` varchar(64) NOT NULL,
 					 `weapon_defindex` int(11) NOT NULL,
-					 `paint` int(11) NOT NULL,
                       UNIQUE (`steamid`)
 					) ENGINE=InnoDB"
 			};

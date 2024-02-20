@@ -79,7 +79,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static IStringLocalizer? _localizer;
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
 	internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
-	internal static ConcurrentDictionary<uint, (ushort Definition, int Paint)> g_playersGlove = new ConcurrentDictionary<uint, (ushort Definition, int Paint)>();
+	internal static ConcurrentDictionary<uint, ushort> g_playersGlove = new ConcurrentDictionary<uint, ushort>();
 	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>>();
 	internal static List<JObject> skinsList = new List<JObject>();
 	internal static List<JObject> glovesList = new List<JObject>();
@@ -158,7 +158,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.8b";
+	public override string ModuleVersion => "1.8c";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
