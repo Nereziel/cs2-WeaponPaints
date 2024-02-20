@@ -68,7 +68,7 @@ jobs:
         type: 'zip'
         filename: '${{ env.PROJECT_NAME }}.zip'
         path: |
-          ${{ env.OUTPUT_PATH }}
+          ./${{ env.OUTPUT_PATH }}
           ./gamedata/
     - name: Clean files Website
       run: |
