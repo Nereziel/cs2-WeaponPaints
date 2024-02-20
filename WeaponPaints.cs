@@ -2,6 +2,7 @@ using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Modules.Cvars;
+using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
@@ -10,9 +11,10 @@ using System.Collections.Concurrent;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(167)]
+[MinimumApiVersion(168)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
+	internal static WeaponPaints Instance { get; private set; } = new();
 	internal static readonly Dictionary<string, string> weaponList = new()
 	{
 		{"weapon_deagle", "Desert Eagle"},
@@ -82,13 +84,16 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static List<JObject> skinsList = new List<JObject>();
 	internal static List<JObject> glovesList = new List<JObject>();
 	internal static WeaponSynchronization? weaponSync;
-	internal bool g_bCommandsAllowed = true;
+	public static bool g_bCommandsAllowed = true;
 	internal Dictionary<int, string> PlayerWeaponImage = new();
 
 	internal Uri GlobalShareApi = new("https://weaponpaints.fun/api.php");
 	internal int GlobalShareServerId = 0;
 	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
 	internal static Database? _database;
+
+	internal static MemoryFunctionVoid<nint, string, float> CAttributeList_SetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
+	internal static MemoryFunctionVoid<CBaseModelEntity, string, UInt64> CBaseModelEntity_SetBodygroup = new(GameData.GetSignature("CBaseModelEntity_SetBodygroup"));
 
 	public static Dictionary<int, string> WeaponDefindex { get; } = new Dictionary<int, string>
 	{
@@ -153,7 +158,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.8a";
+	public override string ModuleVersion => "1.8b";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -162,6 +167,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	public override void Load(bool hotReload)
 	{
+		Instance = this;
+
 		if (hotReload)
 		{
 			OnMapStart(string.Empty);

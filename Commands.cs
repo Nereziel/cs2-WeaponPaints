@@ -1,4 +1,5 @@
-﻿using CounterStrikeSharp.API.Core;
+﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Menu;
 
@@ -96,7 +97,7 @@ namespace WeaponPaints
 			});
 			AddCommand($"css_{Config.Additional.CommandRefresh}", "Skins refresh", (player, info) =>
 			{
-				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
+				if (!Utility.IsPlayerValid(player)) return;
 				OnCommandRefresh(player, info);
 			});
 			if (Config.Additional.CommandKillEnabled)
@@ -149,9 +150,10 @@ namespace WeaponPaints
 					g_playersKnife[(int)player!.Index] = knifeKey;
 
 					if (g_bCommandsAllowed && (LifeState_t)player.LifeState == LifeState_t.LIFE_ALIVE)
-						AddTimer(0.15f, () => RefreshWeapons(player), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+						AddTimer(0.1f, () => RefreshWeapons(player), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 
-					_ = weaponSync?.SyncKnifeToDatabase(playerInfo, knifeKey) ?? Task.CompletedTask;
+					if (weaponSync != null)
+						Task.Run(async () => await weaponSync.SyncKnifeToDatabase(playerInfo, knifeKey));
 				}
 			};
 			foreach (var knifePair in knivesOnly)
@@ -183,6 +185,7 @@ namespace WeaponPaints
 		{
 			var classNamesByWeapon = weaponList.ToDictionary(kvp => kvp.Value, kvp => kvp.Key);
 			var weaponSelectionMenu = new ChatMenu(Localizer["wp_skin_menu_weapon_title"]);
+			weaponSelectionMenu.PostSelectAction = PostSelectAction.Close;
 
 			// Function to handle skin selection for a specific weapon
 			var handleWeaponSelection = (CCSPlayerController? player, ChatMenuOption option) =>
@@ -326,6 +329,7 @@ namespace WeaponPaints
 		private void SetupGlovesMenu()
 		{
 			var glovesSelectionMenu = new ChatMenu(Localizer["wp_glove_menu_title"]);
+			glovesSelectionMenu.PostSelectAction = PostSelectAction.Close;
 
 			var handleGloveSelection = (CCSPlayerController? player, ChatMenuOption option) =>
 			{
@@ -371,7 +375,15 @@ namespace WeaponPaints
 							player!.Print(Localizer["wp_glove_menu_select", selectedPaintName]);
 						}
 
-						_ = weaponSync?.SyncGloveToDatabase(playerInfo, (ushort)weaponDefindex, paint) ?? Task.CompletedTask;
+						Server.NextFrame(() =>
+						{
+							RefreshGloves(player);
+						});
+
+						if (weaponSync != null)
+						{
+							Task.Run(async () => await weaponSync.SyncGloveToDatabase(playerInfo, (ushort)weaponDefindex, paint));
+						}
 					}
 				};
 			};
@@ -388,7 +400,7 @@ namespace WeaponPaints
 			// Command to open the weapon selection menu for players
 			AddCommand($"css_{Config.Additional.CommandGlove}", "Gloves selection menu", (player, info) =>
 					{
-						if (!Utility.IsPlayerValid(player)) return;
+						if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
 
 						if (player == null || player.UserId == null) return;
 
@@ -396,7 +408,6 @@ namespace WeaponPaints
 					DateTime.UtcNow >= (commandsCooldown.TryGetValue((int)player.UserId, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 						{
 							commandsCooldown[(int)player.UserId] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
-							glovesSelectionMenu.PostSelectAction = PostSelectAction.Close;
 							MenuManager.OpenChatMenu(player, glovesSelectionMenu);
 							return;
 						}
