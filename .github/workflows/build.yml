@@ -69,7 +69,7 @@ jobs:
         filename: '${{ env.PROJECT_NAME }}.zip'
         path: |
           ${{ env.OUTPUT_PATH }}
-          gamedata/
+          ./gamedata/
     - name: Clean files Website
       run: |
         rm -rf website/img/
