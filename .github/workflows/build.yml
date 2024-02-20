@@ -63,13 +63,7 @@ jobs:
     - name: Copy gloves.json
       run: cp website/data/gloves.json ${{ env.OUTPUT_PATH }}/gloves.json
     - name: Zip
-      uses: thedoctor0/zip-release@0.7.5
-      with:
-        type: 'zip'
-        filename: '${{ env.PROJECT_NAME }}.zip'
-        path: |
-          ./${{ env.OUTPUT_PATH }}
-          ./gamedata/
+      run: zip -r "${{ env.PROJECT_NAME }}.zip" "${{ env.OUTPUT_PATH }}" gamedata/
     - name: Clean files Website
       run: |
         rm -rf website/img/
