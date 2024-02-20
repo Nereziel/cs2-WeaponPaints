@@ -76,7 +76,9 @@ jobs:
       with:
         type: 'zip'
         filename: '${{ env.PROJECT_NAME }}-Website.zip'
-        path: website
+        path: |
+          ${{ env.OUTPUT_PATH }}
+          gamedata
     - name: WeaponPaints
       uses: ncipollo/release-action@v1.12.0
       with:
