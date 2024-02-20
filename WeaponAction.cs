@@ -1,6 +1,7 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Memory;
+using CounterStrikeSharp.API.Modules.Timers;
 using CounterStrikeSharp.API.Modules.Utils;
 using Microsoft.Extensions.Logging;
 using System.Runtime.InteropServices;
@@ -268,7 +269,7 @@ namespace WeaponPaints
 				}
 
 				player.RemoveWeapons();
-				AddTimer(0.35f, () =>
+				AddTimer(0.1f, () =>
 				{
 					GiveKnifeToPlayer(player);
 
@@ -348,6 +349,50 @@ namespace WeaponPaints
 			}
 		}
 
+		private static void RefreshGloves(CCSPlayerController player)
+		{
+			CCSPlayerPawn? pawn = player.PlayerPawn.Value;
+			if (pawn == null || !pawn.IsValid || pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+				return;
+
+			string model = pawn.CBodyComponent?.SceneNode?.GetSkeletonInstance()?.ModelState.ModelName ?? string.Empty;
+			if (!string.IsNullOrEmpty(model))
+			{
+				pawn.SetModel("characters/models/tm_jumpsuit/tm_jumpsuit_varianta.vmdl");
+				pawn.SetModel(model);
+			}
+
+			Instance.AddTimer(0.06f, () =>
+			{
+				try
+				{
+					if (!player.IsValid)
+						return;
+
+					if (g_playersGlove.TryGetValue(player.Index, out var gloveInfo) && gloveInfo.Paint != 0)
+					{
+						CCSPlayerPawn? pawn = player.PlayerPawn.Value;
+						if (pawn == null || !pawn.IsValid || pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+							return;
+
+						CEconItemView item = pawn.EconGloves;
+						item.ItemDefinitionIndex = gloveInfo.Definition;
+						item.ItemIDLow = 16384 & 0xFFFFFFFF;
+						item.ItemIDHigh = 16384;
+
+						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture prefab", gloveInfo.Paint);
+						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture seed", 0);
+						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture wear", 0.00f);
+
+						item.Initialized = true;
+
+						CBaseModelEntity_SetBodygroup.Invoke(pawn, "default_gloves", 1);
+					}
+				}
+				catch (Exception) { }
+			}, TimerFlags.STOP_ON_MAPCHANGE);
+		}
+
 		private static int GetRandomPaint(int defindex)
 		{
 			if (skinsList == null || skinsList.Count == 0)
@@ -373,18 +418,6 @@ namespace WeaponPaints
 		{
 			Func<nint, nint> GetSkeletonInstance = VirtualFunction.Create<nint, nint>(node.Handle, 8);
 			return new CSkeletonInstance(GetSkeletonInstance(node.Handle));
-		}
-
-		public void SetOrAddAttributeValueByName(CAttributeList attr, string name, float f)
-		{
-			var SetAttr = VirtualFunction.Create<IntPtr, string, float, int>("\\x55\\x48\\x89\\xE5\\x41\\x57\\x41\\x56\\x49\\x89\\xFE\\x41\\x55\\x41\\x54\\x49\\x89\\xF4\\x53\\x48\\x83\\xEC\\x78");
-			SetAttr(attr.Handle, name, f);
-		}
-
-		public void SetPlayerBody(CCSPlayerController player, string model, int i)
-		{
-			var SetBody = VirtualFunction.Create<IntPtr, string, int, int>("\\x55\\x48\\x89\\xE5\\x41\\x56\\x49\\x89\\xF6\\x41\\x55\\x41\\x89\\xD5\\x41\\x54\\x49\\x89\\xFC\\x48\\x83\\xEC\\x08");
-			SetBody(player.PlayerPawn.Value!.Handle, model, i);
 		}
 
 		private static unsafe CHandle<CBaseViewModel>[]? GetPlayerViewModels(CCSPlayerController player)

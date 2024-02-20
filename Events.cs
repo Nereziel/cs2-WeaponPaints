@@ -1,16 +1,19 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Core.Attributes.Registration;
 
 namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
-		private void OnClientPutInServer(int playerSlot)
+
+		[GameEventHandler]
+		public HookResult OnPlayerConnect(EventPlayerConnectFull @event, GameEventInfo info)
 		{
-			CCSPlayerController? player = Utilities.GetPlayerFromSlot(playerSlot);
+			CCSPlayerController? player = @event.Userid;
 
 			if (player is null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID.ToString().Length != 17 ||
-				weaponSync == null) return;
+				weaponSync == null || _database == null) return HookResult.Continue;
 
 			PlayerInfo playerInfo = new PlayerInfo
 			{
@@ -23,34 +26,37 @@ namespace WeaponPaints
 
 			Task.Run(async () =>
 			{
-				if (Config.Additional.SkinEnabled)
-					await weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
+				// Run skin, knife, and glove tasks asynchronously
+				var skinTask = Config.Additional.SkinEnabled ? weaponSync.GetWeaponPaintsFromDatabase(playerInfo) : Task.CompletedTask;
+				var knifeTask = Config.Additional.KnifeEnabled ? weaponSync.GetKnifeFromDatabase(playerInfo) : Task.CompletedTask;
+				var gloveTask = Config.Additional.GloveEnabled ? weaponSync.GetGloveFromDatabase(playerInfo) : Task.CompletedTask;
 
-				if (Config.Additional.KnifeEnabled)
-					await weaponSync.GetKnifeFromDatabase(playerInfo);
-				if (Config.Additional.GloveEnabled)
-					await weaponSync.GetGloveFromDatabase(playerInfo);
+				// Await all tasks to complete
+				await Task.WhenAll(skinTask, knifeTask, gloveTask);
 			});
+
+			return HookResult.Continue;
 		}
 
-		private void OnClientDisconnect(int playerSlot)
+		[GameEventHandler]
+		public HookResult OnPlayerDisconnect(EventPlayerDisconnect @event, GameEventInfo info)
 		{
-			CCSPlayerController player = Utilities.GetPlayerFromSlot(playerSlot);
+			CCSPlayerController player = @event.Userid;
 
-			if (player is null || !player.IsValid || !player.UserId.HasValue || player.IsBot || player.IsHLTV || player.SteamID.ToString().Length != 17) return;
+			if (player is null || !player.IsValid || !player.UserId.HasValue || player.IsBot ||
+				player.IsHLTV || player.SteamID.ToString().Length != 17) return HookResult.Continue;
 
+
+			if (Config.Additional.SkinEnabled)
+				gPlayerWeaponsInfo.TryRemove((int)player.Index, out _);
 			if (Config.Additional.KnifeEnabled)
 				g_playersKnife.TryRemove((int)player.Index, out _);
 			if (Config.Additional.GloveEnabled)
 				g_playersGlove.TryRemove(player.Index, out _);
 
-			if (Config.Additional.SkinEnabled && gPlayerWeaponsInfo.TryGetValue((int)player.Index, out var innerDictionary))
-			{
-				innerDictionary.Clear();
-				gPlayerWeaponsInfo.TryRemove((int)player.Index, out _);
-			}
-
 			commandsCooldown.Remove((int)player.UserId);
+
+			return HookResult.Continue;
 		}
 
 		private void OnEntityCreated(CEntityInstance entity)
@@ -153,29 +159,18 @@ namespace WeaponPaints
 		{
 			CCSPlayerController? player = @event.Userid;
 
-			if (player is null || !player.IsValid || !Config.Additional.KnifeEnabled && !Config.Additional.GloveEnabled)
+			if (player is null || !player.IsValid || player.PlayerPawn == null ||
+			!player.PlayerPawn.IsValid || player.IsHLTV
+			|| !Config.Additional.KnifeEnabled && !Config.Additional.GloveEnabled)
 				return HookResult.Continue;
-
-			if (g_playersGlove.TryGetValue(player.Index, out var gloveInfo) && gloveInfo.Paint != 0)
-			{
-				player.PlayerPawn!.Value!.EconGloves.ItemDefinitionIndex = gloveInfo.Definition;
-				player.PlayerPawn!.Value!.EconGloves.ItemIDLow = 16384 & 0xFFFFFFFF;
-				player.PlayerPawn!.Value!.EconGloves.ItemIDHigh = 16384 >> 32;
-				player.PlayerPawn!.Value!.EconGloves.EntityQuality = 3;
-				player.PlayerPawn!.Value!.EconGloves.EntityLevel = 1;
-
-				Server.NextFrame(() =>
-				{
-					player.PlayerPawn!.Value!.EconGloves.Initialized = true;
-					SetPlayerBody(player, "default_gloves", 1);
-					SetOrAddAttributeValueByName(player.PlayerPawn!.Value!.EconGloves.NetworkedDynamicAttributes, "set item texture prefab", gloveInfo.Paint);
-
-					Utilities.SetStateChanged(player.PlayerPawn.Value, "CCSPlayerPawn", "m_EconGloves");
-				});
-			}
 
 			g_knifePickupCount[(int)player.Index] = 0;
 			GiveKnifeToPlayer(player);
+
+			Server.NextFrame(() =>
+			{
+				RefreshGloves(player);
+			});
 
 			return HookResult.Continue;
 		}
@@ -262,8 +257,8 @@ namespace WeaponPaints
 		private void RegisterListeners()
 		{
 			RegisterListener<Listeners.OnEntityCreated>(OnEntityCreated);
-			RegisterListener<Listeners.OnClientPutInServer>(OnClientPutInServer);
-			RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
+			//RegisterListener<Listeners.OnClientPutInServer>(OnClientPutInServer);
+			//RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
 			RegisterListener<Listeners.OnTick>(OnTick);
 

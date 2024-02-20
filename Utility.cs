@@ -87,7 +87,7 @@ namespace WeaponPaints
 			if (player is null) return false;
 
 			return (player is not null && player.IsValid && !player.IsBot && !player.IsHLTV
-				&& WeaponPaints.weaponSync != null && player.Connected == PlayerConnectedState.PlayerConnected);
+				&& WeaponPaints.weaponSync != null && player.Connected == PlayerConnectedState.PlayerConnected && player.SteamID.ToString().Length == 17);
 		}
 
 		internal static void LoadSkinsFromFile(string filePath)

@@ -62,6 +62,8 @@ jobs:
       run: cp website/data/skins.json ${{ env.OUTPUT_PATH }}/skins.json
     - name: Copy gloves.json
       run: cp website/data/gloves.json ${{ env.OUTPUT_PATH }}/gloves.json
+    - name: Copy gamedata
+      run: cp -R gamedata gamedata
     - name: Zip
       uses: thedoctor0/zip-release@0.7.5
       with:

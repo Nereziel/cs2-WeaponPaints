@@ -84,19 +84,26 @@ namespace WeaponPaints
 			if (!_config.Additional.GloveEnabled) return;
 			try
 			{
+				// Ensure proper disposal of resources using "using" statement
 				await using var connection = await _database.GetConnectionAsync();
+
+				// Construct the SQL query with specific columns for better performance
 				string query = "SELECT `weapon_defindex`, `paint` FROM `wp_player_gloves` WHERE `steamid` = @steamid";
+
+				// Execute the query and retrieve glove data
 				var gloveData = await connection.QueryFirstOrDefaultAsync<(ushort Definition, int Paint)>(query, new { steamid = player.SteamId });
 
+				// Check if glove data is retrieved successfully
 				if (gloveData != default)
 				{
+					// Update g_playersGlove dictionary with glove data
 					WeaponPaints.g_playersGlove[(uint)player.Index] = gloveData;
 				}
 			}
 			catch (Exception e)
 			{
-				Utility.Log(e.Message);
-				return;
+				// Log any exceptions occurred during database operation
+				Utility.Log("An error occurred while fetching glove data: " + e.Message);
 			}
 		}
 
