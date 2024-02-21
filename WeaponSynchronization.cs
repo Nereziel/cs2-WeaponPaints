@@ -219,7 +219,7 @@ namespace WeaponPaints
 			try
 			{
 				await using var connection = await _database.GetConnectionAsync();
-				string query = "INSERT INTO `wp_player_gloves` (`steamid`, `weapon_defindex`) VALUES(@steamid, @weapon_defindex, @paint) ON DUPLICATE KEY UPDATE `weapon_defindex` = @weapon_defindex";
+				string query = "INSERT INTO `wp_player_gloves` (`steamid`, `weapon_defindex`) VALUES(@steamid, @weapon_defindex) ON DUPLICATE KEY UPDATE `weapon_defindex` = @weapon_defindex";
 				await connection.ExecuteAsync(query, new { steamid = player.SteamId, weapon_defindex = defindex });
 			}
 			catch (Exception e)

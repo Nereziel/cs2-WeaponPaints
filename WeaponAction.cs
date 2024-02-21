@@ -202,117 +202,122 @@ namespace WeaponPaints
 		{
 			if (player == null || !player.IsValid || player.PlayerPawn?.Value == null || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE)
 				return;
-
 			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
 				return;
 
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
+
 			if (weapons == null || weapons.Count == 0)
 				return;
+			if (player.Team == CsTeam.None || player.Team == CsTeam.Spectator)
+				return;
 
-			if (weapons != null && weapons.Count > 0)
+			//Dictionary<string, (int, int)> weaponsWithAmmo = new Dictionary<string, (int, int)>();
+			Dictionary<string, List<(int, int)>> weaponsWithAmmo = new Dictionary<string, List<(int, int)>>();
+			bool bomb = false;
+			bool defuser = player.PawnHasDefuser;
+			bool healthshot = false;
+
+			// Iterate through each weapon
+			foreach (var weapon in weapons)
 			{
-				//Dictionary<string, (int, int)> weaponsWithAmmo = new Dictionary<string, (int, int)>();
-				Dictionary<string, List<(int, int)>> weaponsWithAmmo = new Dictionary<string, List<(int, int)>>();
-				bool bomb = false;
-				bool defuser = player.PawnHasDefuser;
-				bool healthshot = false;
+				if (weapon == null || !weapon.IsValid || weapon.Value == null ||
+					!weapon.Value.IsValid || !weapon.Value.DesignerName.Contains("weapon_"))
+					continue;
 
-				// Iterate through each weapon
-				foreach (var weapon in weapons)
+				try
 				{
-					if (weapon == null || !weapon.IsValid || weapon.Value == null ||
-						!weapon.Value.IsValid || !weapon.Value.DesignerName.Contains("weapon_"))
-						continue;
+					string? weaponByDefindex = null;
 
-					try
+					CCSWeaponBaseVData? weaponData = weapon.Value.As<CCSWeaponBase>().VData;
+
+					if (weaponData != null)
 					{
-						string? weaponByDefindex = null;
+						if (weaponData.GearSlot == gear_slot_t.GEAR_SLOT_C4)
+							bomb = true;
 
-						CCSWeaponBaseVData? weaponData = weapon.Value.As<CCSWeaponBase>().VData;
+						if (weaponData.Name.Equals("weapon_healtshot"))
+							healthshot = true;
 
-						if (weaponData != null)
-						{
-							if (weaponData.GearSlot == gear_slot_t.GEAR_SLOT_C4)
-								bomb = true;
-
-							if (weaponData.Name.Equals("weapon_healtshot"))
-								healthshot = true;
-
-							if (weaponData.GearSlot == gear_slot_t.GEAR_SLOT_GRENADES || weaponData.GearSlot == gear_slot_t.GEAR_SLOT_UTILITY || weaponData.GearSlot == gear_slot_t.GEAR_SLOT_BOOSTS)
-							{
-								int clip1 = weapon.Value.Clip1;
-								int reservedAmmo = weapon.Value.ReserveAmmo[0];
-
-								weaponsWithAmmo.Add(weapon.Value.DesignerName, new List<(int, int)>() { (clip1, reservedAmmo) });
-							}
-						}
-
-						if (!weapon.Value.DesignerName.Contains("knife") && WeaponDefindex.TryGetValue(weapon.Value.AttributeManager.Item.ItemDefinitionIndex, out weaponByDefindex) && weaponByDefindex != null)
+						if (weaponData.GearSlot == gear_slot_t.GEAR_SLOT_GRENADES || weaponData.GearSlot == gear_slot_t.GEAR_SLOT_UTILITY || weaponData.GearSlot == gear_slot_t.GEAR_SLOT_BOOSTS)
 						{
 							int clip1 = weapon.Value.Clip1;
 							int reservedAmmo = weapon.Value.ReserveAmmo[0];
 
-							if (!weaponsWithAmmo.ContainsKey(weaponByDefindex))
-							{
-								weaponsWithAmmo.Add(weaponByDefindex, new List<(int, int)>());
-							}
-
-							weaponsWithAmmo[weaponByDefindex].Add((clip1, reservedAmmo));
+							weaponsWithAmmo.Add(weapon.Value.DesignerName, new List<(int, int)>() { (clip1, reservedAmmo) });
 						}
 					}
-					catch (Exception ex)
+
+					if (!weapon.Value.DesignerName.Contains("knife")
+						&&
+						!weapon.Value.DesignerName.Contains("bayonet")
+						&&
+						!weapon.Value.DesignerName.Contains("kukri")
+						&&
+						WeaponDefindex.TryGetValue(weapon.Value.AttributeManager.Item.ItemDefinitionIndex, out weaponByDefindex) && weaponByDefindex != null)
 					{
-						Logger.LogWarning(ex.Message);
-						continue;
+						int clip1 = weapon.Value.Clip1;
+						int reservedAmmo = weapon.Value.ReserveAmmo[0];
+
+						if (!weaponsWithAmmo.ContainsKey(weaponByDefindex))
+						{
+							weaponsWithAmmo.Add(weaponByDefindex, new List<(int, int)>());
+						}
+
+						weaponsWithAmmo[weaponByDefindex].Add((clip1, reservedAmmo));
+					}
+				}
+				catch (Exception ex)
+				{
+					Logger.LogWarning(ex.Message);
+					continue;
+				}
+			}
+
+			player.RemoveWeapons();
+			AddTimer(0.3f, () =>
+			{
+				GiveKnifeToPlayer(player);
+
+				if (bomb)
+					player.GiveNamedItem("weapon_c4");
+
+				if (defuser)
+				{
+					var itemServ = player.PlayerPawn?.Value?.ItemServices;
+					if (itemServ != null)
+					{
+						var items = new CCSPlayer_ItemServices(itemServ.Handle);
+						items.HasDefuser = true;
 					}
 				}
 
-				player.RemoveWeapons();
-				AddTimer(0.1f, () =>
+				if (healthshot)
+					player.GiveNamedItem("weapon_healtshot");
+
+				foreach (var entry in weaponsWithAmmo)
 				{
-					GiveKnifeToPlayer(player);
-
-					if (bomb)
-						player.GiveNamedItem("weapon_c4");
-
-					if (defuser)
+					foreach (var ammo in entry.Value)
 					{
-						var itemServ = player.PlayerPawn?.Value?.ItemServices;
-						if (itemServ != null)
+						var newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(entry.Key));
+						Server.NextFrame(() =>
 						{
-							var items = new CCSPlayer_ItemServices(itemServ.Handle);
-							items.HasDefuser = true;
-						}
-					}
-
-					if (healthshot)
-						player.GiveNamedItem("weapon_healtshot");
-
-					foreach (var entry in weaponsWithAmmo)
-					{
-						foreach (var ammo in entry.Value)
-						{
-							var newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(entry.Key));
-							Server.NextFrame(() =>
+							try
 							{
-								try
+								if (newWeapon != null)
 								{
-									if (newWeapon != null)
-									{
-										newWeapon.Clip1 = ammo.Item1;
-										newWeapon.ReserveAmmo[0] = ammo.Item2;
-									}
+									newWeapon.Clip1 = ammo.Item1;
+									newWeapon.ReserveAmmo[0] = ammo.Item2;
 								}
-								catch (Exception ex)
-								{
-									Logger.LogWarning("Error setting weapon properties: " + ex.Message);
-								}
-							});
-						}
+							}
+							catch (Exception ex)
+							{
+								Logger.LogWarning("Error setting weapon properties: " + ex.Message);
+							}
+						});
 					}
-				}, TimerFlags.STOP_ON_MAPCHANGE);
-			}
+				}
+			}, TimerFlags.STOP_ON_MAPCHANGE);
 		}
 
 		internal void RefreshKnife(CCSPlayerController? player)

@@ -202,17 +202,17 @@ namespace WeaponPaints
 
 			return HookResult.Continue;
 		}
-
 		private void OnTick()
 		{
-			foreach (var player in Utilities.GetPlayers())
+			foreach (var player in Utilities.GetPlayers().Where(p =>
+							p is not null && p.IsValid &&
+							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE && p.SteamID.ToString().Length == 17
+							&& !p.IsBot && !p.IsHLTV && p.Connected == PlayerConnectedState.PlayerConnected && p.Team != CounterStrikeSharp.API.Modules.Utils.CsTeam.None
+							)
+				)
 			{
 				try
 				{
-					if (player is null || !player.IsValid || !player.PawnIsAlive || player.SteamID.ToString().Length != 17
-						|| player.IsBot || player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
-						continue;
-
 					if (Config.Additional.ShowSkinImage && PlayerWeaponImage.ContainsKey(player.Slot) && !string.IsNullOrEmpty(PlayerWeaponImage[player.Slot]))
 					{
 						player.PrintToCenterHtml("<img src='{PATH}'</img>".Replace("{PATH}", PlayerWeaponImage[player.Slot]));
