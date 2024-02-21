@@ -150,11 +150,12 @@ namespace WeaponPaints
 
 					g_playersKnife[(int)player!.Index] = knifeKey;
 
-					if (g_bCommandsAllowed && (LifeState_t)player.LifeState == LifeState_t.LIFE_ALIVE)
-						AddTimer(0.1f, () => RefreshWeapons(player), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 
 					if (weaponSync != null)
 						Task.Run(async () => await weaponSync.SyncKnifeToDatabase(playerInfo, knifeKey));
+
+					if (g_bCommandsAllowed && (LifeState_t)player.LifeState == LifeState_t.LIFE_ALIVE)
+						AddTimer(0.2f, () => RefreshWeapons(player), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 				}
 			};
 			foreach (var knifePair in knivesOnly)
@@ -266,7 +267,7 @@ namespace WeaponPaints
 							};
 
 							if (g_bCommandsAllowed && (LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE)
-								AddTimer(0.15f, () => RefreshWeapons(p), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+								AddTimer(0.2f, () => RefreshWeapons(p), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 						}
 					};
 
