@@ -248,7 +248,7 @@ namespace WeaponPaints
 							}
 
 							gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Paint = paintID;
-							gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Wear = 0.01f;
+							gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Wear = 0.00f;
 							gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Seed = 0;
 
 							PlayerInfo playerInfo = new PlayerInfo
@@ -381,7 +381,17 @@ namespace WeaponPaints
 						{
 							Task.Run(async () =>
 							{
-								await weaponSync.SyncGloveToDatabase(playerInfo, (ushort)weaponDefindex);
+								await weaponSync.SyncGloveToDatabase(playerInfo, weaponDefindex);
+
+								if (!gPlayerWeaponsInfo[playerInfo.Slot].ContainsKey(weaponDefindex))
+								{
+									gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex] = new WeaponInfo();
+								}
+
+								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex].Paint = paint;
+								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex].Wear = 0.00f;
+								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex].Seed = 0;
+
 							});
 						}
 						RefreshGloves(player);
