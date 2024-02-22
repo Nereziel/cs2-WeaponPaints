@@ -7,7 +7,7 @@
 	"wp_command_cooldown": "{lightred}Nie możesz teraz odświeżyć skórek broni",
 	"wp_command_refresh_done": "{lime}Odświeżanie skórek broni",
 	"wp_knife_menu_select": "Wybrałeś {lime}{0}{default} jako swój nóż",
-	"wp_knife_menu_kill": "",
+	"wp_knife_menu_kill": "{lime}Wybrane skiny będą ustawione dopiero po ponownym wejściu na serwer lub wpisaniu komendy {orange}!kill",
 	"wp_knife_menu_title": "Menu Noży",
 	"wp_glove_menu_select": "Wybrałeś {lime}{0}{default} jako swoje rękawiczki",
 	"wp_glove_menu_title": "Menu Rękawiczek",

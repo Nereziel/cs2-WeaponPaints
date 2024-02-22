@@ -1,7 +1,6 @@
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
-using CounterStrikeSharp.API.Modules.Cvars;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
@@ -79,7 +78,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static IStringLocalizer? _localizer;
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
 	internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
-	internal static ConcurrentDictionary<uint, ushort> g_playersGlove = new ConcurrentDictionary<uint, ushort>();
+	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new ConcurrentDictionary<int, ushort>();
 	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>>();
 	internal static List<JObject> skinsList = new List<JObject>();
 	internal static List<JObject> glovesList = new List<JObject>();
@@ -87,8 +86,6 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public static bool g_bCommandsAllowed = true;
 	internal Dictionary<int, string> PlayerWeaponImage = new();
 
-	internal Uri GlobalShareApi = new("https://weaponpaints.fun/api.php");
-	internal int GlobalShareServerId = 0;
 	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
 	internal static Database? _database;
 
@@ -158,7 +155,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.8d";
+	public override string ModuleVersion => "1.9a";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -179,25 +176,32 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
 					continue;
 
-				g_knifePickupCount[(int)player.Index] = 0;
-				gPlayerWeaponsInfo.TryRemove((int)player.Index, out _);
-				g_playersKnife.TryRemove((int)player.Index, out _);
+				g_knifePickupCount[(int)player.Slot] = 0;
+				gPlayerWeaponsInfo.TryRemove((int)player.Slot, out _);
+				g_playersKnife.TryRemove((int)player.Slot, out _);
 
 				PlayerInfo playerInfo = new PlayerInfo
 				{
 					UserId = player.UserId,
-					Index = (int)player.Index,
+					Slot = player.Slot,
+					Index = (int)player.Slot,
 					SteamId = player?.SteamID.ToString(),
 					Name = player?.PlayerName,
 					IpAddress = player?.IpAddress?.Split(":")[0]
 				};
 
 				if (Config.Additional.SkinEnabled)
-					_ = weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
+				{
+					Task.Run(() => weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
+				}
 				if (Config.Additional.KnifeEnabled)
-					_ = weaponSync.GetKnifeFromDatabase(playerInfo);
+				{
+					Task.Run(() => weaponSync.GetKnifeFromDatabase(playerInfo));
+				}
 				if (Config.Additional.GloveEnabled)
-					_ = weaponSync.GetGloveFromDatabase(playerInfo);
+				{
+					Task.Run(() => weaponSync.GetGloveFromDatabase(playerInfo));
+				}
 			}
 		}
 
@@ -217,28 +221,25 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	public void OnConfigParsed(WeaponPaintsConfig config)
 	{
-		if (!config.GlobalShare)
+		if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
 		{
-			if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
-			{
-				Logger.LogError("You need to setup Database credentials in config!");
-				throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
-			}
-
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = config.DatabaseHost,
-				UserID = config.DatabaseUser,
-				Password = config.DatabasePassword,
-				Database = config.DatabaseName,
-				Port = (uint)config.DatabasePort,
-				Pooling = true
-			};
-
-			_database = new(builder.ConnectionString);
-
-			_ = Utility.CheckDatabaseTables();
+			Logger.LogError("You need to setup Database credentials in config!");
+			throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
 		}
+
+		var builder = new MySqlConnectionStringBuilder
+		{
+			Server = config.DatabaseHost,
+			UserID = config.DatabaseUser,
+			Password = config.DatabasePassword,
+			Database = config.DatabaseName,
+			Port = (uint)config.DatabasePort,
+			Pooling = true
+		};
+
+		_database = new(builder.ConnectionString);
+
+		_ = Utility.CheckDatabaseTables();
 
 		Config = config;
 		_config = config;
@@ -252,42 +253,5 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override void Unload(bool hotReload)
 	{
 		base.Unload(hotReload);
-	}
-
-	private void GlobalShareConnect()
-	{
-		if (!Config.GlobalShare) return;
-
-		var values = new Dictionary<string, string>
-			{
-			   { "server_address", $"{ConVar.Find("ip")!.StringValue}:{ConVar.Find("hostport")!.GetPrimitiveValue<int>().ToString()}" },
-			   { "server_hostname", ConVar.Find("hostname")!.StringValue }
-			};
-
-		using (var httpClient = new HttpClient())
-		{
-			httpClient.BaseAddress = GlobalShareApi;
-			var formContent = new FormUrlEncodedContent(values);
-
-			Task<HttpResponseMessage> responseTask = httpClient.PostAsync("", formContent);
-			responseTask.Wait();
-			HttpResponseMessage response = responseTask.Result;
-
-			if (response.IsSuccessStatusCode)
-			{
-				Task<string> responseBodyTask = response.Content.ReadAsStringAsync();
-				responseBodyTask.Wait();
-				string responseBody = responseBodyTask.Result;
-				GlobalShareServerId = int.Parse(responseBody);
-			}
-			else
-			{
-				Logger.LogError("Unable to retrieve serverid from GlobalShare!");
-				throw new Exception("[WeaponPaints] Unable to retrieve serverid from GlobalShare!");
-			}
-		}
-
-		Logger.LogInformation("GlobalShare ONLINE!");
-		Console.WriteLine("[WeaponPaints] GlobalShare ONLINE");
 	}
 }

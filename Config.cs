@@ -73,9 +73,6 @@ namespace WeaponPaints
 		[JsonPropertyName("DatabaseName")]
 		public string DatabaseName { get; set; } = "";
 
-		[JsonPropertyName("GlobalShare")]
-		public bool GlobalShare { get; set; } = false;
-
 		[JsonPropertyName("CmdRefreshCooldownSeconds")]
 		public int CmdRefreshCooldownSeconds { get; set; } = 60;
 
