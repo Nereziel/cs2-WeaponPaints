@@ -160,7 +160,7 @@ namespace WeaponPaints
 				pickupCount++;
 				g_knifePickupCount[player.Slot] = pickupCount;
 
-				AddTimer(0.3f, () => RefreshWeapons(player));
+				AddTimer(0.2f, () => RefreshWeapons(player));
 			}
 
 			return HookResult.Continue;
