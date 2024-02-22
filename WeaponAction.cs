@@ -263,7 +263,7 @@ namespace WeaponPaints
 				}
 			}
 
-			for (int i = 0; i < 3; i++)
+			for (int i = 1; i <= 3; i++)
 			{
 				player.ExecuteClientCommand($"slot {i}");
 				player.ExecuteClientCommand($"slot {i}");
@@ -272,6 +272,9 @@ namespace WeaponPaints
 				{
 					var weapon = player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value;
 					CCSWeaponBaseGun? gun = weapon?.As<CCSWeaponBaseGun>();
+
+					if (gun?.VData?.GearSlot == gear_slot_t.GEAR_SLOT_C4 || gun?.VData?.GearSlot == gear_slot_t.GEAR_SLOT_GRENADES) return;
+
 					player.DropActiveWeapon();
 
 					AddTimer(0.22f, () =>
@@ -362,7 +365,7 @@ namespace WeaponPaints
 				pawn.SetModel(model);
 			}
 
-			Instance.AddTimer(0.2f, () =>
+			Instance.AddTimer(0.06f, () =>
 			{
 				try
 				{

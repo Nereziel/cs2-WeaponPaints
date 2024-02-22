@@ -120,7 +120,7 @@ namespace WeaponPaints
 		}
 
 
-		internal async Task SyncGloveToDatabase(PlayerInfo player, ushort defindex)
+		internal async Task SyncGloveToDatabase(PlayerInfo player, int defindex)
 		{
 			if (!_config.Additional.GloveEnabled || player == null || string.IsNullOrEmpty(player.SteamId)) return;
 

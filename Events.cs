@@ -52,7 +52,7 @@ namespace WeaponPaints
 		{
 			CCSPlayerController player = @event.Userid;
 
-			if (player is null || !player.IsValid || !player.UserId.HasValue || player.IsBot ||
+			if (player is null || !player.IsValid || player.IsBot ||
 				player.IsHLTV || player.SteamID.ToString().Length != 17) return HookResult.Continue;
 
 			PlayerInfo playerInfo = new PlayerInfo
@@ -71,25 +71,25 @@ namespace WeaponPaints
 				Task.Run(async () =>
 				{
 					await weaponSync.SyncWeaponPaintsToDatabase(playerInfo);
+
+					// Remove player data
+					if (Config.Additional.SkinEnabled)
+					{
+						gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
+					}
+					if (Config.Additional.KnifeEnabled)
+					{
+						g_playersKnife.TryRemove(player.Slot, out _);
+					}
+					if (Config.Additional.GloveEnabled)
+					{
+						g_playersGlove.TryRemove(player.Slot, out _);
+					}
 				});
 			}
 
 			// Remove player's command cooldown
 			commandsCooldown.Remove(player.Slot);
-			// Remove player data
-			if (Config.Additional.SkinEnabled)
-			{
-				gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
-			}
-			if (Config.Additional.KnifeEnabled)
-			{
-				g_playersKnife.TryRemove(player.Slot, out _);
-			}
-			if (Config.Additional.GloveEnabled)
-			{
-				g_playersGlove.TryRemove(player.Slot, out _);
-			}
-
 
 			return HookResult.Continue;
 		}
@@ -160,7 +160,7 @@ namespace WeaponPaints
 				pickupCount++;
 				g_knifePickupCount[player.Slot] = pickupCount;
 
-				RefreshWeapons(player);
+				AddTimer(0.3f, () => RefreshWeapons(player));
 			}
 
 			return HookResult.Continue;
