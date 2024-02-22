@@ -6,9 +6,8 @@ namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
-
 		[GameEventHandler]
-		public HookResult OnPlayerConnect(EventPlayerConnectFull @event, GameEventInfo info)
+		public HookResult OnClientFullConnect(EventPlayerConnectFull @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Userid;
 
@@ -18,22 +17,32 @@ namespace WeaponPaints
 			PlayerInfo playerInfo = new PlayerInfo
 			{
 				UserId = player.UserId,
+				Slot = player.Slot,
 				Index = (int)player.Index,
 				SteamId = player.SteamID.ToString(),
 				Name = player.PlayerName,
 				IpAddress = player.IpAddress?.Split(":")[0]
 			};
 
-			Task.Run(async () =>
+			try
 			{
-				// Run skin, knife, and glove tasks asynchronously
-				var skinTask = Config.Additional.SkinEnabled ? weaponSync.GetWeaponPaintsFromDatabase(playerInfo) : Task.CompletedTask;
-				var knifeTask = Config.Additional.KnifeEnabled ? weaponSync.GetKnifeFromDatabase(playerInfo) : Task.CompletedTask;
-				var gloveTask = Config.Additional.GloveEnabled ? weaponSync.GetGloveFromDatabase(playerInfo) : Task.CompletedTask;
-
-				// Await all tasks to complete
-				await Task.WhenAll(skinTask, knifeTask, gloveTask);
-			});
+				if (Config.Additional.SkinEnabled)
+				{
+					Task.Run(() => weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
+				}
+				if (Config.Additional.KnifeEnabled)
+				{
+					Task.Run(() => weaponSync.GetKnifeFromDatabase(playerInfo));
+				}
+				if (Config.Additional.GloveEnabled)
+				{
+					Task.Run(() => weaponSync.GetGloveFromDatabase(playerInfo));
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"An error occurred: {ex.Message}");
+			}
 
 			return HookResult.Continue;
 		}
@@ -49,6 +58,7 @@ namespace WeaponPaints
 			PlayerInfo playerInfo = new PlayerInfo
 			{
 				UserId = player.UserId,
+				Slot = player.Slot,
 				Index = (int)player.Index,
 				SteamId = player.SteamID.ToString(),
 				Name = player.PlayerName,
@@ -56,16 +66,30 @@ namespace WeaponPaints
 			};
 
 			if (weaponSync != null)
-				Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
+			{
+				// Run weapon sync tasks asynchronously
+				Task.Run(async () =>
+				{
+					await weaponSync.SyncWeaponPaintsToDatabase(playerInfo);
+				});
+			}
 
+			// Remove player's command cooldown
+			commandsCooldown.Remove(player.Slot);
+			// Remove player data
 			if (Config.Additional.SkinEnabled)
-				gPlayerWeaponsInfo.TryRemove((int)player.Index, out _);
+			{
+				gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
+			}
 			if (Config.Additional.KnifeEnabled)
-				g_playersKnife.TryRemove((int)player.Index, out _);
+			{
+				g_playersKnife.TryRemove(player.Slot, out _);
+			}
 			if (Config.Additional.GloveEnabled)
-				g_playersGlove.TryRemove(player.Index, out _);
+			{
+				g_playersGlove.TryRemove(player.Slot, out _);
+			}
 
-			commandsCooldown.Remove((int)player.UserId);
 
 			return HookResult.Continue;
 		}
@@ -92,8 +116,7 @@ namespace WeaponPaints
 					if (weapon.OwnerEntity.Value == null) return;
 					if (weapon.OwnerEntity.Index <= 0) return;
 					int weaponOwner = (int)weapon.OwnerEntity.Index;
-					CBasePlayerPawn? pawn = Utilities.GetEntityFromIndex<CCSPlayerPawn>((int)weaponOwner);
-					//var pawn = new CBasePlayerPawn(NativeAPI.GetEntityFromIndex(weaponOwner));
+					CBasePlayerPawn? pawn = Utilities.GetEntityFromIndex<CCSPlayerPawn>(weaponOwner);
 					if (!pawn.IsValid) return;
 
 					var playerIndex = (int)pawn.Controller.Index;
@@ -108,11 +131,14 @@ namespace WeaponPaints
 
 		public HookResult OnPickup(CEntityIOOutput output, string name, CEntityInstance activator, CEntityInstance caller, CVariant value, float delay)
 		{
+			if (!Config.Additional.GiveKnifeAfterRemove)
+				return HookResult.Continue;
+
 			CCSPlayerController? player = Utilities.GetEntityFromIndex<CCSPlayerPawn>((int)activator.Index).OriginalController.Value;
 
 			if (player == null || player.IsBot || player.IsHLTV ||
-				player.SteamID.ToString().Length != 17 || !g_knifePickupCount.TryGetValue((int)player.Index, out var pickupCount) ||
-				!g_playersKnife.ContainsKey((int)player.Index))
+				player.SteamID.ToString().Length != 17 || !g_knifePickupCount.TryGetValue(player.Slot, out var pickupCount) ||
+				!g_playersKnife.ContainsKey(player.Slot))
 			{
 				return HookResult.Continue;
 			}
@@ -129,18 +155,12 @@ namespace WeaponPaints
 				return HookResult.Continue;
 			}
 
-			if (g_playersKnife[(int)player.Index] != "weapon_knife")
+			if (g_playersKnife[player.Slot] != "weapon_knife")
 			{
 				pickupCount++;
-				g_knifePickupCount[(int)player.Index] = pickupCount;
+				g_knifePickupCount[player.Slot] = pickupCount;
 
-				if (Config.Additional.GiveKnifeAfterRemove)
-				{
-					AddTimer(0.10f, () =>
-					{
-						RefreshWeapons(player);
-					});
-				}
+				RefreshWeapons(player);
 			}
 
 			return HookResult.Continue;
@@ -151,7 +171,7 @@ namespace WeaponPaints
 			if (!Config.Additional.KnifeEnabled && !Config.Additional.SkinEnabled && !Config.Additional.GloveEnabled) return;
 
 			if (_database != null)
-				weaponSync = new WeaponSynchronization(_database, Config, GlobalShareApi, GlobalShareServerId);
+				weaponSync = new WeaponSynchronization(_database, Config);
 
 			// TODO
 			// needed for now
@@ -160,9 +180,6 @@ namespace WeaponPaints
 				NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
 				NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
 				NativeAPI.IssueServerCommand("mp_equipment_reset_rounds 0");
-
-				if (Config.GlobalShare)
-					GlobalShareConnect();
 			});
 		}
 
@@ -175,8 +192,9 @@ namespace WeaponPaints
 			|| !Config.Additional.KnifeEnabled && !Config.Additional.GloveEnabled)
 				return HookResult.Continue;
 
-			g_knifePickupCount[(int)player.Index] = 0;
-			GiveKnifeToPlayer(player);
+			g_knifePickupCount[player.Slot] = 0;
+			if (!PlayerHasKnife(player))
+				GiveKnifeToPlayer(player);
 
 			Server.NextFrame(() =>
 			{
@@ -189,6 +207,7 @@ namespace WeaponPaints
 		private HookResult OnRoundEnd(EventRoundEnd @event, GameEventInfo info)
 		{
 			g_bCommandsAllowed = false;
+
 			return HookResult.Continue;
 		}
 
@@ -244,20 +263,28 @@ namespace WeaponPaints
 					if (skeleton == null)
 						continue;
 
+					bool skeletonChange = false;
+
 					int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
 					if (newPaints.Contains(weapon.FallbackPaintKit))
 					{
-						skeleton.ModelState.MeshGroupMask = 1;
+						if (skeleton.ModelState.MeshGroupMask != 1)
+						{
+							skeleton.ModelState.MeshGroupMask = 1;
+							skeletonChange = true;
+						}
 					}
 					else
 					{
 						if (skeleton.ModelState.MeshGroupMask != 2)
 						{
 							skeleton.ModelState.MeshGroupMask = 2;
+							skeletonChange = true;
 						}
 					}
 
-					Utilities.SetStateChanged(viewModel.Value, "CBaseEntity", "m_CBodyComponent");
+					if (skeletonChange)
+						Utilities.SetStateChanged(viewModel.Value, "CBaseEntity", "m_CBodyComponent");
 				}
 				catch (Exception)
 				{
@@ -267,7 +294,7 @@ namespace WeaponPaints
 
 		private void RegisterListeners()
 		{
-			RegisterListener<Listeners.OnEntityCreated>(OnEntityCreated);
+			RegisterListener<Listeners.OnEntitySpawned>(OnEntityCreated);
 			//RegisterListener<Listeners.OnClientPutInServer>(OnClientPutInServer);
 			//RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
