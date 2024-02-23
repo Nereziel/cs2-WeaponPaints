@@ -71,21 +71,21 @@ namespace WeaponPaints
 				Task.Run(async () =>
 				{
 					await weaponSync.SyncWeaponPaintsToDatabase(playerInfo);
-
-					// Remove player data
-					if (Config.Additional.SkinEnabled)
-					{
-						gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
-					}
-					if (Config.Additional.KnifeEnabled)
-					{
-						g_playersKnife.TryRemove(player.Slot, out _);
-					}
-					if (Config.Additional.GloveEnabled)
-					{
-						g_playersGlove.TryRemove(player.Slot, out _);
-					}
 				});
+
+				// Remove player data
+				if (Config.Additional.SkinEnabled)
+				{
+					gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
+				}
+				if (Config.Additional.KnifeEnabled)
+				{
+					g_playersKnife.TryRemove(player.Slot, out _);
+				}
+				if (Config.Additional.GloveEnabled)
+				{
+					g_playersGlove.TryRemove(player.Slot, out _);
+				}
 			}
 
 			// Remove player's command cooldown
@@ -187,12 +187,11 @@ namespace WeaponPaints
 		{
 			CCSPlayerController? player = @event.Userid;
 
-			if (player is null || !player.IsValid || player.PlayerPawn == null ||
-			!player.PlayerPawn.IsValid || player.IsHLTV
-			|| !Config.Additional.KnifeEnabled && !Config.Additional.GloveEnabled)
+			if (player is null || !player.IsValid || !Config.Additional.KnifeEnabled && !Config.Additional.GloveEnabled)
 				return HookResult.Continue;
 
 			g_knifePickupCount[player.Slot] = 0;
+
 			if (!PlayerHasKnife(player))
 				GiveKnifeToPlayer(player);
 
