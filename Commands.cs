@@ -32,13 +32,30 @@ namespace WeaponPaints
 
 					if (weaponSync != null)
 					{
-						Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
+						var weaponTasks = new List<Task>();
+
+						weaponTasks.Add(Task.Run(async () =>
+						{
+							await weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
+						}));
 
 						if (Config.Additional.GloveEnabled)
-							Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
+						{
+							weaponTasks.Add(Task.Run(async () =>
+							{
+								await weaponSync.GetGloveFromDatabase(playerInfo);
+							}));
+						}
 
 						if (Config.Additional.KnifeEnabled)
-							Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
+						{
+							weaponTasks.Add(Task.Run(async () =>
+							{
+								await weaponSync.GetKnifeFromDatabase(playerInfo);
+							}));
+						}
+
+						Task.WaitAll(weaponTasks.ToArray());
 
 						RefreshGloves(player);
 						RefreshWeapons(player);

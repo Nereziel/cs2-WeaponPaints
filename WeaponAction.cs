@@ -142,38 +142,41 @@ namespace WeaponPaints
 		{
 			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
 
-			string knifeToGive;
-			if (g_playersKnife.TryGetValue(player.Slot, out var knife))
+			WeaponPaints.Instance.AddTimer(1.0f, () =>
 			{
-				knifeToGive = knife;
-			}
-			else if (_config.Additional.GiveRandomKnife)
-			{
-				var knifeTypes = weaponList.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet")).ToList();
-
-				if (knifeTypes.Count == 0)
+				string knifeToGive;
+				if (g_playersKnife.TryGetValue(player.Slot, out var knife))
 				{
-					Utility.Log("No valid knife types found.");
-					return;
+					knifeToGive = knife;
+				}
+				else if (_config.Additional.GiveRandomKnife)
+				{
+					var knifeTypes = weaponList.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet")).ToList();
+
+					if (knifeTypes.Count == 0)
+					{
+						Utility.Log("No valid knife types found.");
+						return;
+					}
+
+					Random random = new();
+					int index = random.Next(knifeTypes.Count);
+					knifeToGive = knifeTypes[index].Key;
+				}
+				else
+				{
+					knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
 				}
 
-				Random random = new();
-				int index = random.Next(knifeTypes.Count);
-				knifeToGive = knifeTypes[index].Key;
-			}
-			else
-			{
-				knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
-			}
-
-			player.GiveNamedItem(knifeToGive);
+				player.GiveNamedItem(knifeToGive);
+			});
 		}
 
 		internal static bool PlayerHasKnife(CCSPlayerController? player)
 		{
 			if (!_config.Additional.KnifeEnabled) return false;
 
-			if (player == null || !player.IsValid || player.PlayerPawn == null || !player.PlayerPawn.IsValid || !player.PawnIsAlive)
+			if (player == null || !player.IsValid || player.PlayerPawn == null || !player.PlayerPawn.IsValid)
 			{
 				return false;
 			}
@@ -273,6 +276,8 @@ namespace WeaponPaints
 					var weapon = player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value;
 					CCSWeaponBaseGun? gun = weapon?.As<CCSWeaponBaseGun>();
 
+					if (gun == null || gun.VData == null) return;
+
 					if (gun?.VData?.GearSlot == gear_slot_t.GEAR_SLOT_C4 || gun?.VData?.GearSlot == gear_slot_t.GEAR_SLOT_GRENADES) return;
 
 					player.DropActiveWeapon();
@@ -318,10 +323,10 @@ namespace WeaponPaints
 
 		internal void RefreshKnife(CCSPlayerController? player)
 		{
-			if (player == null || !player.IsValid || player.PlayerPawn?.Value == null || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE)
+			if (player == null || !player.IsValid || player.PlayerPawn?.Value == null)
 				return;
 
-			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
+			if (player.PlayerPawn.Value.WeaponServices == null)
 				return;
 
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
@@ -337,8 +342,10 @@ namespace WeaponPaints
 
 							if (weapon.Value.DesignerName.Contains("knife") || weaponData?.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
 							{
-								RefreshWeapons(player);
-								break;
+								player.ExecuteClientCommand("slot 3");
+
+								weapon.Value.Remove();
+								GiveKnifeToPlayer(player);
 							}
 						}
 						catch (Exception ex)
