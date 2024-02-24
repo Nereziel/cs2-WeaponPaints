@@ -71,8 +71,9 @@ namespace WeaponPaints
 			try
 			{
 				await using var connection = await _database.GetConnectionAsync();
-				string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
-				var playerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = player.SteamId });
+                string query = "SELECT `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed` FROM `wp_player_skins` WHERE `steamid` = @steamid";
+
+                var playerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = player.SteamId });
 
 				if (playerSkins == null) return;
 
@@ -145,24 +146,31 @@ namespace WeaponPaints
 			{
 				await using var connection = await _database.GetConnectionAsync();
 
-				foreach (var weaponInfoPair in weaponsInfo)
-				{
-					int weaponDefIndex = weaponInfoPair.Key;
-					WeaponInfo weaponInfo = weaponInfoPair.Value;
+                foreach (var weaponInfoPair in weaponsInfo)
+                {
+                    int weaponDefIndex = weaponInfoPair.Key;
+                    WeaponInfo weaponInfo = weaponInfoPair.Value;
 
-					int paintId = weaponInfo.Paint;
-					float wear = weaponInfo.Wear;
-					int seed = weaponInfo.Seed;
+                    int paintId = weaponInfo.Paint;
+                    float wear = weaponInfo.Wear;
+                    int seed = weaponInfo.Seed;
 
-					string query = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
-								   "VALUES (@steamid, @weaponDefIndex, @paintId, @wear, @seed) " +
-								   "ON DUPLICATE KEY UPDATE `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed";
+                    string query = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
+                                   "VALUES (@steamid, @weaponDefIndex, @paintId, @wear, @seed) " +
+                                   "ON DUPLICATE KEY UPDATE `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed";
 
-					var parameters = new { steamid = player.SteamId, weaponDefIndex, paintId, wear, seed };
-					await connection.ExecuteAsync(query, parameters);
-				}
-			}
-			catch (Exception e)
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@steamid", player.SteamId);
+                    parameters.Add("@weaponDefIndex", weaponDefIndex);
+                    parameters.Add("@paintId", paintId);
+                    parameters.Add("@wear", wear);
+                    parameters.Add("@seed", seed);
+
+                    await connection.ExecuteAsync(query, parameters);
+                }
+
+            }
+            catch (Exception e)
 			{
 				Utility.Log($"Error syncing weapon paints to database: {e.Message}");
 			}

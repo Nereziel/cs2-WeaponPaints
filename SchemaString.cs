@@ -10,15 +10,16 @@ public class SchemaString<TSchemaClass> : NativeObject where TSchemaClass : Nati
 	internal SchemaString(TSchemaClass instance, string member) : base(Schema.GetSchemaValue<nint>(instance.Handle, typeof(TSchemaClass).Name!, member))
 	{ }
 
-	internal unsafe void Set(string str)
-	{
-		var bytes = Encoding.UTF8.GetBytes(str);
+    internal unsafe void Set(string str)
+    {
+        var bytes = Encoding.UTF8.GetBytes(str);
+        var handle = Handle.ToInt64();
 
-		for (var i = 0; i < bytes.Length; i++)
-		{
-			Unsafe.Write((void*)(Handle.ToInt64() + i), bytes[i]);
-		}
+        for (var i = 0; i < bytes.Length; i++)
+        {
+            Unsafe.Write((void*)(handle + i), bytes[i]);
+        }
 
-		Unsafe.Write((void*)(Handle.ToInt64() + bytes.Length), 0);
-	}
+        Unsafe.Write((void*)(handle + bytes.Length), 0);
+    }
 }

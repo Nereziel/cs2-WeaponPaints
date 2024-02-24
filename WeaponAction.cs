@@ -13,8 +13,7 @@ namespace WeaponPaints
 		internal static void ChangeWeaponAttributes(CBasePlayerWeapon? weapon, CCSPlayerController? player, bool isKnife = false)
 		{
 			if (player is null || weapon is null || !weapon.IsValid || !Utility.IsPlayerValid(player)) return;
-
-			if (!gPlayerWeaponsInfo.ContainsKey(player.Slot)) return;
+            if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return;
 
 			if (isKnife && !g_playersKnife.ContainsKey(player.Slot) || isKnife && g_playersKnife[player.Slot] == "weapon_knife") return;
 

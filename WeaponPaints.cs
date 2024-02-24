@@ -180,15 +180,13 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				gPlayerWeaponsInfo.TryRemove((int)player.Slot, out _);
 				g_playersKnife.TryRemove((int)player.Slot, out _);
 
-				PlayerInfo playerInfo = new PlayerInfo
-				{
-					UserId = player.UserId,
-					Slot = player.Slot,
-					Index = (int)player.Slot,
-					SteamId = player?.SteamID.ToString(),
-					Name = player?.PlayerName,
-					IpAddress = player?.IpAddress?.Split(":")[0]
-				};
+                PlayerInfo playerInfo = new PlayerInfo(
+					(int)player.Slot,
+					player.Slot,
+					player.UserId,
+					player?.SteamID.ToString(),
+					player?.PlayerName,
+					player?.IpAddress?.Split(":")[0]);
 
 				if (Config.Additional.SkinEnabled)
 				{

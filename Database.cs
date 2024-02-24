@@ -11,18 +11,11 @@ namespace WeaponPaints
 			_dbConnectionString = dbConnectionString;
 		}
 
-		public async Task<MySqlConnection> GetConnectionAsync()
-		{
-			try
-			{
-				var connection = new MySqlConnection(_dbConnectionString);
-				await connection.OpenAsync();
-				return connection;
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-		}
+        public async Task<MySqlConnection> GetConnectionAsync()
+        {
+            var connection = new MySqlConnection(_dbConnectionString);
+            await connection.OpenAsync();
+            return connection;
+        }
 	}
 }
