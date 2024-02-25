@@ -14,11 +14,13 @@ namespace WeaponPaints
 			_config = config;
 		}
 
-		internal async Task GetKnifeFromDatabase(PlayerInfo player)
+		public async Task GetKnifeFromDatabase(PlayerInfo player)
 		{
-			if (!_config.Additional.KnifeEnabled) return;
 			try
 			{
+				if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player?.SteamId))
+					return;
+
 				await using var connection = await _database.GetConnectionAsync();
 				string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
 				string? playerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = player.SteamId });
@@ -28,53 +30,47 @@ namespace WeaponPaints
 					WeaponPaints.g_playersKnife[player.Slot] = playerKnife;
 				}
 			}
-			catch (Exception e)
+			catch (Exception ex)
 			{
-				Utility.Log(e.Message);
-				return;
+				Utility.Log($"An error occurred in GetKnifeFromDatabase: {ex.Message}");
 			}
 		}
 
-		internal async Task GetGloveFromDatabase(PlayerInfo player)
+		public async Task GetGloveFromDatabase(PlayerInfo player)
 		{
-			if (!_config.Additional.GloveEnabled) return;
-
 			try
 			{
-				// Ensure proper disposal of resources using "using" statement
+				if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player?.SteamId))
+					return;
+
 				await using var connection = await _database.GetConnectionAsync();
-
-				// Construct the SQL query with specific columns for better performance
 				string query = "SELECT `weapon_defindex` FROM `wp_player_gloves` WHERE `steamid` = @steamid";
-
-				// Execute the query and retrieve glove data
 				ushort? gloveData = await connection.QueryFirstOrDefaultAsync<ushort?>(query, new { steamid = player.SteamId });
 
-				// Check if glove data is retrieved successfully
 				if (gloveData != null)
 				{
-					// Update g_playersGlove dictionary with glove data
 					WeaponPaints.g_playersGlove[player.Slot] = gloveData.Value;
 				}
 			}
-			catch (Exception e)
+			catch (Exception ex)
 			{
-				// Log any exceptions occurred during database operation
-				Utility.Log("An error occurred while fetching glove data: " + e.Message);
+				Utility.Log($"An error occurred in GetGloveFromDatabase: {ex.Message}");
 			}
 		}
 
-		internal async Task GetWeaponPaintsFromDatabase(PlayerInfo player)
+		public async Task GetWeaponPaintsFromDatabase(PlayerInfo player)
 		{
-			if (!_config.Additional.SkinEnabled || player == null || player.SteamId == null) return;
-
 			try
 			{
+				if (!_config.Additional.SkinEnabled || player == null || string.IsNullOrEmpty(player.SteamId))
+					return;
+
 				await using var connection = await _database.GetConnectionAsync();
 				string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
 				var playerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = player.SteamId });
 
-				if (playerSkins == null) return;
+				if (playerSkins == null)
+					return;
 
 				var weaponInfos = new ConcurrentDictionary<int, WeaponInfo>();
 
@@ -97,9 +93,9 @@ namespace WeaponPaints
 
 				WeaponPaints.gPlayerWeaponsInfo[player.Slot] = weaponInfos;
 			}
-			catch (Exception e)
+			catch (Exception ex)
 			{
-				Utility.Log($"Database error occurred: {e.Message}");
+				Utility.Log($"An error occurred in GetWeaponPaintsFromDatabase: {ex.Message}");
 			}
 		}
 
@@ -118,7 +114,6 @@ namespace WeaponPaints
 				Utility.Log($"Error syncing knife to database: {e.Message}");
 			}
 		}
-
 
 		internal async Task SyncGloveToDatabase(PlayerInfo player, int defindex)
 		{
@@ -167,6 +162,5 @@ namespace WeaponPaints
 				Utility.Log($"Error syncing weapon paints to database: {e.Message}");
 			}
 		}
-
 	}
 }

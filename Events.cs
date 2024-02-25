@@ -26,22 +26,30 @@ namespace WeaponPaints
 
 			try
 			{
+				List<Task> tasks = new List<Task>();
+
 				if (Config.Additional.SkinEnabled)
 				{
-					Task.Run(() => weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
+					tasks.Add(Task.Run(() => weaponSync.GetWeaponPaintsFromDatabase(playerInfo)));
 				}
 				if (Config.Additional.KnifeEnabled)
 				{
-					Task.Run(() => weaponSync.GetKnifeFromDatabase(playerInfo));
+					tasks.Add(Task.Run(() => weaponSync.GetKnifeFromDatabase(playerInfo)));
 				}
 				if (Config.Additional.GloveEnabled)
 				{
-					Task.Run(() => weaponSync.GetGloveFromDatabase(playerInfo));
+					tasks.Add(Task.Run(() => weaponSync.GetGloveFromDatabase(playerInfo)));
 				}
+
+				Task.WaitAll(tasks.ToArray());
 			}
-			catch (Exception ex)
+			catch (AggregateException ex)
 			{
-				Console.WriteLine($"An error occurred: {ex.Message}");
+				// Handle the exception
+				foreach (var innerException in ex.InnerExceptions)
+				{
+					Console.WriteLine($"An error occurred for player {player}: {innerException.Message}");
+				}
 			}
 
 			return HookResult.Continue;
@@ -67,25 +75,30 @@ namespace WeaponPaints
 
 			if (weaponSync != null)
 			{
-				// Run weapon sync tasks asynchronously
 				Task.Run(async () =>
 				{
-					await weaponSync.SyncWeaponPaintsToDatabase(playerInfo);
-				});
+					try
+					{
+						await weaponSync.SyncWeaponPaintsToDatabase(playerInfo);
+					}
+					catch (Exception ex)
+					{
+						Utility.Log($"Error syncing weapon paints: {ex.Message}");
+					}
 
-				// Remove player data
-				if (Config.Additional.SkinEnabled)
-				{
-					gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
-				}
-				if (Config.Additional.KnifeEnabled)
-				{
-					g_playersKnife.TryRemove(player.Slot, out _);
-				}
-				if (Config.Additional.GloveEnabled)
-				{
-					g_playersGlove.TryRemove(player.Slot, out _);
-				}
+					if (Config.Additional.SkinEnabled)
+					{
+						gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
+					}
+					if (Config.Additional.KnifeEnabled)
+					{
+						g_playersKnife.TryRemove(player.Slot, out _);
+					}
+					if (Config.Additional.GloveEnabled)
+					{
+						g_playersGlove.TryRemove(player.Slot, out _);
+					}
+				});
 			}
 
 			// Remove player's command cooldown
@@ -136,7 +149,7 @@ namespace WeaponPaints
 
 			CCSPlayerController? player = Utilities.GetEntityFromIndex<CCSPlayerPawn>((int)activator.Index).OriginalController.Value;
 
-			if (player == null || player.IsBot || player.IsHLTV ||
+			if (player == null || player.IsBot || player.PlayerPawn == null || !player.PlayerPawn.IsValid || !player.PawnIsAlive ||
 				player.SteamID.ToString().Length != 17 || !g_knifePickupCount.TryGetValue(player.Slot, out var pickupCount) ||
 				!g_playersKnife.ContainsKey(player.Slot))
 			{
@@ -190,6 +203,11 @@ namespace WeaponPaints
 			if (player is null || !player.IsValid || !Config.Additional.KnifeEnabled && !Config.Additional.GloveEnabled)
 				return HookResult.Continue;
 
+			CCSPlayerPawn? pawn = player.PlayerPawn.Value;
+
+			if (pawn == null || !pawn.IsValid)
+				return HookResult.Continue;
+
 			g_knifePickupCount[player.Slot] = 0;
 
 			if (!PlayerHasKnife(player))
@@ -220,12 +238,13 @@ namespace WeaponPaints
 
 			return HookResult.Continue;
 		}
+
 		private void OnTick()
 		{
 			foreach (var player in Utilities.GetPlayers().Where(p =>
-							p is not null && p.IsValid &&
+							p is not null && p.IsValid && p.PlayerPawn != null && p.PlayerPawn.IsValid &&
 							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE && p.SteamID.ToString().Length == 17
-							&& !p.IsBot && !p.IsHLTV && p.Connected == PlayerConnectedState.PlayerConnected && p.Team != CounterStrikeSharp.API.Modules.Utils.CsTeam.None
+							&& !p.IsBot && !p.IsHLTV && p.Connected == PlayerConnectedState.PlayerConnected
 							)
 				)
 			{
@@ -297,7 +316,7 @@ namespace WeaponPaints
 			//RegisterListener<Listeners.OnClientPutInServer>(OnClientPutInServer);
 			//RegisterListener<Listeners.OnClientDisconnect>(OnClientDisconnect);
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
-			RegisterListener<Listeners.OnTick>(OnTick);
+			//RegisterListener<Listeners.OnTick>(OnTick);
 
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);

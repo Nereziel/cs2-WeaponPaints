@@ -142,8 +142,10 @@ namespace WeaponPaints
 		{
 			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
 
-			WeaponPaints.Instance.AddTimer(1.0f, () =>
+			Instance.AddTimer(1.0f, () =>
 			{
+				if (PlayerHasKnife(player)) return;
+
 				string knifeToGive;
 				if (g_playersKnife.TryGetValue(player.Slot, out var knife))
 				{
@@ -181,7 +183,7 @@ namespace WeaponPaints
 				return false;
 			}
 
-			if (player.PlayerPawn?.Value == null || player.PlayerPawn?.Value.WeaponServices == null || player.PlayerPawn?.Value.ItemServices == null)
+			if (player.PlayerPawn.Value == null || player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
 				return false;
 
 			var weapons = player.PlayerPawn.Value.WeaponServices?.MyWeapons;
@@ -256,8 +258,6 @@ namespace WeaponPaints
 
 						weaponsWithAmmo[weaponByDefindex].Add((clip1, reservedAmmo));
 					}
-
-					//player.RemoveItemByDesignerName(weapon.Value.DesignerName, false);
 				}
 				catch (Exception ex)
 				{
@@ -271,18 +271,21 @@ namespace WeaponPaints
 				player.ExecuteClientCommand($"slot {i}");
 				player.ExecuteClientCommand($"slot {i}");
 
-				AddTimer(0.1f, () =>
+				AddTimer(0.2f, () =>
 				{
 					var weapon = player.PlayerPawn.Value.WeaponServices.ActiveWeapon.Value;
-					CCSWeaponBaseGun? gun = weapon?.As<CCSWeaponBaseGun>();
+
+					if (weapon is null || !weapon.IsValid) return;
+
+					CCSWeaponBaseGun gun = weapon.As<CCSWeaponBaseGun>();
 
 					if (gun == null || gun.VData == null) return;
 
-					if (gun?.VData?.GearSlot == gear_slot_t.GEAR_SLOT_C4 || gun?.VData?.GearSlot == gear_slot_t.GEAR_SLOT_GRENADES) return;
+					if (gun.VData.GearSlot == gear_slot_t.GEAR_SLOT_C4 || gun.VData.GearSlot == gear_slot_t.GEAR_SLOT_GRENADES) return;
 
 					player.DropActiveWeapon();
 
-					AddTimer(0.22f, () =>
+					AddTimer(0.25f, () =>
 					{
 						if (gun != null && gun.IsValid && gun.State == CSWeaponState_t.WEAPON_NOT_CARRIED)
 						{
