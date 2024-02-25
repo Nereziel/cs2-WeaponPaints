@@ -14,6 +14,7 @@ namespace WeaponPaints;
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
+
 	internal static readonly Dictionary<string, string> weaponList = new()
 	{
 		{"weapon_deagle", "Desert Eagle"},
@@ -155,7 +156,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "1.9b";
+	public override string ModuleVersion => "1.9c";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{

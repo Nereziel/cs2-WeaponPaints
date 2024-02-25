@@ -164,7 +164,6 @@ namespace WeaponPaints
 
 					g_playersKnife[player.Slot] = knifeKey;
 
-
 					if (g_bCommandsAllowed && (LifeState_t)player.LifeState == LifeState_t.LIFE_ALIVE)
 						RefreshWeapons(player);
 
@@ -224,7 +223,6 @@ namespace WeaponPaints
 					var handleSkinSelection = (CCSPlayerController p, ChatMenuOption opt) =>
 					{
 						if (!Utility.IsPlayerValid(p)) return;
-
 
 						string steamId = p.SteamID.ToString();
 						var firstSkin = skinsList?.FirstOrDefault(skin =>
@@ -393,7 +391,6 @@ namespace WeaponPaints
 							player!.Print(Localizer["wp_glove_menu_select", selectedPaintName]);
 						}
 
-
 						if (weaponSync != null)
 						{
 							Task.Run(async () =>
@@ -408,7 +405,6 @@ namespace WeaponPaints
 								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex].Paint = paint;
 								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex].Wear = 0.00f;
 								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex].Seed = 0;
-
 							});
 						}
 						RefreshGloves(player);
