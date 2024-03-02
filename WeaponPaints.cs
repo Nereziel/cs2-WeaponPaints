@@ -14,7 +14,8 @@ namespace WeaponPaints;
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
-	internal static readonly Dictionary<string, string> weaponList = new()
+    internal static readonly int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
+    internal static readonly Dictionary<string, string> weaponList = new()
 	{
 		{"weapon_deagle", "Desert Eagle"},
 		{"weapon_elite", "Dual Berettas"},
@@ -150,8 +151,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ 525, "weapon_knife_skeleton" },
 		{ 526, "weapon_knife_kukri" }
 	};
-
-	public WeaponPaintsConfig Config { get; set; } = new();
+    public static MemoryFunctionVoid<IntPtr, string, IntPtr, IntPtr, IntPtr, IntPtr, IntPtr, IntPtr> GiveNamedItem2 = new(@"\x55\x48\x89\xE5\x41\x57\x41\x56\x41\x55\x41\x54\x53\x48\x83\xEC\x18\x48\x89\x7D\xC8\x48\x85\xF6\x74");
+    public WeaponPaintsConfig Config { get; set; } = new();
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
@@ -216,8 +217,16 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		RegisterListeners();
 		RegisterCommands();
 	}
+    public static void PlayerGiveNamedItem(CCSPlayerController player, string item)
+    {
+        if (!player.PlayerPawn.IsValid) return;
+        if (player.PlayerPawn.Value == null) return;
+        if (!player.PlayerPawn.Value.IsValid) return;
+        if (player.PlayerPawn.Value.ItemServices == null) return;
 
-	public void OnConfigParsed(WeaponPaintsConfig config)
+        GiveNamedItem2.Invoke(player.PlayerPawn.Value.ItemServices.Handle, item, 0, 0, 0, 0, 0, 0);
+    }
+    public void OnConfigParsed(WeaponPaintsConfig config)
 	{
 		if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
 		{

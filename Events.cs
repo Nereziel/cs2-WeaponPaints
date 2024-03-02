@@ -14,17 +14,16 @@ namespace WeaponPaints
 			if (player is null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID.ToString().Length != 17 ||
 				weaponSync == null || _database == null) return HookResult.Continue;
 
-			PlayerInfo playerInfo = new PlayerInfo
-			{
-				UserId = player.UserId,
-				Slot = player.Slot,
-				Index = (int)player.Index,
-				SteamId = player.SteamID.ToString(),
-				Name = player.PlayerName,
-				IpAddress = player.IpAddress?.Split(":")[0]
-			};
+            PlayerInfo playerInfo = new(
+                (int)player.Index,
+                player.Slot,
+                player.UserId,
+                player.SteamID.ToString(),
+                player.PlayerName,
+                player.IpAddress?.Split(":")[0]
+            );
 
-			try
+            try
 			{
 				if (Config.Additional.SkinEnabled)
 				{
@@ -55,17 +54,16 @@ namespace WeaponPaints
 			if (player is null || !player.IsValid || player.IsBot ||
 				player.IsHLTV || player.SteamID.ToString().Length != 17) return HookResult.Continue;
 
-			PlayerInfo playerInfo = new PlayerInfo
-			{
-				UserId = player.UserId,
-				Slot = player.Slot,
-				Index = (int)player.Index,
-				SteamId = player.SteamID.ToString(),
-				Name = player.PlayerName,
-				IpAddress = player.IpAddress?.Split(":")[0]
-			};
+            PlayerInfo playerInfo = new(
+                (int)player.Index,
+                player.Slot,
+                player.UserId,
+                player.SteamID.ToString(),
+                player.PlayerName,
+                player.IpAddress?.Split(":")[0]
+            );
 
-			if (weaponSync != null)
+            if (weaponSync != null)
 			{
 				// Run weapon sync tasks asynchronously
 				Task.Run(async () =>

@@ -14,17 +14,14 @@ namespace WeaponPaints
 			if (!Utility.IsPlayerValid(player)) return;
 
 			if (player == null || !player.IsValid || player.UserId == null || player.IsBot) return;
-
-			PlayerInfo playerInfo = new PlayerInfo
-			{
-				UserId = player.UserId,
-				Slot = player.Slot,
-				Index = (int)player.Index,
-				SteamId = player?.SteamID.ToString(),
-				Name = player?.PlayerName,
-				IpAddress = player?.IpAddress?.Split(":")[0]
-			};
-
+            PlayerInfo playerInfo = new (
+                (int)player.Index,
+                player.Slot,
+                player.UserId,
+                player.SteamID.ToString(),
+                player.PlayerName,
+                player.IpAddress?.Split(":")[0]
+            );
 			try
 			{
 				if (player != null && !commandsCooldown.TryGetValue(player.Slot, out DateTime cooldownEndTime) ||
@@ -341,14 +338,15 @@ namespace WeaponPaints
 
         private void UpdatePlayerWeaponInfo(CCSPlayerController p, int weaponDefIndex, int paintID)
         {
-            if (!gPlayerWeaponsInfo[p.Slot].ContainsKey(weaponDefIndex))
+            if (!gPlayerWeaponsInfo[p.Slot].TryGetValue(weaponDefIndex, out WeaponInfo? value))
             {
-                gPlayerWeaponsInfo[p.Slot][weaponDefIndex] = new WeaponInfo();
+                value = new WeaponInfo();
+                gPlayerWeaponsInfo[p.Slot][weaponDefIndex] = value;
             }
 
-            gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Paint = paintID;
-            gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Wear = 0.00f;
-            gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Seed = 0;
+            value.Paint = paintID;
+            value.Wear = 0.00f;
+            value.Seed = 0;
 
             if (g_bCommandsAllowed && (LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE)
             {
@@ -409,16 +407,14 @@ void HandleSelectedGlove(CCSPlayerController? player, JObject selectedGlove, str
                     PlayerWeaponImage[player.Slot] = image;
                     AddTimer(2.0f, () => PlayerWeaponImage.Remove(player.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
                 }
-
-                PlayerInfo playerInfo = new PlayerInfo
-                {
-                    UserId = player.UserId,
-                    Slot = player.Slot,
-                    Index = (int)player.Index,
-                    SteamId = player.SteamID.ToString(),
-                    Name = player.PlayerName,
-                    IpAddress = player.IpAddress?.Split(":")[0]
-                };
+                PlayerInfo playerInfo = new(
+                    (int)player.Index,
+                    player.Slot,
+                    player.UserId,
+                    player.SteamID.ToString(),
+                    player.PlayerName,
+                    player.IpAddress?.Split(":")[0]
+                );
 
                 if (paint != 0)
                 {

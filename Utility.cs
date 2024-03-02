@@ -43,26 +43,33 @@ namespace WeaponPaints
 				{
 					string[] createTableQueries = new[]
 					{
-				@"CREATE TABLE IF NOT EXISTS `wp_player_skins` (
-                        `steamid` varchar(64) NOT NULL,
-                        `weapon_defindex` int(6) NOT NULL,
-                        `weapon_paint_id` int(6) NOT NULL,
-                        `weapon_wear` float NOT NULL DEFAULT 0.000001,
-                        `weapon_seed` int(16) NOT NULL DEFAULT 0
-                    ) ENGINE=InnoDB",
-				@"CREATE TABLE IF NOT EXISTS `wp_player_knife` (
-                        `steamid` varchar(64) NOT NULL,
-                        `knife` varchar(64) NOT NULL,
-                        UNIQUE (`steamid`)
-                    ) ENGINE = InnoDB",
-				@"CREATE TABLE IF NOT EXISTS `wp_player_gloves` (
-					 `steamid` varchar(64) NOT NULL,
-					 `weapon_defindex` int(11) NOT NULL,
-                      UNIQUE (`steamid`)
-					) ENGINE=InnoDB"
-			};
-
-					foreach (var query in createTableQueries)
+						@"CREATE TABLE IF NOT EXISTS `wp_player_skins` (
+								`steamid` varchar(64) NOT NULL,
+								`weapon_defindex` int(6) NOT NULL,
+								`weapon_paint_id` int(6) NOT NULL,
+								`weapon_wear` float NOT NULL DEFAULT 0.000001,
+								`weapon_seed` int(16) NOT NULL DEFAULT 0
+							) ENGINE=InnoDB",
+						@"CREATE TABLE IF NOT EXISTS `wp_player_knife` (
+								`steamid` varchar(64) NOT NULL,
+								`knife` varchar(64) NOT NULL,
+								UNIQUE (`steamid`)
+							) ENGINE = InnoDB",
+						@"CREATE TABLE IF NOT EXISTS `wp_player_gloves` (
+							 `steamid` varchar(64) NOT NULL,
+							 `weapon_defindex` int(11) NOT NULL,
+							  UNIQUE (`steamid`)
+							) ENGINE=InnoDB"
+					};
+                    /*string[] createTableQueries = new[]
+                    {
+                        @"CREATE TABLE IF NOT EXISTS `wp_players` (`steamid` BIGINT UNSIGNED NOT NULL, `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`steamid`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+                        @"CREATE TABLE IF NOT EXISTS `wp_players_skins` (`steamid` BIGINT UNSIGNED NOT NULL, `team` SMALLINT UNSIGNED NOT NULL, `weapon` SMALLINT UNSIGNED NOT NULL, `paint` SMALLINT UNSIGNED NOT NULL, `wear` FLOAT NOT NULL DEFAULT 0.00001, `seed` SMALLINT UNSIGNED NOT NULL DEFAULT 0, `nametag` VARCHAR(20) DEFAULT NULL, `stattrack` INT UNSIGNED NOT NULL DEFAULT 0, `stattrack_enabled` SMALLINT NOT NULL DEFAULT 0, PRIMARY KEY (`steamid`,`weapon`,`team`), FOREIGN KEY (`steamid`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+                        @"CREATE TABLE IF NOT EXISTS `wp_players_knife` (`steamid` BIGINT UNSIGNED NOT NULL, `knife_t` SMALLINT UNSIGNED NOT NULL, `knife_ct` SMALLINT UNSIGNED NOT NULL, PRIMARY KEY (`steamid`), FOREIGN KEY (`steamid`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+                        @"CREATE TABLE IF NOT EXISTS `wp_players_music` (`steamid` BIGINT UNSIGNED NOT NULL, `music` SMALLINT UNSIGNED DEFAULT NULL, PRIMARY KEY (`steamid`), FOREIGN KEY (`steamid`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+                        @"CREATE TABLE IF NOT EXISTS `wp_players_gloves` (`steamid` BIGINT UNSIGNED NOT NULL, `glove_t` SMALLINT UNSIGNED NOT NULL, `glove_ct` SMALLINT UNSIGNED NOT NULL, PRIMARY KEY (`steamid`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;"
+                    };*/
+                    foreach (var query in createTableQueries)
 					{
 						await connection.ExecuteAsync(query, transaction: transaction);
 					}
