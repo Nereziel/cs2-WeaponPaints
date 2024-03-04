@@ -68,7 +68,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Change knife, gloves, paint, seed and wear
 
 ## Known issues
-- Issue on Windows servers, no knives are given.
+- Issue on Windows servers, no knives are given
 - You can't change knife if it's equpied in cs2 inventory
 - Can cause incompatibility with plugins/maps which manipulates weapons and knives
 
