@@ -1,7 +1,6 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
-using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 
 namespace WeaponPaints
@@ -105,6 +104,8 @@ namespace WeaponPaints
 
 			if (isKnife && !g_playersKnife.ContainsKey(player.Slot) || isKnife && g_playersKnife[player.Slot] == "weapon_knife") return;
 
+			int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
+
 			if (isKnife)
 			{
 				var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == g_playersKnife[player.Slot]);
@@ -139,40 +140,17 @@ namespace WeaponPaints
 				if (fallbackPaintKit == 0)
 					return;
 
-				var foundSkin = skinsList.FirstOrDefault(skin =>
-					((int?)skin?["weapon_defindex"] ?? 0) == weaponDefIndex &&
-					((int?)skin?["paint"] ?? 0) == fallbackPaintKit &&
-					skin?["paint_name"] != null
-				);
-
-				if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
+				if (!isKnife)
 				{
-					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-
-					int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
-
 					if (newPaints.Contains(fallbackPaintKit))
 					{
-						skeleton.ModelState.MeshGroupMask = 1;
+						UpdatePlayerWeaponMeshGroupMask(player, weapon, false);
 					}
 					else
 					{
-						if (skeleton.ModelState.MeshGroupMask != 2)
-						{
-							skeleton.ModelState.MeshGroupMask = 2;
-						}
+						UpdatePlayerWeaponMeshGroupMask(player, weapon, true);
 					}
 				}
-
-				var viewModels = GetPlayerViewModels(player);
-				if (viewModels == null || viewModels.Length == 0)
-					return;
-
-				var viewModel = viewModels[0];
-				if (viewModel == null || viewModel.Value == null || viewModel.Value.Weapon == null || viewModel.Value.Weapon.Value == null)
-					return;
-
-				Utilities.SetStateChanged(viewModel.Value, "CBaseEntity", "m_CBodyComponent");
 
 				return;
 			}
@@ -193,38 +171,17 @@ namespace WeaponPaints
 			if (fallbackPaintKit == 0)
 				return;
 
-			var foundSkin1 = skinsList.FirstOrDefault(skin =>
-			   ((int?)skin?["weapon_defindex"] ?? 0) == weaponDefIndex &&
-			   ((int?)skin?["paint"] ?? 0) == fallbackPaintKit &&
-			   skin?["paint_name"] != null
-		   );
-
-			if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
+			if (!isKnife)
 			{
-				var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-				int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
 				if (newPaints.Contains(fallbackPaintKit))
 				{
-					skeleton.ModelState.MeshGroupMask = 1;
+					UpdatePlayerWeaponMeshGroupMask(player, weapon, false);
 				}
 				else
 				{
-					if (skeleton.ModelState.MeshGroupMask != 2)
-					{
-						skeleton.ModelState.MeshGroupMask = 2;
-					}
+					UpdatePlayerWeaponMeshGroupMask(player, weapon, true);
 				}
 			}
-
-			var viewModels1 = GetPlayerViewModels(player);
-			if (viewModels1 == null || viewModels1.Length == 0)
-				return;
-
-			var viewModel1 = viewModels1[0];
-			if (viewModel1 == null || viewModel1.Value == null || viewModel1.Value.Weapon == null || viewModel1.Value.Weapon.Value == null)
-				return;
-
-			Utilities.SetStateChanged(viewModel1.Value, "CBaseEntity", "m_CBodyComponent");
 		}
 
 		private void OnMapStart(string mapName)
@@ -306,6 +263,25 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
+		public void OnEntitySpawned(CEntityInstance entity)
+		{
+			var designerName = entity.DesignerName;
+
+			if (designerName.Contains("weapon"))
+			{
+				Server.NextFrame(() =>
+				{
+					var weapon = new CBasePlayerWeapon(entity.Handle);
+					if (!weapon.IsValid) return;
+
+					var player = Utilities.GetPlayerFromSteamId(weapon.OriginalOwnerXuidLow);
+					if (player == null || !Utility.IsPlayerValid(player)) return;
+
+					GivePlayerWeaponSkin(player, weapon);
+				});
+			}
+		}
+
 		private void RegisterListeners()
 		{
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
@@ -313,8 +289,8 @@ namespace WeaponPaints
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
-
-			VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
+			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
+			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 
 			//HookEntityOutput("weapon_knife", "OnPlayerPickup", OnPickup);
 		}
