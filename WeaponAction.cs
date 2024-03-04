@@ -1,5 +1,6 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Modules.Entities.Constants;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Timers;
 using CounterStrikeSharp.API.Modules.Utils;
@@ -10,176 +11,37 @@ namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
-		internal static void ChangeWeaponAttributes(CBasePlayerWeapon? weapon, CCSPlayerController? player, bool isKnife = false)
-		{
-			if (player is null || weapon is null || !weapon.IsValid || !Utility.IsPlayerValid(player)) return;
-
-			if (!gPlayerWeaponsInfo.ContainsKey(player.Slot)) return;
-
-			if (isKnife && !g_playersKnife.ContainsKey(player.Slot) || isKnife && g_playersKnife[player.Slot] == "weapon_knife") return;
-
-			if (isKnife)
-			{
-				var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == g_playersKnife[player.Slot]);
-				if (newDefIndex.Key == 0) return;
-
-				if (weapon.AttributeManager.Item.ItemDefinitionIndex != newDefIndex.Key)
-				{
-					SubclassChange(weapon, (ushort)newDefIndex.Key);
-				}
-
-				weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)newDefIndex.Key;
-				weapon.AttributeManager.Item.EntityQuality = 3;
-			}
-
-			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
-			int fallbackPaintKit = 0;
-
-			if (_config.Additional.GiveRandomSkin &&
-				 !gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex))
-			{
-				// Random skins
-				weapon.AttributeManager.Item.ItemID = 16384;
-				weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
-				weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
-				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
-				weapon.FallbackSeed = 0;
-				weapon.FallbackWear = 0.000001f;
-				CAttributeList_SetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
-
-				fallbackPaintKit = weapon.FallbackPaintKit;
-
-				if (fallbackPaintKit == 0)
-					return;
-
-				var foundSkin = skinsList.FirstOrDefault(skin =>
-					((int?)skin?["weapon_defindex"] ?? 0) == weaponDefIndex &&
-					((int?)skin?["paint"] ?? 0) == fallbackPaintKit &&
-					skin?["paint_name"] != null
-				);
-				/*
-								string skinName = foundSkin?["paint_name"]?.ToString() ?? "";
-								if (!string.IsNullOrEmpty(skinName))
-									new SchemaString<CEconItemView>(weapon.AttributeManager.Item, "m_szCustomName").Set(skinName);
-				*/
-				if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
-				{
-					var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-
-					int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
-
-					if (newPaints.Contains(fallbackPaintKit))
-					{
-						skeleton.ModelState.MeshGroupMask = 1;
-					}
-					else
-					{
-						if (skeleton.ModelState.MeshGroupMask != 2)
-						{
-							skeleton.ModelState.MeshGroupMask = 2;
-						}
-					}
-				}
-
-				var viewModels = GetPlayerViewModels(player);
-				if (viewModels == null || viewModels.Length == 0)
-					return;
-
-				var viewModel = viewModels[0];
-				if (viewModel == null || viewModel.Value == null || viewModel.Value.Weapon == null || viewModel.Value.Weapon.Value == null)
-					return;
-
-				Utilities.SetStateChanged(viewModel.Value, "CBaseEntity", "m_CBodyComponent");
-
-				return;
-			}
-
-			if (!gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex)) return;
-			WeaponInfo weaponInfo = gPlayerWeaponsInfo[player.Slot][weaponDefIndex];
-			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
-			weapon.AttributeManager.Item.ItemID = 16384;
-			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
-			weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
-			weapon.FallbackPaintKit = weaponInfo.Paint;
-			weapon.FallbackSeed = weaponInfo.Seed;
-			weapon.FallbackWear = weaponInfo.Wear;
-			CAttributeList_SetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
-
-			fallbackPaintKit = weapon.FallbackPaintKit;
-
-			if (fallbackPaintKit == 0)
-				return;
-
-			var foundSkin1 = skinsList.FirstOrDefault(skin =>
-			   ((int?)skin?["weapon_defindex"] ?? 0) == weaponDefIndex &&
-			   ((int?)skin?["paint"] ?? 0) == fallbackPaintKit &&
-			   skin?["paint_name"] != null
-		   );
-
-			/*
-			var skinName1 = foundSkin1?["paint_name"]?.ToString() ?? "";
-			if (!string.IsNullOrEmpty(skinName1))
-				new SchemaString<CEconItemView>(weapon.AttributeManager.Item, "m_szCustomName").Set(skinName1);
-			*/
-			if (!isKnife && weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
-			{
-				var skeleton = GetSkeletonInstance(weapon.CBodyComponent.SceneNode);
-				int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
-				if (newPaints.Contains(fallbackPaintKit))
-				{
-					skeleton.ModelState.MeshGroupMask = 1;
-				}
-				else
-				{
-					if (skeleton.ModelState.MeshGroupMask != 2)
-					{
-						skeleton.ModelState.MeshGroupMask = 2;
-					}
-				}
-			}
-
-			var viewModels1 = GetPlayerViewModels(player);
-			if (viewModels1 == null || viewModels1.Length == 0)
-				return;
-
-			var viewModel1 = viewModels1[0];
-			if (viewModel1 == null || viewModel1.Value == null || viewModel1.Value.Weapon == null || viewModel1.Value.Weapon.Value == null)
-				return;
-
-			Utilities.SetStateChanged(viewModel1.Value, "CBaseEntity", "m_CBodyComponent");
-		}
-
 		internal static void GiveKnifeToPlayer(CCSPlayerController? player)
 		{
 			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
 
 			if (PlayerHasKnife(player)) return;
 
-			string knifeToGive;
-			if (g_playersKnife.TryGetValue(player.Slot, out var knife))
-			{
-				knifeToGive = knife;
-			}
-			else if (_config.Additional.GiveRandomKnife)
-			{
-				var knifeTypes = weaponList.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet")).ToList();
+			//string knifeToGive;
+			//if (g_playersKnife.TryGetValue(player.Slot, out var knife))
+			//{
+			//	knifeToGive = knife;
+			//}
+			//else if (_config.Additional.GiveRandomKnife)
+			//{
+			//	var knifeTypes = weaponList.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet")).ToList();
 
-				if (knifeTypes.Count == 0)
-				{
-					Utility.Log("No valid knife types found.");
-					return;
-				}
+			//	if (knifeTypes.Count == 0)
+			//	{
+			//		Utility.Log("No valid knife types found.");
+			//		return;
+			//	}
 
-				Random random = new();
-				int index = random.Next(knifeTypes.Count);
-				knifeToGive = knifeTypes[index].Key;
-			}
-			else
-			{
-				knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
-			}
+			//	Random random = new();
+			//	int index = random.Next(knifeTypes.Count);
+			//	knifeToGive = knifeTypes[index].Key;
+			//}
+			//else
+			//{
+			//}
 
-			player.GiveNamedItem(knifeToGive);
+			string knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
+			player.GiveNamedItem(CsItem.Knife);
 		}
 
 		internal static bool PlayerHasKnife(CCSPlayerController? player)
@@ -484,6 +346,35 @@ namespace WeaponPaints
 			SubclassChangeFunc(weapon.Handle, itemD.ToString());
 		}
 
+		public static void UpdateWeaponMeshGroupMask(CBaseEntity weapon, bool isLegacy = false)
+		{
+			if (weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
+			{
+				var skeleton = weapon.CBodyComponent.SceneNode.GetSkeletonInstance();
+				if (skeleton != null)
+				{
+					var value = (ulong)(isLegacy ? 2 : 1);
+
+					if (skeleton.ModelState.MeshGroupMask != value)
+					{
+						skeleton.ModelState.MeshGroupMask = value;
+					}
+				}
+			}
+		}
+
+		public static void UpdatePlayerWeaponMeshGroupMask(CCSPlayerController player, CBasePlayerWeapon weapon, bool isLegacy)
+		{
+			UpdateWeaponMeshGroupMask(weapon, isLegacy);
+
+			var viewModel = GetPlayerViewModel(player);
+			if (viewModel != null && viewModel.Weapon.Value != null && viewModel.Weapon.Value.Index == weapon.Index)
+			{
+				UpdateWeaponMeshGroupMask(viewModel, isLegacy);
+				Utilities.SetStateChanged(viewModel, "CBaseEntity", "m_CBodyComponent");
+			}
+		}
+
 		public static CCSPlayerController? GetPlayerFromItemServices(CCSPlayer_ItemServices itemServices)
 		{
 			var pawn = itemServices.Pawn.Value;
@@ -498,12 +389,15 @@ namespace WeaponPaints
 			Func<nint, nint> GetSkeletonInstance = VirtualFunction.Create<nint, nint>(node.Handle, 8);
 			return new CSkeletonInstance(GetSkeletonInstance(node.Handle));
 		}
-
-		private static unsafe CHandle<CBaseViewModel>[]? GetPlayerViewModels(CCSPlayerController player)
+		private static unsafe CBaseViewModel? GetPlayerViewModel(CCSPlayerController player)
 		{
 			if (player.PlayerPawn.Value == null || player.PlayerPawn.Value.ViewModelServices == null) return null;
-			CCSPlayer_ViewModelServices viewModelServices = new CCSPlayer_ViewModelServices(player.PlayerPawn.Value.ViewModelServices!.Handle);
-			return GetFixedArray<CHandle<CBaseViewModel>>(viewModelServices.Handle, "CCSPlayer_ViewModelServices", "m_hViewModel", 3);
+			CCSPlayer_ViewModelServices viewModelServices = new(player.PlayerPawn.Value.ViewModelServices!.Handle);
+			nint ptr = viewModelServices.Handle + Schema.GetSchemaOffset("CCSPlayer_ViewModelServices", "m_hViewModel");
+			var references = MemoryMarshal.CreateSpan(ref ptr, 3);
+			var viewModel = (CHandle<CBaseViewModel>)Activator.CreateInstance(typeof(CHandle<CBaseViewModel>), references[0])!;
+			if (viewModel == null || viewModel.Value == null) return null;
+			return viewModel.Value;
 		}
 
 		public static unsafe T[] GetFixedArray<T>(nint pointer, string @class, string member, int length) where T : CHandle<CBaseViewModel>
