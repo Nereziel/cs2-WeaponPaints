@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CounterStrikeSharp.API" Version="1.0.168" />
+    <PackageReference Include="CounterStrikeSharp.API" Version="1.0.179" />
     <PackageReference Include="Dapper" Version="2.1.28" />
     <PackageReference Include="MySqlConnector" Version="2.3.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -17,5 +17,9 @@
 
   <ItemGroup>
     <None Update="lang\**\*.*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="gamedata\*.*" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

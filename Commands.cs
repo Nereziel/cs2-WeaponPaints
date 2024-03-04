@@ -217,7 +217,6 @@ namespace WeaponPaints
 				)?.ToList();
 
 					var skinSubMenu = new ChatMenu(Localizer["wp_skin_menu_skin_title", selectedWeapon]);
-					skinSubMenu.PostSelectAction = PostSelectAction.Close;
 
 					// Function to handle skin selection for the chosen weapon
 					var handleSkinSelection = (CCSPlayerController p, ChatMenuOption opt) =>
@@ -234,8 +233,9 @@ namespace WeaponPaints
 							return false;
 						});
 
+
 						string selectedSkin = opt.Text;
-						string selectedPaintID = selectedSkin.Split('(')[1].Trim(')').Trim();
+						string selectedPaintID = selectedSkin.Substring(selectedSkin.LastIndexOf('(') + 1).Trim(')');
 
 						if (firstSkin != null &&
 							firstSkin.TryGetValue("weapon_defindex", out var weaponDefIndexObj) &&
@@ -263,21 +263,31 @@ namespace WeaponPaints
 							}
 
 							gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Paint = paintID;
-							gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Wear = 0.00f;
+							gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Wear = 0.01f;
 							gPlayerWeaponsInfo[p.Slot][weaponDefIndex].Seed = 0;
 
 							PlayerInfo playerInfo = new PlayerInfo
 							{
 								UserId = p.UserId,
+								Slot = p.Slot,
 								Index = (int)p.Index,
 								SteamId = p.SteamID.ToString(),
 								Name = p.PlayerName,
 								IpAddress = p.IpAddress?.Split(":")[0]
 							};
 
-							if (g_bCommandsAllowed && (LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE)
+							if (g_bCommandsAllowed && (LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE && weaponSync != null)
 							{
 								RefreshWeapons(player);
+
+								try
+								{
+									Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
+								}
+								catch (Exception ex)
+								{
+									Utility.Log($"Error syncing weapon paints: {ex.Message}");
+								}
 							}
 						}
 					};
