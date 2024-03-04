@@ -3,9 +3,9 @@
 ## Description
 Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin for **[CSSharp](https://docs.cssharp.dev/docs/guides/getting-started.html)**. 
 
-## Created [Discord server](https://discord.gg/d9CvaYPSFe) where you can discuss about plugin.
+#### Created [Discord server](https://discord.gg/d9CvaYPSFe) where you can discuss about plugin.
 
-### Consider to donate instead of buying from unknown sources.
+#### Consider to donate instead of buying from unknown sources.
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E2G0P2O) or [![Donate on Steam](https://github.com/Nereziel/cs2-WeaponPaints/assets/32937653/a0d53822-4ca7-4caf-83b4-e1a9b5f8c94e)](https://steamcommunity.com/tradeoffer/new/?partner=41515647&token=gW2W-nXE)
 
 ## Features
@@ -22,13 +22,13 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Have working CounterStrikeSharp (**with RUNTIME!**)
 - Download from Release and copy plugin to plugins
 - Run server with plugin, **it will generate config if installed correctly!**
-- Edit `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** include database credentials
-- In `addons/counterstrikesharp/configs/`**`core.json`** set **FollowCS2ServerGuidelines** to **`false`**
+- In **`addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json`** include database credentials
+- In **`addons/counterstrikesharp/configs/core.json`** set **FollowCS2ServerGuidelines** to **`false`**
 
 ## Plugin Configuration
 <details>
-  <summary>Click to expand</summary>
-<code><pre>{
+
+<pre>{
 	"Version": 4, // Don't touch
 	"DatabaseHost": "", // MySQL host
 	"DatabasePort": 3306, // MySQL port
@@ -36,21 +36,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 	"DatabasePassword": "", // MySQL user password
 	"DatabaseName": "", // MySQL database name
 	"CmdRefreshCooldownSeconds": 60, // Cooldown time in refreshing skins (!wp command)
-	"Prefix": "[WeaponPaints]", // Prefix every chat message
 	"Website": "example.com/skins", // Website used in WebsiteMessageCommand (!ws command)
-"Messages": {
-	"WebsiteMessageCommand": "Visit {WEBSITE} where you can change skins.", // Information about website where player can change skins (!ws command) Set to empty to disable
-	"SynchronizeMessageCommand": "Type !wp to synchronize chosen skins.", // Information about skins refreshing (!ws command) Set to empty to disable
-	"KnifeMessageCommand": "Type !knife to open knife menu.", // Information about knife menu (!ws command) Set to empty to disable
-	"CooldownRefreshCommand": "You can\u0027t refresh weapon paints right now.", // Cooldown information (!wp command) Set to empty to disable
-	"SuccessRefreshCommand": "Refreshing weapon paints.", // Information about refreshing skins (!wp command) Set to empty to disable
-	"ChosenKnifeMenu": "You have chosen {KNIFE} as your knife.", // Information about choosen knife (!knife command) Set to empty to disable
-	"ChosenSkinMenu": "You have chosen {SKIN} as your skin.", // Information about choosen skin (!skins command) Set to empty to disable
-	"ChosenKnifeMenuKill": "To correctly apply skin for knife, you need to type !kill.", // Information about suicide after knife selection (!knife command) Set to empty to disable
-	"KnifeMenuTitle": "Knife Menu.",  // Menu title (!knife menu)
-	"WeaponMenuTitle": "Weapon Menu.", // Menu title (!skins menu)
-	"SkinMenuTitle": "Select skin for {WEAPON}" // Menu title (!skins menu, after weapon select)
-},
 "Additional": {
 	"SkinVisibilityFix": true, // Enable or disable fix for skin visibility
 	"KnifeEnabled": true, // Enable or disable knife feature
@@ -63,11 +49,11 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 	"CommandRefresh": "wp", // Name of skin refreshing command, u can change to for e.g, refreshskins
 	"CommandKill": "kill", // Name of kill command, u can change to for e.g, suicide
 	"GiveRandomKnife": false,  // Give random knife to players if they didn't choose
-	"GiveRandomSkins": false  // Give random skins to players if they didn't choose
+	"GiveRandomSkins": false,  // Give random skins to players if they didn't choose
+	"GiveKnifeAfterRemove": true
 },
-
 "ConfigVersion": 4  // Don't touch
-}</pre></code>
+}</pre>
 </details>
     
 ## Web install
@@ -75,13 +61,13 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - **Before using website, make sure the plugin is correctly loaded in cs2 server!** Mysql tables are created by plugin not by website.
 - Copy website to web server ***(Folder `img` not needed)***
 - Get [Steam API Key](https://steamcommunity.com/dev/apikey)
-- Fill in database credentials and api key in `class/config.php`
+- Fill in database credentials and api key in **`class/config.php`**
 - Visit website and login via steam
 
 ## Web Features
 - Basic website
 - Steam login/logout
-- Change knife, paint, seed and wear
+- Change knife, gloves, paint, seed and wear
 
 ## Known issues
 - Issue on Windows servers, no knives are given.
@@ -90,17 +76,11 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 
 ## Troubleshooting
 <details>
-**Skins are not changing:**
-Set FollowCSGOGuidelines to false in cssharp’s core.jcon config
 
-**Database error table does not exists:**
-Plugin is not loaded or configured with mysql credentials. Tables are auto-created by plugin.
-
-**Knives are disappearing:**
-Set in config GiveKnifeAfterRemove to true 
-
-**Knives are not changing for players:**
-You can't change knife if you have your own equipped
+- **Skins are not changing:** Set **FollowCSGOGuidelines** to **`false`** in cssharp’s **core.json** config
+- **Database error table does not exists:** Plugin is not loaded or configured with mysql credentials. Tables are auto-created by plugin
+- **Knives are disappearing:** Set in config **GiveKnifeAfterRemove** to **`true`**
+- **Knives are not changing for players:** You can't change knife if you have your own equipped
 </details>
 
 ### Use this plugin at your own risk! Using this may lead to GSLT ban or something else Valve come with. [Valve Server guidelines](https://blog.counter-strike.net/index.php/server_guidelines/)
