@@ -5,9 +5,6 @@ namespace WeaponPaints
 {
 	public class Additional
 	{
-		[JsonPropertyName("SkinVisibilityFix")]
-		public bool SkinVisibilityFix { get; set; } = true;
-
 		[JsonPropertyName("KnifeEnabled")]
 		public bool KnifeEnabled { get; set; } = true;
 
@@ -56,7 +53,7 @@ namespace WeaponPaints
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-		public override int Version { get; set; } = 4;
+		public override int Version { get; set; } = 5;
 
 		[JsonPropertyName("DatabaseHost")]
 		public string DatabaseHost { get; set; } = "";

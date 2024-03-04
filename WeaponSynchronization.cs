@@ -149,11 +149,24 @@ namespace WeaponPaints
 					float wear = weaponInfo.Wear;
 					int seed = weaponInfo.Seed;
 
-					string query = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
-								   "VALUES (@steamid, @weaponDefIndex, @paintId, @wear, @seed) " +
-								   "ON DUPLICATE KEY UPDATE `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed";
+					string queryCheckExistence = "SELECT COUNT(*) FROM `wp_player_skins` WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
 
-					var parameters = new { steamid = player.SteamId, weaponDefIndex, paintId, wear, seed };
+					int existingRecordCount = await connection.ExecuteScalarAsync<int>(queryCheckExistence, new { steamid = player.SteamId, weaponDefIndex });
+
+					string query;
+					object parameters;
+					if (existingRecordCount > 0)
+					{
+						query = "UPDATE `wp_player_skins` SET `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
+						parameters = new { steamid = player.SteamId, weaponDefIndex, paintId, wear, seed };
+					}
+					else
+					{
+						query = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
+								"VALUES (@steamid, @weaponDefIndex, @paintId, @wear, @seed)";
+						parameters = new { steamid = player.SteamId, weaponDefIndex, paintId, wear, seed };
+					}
+
 					await connection.ExecuteAsync(query, parameters);
 				}
 			}
