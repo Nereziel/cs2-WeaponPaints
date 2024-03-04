@@ -15,7 +15,6 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Added command **`!wp`** to refresh skins ***(with cooldown in seconds can be configured)***
 - Added command **`!ws`** to show website
 - Added command **`!knife`** to show menu with knives
-- Knife change is now limited to have these cvars empty **`mp_t_default_melee ""`** and **`mp_ct_default_melee ""`**
 - Translations support, submit a PR if you want to share your translation
 
 ## CS2 Server
@@ -38,7 +37,6 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 	"CmdRefreshCooldownSeconds": 60, // Cooldown time in refreshing skins (!wp command)
 	"Website": "example.com/skins", // Website used in WebsiteMessageCommand (!ws command)
 "Additional": {
-	"SkinVisibilityFix": true, // Enable or disable fix for skin visibility
 	"KnifeEnabled": true, // Enable or disable knife feature
 	"SkinEnabled": true, // Enable or disable skin feature
 	"CommandWpEnabled": true, // Enable or disable refreshing command
