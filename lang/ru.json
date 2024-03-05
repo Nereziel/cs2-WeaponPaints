@@ -11,7 +11,11 @@
 	"wp_knife_menu_title": "Меню Ножей",
 	"wp_glove_menu_select": "Вы выбрали {lime}{0}{default} в качестве ваших перчаток",
 	"wp_glove_menu_title": "Меню Перчаток",
+	"wp_agent_menu_select": "Вы выбрали {lime}{0}{default} в качестве своего агента",
+	"wp_agent_menu_title": "Меню агентов",
 	"wp_skin_menu_weapon_title": "Меню Оружия",
 	"wp_skin_menu_skin_title": "Выберите скин для {lime}{0}{default}",
-	"wp_skin_menu_select": "Вы выбрали {lime}{0}{default} в качестве вашего скина"
+	"wp_skin_menu_select": "Вы выбрали {lime}{0}{default} в качестве вашего скина",
+
+	"None": "Нет"
 }

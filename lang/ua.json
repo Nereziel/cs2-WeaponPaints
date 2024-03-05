@@ -11,7 +11,11 @@
 	"wp_knife_menu_title": "Меню Ножів",
 	"wp_glove_menu_select": "Ви вибрали {lime}{0}{default} як ваші рукавички",
 	"wp_glove_menu_title": "Меню Рукавичок",
+	"wp_agent_menu_select": "Ви обрали {lime}{0}{default} як вашого агента",
+	"wp_agent_menu_title": "Меню агентів",
 	"wp_skin_menu_weapon_title": "Меню Зброї",
 	"wp_skin_menu_skin_title": "Виберіть шкіру для {lime}{0}{default}",
-	"wp_skin_menu_select": "Ви вибрали {lime}{0}{default} як вашу шкіру"
+	"wp_skin_menu_select": "Ви вибрали {lime}{0}{default} як вашу шкіру",
+
+	"None": "Немає"
 }

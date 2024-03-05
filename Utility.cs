@@ -117,6 +117,20 @@ namespace WeaponPaints
 			}
 		}
 
+		internal static void LoadAgentsFromFile(string filePath)
+		{
+			try
+			{
+				string json = File.ReadAllText(filePath);
+				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
+				WeaponPaints.agentsList = deserializedSkins ?? new List<JObject>();
+			}
+			catch (FileNotFoundException)
+			{
+				throw;
+			}
+		}
+
 		internal static void Log(string message)
 		{
 			Console.BackgroundColor = ConsoleColor.DarkGray;
@@ -206,26 +220,5 @@ namespace WeaponPaints
 			Console.WriteLine("			>> GitHub: https://github.com/Nereziel/cs2-WeaponPaints");
 			Console.WriteLine(" ");
 		}
-
-		/*(
-		internal static void TestDatabaseConnection()
-		{
-			try
-			{
-				using var connection = new MySqlConnection(BuildDatabaseConnectionString());
-				connection.Open();
-
-				if (connection.State != System.Data.ConnectionState.Open)
-				{
-					throw new Exception("[WeaponPaints] Unable connect to database!");
-				}
-			}
-			catch (Exception ex)
-			{
-				throw new Exception("[WeaponPaints] Unknown mysql exception! " + ex.Message);
-			}
-			CheckDatabaseTables();
-		}
-		*/
 	}
 }

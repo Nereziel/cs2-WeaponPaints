@@ -10,6 +10,8 @@ namespace WeaponPaints
 
 		[JsonPropertyName("GloveEnabled")]
 		public bool GloveEnabled { get; set; } = true;
+		[JsonPropertyName("AgentEnabled")]
+		public bool AgentEnabled { get; set; } = true;
 
 		[JsonPropertyName("SkinEnabled")]
 		public bool SkinEnabled { get; set; } = true;
@@ -25,6 +27,8 @@ namespace WeaponPaints
 
 		[JsonPropertyName("CommandGlove")]
 		public string CommandGlove { get; set; } = "gloves";
+		[JsonPropertyName("CommandAgent")]
+		public string CommandAgent { get; set; } = "agents";
 
 		[JsonPropertyName("CommandSkin")]
 		public string CommandSkin { get; set; } = "ws";
@@ -44,16 +48,13 @@ namespace WeaponPaints
 		[JsonPropertyName("GiveRandomSkin")]
 		public bool GiveRandomSkin { get; set; } = false;
 
-		[JsonPropertyName("GiveKnifeAfterRemove")]
-		public bool GiveKnifeAfterRemove { get; set; } = false;
-
 		[JsonPropertyName("ShowSkinImage")]
 		public bool ShowSkinImage { get; set; } = true;
 	}
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-		public override int Version { get; set; } = 5;
+		public override int Version { get; set; } = 6;
 
 		[JsonPropertyName("DatabaseHost")]
 		public string DatabaseHost { get; set; } = "";

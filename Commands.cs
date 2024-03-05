@@ -1,6 +1,7 @@
 ﻿using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Menu;
+using Newtonsoft.Json.Linq;
 
 namespace WeaponPaints
 {
@@ -407,16 +408,20 @@ namespace WeaponPaints
 							{
 								await weaponSync.SyncGloveToDatabase(playerInfo, weaponDefindex);
 
-								if (!gPlayerWeaponsInfo[playerInfo.Slot].ContainsKey(weaponDefindex))
+								if (!gPlayerWeaponsInfo[playerInfo.Slot].TryGetValue(weaponDefindex, out WeaponInfo? value))
 								{
-									gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex] = new WeaponInfo();
+									value = new WeaponInfo();
+									gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex] = value;
 								}
 
-								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex].Paint = paint;
-								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex].Wear = 0.00f;
-								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex].Seed = 0;
+								value.Paint = paint;
+								value.Wear = 0.00f;
+								value.Seed = 0;
 							});
+
+							Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
 						}
+
 						RefreshGloves(player);
 					}
 				};
@@ -450,6 +455,115 @@ namespace WeaponPaints
 									player!.Print(Localizer["wp_command_cooldown"]);
 								}
 							});
+		}
+
+		private void SetupAgentsMenu()
+		{
+			var handleAgentSelection = (CCSPlayerController? player, ChatMenuOption option) =>
+			{
+				if (!Utility.IsPlayerValid(player) || player is null) return;
+
+				string selectedPaintName = option.Text;
+
+				var selectedAgent = agentsList.FirstOrDefault(g => g.ContainsKey("agent_name") && g["agent_name"]?.ToString() == selectedPaintName);
+				if (selectedAgent != null)
+				{
+					if (
+						selectedAgent != null &&
+						selectedAgent.ContainsKey("model")
+					)
+					{
+						PlayerInfo playerInfo = new PlayerInfo
+						{
+							UserId = player.UserId,
+							Slot = player.Slot,
+							Index = (int)player.Index,
+							SteamId = player.SteamID.ToString(),
+							Name = player.PlayerName,
+							IpAddress = player.IpAddress?.Split(":")[0]
+						};
+
+						if (Config.Additional.ShowSkinImage)
+						{
+							string image = selectedAgent["image"]?.ToString() ?? "";
+							PlayerWeaponImage[player.Slot] = image;
+							AddTimer(2.0f, () => PlayerWeaponImage.Remove(player.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+						}
+
+						if (!string.IsNullOrEmpty(Localizer["wp_agent_menu_select"]))
+						{
+							player!.Print(Localizer["wp_agent_menu_select", selectedPaintName]);
+						}
+
+						if (player.TeamNum == 3)
+						{
+							g_playersAgent.AddOrUpdate(player.Slot,
+							key => (selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString(), null),
+							(key, oldValue) => (selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString(), oldValue.T));
+						}
+						else
+						{
+							g_playersAgent.AddOrUpdate(player.Slot,
+								key => (null, selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString()),
+								(key, oldValue) => (oldValue.CT, selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString())
+							);
+						}
+
+						if (weaponSync != null)
+						{
+							Task.Run(async () =>
+							{
+								await weaponSync.SyncAgentToDatabase(playerInfo);
+							});
+						}
+					};
+				}
+			};
+
+			// Command to open the weapon selection menu for players
+			AddCommand($"css_{Config.Additional.CommandAgent}", "Agents selection menu", (player, info) =>
+			{
+				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
+
+				if (player == null || player.UserId == null) return;
+
+				if (player != null && !commandsCooldown.TryGetValue(player.Slot, out DateTime cooldownEndTime) ||
+	player != null && DateTime.UtcNow >= (commandsCooldown.TryGetValue(player.Slot, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
+				{
+					var agentsSelectionMenu = new ChatMenu(Localizer["wp_agent_menu_title"]);
+					agentsSelectionMenu.PostSelectAction = PostSelectAction.Close;
+
+					var filteredAgents = agentsList.Where(agentObject =>
+					{
+						if (agentObject["team"]?.Value<int>() is int teamNum)
+						{
+							return teamNum == player.TeamNum;
+						}
+						else
+						{
+							return false;
+						}
+					});
+
+					// Add weapon options to the weapon selection menu
+
+					foreach (var agentObject in filteredAgents)
+					{
+						string paintName = agentObject["agent_name"]?.ToString() ?? "";
+
+						if (paintName.Length > 0)
+							agentsSelectionMenu.AddMenuOption(paintName, handleAgentSelection);
+					}
+
+					commandsCooldown[player.Slot] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
+					MenuManager.OpenChatMenu(player, agentsSelectionMenu);
+					return;
+				}
+				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
+				{
+					player!.Print(Localizer["wp_command_cooldown"]);
+				}
+			});
 		}
 	}
 }

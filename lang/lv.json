@@ -11,7 +11,11 @@
 	"wp_knife_menu_title": "Nazis Izvēlne",
 	"wp_glove_menu_select": "Jūs esat izvēlējies {lime}{0}{default} kā savus cimdus",
 	"wp_glove_menu_title": "Cimdu Izvēlne",
+	"wp_agent_menu_select": "Jūs esat izvēlējušies {lime}{0}{default} kā savu aģentu",
+	"wp_agent_menu_title": "Aģentu izvēlnes",
 	"wp_skin_menu_weapon_title": "Ieroču Izvēlne",
 	"wp_skin_menu_skin_title": "Izvēlieties ādu {lime}{0}{default}",
-	"wp_skin_menu_select": "Jūs esat izvēlējies {lime}{0}{default} kā savu ādu"
+	"wp_skin_menu_select": "Jūs esat izvēlējies {lime}{0}{default} kā savu ādu",
+
+	"None": "Nav"
 }
