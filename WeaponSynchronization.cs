@@ -170,9 +170,9 @@ namespace WeaponPaints
 			{
 				await using var connection = await _database.GetConnectionAsync();
 				string query = @"
-					INSERT INTO `wp_player_agents` (`steamid`, `agent_ct`, `agent_t`) 
-					VALUES(@steamid, @agent_ct, @agent_t) 
-					ON DUPLICATE KEY UPDATE 
+					INSERT INTO `wp_player_agents` (`steamid`, `agent_ct`, `agent_t`)
+					VALUES(@steamid, @agent_ct, @agent_t)
+					ON DUPLICATE KEY UPDATE
 						`agent_ct` = @agent_ct,
 						`agent_t` = @agent_t";
 

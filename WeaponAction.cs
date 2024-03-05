@@ -183,7 +183,6 @@ namespace WeaponPaints
 						});
 							}
 						}
-
 					}, TimerFlags.STOP_ON_MAPCHANGE);
 		}
 
@@ -297,8 +296,10 @@ namespace WeaponPaints
 			}
 		}
 
-		public void GivePlayerAgent(CCSPlayerController player)
+		public static void GivePlayerAgent(CCSPlayerController player)
 		{
+			if (!g_playersAgent.ContainsKey(player.Slot)) return;
+
 			try
 			{
 				Server.NextFrame(() =>

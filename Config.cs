@@ -10,6 +10,7 @@ namespace WeaponPaints
 
 		[JsonPropertyName("GloveEnabled")]
 		public bool GloveEnabled { get; set; } = true;
+
 		[JsonPropertyName("AgentEnabled")]
 		public bool AgentEnabled { get; set; } = true;
 
@@ -27,6 +28,7 @@ namespace WeaponPaints
 
 		[JsonPropertyName("CommandGlove")]
 		public string CommandGlove { get; set; } = "gloves";
+
 		[JsonPropertyName("CommandAgent")]
 		public string CommandAgent { get; set; } = "agents";
 
