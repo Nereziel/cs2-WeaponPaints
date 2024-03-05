@@ -41,6 +41,10 @@ namespace WeaponPaints
 				{
 					tasks.Add(Task.Run(() => weaponSync.GetGloveFromDatabase(playerInfo)));
 				}
+				if (Config.Additional.AgentEnabled)
+				{
+					tasks.Add(Task.Run(() => weaponSync.GetAgentFromDatabase(playerInfo)));
+				}
 
 				Task.WaitAll(tasks.ToArray());
 			}
@@ -85,6 +89,10 @@ namespace WeaponPaints
 			if (Config.Additional.GloveEnabled)
 			{
 				g_playersGlove.TryRemove(player.Slot, out _);
+			}
+			if (Config.Additional.AgentEnabled)
+			{
+				g_playersAgent.TryRemove(player.Slot, out _);
 			}
 
 			commandsCooldown.Remove(player.Slot);
@@ -190,19 +198,6 @@ namespace WeaponPaints
 
 			if (_database != null)
 				weaponSync = new WeaponSynchronization(_database, Config);
-
-
-			// needed for now
-			/*
-			AddTimer(2.0f, () =>
-			{
-				
-				NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
-				NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
-				
-				//NativeAPI.IssueServerCommand("mp_equipment_reset_rounds 0");
-			});
-			*/
 		}
 
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
@@ -219,9 +214,7 @@ namespace WeaponPaints
 
 			g_knifePickupCount[player.Slot] = 0;
 
-			//if (!PlayerHasKnife(player))
-			//GiveKnifeToPlayer(player);
-
+			GivePlayerAgent(player);
 			Server.NextFrame(() =>
 			{
 				RefreshGloves(player);
@@ -282,6 +275,23 @@ namespace WeaponPaints
 			}
 		}
 
+		private void OnTick()
+		{
+			foreach (var player in Utilities.GetPlayers().Where(p =>
+							p is not null && p.IsValid && p.PlayerPawn != null && p.PlayerPawn.IsValid &&
+							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE && p.SteamID.ToString().Length == 17
+							&& !p.IsBot && !p.IsHLTV && p.Connected == PlayerConnectedState.PlayerConnected
+							)
+				)
+			{
+				if (Config.Additional.ShowSkinImage && PlayerWeaponImage.TryGetValue(player.Slot, out string? value) && !string.IsNullOrEmpty(value))
+				{
+					player.PrintToCenterHtml("<img src='{PATH}'</img>".Replace("{PATH}", value));
+				}
+			}
+		}
+
+
 		private void RegisterListeners()
 		{
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
@@ -290,9 +300,8 @@ namespace WeaponPaints
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
 			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
+			RegisterListener<Listeners.OnTick>(OnTick);
 			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
-
-			//HookEntityOutput("weapon_knife", "OnPlayerPickup", OnPickup);
 		}
 	}
 }

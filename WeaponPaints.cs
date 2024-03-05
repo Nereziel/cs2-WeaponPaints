@@ -80,9 +80,11 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
 	internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
 	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new ConcurrentDictionary<int, ushort>();
+	internal static ConcurrentDictionary<int, (string? CT, string? T)> g_playersAgent = new ConcurrentDictionary<int, (string?, string?)>();
 	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>>();
 	internal static List<JObject> skinsList = new List<JObject>();
 	internal static List<JObject> glovesList = new List<JObject>();
+	internal static List<JObject> agentsList = new List<JObject>();
 	internal static WeaponSynchronization? weaponSync;
 	public static bool g_bCommandsAllowed = true;
 	internal Dictionary<int, string> PlayerWeaponImage = new();
@@ -154,9 +156,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	public WeaponPaintsConfig Config { get; set; } = new();
 	public override string ModuleAuthor => "Nereziel & daffyy";
-	public override string ModuleDescription => "Skin, gloves and knife selector, standalone and web-based";
+	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.1a";
+	public override string ModuleVersion => "2.2a";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -177,15 +179,15 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
 					continue;
 
-				g_knifePickupCount[(int)player.Slot] = 0;
-				gPlayerWeaponsInfo.TryRemove((int)player.Slot, out _);
-				g_playersKnife.TryRemove((int)player.Slot, out _);
+				g_knifePickupCount[player.Slot] = 0;
+				gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
+				g_playersKnife.TryRemove(player.Slot, out _);
 
 				PlayerInfo playerInfo = new PlayerInfo
 				{
 					UserId = player.UserId,
 					Slot = player.Slot,
-					Index = (int)player.Slot,
+					Index = (int)player.Index,
 					SteamId = player?.SteamID.ToString(),
 					Name = player?.PlayerName,
 					IpAddress = player?.IpAddress?.Split(":")[0]
@@ -203,11 +205,16 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				{
 					Task.Run(() => weaponSync.GetGloveFromDatabase(playerInfo));
 				}
+				if (Config.Additional.AgentEnabled)
+				{
+					Task.Run(() => weaponSync.GetAgentFromDatabase(playerInfo));
+				}
 			}
 		}
 
 		Utility.LoadSkinsFromFile(ModuleDirectory + "/skins.json");
 		Utility.LoadGlovesFromFile(ModuleDirectory + "/gloves.json");
+		Utility.LoadAgentsFromFile(ModuleDirectory + "/agents.json");
 
 		if (Config.Additional.KnifeEnabled)
 			SetupKnifeMenu();
@@ -215,6 +222,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			SetupSkinsMenu();
 		if (Config.Additional.GloveEnabled)
 			SetupGlovesMenu();
+		if (Config.Additional.AgentEnabled)
+			SetupAgentsMenu();
 
 		RegisterListeners();
 		RegisterCommands();

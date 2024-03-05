@@ -11,7 +11,11 @@
 	"wp_knife_menu_title": "Bıçak Menüsü",
 	"wp_glove_menu_select": "{lime}{0}{default} olarak eldiveninizi seçtiniz",
 	"wp_glove_menu_title": "Eldiven Menüsü",
+	"wp_agent_menu_select": "Ajanınız olarak {lime}{0}{default} seçtiniz",
+	"wp_agent_menu_title": "Ajan Menüsü",
 	"wp_skin_menu_weapon_title": "Silah Menüsü",
 	"wp_skin_menu_skin_title": "{lime}{0}{default} için bir skin seçin",
-	"wp_skin_menu_select": "{lime}{0}{default} olarak bir skin seçtiniz"
+	"wp_skin_menu_select": "{lime}{0}{default} olarak bir skin seçtiniz",
+
+	"None": "Hiçbiri"
 }

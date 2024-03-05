@@ -9,12 +9,14 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E2G0P2O) or [![Donate on Steam](https://github.com/Nereziel/cs2-WeaponPaints/assets/32937653/a0d53822-4ca7-4caf-83b4-e1a9b5f8c94e)](https://steamcommunity.com/tradeoffer/new/?partner=41515647&token=gW2W-nXE)
 
 ## Features
-- Changes only paint, seed and wear on weapons and knives
+- Changes only paint, seed and wear on weapons, knives, gloves and agents
 - MySQL based
 - Data syncs on player connect
 - Added command **`!wp`** to refresh skins ***(with cooldown in seconds can be configured)***
 - Added command **`!ws`** to show website
 - Added command **`!knife`** to show menu with knives
+- Added command **`!gloves`** to show menu with gloves
+- Added command **`!agents`** to show menu with agents
 - Translations support, submit a PR if you want to share your translation
 
 ## CS2 Server
@@ -89,11 +91,6 @@ Set FollowCSGOGuidelines to false in cssharp’s core.jcon config
 **Database error table does not exists:**
 Plugin is not loaded or configured with mysql credentials. Tables are auto-created by plugin.
 
-**Knives are disappearing:**
-Set in config GiveKnifeAfterRemove to true 
-
-**Knives are not changing for players:**
-You can't change knife if you have your own equipped
 </details>
 
 ### Use this plugin at your own risk! Using this may lead to GSLT ban or something else Valve come with. [Valve Server guidelines](https://blog.counter-strike.net/index.php/server_guidelines/)

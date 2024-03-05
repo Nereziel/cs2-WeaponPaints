@@ -11,7 +11,11 @@
 	"wp_knife_menu_title": "Knife Menu",
 	"wp_glove_menu_select": "You have chosen {lime}{0}{default} as your glove",
 	"wp_glove_menu_title": "Gloves Menu",
+	"wp_agent_menu_select": "You have chosen {lime}{0}{default} as your agent",
+	"wp_agent_menu_title": "Agents Menu",
 	"wp_skin_menu_weapon_title": "Weapon Menu",
 	"wp_skin_menu_skin_title": "Select skin for {lime}{0}{default}",
-	"wp_skin_menu_select": "You have chosen {lime}{0}{default} as your skin"
+	"wp_skin_menu_select": "You have chosen {lime}{0}{default} as your skin",
+
+	"None": "None"
 }

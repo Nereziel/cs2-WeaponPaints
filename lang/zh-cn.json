@@ -11,7 +11,11 @@
 	"wp_knife_menu_title": "刀具菜单",
 	"wp_glove_menu_select": "您已选择 {lime}{0}{default} 作为您的手套",
 	"wp_glove_menu_title": "手套菜单",
+	"wp_agent_menu_select": "您选择了{lime}{0}{default}作为您的代理",
+	"wp_agent_menu_title": "代理菜单",
 	"wp_skin_menu_weapon_title": "武器菜单",
 	"wp_skin_menu_skin_title": "为 {lime}{0}{default} 选择皮肤",
-	"wp_skin_menu_select": "您已选择 {lime}{0}{default} 作为您的皮肤"
+	"wp_skin_menu_select": "您已选择 {lime}{0}{default} 作为您的皮肤",
+
+	"None": "无"
 }

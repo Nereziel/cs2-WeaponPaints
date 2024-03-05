@@ -58,6 +58,37 @@ namespace WeaponPaints
 			}
 		}
 
+		public async Task GetAgentFromDatabase(PlayerInfo player)
+		{
+			try
+			{
+				if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player?.SteamId))
+					return;
+
+				await using var connection = await _database.GetConnectionAsync();
+				string query = "SELECT `agent_ct`, `agent_t` FROM `wp_player_agents` WHERE `steamid` = @steamid";
+				var agentData = await connection.QueryFirstOrDefaultAsync<(string, string)>(query, new { steamid = player.SteamId });
+
+				if (agentData != default)
+				{
+					string agentCT = agentData.Item1;
+					string agentT = agentData.Item2;
+
+					if (!string.IsNullOrEmpty(agentCT) || !string.IsNullOrEmpty(agentT))
+					{
+						WeaponPaints.g_playersAgent[player.Slot] = (
+							agentCT,
+							agentT
+						);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Utility.Log($"An error occurred in GetGloveFromDatabase: {ex.Message}");
+			}
+		}
+
 		public async Task GetWeaponPaintsFromDatabase(PlayerInfo player)
 		{
 			try
@@ -128,6 +159,28 @@ namespace WeaponPaints
 			catch (Exception e)
 			{
 				Utility.Log($"Error syncing glove to database: {e.Message}");
+			}
+		}
+
+		internal async Task SyncAgentToDatabase(PlayerInfo player)
+		{
+			if (!_config.Additional.AgentEnabled || player == null || string.IsNullOrEmpty(player.SteamId)) return;
+
+			try
+			{
+				await using var connection = await _database.GetConnectionAsync();
+				string query = @"
+					INSERT INTO `wp_player_agents` (`steamid`, `agent_ct`, `agent_t`) 
+					VALUES(@steamid, @agent_ct, @agent_t) 
+					ON DUPLICATE KEY UPDATE 
+						`agent_ct` = @agent_ct,
+						`agent_t` = @agent_t";
+
+				await connection.ExecuteAsync(query, new { steamid = player.SteamId, agent_ct = WeaponPaints.g_playersAgent[player.Slot].CT, agent_t = WeaponPaints.g_playersAgent[player.Slot].T });
+			}
+			catch (Exception e)
+			{
+				Utility.Log($"Error syncing agents to database: {e.Message}");
 			}
 		}
 

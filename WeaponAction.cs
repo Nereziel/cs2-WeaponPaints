@@ -17,29 +17,6 @@ namespace WeaponPaints
 
 			if (PlayerHasKnife(player)) return;
 
-			//string knifeToGive;
-			//if (g_playersKnife.TryGetValue(player.Slot, out var knife))
-			//{
-			//	knifeToGive = knife;
-			//}
-			//else if (_config.Additional.GiveRandomKnife)
-			//{
-			//	var knifeTypes = weaponList.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet")).ToList();
-
-			//	if (knifeTypes.Count == 0)
-			//	{
-			//		Utility.Log("No valid knife types found.");
-			//		return;
-			//	}
-
-			//	Random random = new();
-			//	int index = random.Next(knifeTypes.Count);
-			//	knifeToGive = knifeTypes[index].Key;
-			//}
-			//else
-			//{
-			//}
-
 			string knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
 			player.GiveNamedItem(CsItem.Knife);
 		}
@@ -88,10 +65,8 @@ namespace WeaponPaints
 
 			int playerTeam = player.TeamNum;
 
-			//Dictionary<string, (int, int)> weaponsWithAmmo = new Dictionary<string, (int, int)>();
 			Dictionary<string, List<(int, int)>> weaponsWithAmmo = new Dictionary<string, List<(int, int)>>();
 
-			// Iterate through each weapon
 			foreach (var weapon in weapons)
 			{
 				if (weapon == null || !weapon.IsValid || weapon.Value == null ||
@@ -212,59 +187,6 @@ namespace WeaponPaints
 					}, TimerFlags.STOP_ON_MAPCHANGE);
 		}
 
-		/*
-		internal void RefreshKnife(CCSPlayerController? player)
-		{
-			return;
-			if (player == null || !player.IsValid || player.PlayerPawn?.Value == null)
-				return;
-
-			if (player.PlayerPawn.Value.WeaponServices == null)
-				return;
-
-			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
-			if (weapons != null && weapons.Count > 0)
-			{
-				try
-				{
-					player.ExecuteClientCommand("slot 3");
-					player.ExecuteClientCommand("slot 3");
-
-					var weapon = player.PlayerPawn.Value.WeaponServices.ActiveWeapon;
-					if (weapon is null || !weapon.IsValid || weapon.Value == null) return;
-					CCSWeaponBaseVData? weaponData = weapon.Value.As<CCSWeaponBase>().VData;
-
-					if (weapon.Value.DesignerName.Contains("knife") || weaponData?.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
-					{
-						AddTimer(0.2f, () =>
-						{
-							player.ExecuteClientCommand("slot 3");
-							player.DropActiveWeapon();
-
-							AddTimer(0.6f, () =>
-							{
-								if (weapon.IsValid)
-									weapon.Value.Remove();
-								GiveKnifeToPlayer(player);
-							});
-						});
-					}
-				}
-				catch (Exception ex)
-				{
-					Logger.LogWarning($"Cannot remove knife: {ex.Message}");
-				}
-				return;
-				foreach (var weapon in weapons)
-				{
-					if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid && weapon.Index > 0)
-					{
-					}
-				}
-			}
-		}
-		*/
-
 		private static void RefreshGloves(CCSPlayerController player)
 		{
 			if (!Utility.IsPlayerValid(player) || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE) return;
@@ -375,6 +297,25 @@ namespace WeaponPaints
 			}
 		}
 
+		public void GivePlayerAgent(CCSPlayerController player)
+		{
+			try
+			{
+				Server.NextFrame(() =>
+				{
+					string? model = player.TeamNum == 3 ? g_playersAgent[player.Slot].CT : g_playersAgent[player.Slot].T;
+					if (model == null) return;
+
+					player.PlayerPawn.Value!.SetModel(
+						$"characters/models/{model}.vmdl"
+					);
+				});
+			}
+			catch (Exception)
+			{
+			}
+		}
+
 		public static CCSPlayerController? GetPlayerFromItemServices(CCSPlayer_ItemServices itemServices)
 		{
 			var pawn = itemServices.Pawn.Value;
@@ -384,11 +325,6 @@ namespace WeaponPaints
 			return player;
 		}
 
-		private static CSkeletonInstance GetSkeletonInstance(CGameSceneNode node)
-		{
-			Func<nint, nint> GetSkeletonInstance = VirtualFunction.Create<nint, nint>(node.Handle, 8);
-			return new CSkeletonInstance(GetSkeletonInstance(node.Handle));
-		}
 		private static unsafe CBaseViewModel? GetPlayerViewModel(CCSPlayerController player)
 		{
 			if (player.PlayerPawn.Value == null || player.PlayerPawn.Value.ViewModelServices == null) return null;

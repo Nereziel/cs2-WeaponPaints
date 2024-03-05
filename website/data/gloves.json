@@ -1,5 +1,11 @@
 [
 	{
+		"weapon_defindex": 0,
+		"paint": "0",
+		"image": "",
+		"paint_name": "Gloves | Default"
+	},
+	{
 		"weapon_defindex": 4725,
 		"paint": "10085",
 		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
