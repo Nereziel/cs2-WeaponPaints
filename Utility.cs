@@ -59,6 +59,12 @@ namespace WeaponPaints
 					 `steamid` varchar(64) NOT NULL,
 					 `weapon_defindex` int(11) NOT NULL,
                       UNIQUE (`steamid`)
+					) ENGINE=InnoDB",
+				@"CREATE TABLE `wp_player_agents` (
+					 `steamid` varchar(64) NOT NULL,
+					 `agent_ct` varchar(64) DEFAULT NULL,
+					 `agent_t` varchar(64) DEFAULT NULL,
+					 UNIQUE KEY `steamid` (`steamid`)
 					) ENGINE=InnoDB"
 			};
 

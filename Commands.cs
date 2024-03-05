@@ -234,7 +234,6 @@ namespace WeaponPaints
 							return false;
 						});
 
-
 						string selectedSkin = opt.Text;
 						string selectedPaintID = selectedSkin.Substring(selectedSkin.LastIndexOf('(') + 1).Trim(')');
 

@@ -1,6 +1,7 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
+using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 
 namespace WeaponPaints
@@ -265,10 +266,10 @@ namespace WeaponPaints
 				Server.NextFrame(() =>
 				{
 					var weapon = new CBasePlayerWeapon(entity.Handle);
-					if (!weapon.IsValid) return;
+					if (weapon == null || !weapon.IsValid || weapon.OwnerEntity.Value == null) return;
 
-					var player = Utilities.GetPlayerFromSteamId(weapon.OriginalOwnerXuidLow);
-					if (player == null || !Utility.IsPlayerValid(player)) return;
+					CCSPlayerController? player = Utilities.GetPlayerFromIndex((int)weapon.OwnerEntity.Value.Index);
+					if (player == null || !player.IsValid || !Utility.IsPlayerValid(player)) return;
 
 					GivePlayerWeaponSkin(player, weapon);
 				});
@@ -291,7 +292,6 @@ namespace WeaponPaints
 			}
 		}
 
-
 		private void RegisterListeners()
 		{
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
@@ -301,7 +301,7 @@ namespace WeaponPaints
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
 			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
 			RegisterListener<Listeners.OnTick>(OnTick);
-			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
+			VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
 	}
 }
