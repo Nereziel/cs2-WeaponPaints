@@ -1,21 +1,21 @@
 {
 	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
-	"wp_info_website": "Ziyaret edin {lime}{0}{default}, burada skinleri değiştirebilirsiniz",
-	"wp_info_refresh": "Senkronize edilen skinleri görmek için {lime}!wp{default} yazın",
+	"wp_info_website": "Skinlerinizi ayarlamak için {lime}{0}{default} sitesini ziyaret edin",
+	"wp_info_refresh": "Seçtiğiniz skinleri senkronize etmek için {lime}!wp{default} yazın",
 	"wp_info_knife": "Bıçak menüsünü açmak için {lime}!knife{default} yazın",
 	"wp_info_glove": "Eldiven menüsünü açmak için {lime}!gloves{default} yazın",
 	"wp_command_cooldown": "{lightred}Şu anda silah skinlerini yenileyemezsiniz",
 	"wp_command_refresh_done": "{lime}Silah skinleri yenileniyor",
-	"wp_knife_menu_select": "{lime}{0}{default} olarak bıçağınızı seçtiniz",
+	"wp_knife_menu_select": "Bıçağınızı {lime}{0}{default} seçtiniz",
 	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "Bıçak Menüsü",
-	"wp_glove_menu_select": "{lime}{0}{default} olarak eldiveninizi seçtiniz",
+	"wp_glove_menu_select": "Eldiveninizi {lime}{0}{default} olarak seçtiniz",
 	"wp_glove_menu_title": "Eldiven Menüsü",
-	"wp_agent_menu_select": "Ajanınız olarak {lime}{0}{default} seçtiniz",
+	"wp_agent_menu_select": "Ajanınızı {lime}{0}{default} olarak seçtiniz",
 	"wp_agent_menu_title": "Ajan Menüsü",
 	"wp_skin_menu_weapon_title": "Silah Menüsü",
 	"wp_skin_menu_skin_title": "{lime}{0}{default} için bir skin seçin",
-	"wp_skin_menu_select": "{lime}{0}{default} olarak bir skin seçtiniz",
+	"wp_skin_menu_select": "Skininizi {lime}{0}{default} olarak seçtiniz",
 
 	"None": "Hiçbiri"
 }
