@@ -1,0 +1,21 @@
+{
+	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
+	"wp_info_website": "Skin tanlash uchun {lime}{0}{default} saytiga tashrif buyuring",
+	"wp_info_refresh": "Tanlangan skinlarni sinxronlashtirish uchun chatga {lime}!wp{default} deb yozing",
+	"wp_info_knife": "Pichoqni tanlash uchun chatga {lime}!knife{default} deb yozing",
+	"wp_info_glove": "Qo‘lqopni tanlash uchun chatga {lime}!gloves{default} deb yozing",
+	"wp_command_cooldown": "{lightred}Siz hozir qurol tanlay olmaysiz",
+	"wp_command_refresh_done": "{lime}Qurol skinlari yangilanmoqda",
+	"wp_knife_menu_select": "Siz {lime}{0}{default} pichoq skinini tanladingiz",
+	"wp_knife_menu_kill": "",
+	"wp_knife_menu_title": "Pichoq menyusi",
+	"wp_glove_menu_select": "Siz qoʻlqop sifatida {lime}{0}{default} ni tanladingiz",
+	"wp_glove_menu_title": "Qo‘lqoplar menyusi",
+	"wp_agent_menu_select": "Siz agent sifatida {lime}{0}{default} ni tanladingiz",
+	"wp_agent_menu_title": "Agentlar menyusi",
+	"wp_skin_menu_weapon_title": "Qurol menyusi",
+	"wp_skin_menu_skin_title": "{lime}{0}{default} uchun skin tanlang",
+	"wp_skin_menu_select": "Siz {lime}{0}{default} qurol skinini tanladingiz",
+	
+	"None": "Yo‘q"
+}
