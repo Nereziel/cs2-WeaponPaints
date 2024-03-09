@@ -158,7 +158,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.2c";
+	public override string ModuleVersion => "2.2d";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -175,13 +175,15 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 			foreach (var player in Utilities.GetPlayers())
 			{
-				if (weaponSync == null || player is null || !player.IsValid || player.SteamID.ToString().Length != 17 || !player.PawnIsAlive || player.IsBot ||
+				if (weaponSync == null || player is null || !player.IsValid || player.SteamID.ToString().Length != 17 || player.IsBot ||
 					player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
 					continue;
 
 				g_knifePickupCount[player.Slot] = 0;
 				gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
 				g_playersKnife.TryRemove(player.Slot, out _);
+				g_playersGlove.TryRemove(player.Slot, out _);
+				g_playersAgent.TryRemove(player.Slot, out _);
 
 				PlayerInfo playerInfo = new PlayerInfo
 				{

@@ -96,14 +96,17 @@ namespace WeaponPaints
 				if (!_config.Additional.SkinEnabled || player == null || string.IsNullOrEmpty(player.SteamId))
 					return;
 
+				var weaponInfos = new ConcurrentDictionary<int, WeaponInfo>();
+
 				await using var connection = await _database.GetConnectionAsync();
 				string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
 				var playerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = player.SteamId });
 
 				if (playerSkins == null)
+				{
+					WeaponPaints.gPlayerWeaponsInfo[player.Slot] = weaponInfos;
 					return;
-
-				var weaponInfos = new ConcurrentDictionary<int, WeaponInfo>();
+				}
 
 				foreach (var row in playerSkins)
 				{

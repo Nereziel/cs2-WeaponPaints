@@ -102,9 +102,7 @@ namespace WeaponPaints
 		private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
 			if (!Config.Additional.SkinEnabled) return;
-
 			if (player is null || weapon is null || !weapon.IsValid || !Utility.IsPlayerValid(player)) return;
-
 			if (!gPlayerWeaponsInfo.ContainsKey(player.Slot)) return;
 
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
@@ -257,7 +255,7 @@ namespace WeaponPaints
 		}
 		*/
 
-		public void OnEntitySpawned(CEntityInstance entity)
+		public void OnEntityCreated(CEntityInstance entity)
 		{
 			var designerName = entity.DesignerName;
 
@@ -268,8 +266,8 @@ namespace WeaponPaints
 					var weapon = new CBasePlayerWeapon(entity.Handle);
 					if (weapon == null || !weapon.IsValid || weapon.OwnerEntity.Value == null) return;
 
-					CCSPlayerController? player = Utilities.GetPlayerFromIndex((int)weapon.OwnerEntity.Value.Index);
-					if (player == null || !player.IsValid || !Utility.IsPlayerValid(player)) return;
+					CCSPlayerController? player = Utilities.GetPlayerFromSteamId(weapon.OriginalOwnerXuidLow);
+					if (player is null || !player.IsValid || !Utility.IsPlayerValid(player)) return;
 
 					GivePlayerWeaponSkin(player, weapon);
 				});
@@ -299,7 +297,7 @@ namespace WeaponPaints
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
-			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
+			RegisterListener<Listeners.OnEntityCreated>(OnEntityCreated);
 			RegisterListener<Listeners.OnTick>(OnTick);
 			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
