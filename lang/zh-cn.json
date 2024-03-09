@@ -1,7 +1,7 @@
 {
 	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
 	"wp_info_website": "您可以在浏览器访问 {lime}{0}{default} 来更改皮肤",
-	"wp_info_refresh": "输入 {lime}!wp{default} 来武器刷新皮肤",
+	"wp_info_refresh": "输入 {lime}!wp{default} 来刷新武器皮肤",
 	"wp_info_knife": "输入 {lime}!knife{default} 来打开选刀菜单",
 	"wp_info_glove": "输入 {lime}!gloves{default} 来打开手套菜单",
 	"wp_info_agent": "输入 {lime}!agents{default} 来打开探员菜单",
