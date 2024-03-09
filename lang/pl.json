@@ -4,6 +4,7 @@
 	"wp_info_refresh": "Wpisz {lime}!wp{default}, aby zsynchronizować wybrane skórki",
 	"wp_info_knife": "Wpisz {lime}!knife{default}, aby otworzyć menu noży",
 	"wp_info_glove": "Wpisz {lime}!gloves{default}, aby otworzyć menu rękawiczek",
+	"wp_info_agent": "Wpisz {lime}!agents{default}, aby otworzyć menu agentów",
 	"wp_command_cooldown": "{lightred}Nie możesz teraz odświeżyć skórek broni",
 	"wp_command_refresh_done": "{lime}Odświeżanie skórek broni",
 	"wp_knife_menu_select": "Wybrałeś {lime}{0}{default} jako swój nóż",

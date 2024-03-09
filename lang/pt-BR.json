@@ -4,6 +4,7 @@
 	"wp_info_refresh": "Digite {lime}!wp{default} para sincronizar as skins selecionadas",
 	"wp_info_knife": "Digite {lime}!knife{default} para abrir o menu de facas",
 	"wp_info_glove": "Digite {lime}!gloves{default} para abrir o menu de luvas",
+	"wp_info_agent": "Digite {lime}!agents{default} para abrir o menu de agentes",
 	"wp_command_cooldown": "{lightred}Você não pode atualizar as skins de arma agora",
 	"wp_command_refresh_done": "{lime}Atualizando as skins de arma",
 	"wp_knife_menu_select": "Você escolheu {lime}{0}{default} como sua faca",

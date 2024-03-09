@@ -4,6 +4,7 @@
 	"wp_info_refresh": "Senkronize edilen skinleri görmek için {lime}!wp{default} yazın",
 	"wp_info_knife": "Bıçak menüsünü açmak için {lime}!knife{default} yazın",
 	"wp_info_glove": "Eldiven menüsünü açmak için {lime}!gloves{default} yazın",
+	"wp_info_agent": "Ajanlar menüsünü açmak için {lime}!agents{default} yazın",
 	"wp_command_cooldown": "{lightred}Şu anda silah skinlerini yenileyemezsiniz",
 	"wp_command_refresh_done": "{lime}Silah skinleri yenileniyor",
 	"wp_knife_menu_select": "{lime}{0}{default} olarak bıçağınızı seçtiniz",

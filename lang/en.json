@@ -4,6 +4,7 @@
 	"wp_info_refresh": "Type {lime}!wp{default} to synchronize chosen skins",
 	"wp_info_knife": "Type {lime}!knife{default} to open knife menu",
 	"wp_info_glove": "Type {lime}!gloves{default} to open gloves menu",
+	"wp_info_agent": "Type {lime}!agents{default} to open agents menu",
 	"wp_command_cooldown": "{lightred}You can't refresh weapon paints right now",
 	"wp_command_refresh_done": "{lime}Refreshing weapon paints",
 	"wp_knife_menu_select": "You have chosen {lime}{0}{default} as your knife",

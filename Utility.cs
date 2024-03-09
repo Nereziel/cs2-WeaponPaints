@@ -44,24 +44,24 @@ namespace WeaponPaints
 					string[] createTableQueries = new[]
 					{
 				@"CREATE TABLE IF NOT EXISTS `wp_player_skins` (
-                        `steamid` varchar(64) NOT NULL,
+                        `steamid` varchar(18) NOT NULL,
                         `weapon_defindex` int(6) NOT NULL,
                         `weapon_paint_id` int(6) NOT NULL,
                         `weapon_wear` float NOT NULL DEFAULT 0.000001,
                         `weapon_seed` int(16) NOT NULL DEFAULT 0
                     ) ENGINE=InnoDB",
 				@"CREATE TABLE IF NOT EXISTS `wp_player_knife` (
-                        `steamid` varchar(64) NOT NULL,
+                        `steamid` varchar(18) NOT NULL,
                         `knife` varchar(64) NOT NULL,
                         UNIQUE (`steamid`)
                     ) ENGINE = InnoDB",
 				@"CREATE TABLE IF NOT EXISTS `wp_player_gloves` (
-					 `steamid` varchar(64) NOT NULL,
+					 `steamid` varchar(18) NOT NULL,
 					 `weapon_defindex` int(11) NOT NULL,
                       UNIQUE (`steamid`)
 					) ENGINE=InnoDB",
 				@"CREATE TABLE `wp_player_agents` (
-					 `steamid` varchar(64) NOT NULL,
+					 `steamid` varchar(18) NOT NULL,
 					 `agent_ct` varchar(64) DEFAULT NULL,
 					 `agent_t` varchar(64) DEFAULT NULL,
 					 UNIQUE KEY `steamid` (`steamid`)
