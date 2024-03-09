@@ -4,6 +4,7 @@
 	"wp_info_refresh": "输入 {lime}!wp{default} 同步已选择的皮肤",
 	"wp_info_knife": "输入 {lime}!knife{default} 打开刀具菜单",
 	"wp_info_glove": "输入 {lime}!gloves{default} 打开手套菜单",
+	"wp_info_agent": "键入 {lime}!agents{default} 打开代理菜单",
 	"wp_command_cooldown": "{lightred}您现在无法刷新武器皮肤",
 	"wp_command_refresh_done": "{lime}刷新武器皮肤",
 	"wp_knife_menu_select": "您已选择 {lime}{0}{default} 作为您的刀具",

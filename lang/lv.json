@@ -4,6 +4,7 @@
 	"wp_info_refresh": "Ievadiet {lime}!wp{default}, lai sinhronizētu izvēlētās ādas",
 	"wp_info_knife": "Ievadiet {lime}!knife{default}, lai atvērtu nazis izvēlni",
 	"wp_info_glove": "Ievadiet {lime}!gloves{default}, lai atvērtu cimdi izvēlni",
+	"wp_info_agent": "Ierakstiet {lime}!agents{default}, lai atvērtu aģentu izvēlni",
 	"wp_command_cooldown": "{lightred}Šobrīd jūs nevarat atjaunot ieroču ādas",
 	"wp_command_refresh_done": "{lime}Atjauno ieroču ādas",
 	"wp_knife_menu_select": "Jūs esat izvēlējies {lime}{0}{default} kā savu nazi",

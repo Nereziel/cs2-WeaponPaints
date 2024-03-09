@@ -96,6 +96,12 @@ namespace WeaponPaints
 					player!.Print(Localizer["wp_info_glove"]);
 				}
 
+			if (Config.Additional.AgentEnabled)
+				if (!string.IsNullOrEmpty(Localizer["wp_info_agent"]))
+				{
+					player!.Print(Localizer["wp_info_agent"]);
+				}
+
 			if (Config.Additional.KnifeEnabled)
 				if (!string.IsNullOrEmpty(Localizer["wp_info_knife"]))
 				{

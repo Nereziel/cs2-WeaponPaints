@@ -305,7 +305,7 @@ namespace WeaponPaints
 				Server.NextFrame(() =>
 				{
 					string? model = player.TeamNum == 3 ? g_playersAgent[player.Slot].CT : g_playersAgent[player.Slot].T;
-					if (model == null) return;
+					if (string.IsNullOrEmpty(model)) return;
 
 					player.PlayerPawn.Value!.SetModel(
 						$"characters/models/{model}.vmdl"

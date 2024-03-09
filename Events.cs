@@ -1,8 +1,6 @@
 ﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
-using CounterStrikeSharp.API.Modules.Memory;
-using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 
 namespace WeaponPaints
 {
@@ -243,6 +241,7 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
+		/*
 		public HookResult OnGiveNamedItemPost(DynamicHook hook)
 		{
 			var itemServices = hook.GetParam<CCSPlayer_ItemServices>(0);
@@ -256,6 +255,7 @@ namespace WeaponPaints
 
 			return HookResult.Continue;
 		}
+		*/
 
 		public void OnEntitySpawned(CEntityInstance entity)
 		{
@@ -301,7 +301,7 @@ namespace WeaponPaints
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
 			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
 			RegisterListener<Listeners.OnTick>(OnTick);
-			VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
+			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
 	}
 }

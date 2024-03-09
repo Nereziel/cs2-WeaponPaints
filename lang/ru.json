@@ -4,6 +4,7 @@
 	"wp_info_refresh": "Введите {lime}!wp{default}, чтобы синхронизировать выбранные скины",
 	"wp_info_knife": "Введите {lime}!knife{default}, чтобы открыть меню ножей",
 	"wp_info_glove": "Введите {lime}!gloves{default}, чтобы открыть меню перчаток",
+	"wp_info_agent": "Введите {lime}!agents{default}, чтобы открыть меню агентов",
 	"wp_command_cooldown": "{lightred}Вы не можете обновить скины оружия сейчас",
 	"wp_command_refresh_done": "{lime}Обновление скинов оружия",
 	"wp_knife_menu_select": "Вы выбрали {lime}{0}{default} в качестве вашего ножа",
