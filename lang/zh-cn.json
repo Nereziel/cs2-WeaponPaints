@@ -15,7 +15,7 @@
 	"wp_agent_menu_select": "您的探员已更改为 {lime}{0}{default}",
 	"wp_agent_menu_title": "探员菜单",
 	"wp_skin_menu_weapon_title": "武器菜单",
-	"wp_skin_menu_skin_title": "为 {lime}{0}{default} 更改皮肤",
+	"wp_skin_menu_skin_title": "为 {lime}{0}{default} 更换皮肤",
 	"wp_skin_menu_select": "皮肤已更换为 {lime}{0}{default} ",
 
 	"None": "无"
