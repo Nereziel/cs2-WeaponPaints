@@ -44,7 +44,7 @@ namespace WeaponPaints
 					_ = Task.Run(async () => await weaponSync.GetAgentFromDatabase(playerInfo));
 				}
 			}
-			catch (AggregateException)
+			catch (Exception)
 			{
 			}
 
