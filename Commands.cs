@@ -33,30 +33,22 @@ namespace WeaponPaints
 
 					if (weaponSync != null)
 					{
-						var weaponTasks = new List<Task>();
-
-						weaponTasks.Add(Task.Run(async () =>
+						if (Config.Additional.SkinEnabled)
 						{
-							await weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
-						}));
-
-						if (Config.Additional.GloveEnabled)
-						{
-							weaponTasks.Add(Task.Run(async () =>
-							{
-								await weaponSync.GetGloveFromDatabase(playerInfo);
-							}));
+							_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
 						}
-
 						if (Config.Additional.KnifeEnabled)
 						{
-							weaponTasks.Add(Task.Run(async () =>
-							{
-								await weaponSync.GetKnifeFromDatabase(playerInfo);
-							}));
+							_ = Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
 						}
-
-						Task.WaitAll(weaponTasks.ToArray());
+						if (Config.Additional.GloveEnabled)
+						{
+							_ = Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
+						}
+						if (Config.Additional.AgentEnabled)
+						{
+							_ = Task.Run(async () => await weaponSync.GetAgentFromDatabase(playerInfo));
+						}
 
 						RefreshGloves(player);
 						RefreshWeapons(player);
@@ -175,7 +167,7 @@ namespace WeaponPaints
 						RefreshWeapons(player);
 
 					if (weaponSync != null)
-						Task.Run(async () => await weaponSync.SyncKnifeToDatabase(playerInfo, knifeKey));
+						_ = Task.Run(async () => await weaponSync.SyncKnifeToDatabase(playerInfo, knifeKey));
 				}
 			};
 			foreach (var knifePair in knivesOnly)
@@ -288,7 +280,7 @@ namespace WeaponPaints
 
 								try
 								{
-									Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
+									_ = Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
 								}
 								catch (Exception ex)
 								{
@@ -409,7 +401,7 @@ namespace WeaponPaints
 
 						if (weaponSync != null)
 						{
-							Task.Run(async () =>
+							_ = Task.Run(async () =>
 							{
 								await weaponSync.SyncGloveToDatabase(playerInfo, weaponDefindex);
 
@@ -422,9 +414,9 @@ namespace WeaponPaints
 								value.Paint = paint;
 								value.Wear = 0.00f;
 								value.Seed = 0;
-							});
 
-							Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
+								await weaponSync.SyncWeaponPaintsToDatabase(playerInfo);
+							});
 						}
 
 						RefreshGloves(player);
@@ -516,7 +508,7 @@ namespace WeaponPaints
 
 						if (weaponSync != null)
 						{
-							Task.Run(async () =>
+							_ = Task.Run(async () =>
 							{
 								await weaponSync.SyncAgentToDatabase(playerInfo);
 							});

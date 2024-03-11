@@ -158,7 +158,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.2d";
+	public override string ModuleVersion => "2.2e";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -197,19 +197,19 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 				if (Config.Additional.SkinEnabled)
 				{
-					Task.Run(() => weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
+					_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
 				}
 				if (Config.Additional.KnifeEnabled)
 				{
-					Task.Run(() => weaponSync.GetKnifeFromDatabase(playerInfo));
+					_ = Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
 				}
 				if (Config.Additional.GloveEnabled)
 				{
-					Task.Run(() => weaponSync.GetGloveFromDatabase(playerInfo));
+					_ = Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
 				}
 				if (Config.Additional.AgentEnabled)
 				{
-					Task.Run(() => weaponSync.GetAgentFromDatabase(playerInfo));
+					_ = Task.Run(async () => await weaponSync.GetAgentFromDatabase(playerInfo));
 				}
 			}
 		}
