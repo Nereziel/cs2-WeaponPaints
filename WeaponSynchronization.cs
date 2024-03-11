@@ -14,7 +14,7 @@ namespace WeaponPaints
 			_config = config;
 		}
 
-		public async Task GetKnifeFromDatabase(PlayerInfo player)
+		internal async Task GetKnifeFromDatabase(PlayerInfo player)
 		{
 			try
 			{
@@ -36,7 +36,7 @@ namespace WeaponPaints
 			}
 		}
 
-		public async Task GetGloveFromDatabase(PlayerInfo player)
+		internal async Task GetGloveFromDatabase(PlayerInfo player)
 		{
 			try
 			{
@@ -58,7 +58,7 @@ namespace WeaponPaints
 			}
 		}
 
-		public async Task GetAgentFromDatabase(PlayerInfo player)
+		internal async Task GetAgentFromDatabase(PlayerInfo player)
 		{
 			try
 			{
@@ -89,7 +89,7 @@ namespace WeaponPaints
 			}
 		}
 
-		public async Task GetWeaponPaintsFromDatabase(PlayerInfo player)
+		internal async Task GetWeaponPaintsFromDatabase(PlayerInfo player)
 		{
 			try
 			{
