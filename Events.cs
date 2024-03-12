@@ -43,6 +43,10 @@ namespace WeaponPaints
 				{
 					_ = Task.Run(async () => await weaponSync.GetAgentFromDatabase(playerInfo));
 				}
+				if (Config.Additional.MusicEnabled)
+				{
+					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
+				}
 			}
 			catch (Exception)
 			{
@@ -84,6 +88,10 @@ namespace WeaponPaints
 			if (Config.Additional.AgentEnabled)
 			{
 				g_playersAgent.TryRemove(player.Slot, out _);
+			}
+			if (Config.Additional.MusicEnabled)
+			{
+				g_playersMusic.TryRemove(player.Slot, out _);
 			}
 
 			commandsCooldown.Remove(player.Slot);
@@ -204,6 +212,7 @@ namespace WeaponPaints
 
 			g_knifePickupCount[player.Slot] = 0;
 
+			GivePlayerMusicKit(player);
 			GivePlayerAgent(player);
 			Server.NextFrame(() =>
 			{
@@ -259,12 +268,14 @@ namespace WeaponPaints
 					var weapon = new CBasePlayerWeapon(entity.Handle);
 					if (weapon == null || !weapon.IsValid || weapon.OwnerEntity.Value == null) return;
 
-					SteamID? _steamid = (SteamID)weapon.OriginalOwnerXuidLow;
-					CCSWeaponBaseGun gun = weapon.As<CCSWeaponBaseGun>();
-					CCSPlayerController? player = null;
-
 					try
 					{
+						SteamID? _steamid = null;
+
+						if (weapon.OriginalOwnerXuidLow > 0)
+							_steamid = new(weapon.OriginalOwnerXuidLow);
+
+						CCSPlayerController? player = null;
 
 						if (_steamid != null && _steamid.IsValid())
 						{
@@ -274,18 +285,20 @@ namespace WeaponPaints
 								player = Utilities.GetPlayerFromSteamId(weapon.OriginalOwnerXuidLow);
 						}
 						else
+						{
+							CCSWeaponBaseGun gun = weapon.As<CCSWeaponBaseGun>();
 							player = Utilities.GetPlayerFromIndex((int)weapon.OwnerEntity.Index) ?? Utilities.GetPlayerFromIndex((int)gun.OwnerEntity.Value!.Index);
+						}
 
-						if (player == null || string.IsNullOrEmpty(player?.PlayerName)) return;
+						if (string.IsNullOrEmpty(player?.PlayerName)) return;
+						if (player is null || !Utility.IsPlayerValid(player)) return;
+
+						GivePlayerWeaponSkin(player, weapon);
 					}
 					catch (Exception)
 					{
 						return;
 					}
-
-					if (player is null || !player.IsValid || !Utility.IsPlayerValid(player)) return;
-
-					GivePlayerWeaponSkin(player, weapon);
 				});
 			}
 		}

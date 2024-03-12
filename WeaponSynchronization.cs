@@ -133,6 +133,28 @@ namespace WeaponPaints
 			}
 		}
 
+		internal async Task GetMusicFromDatabase(PlayerInfo player)
+		{
+			try
+			{
+				if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player.SteamId))
+					return;
+
+				await using var connection = await _database.GetConnectionAsync();
+				string query = "SELECT `music_id` FROM `wp_player_music` WHERE `steamid` = @steamid";
+				ushort? musicData = await connection.QueryFirstOrDefaultAsync<ushort?>(query, new { steamid = player.SteamId });
+
+				if (musicData != null)
+				{
+					WeaponPaints.g_playersMusic[player.Slot] = musicData.Value;
+				}
+			}
+			catch (Exception ex)
+			{
+				Utility.Log($"An error occurred in GetMusicFromDatabase: {ex.Message}");
+			}
+		}
+
 		internal async Task SyncKnifeToDatabase(PlayerInfo player, string knife)
 		{
 			if (!_config.Additional.KnifeEnabled || player == null || string.IsNullOrEmpty(player.SteamId) || string.IsNullOrEmpty(knife)) return;
@@ -229,6 +251,22 @@ namespace WeaponPaints
 			catch (Exception e)
 			{
 				Utility.Log($"Error syncing weapon paints to database: {e.Message}");
+			}
+		}
+
+		internal async Task SyncMusicToDatabase(PlayerInfo player, ushort music)
+		{
+			if (!_config.Additional.MusicEnabled || player == null || string.IsNullOrEmpty(player.SteamId)) return;
+
+			try
+			{
+				await using var connection = await _database.GetConnectionAsync();
+				string query = "INSERT INTO `wp_player_music` (`steamid`, `music_id`) VALUES(@steamid, @newMusic) ON DUPLICATE KEY UPDATE `music_id` = @newMusic";
+				await connection.ExecuteAsync(query, new { steamid = player.SteamId, newMusic = music });
+			}
+			catch (Exception e)
+			{
+				Utility.Log($"Error syncing music kit to database: {e.Message}");
 			}
 		}
 	}
