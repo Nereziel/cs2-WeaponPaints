@@ -320,6 +320,16 @@ namespace WeaponPaints
 			}
 		}
 
+		public static void GivePlayerMusicKit(CCSPlayerController player)
+		{
+			if (!g_playersMusic.ContainsKey(player.Slot)) return;
+			if (player.InventoryServices == null) return;
+
+			Console.WriteLine(g_playersMusic[player.Slot]);
+
+			player.InventoryServices.MusicID = g_playersMusic[player.Slot];
+		}
+
 		public static CCSPlayerController? GetPlayerFromItemServices(CCSPlayer_ItemServices itemServices)
 		{
 			var pawn = itemServices.Pawn.Value;
