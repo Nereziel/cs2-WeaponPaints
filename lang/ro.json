@@ -14,6 +14,8 @@
 	"wp_agent_menu_select": "Ai ales {lime}{0}{default} ca agent",
 	"wp_agent_menu_title": "Meniu agenți",
 	"wp_skin_menu_weapon_title": "Meniu arme",
+	"wp_music_menu_title": "Meniu MVP",
+	"wp_music_menu_select": "Ai ales {lime}{0}{default} ca și kit MVP",
 	"wp_skin_menu_skin_title": "Selectează skin pentru {lime}{0}{default}",
 	"wp_skin_menu_select": "Ai ales {lime}{0}{default} ca skin",
 
