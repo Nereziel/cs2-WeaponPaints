@@ -80,11 +80,13 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
 	internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
 	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new ConcurrentDictionary<int, ushort>();
+	internal static ConcurrentDictionary<int, ushort> g_playersMusic = new ConcurrentDictionary<int, ushort>();
 	internal static ConcurrentDictionary<int, (string? CT, string? T)> g_playersAgent = new ConcurrentDictionary<int, (string?, string?)>();
 	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>>();
 	internal static List<JObject> skinsList = new List<JObject>();
 	internal static List<JObject> glovesList = new List<JObject>();
 	internal static List<JObject> agentsList = new List<JObject>();
+	internal static List<JObject> musicList = new List<JObject>();
 	internal static WeaponSynchronization? weaponSync;
 	public static bool g_bCommandsAllowed = true;
 	internal Dictionary<int, string> PlayerWeaponImage = new();
@@ -158,7 +160,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.2d";
+	public override string ModuleVersion => "2.3a";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -197,19 +199,23 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 				if (Config.Additional.SkinEnabled)
 				{
-					Task.Run(() => weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
+					_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
 				}
 				if (Config.Additional.KnifeEnabled)
 				{
-					Task.Run(() => weaponSync.GetKnifeFromDatabase(playerInfo));
+					_ = Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
 				}
 				if (Config.Additional.GloveEnabled)
 				{
-					Task.Run(() => weaponSync.GetGloveFromDatabase(playerInfo));
+					_ = Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
 				}
 				if (Config.Additional.AgentEnabled)
 				{
-					Task.Run(() => weaponSync.GetAgentFromDatabase(playerInfo));
+					_ = Task.Run(async () => await weaponSync.GetAgentFromDatabase(playerInfo));
+				}
+				if (Config.Additional.MusicEnabled)
+				{
+					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
 				}
 			}
 		}
@@ -217,6 +223,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		Utility.LoadSkinsFromFile(ModuleDirectory + "/skins.json");
 		Utility.LoadGlovesFromFile(ModuleDirectory + "/gloves.json");
 		Utility.LoadAgentsFromFile(ModuleDirectory + "/agents.json");
+		Utility.LoadMusicFromFile(ModuleDirectory + "/music.json");
 
 		if (Config.Additional.KnifeEnabled)
 			SetupKnifeMenu();
@@ -226,6 +233,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			SetupGlovesMenu();
 		if (Config.Additional.AgentEnabled)
 			SetupAgentsMenu();
+		if (Config.Additional.MusicEnabled)
+			SetupMusicMenu();
 
 		RegisterListeners();
 		RegisterCommands();

@@ -60,12 +60,17 @@ namespace WeaponPaints
 					 `weapon_defindex` int(11) NOT NULL,
                       UNIQUE (`steamid`)
 					) ENGINE=InnoDB",
-				@"CREATE TABLE `wp_player_agents` (
+				@"CREATE TABLE IF NOT EXISTS `wp_player_agents` (
 					 `steamid` varchar(18) NOT NULL,
 					 `agent_ct` varchar(64) DEFAULT NULL,
 					 `agent_t` varchar(64) DEFAULT NULL,
-					 UNIQUE KEY `steamid` (`steamid`)
-					) ENGINE=InnoDB"
+					 UNIQUE (`steamid`)
+					) ENGINE=InnoDB",
+				@"CREATE TABLE IF NOT EXISTS `wp_player_music` (
+					 `steamid` varchar(64) NOT NULL,
+					 `music_id` int(11) NOT NULL,
+					 UNIQUE (`steamid`)
+					) ENGINE=InnoDB",
 			};
 
 					foreach (var query in createTableQueries)
@@ -129,6 +134,20 @@ namespace WeaponPaints
 				string json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
 				WeaponPaints.agentsList = deserializedSkins ?? new List<JObject>();
+			}
+			catch (FileNotFoundException)
+			{
+				throw;
+			}
+		}
+
+		internal static void LoadMusicFromFile(string filePath)
+		{
+			try
+			{
+				string json = File.ReadAllText(filePath);
+				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
+				WeaponPaints.musicList = deserializedSkins ?? new List<JObject>();
 			}
 			catch (FileNotFoundException)
 			{

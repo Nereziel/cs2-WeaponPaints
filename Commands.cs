@@ -33,30 +33,26 @@ namespace WeaponPaints
 
 					if (weaponSync != null)
 					{
-						var weaponTasks = new List<Task>();
-
-						weaponTasks.Add(Task.Run(async () =>
+						if (Config.Additional.SkinEnabled)
 						{
-							await weaponSync.GetWeaponPaintsFromDatabase(playerInfo);
-						}));
-
-						if (Config.Additional.GloveEnabled)
-						{
-							weaponTasks.Add(Task.Run(async () =>
-							{
-								await weaponSync.GetGloveFromDatabase(playerInfo);
-							}));
+							_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
 						}
-
 						if (Config.Additional.KnifeEnabled)
 						{
-							weaponTasks.Add(Task.Run(async () =>
-							{
-								await weaponSync.GetKnifeFromDatabase(playerInfo);
-							}));
+							_ = Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
 						}
-
-						Task.WaitAll(weaponTasks.ToArray());
+						if (Config.Additional.GloveEnabled)
+						{
+							_ = Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
+						}
+						if (Config.Additional.AgentEnabled)
+						{
+							_ = Task.Run(async () => await weaponSync.GetAgentFromDatabase(playerInfo));
+						}
+						if (Config.Additional.MusicEnabled)
+						{
+							_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
+						}
 
 						RefreshGloves(player);
 						RefreshWeapons(player);
@@ -100,6 +96,12 @@ namespace WeaponPaints
 				if (!string.IsNullOrEmpty(Localizer["wp_info_agent"]))
 				{
 					player!.Print(Localizer["wp_info_agent"]);
+				}
+
+			if (Config.Additional.MusicEnabled)
+				if (!string.IsNullOrEmpty(Localizer["wp_info_music"]))
+				{
+					player!.Print(Localizer["wp_info_music"]);
 				}
 
 			if (Config.Additional.KnifeEnabled)
@@ -175,7 +177,7 @@ namespace WeaponPaints
 						RefreshWeapons(player);
 
 					if (weaponSync != null)
-						Task.Run(async () => await weaponSync.SyncKnifeToDatabase(playerInfo, knifeKey));
+						_ = Task.Run(async () => await weaponSync.SyncKnifeToDatabase(playerInfo, knifeKey));
 				}
 			};
 			foreach (var knifePair in knivesOnly)
@@ -288,7 +290,7 @@ namespace WeaponPaints
 
 								try
 								{
-									Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
+									_ = Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
 								}
 								catch (Exception ex)
 								{
@@ -409,7 +411,7 @@ namespace WeaponPaints
 
 						if (weaponSync != null)
 						{
-							Task.Run(async () =>
+							_ = Task.Run(async () =>
 							{
 								await weaponSync.SyncGloveToDatabase(playerInfo, weaponDefindex);
 
@@ -422,9 +424,9 @@ namespace WeaponPaints
 								value.Paint = paint;
 								value.Wear = 0.00f;
 								value.Seed = 0;
-							});
 
-							Task.Run(async () => await weaponSync.SyncWeaponPaintsToDatabase(playerInfo));
+								await weaponSync.SyncWeaponPaintsToDatabase(playerInfo);
+							});
 						}
 
 						RefreshGloves(player);
@@ -516,7 +518,7 @@ namespace WeaponPaints
 
 						if (weaponSync != null)
 						{
-							Task.Run(async () =>
+							_ = Task.Run(async () =>
 							{
 								await weaponSync.SyncAgentToDatabase(playerInfo);
 							});
@@ -562,6 +564,129 @@ namespace WeaponPaints
 
 					commandsCooldown[player.Slot] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 					MenuManager.OpenChatMenu(player, agentsSelectionMenu);
+					return;
+				}
+				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
+				{
+					player!.Print(Localizer["wp_command_cooldown"]);
+				}
+			});
+		}
+
+		private void SetupMusicMenu()
+		{
+			var musicSelectionMenu = new ChatMenu(Localizer["wp_music_menu_title"]);
+			musicSelectionMenu.PostSelectAction = PostSelectAction.Close;
+
+			var handleMusicSelection = (CCSPlayerController? player, ChatMenuOption option) =>
+			{
+				if (!Utility.IsPlayerValid(player) || player is null) return;
+
+				string selectedPaintName = option.Text;
+
+				var selectedMusic = musicList.FirstOrDefault(g => g.ContainsKey("name") && g["name"]?.ToString() == selectedPaintName);
+				if (selectedMusic != null)
+				{
+					if (
+						selectedMusic != null &&
+						selectedMusic.ContainsKey("id") &&
+						selectedMusic.ContainsKey("name") &&
+						int.TryParse(selectedMusic["id"]?.ToString(), out int paint)
+					)
+					{
+						if (Config.Additional.ShowSkinImage)
+						{
+							string image = selectedMusic["image"]?.ToString() ?? "";
+							PlayerWeaponImage[player.Slot] = image;
+							AddTimer(2.0f, () => PlayerWeaponImage.Remove(player.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+						}
+
+						PlayerInfo playerInfo = new PlayerInfo
+						{
+							UserId = player.UserId,
+							Slot = player.Slot,
+							Index = (int)player.Index,
+							SteamId = player.SteamID.ToString(),
+							Name = player.PlayerName,
+							IpAddress = player.IpAddress?.Split(":")[0]
+						};
+
+						if (paint != 0)
+						{
+							g_playersMusic[player.Slot] = (ushort)paint;
+						}
+						else
+						{
+							g_playersMusic[player.Slot] = 0;
+						}
+
+						if (!string.IsNullOrEmpty(Localizer["wp_music_menu_select"]))
+						{
+							player!.Print(Localizer["wp_music_menu_select", selectedPaintName]);
+						}
+
+						if (weaponSync != null)
+						{
+							_ = Task.Run(async () =>
+							{
+								await weaponSync.SyncMusicToDatabase(playerInfo, (ushort)paint);
+							});
+						}
+
+						//RefreshGloves(player);
+					}
+				}
+				else
+				{
+					PlayerInfo playerInfo = new PlayerInfo
+					{
+						UserId = player.UserId,
+						Slot = player.Slot,
+						Index = (int)player.Index,
+						SteamId = player.SteamID.ToString(),
+						Name = player.PlayerName,
+						IpAddress = player.IpAddress?.Split(":")[0]
+					};
+
+					g_playersMusic[player.Slot] = 0;
+
+					if (!string.IsNullOrEmpty(Localizer["wp_music_menu_select"]))
+					{
+						player!.Print(Localizer["wp_music_menu_select", Localizer["None"]]);
+					}
+
+					if (weaponSync != null)
+					{
+						_ = Task.Run(async () =>
+						{
+							await weaponSync.SyncMusicToDatabase(playerInfo, 0);
+						});
+					}
+				}
+			};
+
+			musicSelectionMenu.AddMenuOption(Localizer["None"], handleMusicSelection);
+			// Add weapon options to the weapon selection menu
+			foreach (var musicObject in musicList)
+			{
+				string paintName = musicObject["name"]?.ToString() ?? "";
+
+				if (paintName.Length > 0)
+					musicSelectionMenu.AddMenuOption(paintName, handleMusicSelection);
+			}
+
+			// Command to open the weapon selection menu for players
+			AddCommand($"css_{Config.Additional.CommandMusic}", "Music selection menu", (player, info) =>
+			{
+				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
+
+				if (player == null || player.UserId == null) return;
+
+				if (player != null && !commandsCooldown.TryGetValue(player.Slot, out DateTime cooldownEndTime) ||
+	player != null && DateTime.UtcNow >= (commandsCooldown.TryGetValue(player.Slot, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
+				{
+					commandsCooldown[player.Slot] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
+					MenuManager.OpenChatMenu(player, musicSelectionMenu);
 					return;
 				}
 				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
