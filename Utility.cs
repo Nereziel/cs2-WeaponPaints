@@ -44,28 +44,33 @@ namespace WeaponPaints
 					string[] createTableQueries = new[]
 					{
 				@"CREATE TABLE IF NOT EXISTS `wp_player_skins` (
-                        `steamid` varchar(64) NOT NULL,
+                        `steamid` varchar(18) NOT NULL,
                         `weapon_defindex` int(6) NOT NULL,
                         `weapon_paint_id` int(6) NOT NULL,
                         `weapon_wear` float NOT NULL DEFAULT 0.000001,
                         `weapon_seed` int(16) NOT NULL DEFAULT 0
                     ) ENGINE=InnoDB",
 				@"CREATE TABLE IF NOT EXISTS `wp_player_knife` (
-                        `steamid` varchar(64) NOT NULL,
+                        `steamid` varchar(18) NOT NULL,
                         `knife` varchar(64) NOT NULL,
                         UNIQUE (`steamid`)
                     ) ENGINE = InnoDB",
 				@"CREATE TABLE IF NOT EXISTS `wp_player_gloves` (
-					 `steamid` varchar(64) NOT NULL,
+					 `steamid` varchar(18) NOT NULL,
 					 `weapon_defindex` int(11) NOT NULL,
                       UNIQUE (`steamid`)
 					) ENGINE=InnoDB",
-				@"CREATE TABLE `wp_player_agents` (
-					 `steamid` varchar(64) NOT NULL,
+				@"CREATE TABLE IF NOT EXISTS `wp_player_agents` (
+					 `steamid` varchar(18) NOT NULL,
 					 `agent_ct` varchar(64) DEFAULT NULL,
 					 `agent_t` varchar(64) DEFAULT NULL,
-					 UNIQUE KEY `steamid` (`steamid`)
-					) ENGINE=InnoDB"
+					 UNIQUE (`steamid`)
+					) ENGINE=InnoDB",
+				@"CREATE TABLE IF NOT EXISTS `wp_player_music` (
+					 `steamid` varchar(64) NOT NULL,
+					 `music_id` int(11) NOT NULL,
+					 UNIQUE (`steamid`)
+					) ENGINE=InnoDB",
 			};
 
 					foreach (var query in createTableQueries)
@@ -89,10 +94,9 @@ namespace WeaponPaints
 
 		internal static bool IsPlayerValid(CCSPlayerController? player)
 		{
-			if (player is null) return false;
+			if (player is null || WeaponPaints.weaponSync is null) return false;
 
-			return (player is not null && player.IsValid && !player.IsBot && !player.IsHLTV && player.UserId.HasValue
-				&& WeaponPaints.weaponSync != null && player.Connected == PlayerConnectedState.PlayerConnected && player.SteamID.ToString().Length == 17);
+			return (player.IsValid && !player.IsBot && !player.IsHLTV && player.UserId.HasValue);
 		}
 
 		internal static void LoadSkinsFromFile(string filePath)
@@ -130,6 +134,20 @@ namespace WeaponPaints
 				string json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
 				WeaponPaints.agentsList = deserializedSkins ?? new List<JObject>();
+			}
+			catch (FileNotFoundException)
+			{
+				throw;
+			}
+		}
+
+		internal static void LoadMusicFromFile(string filePath)
+		{
+			try
+			{
+				string json = File.ReadAllText(filePath);
+				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
+				WeaponPaints.musicList = deserializedSkins ?? new List<JObject>();
 			}
 			catch (FileNotFoundException)
 			{

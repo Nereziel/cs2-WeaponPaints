@@ -300,14 +300,17 @@ namespace WeaponPaints
 		{
 			if (!g_playersAgent.ContainsKey(player.Slot)) return;
 
+			string? model = player.TeamNum == 3 ? g_playersAgent[player.Slot].CT : g_playersAgent[player.Slot].T;
+			if (string.IsNullOrEmpty(model)) return;
+
+			if (player.PlayerPawn.Value == null)
+				return;
+
 			try
 			{
 				Server.NextFrame(() =>
 				{
-					string? model = player.TeamNum == 3 ? g_playersAgent[player.Slot].CT : g_playersAgent[player.Slot].T;
-					if (model == null) return;
-
-					player.PlayerPawn.Value!.SetModel(
+					player.PlayerPawn.Value.SetModel(
 						$"characters/models/{model}.vmdl"
 					);
 				});
@@ -315,6 +318,16 @@ namespace WeaponPaints
 			catch (Exception)
 			{
 			}
+		}
+
+		public static void GivePlayerMusicKit(CCSPlayerController player)
+		{
+			if (!g_playersMusic.ContainsKey(player.Slot)) return;
+			if (player.InventoryServices == null) return;
+
+			Console.WriteLine(g_playersMusic[player.Slot]);
+
+			player.InventoryServices.MusicID = g_playersMusic[player.Slot];
 		}
 
 		public static CCSPlayerController? GetPlayerFromItemServices(CCSPlayer_ItemServices itemServices)

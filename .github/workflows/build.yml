@@ -64,6 +64,8 @@ jobs:
       run: cp website/data/gloves.json ${{ env.OUTPUT_PATH }}/gloves.json
     - name: Copy agents.json
       run: cp website/data/agents.json ${{ env.OUTPUT_PATH }}/agents.json
+    - name: Copy music.json
+      run: cp website/data/music.json ${{ env.OUTPUT_PATH }}/music.json
     - name: Zip
       run: zip -r "${{ env.PROJECT_NAME }}.zip" "${{ env.OUTPUT_PATH }}" gamedata/
     - name: Clean files Website
