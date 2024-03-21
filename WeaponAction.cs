@@ -99,12 +99,13 @@ namespace WeaponPaints
 						int clip1 = weapon.Value.Clip1;
 						int reservedAmmo = weapon.Value.ReserveAmmo[0];
 
-						if (!weaponsWithAmmo.ContainsKey(weaponByDefindex))
+						if (!weaponsWithAmmo.TryGetValue(weaponByDefindex, out List<(int, int)>? value))
 						{
-							weaponsWithAmmo.Add(weaponByDefindex, new List<(int, int)>());
+							value = new List<(int, int)>();
+							weaponsWithAmmo.Add(weaponByDefindex, value);
 						}
 
-						weaponsWithAmmo[weaponByDefindex].Add((clip1, reservedAmmo));
+						value.Add((clip1, reservedAmmo));
 
 						if (gun == null || gun.VData == null) return;
 
