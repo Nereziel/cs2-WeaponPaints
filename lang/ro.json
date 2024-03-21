@@ -1,0 +1,23 @@
+{
+	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
+	"wp_info_website": "Vizitează {lime}{0}{default} unde poți schimba skin-urile",
+	"wp_info_refresh": "Scrie {lime}!wp{default} pentru a sincroniza skin-urile alese",
+	"wp_info_knife": "Scrie {lime}!knife{default} pentru a deschide meniul cuțitelor",
+	"wp_info_glove": "Scrie {lime}!gloves{default} pentru a deschide meniul mănușilor",
+	"wp_command_cooldown": "{lightred}Nu poți sincroniza skin-urile armelor acum",
+	"wp_command_refresh_done": "{lime}Sincronizarea skin-urilor armelor",
+	"wp_knife_menu_select": "Ai ales {lime}{0}{default} ca și cuțit",
+	"wp_knife_menu_kill": "",
+	"wp_knife_menu_title": "Meniu cuțite",
+	"wp_glove_menu_select": "Ai ales {lime}{0}{default} ca mănuși",
+	"wp_glove_menu_title": "Meniu mănuși",
+	"wp_agent_menu_select": "Ai ales {lime}{0}{default} ca agent",
+	"wp_agent_menu_title": "Meniu agenți",
+	"wp_skin_menu_weapon_title": "Meniu arme",
+	"wp_music_menu_title": "Meniu MVP",
+	"wp_music_menu_select": "Ai ales {lime}{0}{default} ca și kit MVP",
+	"wp_skin_menu_skin_title": "Selectează skin pentru {lime}{0}{default}",
+	"wp_skin_menu_select": "Ai ales {lime}{0}{default} ca skin",
+
+	"None": "Niciunul"
+}
