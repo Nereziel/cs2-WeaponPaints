@@ -233,6 +233,7 @@ namespace WeaponPaints
 
 					string query;
 					object parameters;
+
 					if (existingRecordCount > 0)
 					{
 						query = "UPDATE `wp_player_skins` SET `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";

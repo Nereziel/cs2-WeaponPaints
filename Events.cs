@@ -305,6 +305,8 @@ namespace WeaponPaints
 
 		private void OnTick()
 		{
+			if (!Config.Additional.ShowSkinImage) return;
+
 			foreach (var player in Utilities.GetPlayers().Where(p =>
 							p is not null && p.IsValid && p.PlayerPawn != null && p.PlayerPawn.IsValid &&
 							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE && p.SteamID.ToString().Length == 17
@@ -312,7 +314,7 @@ namespace WeaponPaints
 							)
 				)
 			{
-				if (Config.Additional.ShowSkinImage && PlayerWeaponImage.TryGetValue(player.Slot, out string? value) && !string.IsNullOrEmpty(value))
+				if (PlayerWeaponImage.TryGetValue(player.Slot, out string? value) && !string.IsNullOrEmpty(value))
 				{
 					player.PrintToCenterHtml("<img src='{PATH}'</img>".Replace("{PATH}", value));
 				}

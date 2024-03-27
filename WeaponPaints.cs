@@ -160,7 +160,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.3b";
+	public override string ModuleVersion => "2.3c";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -258,7 +258,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			Password = config.DatabasePassword,
 			Database = config.DatabaseName,
 			Port = (uint)config.DatabasePort,
-			Pooling = true
+			Pooling = true,
+			MaximumPoolSize = 640,
+			ConnectionReset = false
 		};
 
 		_database = new(builder.ConnectionString);
