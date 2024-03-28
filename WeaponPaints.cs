@@ -10,7 +10,7 @@ using System.Collections.Concurrent;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(191)]
+[MinimumApiVersion(195)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
@@ -75,23 +75,23 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ "weapon_knife_kukri", "Kukri Knife" }
 	};
 
-	internal static WeaponPaintsConfig _config = new WeaponPaintsConfig();
+	internal static WeaponPaintsConfig _config = new();
 	internal static IStringLocalizer? _localizer;
-	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
-	internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
-	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new ConcurrentDictionary<int, ushort>();
-	internal static ConcurrentDictionary<int, ushort> g_playersMusic = new ConcurrentDictionary<int, ushort>();
-	internal static ConcurrentDictionary<int, (string? CT, string? T)> g_playersAgent = new ConcurrentDictionary<int, (string?, string?)>();
-	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>>();
-	internal static List<JObject> skinsList = new List<JObject>();
-	internal static List<JObject> glovesList = new List<JObject>();
-	internal static List<JObject> agentsList = new List<JObject>();
-	internal static List<JObject> musicList = new List<JObject>();
+	internal static Dictionary<int, int> g_knifePickupCount = new();
+	internal static ConcurrentDictionary<int, string> g_playersKnife = new();
+	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new();
+	internal static ConcurrentDictionary<int, ushort> g_playersMusic = new();
+	internal static ConcurrentDictionary<int, (string? CT, string? T)> g_playersAgent = new();
+	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new();
+	internal static List<JObject> skinsList = new();
+	internal static List<JObject> glovesList = new();
+	internal static List<JObject> agentsList = new();
+	internal static List<JObject> musicList = new();
 	internal static WeaponSynchronization? weaponSync;
 	public static bool g_bCommandsAllowed = true;
 	internal Dictionary<int, string> PlayerWeaponImage = new();
 
-	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
+	internal static Dictionary<int, DateTime> commandsCooldown = new();
 	internal static Database? _database;
 
 	internal static MemoryFunctionVoid<nint, string, float> CAttributeList_SetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
@@ -160,7 +160,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.3a";
+	public override string ModuleVersion => "2.3c";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -177,7 +177,10 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 			foreach (var player in Utilities.GetPlayers())
 			{
-				if (weaponSync == null || player is null || !player.IsValid || player.SteamID.ToString().Length != 17 || player.IsBot ||
+				if (weaponSync == null)
+					break;
+
+				if (player is null || !player.IsValid || player.SteamID.ToString().Length != 17 || string.IsNullOrEmpty(player.IpAddress) || player.IsBot ||
 					player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
 					continue;
 
@@ -255,7 +258,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			Password = config.DatabasePassword,
 			Database = config.DatabaseName,
 			Port = (uint)config.DatabasePort,
-			Pooling = true
+			Pooling = true,
+			MaximumPoolSize = 640,
+			ConnectionReset = false
 		};
 
 		_database = new(builder.ConnectionString);

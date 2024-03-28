@@ -160,9 +160,9 @@ namespace WeaponPaints
 				return;
 			}
 
-			if (!gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex) || gPlayerWeaponsInfo[player.Slot][weaponDefIndex].Paint == 0) return;
+			if (!gPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out WeaponInfo? value) || value.Paint == 0) return;
 
-			WeaponInfo weaponInfo = gPlayerWeaponsInfo[player.Slot][weaponDefIndex];
+			WeaponInfo weaponInfo = value;
 			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
 			weapon.AttributeManager.Item.ItemID = 16384;
 			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
@@ -257,7 +257,7 @@ namespace WeaponPaints
 		}
 		*/
 
-		public void OnEntityCreated(CEntityInstance entity)
+		public void OnEntitySpawned(CEntityInstance entity)
 		{
 			var designerName = entity.DesignerName;
 
@@ -305,6 +305,8 @@ namespace WeaponPaints
 
 		private void OnTick()
 		{
+			if (!Config.Additional.ShowSkinImage) return;
+
 			foreach (var player in Utilities.GetPlayers().Where(p =>
 							p is not null && p.IsValid && p.PlayerPawn != null && p.PlayerPawn.IsValid &&
 							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE && p.SteamID.ToString().Length == 17
@@ -312,7 +314,7 @@ namespace WeaponPaints
 							)
 				)
 			{
-				if (Config.Additional.ShowSkinImage && PlayerWeaponImage.TryGetValue(player.Slot, out string? value) && !string.IsNullOrEmpty(value))
+				if (PlayerWeaponImage.TryGetValue(player.Slot, out string? value) && !string.IsNullOrEmpty(value))
 				{
 					player.PrintToCenterHtml("<img src='{PATH}'</img>".Replace("{PATH}", value));
 				}
@@ -326,7 +328,7 @@ namespace WeaponPaints
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
-			RegisterListener<Listeners.OnEntityCreated>(OnEntityCreated);
+			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
 			RegisterListener<Listeners.OnTick>(OnTick);
 			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
