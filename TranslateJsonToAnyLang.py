@@ -1,21 +1,21 @@
 import requests
 import json
 import os
+
 script_path = os.path.abspath(__file__)
 print("Current working directory:", os.getcwd())
 script_dir = os.path.dirname(script_path)
 os.chdir(script_dir)
 
-# 本地JSON文件路径
+# Define local JSON file paths
 skins_path = r'./website/data/skins.json'
 gloves_path = './website/data/gloves.json'
 agents_path = r'./website/data/agents.json'
 music_path = r'./website/data/music.json'
+
+# Target language for translation
 #Can be one of the following: bg cs da de el en es-ES es-MX fi fr hu it ja ko nl no pl pt-BR pt-PT ro ru sk sv th tr uk zh-CN zh-TW vi
 target_language = 'zh-CN' 
-
-# 请求在线JSON数据
-
 
 def GetFromIndex(local_path):
     skin_url = f"https://bymykel.github.io/CSGO-API/api/{target_language}/skins.json"
