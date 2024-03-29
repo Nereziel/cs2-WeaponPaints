@@ -15,12 +15,12 @@ music_path = r'./website/data/music.json'
 target_language = 'zh-CN' 
 
 # 请求在线JSON数据
-skin_url = f"https://bymykel.github.io/CSGO-API/api/{target_language}/skins.json"
-response = requests.get(skin_url)
-skins_online = response.json()
 
 
 def GetFromIndex(local_path):
+    skin_url = f"https://bymykel.github.io/CSGO-API/api/{target_language}/skins.json"
+    response = requests.get(skin_url)
+    skins_online = response.json()
     with open(local_path, 'r', encoding='utf-8') as file:
         skins = json.load(file)
     paint_name_mapping = {skin['paint_index']: skin['name'] for skin in skins_online}
