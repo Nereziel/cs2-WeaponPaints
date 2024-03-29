@@ -8,7 +8,7 @@ os.chdir(script_dir)
 
 # 本地JSON文件路径
 skins_path = r'./website/data/skins.json'
-gloves_path = './website/data/gloves.json'
+gloves_path = r'./website/data/gloves.json'
 agents_path = r'./website/data/agents.json'
 music_path = r'./website/data/music.json'
 #Can be one of the following: bg cs da de el en es-ES es-MX fi fr hu it ja ko nl no pl pt-BR pt-PT ro ru sk sv th tr uk zh-CN zh-TW vi
