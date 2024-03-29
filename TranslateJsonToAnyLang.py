@@ -9,7 +9,7 @@ os.chdir(script_dir)
 
 # Define local JSON file paths
 skins_path = r'./website/data/skins.json'
-gloves_path = './website/data/gloves.json'
+gloves_path = r'./website/data/gloves.json'
 agents_path = r'./website/data/agents.json'
 music_path = r'./website/data/music.json'
 
