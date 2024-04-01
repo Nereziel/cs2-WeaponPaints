@@ -17,7 +17,7 @@ music_path = r'./website/data/music.json'
 #Can be one of the following: bg cs da de el en es-ES es-MX fi fr hu it ja ko nl no pl pt-BR pt-PT ro ru sk sv th tr uk zh-CN zh-TW vi
 target_language = 'zh-CN' 
 
-def GetFromIndex(local_path):
+def gloves(local_path):
     skin_url = f"https://bymykel.github.io/CSGO-API/api/{target_language}/skins.json"
     response = requests.get(skin_url)
     skins_online = response.json()
@@ -34,9 +34,30 @@ def GetFromIndex(local_path):
     with open(local_path, 'w', encoding='utf-8') as file:
         json.dump(skins, file, ensure_ascii=False, indent=4)
     print('Translate:'+local_path+'to'+target_language)
+
+def skins(local_path):
+    skin_url = f"https://bymykel.github.io/CSGO-API/api/{target_language}/skins.json"
+    response = requests.get(skin_url)
+    skins_online = response.json()
+    with open(local_path, 'r', encoding='utf-8') as file:
+        skins = json.load(file)
+    paint_name_mapping = {skin['paint_index']: skin['name'] for skin in skins_online}
+    print(paint_name_mapping)
+    print('begin to search')
+    for skin in skins:
+        print(skin)
+        paint = skin.get("paint")
+        weapon = skin.get("weapon_name")
+        for skin_online in skins_online:
+            if skin_online['paint_index'] == paint and skin_online['weapon']['id'] == weapon:
+                skin["paint_name"] = skin_online['name']
+                break
+    with open(local_path, 'w', encoding='utf-8') as file:
+        json.dump(skins, file, ensure_ascii=False, indent=4)
+    print('Translate:'+local_path+'to'+target_language)
     
-GetFromIndex(gloves_path)
-GetFromIndex(skins_path)
+gloves(gloves_path)
+skins(skins_path)
 
 def Agents():
     agents_url = f"https://bymykel.github.io/CSGO-API/api/{target_language}/agents.json"
