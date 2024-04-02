@@ -10,7 +10,7 @@ using System.Collections.Concurrent;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(195)]
+[MinimumApiVersion(201)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
@@ -160,7 +160,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.3c";
+	public override string ModuleVersion => "2.4a";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -200,6 +200,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					IpAddress = player?.IpAddress?.Split(":")[0]
 				};
 
+				_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+
+				/*
 				if (Config.Additional.SkinEnabled)
 				{
 					_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
@@ -220,13 +223,14 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				{
 					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
 				}
+				*/
 			}
 		}
 
-		Utility.LoadSkinsFromFile(ModuleDirectory + "/skins.json");
-		Utility.LoadGlovesFromFile(ModuleDirectory + "/gloves.json");
-		Utility.LoadAgentsFromFile(ModuleDirectory + "/agents.json");
-		Utility.LoadMusicFromFile(ModuleDirectory + "/music.json");
+		Utility.LoadSkinsFromFile(ModuleDirectory + "/skins.json", Logger);
+		Utility.LoadGlovesFromFile(ModuleDirectory + "/gloves.json", Logger);
+		Utility.LoadAgentsFromFile(ModuleDirectory + "/agents.json", Logger);
+		Utility.LoadMusicFromFile(ModuleDirectory + "/music.json", Logger);
 
 		if (Config.Additional.KnifeEnabled)
 			SetupKnifeMenu();

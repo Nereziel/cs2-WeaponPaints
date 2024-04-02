@@ -27,6 +27,8 @@ namespace WeaponPaints
 
 			try
 			{
+				_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+				/*
 				if (Config.Additional.SkinEnabled)
 				{
 					_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
@@ -47,6 +49,7 @@ namespace WeaponPaints
 				{
 					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
 				}
+				*/
 			}
 			catch (Exception)
 			{
@@ -102,7 +105,6 @@ namespace WeaponPaints
 		private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
 			if (!Config.Additional.SkinEnabled) return;
-			if (player is null || weapon is null || !weapon.IsValid || !Utility.IsPlayerValid(player)) return;
 			if (!gPlayerWeaponsInfo.ContainsKey(player.Slot)) return;
 
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
@@ -214,6 +216,7 @@ namespace WeaponPaints
 
 			GivePlayerMusicKit(player);
 			GivePlayerAgent(player);
+
 			Server.NextFrame(() =>
 			{
 				RefreshGloves(player);
@@ -266,7 +269,7 @@ namespace WeaponPaints
 				Server.NextFrame(() =>
 				{
 					var weapon = new CBasePlayerWeapon(entity.Handle);
-					if (weapon == null || !weapon.IsValid || weapon.OwnerEntity.Value == null) return;
+					if (weapon == null || !weapon.IsValid) return;
 
 					try
 					{
@@ -326,10 +329,13 @@ namespace WeaponPaints
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
 
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
-			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
+			RegisterEventHandler<EventRoundStart>(OnRoundStart);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
 			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
-			RegisterListener<Listeners.OnTick>(OnTick);
+
+			if (Config.Additional.ShowSkinImage)
+				RegisterListener<Listeners.OnTick>(OnTick);
+
 			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
 	}
