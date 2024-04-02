@@ -17,7 +17,7 @@ namespace WeaponPaints
 
 			if (PlayerHasKnife(player)) return;
 
-			string knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
+			//string knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
 			player.GiveNamedItem(CsItem.Knife);
 		}
 
