@@ -160,7 +160,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.4a";
+	public override string ModuleVersion => "2.4b";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
