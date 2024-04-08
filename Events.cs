@@ -2,6 +2,8 @@
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Entities;
+using CounterStrikeSharp.API.Modules.Memory;
+using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 
 namespace WeaponPaints
 {
@@ -105,7 +107,7 @@ namespace WeaponPaints
 		private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
 			if (!Config.Additional.SkinEnabled) return;
-			if (!gPlayerWeaponsInfo.ContainsKey(player.Slot)) return;
+			if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out System.Collections.Concurrent.ConcurrentDictionary<int, WeaponInfo>? _value)) return;
 
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
 
@@ -244,23 +246,27 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
-		/*
+
 		public HookResult OnGiveNamedItemPost(DynamicHook hook)
 		{
-			var itemServices = hook.GetParam<CCSPlayer_ItemServices>(0);
-			var weapon = hook.GetReturn<CBasePlayerWeapon>(0);
-			if (!weapon.DesignerName.Contains("weapon"))
-				return HookResult.Continue;
+			try
+			{
+				var itemServices = hook.GetParam<CCSPlayer_ItemServices>(0);
+				var weapon = hook.GetReturn<CBasePlayerWeapon>();
+				if (!weapon.DesignerName.Contains("weapon"))
+					return HookResult.Continue;
 
-			var player = GetPlayerFromItemServices(itemServices);
-			if (player != null)
-				GivePlayerWeaponSkin(player, weapon);
+				var player = GetPlayerFromItemServices(itemServices);
+				if (player != null)
+					GivePlayerWeaponSkin(player, weapon);
+			}
+			catch { }
 
 			return HookResult.Continue;
 		}
-		*/
 
-		public void OnEntitySpawned(CEntityInstance entity)
+
+		public void OnEntityCreated(CEntityInstance entity)
 		{
 			var designerName = entity.DesignerName;
 
@@ -331,12 +337,12 @@ namespace WeaponPaints
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
-			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
+			RegisterListener<Listeners.OnEntityCreated>(OnEntityCreated);
 
 			if (Config.Additional.ShowSkinImage)
 				RegisterListener<Listeners.OnTick>(OnTick);
 
-			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
+			VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
 	}
 }
