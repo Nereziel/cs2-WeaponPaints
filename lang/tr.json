@@ -8,7 +8,7 @@
 	"wp_info_music": "Müzik kiti seçmek için {lime}!music{default} yazın",
 	"wp_command_cooldown": "{lightred}Silah skinlerinizi yenilemek için biraz bekleyin",
 	"wp_command_refresh_done": "{lime}Silah skinleriniz uygulanıyor",
-	"wp_knife_menu_select": "You have chosen {lime}{0}{default} as your knife",
+	"wp_knife_menu_select": "Bıçağınızı {lime}{0}{default} olarak belirlediniz",
 	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "Bıçak Menüsü",
 	"wp_glove_menu_select": "Eldiveninizi {lime}{0}{default} olarak belirlediniz",
