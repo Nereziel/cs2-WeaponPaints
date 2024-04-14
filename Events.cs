@@ -4,6 +4,7 @@ using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
+using System.Runtime.InteropServices;
 
 namespace WeaponPaints
 {
@@ -342,7 +343,8 @@ namespace WeaponPaints
 			if (Config.Additional.ShowSkinImage)
 				RegisterListener<Listeners.OnTick>(OnTick);
 
-			VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
+			if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+				VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
 	}
 }

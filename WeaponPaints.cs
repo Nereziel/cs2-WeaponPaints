@@ -160,7 +160,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.4b";
+	public override string ModuleVersion => "2.4c";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -252,7 +252,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
 		{
 			Logger.LogError("You need to setup Database credentials in config!");
-			throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
+			Unload(false);
+			//throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
 		}
 
 		var builder = new MySqlConnectionStringBuilder
