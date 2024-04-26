@@ -65,7 +65,7 @@ namespace WeaponPaints
 
 			int playerTeam = player.TeamNum;
 
-			Dictionary<string, List<(int, int)>> weaponsWithAmmo = new Dictionary<string, List<(int, int)>>();
+			Dictionary<string, List<(int, int)>> weaponsWithAmmo = [];
 
 			foreach (var weapon in weapons)
 			{
@@ -101,7 +101,7 @@ namespace WeaponPaints
 
 						if (!weaponsWithAmmo.TryGetValue(weaponByDefindex, out List<(int, int)>? value))
 						{
-							value = new List<(int, int)>();
+							value = [];
 							weaponsWithAmmo.Add(weaponByDefindex, value);
 						}
 
@@ -121,8 +121,8 @@ namespace WeaponPaints
 
 			try
 			{
-				player.ExecuteClientCommand("slot 3");
-				player.ExecuteClientCommand("slot 3");
+				player.ExecuteClientCommandFromServer("slot 3");
+				player.ExecuteClientCommandFromServer("slot 3");
 
 				var weapon = player.PlayerPawn.Value.WeaponServices.ActiveWeapon;
 				if (weapon is null || !weapon.IsValid || weapon.Value == null) return;
