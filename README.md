@@ -17,56 +17,43 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Added command **`!knife`** to show menu with knives
 - Added command **`!gloves`** to show menu with gloves
 - Added command **`!agents`** to show menu with agents
+- Added command **`!music`** to show menu with music kits
 - Translations support, submit a PR if you want to share your translation
 
 ## CS2 Server
 - Have working CounterStrikeSharp (**with RUNTIME!**)
 - Download from Release and copy plugin to plugins
 - Run server with plugin, **it will generate config if installed correctly!**
-- Edit `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** include database credentials
-- In `addons/counterstrikesharp/configs/`**`core.json`** set **FollowCS2ServerGuidelines** to **`false`**
+- Edit **`addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json`** include database credentials
+- In **`addons/counterstrikesharp/configs/core.json`** set **FollowCS2ServerGuidelines** to **`false`**
 
 ## Plugin Configuration
 <details>
   <summary>Click to expand</summary>
 <code><pre>{
-	"Version": 4, // Don't touch
+	"Version": 6, // Don't touch
 	"DatabaseHost": "", // MySQL host
 	"DatabasePort": 3306, // MySQL port
 	"DatabaseUser": "", // MySQL username
 	"DatabasePassword": "", // MySQL user password
 	"DatabaseName": "", // MySQL database name
 	"CmdRefreshCooldownSeconds": 60, // Cooldown time in refreshing skins (!wp command)
-	"Prefix": "[WeaponPaints]", // Prefix every chat message
 	"Website": "example.com/skins", // Website used in WebsiteMessageCommand (!ws command)
-"Messages": {
-	"WebsiteMessageCommand": "Visit {WEBSITE} where you can change skins.", // Information about website where player can change skins (!ws command) Set to empty to disable
-	"SynchronizeMessageCommand": "Type !wp to synchronize chosen skins.", // Information about skins refreshing (!ws command) Set to empty to disable
-	"KnifeMessageCommand": "Type !knife to open knife menu.", // Information about knife menu (!ws command) Set to empty to disable
-	"CooldownRefreshCommand": "You can\u0027t refresh weapon paints right now.", // Cooldown information (!wp command) Set to empty to disable
-	"SuccessRefreshCommand": "Refreshing weapon paints.", // Information about refreshing skins (!wp command) Set to empty to disable
-	"ChosenKnifeMenu": "You have chosen {KNIFE} as your knife.", // Information about choosen knife (!knife command) Set to empty to disable
-	"ChosenSkinMenu": "You have chosen {SKIN} as your skin.", // Information about choosen skin (!skins command) Set to empty to disable
-	"ChosenKnifeMenuKill": "To correctly apply skin for knife, you need to type !kill.", // Information about suicide after knife selection (!knife command) Set to empty to disable
-	"KnifeMenuTitle": "Knife Menu.",  // Menu title (!knife menu)
-	"WeaponMenuTitle": "Weapon Menu.", // Menu title (!skins menu)
-	"SkinMenuTitle": "Select skin for {WEAPON}" // Menu title (!skins menu, after weapon select)
-},
-"Additional": {
-	"KnifeEnabled": true, // Enable or disable knife feature
-	"SkinEnabled": true, // Enable or disable skin feature
-	"CommandWpEnabled": true, // Enable or disable refreshing command
-	"CommandKillEnabled": true, // Enable or disable kill command
-	"CommandKnife": "knife", // Name of knife menu command, u can change to for e.g, knives
-	"CommandSkin": "ws", // Name of skin information command, u can change to for e.g, skins
-	"CommandSkinSelection": "skins", // Name of skins menu command, u can change to for e.g, weapons
-	"CommandRefresh": "wp", // Name of skin refreshing command, u can change to for e.g, refreshskins
-	"CommandKill": "kill", // Name of kill command, u can change to for e.g, suicide
-	"GiveRandomKnife": false,  // Give random knife to players if they didn't choose
-	"GiveRandomSkins": false  // Give random skins to players if they didn't choose
+	"Additional": {
+		"KnifeEnabled": true, // Enable or disable knife feature
+		"SkinEnabled": true, // Enable or disable skin feature
+		"CommandWpEnabled": true, // Enable or disable refreshing command
+		"CommandKillEnabled": true, // Enable or disable kill command
+		"CommandKnife": "knife", // Name of knife menu command, u can change to for e.g, knives
+		"CommandSkin": "ws", // Name of skin information command, u can change to for e.g, skins
+		"CommandSkinSelection": "skins", // Name of skins menu command, u can change to for e.g, weapons
+		"CommandRefresh": "wp", // Name of skin refreshing command, u can change to for e.g, refreshskins
+		"CommandKill": "kill", // Name of kill command, u can change to for e.g, suicide
+		"GiveRandomKnife": false,  // Give random knife to players if they didn't choose
+		"GiveRandomSkins": false  // Give random skins to players if they didn't choose
 },
 
-"ConfigVersion": 4  // Don't touch
+"ConfigVersion": 6  // Don't touch
 }</pre></code>
 </details>
     
@@ -81,7 +68,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 ## Web Features
 - Basic website
 - Steam login/logout
-- Change knife, paint, seed and wear
+- Change knife, paint, seed, wear, agents and music
 
 ## Troubleshooting
 <details>
