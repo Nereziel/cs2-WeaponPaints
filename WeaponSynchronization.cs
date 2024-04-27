@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using MySqlConnector;
 using System.Collections.Concurrent;
 
 namespace WeaponPaints
@@ -14,16 +15,39 @@ namespace WeaponPaints
 			_config = config;
 		}
 
-		internal async Task GetKnifeFromDatabase(PlayerInfo player)
+		internal async Task GetPlayerData(PlayerInfo player)
+		{
+			try
+			{
+				await using MySqlConnection connection = await _database.GetConnectionAsync();
+
+				if (_config.Additional.KnifeEnabled)
+					GetKnifeFromDatabase(player, connection);
+				if (_config.Additional.GloveEnabled)
+					GetGloveFromDatabase(player, connection);
+				if (_config.Additional.AgentEnabled)
+					GetAgentFromDatabase(player, connection);
+				if (_config.Additional.MusicEnabled)
+					GetMusicFromDatabase(player, connection);
+				if (_config.Additional.SkinEnabled)
+					GetWeaponPaintsFromDatabase(player, connection);
+			}
+			catch (Exception ex)
+			{
+				// Log the exception or handle it appropriately
+				Console.WriteLine($"An error occurred: {ex.Message}");
+			}
+		}
+
+		internal void GetKnifeFromDatabase(PlayerInfo player, MySqlConnection connection)
 		{
 			try
 			{
 				if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player?.SteamId))
 					return;
 
-				await using var connection = await _database.GetConnectionAsync();
 				string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
-				string? playerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = player.SteamId });
+				string? playerKnife = connection.QueryFirstOrDefault<string>(query, new { steamid = player.SteamId });
 
 				if (!string.IsNullOrEmpty(playerKnife))
 				{
@@ -36,16 +60,15 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task GetGloveFromDatabase(PlayerInfo player)
+		internal void GetGloveFromDatabase(PlayerInfo player, MySqlConnection connection)
 		{
 			try
 			{
 				if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player?.SteamId))
 					return;
 
-				await using var connection = await _database.GetConnectionAsync();
 				string query = "SELECT `weapon_defindex` FROM `wp_player_gloves` WHERE `steamid` = @steamid";
-				ushort? gloveData = await connection.QueryFirstOrDefaultAsync<ushort?>(query, new { steamid = player.SteamId });
+				ushort? gloveData = connection.QueryFirstOrDefault<ushort?>(query, new { steamid = player.SteamId });
 
 				if (gloveData != null)
 				{
@@ -58,16 +81,15 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task GetAgentFromDatabase(PlayerInfo player)
+		internal void GetAgentFromDatabase(PlayerInfo player, MySqlConnection connection)
 		{
 			try
 			{
 				if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player?.SteamId))
 					return;
 
-				await using var connection = await _database.GetConnectionAsync();
 				string query = "SELECT `agent_ct`, `agent_t` FROM `wp_player_agents` WHERE `steamid` = @steamid";
-				var agentData = await connection.QueryFirstOrDefaultAsync<(string, string)>(query, new { steamid = player.SteamId });
+				var agentData = connection.QueryFirstOrDefault<(string, string)>(query, new { steamid = player.SteamId });
 
 				if (agentData != default)
 				{
@@ -85,11 +107,11 @@ namespace WeaponPaints
 			}
 			catch (Exception ex)
 			{
-				Utility.Log($"An error occurred in GetGloveFromDatabase: {ex.Message}");
+				Utility.Log($"An error occurred in GetAgentFromDatabase: {ex.Message}");
 			}
 		}
 
-		internal async Task GetWeaponPaintsFromDatabase(PlayerInfo player)
+		internal void GetWeaponPaintsFromDatabase(PlayerInfo player, MySqlConnection connection)
 		{
 			try
 			{
@@ -98,9 +120,8 @@ namespace WeaponPaints
 
 				var weaponInfos = new ConcurrentDictionary<int, WeaponInfo>();
 
-				await using var connection = await _database.GetConnectionAsync();
 				string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
-				var playerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = player.SteamId });
+				var playerSkins = connection.Query<dynamic>(query, new { steamid = player.SteamId });
 
 				if (playerSkins == null)
 				{
@@ -133,16 +154,15 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task GetMusicFromDatabase(PlayerInfo player)
+		internal void GetMusicFromDatabase(PlayerInfo player, MySqlConnection connection)
 		{
 			try
 			{
 				if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player.SteamId))
 					return;
 
-				await using var connection = await _database.GetConnectionAsync();
 				string query = "SELECT `music_id` FROM `wp_player_music` WHERE `steamid` = @steamid";
-				ushort? musicData = await connection.QueryFirstOrDefaultAsync<ushort?>(query, new { steamid = player.SteamId });
+				ushort? musicData = connection.QueryFirstOrDefault<ushort?>(query, new { steamid = player.SteamId });
 
 				if (musicData != null)
 				{
@@ -154,6 +174,8 @@ namespace WeaponPaints
 				Utility.Log($"An error occurred in GetMusicFromDatabase: {ex.Message}");
 			}
 		}
+
+
 
 		internal async Task SyncKnifeToDatabase(PlayerInfo player, string knife)
 		{
@@ -233,6 +255,7 @@ namespace WeaponPaints
 
 					string query;
 					object parameters;
+
 					if (existingRecordCount > 0)
 					{
 						query = "UPDATE `wp_player_skins` SET `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";

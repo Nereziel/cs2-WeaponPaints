@@ -17,7 +17,7 @@ namespace WeaponPaints
 
 			if (PlayerHasKnife(player)) return;
 
-			string knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
+			//string knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
 			player.GiveNamedItem(CsItem.Knife);
 		}
 
@@ -65,7 +65,7 @@ namespace WeaponPaints
 
 			int playerTeam = player.TeamNum;
 
-			Dictionary<string, List<(int, int)>> weaponsWithAmmo = new Dictionary<string, List<(int, int)>>();
+			Dictionary<string, List<(int, int)>> weaponsWithAmmo = [];
 
 			foreach (var weapon in weapons)
 			{
@@ -99,12 +99,13 @@ namespace WeaponPaints
 						int clip1 = weapon.Value.Clip1;
 						int reservedAmmo = weapon.Value.ReserveAmmo[0];
 
-						if (!weaponsWithAmmo.ContainsKey(weaponByDefindex))
+						if (!weaponsWithAmmo.TryGetValue(weaponByDefindex, out List<(int, int)>? value))
 						{
-							weaponsWithAmmo.Add(weaponByDefindex, new List<(int, int)>());
+							value = [];
+							weaponsWithAmmo.Add(weaponByDefindex, value);
 						}
 
-						weaponsWithAmmo[weaponByDefindex].Add((clip1, reservedAmmo));
+						value.Add((clip1, reservedAmmo));
 
 						if (gun == null || gun.VData == null) return;
 
@@ -120,8 +121,8 @@ namespace WeaponPaints
 
 			try
 			{
-				player.ExecuteClientCommand("slot 3");
-				player.ExecuteClientCommand("slot 3");
+				player.ExecuteClientCommandFromServer("slot 3");
+				player.ExecuteClientCommandFromServer("slot 3");
 
 				var weapon = player.PlayerPawn.Value.WeaponServices.ActiveWeapon;
 				if (weapon is null || !weapon.IsValid || weapon.Value == null) return;

@@ -33,6 +33,8 @@ namespace WeaponPaints
 
 					if (weaponSync != null)
 					{
+						_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+						/*
 						if (Config.Additional.SkinEnabled)
 						{
 							_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
@@ -53,6 +55,7 @@ namespace WeaponPaints
 						{
 							_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
 						}
+						*/
 
 						RefreshGloves(player);
 						RefreshWeapons(player);
@@ -471,60 +474,62 @@ namespace WeaponPaints
 				if (!Utility.IsPlayerValid(player) || player is null) return;
 
 				string selectedPaintName = option.Text;
+				var selectedAgent = agentsList.FirstOrDefault(g =>
+					g.ContainsKey("agent_name") &&
+					g["agent_name"] != null && g["agent_name"]!.ToString() == selectedPaintName &&
+					g["team"] != null && (int)(g["team"]!) == player.TeamNum);
 
-				var selectedAgent = agentsList.FirstOrDefault(g => g.ContainsKey("agent_name") && g["agent_name"]?.ToString() == selectedPaintName);
-				if (selectedAgent != null)
+				if (selectedAgent == null) return;
+
+				if (
+					selectedAgent != null &&
+					selectedAgent.ContainsKey("model")
+				)
 				{
-					if (
-						selectedAgent != null &&
-						selectedAgent.ContainsKey("model")
-					)
+					PlayerInfo playerInfo = new PlayerInfo
 					{
-						PlayerInfo playerInfo = new PlayerInfo
-						{
-							UserId = player.UserId,
-							Slot = player.Slot,
-							Index = (int)player.Index,
-							SteamId = player.SteamID.ToString(),
-							Name = player.PlayerName,
-							IpAddress = player.IpAddress?.Split(":")[0]
-						};
-
-						if (Config.Additional.ShowSkinImage)
-						{
-							string image = selectedAgent["image"]?.ToString() ?? "";
-							PlayerWeaponImage[player.Slot] = image;
-							AddTimer(2.0f, () => PlayerWeaponImage.Remove(player.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
-						}
-
-						if (!string.IsNullOrEmpty(Localizer["wp_agent_menu_select"]))
-						{
-							player!.Print(Localizer["wp_agent_menu_select", selectedPaintName]);
-						}
-
-						if (player.TeamNum == 3)
-						{
-							g_playersAgent.AddOrUpdate(player.Slot,
-							key => (selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString(), null),
-							(key, oldValue) => (selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString(), oldValue.T));
-						}
-						else
-						{
-							g_playersAgent.AddOrUpdate(player.Slot,
-								key => (null, selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString()),
-								(key, oldValue) => (oldValue.CT, selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString())
-							);
-						}
-
-						if (weaponSync != null)
-						{
-							_ = Task.Run(async () =>
-							{
-								await weaponSync.SyncAgentToDatabase(playerInfo);
-							});
-						}
+						UserId = player.UserId,
+						Slot = player.Slot,
+						Index = (int)player.Index,
+						SteamId = player.SteamID.ToString(),
+						Name = player.PlayerName,
+						IpAddress = player.IpAddress?.Split(":")[0]
 					};
-				}
+
+					if (Config.Additional.ShowSkinImage)
+					{
+						string image = selectedAgent["image"]?.ToString() ?? "";
+						PlayerWeaponImage[player.Slot] = image;
+						AddTimer(2.0f, () => PlayerWeaponImage.Remove(player.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+					}
+
+					if (!string.IsNullOrEmpty(Localizer["wp_agent_menu_select"]))
+					{
+						player!.Print(Localizer["wp_agent_menu_select", selectedPaintName]);
+					}
+
+					if (player.TeamNum == 3)
+					{
+						g_playersAgent.AddOrUpdate(player.Slot,
+						key => (selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString(), null),
+						(key, oldValue) => (selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString(), oldValue.T));
+					}
+					else
+					{
+						g_playersAgent.AddOrUpdate(player.Slot,
+							key => (null, selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString()),
+							(key, oldValue) => (oldValue.CT, selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString())
+						);
+					}
+
+					if (weaponSync != null)
+					{
+						_ = Task.Run(async () =>
+						{
+							await weaponSync.SyncAgentToDatabase(playerInfo);
+						});
+					}
+				};
 			};
 
 			// Command to open the weapon selection menu for players

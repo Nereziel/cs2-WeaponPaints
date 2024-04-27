@@ -2,6 +2,9 @@
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Entities;
+using CounterStrikeSharp.API.Modules.Memory;
+using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
+using System.Runtime.InteropServices;
 
 namespace WeaponPaints
 {
@@ -27,6 +30,8 @@ namespace WeaponPaints
 
 			try
 			{
+				_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+				/*
 				if (Config.Additional.SkinEnabled)
 				{
 					_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
@@ -47,6 +52,7 @@ namespace WeaponPaints
 				{
 					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
 				}
+				*/
 			}
 			catch (Exception)
 			{
@@ -102,8 +108,7 @@ namespace WeaponPaints
 		private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
 			if (!Config.Additional.SkinEnabled) return;
-			if (player is null || weapon is null || !weapon.IsValid || !Utility.IsPlayerValid(player)) return;
-			if (!gPlayerWeaponsInfo.ContainsKey(player.Slot)) return;
+			if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out System.Collections.Concurrent.ConcurrentDictionary<int, WeaponInfo>? _value)) return;
 
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
 
@@ -160,9 +165,9 @@ namespace WeaponPaints
 				return;
 			}
 
-			if (!gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex) || gPlayerWeaponsInfo[player.Slot][weaponDefIndex].Paint == 0) return;
+			if (!gPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out WeaponInfo? value) || value.Paint == 0) return;
 
-			WeaponInfo weaponInfo = gPlayerWeaponsInfo[player.Slot][weaponDefIndex];
+			WeaponInfo weaponInfo = value;
 			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
 			weapon.AttributeManager.Item.ItemID = 16384;
 			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
@@ -214,6 +219,7 @@ namespace WeaponPaints
 
 			GivePlayerMusicKit(player);
 			GivePlayerAgent(player);
+
 			Server.NextFrame(() =>
 			{
 				RefreshGloves(player);
@@ -241,21 +247,25 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
-		/*
+
 		public HookResult OnGiveNamedItemPost(DynamicHook hook)
 		{
-			var itemServices = hook.GetParam<CCSPlayer_ItemServices>(0);
-			var weapon = hook.GetReturn<CBasePlayerWeapon>(0);
-			if (!weapon.DesignerName.Contains("weapon"))
-				return HookResult.Continue;
+			try
+			{
+				var itemServices = hook.GetParam<CCSPlayer_ItemServices>(0);
+				var weapon = hook.GetReturn<CBasePlayerWeapon>();
+				if (!weapon.DesignerName.Contains("weapon"))
+					return HookResult.Continue;
 
-			var player = GetPlayerFromItemServices(itemServices);
-			if (player != null)
-				GivePlayerWeaponSkin(player, weapon);
+				var player = GetPlayerFromItemServices(itemServices);
+				if (player != null)
+					GivePlayerWeaponSkin(player, weapon);
+			}
+			catch { }
 
 			return HookResult.Continue;
 		}
-		*/
+
 
 		public void OnEntityCreated(CEntityInstance entity)
 		{
@@ -266,7 +276,7 @@ namespace WeaponPaints
 				Server.NextFrame(() =>
 				{
 					var weapon = new CBasePlayerWeapon(entity.Handle);
-					if (weapon == null || !weapon.IsValid || weapon.OwnerEntity.Value == null) return;
+					if (weapon == null || !weapon.IsValid) return;
 
 					try
 					{
@@ -305,6 +315,8 @@ namespace WeaponPaints
 
 		private void OnTick()
 		{
+			if (!Config.Additional.ShowSkinImage) return;
+
 			foreach (var player in Utilities.GetPlayers().Where(p =>
 							p is not null && p.IsValid && p.PlayerPawn != null && p.PlayerPawn.IsValid &&
 							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE && p.SteamID.ToString().Length == 17
@@ -312,7 +324,7 @@ namespace WeaponPaints
 							)
 				)
 			{
-				if (Config.Additional.ShowSkinImage && PlayerWeaponImage.TryGetValue(player.Slot, out string? value) && !string.IsNullOrEmpty(value))
+				if (PlayerWeaponImage.TryGetValue(player.Slot, out string? value) && !string.IsNullOrEmpty(value))
 				{
 					player.PrintToCenterHtml("<img src='{PATH}'</img>".Replace("{PATH}", value));
 				}
@@ -324,11 +336,15 @@ namespace WeaponPaints
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
 
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
-			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
+			RegisterEventHandler<EventRoundStart>(OnRoundStart);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
 			RegisterListener<Listeners.OnEntityCreated>(OnEntityCreated);
-			RegisterListener<Listeners.OnTick>(OnTick);
-			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
+
+			if (Config.Additional.ShowSkinImage)
+				RegisterListener<Listeners.OnTick>(OnTick);
+
+			if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+				VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
 	}
 }

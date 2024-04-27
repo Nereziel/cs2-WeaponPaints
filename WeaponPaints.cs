@@ -10,7 +10,7 @@ using System.Collections.Concurrent;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(191)]
+[MinimumApiVersion(215)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
@@ -75,23 +75,23 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ "weapon_knife_kukri", "Kukri Knife" }
 	};
 
-	internal static WeaponPaintsConfig _config = new WeaponPaintsConfig();
+	internal static WeaponPaintsConfig _config = new();
 	internal static IStringLocalizer? _localizer;
-	internal static Dictionary<int, int> g_knifePickupCount = new Dictionary<int, int>();
-	internal static ConcurrentDictionary<int, string> g_playersKnife = new ConcurrentDictionary<int, string>();
-	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new ConcurrentDictionary<int, ushort>();
-	internal static ConcurrentDictionary<int, ushort> g_playersMusic = new ConcurrentDictionary<int, ushort>();
-	internal static ConcurrentDictionary<int, (string? CT, string? T)> g_playersAgent = new ConcurrentDictionary<int, (string?, string?)>();
-	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>>();
-	internal static List<JObject> skinsList = new List<JObject>();
-	internal static List<JObject> glovesList = new List<JObject>();
-	internal static List<JObject> agentsList = new List<JObject>();
-	internal static List<JObject> musicList = new List<JObject>();
+	internal static Dictionary<int, int> g_knifePickupCount = new();
+	internal static ConcurrentDictionary<int, string> g_playersKnife = new();
+	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new();
+	internal static ConcurrentDictionary<int, ushort> g_playersMusic = new();
+	internal static ConcurrentDictionary<int, (string? CT, string? T)> g_playersAgent = new();
+	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new();
+	internal static List<JObject> skinsList = new();
+	internal static List<JObject> glovesList = new();
+	internal static List<JObject> agentsList = new();
+	internal static List<JObject> musicList = new();
 	internal static WeaponSynchronization? weaponSync;
 	public static bool g_bCommandsAllowed = true;
 	internal Dictionary<int, string> PlayerWeaponImage = new();
 
-	internal static Dictionary<int, DateTime> commandsCooldown = new Dictionary<int, DateTime>();
+	internal static Dictionary<int, DateTime> commandsCooldown = new();
 	internal static Database? _database;
 
 	internal static MemoryFunctionVoid<nint, string, float> CAttributeList_SetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
@@ -160,7 +160,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.3a";
+	public override string ModuleVersion => "2.4d";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -177,7 +177,10 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 			foreach (var player in Utilities.GetPlayers())
 			{
-				if (weaponSync == null || player is null || !player.IsValid || player.SteamID.ToString().Length != 17 || player.IsBot ||
+				if (weaponSync == null)
+					break;
+
+				if (player is null || !player.IsValid || player.SteamID.ToString().Length != 17 || string.IsNullOrEmpty(player.IpAddress) || player.IsBot ||
 					player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
 					continue;
 
@@ -197,6 +200,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					IpAddress = player?.IpAddress?.Split(":")[0]
 				};
 
+				_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+
+				/*
 				if (Config.Additional.SkinEnabled)
 				{
 					_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
@@ -217,13 +223,14 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				{
 					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
 				}
+				*/
 			}
 		}
 
-		Utility.LoadSkinsFromFile(ModuleDirectory + "/skins.json");
-		Utility.LoadGlovesFromFile(ModuleDirectory + "/gloves.json");
-		Utility.LoadAgentsFromFile(ModuleDirectory + "/agents.json");
-		Utility.LoadMusicFromFile(ModuleDirectory + "/music.json");
+		Utility.LoadSkinsFromFile(ModuleDirectory + "/skins.json", Logger);
+		Utility.LoadGlovesFromFile(ModuleDirectory + "/gloves.json", Logger);
+		Utility.LoadAgentsFromFile(ModuleDirectory + "/agents.json", Logger);
+		Utility.LoadMusicFromFile(ModuleDirectory + "/music.json", Logger);
 
 		if (Config.Additional.KnifeEnabled)
 			SetupKnifeMenu();
@@ -245,7 +252,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
 		{
 			Logger.LogError("You need to setup Database credentials in config!");
-			throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
+			Unload(false);
+			//throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
 		}
 
 		var builder = new MySqlConnectionStringBuilder
@@ -255,7 +263,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			Password = config.DatabasePassword,
 			Database = config.DatabaseName,
 			Port = (uint)config.DatabasePort,
-			Pooling = true
+			Pooling = true,
+			MaximumPoolSize = 640,
+			ConnectionReset = false
 		};
 
 		_database = new(builder.ConnectionString);
