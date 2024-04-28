@@ -89,6 +89,6 @@ namespace WeaponPaints
 		public string Website { get; set; } = "example.com/skins";
 
 		[JsonPropertyName("Additional")]
-		public Additional Additional { get; set; } = new Additional();
+		public Additional Additional { get; set; } = new();
 	}
 }

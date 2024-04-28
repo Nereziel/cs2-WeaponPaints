@@ -15,7 +15,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
 
-	internal static readonly Dictionary<string, string> weaponList = new()
+	private static readonly Dictionary<string, string> WeaponList = new()
 	{
 		{"weapon_deagle", "Desert Eagle"},
 		{"weapon_elite", "Dual Berettas"},
@@ -75,9 +75,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ "weapon_knife_kukri", "Kukri Knife" }
 	};
 
-	internal static WeaponPaintsConfig _config = new();
+	private static WeaponPaintsConfig _config = new();
 	internal static IStringLocalizer? _localizer;
-	internal static Dictionary<int, int> g_knifePickupCount = new();
+	private static Dictionary<int, int> g_knifePickupCount = new();
 	internal static ConcurrentDictionary<int, string> g_playersKnife = new();
 	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new();
 	internal static ConcurrentDictionary<int, ushort> g_playersMusic = new();
@@ -88,16 +88,18 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static List<JObject> agentsList = new();
 	internal static List<JObject> musicList = new();
 	internal static WeaponSynchronization? weaponSync;
-	public static bool g_bCommandsAllowed = true;
-	internal Dictionary<int, string> PlayerWeaponImage = new();
+	private static bool g_bCommandsAllowed = true;
+	private Dictionary<int, string> PlayerWeaponImage = new();
 
-	internal static Dictionary<int, DateTime> commandsCooldown = new();
+	private static Dictionary<int, DateTime> commandsCooldown = new();
 	internal static Database? _database;
 
-	internal static MemoryFunctionVoid<nint, string, float> CAttributeList_SetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
-	internal static MemoryFunctionVoid<CBaseModelEntity, string, UInt64> CBaseModelEntity_SetBodygroup = new(GameData.GetSignature("CBaseModelEntity_SetBodygroup"));
+	private static readonly MemoryFunctionVoid<nint, string, float> CAttributeListSetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
 
-	public static Dictionary<int, string> WeaponDefindex { get; } = new Dictionary<int, string>
+	private static readonly MemoryFunctionVoid<CBaseModelEntity, string, ulong> CBaseModelEntitySetBodygroup =
+		new(GameData.GetSignature("CBaseModelEntity_SetBodygroup"));
+
+	private static Dictionary<int, string> WeaponDefindex { get; } = new Dictionary<int, string>
 	{
 		{ 1, "weapon_deagle" },
 		{ 2, "weapon_elite" },
@@ -160,7 +162,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.4d";
+	public override string ModuleVersion => "2.4e";
 
 	public static WeaponPaintsConfig GetWeaponPaintsConfig()
 	{
@@ -175,22 +177,15 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{
 			OnMapStart(string.Empty);
 
-			foreach (var player in Utilities.GetPlayers())
+			foreach (var player in Enumerable.OfType<CCSPlayerController>(Utilities.GetPlayers().TakeWhile(player => weaponSync != null)).Where(player => player.IsValid && player.SteamID.ToString().Length == 17 && !string.IsNullOrEmpty(player.IpAddress) && player is { IsBot: false, IsHLTV: false, Connected: PlayerConnectedState.PlayerConnected }))
 			{
-				if (weaponSync == null)
-					break;
-
-				if (player is null || !player.IsValid || player.SteamID.ToString().Length != 17 || string.IsNullOrEmpty(player.IpAddress) || player.IsBot ||
-					player.IsHLTV || player.Connected != PlayerConnectedState.PlayerConnected)
-					continue;
-
 				g_knifePickupCount[player.Slot] = 0;
 				gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
 				g_playersKnife.TryRemove(player.Slot, out _);
 				g_playersGlove.TryRemove(player.Slot, out _);
 				g_playersAgent.TryRemove(player.Slot, out _);
 
-				PlayerInfo playerInfo = new PlayerInfo
+				PlayerInfo? playerInfo = new PlayerInfo
 				{
 					UserId = player.UserId,
 					Slot = player.Slot,
@@ -200,30 +195,10 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					IpAddress = player?.IpAddress?.Split(":")[0]
 				};
 
-				_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
-
-				/*
-				if (Config.Additional.SkinEnabled)
+				_ = Task.Run(async () =>
 				{
-					_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
-				}
-				if (Config.Additional.KnifeEnabled)
-				{
-					_ = Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
-				}
-				if (Config.Additional.GloveEnabled)
-				{
-					_ = Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
-				}
-				if (Config.Additional.AgentEnabled)
-				{
-					_ = Task.Run(async () => await weaponSync.GetAgentFromDatabase(playerInfo));
-				}
-				if (Config.Additional.MusicEnabled)
-				{
-					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
-				}
-				*/
+					if (weaponSync != null) await weaponSync.GetPlayerData(playerInfo);
+				});
 			}
 		}
 
@@ -268,7 +243,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			ConnectionReset = false
 		};
 
-		_database = new(builder.ConnectionString);
+		_database = new Database(builder.ConnectionString);
 
 		_ = Utility.CheckDatabaseTables();
 

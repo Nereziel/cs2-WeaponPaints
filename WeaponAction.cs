@@ -11,7 +11,7 @@ namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
-		internal static void GiveKnifeToPlayer(CCSPlayerController? player)
+		private static void GiveKnifeToPlayer(CCSPlayerController? player)
 		{
 			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
 
@@ -21,11 +21,11 @@ namespace WeaponPaints
 			player.GiveNamedItem(CsItem.Knife);
 		}
 
-		internal static bool PlayerHasKnife(CCSPlayerController? player)
+		private static bool PlayerHasKnife(CCSPlayerController? player)
 		{
 			if (!_config.Additional.KnifeEnabled) return false;
 
-			if (player == null || !player.IsValid || player.PlayerPawn == null || !player.PlayerPawn.IsValid)
+			if (player == null || !player.IsValid || !player.PlayerPawn.IsValid)
 			{
 				return false;
 			}
@@ -37,18 +37,16 @@ namespace WeaponPaints
 			if (weapons == null) return false;
 			foreach (var weapon in weapons)
 			{
-				if (weapon != null && weapon.IsValid && weapon.Value != null && weapon.Value.IsValid)
+				if (!weapon.IsValid || weapon.Value == null || !weapon.Value.IsValid) continue;
+				if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
 				{
-					if (weapon.Value.DesignerName.Contains("knife") || weapon.Value.DesignerName.Contains("bayonet"))
-					{
-						return true;
-					}
+					return true;
 				}
 			}
 			return false;
 		}
 
-		internal void RefreshWeapons(CCSPlayerController? player)
+		private void RefreshWeapons(CCSPlayerController? player)
 		{
 			if (!g_bCommandsAllowed) return;
 			if (player == null || !player.IsValid || player.PlayerPawn?.Value == null || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE)
@@ -58,9 +56,9 @@ namespace WeaponPaints
 
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
 
-			if (weapons == null || weapons.Count == 0)
+			if (weapons.Count == 0)
 				return;
-			if (player.Team == CsTeam.None || player.Team == CsTeam.Spectator)
+			if (player.Team is CsTeam.None or CsTeam.Spectator)
 				return;
 
 			int playerTeam = player.TeamNum;
@@ -69,37 +67,33 @@ namespace WeaponPaints
 
 			foreach (var weapon in weapons)
 			{
-				if (weapon == null || !weapon.IsValid || weapon.Value == null ||
+				if (!weapon.IsValid || weapon.Value == null ||
 					!weapon.Value.IsValid || !weapon.Value.DesignerName.Contains("weapon_"))
 					continue;
 
 				CCSWeaponBaseGun gun = weapon.Value.As<CCSWeaponBaseGun>();
 
 				if (weapon.Value.Entity == null) continue;
-				if (weapon.Value.OwnerEntity == null) continue;
 				if (!weapon.Value.OwnerEntity.IsValid) continue;
-				if (gun == null) continue;
 				if (gun.Entity == null) continue;
 				if (!gun.IsValid) continue;
 				if (!gun.VisibleinPVS) continue;
 
 				try
 				{
-					string? weaponByDefindex = null;
-
 					CCSWeaponBaseVData? weaponData = weapon.Value.As<CCSWeaponBase>().VData;
 
 					if (weaponData == null) continue;
 
 					if (weaponData.GearSlot == gear_slot_t.GEAR_SLOT_RIFLE || weaponData.GearSlot == gear_slot_t.GEAR_SLOT_PISTOL)
 					{
-						if (!WeaponDefindex.TryGetValue(weapon.Value.AttributeManager.Item.ItemDefinitionIndex, out weaponByDefindex))
+						if (!WeaponDefindex.TryGetValue(weapon.Value.AttributeManager.Item.ItemDefinitionIndex, out var weaponByDefindex))
 							continue;
 
 						int clip1 = weapon.Value.Clip1;
 						int reservedAmmo = weapon.Value.ReserveAmmo[0];
 
-						if (!weaponsWithAmmo.TryGetValue(weaponByDefindex, out List<(int, int)>? value))
+						if (!weaponsWithAmmo.TryGetValue(weaponByDefindex, out var value))
 						{
 							value = [];
 							weaponsWithAmmo.Add(weaponByDefindex, value);
@@ -107,7 +101,7 @@ namespace WeaponPaints
 
 						value.Add((clip1, reservedAmmo));
 
-						if (gun == null || gun.VData == null) return;
+						if (gun.VData == null) return;
 
 						weapon.Value.Remove();
 					}
@@ -121,16 +115,16 @@ namespace WeaponPaints
 
 			try
 			{
-				player.ExecuteClientCommandFromServer("slot 3");
-				player.ExecuteClientCommandFromServer("slot 3");
+				player.ExecuteClientCommand("slot 3");
+				player.ExecuteClientCommand("slot 3");
 
 				var weapon = player.PlayerPawn.Value.WeaponServices.ActiveWeapon;
-				if (weapon is null || !weapon.IsValid || weapon.Value == null) return;
+				if (!weapon.IsValid || weapon.Value == null) return;
 				CCSWeaponBaseVData? weaponData = weapon.Value.As<CCSWeaponBase>().VData;
 
 				if (weapon.Value.DesignerName.Contains("knife") || weaponData?.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
 				{
-					CCSWeaponBaseGun gun = weapon.Value.As<CCSWeaponBaseGun>();
+					CCSWeaponBaseGun gun;
 
 					AddTimer(0.3f, () =>
 					{
@@ -144,7 +138,7 @@ namespace WeaponPaints
 						{
 							if (player.TeamNum != playerTeam) return;
 
-							if (gun == null || !gun.IsValid || gun.State != CSWeaponState_t.WEAPON_NOT_CARRIED) return;
+							if (!gun.IsValid || gun.State != CSWeaponState_t.WEAPON_NOT_CARRIED) return;
 
 							gun.Remove();
 						});
@@ -171,11 +165,8 @@ namespace WeaponPaints
 						{
 							try
 							{
-								if (newWeapon != null)
-								{
-									newWeapon.Clip1 = ammo.Item1;
-									newWeapon.ReserveAmmo[0] = ammo.Item2;
-								}
+								newWeapon.Clip1 = ammo.Item1;
+								newWeapon.ReserveAmmo[0] = ammo.Item2;
 							}
 							catch (Exception ex)
 							{
@@ -195,7 +186,7 @@ namespace WeaponPaints
 			if (pawn == null || !pawn.IsValid || pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
 				return;
 
-			string model = pawn.CBodyComponent?.SceneNode?.GetSkeletonInstance()?.ModelState.ModelName ?? string.Empty;
+			var model = pawn.CBodyComponent?.SceneNode?.GetSkeletonInstance()?.ModelState.ModelName ?? string.Empty;
 			if (!string.IsNullOrEmpty(model))
 			{
 				pawn.SetModel("characters/models/tm_jumpsuit/tm_jumpsuit_varianta.vmdl");
@@ -204,35 +195,30 @@ namespace WeaponPaints
 
 			Instance.AddTimer(0.06f, () =>
 			{
+				CEconItemView item = pawn.EconGloves;
 				try
 				{
-					if (player == null || !player.IsValid)
+					if (!player.IsValid)
 						return;
 
-					if (pawn == null || !pawn.IsValid || pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+					if (!player.PawnIsAlive)
 						return;
 
-					if (g_playersGlove.TryGetValue(player.Slot, out var gloveInfo) && gloveInfo != 0)
-					{
-						CCSPlayerPawn? pawn = player.PlayerPawn.Value;
-						if (pawn == null || !pawn.IsValid || pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
-							return;
+					if (!g_playersGlove.TryGetValue(player.Slot, out var gloveInfo) || gloveInfo == 0) return;
 
-						WeaponInfo weaponInfo = gPlayerWeaponsInfo[player.Slot][gloveInfo];
+					WeaponInfo weaponInfo = gPlayerWeaponsInfo[player.Slot][gloveInfo];
 
-						CEconItemView item = pawn.EconGloves;
-						item.ItemDefinitionIndex = gloveInfo;
-						item.ItemIDLow = 16384 & 0xFFFFFFFF;
-						item.ItemIDHigh = 16384;
+					item.ItemDefinitionIndex = gloveInfo;
+					item.ItemIDLow = 16384 & 0xFFFFFFFF;
+					item.ItemIDHigh = 16384;
 
-						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weaponInfo.Paint);
-						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture seed", weaponInfo.Seed);
-						CAttributeList_SetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture wear", weaponInfo.Wear);
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weaponInfo.Paint);
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture seed", weaponInfo.Seed);
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture wear", weaponInfo.Wear);
 
-						item.Initialized = true;
+					item.Initialized = true;
 
-						CBaseModelEntity_SetBodygroup.Invoke(pawn, "default_gloves", 1);
-					}
+					CBaseModelEntitySetBodygroup.Invoke(pawn, "default_gloves", 1);
 				}
 				catch (Exception) { }
 			}, TimerFlags.STOP_ON_MAPCHANGE);
@@ -240,7 +226,7 @@ namespace WeaponPaints
 
 		private static int GetRandomPaint(int defindex)
 		{
-			if (skinsList == null || skinsList.Count == 0)
+			if (skinsList.Count == 0)
 				return 0;
 
 			Random rnd = new Random();
@@ -253,55 +239,46 @@ namespace WeaponPaints
 
 			var randomWeapon = filteredWeapons[rnd.Next(filteredWeapons.Count)];
 
-			if (int.TryParse(randomWeapon["paint"]?.ToString(), out int paintValue))
-				return paintValue;
-
-			return 0;
+			return int.TryParse(randomWeapon["paint"]?.ToString(), out var paintValue) ? paintValue : 0;
 		}
 
-		public static void SubclassChange(CBasePlayerWeapon weapon, ushort itemD)
+		private static void SubclassChange(CBasePlayerWeapon weapon, ushort itemD)
 		{
-			var SubclassChangeFunc = VirtualFunction.Create<nint, string, int>(
+			var subclassChangeFunc = VirtualFunction.Create<nint, string, int>(
 				GameData.GetSignature("ChangeSubclass")
 			);
 
-			SubclassChangeFunc(weapon.Handle, itemD.ToString());
+			subclassChangeFunc(weapon.Handle, itemD.ToString());
 		}
 
-		public static void UpdateWeaponMeshGroupMask(CBaseEntity weapon, bool isLegacy = false)
+		private static void UpdateWeaponMeshGroupMask(CBaseEntity weapon, bool isLegacy = false)
 		{
-			if (weapon.CBodyComponent != null && weapon.CBodyComponent.SceneNode != null)
-			{
-				var skeleton = weapon.CBodyComponent.SceneNode.GetSkeletonInstance();
-				if (skeleton != null)
-				{
-					var value = (ulong)(isLegacy ? 2 : 1);
+			if (weapon.CBodyComponent?.SceneNode == null) return;
+			var skeleton = weapon.CBodyComponent.SceneNode.GetSkeletonInstance();
+			var value = (ulong)(isLegacy ? 2 : 1);
 
-					if (skeleton.ModelState.MeshGroupMask != value)
-					{
-						skeleton.ModelState.MeshGroupMask = value;
-					}
-				}
+			if (skeleton.ModelState.MeshGroupMask != value)
+			{
+				skeleton.ModelState.MeshGroupMask = value;
 			}
 		}
 
-		public static void UpdatePlayerWeaponMeshGroupMask(CCSPlayerController player, CBasePlayerWeapon weapon, bool isLegacy)
+		private static void UpdatePlayerWeaponMeshGroupMask(CCSPlayerController player, CBasePlayerWeapon weapon, bool isLegacy)
 		{
 			UpdateWeaponMeshGroupMask(weapon, isLegacy);
 
 			var viewModel = GetPlayerViewModel(player);
-			if (viewModel != null && viewModel.Weapon.Value != null && viewModel.Weapon.Value.Index == weapon.Index)
-			{
-				UpdateWeaponMeshGroupMask(viewModel, isLegacy);
-				Utilities.SetStateChanged(viewModel, "CBaseEntity", "m_CBodyComponent");
-			}
+			if (viewModel == null || viewModel.Weapon.Value == null ||
+			    viewModel.Weapon.Value.Index != weapon.Index) return;
+			UpdateWeaponMeshGroupMask(viewModel, isLegacy);
+			Utilities.SetStateChanged(viewModel, "CBaseEntity", "m_CBodyComponent");
 		}
 
-		public static void GivePlayerAgent(CCSPlayerController player)
+		private static void GivePlayerAgent(CCSPlayerController player)
 		{
-			if (!g_playersAgent.ContainsKey(player.Slot)) return;
+			if (!g_playersAgent.TryGetValue(player.Slot, out var value)) return;
 
-			string? model = player.TeamNum == 3 ? g_playersAgent[player.Slot].CT : g_playersAgent[player.Slot].T;
+			var model = player.TeamNum == 3 ? value.CT : value.T;
 			if (string.IsNullOrEmpty(model)) return;
 
 			if (player.PlayerPawn.Value == null)
@@ -321,43 +298,41 @@ namespace WeaponPaints
 			}
 		}
 
-		public static void GivePlayerMusicKit(CCSPlayerController player)
+		private static void GivePlayerMusicKit(CCSPlayerController player)
 		{
-			if (!g_playersMusic.ContainsKey(player.Slot)) return;
+			if (!g_playersMusic.TryGetValue(player.Slot, out var value)) return;
 			if (player.InventoryServices == null) return;
 
-			Console.WriteLine(g_playersMusic[player.Slot]);
+			Console.WriteLine(value);
 
-			player.InventoryServices.MusicID = g_playersMusic[player.Slot];
+			player.InventoryServices.MusicID = value;
 		}
 
-		public static CCSPlayerController? GetPlayerFromItemServices(CCSPlayer_ItemServices itemServices)
+		private static CCSPlayerController? GetPlayerFromItemServices(CCSPlayer_ItemServices itemServices)
 		{
 			var pawn = itemServices.Pawn.Value;
-			if (pawn == null || !pawn.IsValid || !pawn.Controller.IsValid || pawn.Controller.Value == null) return null;
+			if (!pawn.IsValid || !pawn.Controller.IsValid || pawn.Controller.Value == null) return null;
 			var player = new CCSPlayerController(pawn.Controller.Value.Handle);
-			if (!Utility.IsPlayerValid(player)) return null;
-			return player;
+			return !Utility.IsPlayerValid(player) ? null : player;
 		}
 
 		private static unsafe CBaseViewModel? GetPlayerViewModel(CCSPlayerController player)
 		{
 			if (player.PlayerPawn.Value == null || player.PlayerPawn.Value.ViewModelServices == null) return null;
 			CCSPlayer_ViewModelServices viewModelServices = new(player.PlayerPawn.Value.ViewModelServices!.Handle);
-			nint ptr = viewModelServices.Handle + Schema.GetSchemaOffset("CCSPlayer_ViewModelServices", "m_hViewModel");
+			var ptr = viewModelServices.Handle + Schema.GetSchemaOffset("CCSPlayer_ViewModelServices", "m_hViewModel");
 			var references = MemoryMarshal.CreateSpan(ref ptr, 3);
 			var viewModel = (CHandle<CBaseViewModel>)Activator.CreateInstance(typeof(CHandle<CBaseViewModel>), references[0])!;
-			if (viewModel == null || viewModel.Value == null) return null;
-			return viewModel.Value;
+			return viewModel.Value == null ? null : viewModel.Value;
 		}
 
 		public static unsafe T[] GetFixedArray<T>(nint pointer, string @class, string member, int length) where T : CHandle<CBaseViewModel>
 		{
-			nint ptr = pointer + Schema.GetSchemaOffset(@class, member);
-			Span<nint> references = MemoryMarshal.CreateSpan(ref ptr, length);
-			T[] values = new T[length];
+			var ptr = pointer + Schema.GetSchemaOffset(@class, member);
+			var references = MemoryMarshal.CreateSpan(ref ptr, length);
+			var values = new T[length];
 
-			for (int i = 0; i < length; i++)
+			for (var i = 0; i < length; i++)
 			{
 				values[i] = (T)Activator.CreateInstance(typeof(T), references[i])!;
 			}
