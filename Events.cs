@@ -18,7 +18,7 @@ namespace WeaponPaints
 			if (player is null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID.ToString().Length != 17 ||
 				weaponSync == null || _database == null) return HookResult.Continue;
 
-			PlayerInfo playerInfo = new PlayerInfo
+			PlayerInfo? playerInfo = new PlayerInfo
 			{
 				UserId = player.UserId,
 				Slot = player.Slot,
@@ -54,7 +54,7 @@ namespace WeaponPaints
 				}
 				*/
 			}
-			catch (Exception)
+			catch
 			{
 			}
 
@@ -108,7 +108,7 @@ namespace WeaponPaints
 		private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
 			if (!Config.Additional.SkinEnabled) return;
-			if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out System.Collections.Concurrent.ConcurrentDictionary<int, WeaponInfo>? _value)) return;
+			if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return;
 
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
 
@@ -143,31 +143,23 @@ namespace WeaponPaints
 				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
 				weapon.FallbackSeed = 0;
 				weapon.FallbackWear = 0.000001f;
-				CAttributeList_SetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(
+					weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab",
+					weapon.FallbackPaintKit);
 
 				fallbackPaintKit = weapon.FallbackPaintKit;
 
 				if (fallbackPaintKit == 0)
 					return;
 
-				if (!isKnife)
-				{
-					if (newPaints.Contains(fallbackPaintKit))
-					{
-						UpdatePlayerWeaponMeshGroupMask(player, weapon, false);
-					}
-					else
-					{
-						UpdatePlayerWeaponMeshGroupMask(player, weapon, true);
-					}
-				}
-
+				if (isKnife) return;
+				UpdatePlayerWeaponMeshGroupMask(player, weapon, !newPaints.Contains(fallbackPaintKit));
 				return;
 			}
 
-			if (!gPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out WeaponInfo? value) || value.Paint == 0) return;
+			if (!gPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var value) || value.Paint == 0) return;
 
-			WeaponInfo weaponInfo = value;
+			var weaponInfo = value;
 			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
 			weapon.AttributeManager.Item.ItemID = 16384;
 			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
@@ -175,29 +167,20 @@ namespace WeaponPaints
 			weapon.FallbackPaintKit = weaponInfo.Paint;
 			weapon.FallbackSeed = weaponInfo.Seed;
 			weapon.FallbackWear = weaponInfo.Wear;
-			CAttributeList_SetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
 
 			fallbackPaintKit = weapon.FallbackPaintKit;
 
 			if (fallbackPaintKit == 0)
 				return;
 
-			if (!isKnife)
-			{
-				if (newPaints.Contains(fallbackPaintKit))
-				{
-					UpdatePlayerWeaponMeshGroupMask(player, weapon, false);
-				}
-				else
-				{
-					UpdatePlayerWeaponMeshGroupMask(player, weapon, true);
-				}
-			}
+			if (isKnife) return;
+			UpdatePlayerWeaponMeshGroupMask(player, weapon, !newPaints.Contains(fallbackPaintKit));
 		}
 
 		private void OnMapStart(string mapName)
 		{
-			if (!Config.Additional.KnifeEnabled && !Config.Additional.SkinEnabled && !Config.Additional.GloveEnabled) return;
+			if (Config.Additional is { KnifeEnabled: false, SkinEnabled: false, GloveEnabled: false }) return;
 
 			if (_database != null)
 				weaponSync = new WeaponSynchronization(_database, Config);
@@ -207,7 +190,7 @@ namespace WeaponPaints
 		{
 			CCSPlayerController? player = @event.Userid;
 
-			if (player is null || !player.IsValid || !Config.Additional.KnifeEnabled && !Config.Additional.GloveEnabled)
+			if (player is null || !player.IsValid || Config.Additional is { KnifeEnabled: false, GloveEnabled: false })
 				return HookResult.Continue;
 
 			CCSPlayerPawn? pawn = player.PlayerPawn.Value;
@@ -237,16 +220,9 @@ namespace WeaponPaints
 
 		private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
 		{
-			/*
-			NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
-			NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
-			NativeAPI.IssueServerCommand("mp_equipment_reset_rounds 0");
-			*/
 			g_bCommandsAllowed = true;
-
 			return HookResult.Continue;
 		}
-
 
 		public HookResult OnGiveNamedItemPost(DynamicHook hook)
 		{
@@ -266,7 +242,6 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
-
 		public void OnEntityCreated(CEntityInstance entity)
 		{
 			var designerName = entity.DesignerName;
@@ -276,7 +251,7 @@ namespace WeaponPaints
 				Server.NextFrame(() =>
 				{
 					var weapon = new CBasePlayerWeapon(entity.Handle);
-					if (weapon == null || !weapon.IsValid) return;
+					if (!weapon.IsValid) return;
 
 					try
 					{
@@ -289,7 +264,7 @@ namespace WeaponPaints
 
 						if (_steamid != null && _steamid.IsValid())
 						{
-							player = Utilities.GetPlayers().Where(p => p is not null && p.IsValid && p.SteamID == _steamid.SteamId64).FirstOrDefault();
+							player = Utilities.GetPlayers().FirstOrDefault(p => p.IsValid && p.SteamID == _steamid.SteamId64);
 
 							if (player == null)
 								player = Utilities.GetPlayerFromSteamId(weapon.OriginalOwnerXuidLow);
@@ -301,7 +276,7 @@ namespace WeaponPaints
 						}
 
 						if (string.IsNullOrEmpty(player?.PlayerName)) return;
-						if (player is null || !Utility.IsPlayerValid(player)) return;
+						if (!Utility.IsPlayerValid(player)) return;
 
 						GivePlayerWeaponSkin(player, weapon);
 					}
@@ -318,13 +293,13 @@ namespace WeaponPaints
 			if (!Config.Additional.ShowSkinImage) return;
 
 			foreach (var player in Utilities.GetPlayers().Where(p =>
-							p is not null && p.IsValid && p.PlayerPawn != null && p.PlayerPawn.IsValid &&
+							p is { IsValid: true, PlayerPawn.IsValid: true } &&
 							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE && p.SteamID.ToString().Length == 17
-							&& !p.IsBot && !p.IsHLTV && p.Connected == PlayerConnectedState.PlayerConnected
+							&& !p.IsBot && p is { IsHLTV: false, Connected: PlayerConnectedState.PlayerConnected }
 							)
 				)
 			{
-				if (PlayerWeaponImage.TryGetValue(player.Slot, out string? value) && !string.IsNullOrEmpty(value))
+				if (PlayerWeaponImage.TryGetValue(player.Slot, out var value) && !string.IsNullOrEmpty(value))
 				{
 					player.PrintToCenterHtml("<img src='{PATH}'</img>".Replace("{PATH}", value));
 				}

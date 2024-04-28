@@ -25,34 +25,42 @@ namespace WeaponPaints
 				{
 					string[] createTableQueries =
 					[
-				@"CREATE TABLE IF NOT EXISTS `wp_player_skins` (
-                        `steamid` varchar(18) NOT NULL,
-                        `weapon_defindex` int(6) NOT NULL,
-                        `weapon_paint_id` int(6) NOT NULL,
-                        `weapon_wear` float NOT NULL DEFAULT 0.000001,
-                        `weapon_seed` int(16) NOT NULL DEFAULT 0
-                    ) ENGINE=InnoDB",
+						"""
+						CREATE TABLE IF NOT EXISTS `wp_player_skins` (
+						                        `steamid` varchar(18) NOT NULL,
+						                        `weapon_defindex` int(6) NOT NULL,
+						                        `weapon_paint_id` int(6) NOT NULL,
+						                        `weapon_wear` float NOT NULL DEFAULT 0.000001,
+						                        `weapon_seed` int(16) NOT NULL DEFAULT 0
+						                    ) ENGINE=InnoDB
+						""",
 						@"CREATE TABLE IF NOT EXISTS `wp_player_knife` (
                         `steamid` varchar(18) NOT NULL,
                         `knife` varchar(64) NOT NULL,
                         UNIQUE (`steamid`)
                     ) ENGINE = InnoDB",
-						@"CREATE TABLE IF NOT EXISTS `wp_player_gloves` (
-					 `steamid` varchar(18) NOT NULL,
-					 `weapon_defindex` int(11) NOT NULL,
-                      UNIQUE (`steamid`)
-					) ENGINE=InnoDB",
-						@"CREATE TABLE IF NOT EXISTS `wp_player_agents` (
-					 `steamid` varchar(18) NOT NULL,
-					 `agent_ct` varchar(64) DEFAULT NULL,
-					 `agent_t` varchar(64) DEFAULT NULL,
-					 UNIQUE (`steamid`)
-					) ENGINE=InnoDB",
-						@"CREATE TABLE IF NOT EXISTS `wp_player_music` (
-					 `steamid` varchar(64) NOT NULL,
-					 `music_id` int(11) NOT NULL,
-					 UNIQUE (`steamid`)
-					) ENGINE=InnoDB",
+						"""
+						CREATE TABLE IF NOT EXISTS `wp_player_gloves` (
+											 `steamid` varchar(18) NOT NULL,
+											 `weapon_defindex` int(11) NOT NULL,
+						                      UNIQUE (`steamid`)
+											) ENGINE=InnoDB
+						""",
+						"""
+						CREATE TABLE IF NOT EXISTS `wp_player_agents` (
+											 `steamid` varchar(18) NOT NULL,
+											 `agent_ct` varchar(64) DEFAULT NULL,
+											 `agent_t` varchar(64) DEFAULT NULL,
+											 UNIQUE (`steamid`)
+											) ENGINE=InnoDB
+						""",
+						"""
+						CREATE TABLE IF NOT EXISTS `wp_player_music` (
+											 `steamid` varchar(64) NOT NULL,
+											 `music_id` int(11) NOT NULL,
+											 UNIQUE (`steamid`)
+											) ENGINE=InnoDB
+						""",
 					];
 
 					foreach (var query in createTableQueries)
@@ -78,16 +86,16 @@ namespace WeaponPaints
 		{
 			if (player is null || WeaponPaints.weaponSync is null) return false;
 
-			return (player.IsValid && !player.IsBot && !player.IsHLTV && player.UserId.HasValue);
+			return player is { IsValid: true, IsBot: false, IsHLTV: false, UserId: not null };
 		}
 
 		internal static void LoadSkinsFromFile(string filePath, ILogger logger)
 		{
+			string json = File.ReadAllText(filePath);
 			try
 			{
-				string json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.skinsList = deserializedSkins ?? new List<JObject>();
+				WeaponPaints.skinsList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
@@ -99,9 +107,9 @@ namespace WeaponPaints
 		{
 			try
 			{
-				string json = File.ReadAllText(filePath);
+				var json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.glovesList = deserializedSkins ?? new List<JObject>();
+				WeaponPaints.glovesList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
@@ -113,9 +121,9 @@ namespace WeaponPaints
 		{
 			try
 			{
-				string json = File.ReadAllText(filePath);
+				var json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.agentsList = deserializedSkins ?? new List<JObject>();
+				WeaponPaints.agentsList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
@@ -127,9 +135,9 @@ namespace WeaponPaints
 		{
 			try
 			{
-				string json = File.ReadAllText(filePath);
+				var json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.musicList = deserializedSkins ?? new List<JObject>();
+				WeaponPaints.musicList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
@@ -156,26 +164,26 @@ namespace WeaponPaints
 
 			try
 			{
-				HttpResponseMessage response = await client.GetAsync("https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/VERSION").ConfigureAwait(false);
+				var response = await client.GetAsync("https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/VERSION").ConfigureAwait(false);
 
 				if (response.IsSuccessStatusCode)
 				{
-					string remoteVersion = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+					var remoteVersion = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 					remoteVersion = remoteVersion.Trim();
 
-					int comparisonResult = string.Compare(version, remoteVersion);
+					var comparisonResult = string.CompareOrdinal(version, remoteVersion);
 
-					if (comparisonResult < 0)
+					switch (comparisonResult)
 					{
-						logger.LogWarning("Plugin is outdated! Check https://github.com/Nereziel/cs2-WeaponPaints");
-					}
-					else if (comparisonResult > 0)
-					{
-						logger.LogInformation("Probably dev version detected");
-					}
-					else
-					{
-						logger.LogInformation("Plugin is up to date");
+						case < 0:
+							logger.LogWarning("Plugin is outdated! Check https://github.com/Nereziel/cs2-WeaponPaints");
+							break;
+						case > 0:
+							logger.LogInformation("Probably dev version detected");
+							break;
+						default:
+							logger.LogInformation("Plugin is up to date");
+							break;
 					}
 				}
 				else
