@@ -29,8 +29,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 
 ## Plugin Configuration
 <details>
-  <summary>Click to expand</summary>
-<code><pre>{
+<pre><code>{
 	"Version": 6, // Don't touch
 	"DatabaseHost": "", // MySQL host
 	"DatabasePort": 3306, // MySQL port
@@ -52,7 +51,6 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 		"GiveRandomKnife": false,  // Give random knife to players if they didn't choose
 		"GiveRandomSkins": false  // Give random skins to players if they didn't choose
 },
-
 "ConfigVersion": 6  // Don't touch
 }</pre></code>
 </details>
@@ -65,18 +63,19 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Fill in database credentials and api key in `class/config.php`
 - Visit website and login via steam
 
-## Web Features
+### Web Features
 - Basic website
 - Steam login/logout
 - Change knife, paint, seed, wear, agents and music
 
 ## Troubleshooting
-<details>
-**Skins are not changing:**
-Set FollowCSGOGuidelines to false in cssharp’s core.jcon config
+<details>	
+	
+#### Skins are not changing
+- Set **FollowCSGOGuidelines** to **`false`** in cssharp **`core.json`** config.
 
-**Database error table does not exists:**
-Plugin is not loaded or configured with mysql credentials. Tables are auto-created by plugin.
+#### Database error table does not exists
+-  Plugin is not loaded or configured with mysql credentials. Tables are auto-created by plugin.
 
 </details>
 
