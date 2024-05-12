@@ -21,9 +21,9 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Translations support, submit a PR if you want to share your translation
 
 ## CS2 Server
-- Have working CounterStrikeSharp (**with RUNTIME!**)
+- Have working CounterStrikeSharp (**with RUNTIME**)
 - Download from Release and copy plugin to plugins
-- Run server with plugin, **it will generate config if installed correctly!**
+- Run server with plugin, **it will generate config if installed correctly**
 - Edit **`addons/counterstrikesharp/configs/plugins/WeaponPaints/WeaponPaints.json`** include database credentials
 - In **`addons/counterstrikesharp/configs/core.json`** set **FollowCS2ServerGuidelines** to **`false`**
 
@@ -57,10 +57,10 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
     
 ## Web install
 - Requires PHP >= 7.4 ***(Tested on php ver **`8.2.3`** and nginx webserver)***
-- **Before using website, make sure the plugin is correctly loaded in cs2 server!** Mysql tables are created by plugin not by website.
+- **Before using website, make sure the plugin is correctly loaded in cs2 server!** Mysql tables are created by plugin not by website
 - Copy website to web server ***(Folder `img` not needed)***
 - Get [Steam API Key](https://steamcommunity.com/dev/apikey)
-- Fill in database credentials and api key in `class/config.php`
+- Fill in database credentials and api key in **`class/config.php`**
 - Visit website and login via steam
 
 ### Web Features
