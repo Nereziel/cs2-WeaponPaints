@@ -3,7 +3,7 @@
 		"signatures": {
 			"library": "server",
 			"windows": "\\x48\\x89\\x5C\\x24\\x08\\x57\\x48\\x83\\xEC\\x20\\x48\\x8B\\xDA\\x48\\x8B\\xF9\\xE8\\x2A\\x2A\\x2A\\x2A\\x84\\xC0\\x74\\x2A\\x41\\xB0\\x01",
-			"linux": "\\x55\\x48\\x89\\xE5\\x41\\x57\\x41\\x56\\x41\\x55\\x49\\x89\\xF5\\x41\\x54\\x49\\x89\\xFC\\x53\\x48\\x81\\xEC\\xA8\\x00\\x00\\x00"
+			"linux": "55 48 89 E5 41 57 41 56 49 89 FE 41 55 41 54 45 31 E4 53 48 81 EC 98 00 00 00 48 85 F6 74 ? 80 3E 00 49 89 F5 75 ? 48 81 C4 98 00 00 00 44 89 E6 4C 89 F7 5B 41 5C 41 5D 41 5E 41 5F 5D E9 ? ? ? ? 0F 1F 44 00 00 4C 8D BD 40 FF FF FF 48 89 F7 E8 ? ? ? ? 45 31 C0 4C 89 EA 31 F6 49 89 C4 4C 89 FF 89 C3 48 C7 85 48 FF FF FF 00 00 00 00 48 B8 00 00 00 00 80 00 00 C0 44 89 E1 48 89 85 40 FF FF FF E8 ? ? ? ? 31 F6 4C 89 FF E8 ? ? ? ? 48 8D 8D 48 FF FF FF F6 85 47 FF FF FF 40 75 ? F7 85 44 FF FF FF FF FF FF 3F 48 8D 0D F3 D1 C7 00"
 		}
 	},
 	"CAttributeList_SetOrAddAttributeValueByName": {

@@ -91,7 +91,7 @@ namespace WeaponPaints
 
 		internal static void LoadSkinsFromFile(string filePath, ILogger logger)
 		{
-			string json = File.ReadAllText(filePath);
+			var json = File.ReadAllText(filePath);
 			try
 			{
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
