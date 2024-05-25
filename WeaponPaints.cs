@@ -7,10 +7,11 @@ using Microsoft.Extensions.Logging;
 using MySqlConnector;
 using Newtonsoft.Json.Linq;
 using System.Collections.Concurrent;
+using System.Runtime.InteropServices;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(215)]
+[MinimumApiVersion(230)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
@@ -96,8 +97,10 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	private static readonly MemoryFunctionVoid<nint, string, float> CAttributeListSetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
 
-	private static readonly MemoryFunctionVoid<CBaseModelEntity, string, ulong> CBaseModelEntitySetBodygroup =
-		new(GameData.GetSignature("CBaseModelEntity_SetBodygroup"));
+	private static readonly MemoryFunctionWithReturn<nint, string, int, int> SetBodygroupFunc = new(
+		GameData.GetSignature("CBaseModelEntity_SetBodygroup"));
+
+	private static readonly Func<nint, string, int, int> SetBodygroup = SetBodygroupFunc.Invoke;
 
 	private static Dictionary<int, string> WeaponDefindex { get; } = new Dictionary<int, string>
 	{
@@ -158,16 +161,15 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ 526, "weapon_knife_kukri" }
 	};
 
+	private const ulong MinimumCustomItemId = 65578;
+	private ulong _nextItemId = MinimumCustomItemId;
+	public static readonly bool IsWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+
 	public WeaponPaintsConfig Config { get; set; } = new();
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.4e";
-
-	public static WeaponPaintsConfig GetWeaponPaintsConfig()
-	{
-		return _config;
-	}
+	public override string ModuleVersion => "2.5a";
 
 	public override void Load(bool hotReload)
 	{
@@ -177,7 +179,11 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{
 			OnMapStart(string.Empty);
 
-			foreach (var player in Enumerable.OfType<CCSPlayerController>(Utilities.GetPlayers().TakeWhile(player => weaponSync != null)).Where(player => player.IsValid && player.SteamID.ToString().Length == 17 && !string.IsNullOrEmpty(player.IpAddress) && player is { IsBot: false, IsHLTV: false, Connected: PlayerConnectedState.PlayerConnected }))
+			foreach (var player in Enumerable
+				         .OfType<CCSPlayerController>(Utilities.GetPlayers().TakeWhile(player => weaponSync != null))
+				         .Where(player => player.IsValid &&
+					         !string.IsNullOrEmpty(player.IpAddress) && player is
+						         { IsBot: false, Connected: PlayerConnectedState.PlayerConnected }))
 			{
 				g_knifePickupCount[player.Slot] = 0;
 				gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
@@ -226,11 +232,18 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	{
 		if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
 		{
-			Logger.LogError("You need to setup Database credentials in config!");
+			Logger.LogError("You need to setup Database credentials in \"configs/plugins/WeaponPaints/WeaponPaints.json\"!");
 			Unload(false);
-			//throw new Exception("[WeaponPaints] You need to setup Database credentials in config!");
+			return;
 		}
 
+		if (!File.Exists(Path.GetDirectoryName(Path.GetDirectoryName(ModuleDirectory)) + "/gamedata/weaponpaints.json"))
+		{
+			Logger.LogError("You need to upload \"weaponpaints.json\" to \"gamedata directory\"!");
+			Unload(false);
+			return;
+		}
+		
 		var builder = new MySqlConnectionStringBuilder
 		{
 			Server = config.DatabaseHost,
@@ -240,7 +253,6 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			Port = (uint)config.DatabasePort,
 			Pooling = true,
 			MaximumPoolSize = 640,
-			ConnectionReset = false
 		};
 
 		_database = new Database(builder.ConnectionString);

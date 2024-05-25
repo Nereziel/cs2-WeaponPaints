@@ -11,6 +11,87 @@ namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
+				private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
+		{
+			if (!Config.Additional.SkinEnabled) return;
+			if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return;
+
+			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
+
+			if (isKnife && !g_playersKnife.ContainsKey(player.Slot) || isKnife && g_playersKnife[player.Slot] == "weapon_knife") return;
+
+			int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
+
+			if (isKnife)
+			{
+				var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == g_playersKnife[player.Slot]);
+				if (newDefIndex.Key == 0) return;
+
+				if (weapon.AttributeManager.Item.ItemDefinitionIndex != newDefIndex.Key)
+				{
+					SubclassChange(weapon, (ushort)newDefIndex.Key);
+				}
+
+				weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)newDefIndex.Key;
+				weapon.AttributeManager.Item.EntityQuality = 3;
+			}
+			
+			UpdatePlayerEconItemId(weapon.AttributeManager.Item);
+
+			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
+			int fallbackPaintKit = 0;
+			
+			weapon.AttributeManager.Item.AccountID = (uint)player.SteamID;
+
+			if (_config.Additional.GiveRandomSkin &&
+				 !gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex))
+			{
+				// Random skins
+				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
+				weapon.FallbackSeed = 0;
+				weapon.FallbackWear = 0.01f;
+
+				weapon.AttributeManager.Item.NetworkedDynamicAttributes.Attributes.RemoveAll();
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab",  GetRandomPaint(weaponDefIndex));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture seed", 0);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture wear", 0.01f);
+
+				weapon.AttributeManager.Item.AttributeList.Attributes.RemoveAll();
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture prefab",  GetRandomPaint(weaponDefIndex));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture seed", 0);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture wear", 0.01f);
+
+				fallbackPaintKit = weapon.FallbackPaintKit;
+
+				if (fallbackPaintKit == 0)
+					return;
+
+				if (isKnife) return;
+				UpdatePlayerWeaponMeshGroupMask(player, weapon, !newPaints.Contains(fallbackPaintKit));
+				return;
+			}
+
+			if (!gPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var value) || value.Paint == 0) return;
+
+			var weaponInfo = value;
+			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
+			weapon.AttributeManager.Item.ItemID = 16384;
+			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
+			weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
+			weapon.FallbackPaintKit = weaponInfo.Paint;
+			weapon.FallbackSeed = weaponInfo.Seed;
+			weapon.FallbackWear = weaponInfo.Wear;
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
+
+			fallbackPaintKit = weapon.FallbackPaintKit;
+
+			if (fallbackPaintKit == 0)
+				return;
+
+			if (isKnife) return;
+			UpdatePlayerWeaponMeshGroupMask(player, weapon, !newPaints.Contains(fallbackPaintKit));
+		}
+		
 		private static void GiveKnifeToPlayer(CCSPlayerController? player)
 		{
 			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
@@ -178,12 +259,12 @@ namespace WeaponPaints
 					}, TimerFlags.STOP_ON_MAPCHANGE);
 		}
 
-		private static void RefreshGloves(CCSPlayerController player)
+		private void GivePlayerGloves(CCSPlayerController player)
 		{
 			if (!Utility.IsPlayerValid(player) || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE) return;
 
 			CCSPlayerPawn? pawn = player.PlayerPawn.Value;
-			if (pawn == null || !pawn.IsValid || pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+			if (pawn == null || !pawn.IsValid)
 				return;
 
 			var model = pawn.CBodyComponent?.SceneNode?.GetSkeletonInstance()?.ModelState.ModelName ?? string.Empty;
@@ -218,7 +299,7 @@ namespace WeaponPaints
 
 					item.Initialized = true;
 
-					CBaseModelEntitySetBodygroup.Invoke(pawn, "default_gloves", 1);
+					SetBodygroup(pawn.Handle, "default_gloves", 1);
 				}
 				catch (Exception) { }
 			}, TimerFlags.STOP_ON_MAPCHANGE);
@@ -302,10 +383,37 @@ namespace WeaponPaints
 		{
 			if (!g_playersMusic.TryGetValue(player.Slot, out var value)) return;
 			if (player.InventoryServices == null) return;
-
-			Console.WriteLine(value);
-
+			
 			player.InventoryServices.MusicID = value;
+			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
+			player.MusicKitID = value;
+			Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitID");
+		}
+		
+		private void GiveOnItemPickup(CCSPlayerController player)
+		{
+			var pawn = player.PlayerPawn.Value;
+			if (pawn == null) return;
+			
+			var myWeapons = pawn.WeaponServices?.MyWeapons;
+			if (myWeapons == null) return;
+			foreach (var handle in myWeapons)
+			{
+				var weapon = handle.Value;
+				if (weapon != null && weapon.DesignerName.Contains("knife"))
+				{
+					GivePlayerWeaponSkin(player, weapon);
+				}
+			}
+		}
+		
+		private void UpdatePlayerEconItemId(CEconItemView econItemView)
+		{
+			var itemId = _nextItemId++;
+			econItemView.ItemID = itemId;
+
+			econItemView.ItemIDLow = (uint)itemId & 0xFFFFFFFF;
+			econItemView.ItemIDHigh = (uint)itemId >> 32;
 		}
 
 		private static CCSPlayerController? GetPlayerFromItemServices(CCSPlayer_ItemServices itemServices)
