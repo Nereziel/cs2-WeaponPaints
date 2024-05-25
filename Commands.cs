@@ -1,4 +1,5 @@
-﻿using CounterStrikeSharp.API.Core;
+﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Menu;
 using Newtonsoft.Json.Linq;
@@ -34,30 +35,8 @@ namespace WeaponPaints
 					if (weaponSync != null)
 					{
 						_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
-						/*
-						if (Config.Additional.SkinEnabled)
-						{
-							_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
-						}
-						if (Config.Additional.KnifeEnabled)
-						{
-							_ = Task.Run(async () => await weaponSync.GetKnifeFromDatabase(playerInfo));
-						}
-						if (Config.Additional.GloveEnabled)
-						{
-							_ = Task.Run(async () => await weaponSync.GetGloveFromDatabase(playerInfo));
-						}
-						if (Config.Additional.AgentEnabled)
-						{
-							_ = Task.Run(async () => await weaponSync.GetAgentFromDatabase(playerInfo));
-						}
-						if (Config.Additional.MusicEnabled)
-						{
-							_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
-						}
-						*/
 
-						RefreshGloves(player);
+						GivePlayerGloves(player);
 						RefreshWeapons(player);
 					}
 
@@ -358,76 +337,71 @@ namespace WeaponPaints
 
 				var selectedGlove = glovesList.FirstOrDefault(g => g.ContainsKey("paint_name") && g["paint_name"]?.ToString() == selectedPaintName);
 				var image = selectedGlove?["image"]?.ToString() ?? "";
-				if (
-					selectedGlove != null &&
-					selectedGlove.ContainsKey("weapon_defindex") &&
-					selectedGlove.ContainsKey("paint") &&
-					int.TryParse(selectedGlove["weapon_defindex"]?.ToString(), out var weaponDefindex) &&
-					int.TryParse(selectedGlove["paint"]?.ToString(), out var paint)
-				)
+				if (selectedGlove == null ||
+				    !selectedGlove.ContainsKey("weapon_defindex") ||
+				    !selectedGlove.ContainsKey("paint") ||
+				    !int.TryParse(selectedGlove["weapon_defindex"]?.ToString(), out var weaponDefindex) ||
+				    !int.TryParse(selectedGlove["paint"]?.ToString(), out var paint)) return;
+				if (Config.Additional.ShowSkinImage)
 				{
-					if (Config.Additional.ShowSkinImage)
-					{
-						PlayerWeaponImage[player.Slot] = image;
-						AddTimer(2.0f, () => PlayerWeaponImage.Remove(player.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
-					}
-
-					PlayerInfo playerInfo = new PlayerInfo
-					{
-						UserId = player.UserId,
-						Slot = player.Slot,
-						Index = (int)player.Index,
-						SteamId = player.SteamID.ToString(),
-						Name = player.PlayerName,
-						IpAddress = player.IpAddress?.Split(":")[0]
-					};
-
-					if (paint != 0)
-					{
-						g_playersGlove[player.Slot] = (ushort)weaponDefindex;
-
-						if (!gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefindex))
-						{
-							WeaponInfo weaponInfo = new()
-							{
-								Paint = paint
-							};
-							gPlayerWeaponsInfo[player.Slot][weaponDefindex] = weaponInfo;
-						}
-					}
-					else
-					{
-						g_playersGlove.TryRemove(player.Slot, out _);
-					}
-
-					if (!string.IsNullOrEmpty(Localizer["wp_glove_menu_select"]))
-					{
-						player!.Print(Localizer["wp_glove_menu_select", selectedPaintName]);
-					}
-
-					if (weaponSync != null)
-					{
-						_ = Task.Run(async () =>
-						{
-							await weaponSync.SyncGloveToDatabase(playerInfo, weaponDefindex);
-
-							if (!gPlayerWeaponsInfo[playerInfo.Slot].TryGetValue(weaponDefindex, out var value))
-							{
-								value = new WeaponInfo();
-								gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex] = value;
-							}
-
-							value.Paint = paint;
-							value.Wear = 0.00f;
-							value.Seed = 0;
-
-							await weaponSync.SyncWeaponPaintsToDatabase(playerInfo);
-						});
-					}
-
-					RefreshGloves(player);
+					PlayerWeaponImage[player.Slot] = image;
+					AddTimer(2.0f, () => PlayerWeaponImage.Remove(player.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 				}
-				;
+
+				PlayerInfo playerInfo = new PlayerInfo
+				{
+					UserId = player.UserId,
+					Slot = player.Slot,
+					Index = (int)player.Index,
+					SteamId = player.SteamID.ToString(),
+					Name = player.PlayerName,
+					IpAddress = player.IpAddress?.Split(":")[0]
+				};
+
+				if (paint != 0)
+				{
+					g_playersGlove[player.Slot] = (ushort)weaponDefindex;
+
+					if (!gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefindex))
+					{
+						WeaponInfo weaponInfo = new()
+						{
+							Paint = paint
+						};
+						gPlayerWeaponsInfo[player.Slot][weaponDefindex] = weaponInfo;
+					}
+				}
+				else
+				{
+					g_playersGlove.TryRemove(player.Slot, out _);
+				}
+
+				if (!string.IsNullOrEmpty(Localizer["wp_glove_menu_select"]))
+				{
+					player!.Print(Localizer["wp_glove_menu_select", selectedPaintName]);
+				}
+
+				if (weaponSync == null) return;
+				
+				_ = Task.Run(async () =>
+				{
+					await weaponSync.SyncGloveToDatabase(playerInfo, weaponDefindex);
+
+					if (!gPlayerWeaponsInfo[playerInfo.Slot].TryGetValue(weaponDefindex, out var value))
+					{
+						value = new WeaponInfo();
+						gPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex] = value;
+					}
+
+					value.Paint = paint;
+					value.Wear = 0.00f;
+					value.Seed = 0;
+
+					await weaponSync.SyncWeaponPaintsToDatabase(playerInfo);
+				});
+				
+				AddTimer(0.1f, () => GivePlayerGloves(player));
+				AddTimer(0.15f, () => GivePlayerGloves(player));
 			};
 
 			// Add weapon options to the weapon selection menu
