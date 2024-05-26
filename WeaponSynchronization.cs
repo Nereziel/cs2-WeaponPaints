@@ -1,287 +1,322 @@
-﻿using Dapper;
+﻿using System.Collections.Concurrent;
+using Dapper;
 using MySqlConnector;
-using System.Collections.Concurrent;
 
-namespace WeaponPaints
+namespace WeaponPaints;
+
+internal class WeaponSynchronization
 {
-	internal class WeaponSynchronization
-	{
-		private readonly WeaponPaintsConfig _config;
-		private readonly Database _database;
+    private readonly WeaponPaintsConfig _config;
+    private readonly Database _database;
 
-		internal WeaponSynchronization(Database database, WeaponPaintsConfig config)
-		{
-			_database = database;
-			_config = config;
-		}
+    internal WeaponSynchronization(Database database, WeaponPaintsConfig config)
+    {
+        _database = database;
+        _config = config;
+    }
 
-		internal async Task GetPlayerData(PlayerInfo? player)
-		{
-			try
-			{
-				await using var connection = await _database.GetConnectionAsync();
-				
-				if (_config.Additional.KnifeEnabled)
-					GetKnifeFromDatabase(player, connection);
-				if (_config.Additional.GloveEnabled)
-					GetGloveFromDatabase(player, connection);
-				if (_config.Additional.AgentEnabled)
-					GetAgentFromDatabase(player, connection);
-				if (_config.Additional.MusicEnabled)
-					GetMusicFromDatabase(player, connection);
-				if (_config.Additional.SkinEnabled)
-					GetWeaponPaintsFromDatabase(player, connection);
-			}
-			catch (Exception ex)
-			{
-				// Log the exception or handle it appropriately
-				Console.WriteLine($"An error occurred: {ex.Message}");
-			}
-		}
+    internal async Task GetPlayerDatabaseIndex(PlayerInfo playerInfo)
+    {
+        if (playerInfo.SteamId == null || playerInfo.Slot == 0) return;
+        try
+        {
+            await using var connection = await _database.GetConnectionAsync();
+            const string query = "SELECT `id` FROM `wp_users` WHERE `steamid` = @steamid";
+            var databaseIndex =
+                await connection.QueryFirstOrDefaultAsync<int?>(query, new { steamid = playerInfo.SteamId });
 
-		private void GetKnifeFromDatabase(PlayerInfo? player, MySqlConnection connection)
-		{
-			try
-			{
-				if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player?.SteamId))
-					return;
+            if (databaseIndex != null)
+            {
+                WeaponPaints.g_playersDatabaseIndex[playerInfo.Slot] = (int)databaseIndex;
+            }
+            else
+            {
+                const string insertQuery = "INSERT INTO `wp_users` (`steamid`) VALUES (@steamid)";
+                await connection.ExecuteAsync(insertQuery, new { steamid = playerInfo.SteamId });
+                Console.WriteLine("SQL Insert Query: " + insertQuery);
+                databaseIndex =
+                    await connection.QueryFirstOrDefaultAsync<int?>(query, new { steamid = playerInfo.SteamId });
+                WeaponPaints.g_playersDatabaseIndex[playerInfo.Slot] = (int)databaseIndex;
+            }
 
-				const string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
-				var playerKnife = connection.QueryFirstOrDefault<string>(query, new { steamid = player.SteamId });
+            await GetPlayerData(playerInfo, connection);
+        }
+        catch (Exception ex)
+        {
+            Utility.Log($"An error occurred in GetPlayerDatabaseIndex: {ex.Message}");
+        }
+    }
 
-				if (!string.IsNullOrEmpty(playerKnife))
-				{
-					WeaponPaints.g_playersKnife[player.Slot] = playerKnife;
-				}
-			}
-			catch (Exception ex)
-			{
-				Utility.Log($"An error occurred in GetKnifeFromDatabase: {ex.Message}");
-			}
-		}
+    internal async Task GetPlayerData(PlayerInfo? player, MySqlConnection connection)
+    {
+        try
+        {
+            if (_config.Additional.KnifeEnabled)
+                GetKnifeFromDatabase(player, connection);
+            if (_config.Additional.GloveEnabled)
+                GetGloveFromDatabase(player, connection);
+            if (_config.Additional.AgentEnabled)
+                GetAgentFromDatabase(player, connection);
+            if (_config.Additional.MusicEnabled)
+                GetMusicFromDatabase(player, connection);
+            if (_config.Additional.SkinEnabled)
+                GetWeaponPaintsFromDatabase(player, connection);
+        }
+        catch (Exception ex)
+        {
+            // Log the exception or handle it appropriately
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+    }
 
-		private void GetGloveFromDatabase(PlayerInfo? player, MySqlConnection connection)
-		{
-			try
-			{
-				if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player?.SteamId))
-					return;
+    private void GetKnifeFromDatabase(PlayerInfo? player, MySqlConnection connection)
+    {
+        try
+        {
+            if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player?.SteamId.ToString()))
+                return;
 
-				const string query = "SELECT `weapon_defindex` FROM `wp_player_gloves` WHERE `steamid` = @steamid";
-				var gloveData = connection.QueryFirstOrDefault<ushort?>(query, new { steamid = player.SteamId });
+            const string query = "SELECT `knife` FROM `wp_users_knife` WHERE `user_id` = @userId";
+            var playerKnife = connection.QueryFirstOrDefault<string>(query,
+                new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot] });
 
-				if (gloveData != null)
-				{
-					WeaponPaints.g_playersGlove[player.Slot] = gloveData.Value;
-				}
-			}
-			catch (Exception ex)
-			{
-				Utility.Log($"An error occurred in GetGloveFromDatabase: {ex.Message}");
-			}
-		}
+            if (!string.IsNullOrEmpty(playerKnife)) WeaponPaints.g_playersKnife[player.Slot] = playerKnife;
+        }
+        catch (Exception ex)
+        {
+            Utility.Log($"An error occurred in GetKnifeFromDatabase: {ex.Message}");
+        }
+    }
 
-		private void GetAgentFromDatabase(PlayerInfo? player, MySqlConnection connection)
-		{
-			try
-			{
-				if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player?.SteamId))
-					return;
+    private void GetGloveFromDatabase(PlayerInfo? player, MySqlConnection connection)
+    {
+        try
+        {
+            if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player?.SteamId.ToString()))
+                return;
 
-				const string query = "SELECT `agent_ct`, `agent_t` FROM `wp_player_agents` WHERE `steamid` = @steamid";
-				var agentData = connection.QueryFirstOrDefault<(string, string)>(query, new { steamid = player.SteamId });
+            const string query = "SELECT `weapon_defindex` FROM `wp_users_gloves` WHERE `userId` = @userId";
+            var gloveData = connection.QueryFirstOrDefault<ushort?>(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot] });
 
-				if (agentData == default) return;
-				var agentCT = agentData.Item1;
-				var agentT = agentData.Item2;
+            if (gloveData != null) WeaponPaints.g_playersGlove[player.Slot] = gloveData.Value;
+        }
+        catch (Exception ex)
+        {
+            Utility.Log($"An error occurred in GetGloveFromDatabase: {ex.Message}");
+        }
+    }
 
-				if (!string.IsNullOrEmpty(agentCT) || !string.IsNullOrEmpty(agentT))
-				{
-					WeaponPaints.g_playersAgent[player.Slot] = (
-						agentCT,
-						agentT
-					);
-				}
-			}
-			catch (Exception ex)
-			{
-				Utility.Log($"An error occurred in GetAgentFromDatabase: {ex.Message}");
-			}
-		}
+    private void GetAgentFromDatabase(PlayerInfo? player, MySqlConnection connection)
+    {
+        try
+        {
+            if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player?.SteamId.ToString()))
+                return;
 
-		private void GetWeaponPaintsFromDatabase(PlayerInfo? player, MySqlConnection connection)
-		{
-			try
-			{
-				if (!_config.Additional.SkinEnabled || player == null || string.IsNullOrEmpty(player.SteamId))
-					return;
+            const string query = "SELECT `agent_ct`, `agent_t` FROM `wp_users_agents` WHERE `user_id` = @userId";
+            var agentData = connection.QueryFirstOrDefault<(string, string)>(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot] });
 
-				var weaponInfos = new ConcurrentDictionary<int, WeaponInfo>();
+            if (agentData == default) return;
+            var agentCT = agentData.Item1;
+            var agentT = agentData.Item2;
 
-				const string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
-				var playerSkins = connection.Query<dynamic>(query, new { steamid = player.SteamId });
+            if (!string.IsNullOrEmpty(agentCT) || !string.IsNullOrEmpty(agentT))
+                WeaponPaints.g_playersAgent[player.Slot] = (
+                    agentCT,
+                    agentT
+                );
+        }
+        catch (Exception ex)
+        {
+            Utility.Log($"An error occurred in GetAgentFromDatabase: {ex.Message}");
+        }
+    }
 
-				foreach (var row in playerSkins)
-				{
-					int weaponDefIndex = row?.weapon_defindex ?? 0;
-					int weaponPaintId = row?.weapon_paint_id ?? 0;
-					float weaponWear = row?.weapon_wear ?? 0f;
-					int weaponSeed = row?.weapon_seed ?? 0;
+    private void GetWeaponPaintsFromDatabase(PlayerInfo? player, MySqlConnection connection)
+    {
+        try
+        {
+            if (!_config.Additional.SkinEnabled || player == null || string.IsNullOrEmpty(player.SteamId.ToString()))
+                return;
 
-					WeaponInfo weaponInfo = new WeaponInfo
-					{
-						Paint = weaponPaintId,
-						Seed = weaponSeed,
-						Wear = weaponWear
-					};
-
-					weaponInfos[weaponDefIndex] = weaponInfo;
-				}
-
-				WeaponPaints.gPlayerWeaponsInfo[player.Slot] = weaponInfos;
-			}
-			catch (Exception ex)
-			{
-				Utility.Log($"An error occurred in GetWeaponPaintsFromDatabase: {ex.Message}");
-			}
-		}
-
-		private void GetMusicFromDatabase(PlayerInfo? player, MySqlConnection connection)
-		{
-			try
-			{
-				if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player?.SteamId))
-					return;
-
-				const string query = "SELECT `music_id` FROM `wp_player_music` WHERE `steamid` = @steamid";
-				var musicData = connection.QueryFirstOrDefault<ushort?>(query, new { steamid = player.SteamId });
-
-				if (musicData != null)
-				{
-					WeaponPaints.g_playersMusic[player.Slot] = musicData.Value;
-				}
-			}
-			catch (Exception ex)
-			{
-				Utility.Log($"An error occurred in GetMusicFromDatabase: {ex.Message}");
-			}
-		}
+            var weaponInfos = new ConcurrentDictionary<ushort, WeaponInfo>();
 
 
+            const string query = "SELECT `weapon`, `paint`, `wear`, `seed`, `nametag` FROM `wp_users_items` WHERE `user_id` = @userId";
+            var playerSkins = connection.Query<dynamic>(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Index] });
 
-		internal async Task SyncKnifeToDatabase(PlayerInfo player, string knife)
-		{
-			if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player.SteamId) || string.IsNullOrEmpty(knife)) return;
+            foreach (var row in playerSkins)
+            {
+                ushort weaponDefIndex = row?.weapon_defindex ?? 0;
+                ushort weaponPaintId = row?.weapon_paint_id ?? 0;
+                float weaponWear = row?.weapon_wear ?? 0f;
+                ushort weaponSeed = row?.weapon_seed ?? 0;
+                string weaponNameTag = row?.nametag ?? string.Empty;
 
-			const string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
-			
-			try
-			{
-				await using var connection = await _database.GetConnectionAsync();
-				await connection.ExecuteAsync(query, new { steamid = player.SteamId, newKnife = knife });
-			}
-			catch (Exception e)
-			{
-				Utility.Log($"Error syncing knife to database: {e.Message}");
-			}
-		}
+                var weaponInfo = new WeaponInfo
+                {
+                    Paint = weaponPaintId,
+                    Seed = weaponSeed,
+                    Wear = weaponWear,
+                    NameTag = weaponNameTag
+                };
 
-		internal async Task SyncGloveToDatabase(PlayerInfo player, int defindex)
-		{
-			if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player.SteamId)) return;
+                weaponInfos[weaponDefIndex] = weaponInfo;
+            }
 
-			try
-			{
-				await using var connection = await _database.GetConnectionAsync();
-				const string query = "INSERT INTO `wp_player_gloves` (`steamid`, `weapon_defindex`) VALUES(@steamid, @weapon_defindex) ON DUPLICATE KEY UPDATE `weapon_defindex` = @weapon_defindex";
-				await connection.ExecuteAsync(query, new { steamid = player.SteamId, weapon_defindex = defindex });
-			}
-			catch (Exception e)
-			{
-				Utility.Log($"Error syncing glove to database: {e.Message}");
-			}
-		}
+            WeaponPaints.gPlayerWeaponsInfo[player.Slot] = weaponInfos;
+        }
+        catch (Exception ex)
+        {
+            Utility.Log($"An error occurred in GetWeaponPaintsFromDatabase: {ex.Message}");
+        }
+    }
 
-		internal async Task SyncAgentToDatabase(PlayerInfo player)
-		{
-			if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player.SteamId)) return;
+    private void GetMusicFromDatabase(PlayerInfo? player, MySqlConnection connection)
+    {
+        try
+        {
+            if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player?.SteamId.ToString()))
+                return;
 
-			const string query = """
-			                     					INSERT INTO `wp_player_agents` (`steamid`, `agent_ct`, `agent_t`)
-			                     					VALUES(@steamid, @agent_ct, @agent_t)
-			                     					ON DUPLICATE KEY UPDATE
-			                     						`agent_ct` = @agent_ct,
-			                     						`agent_t` = @agent_t
-			                     """;
-			try
-			{
-				await using var connection = await _database.GetConnectionAsync();
+            const string query = "SELECT `music` FROM `wp_users_music` WHERE `user_id` = @userId";
+            var musicData = connection.QueryFirstOrDefault<ushort?>(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot] });
 
-				await connection.ExecuteAsync(query, new { steamid = player.SteamId, agent_ct = WeaponPaints.g_playersAgent[player.Slot].CT, agent_t = WeaponPaints.g_playersAgent[player.Slot].T });
-			}
-			catch (Exception e)
-			{
-				Utility.Log($"Error syncing agents to database: {e.Message}");
-			}
-		}
+            if (musicData != null) WeaponPaints.g_playersMusic[player.Slot] = musicData.Value;
+        }
+        catch (Exception ex)
+        {
+            Utility.Log($"An error occurred in GetMusicFromDatabase: {ex.Message}");
+        }
+    }
 
-		internal async Task SyncWeaponPaintsToDatabase(PlayerInfo player)
-		{
-			if (string.IsNullOrEmpty(player.SteamId) || !WeaponPaints.gPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponsInfo))
-				return;
 
-			try
-			{
-				await using var connection = await _database.GetConnectionAsync();
+    internal async Task SyncKnifeToDatabase(PlayerInfo player, string knife)
+    {
+        if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player.SteamId.ToString()) ||
+            string.IsNullOrEmpty(knife)) return;
 
-				foreach (var (weaponDefIndex, weaponInfo) in weaponsInfo)
-				{
-					var paintId = weaponInfo.Paint;
-					var wear = weaponInfo.Wear;
-					var seed = weaponInfo.Seed;
+        const string query =
+            "INSERT INTO `wp_users_knife` (`user_id`, `knife`) VALUES(@userId, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
 
-					const string queryCheckExistence = "SELECT COUNT(*) FROM `wp_player_skins` WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
+        try
+        {
+            await using var connection = await _database.GetConnectionAsync();
+            await connection.ExecuteAsync(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot], newKnife = knife });
+        }
+        catch (Exception e)
+        {
+            Utility.Log($"Error syncing knife to database: {e.Message}");
+        }
+    }
 
-					var existingRecordCount = await connection.ExecuteScalarAsync<int>(queryCheckExistence, new { steamid = player.SteamId, weaponDefIndex = weaponDefIndex });
+    internal async Task SyncGloveToDatabase(PlayerInfo player, int defindex)
+    {
+        if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player.SteamId.ToString())) return;
 
-					string query;
-					object parameters;
+        try
+        {
+            await using var connection = await _database.GetConnectionAsync();
+            const string query =
+                "INSERT INTO `wp_users_gloves` (`user_id`, `weapon_defindex`) VALUES(@userId, @weapon_defindex) ON DUPLICATE KEY UPDATE `weapon_defindex` = @weapon_defindex";
+            await connection.ExecuteAsync(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot], weapon_defindex = defindex });
+        }
+        catch (Exception e)
+        {
+            Utility.Log($"Error syncing glove to database: {e.Message}");
+        }
+    }
 
-					if (existingRecordCount > 0)
-					{
-						query = "UPDATE `wp_player_skins` SET `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
-						parameters = new { steamid = player.SteamId, weaponDefIndex = weaponDefIndex, paintId, wear, seed };
-					}
-					else
-					{
-						query = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
-								"VALUES (@steamid, @weaponDefIndex, @paintId, @wear, @seed)";
-						parameters = new { steamid = player.SteamId, weaponDefIndex = weaponDefIndex, paintId, wear, seed };
-					}
+    internal async Task SyncAgentToDatabase(PlayerInfo player)
+    {
+        if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player.SteamId.ToString())) return;
 
-					await connection.ExecuteAsync(query, parameters);
-				}
-			}
-			catch (Exception e)
-			{
-				Utility.Log($"Error syncing weapon paints to database: {e.Message}");
-			}
-		}
+        const string query = """
+                             					INSERT INTO `wp_users_agents` (`user_id`, `agent_ct`, `agent_t`)
+                             					VALUES(@userId, @agent_ct, @agent_t)
+                             					ON DUPLICATE KEY UPDATE
+                             						`agent_ct` = @agent_ct,
+                             						`agent_t` = @agent_t
+                             """;
+        try
+        {
+            await using var connection = await _database.GetConnectionAsync();
 
-		internal async Task SyncMusicToDatabase(PlayerInfo player, ushort music)
-		{
-			if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player.SteamId)) return;
+            await connection.ExecuteAsync(query,
+                new
+                {
+                    userId = WeaponPaints.g_playersDatabaseIndex[player.Slot], agent_ct = WeaponPaints.g_playersAgent[player.Slot].CT,
+                    agent_t = WeaponPaints.g_playersAgent[player.Slot].T
+                });
+        }
+        catch (Exception e)
+        {
+            Utility.Log($"Error syncing agents to database: {e.Message}");
+        }
+    }
 
-			try
-			{
-				await using var connection = await _database.GetConnectionAsync();
-				const string query = "INSERT INTO `wp_player_music` (`steamid`, `music_id`) VALUES(@steamid, @newMusic) ON DUPLICATE KEY UPDATE `music_id` = @newMusic";
-				await connection.ExecuteAsync(query, new { steamid = player.SteamId, newMusic = music });
-			}
-			catch (Exception e)
-			{
-				Utility.Log($"Error syncing music kit to database: {e.Message}");
-			}
-		}
-	}
+    internal async Task SyncWeaponPaintsToDatabase(PlayerInfo player)
+    {
+        if (string.IsNullOrEmpty(player.SteamId.ToString()) ||
+            !WeaponPaints.gPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponsInfo))
+            return;
+
+        try
+        {
+            await using var connection = await _database.GetConnectionAsync();
+
+            foreach (var (weaponDefIndex, weaponInfo) in weaponsInfo)
+            {
+                var paintId = weaponInfo.Paint;
+                var wear = weaponInfo.Wear;
+                var seed = weaponInfo.Seed;
+
+                const string queryCheckExistence =
+                    "SELECT COUNT(*) FROM `wp_users_items` WHERE `user_id` = @userId AND `weapon_defindex` = @weaponDefIndex";
+
+                var existingRecordCount = await connection.ExecuteScalarAsync<int>(queryCheckExistence,
+                    new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot], weaponDefIndex });
+
+                string query;
+                object parameters;
+
+                if (existingRecordCount > 0)
+                {
+                    query =
+                        "UPDATE `wp_users_items` SET `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed WHERE `user_id` = @userId AND `weapon_defindex` = @weaponDefIndex";
+                    parameters = new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot], weaponDefIndex, paintId, wear, seed };
+                }
+                else
+                {
+                    query =
+                        "INSERT INTO `wp_users_items` (`user_id`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
+                        "VALUES (@userId, @weaponDefIndex, @paintId, @wear, @seed)";
+                    parameters = new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot], weaponDefIndex, paintId, wear, seed };
+                }
+
+                await connection.ExecuteAsync(query, parameters);
+            }
+        }
+        catch (Exception e)
+        {
+            Utility.Log($"Error syncing weapon paints to database: {e.Message}");
+        }
+    }
+
+    internal async Task SyncMusicToDatabase(PlayerInfo player, ushort music)
+    {
+        if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player.SteamId.ToString())) return;
+
+        try
+        {
+            await using var connection = await _database.GetConnectionAsync();
+            const string query =
+                "INSERT INTO `wp_users_music` (`user_id`, `music_id`) VALUES(@userId, @newMusic) ON DUPLICATE KEY UPDATE `music_id` = @newMusic";
+            await connection.ExecuteAsync(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot], newMusic = music });
+        }
+        catch (Exception e)
+        {
+            Utility.Log($"Error syncing music kit to database: {e.Message}");
+        }
+    }
 }

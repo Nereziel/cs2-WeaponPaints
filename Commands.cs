@@ -224,8 +224,8 @@ namespace WeaponPaints
 
 					if (firstSkin == null ||
 					    !firstSkin.TryGetValue("weapon_defindex", out var weaponDefIndexObj) ||
-					    !int.TryParse(weaponDefIndexObj.ToString(), out var weaponDefIndex) ||
-					    !int.TryParse(selectedPaintId, out var paintId)) return;
+					    !ushort.TryParse(weaponDefIndexObj.ToString(), out var weaponDefIndex) ||
+					    !ushort.TryParse(selectedPaintId, out var paintId)) return;
 					{
 						if (Config.Additional.ShowSkinImage && skinsList != null)
 						{

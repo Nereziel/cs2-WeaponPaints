@@ -8,7 +8,7 @@ $weapons = array (
 "weapon_aug" => 8,
 "weapon_awp" => 9,
 "weapon_famas" => 10,
-"weapon_g3sg1" => 11,
+"weapon_g3sg1" => 10,
 "weapon_galilar" => 13,
 "weapon_m249" => 14,
 "weapon_m4a1" => 16,
@@ -53,14 +53,7 @@ $weapons = array (
 "weapon_knife_stiletto" => 522,
 "weapon_knife_widowmaker" => 523,
 "weapon_knife_skeleton" => 525);
-
-
-
-$
-
-$json = json_decode(file_get_contents('https://bymykel.github.io/CSGO-API/api/en/skins.json')); 
-
-die(var_dump($json));
+$json = json_decode(file_get_contents('skins.json')); 
 echo "<pre>";
 foreach($json as $skin)
 {

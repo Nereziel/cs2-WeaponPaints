@@ -83,8 +83,10 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new();
 	internal static ConcurrentDictionary<int, ushort> g_playersMusic = new();
 	internal static ConcurrentDictionary<int, (string? CT, string? T)> g_playersAgent = new();
-	internal static ConcurrentDictionary<int, ConcurrentDictionary<int, WeaponInfo>> gPlayerWeaponsInfo = new();
-	internal static List<JObject> skinsList = new();
+	internal static ConcurrentDictionary<int, ConcurrentDictionary<ushort, WeaponInfo>> gPlayerWeaponsInfo = new();
+    internal static ConcurrentDictionary<int, int> g_playersDatabaseIndex = new();
+
+    internal static List<JObject> skinsList = new();
 	internal static List<JObject> glovesList = new();
 	internal static List<JObject> agentsList = new();
 	internal static List<JObject> musicList = new();
@@ -196,14 +198,14 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					UserId = player.UserId,
 					Slot = player.Slot,
 					Index = (int)player.Index,
-					SteamId = player?.SteamID.ToString(),
+					SteamId = player?.SteamID,
 					Name = player?.PlayerName,
 					IpAddress = player?.IpAddress?.Split(":")[0]
 				};
 
 				_ = Task.Run(async () =>
 				{
-					if (weaponSync != null) await weaponSync.GetPlayerData(playerInfo);
+					if (weaponSync != null) await weaponSync.GetPlayerDatabaseIndex(playerInfo);
 				});
 			}
 		}

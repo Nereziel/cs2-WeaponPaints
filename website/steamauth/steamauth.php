@@ -1,9 +1,11 @@
 <?php
-ob_start();
-session_start();
+//ob_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 function logoutbutton() {
-	echo "<form action='' method='get'><button class='btn btn-secondary' name='logout' type='submit'>Logout</button></form>"; //logout button
+	echo "<form><button class='btn btn-secondary' name='logout' type='submit'>Logout</button></form>"; //logout button
 }
 
 function loginbutton($buttonstyle = "square") {

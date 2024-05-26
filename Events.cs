@@ -23,14 +23,14 @@ namespace WeaponPaints
 				UserId = player.UserId,
 				Slot = player.Slot,
 				Index = (int)player.Index,
-				SteamId = player.SteamID.ToString(),
+				SteamId = player.SteamID,
 				Name = player.PlayerName,
 				IpAddress = player.IpAddress?.Split(":")[0]
 			};
 
 			try
 			{
-				_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+				_ = Task.Run(async () => await weaponSync.GetPlayerDatabaseIndex(playerInfo));
 				/*
 				if (Config.Additional.SkinEnabled)
 				{
@@ -54,9 +54,10 @@ namespace WeaponPaints
 				}
 				*/
 			}
-			catch
-			{
-			}
+			catch (Exception)
+            {
+                return HookResult.Continue;
+            }
 
 			return HookResult.Continue;
 		}
@@ -68,7 +69,9 @@ namespace WeaponPaints
 
 			if (player is null || !player.IsValid || player.IsBot) return HookResult.Continue;
 
-			if (Config.Additional.SkinEnabled)
+            g_playersDatabaseIndex.TryRemove(player.Slot, out _);
+
+            if (Config.Additional.SkinEnabled)
 			{
 				gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
 			}

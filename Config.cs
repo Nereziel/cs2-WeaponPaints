@@ -20,7 +20,10 @@ namespace WeaponPaints
 		[JsonPropertyName("SkinEnabled")]
 		public bool SkinEnabled { get; set; } = true;
 
-		[JsonPropertyName("CommandWpEnabled")]
+        [JsonPropertyName("NameTagEnabled")]
+        public bool NameTagEnabled { get; set; } = true;
+
+        [JsonPropertyName("CommandWpEnabled")]
 		public bool CommandWpEnabled { get; set; } = true;
 
 		[JsonPropertyName("CommandKillEnabled")]
@@ -62,7 +65,7 @@ namespace WeaponPaints
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-		public override int Version { get; set; } = 6;
+		public override int Version { get; set; } = 7;
 
 		[JsonPropertyName("DatabaseHost")]
 		public string DatabaseHost { get; set; } = "";
