@@ -33,7 +33,53 @@ class UtilsClass
 
         return $skins;
     }
+    /**
+     * Retrieve music data from the JSON file.
+     *
+     * @return array An associative array containing music data.
+     */
+    public static function musicFromJson()
+    {
+        $music = array();
+        $jsonFilePath = __DIR__ . "/../data/music.json";
 
+        if (file_exists($jsonFilePath) && is_readable($jsonFilePath)) {
+            $json = json_decode(file_get_contents($jsonFilePath), true);
+
+            foreach ($json as $track) {
+                $music[$track['id']] = array(
+                    'name' => $track['name'],
+                    'image' => $track['image'],
+                );
+            }
+        } else {
+            // Handle file not found or unreadable error
+            // You can throw an exception or log an error message
+        }
+
+        return $music;
+    }
+    public static function glovesFromJson()
+    {
+        $gloves = array();
+        $jsonFilePath = __DIR__ . "/../data/gloves.json";
+
+        if (file_exists($jsonFilePath) && is_readable($jsonFilePath)) {
+            $json = json_decode(file_get_contents($jsonFilePath), true);
+
+            foreach ($json as $glove) {
+                $gloves[$glove['weapon_defindex']][$glove['paint']] = array(
+                    'paint_name' => $glove['paint_name'],
+                    'image_url' => $glove['image'],
+                );
+            }
+        } else {
+            // Handle file not found or unreadable error
+            // You can throw an exception or log an error message
+        }
+
+        return $gloves;
+    }
     /**
      * Retrieve weapons data from the skin data array.
      *

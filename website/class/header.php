@@ -1,10 +1,14 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Set security headers to enhance security
-header("X-Frame-Options: SAMEORIGIN");
-header("X-XSS-Protection: 1; mode=block");
-header("X-Content-Type-Options: nosniff");
-header("Referrer-Policy: no-referrer-when-downgrade");
-header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://code.jquery.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://cdn.jsdelivr.net https://steamcommunity-a.akamaihd.net https://raw.githubusercontent.com;");
+// header("X-Frame-Options: SAMEORIGIN");
+// header("X-XSS-Protection: 1; mode=block");
+// header("X-Content-Type-Options: nosniff");
+// header("Referrer-Policy: no-referrer-when-downgrade");
+// header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://code.jquery.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://cdn.jsdelivr.net https://steamcommunity-a.akamaihd.net https://raw.githubusercontent.com;");
 
 
 // Include necessary classes and files
@@ -29,11 +33,14 @@ if (isset($_SESSION['steamid'])) {
     // Get weapons and skins information
     $weapons = UtilsClass::getWeaponsFromArray();
     $skins = UtilsClass::skinsFromJson();
+    $gloves = UtilsClass::glovesFromJson();
 
     // Retrieve user's selected skins and knife
     $querySelected = $db->select("SELECT `weapon`, `paint`, `wear`, `seed`, `nametag` FROM `wp_users_items` WHERE `user_id` = :user_id", ["user_id" => $userDbIndex]);
     $selectedSkins = UtilsClass::getSelectedSkins($querySelected);
     $selectedKnifeResult = $db->select("SELECT `knife` FROM `wp_users_knife` WHERE `user_id` = :user_id", ["user_id" => $userDbIndex]);
+    $selectedGlovesResult = $db->select("SELECT `weapon_defindex` FROM `wp_users_gloves` WHERE `user_id` = :user_id", ["user_id" => $userDbIndex]);
+    $selectedGloves = !empty($selectedGlovesResult) ? $selectedGlovesResult[0] : $gloves[0][0];
 
     // Determine user's selected knife or set default knife
     if (!empty($selectedKnifeResult)) {

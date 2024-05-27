@@ -20,8 +20,11 @@ require 'class/header.php';
         <div class='card-group mt-2'>
             <!-- Display user's selected knife -->
             <?php require_once 'view/display_knife.php'; ?>
+            <!-- Display user's selected gloves -->
+            <?php require_once 'view/display_gloves.php'; ?>
             <!-- Display user's selected skins for different weapons -->
             <?php require_once 'view/display_weapons.php'; ?>
+
         </div>
     <?php endif; ?>
     <!-- Footer section -->
