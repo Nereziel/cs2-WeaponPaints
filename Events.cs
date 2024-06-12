@@ -103,6 +103,9 @@ namespace WeaponPaints
 
 			if (_database != null)
 				weaponSync = new WeaponSynchronization(_database, Config);
+
+			if (weaponSync != null)
+				Task.Run(async () => await weaponSync.PurgeExpiredUsers());
 		}
 
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)

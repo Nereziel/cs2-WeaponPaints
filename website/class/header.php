@@ -36,9 +36,9 @@ if (isset($_SESSION['steamid'])) {
     $gloves = UtilsClass::glovesFromJson();
 
     // Retrieve user's selected skins and knife
-    $querySelected = $db->select("SELECT `weapon`, `paint`, `wear`, `seed`, `nametag` FROM `wp_users_items` WHERE `user_id` = :user_id", ["user_id" => $userDbIndex]);
+    $querySelected = $db->select("SELECT `weapon`, `paint`, `wear`, `seed`, `nametag` FROM `wp_users_skins` WHERE `user_id` = :user_id", ["user_id" => $userDbIndex]);
     $selectedSkins = UtilsClass::getSelectedSkins($querySelected);
-    $selectedKnifeResult = $db->select("SELECT `knife` FROM `wp_users_knife` WHERE `user_id` = :user_id", ["user_id" => $userDbIndex]);
+    $selectedKnifeResult = $db->select("SELECT `knife` FROM `wp_users_knives` WHERE `user_id` = :user_id", ["user_id" => $userDbIndex]);
     $selectedGlovesResult = $db->select("SELECT `weapon_defindex` FROM `wp_users_gloves` WHERE `user_id` = :user_id", ["user_id" => $userDbIndex]);
     $selectedGloves = !empty($selectedGlovesResult) ? $selectedGlovesResult[0] : $gloves[0][0];
 
@@ -56,7 +56,7 @@ if (isset($_SESSION['steamid'])) {
 
         // Handle knife selection
         if ($ex[0] == "knife") {
-            $db->query("INSERT INTO `wp_users_knife` (`user_id`, `knife`) VALUES(:user_id, :knife) ON DUPLICATE KEY UPDATE `knife` = :knife", ["user_id" => $userDbIndex, "knife" => $knifes[$ex[1]]['weapon_name']]);
+            $db->query("INSERT INTO `wp_users_knives` (`user_id`, `knife`) VALUES(:user_id, :knife) ON DUPLICATE KEY UPDATE `knife` = :knife", ["user_id" => $userDbIndex, "knife" => $knifes[$ex[1]]['weapon_name']]);
         } else {
             // Handle skin selection
             if (array_key_exists($ex[1], $skins[$ex[0]]) && isset($_POST['wear']) && $_POST['wear'] >= 0.00 && $_POST['wear'] <= 1.00 && isset($_POST['seed'])) {
@@ -65,9 +65,9 @@ if (isset($_SESSION['steamid'])) {
 
                 // Check if the skin is already selected and update or insert accordingly
                 if (array_key_exists($ex[0], $selectedSkins)) {
-                    $db->query("UPDATE wp_users_items SET paint = :weapon_paint_id, wear = :weapon_wear, seed = :weapon_seed WHERE user_id = :user_id AND weapon = :weapon_defindex", ["user_id" => $userDbIndex, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
+                    $db->query("UPDATE wp_users_skins SET paint = :weapon_paint_id, wear = :weapon_wear, seed = :weapon_seed WHERE user_id = :user_id AND weapon = :weapon_defindex", ["user_id" => $userDbIndex, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
                 } else {
-                    $db->query("INSERT INTO wp_users_items (`user_id`, `weapon`, `paint`, `wear`, `seed`) VALUES (:user_id, :weapon_defindex, :weapon_paint_id, :weapon_wear, :weapon_seed)", ["user_id" => $userDbIndex, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
+                    $db->query("INSERT INTO wp_users_skins (`user_id`, `weapon`, `paint`, `wear`, `seed`) VALUES (:user_id, :weapon_defindex, :weapon_paint_id, :weapon_wear, :weapon_seed)", ["user_id" => $userDbIndex, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
                 }
             }
         }
