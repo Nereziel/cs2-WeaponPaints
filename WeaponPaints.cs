@@ -8,10 +8,11 @@ using MySqlConnector;
 using Newtonsoft.Json.Linq;
 using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
+using CounterStrikeSharp.API.Modules.Entities.Constants;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(230)]
+[MinimumApiVersion(238)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
@@ -79,17 +80,17 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	private static WeaponPaintsConfig _config = new();
 	internal static IStringLocalizer? _localizer;
 	private static Dictionary<int, int> g_knifePickupCount = new();
-	internal static ConcurrentDictionary<int, string> g_playersKnife = new();
+	internal static ConcurrentDictionary<int, ushort> g_playersKnife = new();
 	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new();
 	internal static ConcurrentDictionary<int, ushort> g_playersMusic = new();
 	internal static ConcurrentDictionary<int, (string? CT, string? T)> g_playersAgent = new();
 	internal static ConcurrentDictionary<int, ConcurrentDictionary<ushort, WeaponInfo>> gPlayerWeaponsInfo = new();
     internal static ConcurrentDictionary<int, int> g_playersDatabaseIndex = new();
 
-    internal static List<JObject> skinsList = new();
-	internal static List<JObject> glovesList = new();
-	internal static List<JObject> agentsList = new();
-	internal static List<JObject> musicList = new();
+    internal static List<JObject> skinsList = [];
+	internal static List<JObject> glovesList = [];
+	internal static List<JObject> agentsList = [];
+	internal static List<JObject> musicList = [];
 	internal static WeaponSynchronization? weaponSync;
 	private static bool g_bCommandsAllowed = true;
 	private Dictionary<int, string> PlayerWeaponImage = new();
@@ -162,7 +163,6 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		{ 525, "weapon_knife_skeleton" },
 		{ 526, "weapon_knife_kukri" }
 	};
-
 	private const ulong MinimumCustomItemId = 65578;
 	private ulong _nextItemId = MinimumCustomItemId;
 	public static readonly bool IsWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
@@ -180,7 +180,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		if (hotReload)
 		{
 			OnMapStart(string.Empty);
-
+	
 			foreach (var player in Enumerable
 				         .OfType<CCSPlayerController>(Utilities.GetPlayers().TakeWhile(player => weaponSync != null))
 				         .Where(player => player.IsValid &&
@@ -232,7 +232,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	public void OnConfigParsed(WeaponPaintsConfig config)
 	{
-		if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
+		if (config.DatabaseCredentials.DatabaseHost.Length < 1 || config.DatabaseCredentials.DatabaseName.Length < 1 || config.DatabaseCredentials.DatabaseUser.Length < 1)
 		{
 			Logger.LogError("You need to setup Database credentials in \"configs/plugins/WeaponPaints/WeaponPaints.json\"!");
 			Unload(false);
@@ -248,11 +248,11 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		
 		var builder = new MySqlConnectionStringBuilder
 		{
-			Server = config.DatabaseHost,
-			UserID = config.DatabaseUser,
-			Password = config.DatabasePassword,
-			Database = config.DatabaseName,
-			Port = (uint)config.DatabasePort,
+			Server = config.DatabaseCredentials.DatabaseHost,
+			UserID = config.DatabaseCredentials.DatabaseUser,
+			Password = config.DatabaseCredentials.DatabasePassword,
+			Database = config.DatabaseCredentials.DatabaseName,
+			Port = (uint)config.DatabaseCredentials.DatabasePort,
 			Pooling = true,
 			MaximumPoolSize = 640,
 		};

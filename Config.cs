@@ -3,6 +3,24 @@ using System.Text.Json.Serialization;
 
 namespace WeaponPaints
 {
+	public class DatabaseCredentials
+	{
+		[JsonPropertyName("DatabaseHost")]
+		public string DatabaseHost { get; set; } = "";
+
+		[JsonPropertyName("DatabasePort")]
+		public int DatabasePort { get; set; } = 3306;
+
+		[JsonPropertyName("DatabaseUser")]
+		public string DatabaseUser { get; set; } = "";
+
+		[JsonPropertyName("DatabasePassword")]
+		public string DatabasePassword { get; set; } = "";
+
+		[JsonPropertyName("DatabaseName")]
+		public string DatabaseName { get; set; } = "";
+	}
+
 	public class Additional
 	{
 		[JsonPropertyName("KnifeEnabled")]
@@ -23,35 +41,29 @@ namespace WeaponPaints
         [JsonPropertyName("NameTagEnabled")]
         public bool NameTagEnabled { get; set; } = true;
 
-        [JsonPropertyName("CommandWpEnabled")]
-		public bool CommandWpEnabled { get; set; } = true;
+		[JsonPropertyName("CommandsKnife")]
+		public List<string> CommandsKnife { get; set; } = ["knife", "knives"];
 
-		[JsonPropertyName("CommandKillEnabled")]
-		public bool CommandKillEnabled { get; set; } = true;
+		[JsonPropertyName("CommandsMusic")]
+		public List<string> CommandsMusic { get; set; } = ["music", "musickits", "mkit"];
 
-		[JsonPropertyName("CommandKnife")]
-		public string CommandKnife { get; set; } = "knife";
+		[JsonPropertyName("CommandsGlove")]
+		public List<string> CommandsGlove { get; set; } = ["gloves", "glove"];
 
-		[JsonPropertyName("CommandMusic")]
-		public string CommandMusic { get; set; } = "music";
+		[JsonPropertyName("CommandsAgent")]
+		public List<string> CommandsAgent { get; set; } = ["agents", "agent"];
 
-		[JsonPropertyName("CommandGlove")]
-		public string CommandGlove { get; set; } = "gloves";
+		[JsonPropertyName("CommandsInfo")]
+		public List<string> CommandsInfo { get; set; } = ["ws", "skininfo"];
 
-		[JsonPropertyName("CommandAgent")]
-		public string CommandAgent { get; set; } = "agents";
+		[JsonPropertyName("CommandsSkinSelection")]
+		public List<string> CommandsSkinSelection { get; set; } = ["skins", "skin"];
 
-		[JsonPropertyName("CommandSkin")]
-		public string CommandSkin { get; set; } = "ws";
+		[JsonPropertyName("CommandsRefresh")]
+		public List<string> CommandsRefresh { get; set; } = ["wp", "refreshskins"];
 
-		[JsonPropertyName("CommandSkinSelection")]
-		public string CommandSkinSelection { get; set; } = "skins";
-
-		[JsonPropertyName("CommandRefresh")]
-		public string CommandRefresh { get; set; } = "wp";
-
-		[JsonPropertyName("CommandKill")]
-		public string CommandKill { get; set; } = "kill";
+		[JsonPropertyName("CommandsKill")]
+		public List<string> CommandsKill { get; set; } = ["kill", "suicide"];
 
 		[JsonPropertyName("GiveRandomKnife")]
 		public bool GiveRandomKnife { get; set; } = false;
@@ -61,27 +73,21 @@ namespace WeaponPaints
 
 		[JsonPropertyName("ShowSkinImage")]
 		public bool ShowSkinImage { get; set; } = true;
+		
+		[JsonPropertyName("UseHtmlMenu")]
+		public bool UseHtmlMenu { get; set; } = true;
+		
+		[JsonPropertyName("ExpireOlderThan")]
+		public int ExpireOlderThan { get; set; } = 90;
 	}
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
 		public override int Version { get; set; } = 7;
-
-		[JsonPropertyName("DatabaseHost")]
-		public string DatabaseHost { get; set; } = "";
-
-		[JsonPropertyName("DatabasePort")]
-		public int DatabasePort { get; set; } = 3306;
-
-		[JsonPropertyName("DatabaseUser")]
-		public string DatabaseUser { get; set; } = "";
-
-		[JsonPropertyName("DatabasePassword")]
-		public string DatabasePassword { get; set; } = "";
-
-		[JsonPropertyName("DatabaseName")]
-		public string DatabaseName { get; set; } = "";
-
+		
+		[JsonPropertyName("DatabaseCredentials")]
+		public DatabaseCredentials DatabaseCredentials { get; set; } = new();
+		
 		[JsonPropertyName("CmdRefreshCooldownSeconds")]
 		public int CmdRefreshCooldownSeconds { get; set; } = 60;
 

@@ -21,20 +21,20 @@ public partial class WeaponPaints
         var isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
 
         if ((isKnife && !g_playersKnife.ContainsKey(player.Slot)) ||
-            (isKnife && g_playersKnife[player.Slot] == "weapon_knife")) return;
+            (isKnife && g_playersKnife[player.Slot] < 500)) return;
 
         int[] newPaints =
             [1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173];
 
         if (isKnife)
         {
-            var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == g_playersKnife[player.Slot]);
-            if (newDefIndex.Key == 0) return;
+            //var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == g_playersKnife[player.Slot]);
+            //if (newDefIndex.Key == 0) return;
 
-            if (weapon.AttributeManager.Item.ItemDefinitionIndex != newDefIndex.Key)
-                SubclassChange(weapon, (ushort)newDefIndex.Key);
+            if (weapon.AttributeManager.Item.ItemDefinitionIndex != g_playersKnife[player.Slot])
+                SubclassChange(weapon, (ushort)g_playersKnife[player.Slot]);
 
-            weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)newDefIndex.Key;
+            weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)g_playersKnife[player.Slot];
             weapon.AttributeManager.Item.EntityQuality = 3;
         }
 
@@ -46,7 +46,7 @@ public partial class WeaponPaints
         weapon.AttributeManager.Item.AccountID = (uint)player.SteamID;
 
         if (_config.Additional.GiveRandomSkin &&
-            !gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex))
+            !gPlayerWeaponsInfo[player.Slot].ContainsKey((ushort)weaponDefIndex))
         {
             // Random skins
             weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
@@ -80,7 +80,7 @@ public partial class WeaponPaints
             return;
         }
 
-        if (!gPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var value) || value.Paint == 0) return;
+        if (!gPlayerWeaponsInfo[player.Slot].TryGetValue((ushort)weaponDefIndex, out var value) || value.Paint == 0) return;
 
         var weaponInfo = value;
         //Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
