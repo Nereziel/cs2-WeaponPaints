@@ -71,7 +71,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 </details>
     
 ## Web install
-- Requires PHP >= 7.4 ***(Tested on php ver **`8.2.3`** and nginx webserver)***
+- Requires PHP >= 7.4 with curl and pdo_mysql ***(Tested on php ver **`8.2.3`** and nginx webserver)***
 - **Before using website, make sure the plugin is correctly loaded in cs2 server!** Mysql tables are created by plugin not by website.
 - Copy website to web server ***(Folder `img` not needed)***
 - Get [Steam API Key](https://steamcommunity.com/dev/apikey)
