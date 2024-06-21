@@ -1,4 +1,4 @@
-﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Menu;
@@ -8,53 +8,92 @@ namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
-		private void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
-		{
+        	private void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
+        	{
 			if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
 			if (!Utility.IsPlayerValid(player)) return;
 
 			if (player == null || !player.IsValid || player.UserId == null || player.IsBot) return;
 
-			PlayerInfo? playerInfo = new PlayerInfo
-			{
-				UserId = player.UserId,
-				Slot = player.Slot,
-				Index = (int)player.Index,
-				SteamId = player?.SteamID.ToString(),
-				Name = player?.PlayerName,
-				IpAddress = player?.IpAddress?.Split(":")[0]
-			};
+            		PlayerInfo? playerInfo = new PlayerInfo
+            		{
+                		UserId = player.UserId,
+               		 	Slot = player.Slot,
+                		Index = (int)player.Index,
+                		SteamId = player?.SteamID.ToString(),
+                		Name = player?.PlayerName,
+                		IpAddress = player?.IpAddress?.Split(":")[0]
+            		};
 
-			try
-			{
-				if (player != null && !commandsCooldown.TryGetValue(player.Slot, out var cooldownEndTime) ||
-	player != null && DateTime.UtcNow >= (commandsCooldown.TryGetValue(player.Slot, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
-				{
-					commandsCooldown[player.Slot] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
+            		try
+           		 {
+                		if (player != null && !commandsCooldown.TryGetValue(player.Slot, out var cooldownEndTime) ||
+    	player != null && DateTime.UtcNow >= (commandsCooldown.TryGetValue(player.Slot, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
+                		{
+                    			commandsCooldown[player.Slot] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 
-					if (weaponSync != null)
-					{
-						_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+                    			if (weaponSync != null)
+                    			{
+                        			_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
 
-						GivePlayerGloves(player);
-						RefreshWeapons(player);
-					}
+                        			GivePlayerGloves(player);
+                        			RefreshWeapons(player);
+                    			}
 
-					if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
-					{
-						player!.Print(Localizer["wp_command_refresh_done"]);
-					}
-					return;
-				}
-				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
-				{
-					player!.Print(Localizer["wp_command_cooldown"]);
-				}
+                    			if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
+                    			{
+                       			 	player!.Print(Localizer["wp_command_refresh_done"]);
+                    			}
+                    			return;
+                		}
+                		if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
+                		{
+                   		 	player!.Print(Localizer["wp_command_cooldown"]);
+                		}
 			}
-			catch (Exception) { }
-		}
+            		catch (Exception) { }
+        }
 
-		private void OnCommandWS(CCSPlayerController? player, CommandInfo command)
+        private void OnCommandRefreshBySteamId(CommandInfo command)
+        {
+		var player = Utilities.GetPlayerFromSteamId(Convert.ToUInt64(command.ArgByIndex(1)));
+
+            	if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
+            	if (!Utility.IsPlayerValid(player)) return;
+
+            	if (player == null || !player.IsValid || player.UserId == null || player.IsBot) return;
+
+            	PlayerInfo? playerInfo = new PlayerInfo
+            	{
+                	UserId = player.UserId,
+                	Slot = player.Slot,
+                	Index = (int)player.Index,
+                	SteamId = player?.SteamID.ToString(),
+                	Name = player?.PlayerName,
+                	IpAddress = player?.IpAddress?.Split(":")[0]
+            	};
+
+            	try
+            	{
+                	if (player != null && !commandsCooldown.TryGetValue(player.Slot, out var cooldownEndTime) ||
+    player != null && DateTime.UtcNow >= (commandsCooldown.TryGetValue(player.Slot, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
+                	{
+                    		commandsCooldown[player.Slot] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
+
+				if (weaponSync != null)
+				{
+					_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+
+					GivePlayerGloves(player);
+					RefreshWeapons(player);
+				}
+                   		return;
+                	}
+	        }
+            	catch (Exception) { }
+        }
+
+        private void OnCommandWS(CCSPlayerController? player, CommandInfo command)
 		{
 			if (!Config.Additional.SkinEnabled) return;
 			if (!Utility.IsPlayerValid(player)) return;
@@ -100,12 +139,17 @@ namespace WeaponPaints
 				if (!Utility.IsPlayerValid(player)) return;
 				OnCommandWS(player, info);
 			});
-			AddCommand($"css_{Config.Additional.CommandRefresh}", "Skins refresh", (player, info) =>
-			{
-				if (!Utility.IsPlayerValid(player)) return;
-				OnCommandRefresh(player, info);
-			});
-			if (Config.Additional.CommandKillEnabled)
+            AddCommand($"css_{Config.Additional.CommandRefresh}", "Skins refresh", (player, info) =>
+            {
+                if (!Utility.IsPlayerValid(player)) return;
+                OnCommandRefresh(player, info);
+            });
+            AddCommand($"css_steamid_{Config.Additional.CommandRefresh}", "Skins refresh by SteamID", (player, info) =>
+            {
+                if (Utility.IsPlayerValid(player)) return;
+                OnCommandRefreshBySteamId(info);
+            });
+            if (Config.Additional.CommandKillEnabled)
 			{
 				AddCommand($"css_{Config.Additional.CommandKill}", "kill yourself", (player, info) =>
 				{
