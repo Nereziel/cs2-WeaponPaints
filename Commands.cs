@@ -38,6 +38,8 @@ namespace WeaponPaints
 						_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
 
 						GivePlayerGloves(player);
+						GivePlayerAgent(player);
+						GivePlayerMusicKit(player);
 						RefreshWeapons(player);
 					}
 
