@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using Dapper;
 using MySqlConnector;
 
@@ -17,7 +17,7 @@ internal class WeaponSynchronization
 
     internal async Task GetPlayerDatabaseIndex(PlayerInfo playerInfo)
     {
-        if (playerInfo.SteamId == null || playerInfo.Slot < 0) return;
+        if (playerInfo.SteamId == null) return;
         Console.WriteLine("test");
         try
         {
