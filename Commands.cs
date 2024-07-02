@@ -587,7 +587,7 @@ namespace WeaponPaints
 
 				var selectedPaintName = option.Text;
 
-				var selectedMusic = musicList.FirstOrDefault(g => g.ContainsKey("name") && g["name"]?.ToString() == selectedPaintName);
+				var selectedMusic = musicList.FirstOrDefault(g => g.ContainsKey("name") && g["name"]?.ToString().Contains(selectedPaintName) == true);
 				if (selectedMusic != null)
 				{
 					if (!selectedMusic.ContainsKey("id") ||
@@ -621,7 +621,7 @@ namespace WeaponPaints
 
 					if (!string.IsNullOrEmpty(Localizer["wp_music_menu_select"]))
 					{
-						player!.Print(Localizer["wp_music_menu_select", selectedPaintName]);
+						player!.Print(Localizer["wp_music_menu_select", selectedMusic["name"] ?? selectedPaintName]);
 					}
 
 					if (weaponSync != null)
@@ -661,6 +661,8 @@ namespace WeaponPaints
 						});
 					}
 				}
+
+				GivePlayerMusicKit(player);
 			};
 
 			musicSelectionMenu.AddMenuOption(Localizer["None"], handleMusicSelection);
