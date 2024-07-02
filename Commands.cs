@@ -474,7 +474,7 @@ namespace WeaponPaints
 				var selectedPaintName = option.Text;
 				var selectedAgent = agentsList.FirstOrDefault(g =>
 					g.ContainsKey("agent_name") &&
-					g["agent_name"] != null && g["agent_name"]!.ToString() == selectedPaintName &&
+					g["agent_name"] != null && g["agent_name"]!.ToString().Contains(selectedPaintName) == true &&
 					g["team"] != null && (int)(g["team"]!) == player.TeamNum);
 
 				if (selectedAgent == null) return;
@@ -502,7 +502,7 @@ namespace WeaponPaints
 
 					if (!string.IsNullOrEmpty(Localizer["wp_agent_menu_select"]))
 					{
-						player!.Print(Localizer["wp_agent_menu_select", selectedPaintName]);
+						player!.Print(Localizer["wp_agent_menu_select", selectedAgent?["agent_name"] ?? selectedPaintName]);
 					}
 
 					if (player.TeamNum == 3)
@@ -524,6 +524,7 @@ namespace WeaponPaints
 						_ = Task.Run(async () =>
 						{
 							await weaponSync.SyncAgentToDatabase(playerInfo);
+							GivePlayerAgent(player);
 						});
 					}
 				};
