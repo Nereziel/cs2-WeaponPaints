@@ -1,4 +1,4 @@
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
@@ -40,8 +40,9 @@ namespace WeaponPaints
 						GivePlayerGloves(player);
 						GivePlayerAgent(player);
 						GivePlayerMusicKit(player);
-						GivePlayerPin(player);
 						RefreshWeapons(player);
+						AddTimer(0.1f, () => GivePlayerPin(player));
+						AddTimer(0.15f, () => GivePlayerPin(player));
 					}
 
 					if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
