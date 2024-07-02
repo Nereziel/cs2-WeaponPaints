@@ -11,7 +11,7 @@ namespace WeaponPaints
 	{
 		private void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
 		{
-			if (Config.Additional.CommandsRefresh.Count > 0 || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
+			if (Config.Additional.CommandsRefresh.Count == 0 || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
 			if (!Utility.IsPlayerValid(player)) return;
 
 			if (player == null || !player.IsValid || player.UserId == null || player.IsBot) return;
