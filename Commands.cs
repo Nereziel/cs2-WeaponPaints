@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
@@ -40,6 +40,7 @@ namespace WeaponPaints
 						GivePlayerGloves(player);
 						GivePlayerAgent(player);
 						GivePlayerMusicKit(player);
+						GivePlayerPin(player);
 						RefreshWeapons(player);
 					}
 

@@ -1,4 +1,4 @@
-﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Entities;
@@ -91,6 +91,10 @@ namespace WeaponPaints
 			{
 				g_playersMusic.TryRemove(player.Slot, out _);
 			}
+			if (Config.Additional.PinEnabled)
+			{
+				g_playersPin.TryRemove(player.Slot, out _);
+			}
 
 			commandsCooldown.Remove(player.Slot);
 
@@ -125,6 +129,7 @@ namespace WeaponPaints
 			GivePlayerMusicKit(player);
 			GivePlayerAgent(player);
 			GivePlayerGloves(player);
+			GivePlayerPin(player);
 
 			return HookResult.Continue;
 		}

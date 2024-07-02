@@ -41,6 +41,9 @@ namespace WeaponPaints
         [JsonPropertyName("NameTagEnabled")]
         public bool NameTagEnabled { get; set; } = true;
 
+		[JsonPropertyName("PinEnabled")]
+		public bool PinEnabled { get; set; } = true;
+
 		[JsonPropertyName("CommandsKnife")]
 		public List<string> CommandsKnife { get; set; } = ["knife", "knives"];
 

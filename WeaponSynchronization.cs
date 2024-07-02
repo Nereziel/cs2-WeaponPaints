@@ -1,4 +1,4 @@
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using Dapper;
 using MySqlConnector;
 
@@ -71,6 +71,8 @@ internal class WeaponSynchronization
                 GetMusicFromDatabase(player, connection);
             if (_config.Additional.SkinEnabled)
                 GetWeaponPaintsFromDatabase(player, connection);
+            if (_config.Additional.PinEnabled)
+                GetPinFromDatabase(player, connection);
         }
         catch (Exception ex)
         {
@@ -200,6 +202,24 @@ internal class WeaponSynchronization
         }
     }
 
+    private void GetPinFromDatabase(PlayerInfo? player, MySqlConnection connection)
+    {
+        try
+        {
+            if (!_config.Additional.PinEnabled || string.IsNullOrEmpty(player?.SteamId.ToString()))
+                return;
+
+            const string query = "SELECT `pin` FROM `wp_users_pins` WHERE `user_id` = @userId";
+            var pinData = connection.QueryFirstOrDefault<ushort?>(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot] });
+
+            if (pinData != null) WeaponPaints.g_playersPin[player.Slot] = pinData.Value;
+        }
+        catch (Exception ex)
+        {
+            Utility.Log($"An error occurred in GetPinFromDatabase: {ex.Message}");
+        }
+    }
+
     internal async Task PurgeExpiredUsers()
     {
         try
@@ -232,6 +252,9 @@ internal class WeaponSynchronization
                 await connection.ExecuteAsync(query, transaction: transaction);
                 
                 query = $"DELETE FROM wp_users_musics WHERE user_id IN ({ids})";
+                await connection.ExecuteAsync(query, transaction: transaction);
+
+                query = $"DELETE FROM wp_users_pins WHERE user_id IN ({ids})";
                 await connection.ExecuteAsync(query, transaction: transaction);
 
                 // Step 3: Delete users from wp_users
