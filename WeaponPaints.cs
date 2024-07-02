@@ -83,6 +83,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	internal static ConcurrentDictionary<int, ushort> g_playersKnife = new();
 	internal static ConcurrentDictionary<int, ushort> g_playersGlove = new();
 	internal static ConcurrentDictionary<int, ushort> g_playersMusic = new();
+	internal static ConcurrentDictionary<int, ushort> g_playersPin = new();
 	internal static ConcurrentDictionary<int, (string? CT, string? T)> g_playersAgent = new();
 	internal static ConcurrentDictionary<int, ConcurrentDictionary<ushort, WeaponInfo>> gPlayerWeaponsInfo = new();
     internal static ConcurrentDictionary<int, int> g_playersDatabaseIndex = new();

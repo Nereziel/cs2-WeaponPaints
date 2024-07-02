@@ -11,7 +11,7 @@ namespace WeaponPaints
 	{
 		private void OnCommandRefresh(CCSPlayerController? player, CommandInfo command)
 		{
-			if (Config.Additional.CommandsRefresh.Count > 0 || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
+			if (Config.Additional.CommandsRefresh.Count == 0 || !Config.Additional.SkinEnabled || !g_bCommandsAllowed) return;
 			if (!Utility.IsPlayerValid(player)) return;
 
 			if (player == null || !player.IsValid || player.UserId == null || player.IsBot) return;
@@ -38,7 +38,11 @@ namespace WeaponPaints
 						_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
 
 						GivePlayerGloves(player);
+						GivePlayerAgent(player);
+						GivePlayerMusicKit(player);
 						RefreshWeapons(player);
+						AddTimer(0.1f, () => GivePlayerPin(player));
+						AddTimer(0.15f, () => GivePlayerPin(player));
 					}
 
 					if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
@@ -471,7 +475,7 @@ namespace WeaponPaints
 				var selectedPaintName = option.Text;
 				var selectedAgent = agentsList.FirstOrDefault(g =>
 					g.ContainsKey("agent_name") &&
-					g["agent_name"] != null && g["agent_name"]!.ToString() == selectedPaintName &&
+					g["agent_name"] != null && g["agent_name"]!.ToString().Contains(selectedPaintName) == true &&
 					g["team"] != null && (int)(g["team"]!) == player.TeamNum);
 
 				if (selectedAgent == null) return;
@@ -499,7 +503,7 @@ namespace WeaponPaints
 
 					if (!string.IsNullOrEmpty(Localizer["wp_agent_menu_select"]))
 					{
-						player!.Print(Localizer["wp_agent_menu_select", selectedPaintName]);
+						player!.Print(Localizer["wp_agent_menu_select", selectedAgent?["agent_name"] ?? selectedPaintName]);
 					}
 
 					if (player.TeamNum == 3)
@@ -521,6 +525,7 @@ namespace WeaponPaints
 						_ = Task.Run(async () =>
 						{
 							await weaponSync.SyncAgentToDatabase(playerInfo);
+							GivePlayerAgent(player);
 						});
 					}
 				};
@@ -584,7 +589,7 @@ namespace WeaponPaints
 
 				var selectedPaintName = option.Text;
 
-				var selectedMusic = musicList.FirstOrDefault(g => g.ContainsKey("name") && g["name"]?.ToString() == selectedPaintName);
+				var selectedMusic = musicList.FirstOrDefault(g => g.ContainsKey("name") && g["name"]?.ToString().Contains(selectedPaintName) == true);
 				if (selectedMusic != null)
 				{
 					if (!selectedMusic.ContainsKey("id") ||
@@ -618,7 +623,7 @@ namespace WeaponPaints
 
 					if (!string.IsNullOrEmpty(Localizer["wp_music_menu_select"]))
 					{
-						player!.Print(Localizer["wp_music_menu_select", selectedPaintName]);
+						player!.Print(Localizer["wp_music_menu_select", selectedMusic["name"] ?? selectedPaintName]);
 					}
 
 					if (weaponSync != null)
@@ -658,6 +663,8 @@ namespace WeaponPaints
 						});
 					}
 				}
+
+				GivePlayerMusicKit(player);
 			};
 
 			musicSelectionMenu.AddMenuOption(Localizer["None"], handleMusicSelection);
