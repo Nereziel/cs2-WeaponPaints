@@ -401,6 +401,18 @@ public partial class WeaponPaints
         Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitID");
     }
 
+    private static void GivePlayerPin(CCSPlayerController player)
+    {
+        if (!g_playersPin.TryGetValue(player.Slot, out var value)) return;
+        if (player.InventoryServices == null) return;
+
+        for (var index = 0; index < player.InventoryServices.Rank.Length; index++)
+        {
+            player.InventoryServices.Rank[index] = index == 5 ? (MedalRank_t)value : MedalRank_t.MEDAL_RANK_NONE;
+            Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
+        }
+    }
+
     private void GiveOnItemPickup(CCSPlayerController player)
     {
         var pawn = player.PlayerPawn.Value;

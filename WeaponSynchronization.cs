@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using Dapper;
 using MySqlConnector;
 
@@ -29,7 +29,7 @@ internal class WeaponSynchronization
             if (databaseIndex != null)
             {
                 WeaponPaints.g_playersDatabaseIndex[playerInfo.Slot] = (int)databaseIndex;
-                query = "UPDATE `wp_users` SET `last_update` = @lastUpdate WHERE `id` = @databaseIndex";
+                query = "UPDATE `wp_users` SET `last_online` = @lastUpdate WHERE `id` = @databaseIndex";
                 await connection.ExecuteAsync(query, new
                 {
                     lastUpdate = DateTime.Now,
@@ -71,6 +71,8 @@ internal class WeaponSynchronization
                 GetMusicFromDatabase(player, connection);
             if (_config.Additional.SkinEnabled)
                 GetWeaponPaintsFromDatabase(player, connection);
+            if (_config.Additional.PinEnabled)
+                GetPinFromDatabase(player, connection);
         }
         catch (Exception ex)
         {
@@ -200,6 +202,24 @@ internal class WeaponSynchronization
         }
     }
 
+    private void GetPinFromDatabase(PlayerInfo? player, MySqlConnection connection)
+    {
+        try
+        {
+            if (!_config.Additional.PinEnabled || string.IsNullOrEmpty(player?.SteamId.ToString()))
+                return;
+
+            const string query = "SELECT `pin` FROM `wp_users_pins` WHERE `user_id` = @userId";
+            var pinData = connection.QueryFirstOrDefault<ushort?>(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot] });
+
+            if (pinData != null) WeaponPaints.g_playersPin[player.Slot] = pinData.Value;
+        }
+        catch (Exception ex)
+        {
+            Utility.Log($"An error occurred in GetPinFromDatabase: {ex.Message}");
+        }
+    }
+
     internal async Task PurgeExpiredUsers()
     {
         try
@@ -208,7 +228,7 @@ internal class WeaponSynchronization
             await using var transaction = await connection.BeginTransactionAsync();
             
             var userIds = await connection.QueryAsync<int>(
-                $"SELECT id FROM wp_users WHERE last_update < NOW() - INTERVAL {_config.Additional.ExpireOlderThan} DAY",
+                $"SELECT id FROM wp_users WHERE last_online < NOW() - INTERVAL {_config.Additional.ExpireOlderThan} DAY",
                 transaction: transaction
             );
 
@@ -232,6 +252,9 @@ internal class WeaponSynchronization
                 await connection.ExecuteAsync(query, transaction: transaction);
                 
                 query = $"DELETE FROM wp_users_musics WHERE user_id IN ({ids})";
+                await connection.ExecuteAsync(query, transaction: transaction);
+
+                query = $"DELETE FROM wp_users_pins WHERE user_id IN ({ids})";
                 await connection.ExecuteAsync(query, transaction: transaction);
 
                 // Step 3: Delete users from wp_users
@@ -367,7 +390,7 @@ internal class WeaponSynchronization
         {
             await using var connection = await _database.GetConnectionAsync();
             const string query =
-                "INSERT INTO `wp_users_musics` (`user_id`, `music_id`) VALUES(@userId, @newMusic) ON DUPLICATE KEY UPDATE `music_id` = @newMusic";
+                "INSERT INTO `wp_users_musics` (`user_id`, `music`) VALUES(@userId, @newMusic) ON DUPLICATE KEY UPDATE `music` = @newMusic";
             await connection.ExecuteAsync(query, new { userId = WeaponPaints.g_playersDatabaseIndex[player.Slot], newMusic = music });
         }
         catch (Exception e)

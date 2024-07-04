@@ -1,4 +1,4 @@
-﻿using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Translations;
 using Dapper;
 using Microsoft.Extensions.Logging;
@@ -30,7 +30,8 @@ namespace WeaponPaints
                         "CREATE TABLE IF NOT EXISTS `wp_users_knives` (`user_id` INT UNSIGNED NOT NULL, `knife` SMALLINT UNSIGNED NOT NULL, PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
                         "CREATE TABLE IF NOT EXISTS `wp_users_gloves` (`user_id` INT UNSIGNED NOT NULL, `weapon_defindex` SMALLINT UNSIGNED DEFAULT NULL, PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
                         "CREATE TABLE IF NOT EXISTS `wp_users_musics` (`user_id` INT UNSIGNED NOT NULL, `music` SMALLINT UNSIGNED DEFAULT NULL, PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
-                        "CREATE TABLE IF NOT EXISTS `wp_users_agents` (`user_id` INT UNSIGNED NOT NULL,`agent_ct` varchar(64) DEFAULT NULL,`agent_t` varchar(64) DEFAULT NULL, PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;"
+                        "CREATE TABLE IF NOT EXISTS `wp_users_agents` (`user_id` INT UNSIGNED NOT NULL,`agent_ct` varchar(64) DEFAULT NULL,`agent_t` varchar(64) DEFAULT NULL, PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
+                        "CREATE TABLE IF NOT EXISTS `wp_users_pins` (`user_id` INT UNSIGNED NOT NULL, `pin` SMALLINT UNSIGNED DEFAULT NULL, PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;",
                     };
 
 					foreach (var query in createTableQueries)
