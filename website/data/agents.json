@@ -120,6 +120,12 @@
 		"agent_name": "Sir Bloody Loudmouth Darryl | The Professionals"
 	},
 	{
+		"team": 2,
+		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4613.png",
+		"model": "tm_professional/tm_professional_varf5",
+		"agent_name": "Bloody Darryl The Strapped | The Professionals"
+	},
+	{
 		"team": 3,
 		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4749.png",
 		"model": "ctm_gendarmerie/ctm_gendarmerie_varianta",
