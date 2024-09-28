@@ -9,6 +9,21 @@ namespace WeaponPaints
 {
 	internal static class Utility
 	{
+		CCSGameRules? gameRules = null;
+
+		void GetGameRules() => gameRules = Utilities.FindAllEntitiesByDesignerName<CCSGameRulesProxy>("cs_gamerules").First().GameRules!;
+
+		public bool IsWarmup
+		{
+			get
+			{
+				if (gameRules is null)
+					GetGameRules();
+
+				return gameRules is not null && gameRules.WarmupPeriod;
+			}
+		}
+		
 		internal static WeaponPaintsConfig? Config { get; set; }
 
 		internal static async Task CheckDatabaseTables()
