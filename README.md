@@ -25,7 +25,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Run server with plugin, **it will generate config if installed correctly!**
 - Edit `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** include database credentials
 - In `addons/counterstrikesharp/configs/`**`core.json`** set **FollowCS2ServerGuidelines** to **`false`**
-- Copy from plugin **`gamedata/weaponpaints.json`** to folder **`addons/counterstrikesharp/gamedata/`**
+- Copy from plugins folder gamedata file **`weaponpaints.json`** to folder **`addons/counterstrikesharp/gamedata/`**
 
 ## Plugin Configuration
 <details>
