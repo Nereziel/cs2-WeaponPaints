@@ -9,6 +9,7 @@
 	"wp_command_cooldown": "{lightred}You can't refresh weapon paints right now",
 	"wp_command_refresh_done": "{lime}Refreshing weapon paints",
 	"wp_knife_menu_select": "You have chosen {lime}{0}{default} as your knife",
+	"wp_command_disable_warmup": "{lightred}You cannot change skins during warmup.",
 	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "Knife Menu",
 	"wp_glove_menu_select": "You have chosen {lime}{0}{default} as your glove",

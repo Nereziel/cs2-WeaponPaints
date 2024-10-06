@@ -8,6 +8,7 @@
 	"wp_info_music": "Введите {lime}!music{default}, чтобы открыть меню музыки",
 	"wp_command_cooldown": "{lightred}Вы не можете обновить раскраску оружия сейчас",
 	"wp_command_refresh_done": "{lime}Обновление раскраски оружия",
+	"wp_command_disable_warmup": "{lightred}Вы не можете обновить скины во время разминки",
 	"wp_knife_menu_select": "Вы выбрали {lime}{0}{default} в качестве вашего ножа",
 	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "Меню Ножей",

@@ -8,6 +8,7 @@
 	"wp_info_music": "输入 {lime}!music{default} 打开音乐菜单",
 	"wp_command_cooldown": "{lightred}您现在无法刷新武器涂装",
 	"wp_command_refresh_done": "{lime}正在刷新武器涂装",
+	"wp_command_disable_warmup": "{lightred}你不能在热身期间刷新皮肤",
 	"wp_knife_menu_select": "您选择了 {lime}{0}{default} 作为您的刀具",
 	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "刀具菜单",

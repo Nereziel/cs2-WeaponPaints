@@ -8,6 +8,7 @@
 	"wp_info_music": "Введіть {lime}!music{default}, щоб відкрити меню музики",
 	"wp_command_cooldown": "{lightred}Ви не можете оновити фарби зброї зараз",
 	"wp_command_refresh_done": "{lime}Оновлення фарби зброї",
+	"wp_command_disable_warmup": "{lightred}Ви не можете оновити скіни під час розігріву",
 	"wp_knife_menu_select": "Ви обрали {lime}{0}{default} як свій ніж",
 	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "Меню Ножів",

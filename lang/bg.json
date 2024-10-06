@@ -1,0 +1,26 @@
+{
+	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
+	"wp_info_website": "Посетете {lime}{0}{default}, където можете да променяте скинове",
+	"wp_info_refresh": "Напишете {lime}!wp{default}, за да синхронизирате избраните скинове",
+	"wp_info_knife": "Напишете {lime}!knife{default}, за да отворите менюто за ножове",
+	"wp_info_glove": "Напишете {lime}!gloves{default}, за да отворите менюто за ръкавици",
+	"wp_info_agent": "Напишете {lime}!agents{default}, за да отворите менюто за агенти",
+	"wp_info_music": "Напишете {lime}!music{default}, за да отворите менюто за музика",
+	"wp_command_cooldown": "{lightred}Не можете да обновявате скинове в момента",
+	"wp_command_refresh_done": "{lime}Обновяване на скинове",
+	"wp_command_disable_warmup": "{lightred}Не можете да обновявате скинове по време на загрявка",
+	"wp_knife_menu_select": "Избрахте {lime}{0}{default} като ваш нож",
+	"wp_knife_menu_kill": "",
+	"wp_knife_menu_title": "Меню за ножове",
+	"wp_glove_menu_select": "Избрахте {lime}{0}{default} като вашите ръкавици",
+	"wp_glove_menu_title": "Меню за ръкавици",
+	"wp_agent_menu_select": "Избрахте {lime}{0}{default} като ваш агент",
+	"wp_agent_menu_title": "Меню за агенти",
+	"wp_music_menu_title": "Меню за музика",
+	"wp_music_menu_select": "Избрахте {lime}{0}{default} като ваш музикален комплект",
+	"wp_skin_menu_weapon_title": "Меню за оръжия",
+	"wp_skin_menu_skin_title": "Изберете скин за {lime}{0}{default}",
+	"wp_skin_menu_select": "Избрахте {lime}{0}{default} като ваш скин",
+
+	"None": "Няма"
+}
