@@ -2,7 +2,7 @@
 	"ChangeSubclass": {
 		"signatures": {
 			"library": "server",
-			"windows": "40 57 48 83 EC 20 48 8B F9 41 B0 01",
+			"windows": "48 89 6C 24 ? 56 48 83 EC ? 48 8B EA 48 8B F1 E8 ? ? ? ? 84 C0 0F 84",
 			"linux": "55 48 89 E5 41 57 41 56 41 55 49 89 F5 41 54 49 89 FC 53 48 81 EC A8 00 00 00"
 		}
 	},
