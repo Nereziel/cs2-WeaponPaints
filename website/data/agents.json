@@ -1,392 +1,392 @@
 [
-	{
-		"team": 2,
-		"image": "",
-		"model": "null",
-		"agent_name": "Agent | Default"
-	},
-	{
-		"team": 3,
-		"image": "",
-		"model": "null",
-		"agent_name": "Agent | Default"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4619.png",
-		"model": "ctm_st6/ctm_st6_variantj",
-		"agent_name": "'Blueberries' Buckshot | NSWC SEAL"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4680.png",
-		"model": "ctm_st6/ctm_st6_variantl",
-		"agent_name": "'Two Times' McCoy | TACP Cavalry"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4711.png",
-		"model": "ctm_swat/ctm_swat_variante",
-		"agent_name": "Cmdr. Mae 'Dead Cold' Jamison | SWAT"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4712.png",
-		"model": "ctm_swat/ctm_swat_variantf",
-		"agent_name": "1st Lieutenant Farlow | SWAT"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4713.png",
-		"model": "ctm_swat/ctm_swat_variantg",
-		"agent_name": "John 'Van Healen' Kask | SWAT"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4714.png",
-		"model": "ctm_swat/ctm_swat_varianth",
-		"agent_name": "Bio-Haz Specialist | SWAT"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4715.png",
-		"model": "ctm_swat/ctm_swat_varianti",
-		"agent_name": "Sergeant Bombson | SWAT"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4716.png",
-		"model": "ctm_swat/ctm_swat_variantj",
-		"agent_name": "Chem-Haz Specialist | SWAT"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4718.png",
-		"model": "tm_balkan/tm_balkan_variantk",
-		"agent_name": "Rezan the Redshirt | Sabre"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4726.png",
-		"model": "tm_professional/tm_professional_varf",
-		"agent_name": "Sir Bloody Miami Darryl | The Professionals"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4727.png",
-		"model": "tm_professional/tm_professional_varg",
-		"agent_name": "Safecracker Voltzmann | The Professionals"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4728.png",
-		"model": "tm_professional/tm_professional_varh",
-		"agent_name": "Little Kev | The Professionals"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4730.png",
-		"model": "tm_professional/tm_professional_varj",
-		"agent_name": "Getaway Sally | The Professionals"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4732.png",
-		"model": "tm_professional/tm_professional_vari",
-		"agent_name": "Number K | The Professionals"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4733.png",
-		"model": "tm_professional/tm_professional_varf1",
-		"agent_name": "Sir Bloody Silent Darryl | The Professionals"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4734.png",
-		"model": "tm_professional/tm_professional_varf2",
-		"agent_name": "Sir Bloody Skullhead Darryl | The Professionals"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4735.png",
-		"model": "tm_professional/tm_professional_varf3",
-		"agent_name": "Sir Bloody Darryl Royale | The Professionals"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4736.png",
-		"model": "tm_professional/tm_professional_varf4",
-		"agent_name": "Sir Bloody Loudmouth Darryl | The Professionals"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4613.png",
-		"model": "tm_professional/tm_professional_varf5",
-		"agent_name": "Bloody Darryl The Strapped | The Professionals"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4749.png",
-		"model": "ctm_gendarmerie/ctm_gendarmerie_varianta",
-		"agent_name": "Sous-Lieutenant Medic | Gendarmerie Nationale"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4750.png",
-		"model": "ctm_gendarmerie/ctm_gendarmerie_variantb",
-		"agent_name": "Chem-Haz Capitaine | Gendarmerie Nationale"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4751.png",
-		"model": "ctm_gendarmerie/ctm_gendarmerie_variantc",
-		"agent_name": "Chef d'Escadron Rouchard | Gendarmerie Nationale"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4752.png",
-		"model": "ctm_gendarmerie/ctm_gendarmerie_variantd",
-		"agent_name": "Aspirant | Gendarmerie Nationale"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4753.png",
-		"model": "ctm_gendarmerie/ctm_gendarmerie_variante",
-		"agent_name": "Officer Jacques Beltram | Gendarmerie Nationale"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4756.png",
-		"model": "ctm_swat/ctm_swat_variantk",
-		"agent_name": "Lieutenant 'Tree Hugger' Farlow | SWAT"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4757.png",
-		"model": "ctm_diver/ctm_diver_varianta",
-		"agent_name": "Cmdr. Davida 'Goggles' Fernandez | SEAL Frogman"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4771.png",
-		"model": "ctm_diver/ctm_diver_variantb",
-		"agent_name": "Cmdr. Frank 'Wet Sox' Baroud | SEAL Frogman"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4772.png",
-		"model": "ctm_diver/ctm_diver_variantc",
-		"agent_name": "Lieutenant Rex Krikey | SEAL Frogman"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4773.png",
-		"model": "tm_jungle_raider/tm_jungle_raider_varianta",
-		"agent_name": "Elite Trapper Solman | Guerrilla Warfare"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4774.png",
-		"model": "tm_jungle_raider/tm_jungle_raider_variantb",
-		"agent_name": "Crasswater The Forgotten | Guerrilla Warfare"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4775.png",
-		"model": "tm_jungle_raider/tm_jungle_raider_variantc",
-		"agent_name": "Arno The Overgrown | Guerrilla Warfare"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4776.png",
-		"model": "tm_jungle_raider/tm_jungle_raider_variantd",
-		"agent_name": "Col. Mangos Dabisi | Guerrilla Warfare"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4777.png",
-		"model": "tm_jungle_raider/tm_jungle_raider_variante",
-		"agent_name": "Vypa Sista of the Revolution | Guerrilla Warfare"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4778.png",
-		"model": "tm_jungle_raider/tm_jungle_raider_variantf",
-		"agent_name": "Trapper Aggressor | Guerrilla Warfare"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4780.png",
-		"model": "tm_jungle_raider/tm_jungle_raider_variantb2",
-		"agent_name": "'Medium Rare' Crasswater | Guerrilla Warfare"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4781.png",
-		"model": "tm_jungle_raider/tm_jungle_raider_variantf2",
-		"agent_name": "Trapper | Guerrilla Warfare"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5105.png",
-		"model": "tm_leet/tm_leet_variantg",
-		"agent_name": "Ground Rebel  | Elite Crew"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5106.png",
-		"model": "tm_leet/tm_leet_varianth",
-		"agent_name": "Osiris | Elite Crew"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5107.png",
-		"model": "tm_leet/tm_leet_varianti",
-		"agent_name": "Prof. Shahmat | Elite Crew"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5108.png",
-		"model": "tm_leet/tm_leet_variantf",
-		"agent_name": "The Elite Mr. Muhlik | Elite Crew"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5109.png",
-		"model": "tm_leet/tm_leet_variantj",
-		"agent_name": "Jungle Rebel | Elite Crew"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5205.png",
-		"model": "tm_phoenix/tm_phoenix_varianth",
-		"agent_name": "Soldier | Phoenix"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5206.png",
-		"model": "tm_phoenix/tm_phoenix_variantf",
-		"agent_name": "Enforcer | Phoenix"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5207.png",
-		"model": "tm_phoenix/tm_phoenix_variantg",
-		"agent_name": "Slingshot | Phoenix"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5208.png",
-		"model": "tm_phoenix/tm_phoenix_varianti",
-		"agent_name": "Street Soldier | Phoenix"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5305.png",
-		"model": "ctm_fbi/ctm_fbi_variantf",
-		"agent_name": "Operator | FBI SWAT"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5306.png",
-		"model": "ctm_fbi/ctm_fbi_variantg",
-		"agent_name": "Markus Delrow | FBI HRT"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5307.png",
-		"model": "ctm_fbi/ctm_fbi_varianth",
-		"agent_name": "Michael Syfers  | FBI Sniper"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5308.png",
-		"model": "ctm_fbi/ctm_fbi_variantb",
-		"agent_name": "Special Agent Ava | FBI"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5400.png",
-		"model": "ctm_st6/ctm_st6_variantk",
-		"agent_name": "3rd Commando Company | KSK"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5401.png",
-		"model": "ctm_st6/ctm_st6_variante",
-		"agent_name": "Seal Team 6 Soldier | NSWC SEAL"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5402.png",
-		"model": "ctm_st6/ctm_st6_variantg",
-		"agent_name": "Buckshot | NSWC SEAL"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5403.png",
-		"model": "ctm_st6/ctm_st6_variantm",
-		"agent_name": "'Two Times' McCoy | USAF TACP"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5404.png",
-		"model": "ctm_st6/ctm_st6_varianti",
-		"agent_name": "Lt. Commander Ricksaw | NSWC SEAL"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5405.png",
-		"model": "ctm_st6/ctm_st6_variantn",
-		"agent_name": "Primeiro Tenente | Brazilian 1st Battalion"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5500.png",
-		"model": "tm_balkan/tm_balkan_variantf",
-		"agent_name": "Dragomir | Sabre"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5501.png",
-		"model": "tm_balkan/tm_balkan_varianti",
-		"agent_name": "Maximus | Sabre"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5502.png",
-		"model": "tm_balkan/tm_balkan_variantg",
-		"agent_name": "Rezan The Ready | Sabre"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5503.png",
-		"model": "tm_balkan/tm_balkan_variantj",
-		"agent_name": "Blackwolf | Sabre"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5504.png",
-		"model": "tm_balkan/tm_balkan_varianth",
-		"agent_name": "'The Doctor' Romanov | Sabre"
-	},
-	{
-		"team": 2,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5505.png",
-		"model": "tm_balkan/tm_balkan_variantl",
-		"agent_name": "Dragomir | Sabre Footsoldier"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5601.png",
-		"model": "ctm_sas/ctm_sas_variantf",
-		"agent_name": "B Squadron Officer | SAS"
-	},
-	{
-		"team": 3,
-		"image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5602.png",
-		"model": "ctm_sas/ctm_sas_variantg",
-		"agent_name": "D Squadron Officer | NZSAS"
-	}
+    {
+        "team": 2,
+        "image": "",
+        "model": "null",
+        "agent_name": "Agent | Default"
+    },
+    {
+        "team": 3,
+        "image": "",
+        "model": "null",
+        "agent_name": "Agent | Default"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4619.png",
+        "model": "ctm_st6/ctm_st6_variantj",
+        "agent_name": "“蓝莓” 铅弹 | 海军水面战中心海豹部队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4680.png",
+        "model": "ctm_st6/ctm_st6_variantl",
+        "agent_name": "“两次”麦考伊 | 战术空中管制部队装甲兵"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4711.png",
+        "model": "ctm_swat/ctm_swat_variante",
+        "agent_name": "指挥官 梅 “极寒” 贾米森 | 特警"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4712.png",
+        "model": "ctm_swat/ctm_swat_variantf",
+        "agent_name": "第一中尉法洛 | 特警"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4713.png",
+        "model": "ctm_swat/ctm_swat_variantg",
+        "agent_name": "约翰 “范·海伦” 卡斯克 | 特警"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4714.png",
+        "model": "ctm_swat/ctm_swat_varianth",
+        "agent_name": "生物防害专家 | 特警"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4715.png",
+        "model": "ctm_swat/ctm_swat_varianti",
+        "agent_name": "军士长炸弹森 | 特警"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4716.png",
+        "model": "ctm_swat/ctm_swat_variantj",
+        "agent_name": "化学防害专家 | 特警"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4718.png",
+        "model": "tm_balkan/tm_balkan_variantk",
+        "agent_name": "红衫列赞 | 军刀"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4726.png",
+        "model": "tm_professional/tm_professional_varf",
+        "agent_name": "残酷的达里尔爵士（迈阿密）| 专业人士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4727.png",
+        "model": "tm_professional/tm_professional_varg",
+        "agent_name": "飞贼波兹曼 | 专业人士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4728.png",
+        "model": "tm_professional/tm_professional_varh",
+        "agent_name": "小凯夫 | 专业人士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4730.png",
+        "model": "tm_professional/tm_professional_varj",
+        "agent_name": "出逃的萨莉 | 专业人士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4732.png",
+        "model": "tm_professional/tm_professional_vari",
+        "agent_name": "老K | 专业人士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4733.png",
+        "model": "tm_professional/tm_professional_varf1",
+        "agent_name": "残酷的达里尔爵士（沉默）| 专业人士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4734.png",
+        "model": "tm_professional/tm_professional_varf2",
+        "agent_name": "残酷的达里尔爵士（头盖骨）| 专业人士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4735.png",
+        "model": "tm_professional/tm_professional_varf3",
+        "agent_name": "残酷的达里尔爵士（皇家）| 专业人士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4736.png",
+        "model": "tm_professional/tm_professional_varf4",
+        "agent_name": "残酷的达里尔爵士（聒噪）| 专业人士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4613.png",
+        "model": "tm_professional/tm_professional_varf5",
+        "agent_name": "残酷的达里尔（穷鬼）| 专业人士"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4749.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_varianta",
+        "agent_name": "军医少尉 | 法国宪兵特勤队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4750.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_variantb",
+        "agent_name": "化学防害上尉| 法国宪兵特勤队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4751.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_variantc",
+        "agent_name": "中队长鲁沙尔·勒库托 | 法国宪兵特勤队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4752.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_variantd",
+        "agent_name": "准尉 | 法国宪兵特勤队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4753.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_variante",
+        "agent_name": "军官雅克·贝尔特朗 | 法国宪兵特勤队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4756.png",
+        "model": "ctm_swat/ctm_swat_variantk",
+        "agent_name": "中尉法洛（抱树人） | 特警"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4757.png",
+        "model": "ctm_diver/ctm_diver_varianta",
+        "agent_name": "指挥官黛维达·费尔南德斯（护目镜） | 海豹蛙人"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4771.png",
+        "model": "ctm_diver/ctm_diver_variantb",
+        "agent_name": "指挥官弗兰克·巴鲁德（湿袜） | 海豹蛙人"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4772.png",
+        "model": "ctm_diver/ctm_diver_variantc",
+        "agent_name": "中尉雷克斯·克里奇 | 海豹蛙人"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4773.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_varianta",
+        "agent_name": "精锐捕兽者索尔曼 | 游击队"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4774.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantb",
+        "agent_name": "遗忘者克拉斯沃特 | 游击队"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4775.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantc",
+        "agent_name": "亚诺（野草） | 游击队"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4776.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantd",
+        "agent_name": "上校曼戈斯·达比西 | 游击队"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4777.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variante",
+        "agent_name": "薇帕姐（革新派） | 游击队"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4778.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantf",
+        "agent_name": "捕兽者（挑衅者） | 游击队"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4780.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantb2",
+        "agent_name": "克拉斯沃特（三分熟） | 游击队"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-4781.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantf2",
+        "agent_name": "捕兽者 | 游击队"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5105.png",
+        "model": "tm_leet/tm_leet_variantg",
+        "agent_name": "地面叛军 | 精锐分子"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5106.png",
+        "model": "tm_leet/tm_leet_varianth",
+        "agent_name": "奥西瑞斯 | 精锐分子"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5107.png",
+        "model": "tm_leet/tm_leet_varianti",
+        "agent_name": "沙哈马特教授 | 精锐分子"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5108.png",
+        "model": "tm_leet/tm_leet_variantf",
+        "agent_name": "精英穆哈里克先生 | 精锐分子"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5109.png",
+        "model": "tm_leet/tm_leet_variantj",
+        "agent_name": "丛林反抗者 | 精锐分子"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5205.png",
+        "model": "tm_phoenix/tm_phoenix_varianth",
+        "agent_name": "枪手 | 凤凰战士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5206.png",
+        "model": "tm_phoenix/tm_phoenix_variantf",
+        "agent_name": "执行者 | 凤凰战士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5207.png",
+        "model": "tm_phoenix/tm_phoenix_variantg",
+        "agent_name": "弹弓 | 凤凰战士"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5208.png",
+        "model": "tm_phoenix/tm_phoenix_varianti",
+        "agent_name": "街头士兵 | 凤凰战士"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5305.png",
+        "model": "ctm_fbi/ctm_fbi_variantf",
+        "agent_name": "特种兵 | 联邦调查局（FBI）特警"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5306.png",
+        "model": "ctm_fbi/ctm_fbi_variantg",
+        "agent_name": "马尔库斯·戴劳 | 联邦调查局（FBI）人质营救队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5307.png",
+        "model": "ctm_fbi/ctm_fbi_varianth",
+        "agent_name": "迈克·赛弗斯 | 联邦调查局（FBI）狙击手"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5308.png",
+        "model": "ctm_fbi/ctm_fbi_variantb",
+        "agent_name": "爱娃特工 | 联邦调查局（FBI）"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5400.png",
+        "model": "ctm_st6/ctm_st6_variantk",
+        "agent_name": "第三特种兵连 | 德国特种部队突击队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5401.png",
+        "model": "ctm_st6/ctm_st6_variante",
+        "agent_name": "海豹突击队第六分队士兵 | 海军水面战中心海豹部队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5402.png",
+        "model": "ctm_st6/ctm_st6_variantg",
+        "agent_name": "铅弹 | 海军水面战中心海豹部队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5403.png",
+        "model": "ctm_st6/ctm_st6_variantm",
+        "agent_name": "“两次”麦考伊 | 美国空军战术空中管制部队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5404.png",
+        "model": "ctm_st6/ctm_st6_varianti",
+        "agent_name": "海军上尉里克索尔 | 海军水面战中心海豹部队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5405.png",
+        "model": "ctm_st6/ctm_st6_variantn",
+        "agent_name": "陆军中尉普里米罗 | 巴西第一营"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5500.png",
+        "model": "tm_balkan/tm_balkan_variantf",
+        "agent_name": "德拉戈米尔 | 军刀"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5501.png",
+        "model": "tm_balkan/tm_balkan_varianti",
+        "agent_name": "马克西姆斯 | 军刀"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5502.png",
+        "model": "tm_balkan/tm_balkan_variantg",
+        "agent_name": "准备就绪的列赞 | 军刀"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5503.png",
+        "model": "tm_balkan/tm_balkan_variantj",
+        "agent_name": "黑狼 | 军刀"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5504.png",
+        "model": "tm_balkan/tm_balkan_varianth",
+        "agent_name": "“医生”罗曼诺夫 | 军刀"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5505.png",
+        "model": "tm_balkan/tm_balkan_variantl",
+        "agent_name": "德拉戈米尔 | 军刀勇士"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5601.png",
+        "model": "ctm_sas/ctm_sas_variantf",
+        "agent_name": "B 中队指挥官 | 英国空军特别部队"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/daffyyyy/cs2-WeaponPaints/main/website/img/skins/agent-5602.png",
+        "model": "ctm_sas/ctm_sas_variantg",
+        "agent_name": "D 中队军官 | 新西兰特种空勤团"
+    }
 ]
