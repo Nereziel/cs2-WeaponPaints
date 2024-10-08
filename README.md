@@ -19,8 +19,8 @@ This project allows you to translate JSON files related to game assets, such as 
 
 ## How to Run
 
-1. Download the `TranslateJsonToAnyLang.py` script to the root directory of your project.
-2. Open the script and modify the `target_language` variable to your desired language code (e.g., `'zh-CN'` for Chinese).
+1. Download the [TranslateJsonToAnyLang.py](https://github.com/yichen11818/cs2-WeaponPaints-Translate/blob/translate-json/TranslateJsonToAnyLang.py) script to the root directory of your project.
+2. Open the script 和 modify the `target_language` variable to your desired language code (e.g., `'zh-CN'` for Chinese).
 3. Run the script to perform the translation.
 
 ```bash
