@@ -25,6 +25,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Run server with plugin, **it will generate config if installed correctly!**
 - Edit `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** include database credentials
 - In `addons/counterstrikesharp/configs/`**`core.json`** set **FollowCS2ServerGuidelines** to **`false`**
+- Copy from plugins folder gamedata file **`weaponpaints.json`** to folder **`addons/counterstrikesharp/gamedata/`**
 
 ## Plugin Configuration
 <details>
@@ -71,7 +72,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 </details>
     
 ## Web install
-- Requires PHP >= 7.4 ***(Tested on php ver **`8.2.3`** and nginx webserver)***
+- Requires PHP >= 7.4 with curl and pdo_mysql ***(Tested on php ver **`8.2.3`** and nginx webserver)***
 - **Before using website, make sure the plugin is correctly loaded in cs2 server!** Mysql tables are created by plugin not by website.
 - Copy website to web server ***(Folder `img` not needed)***
 - Get [Steam API Key](https://steamcommunity.com/dev/apikey)

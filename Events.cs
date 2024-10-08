@@ -2,6 +2,9 @@
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Entities;
+using CounterStrikeSharp.API.Modules.Memory;
+using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
+using System.Runtime.InteropServices;
 
 namespace WeaponPaints
 {
@@ -12,7 +15,7 @@ namespace WeaponPaints
 		{
 			CCSPlayerController? player = @event.Userid;
 
-			if (player is null || !player.IsValid || player.IsBot || player.IsHLTV || player.SteamID.ToString().Length != 17 ||
+			if (player is null || !player.IsValid || player.IsBot ||
 				weaponSync == null || _database == null) return HookResult.Continue;
 
 			PlayerInfo playerInfo = new PlayerInfo
@@ -27,6 +30,8 @@ namespace WeaponPaints
 
 			try
 			{
+				_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+				/*
 				if (Config.Additional.SkinEnabled)
 				{
 					_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
@@ -47,8 +52,9 @@ namespace WeaponPaints
 				{
 					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
 				}
+				*/
 			}
-			catch (Exception)
+			catch
 			{
 			}
 
@@ -58,20 +64,9 @@ namespace WeaponPaints
 		[GameEventHandler]
 		public HookResult OnPlayerDisconnect(EventPlayerDisconnect @event, GameEventInfo info)
 		{
-			CCSPlayerController player = @event.Userid;
+			CCSPlayerController? player = @event.Userid;
 
-			if (player is null || !player.IsValid || player.IsBot ||
-				player.IsHLTV || player.SteamID.ToString().Length != 17) return HookResult.Continue;
-
-			PlayerInfo playerInfo = new PlayerInfo
-			{
-				UserId = player.UserId,
-				Slot = player.Slot,
-				Index = (int)player.Index,
-				SteamId = player.SteamID.ToString(),
-				Name = player.PlayerName,
-				IpAddress = player.IpAddress?.Split(":")[0]
-			};
+			if (player is null || !player.IsValid || player.IsBot) return HookResult.Continue;
 
 			if (Config.Additional.SkinEnabled)
 			{
@@ -98,101 +93,10 @@ namespace WeaponPaints
 
 			return HookResult.Continue;
 		}
-
-		private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
-		{
-			if (!Config.Additional.SkinEnabled) return;
-			if (player is null || weapon is null || !weapon.IsValid || !Utility.IsPlayerValid(player)) return;
-			if (!gPlayerWeaponsInfo.ContainsKey(player.Slot)) return;
-
-			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
-
-			if (isKnife && !g_playersKnife.ContainsKey(player.Slot) || isKnife && g_playersKnife[player.Slot] == "weapon_knife") return;
-
-			int[] newPaints = { 1171, 1170, 1169, 1164, 1162, 1161, 1159, 1175, 1174, 1167, 1165, 1168, 1163, 1160, 1166, 1173 };
-
-			if (isKnife)
-			{
-				var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == g_playersKnife[player.Slot]);
-				if (newDefIndex.Key == 0) return;
-
-				if (weapon.AttributeManager.Item.ItemDefinitionIndex != newDefIndex.Key)
-				{
-					SubclassChange(weapon, (ushort)newDefIndex.Key);
-				}
-
-				weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)newDefIndex.Key;
-				weapon.AttributeManager.Item.EntityQuality = 3;
-			}
-
-			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
-			int fallbackPaintKit = 0;
-
-			if (_config.Additional.GiveRandomSkin &&
-				 !gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex))
-			{
-				// Random skins
-				weapon.AttributeManager.Item.ItemID = 16384;
-				weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
-				weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
-				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
-				weapon.FallbackSeed = 0;
-				weapon.FallbackWear = 0.000001f;
-				CAttributeList_SetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
-
-				fallbackPaintKit = weapon.FallbackPaintKit;
-
-				if (fallbackPaintKit == 0)
-					return;
-
-				if (!isKnife)
-				{
-					if (newPaints.Contains(fallbackPaintKit))
-					{
-						UpdatePlayerWeaponMeshGroupMask(player, weapon, false);
-					}
-					else
-					{
-						UpdatePlayerWeaponMeshGroupMask(player, weapon, true);
-					}
-				}
-
-				return;
-			}
-
-			if (!gPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out WeaponInfo? value) || value.Paint == 0) return;
-
-			WeaponInfo weaponInfo = value;
-			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
-			weapon.AttributeManager.Item.ItemID = 16384;
-			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
-			weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
-			weapon.FallbackPaintKit = weaponInfo.Paint;
-			weapon.FallbackSeed = weaponInfo.Seed;
-			weapon.FallbackWear = weaponInfo.Wear;
-			CAttributeList_SetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
-
-			fallbackPaintKit = weapon.FallbackPaintKit;
-
-			if (fallbackPaintKit == 0)
-				return;
-
-			if (!isKnife)
-			{
-				if (newPaints.Contains(fallbackPaintKit))
-				{
-					UpdatePlayerWeaponMeshGroupMask(player, weapon, false);
-				}
-				else
-				{
-					UpdatePlayerWeaponMeshGroupMask(player, weapon, true);
-				}
-			}
-		}
-
+		
 		private void OnMapStart(string mapName)
 		{
-			if (!Config.Additional.KnifeEnabled && !Config.Additional.SkinEnabled && !Config.Additional.GloveEnabled) return;
+			if (Config.Additional is { KnifeEnabled: false, SkinEnabled: false, GloveEnabled: false }) return;
 
 			if (_database != null)
 				weaponSync = new WeaponSynchronization(_database, Config);
@@ -202,7 +106,7 @@ namespace WeaponPaints
 		{
 			CCSPlayerController? player = @event.Userid;
 
-			if (player is null || !player.IsValid || !Config.Additional.KnifeEnabled && !Config.Additional.GloveEnabled)
+			if (player is null || !player.IsValid || Config.Additional is { KnifeEnabled: false, GloveEnabled: false })
 				return HookResult.Continue;
 
 			CCSPlayerPawn? pawn = player.PlayerPawn.Value;
@@ -214,10 +118,7 @@ namespace WeaponPaints
 
 			GivePlayerMusicKit(player);
 			GivePlayerAgent(player);
-			Server.NextFrame(() =>
-			{
-				RefreshGloves(player);
-			});
+			GivePlayerGloves(player);
 
 			return HookResult.Continue;
 		}
@@ -231,33 +132,29 @@ namespace WeaponPaints
 
 		private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
 		{
-			/*
-			NativeAPI.IssueServerCommand("mp_t_default_melee \"\"");
-			NativeAPI.IssueServerCommand("mp_ct_default_melee \"\"");
-			NativeAPI.IssueServerCommand("mp_equipment_reset_rounds 0");
-			*/
 			g_bCommandsAllowed = true;
-
 			return HookResult.Continue;
 		}
 
-		/*
 		public HookResult OnGiveNamedItemPost(DynamicHook hook)
 		{
-			var itemServices = hook.GetParam<CCSPlayer_ItemServices>(0);
-			var weapon = hook.GetReturn<CBasePlayerWeapon>(0);
-			if (!weapon.DesignerName.Contains("weapon"))
-				return HookResult.Continue;
+			try
+			{
+				var itemServices = hook.GetParam<CCSPlayer_ItemServices>(0);
+				var weapon = hook.GetReturn<CBasePlayerWeapon>();
+				if (!weapon.DesignerName.Contains("weapon"))
+					return HookResult.Continue;
 
-			var player = GetPlayerFromItemServices(itemServices);
-			if (player != null)
-				GivePlayerWeaponSkin(player, weapon);
+				var player = GetPlayerFromItemServices(itemServices);
+				if (player != null)
+					GivePlayerWeaponSkin(player, weapon);
+			}
+			catch { }
 
 			return HookResult.Continue;
 		}
-		*/
 
-		public void OnEntitySpawned(CEntityInstance entity)
+		public void OnEntityCreated(CEntityInstance entity)
 		{
 			var designerName = entity.DesignerName;
 
@@ -266,7 +163,7 @@ namespace WeaponPaints
 				Server.NextFrame(() =>
 				{
 					var weapon = new CBasePlayerWeapon(entity.Handle);
-					if (weapon == null || !weapon.IsValid || weapon.OwnerEntity.Value == null) return;
+					if (!weapon.IsValid) return;
 
 					try
 					{
@@ -279,7 +176,7 @@ namespace WeaponPaints
 
 						if (_steamid != null && _steamid.IsValid())
 						{
-							player = Utilities.GetPlayers().Where(p => p is not null && p.IsValid && p.SteamID == _steamid.SteamId64).FirstOrDefault();
+							player = Utilities.GetPlayers().FirstOrDefault(p => p.IsValid && p.SteamID == _steamid.SteamId64);
 
 							if (player == null)
 								player = Utilities.GetPlayerFromSteamId(weapon.OriginalOwnerXuidLow);
@@ -291,7 +188,7 @@ namespace WeaponPaints
 						}
 
 						if (string.IsNullOrEmpty(player?.PlayerName)) return;
-						if (player is null || !Utility.IsPlayerValid(player)) return;
+						if (!Utility.IsPlayerValid(player)) return;
 
 						GivePlayerWeaponSkin(player, weapon);
 					}
@@ -308,17 +205,31 @@ namespace WeaponPaints
 			if (!Config.Additional.ShowSkinImage) return;
 
 			foreach (var player in Utilities.GetPlayers().Where(p =>
-							p is not null && p.IsValid && p.PlayerPawn != null && p.PlayerPawn.IsValid &&
-							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE && p.SteamID.ToString().Length == 17
-							&& !p.IsBot && !p.IsHLTV && p.Connected == PlayerConnectedState.PlayerConnected
+							p is { IsValid: true, PlayerPawn.IsValid: true } &&
+							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE
+							&& !p.IsBot && p is {  Connected: PlayerConnectedState.PlayerConnected }
 							)
 				)
 			{
-				if (PlayerWeaponImage.TryGetValue(player.Slot, out string? value) && !string.IsNullOrEmpty(value))
+				if (PlayerWeaponImage.TryGetValue(player.Slot, out var value) && !string.IsNullOrEmpty(value))
 				{
 					player.PrintToCenterHtml("<img src='{PATH}'</img>".Replace("{PATH}", value));
 				}
 			}
+		}
+		
+		[GameEventHandler]
+		public HookResult OnItemPickup(EventItemPickup @event, GameEventInfo _)
+		{
+			if (!IsWindows) return HookResult.Continue;
+			
+			var player = @event.Userid;
+			if (player != null && player is { IsValid: true, Connected: PlayerConnectedState.PlayerConnected, PawnIsAlive: true, PlayerPawn.IsValid: true })
+			{
+				GiveOnItemPickup(player);
+			}
+
+			return HookResult.Continue;
 		}
 
 		private void RegisterListeners()
@@ -326,11 +237,15 @@ namespace WeaponPaints
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
 
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
-			RegisterEventHandler<EventRoundStart>(OnRoundStart, HookMode.Pre);
+			RegisterEventHandler<EventRoundStart>(OnRoundStart);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
-			RegisterListener<Listeners.OnEntitySpawned>(OnEntitySpawned);
-			RegisterListener<Listeners.OnTick>(OnTick);
-			//VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
+			RegisterListener<Listeners.OnEntityCreated>(OnEntityCreated);
+
+			if (Config.Additional.ShowSkinImage)
+				RegisterListener<Listeners.OnTick>(OnTick);
+
+			if (!IsWindows)
+				VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
 	}
 }

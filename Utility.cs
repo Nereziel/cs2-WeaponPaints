@@ -1,33 +1,15 @@
 ﻿using CounterStrikeSharp.API.Core;
-using CounterStrikeSharp.API.Modules.Utils;
+using CounterStrikeSharp.API.Core.Translations;
 using Dapper;
 using Microsoft.Extensions.Logging;
-using MySqlConnector;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Reflection;
 
 namespace WeaponPaints
 {
 	internal static class Utility
 	{
 		internal static WeaponPaintsConfig? Config { get; set; }
-
-		internal static string BuildDatabaseConnectionString()
-		{
-			if (Config == null) return string.Empty;
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = Config.DatabaseHost,
-				UserID = Config.DatabaseUser,
-				Password = Config.DatabasePassword,
-				Database = Config.DatabaseName,
-				Port = (uint)Config.DatabasePort,
-				Pooling = true
-			};
-
-			return builder.ConnectionString;
-		}
 
 		internal static async Task CheckDatabaseTables()
 		{
@@ -41,37 +23,45 @@ namespace WeaponPaints
 
 				try
 				{
-					string[] createTableQueries = new[]
-					{
-				@"CREATE TABLE IF NOT EXISTS `wp_player_skins` (
-                        `steamid` varchar(18) NOT NULL,
-                        `weapon_defindex` int(6) NOT NULL,
-                        `weapon_paint_id` int(6) NOT NULL,
-                        `weapon_wear` float NOT NULL DEFAULT 0.000001,
-                        `weapon_seed` int(16) NOT NULL DEFAULT 0
-                    ) ENGINE=InnoDB",
-				@"CREATE TABLE IF NOT EXISTS `wp_player_knife` (
+					string[] createTableQueries =
+					[
+						"""
+						CREATE TABLE IF NOT EXISTS `wp_player_skins` (
+						                        `steamid` varchar(18) NOT NULL,
+						                        `weapon_defindex` int(6) NOT NULL,
+						                        `weapon_paint_id` int(6) NOT NULL,
+						                        `weapon_wear` float NOT NULL DEFAULT 0.000001,
+						                        `weapon_seed` int(16) NOT NULL DEFAULT 0
+						                    ) ENGINE=InnoDB
+						""",
+						@"CREATE TABLE IF NOT EXISTS `wp_player_knife` (
                         `steamid` varchar(18) NOT NULL,
                         `knife` varchar(64) NOT NULL,
                         UNIQUE (`steamid`)
                     ) ENGINE = InnoDB",
-				@"CREATE TABLE IF NOT EXISTS `wp_player_gloves` (
-					 `steamid` varchar(18) NOT NULL,
-					 `weapon_defindex` int(11) NOT NULL,
-                      UNIQUE (`steamid`)
-					) ENGINE=InnoDB",
-				@"CREATE TABLE IF NOT EXISTS `wp_player_agents` (
-					 `steamid` varchar(18) NOT NULL,
-					 `agent_ct` varchar(64) DEFAULT NULL,
-					 `agent_t` varchar(64) DEFAULT NULL,
-					 UNIQUE (`steamid`)
-					) ENGINE=InnoDB",
-				@"CREATE TABLE IF NOT EXISTS `wp_player_music` (
-					 `steamid` varchar(64) NOT NULL,
-					 `music_id` int(11) NOT NULL,
-					 UNIQUE (`steamid`)
-					) ENGINE=InnoDB",
-			};
+						"""
+						CREATE TABLE IF NOT EXISTS `wp_player_gloves` (
+											 `steamid` varchar(18) NOT NULL,
+											 `weapon_defindex` int(11) NOT NULL,
+						                      UNIQUE (`steamid`)
+											) ENGINE=InnoDB
+						""",
+						"""
+						CREATE TABLE IF NOT EXISTS `wp_player_agents` (
+											 `steamid` varchar(18) NOT NULL,
+											 `agent_ct` varchar(64) DEFAULT NULL,
+											 `agent_t` varchar(64) DEFAULT NULL,
+											 UNIQUE (`steamid`)
+											) ENGINE=InnoDB
+						""",
+						"""
+						CREATE TABLE IF NOT EXISTS `wp_player_music` (
+											 `steamid` varchar(64) NOT NULL,
+											 `music_id` int(11) NOT NULL,
+											 UNIQUE (`steamid`)
+											) ENGINE=InnoDB
+						""",
+					];
 
 					foreach (var query in createTableQueries)
 					{
@@ -96,62 +86,62 @@ namespace WeaponPaints
 		{
 			if (player is null || WeaponPaints.weaponSync is null) return false;
 
-			return (player.IsValid && !player.IsBot && !player.IsHLTV && player.UserId.HasValue);
+			return player is { IsValid: true, IsBot: false, IsHLTV: false, UserId: not null };
 		}
 
-		internal static void LoadSkinsFromFile(string filePath)
+		internal static void LoadSkinsFromFile(string filePath, ILogger logger)
 		{
+			var json = File.ReadAllText(filePath);
 			try
 			{
-				string json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.skinsList = deserializedSkins ?? new List<JObject>();
+				WeaponPaints.skinsList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
-				throw;
+				logger?.LogError("Not found \"skins.json\" file");
 			}
 		}
 
-		internal static void LoadGlovesFromFile(string filePath)
+		internal static void LoadGlovesFromFile(string filePath, ILogger logger)
 		{
 			try
 			{
-				string json = File.ReadAllText(filePath);
+				var json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.glovesList = deserializedSkins ?? new List<JObject>();
+				WeaponPaints.glovesList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
-				throw;
+				logger?.LogError("Not found \"gloves.json\" file");
 			}
 		}
 
-		internal static void LoadAgentsFromFile(string filePath)
+		internal static void LoadAgentsFromFile(string filePath, ILogger logger)
 		{
 			try
 			{
-				string json = File.ReadAllText(filePath);
+				var json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.agentsList = deserializedSkins ?? new List<JObject>();
+				WeaponPaints.agentsList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
-				throw;
+				logger?.LogError("Not found \"agents.json\" file");
 			}
 		}
 
-		internal static void LoadMusicFromFile(string filePath)
+		internal static void LoadMusicFromFile(string filePath, ILogger logger)
 		{
 			try
 			{
-				string json = File.ReadAllText(filePath);
+				var json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.musicList = deserializedSkins ?? new List<JObject>();
+				WeaponPaints.musicList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
-				throw;
+				logger?.LogError("Not found \"music.json\" file");
 			}
 		}
 
@@ -165,68 +155,49 @@ namespace WeaponPaints
 
 		internal static string ReplaceTags(string message)
 		{
-			if (message.Contains('{'))
-			{
-				string modifiedValue = message;
-				if (Config != null)
-				{
-					modifiedValue = modifiedValue.Replace("{WEBSITE}", Config.Website);
-				}
-				foreach (FieldInfo field in typeof(ChatColors).GetFields())
-				{
-					string pattern = $"{{{field.Name}}}";
-					if (message.Contains(pattern, StringComparison.OrdinalIgnoreCase))
-					{
-						modifiedValue = modifiedValue.Replace(pattern, field.GetValue(null)!.ToString(), StringComparison.OrdinalIgnoreCase);
-					}
-				}
-				return modifiedValue;
-			}
-
-			return message;
+			return message.ReplaceColorTags();
 		}
 
 		internal static async Task CheckVersion(string version, ILogger logger)
 		{
-			using (HttpClient client = new HttpClient())
+			using HttpClient client = new();
+
+			try
 			{
-				try
+				var response = await client.GetAsync("https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/VERSION").ConfigureAwait(false);
+
+				if (response.IsSuccessStatusCode)
 				{
-					HttpResponseMessage response = await client.GetAsync("https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/VERSION").ConfigureAwait(false);
+					var remoteVersion = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+					remoteVersion = remoteVersion.Trim();
 
-					if (response.IsSuccessStatusCode)
+					var comparisonResult = string.CompareOrdinal(version, remoteVersion);
+
+					switch (comparisonResult)
 					{
-						string remoteVersion = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-						remoteVersion = remoteVersion.Trim();
-
-						int comparisonResult = string.Compare(version, remoteVersion);
-
-						if (comparisonResult < 0)
-						{
+						case < 0:
 							logger.LogWarning("Plugin is outdated! Check https://github.com/Nereziel/cs2-WeaponPaints");
-						}
-						else if (comparisonResult > 0)
-						{
+							break;
+						case > 0:
 							logger.LogInformation("Probably dev version detected");
-						}
-						else
-						{
+							break;
+						default:
 							logger.LogInformation("Plugin is up to date");
-						}
-					}
-					else
-					{
-						logger.LogWarning("Failed to check version");
+							break;
 					}
 				}
-				catch (HttpRequestException ex)
+				else
 				{
-					logger.LogError(ex, "Failed to connect to the version server.");
+					logger.LogWarning("Failed to check version");
 				}
-				catch (Exception ex)
-				{
-					logger.LogError(ex, "An error occurred while checking version.");
-				}
+			}
+			catch (HttpRequestException ex)
+			{
+				logger.LogError(ex, "Failed to connect to the version server.");
+			}
+			catch (Exception ex)
+			{
+				logger.LogError(ex, "An error occurred while checking version.");
 			}
 		}
 

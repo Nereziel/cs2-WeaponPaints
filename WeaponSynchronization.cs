@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using MySqlConnector;
 using System.Collections.Concurrent;
 
 namespace WeaponPaints
@@ -14,16 +15,39 @@ namespace WeaponPaints
 			_config = config;
 		}
 
-		internal async Task GetKnifeFromDatabase(PlayerInfo player)
+		internal async Task GetPlayerData(PlayerInfo? player)
+		{
+			try
+			{
+				await using var connection = await _database.GetConnectionAsync();
+				
+				if (_config.Additional.KnifeEnabled)
+					GetKnifeFromDatabase(player, connection);
+				if (_config.Additional.GloveEnabled)
+					GetGloveFromDatabase(player, connection);
+				if (_config.Additional.AgentEnabled)
+					GetAgentFromDatabase(player, connection);
+				if (_config.Additional.MusicEnabled)
+					GetMusicFromDatabase(player, connection);
+				if (_config.Additional.SkinEnabled)
+					GetWeaponPaintsFromDatabase(player, connection);
+			}
+			catch (Exception ex)
+			{
+				// Log the exception or handle it appropriately
+				Console.WriteLine($"An error occurred: {ex.Message}");
+			}
+		}
+
+		private void GetKnifeFromDatabase(PlayerInfo? player, MySqlConnection connection)
 		{
 			try
 			{
 				if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player?.SteamId))
 					return;
 
-				await using var connection = await _database.GetConnectionAsync();
-				string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
-				string? playerKnife = await connection.QueryFirstOrDefaultAsync<string>(query, new { steamid = player.SteamId });
+				const string query = "SELECT `knife` FROM `wp_player_knife` WHERE `steamid` = @steamid";
+				var playerKnife = connection.QueryFirstOrDefault<string>(query, new { steamid = player.SteamId });
 
 				if (!string.IsNullOrEmpty(playerKnife))
 				{
@@ -36,16 +60,15 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task GetGloveFromDatabase(PlayerInfo player)
+		private void GetGloveFromDatabase(PlayerInfo? player, MySqlConnection connection)
 		{
 			try
 			{
 				if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player?.SteamId))
 					return;
 
-				await using var connection = await _database.GetConnectionAsync();
-				string query = "SELECT `weapon_defindex` FROM `wp_player_gloves` WHERE `steamid` = @steamid";
-				ushort? gloveData = await connection.QueryFirstOrDefaultAsync<ushort?>(query, new { steamid = player.SteamId });
+				const string query = "SELECT `weapon_defindex` FROM `wp_player_gloves` WHERE `steamid` = @steamid";
+				var gloveData = connection.QueryFirstOrDefault<ushort?>(query, new { steamid = player.SteamId });
 
 				if (gloveData != null)
 				{
@@ -58,38 +81,35 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task GetAgentFromDatabase(PlayerInfo player)
+		private void GetAgentFromDatabase(PlayerInfo? player, MySqlConnection connection)
 		{
 			try
 			{
 				if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player?.SteamId))
 					return;
 
-				await using var connection = await _database.GetConnectionAsync();
-				string query = "SELECT `agent_ct`, `agent_t` FROM `wp_player_agents` WHERE `steamid` = @steamid";
-				var agentData = await connection.QueryFirstOrDefaultAsync<(string, string)>(query, new { steamid = player.SteamId });
+				const string query = "SELECT `agent_ct`, `agent_t` FROM `wp_player_agents` WHERE `steamid` = @steamid";
+				var agentData = connection.QueryFirstOrDefault<(string, string)>(query, new { steamid = player.SteamId });
 
-				if (agentData != default)
+				if (agentData == default) return;
+				var agentCT = agentData.Item1;
+				var agentT = agentData.Item2;
+
+				if (!string.IsNullOrEmpty(agentCT) || !string.IsNullOrEmpty(agentT))
 				{
-					string agentCT = agentData.Item1;
-					string agentT = agentData.Item2;
-
-					if (!string.IsNullOrEmpty(agentCT) || !string.IsNullOrEmpty(agentT))
-					{
-						WeaponPaints.g_playersAgent[player.Slot] = (
-							agentCT,
-							agentT
-						);
-					}
+					WeaponPaints.g_playersAgent[player.Slot] = (
+						agentCT,
+						agentT
+					);
 				}
 			}
 			catch (Exception ex)
 			{
-				Utility.Log($"An error occurred in GetGloveFromDatabase: {ex.Message}");
+				Utility.Log($"An error occurred in GetAgentFromDatabase: {ex.Message}");
 			}
 		}
 
-		internal async Task GetWeaponPaintsFromDatabase(PlayerInfo player)
+		private void GetWeaponPaintsFromDatabase(PlayerInfo? player, MySqlConnection connection)
 		{
 			try
 			{
@@ -98,15 +118,8 @@ namespace WeaponPaints
 
 				var weaponInfos = new ConcurrentDictionary<int, WeaponInfo>();
 
-				await using var connection = await _database.GetConnectionAsync();
-				string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
-				var playerSkins = await connection.QueryAsync<dynamic>(query, new { steamid = player.SteamId });
-
-				if (playerSkins == null)
-				{
-					WeaponPaints.gPlayerWeaponsInfo[player.Slot] = weaponInfos;
-					return;
-				}
+				const string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
+				var playerSkins = connection.Query<dynamic>(query, new { steamid = player.SteamId });
 
 				foreach (var row in playerSkins)
 				{
@@ -133,16 +146,15 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task GetMusicFromDatabase(PlayerInfo player)
+		private void GetMusicFromDatabase(PlayerInfo? player, MySqlConnection connection)
 		{
 			try
 			{
-				if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player.SteamId))
+				if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player?.SteamId))
 					return;
 
-				await using var connection = await _database.GetConnectionAsync();
-				string query = "SELECT `music_id` FROM `wp_player_music` WHERE `steamid` = @steamid";
-				ushort? musicData = await connection.QueryFirstOrDefaultAsync<ushort?>(query, new { steamid = player.SteamId });
+				const string query = "SELECT `music_id` FROM `wp_player_music` WHERE `steamid` = @steamid";
+				var musicData = connection.QueryFirstOrDefault<ushort?>(query, new { steamid = player.SteamId });
 
 				if (musicData != null)
 				{
@@ -155,14 +167,17 @@ namespace WeaponPaints
 			}
 		}
 
+
+
 		internal async Task SyncKnifeToDatabase(PlayerInfo player, string knife)
 		{
-			if (!_config.Additional.KnifeEnabled || player == null || string.IsNullOrEmpty(player.SteamId) || string.IsNullOrEmpty(knife)) return;
+			if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player.SteamId) || string.IsNullOrEmpty(knife)) return;
 
+			const string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
+			
 			try
 			{
 				await using var connection = await _database.GetConnectionAsync();
-				string query = "INSERT INTO `wp_player_knife` (`steamid`, `knife`) VALUES(@steamid, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
 				await connection.ExecuteAsync(query, new { steamid = player.SteamId, newKnife = knife });
 			}
 			catch (Exception e)
@@ -173,12 +188,12 @@ namespace WeaponPaints
 
 		internal async Task SyncGloveToDatabase(PlayerInfo player, int defindex)
 		{
-			if (!_config.Additional.GloveEnabled || player == null || string.IsNullOrEmpty(player.SteamId)) return;
+			if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player.SteamId)) return;
 
 			try
 			{
 				await using var connection = await _database.GetConnectionAsync();
-				string query = "INSERT INTO `wp_player_gloves` (`steamid`, `weapon_defindex`) VALUES(@steamid, @weapon_defindex) ON DUPLICATE KEY UPDATE `weapon_defindex` = @weapon_defindex";
+				const string query = "INSERT INTO `wp_player_gloves` (`steamid`, `weapon_defindex`) VALUES(@steamid, @weapon_defindex) ON DUPLICATE KEY UPDATE `weapon_defindex` = @weapon_defindex";
 				await connection.ExecuteAsync(query, new { steamid = player.SteamId, weapon_defindex = defindex });
 			}
 			catch (Exception e)
@@ -189,17 +204,18 @@ namespace WeaponPaints
 
 		internal async Task SyncAgentToDatabase(PlayerInfo player)
 		{
-			if (!_config.Additional.AgentEnabled || player == null || string.IsNullOrEmpty(player.SteamId)) return;
+			if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player.SteamId)) return;
 
+			const string query = """
+			                     					INSERT INTO `wp_player_agents` (`steamid`, `agent_ct`, `agent_t`)
+			                     					VALUES(@steamid, @agent_ct, @agent_t)
+			                     					ON DUPLICATE KEY UPDATE
+			                     						`agent_ct` = @agent_ct,
+			                     						`agent_t` = @agent_t
+			                     """;
 			try
 			{
 				await using var connection = await _database.GetConnectionAsync();
-				string query = @"
-					INSERT INTO `wp_player_agents` (`steamid`, `agent_ct`, `agent_t`)
-					VALUES(@steamid, @agent_ct, @agent_t)
-					ON DUPLICATE KEY UPDATE
-						`agent_ct` = @agent_ct,
-						`agent_t` = @agent_t";
 
 				await connection.ExecuteAsync(query, new { steamid = player.SteamId, agent_ct = WeaponPaints.g_playersAgent[player.Slot].CT, agent_t = WeaponPaints.g_playersAgent[player.Slot].T });
 			}
@@ -211,25 +227,22 @@ namespace WeaponPaints
 
 		internal async Task SyncWeaponPaintsToDatabase(PlayerInfo player)
 		{
-			if (player == null || string.IsNullOrEmpty(player.SteamId) || !WeaponPaints.gPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponsInfo))
+			if (string.IsNullOrEmpty(player.SteamId) || !WeaponPaints.gPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponsInfo))
 				return;
 
 			try
 			{
 				await using var connection = await _database.GetConnectionAsync();
 
-				foreach (var weaponInfoPair in weaponsInfo)
+				foreach (var (weaponDefIndex, weaponInfo) in weaponsInfo)
 				{
-					int weaponDefIndex = weaponInfoPair.Key;
-					WeaponInfo weaponInfo = weaponInfoPair.Value;
+					var paintId = weaponInfo.Paint;
+					var wear = weaponInfo.Wear;
+					var seed = weaponInfo.Seed;
 
-					int paintId = weaponInfo.Paint;
-					float wear = weaponInfo.Wear;
-					int seed = weaponInfo.Seed;
+					const string queryCheckExistence = "SELECT COUNT(*) FROM `wp_player_skins` WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
 
-					string queryCheckExistence = "SELECT COUNT(*) FROM `wp_player_skins` WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
-
-					int existingRecordCount = await connection.ExecuteScalarAsync<int>(queryCheckExistence, new { steamid = player.SteamId, weaponDefIndex });
+					var existingRecordCount = await connection.ExecuteScalarAsync<int>(queryCheckExistence, new { steamid = player.SteamId, weaponDefIndex = weaponDefIndex });
 
 					string query;
 					object parameters;
@@ -237,13 +250,13 @@ namespace WeaponPaints
 					if (existingRecordCount > 0)
 					{
 						query = "UPDATE `wp_player_skins` SET `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
-						parameters = new { steamid = player.SteamId, weaponDefIndex, paintId, wear, seed };
+						parameters = new { steamid = player.SteamId, weaponDefIndex = weaponDefIndex, paintId, wear, seed };
 					}
 					else
 					{
 						query = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
 								"VALUES (@steamid, @weaponDefIndex, @paintId, @wear, @seed)";
-						parameters = new { steamid = player.SteamId, weaponDefIndex, paintId, wear, seed };
+						parameters = new { steamid = player.SteamId, weaponDefIndex = weaponDefIndex, paintId, wear, seed };
 					}
 
 					await connection.ExecuteAsync(query, parameters);
@@ -257,12 +270,12 @@ namespace WeaponPaints
 
 		internal async Task SyncMusicToDatabase(PlayerInfo player, ushort music)
 		{
-			if (!_config.Additional.MusicEnabled || player == null || string.IsNullOrEmpty(player.SteamId)) return;
+			if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player.SteamId)) return;
 
 			try
 			{
 				await using var connection = await _database.GetConnectionAsync();
-				string query = "INSERT INTO `wp_player_music` (`steamid`, `music_id`) VALUES(@steamid, @newMusic) ON DUPLICATE KEY UPDATE `music_id` = @newMusic";
+				const string query = "INSERT INTO `wp_player_music` (`steamid`, `music_id`) VALUES(@steamid, @newMusic) ON DUPLICATE KEY UPDATE `music_id` = @newMusic";
 				await connection.ExecuteAsync(query, new { steamid = player.SteamId, newMusic = music });
 			}
 			catch (Exception e)

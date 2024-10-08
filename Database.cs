@@ -1,15 +1,11 @@
-﻿using MySqlConnector;
+﻿using Microsoft.Extensions.Logging;
+using MySqlConnector;
 
 namespace WeaponPaints
 {
-	public class Database
+	public class Database(string dbConnectionString)
 	{
-		private readonly string _dbConnectionString;
-
-		public Database(string dbConnectionString)
-		{
-			_dbConnectionString = dbConnectionString;
-		}
+		private readonly string _dbConnectionString = dbConnectionString;
 
 		public async Task<MySqlConnection> GetConnectionAsync()
 		{
@@ -19,8 +15,9 @@ namespace WeaponPaints
 				await connection.OpenAsync();
 				return connection;
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
+				WeaponPaints.Instance.Logger.LogError($"Unable to connect to database: {ex.Message}");
 				throw;
 			}
 		}
