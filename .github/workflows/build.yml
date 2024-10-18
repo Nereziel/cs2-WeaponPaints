@@ -58,8 +58,13 @@ jobs:
           ${{ env.OUTPUT_PATH }}/McMaster.NETCore.Plugins.dll \
           ${{ env.OUTPUT_PATH }}/Microsoft.DotNet.PlatformAbstractions.dll \
           ${{ env.OUTPUT_PATH }}/Microsoft.Extensions.DependencyModel.dll \
+<<<<<<< HEAD
     - name: Copy skins
       run: cp -$ website/data ${{ env.OUTPUT_PATH }}
+=======
+    - name: Copy skins.json
+      run: cp -R website/data ${{ env.OUTPUT_PATH }}
+>>>>>>> a5723a4462a7e9a5b3749f727b8fdb6100ae10df
     - name: Zip
       run: zip -r "${{ env.PROJECT_NAME }}.zip" "${{ env.OUTPUT_PATH }}" gamedata/
     - name: Clean files Website
