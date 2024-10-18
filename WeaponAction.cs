@@ -5,13 +5,15 @@ using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Timers;
 using CounterStrikeSharp.API.Modules.Utils;
 using Microsoft.Extensions.Logging;
+using System.Collections.Concurrent;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 
 namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
-				private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
+		private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
 			if (!Config.Additional.SkinEnabled) return;
 			if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return;
@@ -52,12 +54,12 @@ namespace WeaponPaints
 				weapon.FallbackWear = 0.01f;
 
 				weapon.AttributeManager.Item.NetworkedDynamicAttributes.Attributes.RemoveAll();
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab",  GetRandomPaint(weaponDefIndex));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", GetRandomPaint(weaponDefIndex));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture seed", 0);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture wear", 0.01f);
 
 				weapon.AttributeManager.Item.AttributeList.Attributes.RemoveAll();
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture prefab",  GetRandomPaint(weaponDefIndex));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture prefab", GetRandomPaint(weaponDefIndex));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture seed", 0);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture wear", 0.01f);
 
@@ -75,9 +77,11 @@ namespace WeaponPaints
 
 			var weaponInfo = value;
 			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
+
 			weapon.AttributeManager.Item.ItemID = 16384;
 			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
 			weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
+			weapon.AttributeManager.Item.CustomName = weaponInfo.Nametag;
 			weapon.FallbackPaintKit = weaponInfo.Paint;
 			weapon.FallbackSeed = weaponInfo.Seed;
 			weapon.FallbackWear = weaponInfo.Wear;
@@ -89,9 +93,104 @@ namespace WeaponPaints
 				return;
 
 			if (isKnife) return;
+
+			if (weaponInfo.Stickers.Count > 0) SetStickers(player, weapon);
+			if (weaponInfo.KeyChain != null) SetKeychain(player, weapon);
+
 			UpdatePlayerWeaponMeshGroupMask(player, weapon, !newPaints.Contains(fallbackPaintKit));
 		}
-		
+
+		// silly method to update sticker when call RefreshWeapons()
+		private void IncrementWearForWeaponWithStickers(CCSPlayerController player, CBasePlayerWeapon weapon)
+		{
+			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
+			if (gPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) &&
+				playerWeapons.TryGetValue(weaponDefIndex, out var weaponInfo) &&
+				weaponInfo.Stickers.Count > 0)
+			{
+
+				float wearIncrement = 0.001f;
+				float currentWear = weaponInfo.Wear;
+
+				var playerWear = temporaryPlayerWeaponWear.GetOrAdd(player.Slot, _ => new ConcurrentDictionary<int, float>());
+
+				float incrementedWear = playerWear.AddOrUpdate(
+					weaponDefIndex,
+					currentWear + wearIncrement,
+					(_, oldWear) => Math.Min(oldWear + wearIncrement, 1.0f)
+				);
+
+				weapon.FallbackWear = incrementedWear;
+			}
+		}
+
+		public void SetStickers(CCSPlayerController? player, CBasePlayerWeapon weapon)
+		{
+			if (player == null || !player.IsValid) return;
+
+			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
+
+			if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) ||
+				playerWeapons == null ||
+				!playerWeapons.TryGetValue(weaponDefIndex, out var weaponInfo) ||
+				weaponInfo == null)
+			{
+				return;
+			}
+
+			foreach (var sticker in weaponInfo.Stickers)
+			{
+				int stickerSlot = weaponInfo.Stickers.IndexOf(sticker);
+
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					$"sticker slot {stickerSlot} id", ViewAsFloat(sticker.Id));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					$"sticker slot {stickerSlot} schema", sticker.Schema);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					$"sticker slot {stickerSlot} offset x", sticker.OffsetX);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					$"sticker slot {stickerSlot} offset y", sticker.OffsetY);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					$"sticker slot {stickerSlot} wear", sticker.Wear);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					$"sticker slot {stickerSlot} scale", sticker.Scale);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					$"sticker slot {stickerSlot} rotation", sticker.Rotation);
+			}
+
+			if (temporaryPlayerWeaponWear != null &&
+				temporaryPlayerWeaponWear.TryGetValue(player.Slot, out var playerWear) &&
+				playerWear.TryGetValue(weaponDefIndex, out float storedWear))
+			{
+				weapon.FallbackWear = storedWear;
+			}
+		}
+
+		public void SetKeychain(CCSPlayerController? player, CBasePlayerWeapon weapon)
+		{
+			if (player == null || !player.IsValid) return;
+
+			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
+
+			if (gPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeaponsInfo) &&
+				playerWeaponsInfo.TryGetValue(weaponDefIndex, out var value) &&
+				value.KeyChain != null)
+			{
+				var keyChain = value.KeyChain;
+
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					"keychain slot 0 id", ViewAsFloat(keyChain.Id));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					"keychain slot 0 offset x", keyChain.OffsetX);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					"keychain slot 0 offset y", keyChain.OffsetY);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					"keychain slot 0 offset z", keyChain.OffsetZ);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					"keychain slot 0 seed", keyChain.Seed);
+			}
+		}
+
 		private static void GiveKnifeToPlayer(CCSPlayerController? player)
 		{
 			if (!_config.Additional.KnifeEnabled || player == null || !player.IsValid) return;
@@ -248,6 +347,8 @@ namespace WeaponPaints
 							{
 								newWeapon.Clip1 = ammo.Item1;
 								newWeapon.ReserveAmmo[0] = ammo.Item2;
+
+								IncrementWearForWeaponWithStickers(player, newWeapon);
 							}
 							catch (Exception ex)
 							{
@@ -446,6 +547,11 @@ namespace WeaponPaints
 			}
 
 			return values;
+		}
+
+		public float ViewAsFloat(uint value)
+		{
+			return BitConverter.Int32BitsToSingle((int)value);
 		}
 	}
 }
