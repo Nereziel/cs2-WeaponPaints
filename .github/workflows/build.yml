@@ -59,13 +59,7 @@ jobs:
           ${{ env.OUTPUT_PATH }}/Microsoft.DotNet.PlatformAbstractions.dll \
           ${{ env.OUTPUT_PATH }}/Microsoft.Extensions.DependencyModel.dll \
     - name: Copy skins.json
-      run: cp website/data/skins.json ${{ env.OUTPUT_PATH }}/skins.json
-    - name: Copy gloves.json
-      run: cp website/data/gloves.json ${{ env.OUTPUT_PATH }}/gloves.json
-    - name: Copy agents.json
-      run: cp website/data/agents.json ${{ env.OUTPUT_PATH }}/agents.json
-    - name: Copy music.json
-      run: cp website/data/music.json ${{ env.OUTPUT_PATH }}/music.json
+      run: cp -R website/data ${{ env.OUTPUT_PATH }}
     - name: Zip
       run: zip -r "${{ env.PROJECT_NAME }}.zip" "${{ env.OUTPUT_PATH }}" gamedata/
     - name: Clean files Website
