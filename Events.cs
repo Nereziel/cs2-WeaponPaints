@@ -4,7 +4,6 @@ using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
-using System.Runtime.InteropServices;
 
 namespace WeaponPaints
 {
@@ -68,6 +67,22 @@ namespace WeaponPaints
 
 			if (player is null || !player.IsValid || player.IsBot) return HookResult.Continue;
 
+			var playerInfo = new PlayerInfo
+			{
+				UserId = player.UserId,
+				Slot = player.Slot,
+				Index = (int)player.Index,
+				SteamId = player.SteamID.ToString(),
+				Name = player.PlayerName,
+				IpAddress = player.IpAddress?.Split(":")[0]
+			};
+
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponInfos))
+				return HookResult.Continue;
+			
+			if (WeaponSync != null)
+				_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo, weaponInfos));
+
 			if (Config.Additional.SkinEnabled)
 			{
 				GPlayerWeaponsInfo.TryRemove(player.Slot, out _);
@@ -88,9 +103,12 @@ namespace WeaponPaints
 			{
 				GPlayersMusic.TryRemove(player.Slot, out _);
 			}
+			if (Config.Additional.PinsEnabled)
+			{
+				GPlayersPin.TryRemove(player.Slot, out _);
+			}
 
 			_temporaryPlayerWeaponWear.TryRemove(player.Slot, out _);
-
 			CommandsCooldown.Remove(player.Slot);
 
 			return HookResult.Continue;
@@ -231,6 +249,37 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
+		private HookResult OnPlayerDeath(EventPlayerDeath @event, GameEventInfo info)
+		{
+			CCSPlayerController? player = @event.Attacker;
+
+			if (player is null || !player.IsValid)
+				return HookResult.Continue;
+
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return HookResult.Continue;
+
+			CBasePlayerWeapon? weapon = player.PlayerPawn.Value?.WeaponServices?.ActiveWeapon.Value;
+
+			if (weapon == null) return HookResult.Continue;
+
+			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
+
+			if (!GPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var weaponInfo) || weaponInfo.Paint == 0)
+				return HookResult.Continue;
+			
+			if (!weaponInfo.StatTrak) return HookResult.Continue;
+			
+			weaponInfo.StatTrakCount += 1;
+				
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater score type", 0);
+				
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater score type", 0);
+
+			return HookResult.Continue;
+		}
+
 		private void RegisterListeners()
 		{
 			RegisterListener<Listeners.OnMapStart>(OnMapStart);
@@ -239,6 +288,7 @@ namespace WeaponPaints
 			RegisterEventHandler<EventRoundStart>(OnRoundStart);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
 			RegisterListener<Listeners.OnEntityCreated>(OnEntityCreated);
+			RegisterEventHandler<EventPlayerDeath>(OnPlayerDeath);
 
 			if (Config.Additional.ShowSkinImage)
 				RegisterListener<Listeners.OnTick>(OnTick);
