@@ -115,9 +115,6 @@ namespace WeaponPaints
 				var weaponDefIndex = weapon.Key;
 				var weaponInfo = weapon.Value;
 
-				if (weaponInfo.Paint == 0)
-					continue;
-
 				if (weaponInfo.StatTrak)
 				{
 					if (WeaponSync != null)
