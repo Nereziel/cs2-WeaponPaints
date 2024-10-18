@@ -6,7 +6,6 @@ using CounterStrikeSharp.API.Modules.Timers;
 using CounterStrikeSharp.API.Modules.Utils;
 using Microsoft.Extensions.Logging;
 using System.Collections.Concurrent;
-using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 
 namespace WeaponPaints
@@ -86,6 +85,15 @@ namespace WeaponPaints
 			weapon.FallbackSeed = weaponInfo.Seed;
 			weapon.FallbackWear = weaponInfo.Wear;
 			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
+
+			if (weaponInfo.StatTrak)
+			{				
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater score type", 0);
+				
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater score type", 0);
+			}
 
 			fallbackPaintKit = weapon.FallbackPaintKit;
 
@@ -451,6 +459,19 @@ namespace WeaponPaints
 			player.MusicKitID = value;
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitID");
 		}
+
+		private static void GivePlayerPin(CCSPlayerController player)
+		{
+			if (!GPlayersPin.TryGetValue(player.Slot, out var pin)) return;
+
+			if (player.InventoryServices == null) return;
+
+			for (var index = 0; index < player.InventoryServices.Rank.Length; index++)
+			{
+				player.InventoryServices.Rank[index] = index == 5 ? (MedalRank_t)pin : MedalRank_t.MEDAL_RANK_NONE;
+				Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
+			}
+		}
 		
 		private void GiveOnItemPickup(CCSPlayerController player)
 		{
@@ -496,21 +517,7 @@ namespace WeaponPaints
 			return viewModel.Value == null ? null : viewModel.Value;
 		}
 
-		public static unsafe T[] GetFixedArray<T>(nint pointer, string @class, string member, int length) where T : CHandle<CBaseViewModel>
-		{
-			var ptr = pointer + Schema.GetSchemaOffset(@class, member);
-			var references = MemoryMarshal.CreateSpan(ref ptr, length);
-			var values = new T[length];
-
-			for (var i = 0; i < length; i++)
-			{
-				values[i] = (T)Activator.CreateInstance(typeof(T), references[i])!;
-			}
-
-			return values;
-		}
-
-		private float ViewAsFloat(uint value)
+		private static float ViewAsFloat(uint value)
 		{
 			return BitConverter.Int32BitsToSingle((int)value);
 		}
