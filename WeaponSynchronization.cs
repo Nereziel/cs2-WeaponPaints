@@ -373,9 +373,17 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task SyncStatTrakToDatabase(PlayerInfo player, Dictionary<int, int> weaponStatTrakCounts)
+		internal async Task SyncStatTrakToDatabase(PlayerInfo player, ConcurrentDictionary<int,WeaponInfo> weaponInfos)
 		{
-			if (string.IsNullOrEmpty(player.SteamId) || weaponStatTrakCounts == null || weaponStatTrakCounts.Count == 0)
+			if (WeaponPaints.WeaponSync == null || weaponInfos.IsEmpty) return;
+
+			var statTrakWeapons = weaponInfos
+				.Where(w => w.Value is { StatTrak: true, StatTrakCount: > 0 })
+				.ToDictionary(w => w.Key, w => w.Value.StatTrakCount);
+
+			if (statTrakWeapons.Count == 0) return;
+
+			if (string.IsNullOrEmpty(player.SteamId))
 				return;
 
 			try
@@ -383,11 +391,8 @@ namespace WeaponPaints
 				await using var connection = await _database.GetConnectionAsync();
 				await using var transaction = await connection.BeginTransactionAsync();
 
-				foreach (var weapon in weaponStatTrakCounts)
+				foreach (var (defindex, statTrakCount) in statTrakWeapons)
 				{
-					int defindex = weapon.Key;
-					int statTrakCount = weapon.Value;
-
 					const string query = @"
 						INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_stattrak_count`) 
 						VALUES (@steamid, @weaponDefIndex, @StatTrakCount) 
@@ -407,7 +412,7 @@ namespace WeaponPaints
 			}
 			catch (Exception e)
 			{
-				Utility.Log($"Error syncing weapon paints to database: {e.Message}");
+				Utility.Log($"Error syncing stattrak to database: {e.Message}");
 			}
 		}
 	}

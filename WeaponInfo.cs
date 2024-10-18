@@ -3,13 +3,13 @@
 	public class WeaponInfo
 	{
 		public int Paint { get; set; }
-		public int Seed { get; set; } = 0;
-		public float Wear { get; set; } = 0f;
+		public int Seed { get; set; }
+		public float Wear { get; set; }
 		public string Nametag { get; set; } = "";
 		public bool StatTrak { get; set; } = false;
-		public int StatTrakCount { get; set; } = 0;
+		public int StatTrakCount { get; set; }
 		public KeyChainInfo? KeyChain { get; set; }
-		public List<StickerInfo> Stickers { get; set; } = new List<StickerInfo>();
+		public List<StickerInfo> Stickers { get; set; } = new();
 	}
 
 	public class StickerInfo

@@ -16,7 +16,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
     public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.6a";
+	public override string ModuleVersion => "2.7a";
 
 	public override void Load(bool hotReload)
 	{
@@ -53,6 +53,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					if (WeaponSync != null) await WeaponSync.GetPlayerData(playerInfo);
 				});
 			}
+
+			AddTimer(2.0f, () => OnAllPluginsLoaded(hotReload));
 		}
 
 		Utility.LoadSkinsFromFile(ModuleDirectory + $"/data/skins_{_config.SkinsLanguage}.json", Logger);

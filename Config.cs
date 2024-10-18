@@ -65,7 +65,7 @@ namespace WeaponPaints
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 7;
+        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 8;
 
         [JsonPropertyName("SkinsLanguage")]
 		public string SkinsLanguage { get; set; } = "en";
@@ -91,7 +91,7 @@ namespace WeaponPaints
 		[JsonPropertyName("Website")]
 		public string Website { get; set; } = "example.com/skins";
 
-		[JsonPropertyName("Additionalss")]
+		[JsonPropertyName("Additional")]
 		public Additional Additional { get; set; } = new();
 	}
 }

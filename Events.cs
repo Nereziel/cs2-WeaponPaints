@@ -4,8 +4,6 @@ using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
-using System.Runtime.InteropServices;
-using System.Collections.Concurrent;
 
 namespace WeaponPaints
 {
@@ -81,8 +79,9 @@ namespace WeaponPaints
 
 			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponInfos))
 				return HookResult.Continue;
-
-			_ = Task.Run(async () => await SyncStatTrakForPlayer(playerInfo, weaponInfos));
+			
+			if (WeaponSync != null)
+				_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo, weaponInfos));
 
 			if (Config.Additional.SkinEnabled)
 			{
@@ -110,30 +109,9 @@ namespace WeaponPaints
 			}
 
 			_temporaryPlayerWeaponWear.TryRemove(player.Slot, out _);
-
 			CommandsCooldown.Remove(player.Slot);
 
 			return HookResult.Continue;
-		}
-
-		public async Task SyncStatTrakForPlayer(PlayerInfo playerInfo, ConcurrentDictionary<int, WeaponInfo> weaponInfos)
-		{
-			if (WeaponSync == null || weaponInfos == null || weaponInfos.Count == 0) return;
-
-			var statTrakWeapons = weaponInfos
-				.Where(w => w.Value.StatTrak)
-				.ToDictionary(w => w.Key, w => w.Value.StatTrakCount);
-
-			if (statTrakWeapons.Count == 0) return;
-
-			try
-			{
-				await WeaponSync.SyncStatTrakToDatabase(playerInfo, statTrakWeapons);
-			}
-			catch (Exception ex)
-			{
-				Utility.Log($"Error syncing StatTrak for player {playerInfo.SteamId}: {ex.Message}");
-			}
 		}
 		
 		private void OnMapStart(string mapName)
@@ -286,30 +264,18 @@ namespace WeaponPaints
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-			if (!GPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var value) || value.Paint == 0) return HookResult.Continue;
-
-			var weaponInfo = value;
-
-			if (weaponInfo.StatTrak)
-			{
-				weaponInfo.StatTrakCount += 1;
-
-				var playerInfo = new PlayerInfo
-				{
-					UserId = player.UserId,
-					Slot = player.Slot,
-					Index = (int)player.Index,
-					SteamId = player.SteamID.ToString(),
-					Name = player.PlayerName,
-					IpAddress = player.IpAddress?.Split(":")[0]
-				};
-
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater score type", 0);
+			if (!GPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var weaponInfo) || weaponInfo.Paint == 0)
+				return HookResult.Continue;
+			
+			if (!weaponInfo.StatTrak) return HookResult.Continue;
+			
+			weaponInfo.StatTrakCount += 1;
 				
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater score type", 0);
-			}
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater score type", 0);
+				
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater score type", 0);
 
 			return HookResult.Continue;
 		}

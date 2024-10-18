@@ -6,7 +6,6 @@ using CounterStrikeSharp.API.Modules.Timers;
 using CounterStrikeSharp.API.Modules.Utils;
 using Microsoft.Extensions.Logging;
 using System.Collections.Concurrent;
-using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 
 namespace WeaponPaints
@@ -518,21 +517,7 @@ namespace WeaponPaints
 			return viewModel.Value == null ? null : viewModel.Value;
 		}
 
-		public static unsafe T[] GetFixedArray<T>(nint pointer, string @class, string member, int length) where T : CHandle<CBaseViewModel>
-		{
-			var ptr = pointer + Schema.GetSchemaOffset(@class, member);
-			var references = MemoryMarshal.CreateSpan(ref ptr, length);
-			var values = new T[length];
-
-			for (var i = 0; i < length; i++)
-			{
-				values[i] = (T)Activator.CreateInstance(typeof(T), references[i])!;
-			}
-
-			return values;
-		}
-
-		private float ViewAsFloat(uint value)
+		private static float ViewAsFloat(uint value)
 		{
 			return BitConverter.Int32BitsToSingle((int)value);
 		}
