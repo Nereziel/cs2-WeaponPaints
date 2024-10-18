@@ -8,6 +8,7 @@
 	"wp_info_music": "Ievadiet {lime}!music{default}, lai atvērtu mūzikas izvēlni",
 	"wp_command_cooldown": "{lightred}Šobrīd nevarat atsvaidzināt ieroča krāsas",
 	"wp_command_refresh_done": "{lime}Atsvaidzinot ieroča krāsas",
+	"wp_command_disable_warmup": "{lightred}Jūs nevarat atsvaidzināt apvalkus iesildīšanās laikā",
 	"wp_knife_menu_select": "Jūs esat izvēlējies {lime}{0}{default} kā savu nazi",
 	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "Nazi Izvēlne",

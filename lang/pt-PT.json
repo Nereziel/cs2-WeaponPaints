@@ -8,6 +8,7 @@
 	"wp_info_music": "Digite {lime}!music{default} para abrir o menu de música",
 	"wp_command_cooldown": "{lightred}Não pode atualizar as skins de armas de momento",
 	"wp_command_refresh_done": "{lime}Atualizando as skins de armas",
+	"wp_command_disable_warmup": "{lightred}Não podes atualizar as skins durante o aquecimento",
 	"wp_knife_menu_select": "Escolheu {lime}{0}{default} como a sua faca",
 	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "Menu de Facas",

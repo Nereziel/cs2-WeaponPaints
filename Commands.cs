@@ -27,6 +27,10 @@ namespace WeaponPaints
 
 			try
 			{
+				if (WeaponPaints.Utility.IsWarmup) {
+					player!.Print(Localizer["wp_command_disable_warmup"])
+					return;
+				}
 				if (player != null && !commandsCooldown.TryGetValue(player.Slot, out var cooldownEndTime) ||
 	player != null && DateTime.UtcNow >= (commandsCooldown.TryGetValue(player.Slot, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 				{

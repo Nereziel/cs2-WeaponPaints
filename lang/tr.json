@@ -8,6 +8,7 @@
 	"wp_info_music": "Müzik menüsünü açmak için {lime}!music{default} yazın",
 	"wp_command_cooldown": "{lightred}Şu anda silah boyalarını yenileyemezsiniz",
 	"wp_command_refresh_done": "{lime}Silah boyaları yenileniyor",
+	"wp_command_disable_warmup": "{lightred}Isınma sırasında skin'leri yenileyemezsiniz",
 	"wp_knife_menu_select": "{lime}{0}{default} olarak bıçağınızı seçtiniz",
 	"wp_knife_menu_kill": "",
 	"wp_knife_menu_title": "Bıçak Menüsü",
