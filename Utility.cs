@@ -31,7 +31,14 @@ namespace WeaponPaints
 						                        `weapon_defindex` int(6) NOT NULL,
 						                        `weapon_paint_id` int(6) NOT NULL,
 						                        `weapon_wear` float NOT NULL DEFAULT 0.000001,
-						                        `weapon_seed` int(16) NOT NULL DEFAULT 0
+						                        `weapon_seed` int(16) NOT NULL DEFAULT 0,
+												`weapon_nametag` VARCHAR(128) DEFAULT NULL,
+												`weapon_sticker_0` VARCHAR(128) NOT NULL DEFAULT '0;0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+												`weapon_sticker_1` VARCHAR(128) NOT NULL DEFAULT '0;0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+												`weapon_sticker_2` VARCHAR(128) NOT NULL DEFAULT '0;0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+												`weapon_sticker_3` VARCHAR(128) NOT NULL DEFAULT '0;0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+												`weapon_sticker_4` VARCHAR(128) NOT NULL DEFAULT '0;0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+												`weapon_keychain`VARCHAR(128) NOT NULL DEFAULT '0;0;0;0;0' COMMENT 'id;x;y;z;seed'
 						                    ) ENGINE=InnoDB
 						""",
 						@"CREATE TABLE IF NOT EXISTS `wp_player_knife` (

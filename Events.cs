@@ -89,6 +89,8 @@ namespace WeaponPaints
 				g_playersMusic.TryRemove(player.Slot, out _);
 			}
 
+			temporaryPlayerWeaponWear.TryRemove(player.Slot, out _);
+
 			commandsCooldown.Remove(player.Slot);
 
 			return HookResult.Continue;

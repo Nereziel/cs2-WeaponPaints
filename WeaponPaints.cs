@@ -165,6 +165,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 	private ulong _nextItemId = MinimumCustomItemId;
 	public static readonly bool IsWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
 
+	private ConcurrentDictionary<int, ConcurrentDictionary<int, float>> temporaryPlayerWeaponWear = new ConcurrentDictionary<int, ConcurrentDictionary<int, float>>();
+
 	public WeaponPaintsConfig Config { get; set; } = new();
 	public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
