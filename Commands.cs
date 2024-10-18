@@ -37,6 +37,10 @@ namespace WeaponPaints
 
 						GivePlayerGloves(player);
 						RefreshWeapons(player);
+						GivePlayerAgent(player);
+						GivePlayerMusicKit(player);
+						AddTimer(0.1f, () => GivePlayerPin(player));
+						AddTimer(0.15f, () => GivePlayerPin(player));
 					}
 
 					if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))

@@ -87,6 +87,15 @@ namespace WeaponPaints
 			weapon.FallbackWear = weaponInfo.Wear;
 			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
 
+			if (weaponInfo.StatTrak)
+			{				
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloatKillStreak(weaponInfo.StatTrakCount));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater score type", 0);
+				
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater", ViewAsFloatKillStreak(weaponInfo.StatTrakCount));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater score type", 0);
+			}
+
 			fallbackPaintKit = weapon.FallbackPaintKit;
 
 			if (fallbackPaintKit == 0)
@@ -451,6 +460,19 @@ namespace WeaponPaints
 			player.MusicKitID = value;
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitID");
 		}
+
+		private static void GivePlayerPin(CCSPlayerController player)
+		{
+			if (!GPlayersPin.TryGetValue(player.Slot, out var pin)) return;
+
+			if (player.InventoryServices == null) return;
+
+			for (var index = 0; index < player.InventoryServices.Rank.Length; index++)
+			{
+				player.InventoryServices.Rank[index] = index == 5 ? (MedalRank_t)pin : MedalRank_t.MEDAL_RANK_NONE;
+				Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
+			}
+		}
 		
 		private void GiveOnItemPickup(CCSPlayerController player)
 		{
@@ -513,6 +535,17 @@ namespace WeaponPaints
 		private float ViewAsFloat(uint value)
 		{
 			return BitConverter.Int32BitsToSingle((int)value);
+		}
+
+		public float ViewAsFloatKillStreak<T>(T value) where T : struct
+		{
+			byte[] bytes = value switch
+			{
+				int intValue => BitConverter.GetBytes(intValue),
+				uint uintValue => BitConverter.GetBytes(uintValue),
+				_ => throw new ArgumentException("Unsupported type")
+			};
+			return BitConverter.ToSingle(bytes, 0);
 		}
 	}
 }

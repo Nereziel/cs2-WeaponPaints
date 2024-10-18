@@ -32,6 +32,8 @@ namespace WeaponPaints
 					GetMusicFromDatabase(player, connection);
 				if (_config.Additional.SkinEnabled)
 					GetWeaponPaintsFromDatabase(player, connection);
+				if (_config.Additional.PinsEnabled)
+					GetPinsFromDatabase(player, connection);
 			}
 			catch (Exception ex)
 			{
@@ -235,6 +237,27 @@ namespace WeaponPaints
 			}
 		}
 
+		private void GetPinsFromDatabase(PlayerInfo? player, MySqlConnection connection)
+		{
+			try
+			{
+				if (string.IsNullOrEmpty(player?.SteamId))
+					return;
+
+				const string query = "SELECT `id` FROM `wp_player_pins` WHERE `steamid` = @steamid";
+				var pinData = connection.QueryFirstOrDefault<ushort?>(query, new { steamid = player.SteamId });
+
+				if (pinData != null)
+				{
+					WeaponPaints.GPlayersPin[player.Slot] = pinData.Value;
+				}
+			}
+			catch (Exception ex)
+			{
+				Utility.Log($"An error occurred in GetPinsFromDatabase: {ex.Message}");
+			}
+		}
+
 		internal async Task SyncKnifeToDatabase(PlayerInfo player, string knife)
 		{
 			if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player.SteamId) || string.IsNullOrEmpty(knife)) return;
@@ -347,6 +370,41 @@ namespace WeaponPaints
 			catch (Exception e)
 			{
 				Utility.Log($"Error syncing music kit to database: {e.Message}");
+			}
+		}
+
+		internal async Task SyncStatTrakToDatabase(PlayerInfo player, int StatTrakCount, int defindex)
+		{
+			if (string.IsNullOrEmpty(player.SteamId) || !WeaponPaints.GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponsInfo))
+				return;
+
+			try
+			{
+				await using var connection = await _database.GetConnectionAsync();
+
+					const string queryCheckExistence = "SELECT COUNT(*) FROM `wp_player_skins` WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
+
+					var existingRecordCount = await connection.ExecuteScalarAsync<int>(queryCheckExistence, new { steamid = player.SteamId, weaponDefIndex = defindex });
+
+					string query = string.Empty;
+					object? parameters = null;
+
+					if (existingRecordCount > 0)
+					{
+						query = "UPDATE `wp_player_skins` SET `weapon_stattrak_count` = @StatTrakCount WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
+						parameters = new { steamid = player.SteamId, weaponDefIndex = defindex, StatTrakCount };
+					}
+					else
+					{
+						query = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_stattrak_count`) VALUES (@steamid, @weaponDefIndex, @StatTrakCount)";
+						parameters = new { steamid = player.SteamId, weaponDefIndex = defindex, StatTrakCount };
+					}
+
+					await connection.ExecuteAsync(query, parameters);
+			}
+			catch (Exception e)
+			{
+				Utility.Log($"Error syncing weapon paints to database: {e.Message}");
 			}
 		}
 	}

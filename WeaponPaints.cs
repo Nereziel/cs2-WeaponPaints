@@ -36,6 +36,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				GPlayersKnife.TryRemove(player.Slot, out _);
 				GPlayersGlove.TryRemove(player.Slot, out _);
 				GPlayersAgent.TryRemove(player.Slot, out _);
+				GPlayersPin.TryRemove(player.Slot, out _);
 
 				var playerInfo = new PlayerInfo
 				{

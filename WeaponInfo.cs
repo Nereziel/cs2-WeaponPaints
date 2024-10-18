@@ -6,6 +6,8 @@
 		public int Seed { get; set; } = 0;
 		public float Wear { get; set; } = 0f;
 		public string Nametag { get; set; } = "";
+		public bool StatTrak { get; set; } = false;
+		public int StatTrakCount { get; set; } = 0;
 		public KeyChainInfo? KeyChain { get; set; }
 		public List<StickerInfo> Stickers { get; set; } = new List<StickerInfo>();
 	}

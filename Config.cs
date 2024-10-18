@@ -20,6 +20,9 @@ namespace WeaponPaints
 		[JsonPropertyName("SkinEnabled")]
 		public bool SkinEnabled { get; set; } = true;
 
+		[JsonPropertyName("PinsEnabled")]
+		public bool PinsEnabled { get; set; } = true;
+
 		[JsonPropertyName("CommandWpEnabled")]
 		public bool CommandWpEnabled { get; set; } = true;
 
