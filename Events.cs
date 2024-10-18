@@ -5,6 +5,7 @@ using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 using System.Runtime.InteropServices;
+using System.Collections.Concurrent;
 
 namespace WeaponPaints
 {
@@ -68,6 +69,21 @@ namespace WeaponPaints
 
 			if (player is null || !player.IsValid || player.IsBot) return HookResult.Continue;
 
+			var playerInfo = new PlayerInfo
+			{
+				UserId = player.UserId,
+				Slot = player.Slot,
+				Index = (int)player.Index,
+				SteamId = player.SteamID.ToString(),
+				Name = player.PlayerName,
+				IpAddress = player.IpAddress?.Split(":")[0]
+			};
+
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponInfos))
+				return HookResult.Continue;
+
+			_ = Task.Run(async () => await SyncStatTrakForPlayer(playerInfo, weaponInfos));
+
 			if (Config.Additional.SkinEnabled)
 			{
 				GPlayerWeaponsInfo.TryRemove(player.Slot, out _);
@@ -97,35 +113,27 @@ namespace WeaponPaints
 
 			CommandsCooldown.Remove(player.Slot);
 
-			var playerInfo = new PlayerInfo
-			{
-				UserId = player.UserId,
-				Slot = player.Slot,
-				Index = (int)player.Index,
-				SteamId = player.SteamID.ToString(),
-				Name = player.PlayerName,
-				IpAddress = player.IpAddress?.Split(":")[0]
-			};
-
-			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponInfos))
-				return HookResult.Continue;
-
-			foreach (var weapon in weaponInfos)
-			{
-				var weaponDefIndex = weapon.Key;
-				var weaponInfo = weapon.Value;
-
-				if (weaponInfo.StatTrak)
-				{
-					if (WeaponSync != null)
-					{
-
-						_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo, weaponInfo.StatTrakCount, weaponDefIndex));
-					}
-				}
-			}
-
 			return HookResult.Continue;
+		}
+
+		public async Task SyncStatTrakForPlayer(PlayerInfo playerInfo, ConcurrentDictionary<int, WeaponInfo> weaponInfos)
+		{
+			if (WeaponSync == null || weaponInfos == null || weaponInfos.Count == 0) return;
+
+			var statTrakWeapons = weaponInfos
+				.Where(w => w.Value.StatTrak)
+				.ToDictionary(w => w.Key, w => w.Value.StatTrakCount);
+
+			if (statTrakWeapons.Count == 0) return;
+
+			try
+			{
+				await WeaponSync.SyncStatTrakToDatabase(playerInfo, statTrakWeapons);
+			}
+			catch (Exception ex)
+			{
+				Utility.Log($"Error syncing StatTrak for player {playerInfo.SteamId}: {ex.Message}");
+			}
 		}
 		
 		private void OnMapStart(string mapName)

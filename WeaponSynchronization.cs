@@ -373,34 +373,37 @@ namespace WeaponPaints
 			}
 		}
 
-		internal async Task SyncStatTrakToDatabase(PlayerInfo player, int StatTrakCount, int defindex)
+		internal async Task SyncStatTrakToDatabase(PlayerInfo player, Dictionary<int, int> weaponStatTrakCounts)
 		{
-			if (string.IsNullOrEmpty(player.SteamId) || !WeaponPaints.GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponsInfo))
+			if (string.IsNullOrEmpty(player.SteamId) || weaponStatTrakCounts == null || weaponStatTrakCounts.Count == 0)
 				return;
 
 			try
 			{
 				await using var connection = await _database.GetConnectionAsync();
+				await using var transaction = await connection.BeginTransactionAsync();
 
-					const string queryCheckExistence = "SELECT COUNT(*) FROM `wp_player_skins` WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
+				foreach (var weapon in weaponStatTrakCounts)
+				{
+					int defindex = weapon.Key;
+					int statTrakCount = weapon.Value;
 
-					var existingRecordCount = await connection.ExecuteScalarAsync<int>(queryCheckExistence, new { steamid = player.SteamId, weaponDefIndex = defindex });
+					const string query = @"
+						INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_stattrak_count`) 
+						VALUES (@steamid, @weaponDefIndex, @StatTrakCount) 
+						ON DUPLICATE KEY UPDATE `weapon_stattrak_count` = @StatTrakCount";
 
-					string query = string.Empty;
-					object? parameters = null;
-
-					if (existingRecordCount > 0)
+					var parameters = new
 					{
-						query = "UPDATE `wp_player_skins` SET `weapon_stattrak_count` = @StatTrakCount WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
-						parameters = new { steamid = player.SteamId, weaponDefIndex = defindex, StatTrakCount };
-					}
-					else
-					{
-						query = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_stattrak_count`) VALUES (@steamid, @weaponDefIndex, @StatTrakCount)";
-						parameters = new { steamid = player.SteamId, weaponDefIndex = defindex, StatTrakCount };
-					}
+						steamid = player.SteamId,
+						weaponDefIndex = defindex,
+						StatTrakCount = statTrakCount
+					};
 
-					await connection.ExecuteAsync(query, parameters);
+					await connection.ExecuteAsync(query, parameters, transaction);
+				}
+
+				await transaction.CommitAsync();
 			}
 			catch (Exception e)
 			{
