@@ -108,7 +108,7 @@ namespace WeaponPaints
 			};
 
 			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponInfos))
-    			return HookResult.Continue;
+				return HookResult.Continue;
 
 			foreach (var weapon in weaponInfos)
 			{
