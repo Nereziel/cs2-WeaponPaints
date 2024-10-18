@@ -19,6 +19,14 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Added command **`!agents`** to show menu with agents
 - Translations support, submit a PR if you want to share your translation
 
+## ⚙️ Requirements
+**Ensure all the following dependencies are installed before proceeding**
+- [CounterStrikeSharp](https://github.com/roflmuffin/CounterStrikeSharp)
+- [PlayerSettings](https://github.com/NickFox007/PlayerSettingsCS2) - Required by MenuManagerCS2
+- [AnyBaseLibCS2](https://github.com/NickFox007/AnyBaseLibCS2) - Required by PlayerSettings
+- [MenuManagerCS2](https://github.com/NickFox007/MenuManagerCS2)
+- MySQL database
+
 ## CS2 Server
 - Have working CounterStrikeSharp (**with RUNTIME!**)
 - Download from Release and copy plugin to plugins
@@ -66,9 +74,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 	"GiveRandomKnife": false,  // Give random knife to players if they didn't choose
 	"GiveRandomSkins": false  // Give random skins to players if they didn't choose
 },
-
-"ConfigVersion": 4  // Don't touch
-}</pre></code>
+</pre></code>
 </details>
     
 ## Web install

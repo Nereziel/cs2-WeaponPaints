@@ -52,7 +52,7 @@ namespace WeaponPaints
 
 				if (!string.IsNullOrEmpty(playerKnife))
 				{
-					WeaponPaints.g_playersKnife[player.Slot] = playerKnife;
+					WeaponPaints.GPlayersKnife[player.Slot] = playerKnife;
 				}
 			}
 			catch (Exception ex)
@@ -73,7 +73,7 @@ namespace WeaponPaints
 
 				if (gloveData != null)
 				{
-					WeaponPaints.g_playersGlove[player.Slot] = gloveData.Value;
+					WeaponPaints.GPlayersGlove[player.Slot] = gloveData.Value;
 				}
 			}
 			catch (Exception ex)
@@ -98,7 +98,7 @@ namespace WeaponPaints
 
 				if (!string.IsNullOrEmpty(agentCT) || !string.IsNullOrEmpty(agentT))
 				{
-					WeaponPaints.g_playersAgent[player.Slot] = (
+					WeaponPaints.GPlayersAgent[player.Slot] = (
 						agentCT,
 						agentT
 					);
@@ -175,42 +175,38 @@ namespace WeaponPaints
 						string stickerColumn = $"weapon_sticker_{i}";
 						var stickerData = ((IDictionary<string, object>)row!)[stickerColumn]; // Safely cast row to a dictionary
 
-						if (stickerData != null && !string.IsNullOrEmpty(stickerData.ToString()))
+						if (string.IsNullOrEmpty(stickerData.ToString())) continue;
+						
+						var parts = stickerData.ToString()!.Split(';');
+
+						//"id;schema;x;y;wear;scale;rotation"
+						if (parts.Length != 7 ||
+						    !uint.TryParse(parts[0], out uint stickerId) ||
+						    !uint.TryParse(parts[1], out uint stickerSchema) ||
+						    !float.TryParse(parts[2], out float stickerOffsetX) ||
+						    !float.TryParse(parts[3], out float stickerOffsetY) ||
+						    !float.TryParse(parts[4], out float stickerWear) ||
+						    !float.TryParse(parts[5], out float stickerScale) ||
+						    !float.TryParse(parts[6], out float stickerRotation)) continue;
+						
+						StickerInfo stickerInfo = new StickerInfo
 						{
-							var parts = stickerData.ToString()!.Split(';');
+							Id = stickerId,
+							Schema = stickerSchema,
+							OffsetX = stickerOffsetX,
+							OffsetY = stickerOffsetY,
+							Wear = stickerWear,
+							Scale = stickerScale,
+							Rotation = stickerRotation
+						};
 
-							//"id;schema;x;y;wear;scale;rotation"
-							if (parts.Length == 7 &&
-								uint.TryParse(parts[0], out uint stickerId) &&
-								uint.TryParse(parts[1], out uint stickerSchema) &&
-								float.TryParse(parts[2], out float stickerOffsetX) &&
-								float.TryParse(parts[3], out float stickerOffsetY) &&
-								float.TryParse(parts[4], out float stickerWear) &&
-								float.TryParse(parts[5], out float stickerScale) &&
-								float.TryParse(parts[6], out float stickerRotation))
-							{
-								StickerInfo stickerInfo = new StickerInfo
-								{
-									Id = stickerId,
-									Schema = stickerSchema,
-									OffsetX = stickerOffsetX,
-									OffsetY = stickerOffsetY,
-									Wear = stickerWear,
-									Scale = stickerScale,
-									Rotation = stickerRotation
-								};
-
-								weaponInfo.Stickers.Add(stickerInfo);
-
-
-							}
-						}
+						weaponInfo.Stickers.Add(stickerInfo);
 					}
 
 					weaponInfos[weaponDefIndex] = weaponInfo;
 				}
 
-				WeaponPaints.gPlayerWeaponsInfo[player.Slot] = weaponInfos;
+				WeaponPaints.GPlayerWeaponsInfo[player.Slot] = weaponInfos;
 			}
 			catch (Exception ex)
 			{
@@ -230,7 +226,7 @@ namespace WeaponPaints
 
 				if (musicData != null)
 				{
-					WeaponPaints.g_playersMusic[player.Slot] = musicData.Value;
+					WeaponPaints.GPlayersMusic[player.Slot] = musicData.Value;
 				}
 			}
 			catch (Exception ex)
@@ -287,7 +283,7 @@ namespace WeaponPaints
 			{
 				await using var connection = await _database.GetConnectionAsync();
 
-				await connection.ExecuteAsync(query, new { steamid = player.SteamId, agent_ct = WeaponPaints.g_playersAgent[player.Slot].CT, agent_t = WeaponPaints.g_playersAgent[player.Slot].T });
+				await connection.ExecuteAsync(query, new { steamid = player.SteamId, agent_ct = WeaponPaints.GPlayersAgent[player.Slot].CT, agent_t = WeaponPaints.GPlayersAgent[player.Slot].T });
 			}
 			catch (Exception e)
 			{
@@ -297,7 +293,7 @@ namespace WeaponPaints
 
 		internal async Task SyncWeaponPaintsToDatabase(PlayerInfo player)
 		{
-			if (string.IsNullOrEmpty(player.SteamId) || !WeaponPaints.gPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponsInfo))
+			if (string.IsNullOrEmpty(player.SteamId) || !WeaponPaints.GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponsInfo))
 				return;
 
 			try

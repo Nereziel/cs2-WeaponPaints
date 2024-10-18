@@ -16,17 +16,17 @@ namespace WeaponPaints
 		private void GivePlayerWeaponSkin(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
 			if (!Config.Additional.SkinEnabled) return;
-			if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return;
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return;
 
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
 
-			if (isKnife && !g_playersKnife.ContainsKey(player.Slot) || isKnife && g_playersKnife[player.Slot] == "weapon_knife") return;
+			if (isKnife && !GPlayersKnife.ContainsKey(player.Slot) || isKnife && GPlayersKnife[player.Slot] == "weapon_knife") return;
 
 			int[] newPaints = { 106, 112, 113, 114, 115, 117, 118, 120, 121, 123, 126, 127, 128, 129, 130, 131, 133, 134, 137, 138, 139, 140, 142, 144, 145, 146, 152, 160, 161, 163, 173, 239, 292, 324, 331, 412, 461, 513, 766, 768, 770, 773, 774, 830, 831, 832, 834, 874, 875, 877, 878, 882, 883, 901, 912, 936, 937, 938, 939, 940, 1054, 1062, 1159, 1160, 1161, 1162, 1163, 1164, 1165, 1166, 1167, 1168, 1169, 1170, 1171, 1172, 1173, 1174, 1175, 1177, 1178, 1179, 1180 };
 
 			if (isKnife)
 			{
-				var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == g_playersKnife[player.Slot]);
+				var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == GPlayersKnife[player.Slot]);
 				if (newDefIndex.Key == 0) return;
 
 				if (weapon.AttributeManager.Item.ItemDefinitionIndex != newDefIndex.Key)
@@ -46,7 +46,7 @@ namespace WeaponPaints
 			weapon.AttributeManager.Item.AccountID = (uint)player.SteamID;
 
 			if (_config.Additional.GiveRandomSkin &&
-				 !gPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex))
+				 !GPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex))
 			{
 				// Random skins
 				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
@@ -73,7 +73,7 @@ namespace WeaponPaints
 				return;
 			}
 
-			if (!gPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var value) || value.Paint == 0) return;
+			if (!GPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var value) || value.Paint == 0) return;
 
 			var weaponInfo = value;
 			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
@@ -104,36 +104,32 @@ namespace WeaponPaints
 		private void IncrementWearForWeaponWithStickers(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
-			if (gPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) &&
-				playerWeapons.TryGetValue(weaponDefIndex, out var weaponInfo) &&
-				weaponInfo.Stickers.Count > 0)
-			{
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) ||
+			    !playerWeapons.TryGetValue(weaponDefIndex, out var weaponInfo) ||
+			    weaponInfo.Stickers.Count <= 0) return;
+			
+			float wearIncrement = 0.001f;
+			float currentWear = weaponInfo.Wear;
 
-				float wearIncrement = 0.001f;
-				float currentWear = weaponInfo.Wear;
+			var playerWear = _temporaryPlayerWeaponWear.GetOrAdd(player.Slot, _ => new ConcurrentDictionary<int, float>());
 
-				var playerWear = temporaryPlayerWeaponWear.GetOrAdd(player.Slot, _ => new ConcurrentDictionary<int, float>());
+			float incrementedWear = playerWear.AddOrUpdate(
+				weaponDefIndex,
+				currentWear + wearIncrement,
+				(_, oldWear) => Math.Min(oldWear + wearIncrement, 1.0f)
+			);
 
-				float incrementedWear = playerWear.AddOrUpdate(
-					weaponDefIndex,
-					currentWear + wearIncrement,
-					(_, oldWear) => Math.Min(oldWear + wearIncrement, 1.0f)
-				);
-
-				weapon.FallbackWear = incrementedWear;
-			}
+			weapon.FallbackWear = incrementedWear;
 		}
 
-		public void SetStickers(CCSPlayerController? player, CBasePlayerWeapon weapon)
+		private void SetStickers(CCSPlayerController? player, CBasePlayerWeapon weapon)
 		{
 			if (player == null || !player.IsValid) return;
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-			if (!gPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) ||
-				playerWeapons == null ||
-				!playerWeapons.TryGetValue(weaponDefIndex, out var weaponInfo) ||
-				weaponInfo == null)
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) ||
+			    !playerWeapons.TryGetValue(weaponDefIndex, out var weaponInfo))
 			{
 				return;
 			}
@@ -158,37 +154,34 @@ namespace WeaponPaints
 					$"sticker slot {stickerSlot} rotation", sticker.Rotation);
 			}
 
-			if (temporaryPlayerWeaponWear != null &&
-				temporaryPlayerWeaponWear.TryGetValue(player.Slot, out var playerWear) &&
+			if (_temporaryPlayerWeaponWear.TryGetValue(player.Slot, out var playerWear) &&
 				playerWear.TryGetValue(weaponDefIndex, out float storedWear))
 			{
 				weapon.FallbackWear = storedWear;
 			}
 		}
 
-		public void SetKeychain(CCSPlayerController? player, CBasePlayerWeapon weapon)
+		private void SetKeychain(CCSPlayerController? player, CBasePlayerWeapon weapon)
 		{
 			if (player == null || !player.IsValid) return;
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-			if (gPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeaponsInfo) &&
-				playerWeaponsInfo.TryGetValue(weaponDefIndex, out var value) &&
-				value.KeyChain != null)
-			{
-				var keyChain = value.KeyChain;
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeaponsInfo) ||
+			    !playerWeaponsInfo.TryGetValue(weaponDefIndex, out var value) ||
+			    value.KeyChain == null) return;
+			var keyChain = value.KeyChain;
 
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					"keychain slot 0 id", ViewAsFloat(keyChain.Id));
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					"keychain slot 0 offset x", keyChain.OffsetX);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					"keychain slot 0 offset y", keyChain.OffsetY);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					"keychain slot 0 offset z", keyChain.OffsetZ);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					"keychain slot 0 seed", keyChain.Seed);
-			}
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 id", ViewAsFloat(keyChain.Id));
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 offset x", keyChain.OffsetX);
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 offset y", keyChain.OffsetY);
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 offset z", keyChain.OffsetZ);
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 seed", keyChain.Seed);
 		}
 
 		private static void GiveKnifeToPlayer(CCSPlayerController? player)
@@ -228,8 +221,8 @@ namespace WeaponPaints
 
 		private void RefreshWeapons(CCSPlayerController? player)
 		{
-			if (!g_bCommandsAllowed) return;
-			if (player == null || !player.IsValid || player.PlayerPawn?.Value == null || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE)
+			if (!_gBCommandsAllowed) return;
+			if (player == null || !player.IsValid || player.PlayerPawn.Value == null || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE)
 				return;
 			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
 				return;
@@ -265,7 +258,7 @@ namespace WeaponPaints
 
 					if (weaponData == null) continue;
 
-					if (weaponData.GearSlot == gear_slot_t.GEAR_SLOT_RIFLE || weaponData.GearSlot == gear_slot_t.GEAR_SLOT_PISTOL)
+					if (weaponData.GearSlot is gear_slot_t.GEAR_SLOT_RIFLE or gear_slot_t.GEAR_SLOT_PISTOL)
 					{
 						if (!WeaponDefindex.TryGetValue(weapon.Value.AttributeManager.Item.ItemDefinitionIndex, out var weaponByDefindex))
 							continue;
@@ -282,59 +275,27 @@ namespace WeaponPaints
 						value.Add((clip1, reservedAmmo));
 
 						if (gun.VData == null) return;
+						
+						weapon.Value?.AddEntityIOEvent("Kill", weapon.Value, null, "", 0.1f);
+					}
 
-						weapon.Value.Remove();
+					if (weaponData.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
+					{
+						weapon.Value?.AddEntityIOEvent("Kill", weapon.Value, null, "", 0.1f);
 					}
 				}
 				catch (Exception ex)
 				{
 					Logger.LogWarning(ex.Message);
-					continue;
 				}
 			}
 
-			try
-			{
-				player.ExecuteClientCommand("slot 3");
-				player.ExecuteClientCommand("slot 3");
-
-				var weapon = player.PlayerPawn.Value.WeaponServices.ActiveWeapon;
-				if (!weapon.IsValid || weapon.Value == null) return;
-				CCSWeaponBaseVData? weaponData = weapon.Value.As<CCSWeaponBase>().VData;
-
-				if (weapon.Value.DesignerName.Contains("knife") || weaponData?.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
-				{
-					CCSWeaponBaseGun gun;
-
-					AddTimer(0.3f, () =>
+			AddTimer(0.23f, () =>
 					{
-						if (player.TeamNum != playerTeam) return;
-
-						player.ExecuteClientCommand("slot 3");
-						gun = weapon.Value.As<CCSWeaponBaseGun>();
-						player.DropActiveWeapon();
-
-						AddTimer(0.7f, () =>
-						{
-							if (player.TeamNum != playerTeam) return;
-
-							if (!gun.IsValid || gun.State != CSWeaponState_t.WEAPON_NOT_CARRIED) return;
-
-							gun.Remove();
-						});
-
-						GiveKnifeToPlayer(player);
-					});
-				}
-			}
-			catch (Exception ex)
-			{
-				Logger.LogWarning($"Cannot remove knife: {ex.Message}");
-			}
-
-			AddTimer(0.6f, () =>
-					{
-						if (!g_bCommandsAllowed) return;
+						if (!_gBCommandsAllowed) return;
+						
+						if (!PlayerHasKnife(player))
+							GiveKnifeToPlayer(player);
 
 						foreach (var entry in weaponsWithAmmo)
 						{
@@ -375,7 +336,7 @@ namespace WeaponPaints
 				pawn.SetModel(model);
 			}
 
-			Instance.AddTimer(0.06f, () =>
+			Instance.AddTimer(0.08f, () =>
 			{
 				CEconItemView item = pawn.EconGloves;
 				try
@@ -386,9 +347,9 @@ namespace WeaponPaints
 					if (!player.PawnIsAlive)
 						return;
 
-					if (!g_playersGlove.TryGetValue(player.Slot, out var gloveInfo) || gloveInfo == 0) return;
+					if (!GPlayersGlove.TryGetValue(player.Slot, out var gloveInfo) || gloveInfo == 0) return;
 
-					WeaponInfo weaponInfo = gPlayerWeaponsInfo[player.Slot][gloveInfo];
+					WeaponInfo weaponInfo = GPlayerWeaponsInfo[player.Slot][gloveInfo];
 
 					item.ItemDefinitionIndex = gloveInfo;
 					item.ItemIDLow = 16384 & 0xFFFFFFFF;
@@ -408,13 +369,13 @@ namespace WeaponPaints
 
 		private static int GetRandomPaint(int defindex)
 		{
-			if (skinsList.Count == 0)
+			if (SkinsList.Count == 0)
 				return 0;
 
 			Random rnd = new Random();
 
 			// Filter weapons by the provided defindex
-			var filteredWeapons = skinsList.Where(w => w["weapon_defindex"]?.ToString() == defindex.ToString()).ToList();
+			var filteredWeapons = SkinsList.Where(w => w["weapon_defindex"]?.ToString() == defindex.ToString()).ToList();
 
 			if (filteredWeapons.Count == 0)
 				return 0;
@@ -458,7 +419,7 @@ namespace WeaponPaints
 
 		private static void GivePlayerAgent(CCSPlayerController player)
 		{
-			if (!g_playersAgent.TryGetValue(player.Slot, out var value)) return;
+			if (!GPlayersAgent.TryGetValue(player.Slot, out var value)) return;
 
 			var model = player.TeamNum == 3 ? value.CT : value.T;
 			if (string.IsNullOrEmpty(model)) return;
@@ -482,7 +443,7 @@ namespace WeaponPaints
 
 		private static void GivePlayerMusicKit(CCSPlayerController player)
 		{
-			if (!g_playersMusic.TryGetValue(player.Slot, out var value)) return;
+			if (!GPlayersMusic.TryGetValue(player.Slot, out var value)) return;
 			if (player.InventoryServices == null) return;
 			
 			player.InventoryServices.MusicID = value;
@@ -549,7 +510,7 @@ namespace WeaponPaints
 			return values;
 		}
 
-		public float ViewAsFloat(uint value)
+		private float ViewAsFloat(uint value)
 		{
 			return BitConverter.Int32BitsToSingle((int)value);
 		}

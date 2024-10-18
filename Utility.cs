@@ -13,11 +13,11 @@ namespace WeaponPaints
 
 		internal static async Task CheckDatabaseTables()
 		{
-			if (WeaponPaints._database is null) return;
+			if (WeaponPaints.Database is null) return;
 
 			try
 			{
-				await using var connection = await WeaponPaints._database.GetConnectionAsync();
+				await using var connection = await WeaponPaints.Database.GetConnectionAsync();
 
 				await using var transaction = await connection.BeginTransactionAsync();
 
@@ -91,7 +91,7 @@ namespace WeaponPaints
 
 		internal static bool IsPlayerValid(CCSPlayerController? player)
 		{
-			if (player is null || WeaponPaints.weaponSync is null) return false;
+			if (player is null || WeaponPaints.WeaponSync is null) return false;
 
 			return player is { IsValid: true, IsBot: false, IsHLTV: false, UserId: not null };
 		}
@@ -102,7 +102,7 @@ namespace WeaponPaints
 			try
 			{
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.skinsList = deserializedSkins ?? [];
+				WeaponPaints.SkinsList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
@@ -116,7 +116,7 @@ namespace WeaponPaints
 			{
 				var json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.glovesList = deserializedSkins ?? [];
+				WeaponPaints.GlovesList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
@@ -130,7 +130,7 @@ namespace WeaponPaints
 			{
 				var json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.agentsList = deserializedSkins ?? [];
+				WeaponPaints.AgentsList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{
@@ -144,7 +144,7 @@ namespace WeaponPaints
 			{
 				var json = File.ReadAllText(filePath);
 				var deserializedSkins = JsonConvert.DeserializeObject<List<JObject>>(json);
-				WeaponPaints.musicList = deserializedSkins ?? [];
+				WeaponPaints.MusicList = deserializedSkins ?? [];
 			}
 			catch (FileNotFoundException)
 			{

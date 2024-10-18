@@ -11,7 +11,7 @@
   <ItemGroup>
     <PackageReference Include="CounterStrikeSharp.API" Version="1.0.281" />
     <PackageReference Include="Dapper" Version="2.1.35" />
-    <PackageReference Include="MySqlConnector" Version="2.3.7" />
+    <PackageReference Include="MySqlConnector" Version="2.4.0-beta.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
@@ -21,5 +21,11 @@
   
   <ItemGroup>
     <None Update="gamedata\*.*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="MenuManagerApi">
+      <HintPath>3rd_party\MenuManagerApi.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
