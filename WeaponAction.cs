@@ -89,10 +89,10 @@ namespace WeaponPaints
 
 			if (weaponInfo.StatTrak)
 			{				
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloatKillStreak(weaponInfo.StatTrakCount));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater score type", 0);
 				
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater", ViewAsFloatKillStreak(weaponInfo.StatTrakCount));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater score type", 0);
 			}
 
@@ -535,17 +535,6 @@ namespace WeaponPaints
 		private float ViewAsFloat(uint value)
 		{
 			return BitConverter.Int32BitsToSingle((int)value);
-		}
-
-		public float ViewAsFloatKillStreak<T>(T value) where T : struct
-		{
-			byte[] bytes = value switch
-			{
-				int intValue => BitConverter.GetBytes(intValue),
-				uint uintValue => BitConverter.GetBytes(uintValue),
-				_ => throw new ArgumentException("Unsupported type")
-			};
-			return BitConverter.ToSingle(bytes, 0);
 		}
 	}
 }

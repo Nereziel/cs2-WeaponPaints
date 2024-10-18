@@ -97,6 +97,37 @@ namespace WeaponPaints
 
 			CommandsCooldown.Remove(player.Slot);
 
+			var playerInfo = new PlayerInfo
+			{
+				UserId = player.UserId,
+				Slot = player.Slot,
+				Index = (int)player.Index,
+				SteamId = player.SteamID.ToString(),
+				Name = player.PlayerName,
+				IpAddress = player.IpAddress?.Split(":")[0]
+			};
+
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponInfos))
+    			return HookResult.Continue;
+
+			foreach (var weapon in weaponInfos)
+			{
+				var weaponDefIndex = weapon.Key;
+				var weaponInfo = weapon.Value;
+
+				if (weaponInfo.Paint == 0)
+					continue;
+
+				if (weaponInfo.StatTrak)
+				{
+					if (WeaponSync != null)
+					{
+
+						_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo, weaponInfo.StatTrakCount, weaponDefIndex));
+					}
+				}
+			}
+
 			return HookResult.Continue;
 		}
 		
@@ -268,14 +299,11 @@ namespace WeaponPaints
 					IpAddress = player.IpAddress?.Split(":")[0]
 				};
 
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloatKillStreak(weaponInfo.StatTrakCount));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater score type", 0);
 				
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater", ViewAsFloatKillStreak(weaponInfo.StatTrakCount));
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "kill eater score type", 0);
-
-				if (WeaponSync != null)
-					_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo, weaponInfo.StatTrakCount, weaponDefIndex));
 			}
 
 			return HookResult.Continue;
