@@ -27,28 +27,28 @@ namespace WeaponPaints
 		public bool CommandKillEnabled { get; set; } = true;
 
 		[JsonPropertyName("CommandKnife")]
-		public string CommandKnife { get; set; } = "knife";
+		public List<string> CommandKnife { get; set; } = ["knife"];
 
 		[JsonPropertyName("CommandMusic")]
-		public string CommandMusic { get; set; } = "music";
+		public List<string> CommandMusic { get; set; } = ["music"];
 
 		[JsonPropertyName("CommandGlove")]
-		public string CommandGlove { get; set; } = "gloves";
+		public List<string> CommandGlove { get; set; } = ["gloves"];
 
 		[JsonPropertyName("CommandAgent")]
-		public string CommandAgent { get; set; } = "agents";
+		public List<string> CommandAgent { get; set; } = ["agents"];
 
 		[JsonPropertyName("CommandSkin")]
-		public string CommandSkin { get; set; } = "ws";
+		public List<string> CommandSkin { get; set; } = ["ws"];
 
 		[JsonPropertyName("CommandSkinSelection")]
-		public string CommandSkinSelection { get; set; } = "skins";
+		public List<string> CommandSkinSelection { get; set; } = ["skins"];
 
 		[JsonPropertyName("CommandRefresh")]
-		public string CommandRefresh { get; set; } = "wp";
+		public List<string> CommandRefresh { get; set; } = ["wp"];
 
 		[JsonPropertyName("CommandKill")]
-		public string CommandKill { get; set; } = "kill";
+		public List<string> CommandKill { get; set; } = ["kill"];
 
 		[JsonPropertyName("GiveRandomKnife")]
 		public bool GiveRandomKnife { get; set; } = false;
@@ -62,7 +62,10 @@ namespace WeaponPaints
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-		public override int Version { get; set; } = 6;
+        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 7;
+
+        [JsonPropertyName("SkinsLanguage")]
+		public string SkinsLanguage { get; set; } = "en";
 
 		[JsonPropertyName("DatabaseHost")]
 		public string DatabaseHost { get; set; } = "";
@@ -80,15 +83,12 @@ namespace WeaponPaints
 		public string DatabaseName { get; set; } = "";
 
 		[JsonPropertyName("CmdRefreshCooldownSeconds")]
-		public int CmdRefreshCooldownSeconds { get; set; } = 60;
-
-		[JsonPropertyName("Prefix")]
-		public string Prefix { get; set; } = "[WeaponPaints]";
+		public int CmdRefreshCooldownSeconds { get; set; } = 10;
 
 		[JsonPropertyName("Website")]
 		public string Website { get; set; } = "example.com/skins";
 
-		[JsonPropertyName("Additional")]
+		[JsonPropertyName("Additionalss")]
 		public Additional Additional { get; set; } = new();
 	}
 }

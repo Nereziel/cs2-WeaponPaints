@@ -16,9 +16,9 @@ namespace WeaponPaints
 			CCSPlayerController? player = @event.Userid;
 
 			if (player is null || !player.IsValid || player.IsBot ||
-				weaponSync == null || _database == null) return HookResult.Continue;
+				WeaponSync == null || Database == null) return HookResult.Continue;
 
-			PlayerInfo playerInfo = new PlayerInfo
+			var playerInfo = new PlayerInfo
 			{
 				UserId = player.UserId,
 				Slot = player.Slot,
@@ -30,7 +30,7 @@ namespace WeaponPaints
 
 			try
 			{
-				_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+				_ = Task.Run(async () => await WeaponSync.GetPlayerData(playerInfo));
 				/*
 				if (Config.Additional.SkinEnabled)
 				{
@@ -70,28 +70,28 @@ namespace WeaponPaints
 
 			if (Config.Additional.SkinEnabled)
 			{
-				gPlayerWeaponsInfo.TryRemove(player.Slot, out _);
+				GPlayerWeaponsInfo.TryRemove(player.Slot, out _);
 			}
 			if (Config.Additional.KnifeEnabled)
 			{
-				g_playersKnife.TryRemove(player.Slot, out _);
+				GPlayersKnife.TryRemove(player.Slot, out _);
 			}
 			if (Config.Additional.GloveEnabled)
 			{
-				g_playersGlove.TryRemove(player.Slot, out _);
+				GPlayersGlove.TryRemove(player.Slot, out _);
 			}
 			if (Config.Additional.AgentEnabled)
 			{
-				g_playersAgent.TryRemove(player.Slot, out _);
+				GPlayersAgent.TryRemove(player.Slot, out _);
 			}
 			if (Config.Additional.MusicEnabled)
 			{
-				g_playersMusic.TryRemove(player.Slot, out _);
+				GPlayersMusic.TryRemove(player.Slot, out _);
 			}
 
-			temporaryPlayerWeaponWear.TryRemove(player.Slot, out _);
+			_temporaryPlayerWeaponWear.TryRemove(player.Slot, out _);
 
-			commandsCooldown.Remove(player.Slot);
+			CommandsCooldown.Remove(player.Slot);
 
 			return HookResult.Continue;
 		}
@@ -100,8 +100,8 @@ namespace WeaponPaints
 		{
 			if (Config.Additional is { KnifeEnabled: false, SkinEnabled: false, GloveEnabled: false }) return;
 
-			if (_database != null)
-				weaponSync = new WeaponSynchronization(_database, Config);
+			if (Database != null)
+				WeaponSync = new WeaponSynchronization(Database, Config);
 		}
 
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)
@@ -116,8 +116,6 @@ namespace WeaponPaints
 			if (pawn == null || !pawn.IsValid)
 				return HookResult.Continue;
 
-			g_knifePickupCount[player.Slot] = 0;
-
 			GivePlayerMusicKit(player);
 			GivePlayerAgent(player);
 			GivePlayerGloves(player);
@@ -127,14 +125,14 @@ namespace WeaponPaints
 
 		private HookResult OnRoundEnd(EventRoundEnd @event, GameEventInfo info)
 		{
-			g_bCommandsAllowed = false;
+			_gBCommandsAllowed = false;
 
 			return HookResult.Continue;
 		}
 
 		private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
 		{
-			g_bCommandsAllowed = true;
+			_gBCommandsAllowed = true;
 			return HookResult.Continue;
 		}
 
@@ -169,16 +167,16 @@ namespace WeaponPaints
 
 					try
 					{
-						SteamID? _steamid = null;
+						SteamID? steamid = null;
 
 						if (weapon.OriginalOwnerXuidLow > 0)
-							_steamid = new(weapon.OriginalOwnerXuidLow);
+							steamid = new SteamID(weapon.OriginalOwnerXuidLow);
 
-						CCSPlayerController? player = null;
+						CCSPlayerController? player;
 
-						if (_steamid != null && _steamid.IsValid())
+						if (steamid != null && steamid.IsValid())
 						{
-							player = Utilities.GetPlayers().FirstOrDefault(p => p.IsValid && p.SteamID == _steamid.SteamId64);
+							player = Utilities.GetPlayers().FirstOrDefault(p => p.IsValid && p.SteamID == steamid.SteamId64);
 
 							if (player == null)
 								player = Utilities.GetPlayerFromSteamId(weapon.OriginalOwnerXuidLow);
@@ -196,7 +194,6 @@ namespace WeaponPaints
 					}
 					catch (Exception)
 					{
-						return;
 					}
 				});
 			}
@@ -213,7 +210,7 @@ namespace WeaponPaints
 							)
 				)
 			{
-				if (PlayerWeaponImage.TryGetValue(player.Slot, out var value) && !string.IsNullOrEmpty(value))
+				if (_playerWeaponImage.TryGetValue(player.Slot, out var value) && !string.IsNullOrEmpty(value))
 				{
 					player.PrintToCenterHtml("<img src='{PATH}'</img>".Replace("{PATH}", value));
 				}
