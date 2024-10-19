@@ -77,6 +77,9 @@ namespace WeaponPaints
 				IpAddress = player.IpAddress?.Split(":")[0]
 			};
 
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponInfos))
+				return HookResult.Continue;
+
 			if (WeaponSync != null)
 				_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo));
 
