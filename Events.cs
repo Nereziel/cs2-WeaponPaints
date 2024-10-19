@@ -77,9 +77,6 @@ namespace WeaponPaints
 				IpAddress = player.IpAddress?.Split(":")[0]
 			};
 
-			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var weaponInfos))
-				return HookResult.Continue;
-			
 			if (WeaponSync != null)
 				_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo));
 
@@ -111,6 +108,35 @@ namespace WeaponPaints
 			_temporaryPlayerWeaponWear.TryRemove(player.Slot, out _);
 			CommandsCooldown.Remove(player.Slot);
 
+			return HookResult.Continue;
+		}
+
+		[GameEventHandler(HookMode.Pre)]
+		public HookResult OnPlayerMvp(EventRoundMvp @event, GameEventInfo info)
+		{
+			var player = @event.Userid;
+			if (player == null || !player.IsValid || player.IsBot)
+				return HookResult.Continue;
+
+			if (!(GPlayersMusic.TryGetValue(player.Slot, out var musicInfo)
+			      && musicInfo.TryGetValue(player.Team, out var musicId)
+			      && musicId != 0))
+				return HookResult.Continue;
+
+			@event.Musickitid = musicId;
+			@event.Nomusic = 0;
+			@event.Musickitmvps = 1;
+			@event.Value = 1;
+			
+			var newEvent = new EventRoundMvp(true)
+			{
+				Musickitid = musicId,
+				Nomusic = 0,
+				Musickitmvps = 1,
+				Value = 1
+			};
+			
+			newEvent.FireEvent(false);
 			return HookResult.Continue;
 		}
 		
