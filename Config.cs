@@ -34,6 +34,9 @@ namespace WeaponPaints
 
 		[JsonPropertyName("CommandMusic")]
 		public List<string> CommandMusic { get; set; } = ["music"];
+		
+		[JsonPropertyName("CommandPin")]
+		public List<string> CommandPin { get; set; } = ["pins"];
 
 		[JsonPropertyName("CommandGlove")]
 		public List<string> CommandGlove { get; set; } = ["gloves"];
