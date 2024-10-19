@@ -1,7 +1,9 @@
-﻿using CounterStrikeSharp.API.Core;
+﻿using System.Collections.Concurrent;
+using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Menu;
 using CounterStrikeSharp.API.Modules.Timers;
+using CounterStrikeSharp.API.Modules.Utils;
 using Newtonsoft.Json.Linq;
 
 namespace WeaponPaints;
@@ -150,6 +152,11 @@ public partial class WeaponPaints
 		{
 			if (!Utility.IsPlayerValid(player)) return;
 
+			var playerKnives = GPlayersKnife.GetOrAdd(player.Slot, new ConcurrentDictionary<CsTeam, string>());
+			var teamsToCheck = player.TeamNum < 2 
+				? new[] { CsTeam.Terrorist, CsTeam.CounterTerrorist } 
+				: [player.Team];
+			
 			var knifeName = option.Text;
 			var knifeKey = knivesOnly.FirstOrDefault(x => x.Value == knifeName).Key;
 			if (string.IsNullOrEmpty(knifeKey)) return;
@@ -172,14 +179,18 @@ public partial class WeaponPaints
 				Name = player.PlayerName,
 				IpAddress = player.IpAddress?.Split(":")[0]
 			};
-
-			GPlayersKnife[player.Slot] = knifeKey;
-
+			
+			foreach (var team in teamsToCheck)
+			{
+				// Attempt to get the existing knives
+				playerKnives[team] = knifeKey;
+			}
+			
 			if (_gBCommandsAllowed && (LifeState_t)player.LifeState == LifeState_t.LIFE_ALIVE)
 				RefreshWeapons(player);
 
 			if (WeaponSync != null)
-				_ = Task.Run(async () => await WeaponSync.SyncKnifeToDatabase(playerInfo, knifeKey));
+				_ = Task.Run(async () => await WeaponSync.SyncKnifeToDatabase(playerInfo, knifeKey, teamsToCheck));
 		};
 		foreach (var knifePair in knivesOnly)
 		{
@@ -229,7 +240,7 @@ public partial class WeaponPaints
 			var selectedWeapon = option.Text;
 
 			if (!classNamesByWeapon.TryGetValue(selectedWeapon, out var selectedWeaponClassname)) return;
-			var skinsForSelectedWeapon = SkinsList?.Where(skin =>
+			var skinsForSelectedWeapon = SkinsList.Where(skin =>
 				skin.TryGetValue("weapon_name", out var weaponName) &&
 				weaponName?.ToString() == selectedWeaponClassname
 			)?.ToList();
@@ -241,8 +252,7 @@ public partial class WeaponPaints
 			{
 				if (!Utility.IsPlayerValid(p)) return;
 
-				var steamId = p.SteamID.ToString();
-				var firstSkin = SkinsList?.FirstOrDefault(skin =>
+				var firstSkin = SkinsList.FirstOrDefault(skin =>
 				{
 					if (skin.TryGetValue("weapon_name", out var weaponName))
 					{
@@ -259,29 +269,38 @@ public partial class WeaponPaints
 				    !int.TryParse(weaponDefIndexObj.ToString(), out var weaponDefIndex) ||
 				    !int.TryParse(selectedPaintId, out var paintId)) return;
 				{
-					if (Config.Additional.ShowSkinImage && SkinsList != null)
+					if (Config.Additional.ShowSkinImage)
 					{
 						var foundSkin = SkinsList.FirstOrDefault(skin =>
-							((int?)skin?["weapon_defindex"] ?? 0) == weaponDefIndex &&
-							((int?)skin?["paint"] ?? 0) == paintId &&
-							skin?["image"] != null
+							((int?)skin["weapon_defindex"] ?? 0) == weaponDefIndex &&
+							((int?)skin["paint"] ?? 0) == paintId &&
+							skin["image"] != null
 						);
 						var image = foundSkin?["image"]?.ToString() ?? "";
 						_playerWeaponImage[p.Slot] = image;
-						AddTimer(2.0f, () => _playerWeaponImage.Remove(p.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+						AddTimer(2.0f, () => _playerWeaponImage.Remove(p.Slot), TimerFlags.STOP_ON_MAPCHANGE);
 					}
 
 					p.Print(Localizer["wp_skin_menu_select", selectedSkin]);
+					var playerSkins = GPlayerWeaponsInfo.GetOrAdd(p.Slot, new ConcurrentDictionary<CsTeam, ConcurrentDictionary<int, WeaponInfo>>());
 
-					if (!GPlayerWeaponsInfo[p.Slot].TryGetValue(weaponDefIndex, out var value))
+					var teamsToCheck = p.TeamNum < 2 
+						? new[] { CsTeam.Terrorist, CsTeam.CounterTerrorist } 
+						: [p.Team];
+
+					foreach (var team in teamsToCheck)
 					{
-						value = new WeaponInfo();
-						GPlayerWeaponsInfo[p.Slot][weaponDefIndex] = value;
-					}
+						// Ensure there's an entry for the team in playerSkins
+						var teamWeapons = playerSkins.GetOrAdd(team, _ => new ConcurrentDictionary<int, WeaponInfo>());
 
-					value.Paint = paintId;
-					value.Wear = 0.01f;
-					value.Seed = 0;
+						// Attempt to get or add the existing WeaponInfo
+						var value = teamWeapons.GetOrAdd(weaponDefIndex, _ => new WeaponInfo());
+
+						// Update the properties of WeaponInfo
+						value.Paint = paintId;
+						value.Wear = 0.01f;
+						value.Seed = 0;
+					}
 
 					PlayerInfo playerInfo = new PlayerInfo
 					{
@@ -371,6 +390,11 @@ public partial class WeaponPaints
 			if (!Utility.IsPlayerValid(player) || player is null) return;
 
 			var selectedPaintName = option.Text;
+			
+			var playerGloves = GPlayersGlove.GetOrAdd(player.Slot, new ConcurrentDictionary<CsTeam, ushort>());
+			var teamsToCheck = player.TeamNum < 2 
+				? new[] { CsTeam.Terrorist, CsTeam.CounterTerrorist } 
+				: [player.Team];
 
 			var selectedGlove = GlovesList.FirstOrDefault(g => g.ContainsKey("paint_name") && g["paint_name"]?.ToString() == selectedPaintName);
 			var image = selectedGlove?["image"]?.ToString() ?? "";
@@ -397,15 +421,32 @@ public partial class WeaponPaints
 
 			if (paint != 0)
 			{
-				GPlayersGlove[player.Slot] = (ushort)weaponDefindex;
-
-				if (!GPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefindex))
+				// Ensure that player weapons info exists for the player
+				if (!GPlayerWeaponsInfo.ContainsKey(player.Slot))
 				{
-					WeaponInfo weaponInfo = new()
+					GPlayerWeaponsInfo[player.Slot] = new ConcurrentDictionary<CsTeam, ConcurrentDictionary<int, WeaponInfo>>();
+				}
+
+				// Ensure teams are initialized
+				foreach (var team in teamsToCheck)
+				{
+					if (!GPlayerWeaponsInfo[player.Slot].ContainsKey(team))
 					{
-						Paint = paint
-					};
-					GPlayerWeaponsInfo[player.Slot][weaponDefindex] = weaponInfo;
+						GPlayerWeaponsInfo[player.Slot][team] = new ConcurrentDictionary<int, WeaponInfo>();
+					}
+
+					// Update the glove for the player in the specified team
+					playerGloves[team] = (ushort)weaponDefindex;
+
+					// Check if the glove information already exists for the player
+					if (!GPlayerWeaponsInfo[player.Slot][team].ContainsKey(weaponDefindex))
+					{
+						WeaponInfo weaponInfo = new()
+						{
+							Paint = paint
+						};
+						GPlayerWeaponsInfo[player.Slot][team][weaponDefindex] = weaponInfo;
+					}
 				}
 			}
 			else
@@ -413,28 +454,30 @@ public partial class WeaponPaints
 				GPlayersGlove.TryRemove(player.Slot, out _);
 			}
 
-			if (!string.IsNullOrEmpty(Localizer["wp_glove_menu_select"]))
-			{
-				player.Print(Localizer["wp_glove_menu_select", selectedPaintName]);
-			}
-
 			if (WeaponSync == null) return;
-				
+
 			_ = Task.Run(async () =>
 			{
-				await WeaponSync.SyncGloveToDatabase(playerInfo, weaponDefindex);
-
-				if (!GPlayerWeaponsInfo[playerInfo.Slot].TryGetValue(weaponDefindex, out var value))
+				// Sync glove to database for all teams
+				foreach (var team in teamsToCheck)
 				{
-					value = new WeaponInfo();
-					GPlayerWeaponsInfo[playerInfo.Slot][weaponDefindex] = value;
+					await WeaponSync.SyncGloveToDatabase(playerInfo, (ushort)weaponDefindex, teamsToCheck);
+        
+					// Check if the weapon info exists for the glove
+					if (!GPlayerWeaponsInfo[playerInfo.Slot][team].TryGetValue(weaponDefindex, out var value))
+					{
+						value = new WeaponInfo();
+						GPlayerWeaponsInfo[playerInfo.Slot][team][weaponDefindex] = value;
+					}
+
+					// Update weapon info
+					value.Paint = paint;
+					value.Wear = 0.00f;
+					value.Seed = 0;
+
+					// Sync weapon paints to database
+					await WeaponSync.SyncWeaponPaintsToDatabase(playerInfo);
 				}
-
-				value.Paint = paint;
-				value.Wear = 0.00f;
-				value.Seed = 0;
-
-				await WeaponSync.SyncWeaponPaintsToDatabase(playerInfo);
 			});
 				
 			AddTimer(0.1f, () => GivePlayerGloves(player));
@@ -596,6 +639,11 @@ public partial class WeaponPaints
 			if (!Utility.IsPlayerValid(player) || player is null) return;
 
 			var selectedPaintName = option.Text;
+			
+			var playerMusic = GPlayersMusic.GetOrAdd(player.Slot, new ConcurrentDictionary<CsTeam, ushort>());
+			var teamsToCheck = player.TeamNum < 2 
+				? new[] { CsTeam.Terrorist, CsTeam.CounterTerrorist } 
+				: [player.Team];  // Corrected array initializer
 
 			var selectedMusic = MusicList.FirstOrDefault(g => g.ContainsKey("name") && g["name"]?.ToString() == selectedPaintName);
 			if (selectedMusic != null)
@@ -607,7 +655,7 @@ public partial class WeaponPaints
 				if (Config.Additional.ShowSkinImage)
 				{
 					_playerWeaponImage[player.Slot] = image;
-					AddTimer(2.0f, () => _playerWeaponImage.Remove(player.Slot), CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+					AddTimer(2.0f, () => _playerWeaponImage.Remove(player.Slot), TimerFlags.STOP_ON_MAPCHANGE);
 				}
 
 				PlayerInfo playerInfo = new PlayerInfo
@@ -619,14 +667,20 @@ public partial class WeaponPaints
 					Name = player.PlayerName,
 					IpAddress = player.IpAddress?.Split(":")[0]
 				};
-
+				
 				if (paint != 0)
 				{
-					GPlayersMusic[player.Slot] = (ushort)paint;
+					foreach (var team in teamsToCheck)
+					{
+						playerMusic[team] = (ushort)paint;
+					}
 				}
 				else
 				{
-					GPlayersMusic[player.Slot] = 0;
+					foreach (var team in teamsToCheck)
+					{
+						playerMusic[team] = 0;
+					}
 				}
 
 				if (!string.IsNullOrEmpty(Localizer["wp_music_menu_select"]))
@@ -638,11 +692,9 @@ public partial class WeaponPaints
 				{
 					_ = Task.Run(async () =>
 					{
-						await WeaponSync.SyncMusicToDatabase(playerInfo, (ushort)paint);
+						await WeaponSync.SyncMusicToDatabase(playerInfo, (ushort)paint, teamsToCheck);
 					});
 				}
-
-				//RefreshGloves(player);
 			}
 			else
 			{
@@ -656,7 +708,10 @@ public partial class WeaponPaints
 					IpAddress = player.IpAddress?.Split(":")[0]
 				};
 
-				GPlayersMusic[player.Slot] = 0;
+				foreach (var team in teamsToCheck)
+				{
+					playerMusic[team] = 0;
+				}
 
 				if (!string.IsNullOrEmpty(Localizer["wp_music_menu_select"]))
 				{
@@ -667,7 +722,7 @@ public partial class WeaponPaints
 				{
 					_ = Task.Run(async () =>
 					{
-						await WeaponSync.SyncMusicToDatabase(playerInfo, 0);
+						await WeaponSync.SyncMusicToDatabase(playerInfo, 0, teamsToCheck);
 					});
 				}
 			}
@@ -716,6 +771,11 @@ public partial class WeaponPaints
 
 			var selectedPaintName = option.Text;
 
+			var playerPins = GPlayersPin.GetOrAdd(player.Slot, new ConcurrentDictionary<CsTeam, ushort>());
+			var teamsToCheck = player.TeamNum < 2 
+				? new[] { CsTeam.Terrorist, CsTeam.CounterTerrorist } 
+				: [player.Team];
+
 			var selectedPin = PinsList.FirstOrDefault(g => g.ContainsKey("name") && g["name"]?.ToString() == selectedPaintName);
 			if (selectedPin != null)
 			{
@@ -738,14 +798,20 @@ public partial class WeaponPaints
 					Name = player.PlayerName,
 					IpAddress = player.IpAddress?.Split(":")[0]
 				};
-
+				
 				if (paint != 0)
 				{
-					GPlayersPin[player.Slot] = (ushort)paint;
+					foreach (var team in teamsToCheck)
+					{
+						playerPins[team] = (ushort)paint; // Set pin for each team
+					}
 				}
 				else
 				{
-					GPlayersPin[player.Slot] = 0;
+					foreach (var team in teamsToCheck)
+					{
+						playerPins[team] = 0; // Set pin for each team
+					}
 				}
 
 				if (!string.IsNullOrEmpty(Localizer["wp_pins_menu_select"]))
@@ -759,7 +825,7 @@ public partial class WeaponPaints
 				{
 					_ = Task.Run(async () =>
 					{
-						await WeaponSync.SyncPinToDatabase(playerInfo, (ushort)paint);
+						await WeaponSync.SyncPinToDatabase(playerInfo, (ushort)paint, teamsToCheck);
 					});
 				}
 			}
@@ -775,7 +841,10 @@ public partial class WeaponPaints
 					IpAddress = player.IpAddress?.Split(":")[0]
 				};
 
-				GPlayersPin[player.Slot] = 0;
+				foreach (var team in teamsToCheck)
+				{
+					playerPins[team] = 0; // Set music for each team
+				}
 
 				if (!string.IsNullOrEmpty(Localizer["wp_pins_menu_select"]))
 				{
@@ -788,7 +857,7 @@ public partial class WeaponPaints
 				{
 					_ = Task.Run(async () =>
 					{
-						await WeaponSync.SyncPinToDatabase(playerInfo, 0);
+						await WeaponSync.SyncPinToDatabase(playerInfo, 0, teamsToCheck);
 					});
 				}
 			}

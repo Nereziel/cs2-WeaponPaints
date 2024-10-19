@@ -20,11 +20,12 @@ namespace WeaponPaints
 
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
 
-			if (isKnife && !GPlayersKnife.ContainsKey(player.Slot) || isKnife && GPlayersKnife[player.Slot] == "weapon_knife") return;
+			if (isKnife && !GPlayersKnife.ContainsKey(player.Slot) ||
+			    isKnife && GPlayersKnife[player.Slot][player.Team] == "weapon_knife") return;
 
 			if (isKnife)
 			{
-				var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == GPlayersKnife[player.Slot]);
+				var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == GPlayersKnife[player.Slot][player.Team]);
 				if (newDefIndex.Key == 0) return;
 
 				if (weapon.AttributeManager.Item.ItemDefinitionIndex != newDefIndex.Key)
@@ -47,7 +48,7 @@ namespace WeaponPaints
 			bool isLegacyModel;
 
 			if (_config.Additional.GiveRandomSkin &&
-				 !GPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex))
+				 !GPlayerWeaponsInfo[player.Slot][player.Team].ContainsKey(weaponDefIndex))
 			{
 				// Random skins
 				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
@@ -80,7 +81,7 @@ namespace WeaponPaints
 				return;
 			}
 
-			if (!GPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var value) || value.Paint == 0) return;
+			if (!GPlayerWeaponsInfo[player.Slot][player.Team].TryGetValue(weaponDefIndex, out var value) || value.Paint == 0) return;
 
 			var weaponInfo = value;
 			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
@@ -131,7 +132,8 @@ namespace WeaponPaints
 		{
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) ||
-			    !playerWeapons.TryGetValue(weaponDefIndex, out var weaponInfo) ||
+			    !playerWeapons.TryGetValue(player.Team, out var weaponInfoDict) ||
+			    !weaponInfoDict.TryGetValue(weaponDefIndex, out var weaponInfo) ||
 			    weaponInfo.Stickers.Count <= 0) return;
 			
 			float wearIncrement = 0.001f;
@@ -155,7 +157,7 @@ namespace WeaponPaints
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
 			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) ||
-			    !playerWeapons.TryGetValue(weaponDefIndex, out var weaponInfo))
+			    !playerWeapons[player.Team].TryGetValue(weaponDefIndex, out var weaponInfo))
 			{
 				return;
 			}
@@ -197,7 +199,7 @@ namespace WeaponPaints
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
 			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeaponsInfo) ||
-			    !playerWeaponsInfo.TryGetValue(weaponDefIndex, out var value) ||
+			    !playerWeaponsInfo[player.Team].TryGetValue(weaponDefIndex, out var value) ||
 			    value.KeyChain == null) return;
 			var keyChain = value.KeyChain;
 
@@ -262,8 +264,6 @@ namespace WeaponPaints
 				return;
 			if (player.Team is CsTeam.None or CsTeam.Spectator)
 				return;
-
-			int playerTeam = player.TeamNum;
 
 			Dictionary<string, List<(int, int)>> weaponsWithAmmo = [];
 
@@ -376,11 +376,12 @@ namespace WeaponPaints
 					if (!player.PawnIsAlive)
 						return;
 
-					if (!GPlayersGlove.TryGetValue(player.Slot, out var gloveInfo) || gloveInfo == 0) return;
+					if (!GPlayersGlove.TryGetValue(player.Slot, out var gloveInfo) ||
+					    !gloveInfo.TryGetValue(player.Team, out var gloveId) || gloveId == 0) return; 
 
-					WeaponInfo weaponInfo = GPlayerWeaponsInfo[player.Slot][gloveInfo];
+					WeaponInfo weaponInfo = GPlayerWeaponsInfo[player.Slot][player.Team][gloveId];
 
-					item.ItemDefinitionIndex = gloveInfo;
+					item.ItemDefinitionIndex = gloveId;
 					item.ItemIDLow = 16384 & 0xFFFFFFFF;
 					item.ItemIDHigh = 16384;
 
@@ -472,21 +473,24 @@ namespace WeaponPaints
 
 		private static void GivePlayerMusicKit(CCSPlayerController player)
 		{
-			if (!GPlayersMusic.TryGetValue(player.Slot, out var value)) return;
+			if (GPlayersMusic.TryGetValue(player.Slot, out var musicInfo) || musicInfo == null ||
+			    !musicInfo.TryGetValue(player.Team, out var musicId) || musicId == 0) return;
+			
 			if (player.InventoryServices == null) return;
 			
-			player.InventoryServices.MusicID = value;
+			player.InventoryServices.MusicID = musicId;
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
-			player.MusicKitID = value;
+			player.MusicKitID = musicId;
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitID");
 		}
 
 		private static void GivePlayerPin(CCSPlayerController player)
 		{
-			if (!GPlayersPin.TryGetValue(player.Slot, out var pin)) return;
+			if (!GPlayersPin.TryGetValue(player.Slot, out var pinInfo) ||
+			    !pinInfo.TryGetValue(player.Team, out var pinId)) return;
 			if (player.InventoryServices == null) return;
 			
-			player.InventoryServices.Rank[5] = pin > 0 ? (MedalRank_t)pin : MedalRank_t.MEDAL_RANK_NONE;
+			player.InventoryServices.Rank[5] = pinId > 0 ? (MedalRank_t)pinId : MedalRank_t.MEDAL_RANK_NONE;
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
 		}
 		

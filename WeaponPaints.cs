@@ -16,7 +16,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
     public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.8c";
+	public override string ModuleVersion => "2.9a";
 
 	public override void Load(bool hotReload)
 	{
@@ -25,19 +25,20 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		if (hotReload)
 		{
 			OnMapStart(string.Empty);
+			
+			GPlayerWeaponsInfo.Clear();
+			GPlayersKnife.Clear();
+			GPlayersGlove.Clear();
+			GPlayersAgent.Clear();
+			GPlayersPin.Clear();
+			GPlayersMusic.Clear();
 
 			foreach (var player in Enumerable
-				         .OfType<CCSPlayerController>(Utilities.GetPlayers().TakeWhile(player => WeaponSync != null))
+				         .OfType<CCSPlayerController>(Utilities.GetPlayers().TakeWhile(_ => WeaponSync != null))
 				         .Where(player => player.IsValid &&
 					         !string.IsNullOrEmpty(player.IpAddress) && player is
 						         { IsBot: false, Connected: PlayerConnectedState.PlayerConnected }))
 			{
-				GPlayerWeaponsInfo.TryRemove(player.Slot, out _);
-				GPlayersKnife.TryRemove(player.Slot, out _);
-				GPlayersGlove.TryRemove(player.Slot, out _);
-				GPlayersAgent.TryRemove(player.Slot, out _);
-				GPlayersPin.TryRemove(player.Slot, out _);
-
 				var playerInfo = new PlayerInfo
 				{
 					UserId = player.UserId,
