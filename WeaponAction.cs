@@ -101,9 +101,9 @@ namespace WeaponPaints
 				return;
 
 			if (isKnife) return;
-
-			if (weaponInfo.Stickers.Count > 0) SetStickers(player, weapon);
+			
 			if (weaponInfo.KeyChain != null) SetKeychain(player, weapon);
+			if (weaponInfo.Stickers.Count > 0) SetStickers(player, weapon);
 
 			UpdatePlayerWeaponMeshGroupMask(player, weapon, !newPaints.Contains(fallbackPaintKit));
 		}
@@ -145,15 +145,14 @@ namespace WeaponPaints
 			foreach (var sticker in weaponInfo.Stickers)
 			{
 				int stickerSlot = weaponInfo.Stickers.IndexOf(sticker);
-
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} id", ViewAsFloat(sticker.Id));
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} schema", sticker.Schema);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} offset x", sticker.OffsetX);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} offset y", sticker.OffsetY);
+				// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				// 	$"sticker slot {stickerSlot} schema", stickerSlot);
+				// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				// 	$"sticker slot {stickerSlot} offset x", sticker.OffsetX);
+				// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				// 	$"sticker slot {stickerSlot} offset y", sticker.OffsetY);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} wear", sticker.Wear);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
