@@ -137,6 +137,7 @@ namespace WeaponPaints
 			GivePlayerMusicKit(player);
 			GivePlayerAgent(player);
 			GivePlayerGloves(player);
+			GivePlayerPin(player);
 
 			return HookResult.Continue;
 		}
