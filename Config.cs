@@ -36,7 +36,7 @@ namespace WeaponPaints
 		public List<string> CommandMusic { get; set; } = ["music"];
 		
 		[JsonPropertyName("CommandPin")]
-		public List<string> CommandPin { get; set; } = ["pins"];
+		public List<string> CommandPin { get; set; } = ["pin", "pins", "coin", "coins"];
 
 		[JsonPropertyName("CommandGlove")]
 		public List<string> CommandGlove { get; set; } = ["gloves"];
@@ -68,7 +68,7 @@ namespace WeaponPaints
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 8;
+        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 9;
 
         [JsonPropertyName("SkinsLanguage")]
 		public string SkinsLanguage { get; set; } = "en";
