@@ -256,7 +256,9 @@ namespace WeaponPaints
 			if (victim == null || !victim.IsValid || victim == player)
 				return HookResult.Continue;
 
-			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return HookResult.Continue;
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var teamInfo) || 
+			    !teamInfo.TryGetValue(player.Team, out var teamWeapons) )
+				return HookResult.Continue;
 
 			CBasePlayerWeapon? weapon = player.PlayerPawn.Value?.WeaponServices?.ActiveWeapon.Value;
 
@@ -264,7 +266,7 @@ namespace WeaponPaints
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-			if (!GPlayerWeaponsInfo[player.Slot][player.Team].TryGetValue(weaponDefIndex, out var weaponInfo) || weaponInfo.Paint == 0)
+			if (!teamWeapons.TryGetValue(weaponDefIndex, out var weaponInfo) || weaponInfo.Paint == 0)
 				return HookResult.Continue;
 			
 			if (!weaponInfo.StatTrak) return HookResult.Continue;
