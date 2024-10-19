@@ -1,10 +1,5 @@
 [
     {
-        "id": "874",
-        "name": "5 年老兵硬币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-874.png"
-    },
-    {
         "id": "875",
         "name": "2013年 DreamHack 锦标赛冠军",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-875.png"
@@ -475,16 +470,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-968.png"
     },
     {
-        "id": "969",
-        "name": "10 年老兵硬币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-969.png"
-    },
-    {
-        "id": "970",
-        "name": "忠诚徽章",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-970.png"
-    },
-    {
         "id": "971",
         "name": "IEM 卡托维兹 2019 冠军",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-971.png"
@@ -565,11 +550,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-986.png"
     },
     {
-        "id": "987",
-        "name": "CS:GO 10周年生日硬币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-987.png"
-    },
-    {
         "id": "988",
         "name": "2022年 IEM 里约热内卢锦标赛冠军",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-988.png"
@@ -608,16 +588,6 @@
         "id": "995",
         "name": "2023年 BLAST.tv 巴黎锦标赛四分之一决赛选手",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-995.png"
-    },
-    {
-        "id": "996",
-        "name": "全球攻势徽章",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-996.png"
-    },
-    {
-        "id": "1000",
-        "name": "“回赠大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1000.png"
     },
     {
         "id": "1001",
@@ -670,11 +640,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1010.png"
     },
     {
-        "id": "1012",
-        "name": "“英勇大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1012.png"
-    },
-    {
         "id": "1013",
         "name": "“英勇大行动”挑战币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1013.png"
@@ -725,11 +690,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1022.png"
     },
     {
-        "id": "1023",
-        "name": "“凤凰大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1023.png"
-    },
-    {
         "id": "1024",
         "name": "“凤凰大行动”挑战币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1024.png"
@@ -743,11 +703,6 @@
         "id": "1026",
         "name": "“凤凰大行动”金币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1026.png"
-    },
-    {
-        "id": "1027",
-        "name": "“突围大行动”全通证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1027.png"
     },
     {
         "id": "1028",
@@ -1060,11 +1015,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1089.png"
     },
     {
-        "id": "1315",
-        "name": "“先锋大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1315.png"
-    },
-    {
         "id": "1316",
         "name": "“先锋大行动”挑战币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1316.png"
@@ -1078,11 +1028,6 @@
         "id": "1318",
         "name": "“先锋大行动”金币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1318.png"
-    },
-    {
-        "id": "1326",
-        "name": "“血猎大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1326.png"
     },
     {
         "id": "1327",
@@ -1108,11 +1053,6 @@
         "id": "1332",
         "name": "2015 年服役勋章",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1332.png"
-    },
-    {
-        "id": "1335",
-        "name": "“野火大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1335.png"
     },
     {
         "id": "1336",
@@ -1158,11 +1098,6 @@
         "id": "1344",
         "name": "2016 年服役勋章",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1344.png"
-    },
-    {
-        "id": "1352",
-        "name": "“九头蛇大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1352.png"
     },
     {
         "id": "1357",
@@ -1280,11 +1215,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4356.png"
     },
     {
-        "id": "4549",
-        "name": "“裂网大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4549.png"
-    },
-    {
         "id": "4550",
         "name": "“裂网大行动”挑战币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4550.png"
@@ -1303,11 +1233,6 @@
         "id": "4553",
         "name": "“裂网大行动”钻石币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4553.png"
-    },
-    {
-        "id": "4554",
-        "name": "卡托维兹 2019 观众通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4554.png"
     },
     {
         "id": "4555",
@@ -1330,11 +1255,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4558.png"
     },
     {
-        "id": "4622",
-        "name": "柏林2019观众通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4622.png"
-    },
-    {
         "id": "4623",
         "name": "柏林 2019 硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4623.png"
@@ -1353,16 +1273,6 @@
         "id": "4626",
         "name": "柏林 2019 钻石硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"
-    },
-    {
-        "id": "4627",
-        "name": "柏林2019观众通行证+3枚纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4627.png"
-    },
-    {
-        "id": "4628",
-        "name": "柏林2019纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4628.png"
     },
     {
         "id": "4671",
@@ -1465,11 +1375,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4692.png"
     },
     {
-        "id": "4699",
-        "name": "“狂牙大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4699.png"
-    },
-    {
         "id": "4700",
         "name": "“狂牙大行动”挑战币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4700.png"
@@ -1535,11 +1440,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4742.png"
     },
     {
-        "id": "4758",
-        "name": "“激流大行动”通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4758.png"
-    },
-    {
         "id": "4759",
         "name": "“激流大行动”挑战币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4759.png"
@@ -1575,11 +1475,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"
     },
     {
-        "id": "4796",
-        "name": "斯德哥尔摩 2021 观众通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4796.png"
-    },
-    {
         "id": "4797",
         "name": "斯德哥尔摩 2021 硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4797.png"
@@ -1598,16 +1493,6 @@
         "id": "4800",
         "name": "斯德哥尔摩 2021 钻石硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4800.png"
-    },
-    {
-        "id": "4801",
-        "name": "斯德哥尔摩 2021 观众通行证 + 3 枚纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4801.png"
-    },
-    {
-        "id": "4802",
-        "name": "斯德哥尔摩 2021 纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4802.png"
     },
     {
         "id": "4819",
@@ -1640,11 +1525,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4824.png"
     },
     {
-        "id": "4825",
-        "name": "2022年安特卫普锦标赛观众通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4825.png"
-    },
-    {
         "id": "4826",
         "name": "安特卫普 2022 硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4826.png"
@@ -1665,21 +1545,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4829.png"
     },
     {
-        "id": "4830",
-        "name": "安特卫普 2022 观众通行证 + 3 枚纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4830.png"
-    },
-    {
-        "id": "4831",
-        "name": "安特卫普 2022 纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4831.png"
-    },
-    {
-        "id": "4850",
-        "name": "2022年里约热内卢锦标赛观众通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4850.png"
-    },
-    {
         "id": "4851",
         "name": "里约 2022 硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4851.png"
@@ -1698,16 +1563,6 @@
         "id": "4854",
         "name": "里约 2022 钻石硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4854.png"
-    },
-    {
-        "id": "4855",
-        "name": "里约 2022 观众通行证 + 3 枚纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4855.png"
-    },
-    {
-        "id": "4856",
-        "name": "里约 2022 纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4856.png"
     },
     {
         "id": "4873",
@@ -1740,11 +1595,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4878.png"
     },
     {
-        "id": "4883",
-        "name": "巴黎 2023 观众通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4883.png"
-    },
-    {
         "id": "4884",
         "name": "巴黎 2023 硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4884.png"
@@ -1763,16 +1613,6 @@
         "id": "4887",
         "name": "巴黎 2023 钻石硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4887.png"
-    },
-    {
-        "id": "4888",
-        "name": "巴黎 2023 观众通行证 + 3 枚纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4888.png"
-    },
-    {
-        "id": "4889",
-        "name": "巴黎 2023 纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4889.png"
     },
     {
         "id": "4906",
@@ -1805,11 +1645,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4911.png"
     },
     {
-        "id": "4916",
-        "name": "2024年哥本哈根锦标赛观众通行证",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4916.png"
-    },
-    {
         "id": "4917",
         "name": "哥本哈根 2024 硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4917.png"
@@ -1828,16 +1663,6 @@
         "id": "4920",
         "name": "哥本哈根 2024 钻石硬币",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4920.png"
-    },
-    {
-        "id": "4921",
-        "name": "2024年哥本哈根锦标赛观众通行证 + 3 枚纪念品代币",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4921.png"
-    },
-    {
-        "id": "4922",
-        "name": "2024年哥本哈根锦标赛纪念包",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4922.png"
     },
     {
         "id": "4933",

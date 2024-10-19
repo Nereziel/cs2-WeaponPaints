@@ -18,7 +18,6 @@ namespace WeaponPaints
 			try
 			{
 				await using var connection = await WeaponPaints.Database.GetConnectionAsync();
-
 				await using var transaction = await connection.BeginTransactionAsync();
 
 				try

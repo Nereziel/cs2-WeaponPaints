@@ -1,10 +1,5 @@
 [
     {
-        "id": "874",
-        "name": "Moneda de 5 años de veteranía",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-874.png"
-    },
-    {
         "id": "875",
         "name": "Campeón del DreamHack 2013",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-875.png"
@@ -475,16 +470,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-968.png"
     },
     {
-        "id": "969",
-        "name": "Moneda de 10 años de veteranía",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-969.png"
-    },
-    {
-        "id": "970",
-        "name": "Insignia de lealtad",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-970.png"
-    },
-    {
         "id": "971",
         "name": "Campeón del IEM Katowice 2019",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-971.png"
@@ -565,11 +550,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-986.png"
     },
     {
-        "id": "987",
-        "name": "Moneda del 10.º cumpleaños",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-987.png"
-    },
-    {
         "id": "988",
         "name": "Campeón del IEM Río 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-988.png"
@@ -608,16 +588,6 @@
         "id": "995",
         "name": "Cuartofinalista del BLAST.tv de París 2023",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-995.png"
-    },
-    {
-        "id": "996",
-        "name": "Insignia de Global Offensive",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-996.png"
-    },
-    {
-        "id": "1000",
-        "name": "Pase de la Operación Payback",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1000.png"
     },
     {
         "id": "1001",
@@ -670,11 +640,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1010.png"
     },
     {
-        "id": "1012",
-        "name": "Pase de la Operación Bravo",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1012.png"
-    },
-    {
         "id": "1013",
         "name": "Moneda de desafío de la Operación Bravo",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1013.png"
@@ -725,11 +690,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1022.png"
     },
     {
-        "id": "1023",
-        "name": "Pase de la Operación Phoenix",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1023.png"
-    },
-    {
         "id": "1024",
         "name": "Moneda de desafío de la Operación Phoenix",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1024.png"
@@ -743,11 +703,6 @@
         "id": "1026",
         "name": "Moneda de oro de la Operación Phoenix",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1026.png"
-    },
-    {
-        "id": "1027",
-        "name": "Pase de acceso total a la Operación Breakout",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1027.png"
     },
     {
         "id": "1028",
@@ -1060,11 +1015,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1089.png"
     },
     {
-        "id": "1315",
-        "name": "Pase de acceso a la Operación Vanguard",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1315.png"
-    },
-    {
         "id": "1316",
         "name": "Moneda de desafío de la Operación Vanguard",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1316.png"
@@ -1078,11 +1028,6 @@
         "id": "1318",
         "name": "Moneda de oro de la Operación Vanguard",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1318.png"
-    },
-    {
-        "id": "1326",
-        "name": "Pase de acceso a la Operación Bloodhound",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1326.png"
     },
     {
         "id": "1327",
@@ -1108,11 +1053,6 @@
         "id": "1332",
         "name": "Medalla de Servicio de 2015",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1332.png"
-    },
-    {
-        "id": "1335",
-        "name": "Pase de acceso a la Operación Wildfire",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1335.png"
     },
     {
         "id": "1336",
@@ -1158,11 +1098,6 @@
         "id": "1344",
         "name": "Medalla de Servicio de 2016",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1344.png"
-    },
-    {
-        "id": "1352",
-        "name": "Pase de la Operación Hydra",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1352.png"
     },
     {
         "id": "1357",
@@ -1280,11 +1215,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4356.png"
     },
     {
-        "id": "4549",
-        "name": "Pase prémium de la Operación Shattered Web",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4549.png"
-    },
-    {
         "id": "4550",
         "name": "Moneda de desafío de la Operación Shattered Web",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4550.png"
@@ -1303,11 +1233,6 @@
         "id": "4553",
         "name": "Moneda de diamante de la Operación Shattered Web",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4553.png"
-    },
-    {
-        "id": "4554",
-        "name": "Pase de espectador de Katowice 2019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4554.png"
     },
     {
         "id": "4555",
@@ -1330,11 +1255,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4558.png"
     },
     {
-        "id": "4622",
-        "name": "Pase de espectador de Berlín 2019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4622.png"
-    },
-    {
         "id": "4623",
         "name": "Moneda de Berlín 2019",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4623.png"
@@ -1353,16 +1273,6 @@
         "id": "4626",
         "name": "Moneda de diamante de Berlín 2019",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"
-    },
-    {
-        "id": "4627",
-        "name": "Pase de espectador de Berlín 2019 + 3 fichas regalo",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4627.png"
-    },
-    {
-        "id": "4628",
-        "name": "Ficha regalo de Berlín 2019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4628.png"
     },
     {
         "id": "4671",
@@ -1465,11 +1375,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4692.png"
     },
     {
-        "id": "4699",
-        "name": "Pase prémium de la Operación Broken Fang",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4699.png"
-    },
-    {
         "id": "4700",
         "name": "Moneda de desafío de la Operación Broken Fang",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4700.png"
@@ -1535,11 +1440,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4742.png"
     },
     {
-        "id": "4758",
-        "name": "Pase prémium de la Operación Riptide",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4758.png"
-    },
-    {
         "id": "4759",
         "name": "Moneda de desafío de la Operación Riptide",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4759.png"
@@ -1575,11 +1475,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"
     },
     {
-        "id": "4796",
-        "name": "Pase de espectador de Estocolmo 2021",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4796.png"
-    },
-    {
         "id": "4797",
         "name": "Moneda de Estocolmo 2021",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4797.png"
@@ -1598,16 +1493,6 @@
         "id": "4800",
         "name": "Moneda de diamante de Estocolmo 2021",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4800.png"
-    },
-    {
-        "id": "4801",
-        "name": "Pase de espectador de Estocolmo 2021 + 3 fichas regalo",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4801.png"
-    },
-    {
-        "id": "4802",
-        "name": "Ficha regalo de Estocolmo 2021",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4802.png"
     },
     {
         "id": "4819",
@@ -1640,11 +1525,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4824.png"
     },
     {
-        "id": "4825",
-        "name": "Pase de espectador de Amberes 2022",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4825.png"
-    },
-    {
         "id": "4826",
         "name": "Moneda de Amberes 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4826.png"
@@ -1665,21 +1545,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4829.png"
     },
     {
-        "id": "4830",
-        "name": "Pase de espectador de Amberes 2022 + 3 fichas regalo",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4830.png"
-    },
-    {
-        "id": "4831",
-        "name": "Ficha regalo de Amberes 2022",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4831.png"
-    },
-    {
-        "id": "4850",
-        "name": "Pase de espectador de Río 2022",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4850.png"
-    },
-    {
         "id": "4851",
         "name": "Moneda de Río 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4851.png"
@@ -1698,16 +1563,6 @@
         "id": "4854",
         "name": "Moneda de diamante de Río 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4854.png"
-    },
-    {
-        "id": "4855",
-        "name": "Pase de espectador de Río 2022 + 3 fichas regalo",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4855.png"
-    },
-    {
-        "id": "4856",
-        "name": "Ficha regalo de Río 2022",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4856.png"
     },
     {
         "id": "4873",
@@ -1740,11 +1595,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4878.png"
     },
     {
-        "id": "4883",
-        "name": "Pase de espectador de París 2023",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4883.png"
-    },
-    {
         "id": "4884",
         "name": "Moneda de París 2023",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4884.png"
@@ -1763,16 +1613,6 @@
         "id": "4887",
         "name": "Moneda de diamante de París 2023",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4887.png"
-    },
-    {
-        "id": "4888",
-        "name": "Pase de espectador de París 2023 + 3 fichas regalo",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4888.png"
-    },
-    {
-        "id": "4889",
-        "name": "Ficha regalo de París 2023",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4889.png"
     },
     {
         "id": "4906",
@@ -1805,11 +1645,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4911.png"
     },
     {
-        "id": "4916",
-        "name": "Pase de espectador de Copenhague 2024",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4916.png"
-    },
-    {
         "id": "4917",
         "name": "Moneda de Copenhague 2024",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4917.png"
@@ -1828,16 +1663,6 @@
         "id": "4920",
         "name": "Moneda de diamante de Copenhague 2024",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4920.png"
-    },
-    {
-        "id": "4921",
-        "name": "Pase de espectador de Copenhague 2024 + 3 fichas regalo",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4921.png"
-    },
-    {
-        "id": "4922",
-        "name": "Paquete regalo de Copenhague 2024",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4922.png"
     },
     {
         "id": "4933",
