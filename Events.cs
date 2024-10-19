@@ -81,7 +81,7 @@ namespace WeaponPaints
 				return HookResult.Continue;
 			
 			if (WeaponSync != null)
-				_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo, weaponInfos));
+				_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo));
 
 			if (Config.Additional.SkinEnabled)
 			{
@@ -253,8 +253,12 @@ namespace WeaponPaints
 		private HookResult OnPlayerDeath(EventPlayerDeath @event, GameEventInfo info)
 		{
 			CCSPlayerController? player = @event.Attacker;
+			CCSPlayerController? victim = @event.Userid;
 
 			if (player is null || !player.IsValid)
+				return HookResult.Continue;
+			
+			if (victim == null || victim == player)
 				return HookResult.Continue;
 
 			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return HookResult.Continue;
@@ -265,7 +269,7 @@ namespace WeaponPaints
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-			if (!GPlayerWeaponsInfo[player.Slot].TryGetValue(weaponDefIndex, out var weaponInfo) || weaponInfo.Paint == 0)
+			if (!GPlayerWeaponsInfo[player.Slot][player.Team].TryGetValue(weaponDefIndex, out var weaponInfo) || weaponInfo.Paint == 0)
 				return HookResult.Continue;
 			
 			if (!weaponInfo.StatTrak) return HookResult.Continue;
