@@ -17,6 +17,8 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Added command **`!knife`** to show menu with knives
 - Added command **`!gloves`** to show menu with gloves
 - Added command **`!agents`** to show menu with agents
+- Added command **`!pins`** to show menu with pins
+- Added command **`!music`** to show menu with music
 - Translations support, submit a PR if you want to share your translation
 
 ## ⚙️ Requirements

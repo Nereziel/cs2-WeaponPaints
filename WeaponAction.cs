@@ -463,14 +463,10 @@ namespace WeaponPaints
 		private static void GivePlayerPin(CCSPlayerController player)
 		{
 			if (!GPlayersPin.TryGetValue(player.Slot, out var pin)) return;
-
 			if (player.InventoryServices == null) return;
-
-			for (var index = 0; index < player.InventoryServices.Rank.Length; index++)
-			{
-				player.InventoryServices.Rank[index] = index == 5 ? (MedalRank_t)pin : MedalRank_t.MEDAL_RANK_NONE;
-				Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
-			}
+			
+			player.InventoryServices.Rank[5] = pin > 0 ? (MedalRank_t)pin : MedalRank_t.MEDAL_RANK_NONE;
+			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
 		}
 		
 		private void GiveOnItemPickup(CCSPlayerController player)

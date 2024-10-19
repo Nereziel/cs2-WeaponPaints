@@ -131,6 +131,8 @@ namespace WeaponPaints
 					float weaponWear = row?.weapon_wear ?? 0f;
 					int weaponSeed = row?.weapon_seed ?? 0;
 					string weaponNameTag = row?.weapon_nametag ?? "";
+					bool weaponStatTrak = row?.weapon_stattrak ?? false;
+					int weaponStatTrakCount = row?.weapon_stattrak_count ?? 0;
 
 					string[]? keyChainParts = row?.weapon_keychain?.ToString().Split(';');
 
@@ -167,7 +169,9 @@ namespace WeaponPaints
 						Seed = weaponSeed,
 						Wear = weaponWear,
 						Nametag = weaponNameTag,
-						KeyChain = keyChainInfo
+						KeyChain = keyChainInfo,
+						StatTrak = weaponStatTrak,
+						StatTrakCount = weaponStatTrakCount,
 					};
 
 					// Retrieve and parse sticker data (up to 5 slots)
@@ -370,6 +374,22 @@ namespace WeaponPaints
 			catch (Exception e)
 			{
 				Utility.Log($"Error syncing music kit to database: {e.Message}");
+			}
+		}		
+		
+		internal async Task SyncPinToDatabase(PlayerInfo player, ushort pin)
+		{
+			if (!_config.Additional.PinsEnabled || string.IsNullOrEmpty(player.SteamId)) return;
+
+			try
+			{
+				await using var connection = await _database.GetConnectionAsync();
+				const string query = "INSERT INTO `wp_player_pins` (`steamid`, `id`) VALUES(@steamid, @newPin) ON DUPLICATE KEY UPDATE `id` = @newPin";
+				await connection.ExecuteAsync(query, new { steamid = player.SteamId, newPin = pin });
+			}
+			catch (Exception e)
+			{
+				Utility.Log($"Error syncing pin to database: {e.Message}");
 			}
 		}
 

@@ -16,7 +16,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
     public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "2.7a";
+	public override string ModuleVersion => "2.8a";
 
 	public override void Load(bool hotReload)
 	{
@@ -53,28 +53,15 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					if (WeaponSync != null) await WeaponSync.GetPlayerData(playerInfo);
 				});
 			}
-
-			AddTimer(2.0f, () => OnAllPluginsLoaded(hotReload));
 		}
 
 		Utility.LoadSkinsFromFile(ModuleDirectory + $"/data/skins_{_config.SkinsLanguage}.json", Logger);
 		Utility.LoadGlovesFromFile(ModuleDirectory + $"/data/gloves_{_config.SkinsLanguage}.json", Logger);
 		Utility.LoadAgentsFromFile(ModuleDirectory + $"/data/agents_{_config.SkinsLanguage}.json", Logger);
 		Utility.LoadMusicFromFile(ModuleDirectory + $"/data/music_{_config.SkinsLanguage}.json", Logger);
-
-		if (Config.Additional.KnifeEnabled)
-			SetupKnifeMenu();
-		if (Config.Additional.SkinEnabled)
-			SetupSkinsMenu();
-		if (Config.Additional.GloveEnabled)
-			SetupGlovesMenu();
-		if (Config.Additional.AgentEnabled)
-			SetupAgentsMenu();
-		if (Config.Additional.MusicEnabled)
-			SetupMusicMenu();
+		Utility.LoadPinsFromFile(ModuleDirectory + $"/data/collectibles_{_config.SkinsLanguage}.json", Logger);
 
 		RegisterListeners();
-		RegisterCommands();
 	}
 
 	public void OnConfigParsed(WeaponPaintsConfig config)
@@ -122,6 +109,21 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		try
 		{
 			MenuApi = MenuCapability.Get();
+			
+			if (Config.Additional.KnifeEnabled)
+				SetupKnifeMenu();
+			if (Config.Additional.SkinEnabled)
+				SetupSkinsMenu();
+			if (Config.Additional.GloveEnabled)
+				SetupGlovesMenu();
+			if (Config.Additional.AgentEnabled)
+				SetupAgentsMenu();
+			if (Config.Additional.MusicEnabled)
+				SetupMusicMenu();
+			if (Config.Additional.PinsEnabled)
+				SetupPinsMenu();
+		
+			RegisterCommands();
 		}
 		catch (Exception)
 		{
