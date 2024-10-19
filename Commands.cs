@@ -682,6 +682,8 @@ public partial class WeaponPaints
 						playerMusic[team] = 0;
 					}
 				}
+				
+				GivePlayerMusicKit(player);
 
 				if (!string.IsNullOrEmpty(Localizer["wp_music_menu_select"]))
 				{
@@ -712,6 +714,8 @@ public partial class WeaponPaints
 				{
 					playerMusic[team] = 0;
 				}
+				
+				GivePlayerMusicKit(player);
 
 				if (!string.IsNullOrEmpty(Localizer["wp_music_menu_select"]))
 				{

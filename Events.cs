@@ -111,35 +111,6 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
-		[GameEventHandler(HookMode.Pre)]
-		public HookResult OnPlayerMvp(EventRoundMvp @event, GameEventInfo info)
-		{
-			var player = @event.Userid;
-			if (player == null || !player.IsValid || player.IsBot)
-				return HookResult.Continue;
-
-			if (!(GPlayersMusic.TryGetValue(player.Slot, out var musicInfo)
-			      && musicInfo.TryGetValue(player.Team, out var musicId)
-			      && musicId != 0))
-				return HookResult.Continue;
-
-			@event.Musickitid = musicId;
-			@event.Nomusic = 0;
-			@event.Musickitmvps = 1;
-			@event.Value = 1;
-			
-			var newEvent = new EventRoundMvp(true)
-			{
-				Musickitid = musicId,
-				Nomusic = 0,
-				Musickitmvps = 1,
-				Value = 1
-			};
-			
-			newEvent.FireEvent(false);
-			return HookResult.Continue;
-		}
-		
 		private void OnMapStart(string mapName)
 		{
 			if (Config.Additional is { KnifeEnabled: false, SkinEnabled: false, GloveEnabled: false }) return;
@@ -171,7 +142,6 @@ namespace WeaponPaints
 		private HookResult OnRoundEnd(EventRoundEnd @event, GameEventInfo info)
 		{
 			_gBCommandsAllowed = false;
-
 			return HookResult.Continue;
 		}
 
@@ -249,9 +219,8 @@ namespace WeaponPaints
 			if (!Config.Additional.ShowSkinImage) return;
 
 			foreach (var player in Utilities.GetPlayers().Where(p =>
-							p is { IsValid: true, PlayerPawn.IsValid: true } &&
-							(LifeState_t)p.LifeState == LifeState_t.LIFE_ALIVE
-							&& !p.IsBot && p is {  Connected: PlayerConnectedState.PlayerConnected }
+							p is { IsValid: true, PlayerPawn.IsValid: true, IsBot: false } and
+								{ Connected: PlayerConnectedState.PlayerConnected }
 							)
 				)
 			{
@@ -284,7 +253,7 @@ namespace WeaponPaints
 			if (player is null || !player.IsValid)
 				return HookResult.Continue;
 			
-			if (victim == null || victim == player)
+			if (victim == null || !victim.IsValid || victim == player)
 				return HookResult.Continue;
 
 			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return HookResult.Continue;
