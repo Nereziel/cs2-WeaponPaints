@@ -1,10 +1,5 @@
 [
     {
-        "id": "874",
-        "name": "Viiden vuoden veteraanikolikko",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-874.png"
-    },
-    {
         "id": "875",
         "name": "DreamHack 2013 -mestari",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-875.png"
@@ -475,16 +470,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-968.png"
     },
     {
-        "id": "969",
-        "name": "Kymmenen vuoden veteraanikolikko",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-969.png"
-    },
-    {
-        "id": "970",
-        "name": "Uskollisuusmerkki",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-970.png"
-    },
-    {
         "id": "971",
         "name": "IEM Katowice 2019 -mestari",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-971.png"
@@ -565,11 +550,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-986.png"
     },
     {
-        "id": "987",
-        "name": "10-vuotispäivän kolikko",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-987.png"
-    },
-    {
         "id": "988",
         "name": "IEM Rio 2022 -mestari",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-988.png"
@@ -608,16 +588,6 @@
         "id": "995",
         "name": "BLAST.tv Paris 2023 -neljännesfinalisti",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-995.png"
-    },
-    {
-        "id": "996",
-        "name": "Global Offensive -merkki",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-996.png"
-    },
-    {
-        "id": "1000",
-        "name": "Operaatio Vastaisku -passi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1000.png"
     },
     {
         "id": "1001",
@@ -670,11 +640,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1010.png"
     },
     {
-        "id": "1012",
-        "name": "Operaatio Bravo -passi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1012.png"
-    },
-    {
         "id": "1013",
         "name": "Operaatio Bravo -haastekolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1013.png"
@@ -725,11 +690,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1022.png"
     },
     {
-        "id": "1023",
-        "name": "Operaatio Feeniks -passi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1023.png"
-    },
-    {
         "id": "1024",
         "name": "Operaatio Feeniks -haastekolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1024.png"
@@ -743,11 +703,6 @@
         "id": "1026",
         "name": "Kultainen Operaatio Feeniks -kolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1026.png"
-    },
-    {
-        "id": "1027",
-        "name": "Operaatio Läpimurron täyden pääsyn passi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1027.png"
     },
     {
         "id": "1028",
@@ -1060,11 +1015,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1089.png"
     },
     {
-        "id": "1315",
-        "name": "Operaatio Eturintama -pääsypassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1315.png"
-    },
-    {
         "id": "1316",
         "name": "Operaatio Eturintama -haastekolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1316.png"
@@ -1078,11 +1028,6 @@
         "id": "1318",
         "name": "Kultainen Operaatio Eturintama -kolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1318.png"
-    },
-    {
-        "id": "1326",
-        "name": "Operaatio Verikoira -pääsypassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1326.png"
     },
     {
         "id": "1327",
@@ -1108,11 +1053,6 @@
         "id": "1332",
         "name": "Palvelusmitali 2015",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1332.png"
-    },
-    {
-        "id": "1335",
-        "name": "Operaatio Maastopalo -pääsypassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1335.png"
     },
     {
         "id": "1336",
@@ -1158,11 +1098,6 @@
         "id": "1344",
         "name": "Palvelusmitali 2016",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1344.png"
-    },
-    {
-        "id": "1352",
-        "name": "Operaatio Hydra -pääsypassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1352.png"
     },
     {
         "id": "1357",
@@ -1280,11 +1215,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4356.png"
     },
     {
-        "id": "4549",
-        "name": "Operaatio Pirstaleisen verkon Premium-passi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4549.png"
-    },
-    {
         "id": "4550",
         "name": "Operaatio Pirstaleinen verkko -haastekolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4550.png"
@@ -1303,11 +1233,6 @@
         "id": "4553",
         "name": "Timanttinen Operaatio Pirstaleinen verkko -kolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4553.png"
-    },
-    {
-        "id": "4554",
-        "name": "Katowice 2019 -katsojapassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4554.png"
     },
     {
         "id": "4555",
@@ -1330,11 +1255,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4558.png"
     },
     {
-        "id": "4622",
-        "name": "Berliini 2019 -katsojapassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4622.png"
-    },
-    {
         "id": "4623",
         "name": "Berliini 2019 -kolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4623.png"
@@ -1353,16 +1273,6 @@
         "id": "4626",
         "name": "Berliini 2019 -timanttikolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"
-    },
-    {
-        "id": "4627",
-        "name": "Berliini 2019 -katsojapassi + 3 tuliaispolettia",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4627.png"
-    },
-    {
-        "id": "4628",
-        "name": "Berliini 2019 -tuliaispoletti",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4628.png"
     },
     {
         "id": "4671",
@@ -1465,11 +1375,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4692.png"
     },
     {
-        "id": "4699",
-        "name": "Operaatio Katkenneen torahampaan Premium-passi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4699.png"
-    },
-    {
         "id": "4700",
         "name": "Operaatio Katkennut torahammas -haastekolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4700.png"
@@ -1535,11 +1440,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4742.png"
     },
     {
-        "id": "4758",
-        "name": "Operaatio Ristiaallokon Premium-passi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4758.png"
-    },
-    {
         "id": "4759",
         "name": "Operaatio Ristiaallokko -haastekolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4759.png"
@@ -1575,11 +1475,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"
     },
     {
-        "id": "4796",
-        "name": "Tukholma 2021 -katsojapassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4796.png"
-    },
-    {
         "id": "4797",
         "name": "Tukholma 2021 -kolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4797.png"
@@ -1598,16 +1493,6 @@
         "id": "4800",
         "name": "Tukholma 2021 -timanttikolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4800.png"
-    },
-    {
-        "id": "4801",
-        "name": "Tukholma 2021 -katsojapassi + 3 tuliaispolettia",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4801.png"
-    },
-    {
-        "id": "4802",
-        "name": "Tukholma 2021 -tuliaispoletti",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4802.png"
     },
     {
         "id": "4819",
@@ -1640,11 +1525,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4824.png"
     },
     {
-        "id": "4825",
-        "name": "Antwerpen 2022 -katsojapassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4825.png"
-    },
-    {
         "id": "4826",
         "name": "Antwerpen 2022 -kolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4826.png"
@@ -1665,21 +1545,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4829.png"
     },
     {
-        "id": "4830",
-        "name": "Antwerpen 2022 -katsojapassi + 3 tuliaispolettia",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4830.png"
-    },
-    {
-        "id": "4831",
-        "name": "Antwerpen 2022 -tuliaispoletti",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4831.png"
-    },
-    {
-        "id": "4850",
-        "name": "Rio 2022 -katsojapassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4850.png"
-    },
-    {
         "id": "4851",
         "name": "Rio 2022 -kolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4851.png"
@@ -1698,16 +1563,6 @@
         "id": "4854",
         "name": "Rio 2022 -timanttikolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4854.png"
-    },
-    {
-        "id": "4855",
-        "name": "Rio 2022 -katsojapassi + 3 tuliaispolettia",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4855.png"
-    },
-    {
-        "id": "4856",
-        "name": "Rio 2022 -tuliaispoletti",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4856.png"
     },
     {
         "id": "4873",
@@ -1740,11 +1595,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4878.png"
     },
     {
-        "id": "4883",
-        "name": "Paris 2023 -katsojapassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4883.png"
-    },
-    {
         "id": "4884",
         "name": "Paris 2023 -kolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4884.png"
@@ -1763,16 +1613,6 @@
         "id": "4887",
         "name": "Paris 2023 -timanttikolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4887.png"
-    },
-    {
-        "id": "4888",
-        "name": "Paris 2023 -katsojapassi + 3 tuliaispolettia",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4888.png"
-    },
-    {
-        "id": "4889",
-        "name": "Paris 2023 -tuliaispoletti",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4889.png"
     },
     {
         "id": "4906",
@@ -1805,11 +1645,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4911.png"
     },
     {
-        "id": "4916",
-        "name": "Kööpenhamina 2024 -katsojapassi",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4916.png"
-    },
-    {
         "id": "4917",
         "name": "Kööpenhamina 2024 -kolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4917.png"
@@ -1828,16 +1663,6 @@
         "id": "4920",
         "name": "Kööpenhamina 2024 -timanttikolikko",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4920.png"
-    },
-    {
-        "id": "4921",
-        "name": "Kööpenhamina 2024 -katsojapassi + 3 tuliaispolettia",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4921.png"
-    },
-    {
-        "id": "4922",
-        "name": "Kööpenhamina 2024 -tuliaispaketti",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4922.png"
     },
     {
         "id": "4933",

@@ -7,6 +7,7 @@ using CounterStrikeSharp.API.Modules.Utils;
 using Microsoft.Extensions.Logging;
 using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
+using Newtonsoft.Json.Linq;
 
 namespace WeaponPaints
 {
@@ -20,8 +21,6 @@ namespace WeaponPaints
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
 
 			if (isKnife && !GPlayersKnife.ContainsKey(player.Slot) || isKnife && GPlayersKnife[player.Slot] == "weapon_knife") return;
-
-			int[] newPaints = { 106, 112, 113, 114, 115, 117, 118, 120, 121, 123, 126, 127, 128, 129, 130, 131, 133, 134, 137, 138, 139, 140, 142, 144, 145, 146, 152, 160, 161, 163, 173, 239, 292, 324, 331, 412, 461, 513, 766, 768, 770, 773, 774, 830, 831, 832, 834, 874, 875, 877, 878, 882, 883, 901, 912, 936, 937, 938, 939, 940, 1054, 1062, 1159, 1160, 1161, 1162, 1163, 1164, 1165, 1166, 1167, 1168, 1169, 1170, 1171, 1172, 1173, 1174, 1175, 1177, 1178, 1179, 1180 };
 
 			if (isKnife)
 			{
@@ -43,6 +42,9 @@ namespace WeaponPaints
 			int fallbackPaintKit = 0;
 			
 			weapon.AttributeManager.Item.AccountID = (uint)player.SteamID;
+			
+			List<JObject> skinInfo;
+			bool isLegacyModel;
 
 			if (_config.Additional.GiveRandomSkin &&
 				 !GPlayerWeaponsInfo[player.Slot].ContainsKey(weaponDefIndex))
@@ -67,8 +69,14 @@ namespace WeaponPaints
 				if (fallbackPaintKit == 0)
 					return;
 
-				if (isKnife) return;
-				UpdatePlayerWeaponMeshGroupMask(player, weapon, !newPaints.Contains(fallbackPaintKit));
+				skinInfo = SkinsList
+					.Where(w => 
+						w["weapon_defindex"]?.ToObject<int>() == weaponDefIndex && 
+						w["paint"]?.ToObject<int>() == fallbackPaintKit)
+					.ToList();
+				
+				isLegacyModel = skinInfo.Count <= 0 || skinInfo[0].Value<bool>("legacy_model");
+				UpdatePlayerWeaponMeshGroupMask(player, weapon, isLegacyModel);
 				return;
 			}
 
@@ -105,7 +113,14 @@ namespace WeaponPaints
 			if (weaponInfo.KeyChain != null) SetKeychain(player, weapon);
 			if (weaponInfo.Stickers.Count > 0) SetStickers(player, weapon);
 
-			UpdatePlayerWeaponMeshGroupMask(player, weapon, !newPaints.Contains(fallbackPaintKit));
+			skinInfo = SkinsList
+				.Where(w => 
+					w["weapon_defindex"]?.ToObject<int>() == weaponDefIndex && 
+					w["paint"]?.ToObject<int>() == fallbackPaintKit)
+				.ToList();
+				
+			isLegacyModel = skinInfo.Count <= 0 || skinInfo[0].Value<bool>("legacy_model");
+			UpdatePlayerWeaponMeshGroupMask(player, weapon, isLegacyModel);
 		}
 
 		// silly method to update sticker when call RefreshWeapons()
@@ -145,14 +160,18 @@ namespace WeaponPaints
 			foreach (var sticker in weaponInfo.Stickers)
 			{
 				int stickerSlot = weaponInfo.Stickers.IndexOf(sticker);
+				
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} id", ViewAsFloat(sticker.Id));
 				// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 				// 	$"sticker slot {stickerSlot} schema", stickerSlot);
-				// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				// 	$"sticker slot {stickerSlot} offset x", sticker.OffsetX);
-				// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				// 	$"sticker slot {stickerSlot} offset y", sticker.OffsetY);
+				// if (stickerSlot == 5)
+				// {
+				// 	// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				// 	// 	$"sticker slot {stickerSlot} offset x", 0.05f);
+				// 	// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				// 	// 	$"sticker slot {stickerSlot} offset y", 0.02f);
+				// }
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} wear", sticker.Wear);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
@@ -160,7 +179,7 @@ namespace WeaponPaints
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} rotation", sticker.Rotation);
 			}
-
+			
 			if (_temporaryPlayerWeaponWear.TryGetValue(player.Slot, out var playerWear) &&
 				playerWear.TryGetValue(weaponDefIndex, out float storedWear))
 			{
@@ -488,8 +507,8 @@ namespace WeaponPaints
 		private void UpdatePlayerEconItemId(CEconItemView econItemView)
 		{
 			var itemId = _nextItemId++;
+			
 			econItemView.ItemID = itemId;
-
 			econItemView.ItemIDLow = (uint)itemId & 0xFFFFFFFF;
 			econItemView.ItemIDHigh = (uint)itemId >> 32;
 		}

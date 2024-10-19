@@ -1,10 +1,5 @@
 [
     {
-        "id": "874",
-        "name": "Huy chương 5 năm kỳ cựu",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-874.png"
-    },
-    {
         "id": "875",
         "name": "Nhà vô địch DreamHack 2013",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-875.png"
@@ -475,16 +470,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-968.png"
     },
     {
-        "id": "969",
-        "name": "Huy chương 10 năm kỳ cựu",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-969.png"
-    },
-    {
-        "id": "970",
-        "name": "Huy hiệu trung kiên",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-970.png"
-    },
-    {
         "id": "971",
         "name": "Nhà vô địch IEM Katowice 2019",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-971.png"
@@ -565,11 +550,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-986.png"
     },
     {
-        "id": "987",
-        "name": "Huy chương kỷ niệm 10 năm",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-987.png"
-    },
-    {
         "id": "988",
         "name": "Nhà vô địch IEM Rio 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-988.png"
@@ -608,16 +588,6 @@
         "id": "995",
         "name": "Lọt vào tứ kết tại giải BLAST.tv Paris 2023",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-995.png"
-    },
-    {
-        "id": "996",
-        "name": "Huy hiệu Global Offensive",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-996.png"
-    },
-    {
-        "id": "1000",
-        "name": "Vé chiến dịch Payback",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1000.png"
     },
     {
         "id": "1001",
@@ -670,11 +640,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1010.png"
     },
     {
-        "id": "1012",
-        "name": "Vé chiến dịch Bravo",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1012.png"
-    },
-    {
         "id": "1013",
         "name": "Huy chương thử thách chiến dịch Bravo",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1013.png"
@@ -725,11 +690,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1022.png"
     },
     {
-        "id": "1023",
-        "name": "Vé chiến dịch Phoenix",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1023.png"
-    },
-    {
         "id": "1024",
         "name": "Huy chương thử thách chiến dịch Phoenix",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1024.png"
@@ -743,11 +703,6 @@
         "id": "1026",
         "name": "Huy chương vàng chiến dịch Phoenix",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1026.png"
-    },
-    {
-        "id": "1027",
-        "name": "Vé truy cập tất cả chiến dịch Breakout",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1027.png"
     },
     {
         "id": "1028",
@@ -1060,11 +1015,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1089.png"
     },
     {
-        "id": "1315",
-        "name": "Vé chiến dịch Vanguard",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1315.png"
-    },
-    {
         "id": "1316",
         "name": "Huy chương thử thách chiến dịch Vanguard",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1316.png"
@@ -1078,11 +1028,6 @@
         "id": "1318",
         "name": "Huy chương vàng chiến dịch Vanguard",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1318.png"
-    },
-    {
-        "id": "1326",
-        "name": "Vé chiến dịch Bloodhound",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1326.png"
     },
     {
         "id": "1327",
@@ -1108,11 +1053,6 @@
         "id": "1332",
         "name": "Huy chương phục vụ 2015",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1332.png"
-    },
-    {
-        "id": "1335",
-        "name": "Vé chiến dịch Wildfire",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1335.png"
     },
     {
         "id": "1336",
@@ -1158,11 +1098,6 @@
         "id": "1344",
         "name": "Huy chương phục vụ 2016",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1344.png"
-    },
-    {
-        "id": "1352",
-        "name": "Vé chiến dịch Hydra",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1352.png"
     },
     {
         "id": "1357",
@@ -1280,11 +1215,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4356.png"
     },
     {
-        "id": "4549",
-        "name": "Vé chiến dịch Shattered Web cao cấp",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4549.png"
-    },
-    {
         "id": "4550",
         "name": "Huy hiệu thử thách Chiến dịch Shattered Web",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4550.png"
@@ -1303,11 +1233,6 @@
         "id": "4553",
         "name": "Huy hiệu kim cương chiến dịch Shattered Web",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4553.png"
-    },
-    {
-        "id": "4554",
-        "name": "Vé xem Katowice 2019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4554.png"
     },
     {
         "id": "4555",
@@ -1330,11 +1255,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4558.png"
     },
     {
-        "id": "4622",
-        "name": "Vé xem Berlin 2019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4622.png"
-    },
-    {
         "id": "4623",
         "name": "Huy chương Berlin 2019",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4623.png"
@@ -1353,16 +1273,6 @@
         "id": "4626",
         "name": "Huy chương kim cương Berlin 2019",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"
-    },
-    {
-        "id": "4627",
-        "name": "Vé xem Berlin 2019 + 3 token lưu niệm",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4627.png"
-    },
-    {
-        "id": "4628",
-        "name": "Token lưu niệm Berlin 2019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4628.png"
     },
     {
         "id": "4671",
@@ -1465,11 +1375,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4692.png"
     },
     {
-        "id": "4699",
-        "name": "Vé chiến dịch Broken Fang cao cấp",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4699.png"
-    },
-    {
         "id": "4700",
         "name": "Huy chương thử thách chiến dịch Broken Fang",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4700.png"
@@ -1535,11 +1440,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4742.png"
     },
     {
-        "id": "4758",
-        "name": "Vé Premium chiến dịch Riptide",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4758.png"
-    },
-    {
         "id": "4759",
         "name": "Huy chương thử thách chiến dịch Riptide",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4759.png"
@@ -1575,11 +1475,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"
     },
     {
-        "id": "4796",
-        "name": "Vé xem giải Stockholm 2021",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4796.png"
-    },
-    {
         "id": "4797",
         "name": "Huy chương Stockholm 2021",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4797.png"
@@ -1598,16 +1493,6 @@
         "id": "4800",
         "name": "Huy chương kim cương Stockholm 2021",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4800.png"
-    },
-    {
-        "id": "4801",
-        "name": "Vé xem giải Stockholm 2021 + 3 token lưu niệm",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4801.png"
-    },
-    {
-        "id": "4802",
-        "name": "Token lưu niệm Stockholm 2021",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4802.png"
     },
     {
         "id": "4819",
@@ -1640,11 +1525,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4824.png"
     },
     {
-        "id": "4825",
-        "name": "Vé xem giải Antwerp 2022",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4825.png"
-    },
-    {
         "id": "4826",
         "name": "Huy chương Antwerp 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4826.png"
@@ -1665,21 +1545,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4829.png"
     },
     {
-        "id": "4830",
-        "name": "Vé xem giải Antwerp 2022 + 3 token lưu niệm",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4830.png"
-    },
-    {
-        "id": "4831",
-        "name": "Token lưu niệm Antwerp 2022",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4831.png"
-    },
-    {
-        "id": "4850",
-        "name": "Vé xem giải Rio 2022",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4850.png"
-    },
-    {
         "id": "4851",
         "name": "Huy chương Rio 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4851.png"
@@ -1698,16 +1563,6 @@
         "id": "4854",
         "name": "Huy chương kim cương Rio 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4854.png"
-    },
-    {
-        "id": "4855",
-        "name": "Vé xem Rio 2022 + 3 token lưu niệm",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4855.png"
-    },
-    {
-        "id": "4856",
-        "name": "Token lưu niệm Rio 2022",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4856.png"
     },
     {
         "id": "4873",
@@ -1740,11 +1595,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4878.png"
     },
     {
-        "id": "4883",
-        "name": "Vé xem giải Paris 2023",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4883.png"
-    },
-    {
         "id": "4884",
         "name": "Huy chương Paris 2023",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4884.png"
@@ -1763,16 +1613,6 @@
         "id": "4887",
         "name": "Huy chương kim cương Paris 2023",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4887.png"
-    },
-    {
-        "id": "4888",
-        "name": "Vé xem Paris 2023 + 3 token lưu niệm",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4888.png"
-    },
-    {
-        "id": "4889",
-        "name": "Token lưu niệm Paris 2023",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4889.png"
     },
     {
         "id": "4906",
@@ -1805,11 +1645,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4911.png"
     },
     {
-        "id": "4916",
-        "name": "Vé xem Copenhagen 2024",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4916.png"
-    },
-    {
         "id": "4917",
         "name": "Huy chương Copenhagen 2024",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4917.png"
@@ -1828,16 +1663,6 @@
         "id": "4920",
         "name": "Huy chương kim cương Copenhagen 2024",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4920.png"
-    },
-    {
-        "id": "4921",
-        "name": "Vé xem Copenhagen 2024 + 3 token lưu niệm",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4921.png"
-    },
-    {
-        "id": "4922",
-        "name": "Gói lưu niệm Copenhagen 2024",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4922.png"
     },
     {
         "id": "4933",
