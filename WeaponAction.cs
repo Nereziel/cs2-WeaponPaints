@@ -473,17 +473,20 @@ namespace WeaponPaints
 
 		private static void GivePlayerMusicKit(CCSPlayerController player)
 		{
-			if (GPlayersMusic.TryGetValue(player.Slot, out var musicInfo) || musicInfo == null ||
+			if (player.IsBot) return;
+			if (!GPlayersMusic.TryGetValue(player.Slot, out var musicInfo) ||
 			    !musicInfo.TryGetValue(player.Team, out var musicId) || musicId == 0) return;
 			
 			if (player.InventoryServices == null) return;
-			
-			player.InventoryServices.MusicID = musicId;
-			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
+
 			player.MusicKitID = musicId;
+			// player.MvpNoMusic = false;
+			player.InventoryServices.MusicID = musicId;
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitID");
-			player.MusicKitMVPs = musicId;
-			Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitMVPs");
+			// Utilities.SetStateChanged(player, "CCSPlayerController", "m_bMvpNoMusic");
+			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
+			// player.MusicKitMVPs = musicId;
+			// Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitMVPs");
 		}
 
 		private static void GivePlayerPin(CCSPlayerController player)
