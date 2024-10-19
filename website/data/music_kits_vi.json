@@ -1,0 +1,407 @@
+[
+    {
+        "id": "3",
+        "name": "Gói âm thanh | Daniel Sadowski, Crimson Assault",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-3.png"
+    },
+    {
+        "id": "4",
+        "name": "Gói âm thanh | Noisia, Sharpened",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-4.png"
+    },
+    {
+        "id": "5",
+        "name": "Gói âm thanh | Robert Allaire, Insurgency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-5.png"
+    },
+    {
+        "id": "6",
+        "name": "Gói âm thanh | Sean Murray, A*D*8",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-6.png"
+    },
+    {
+        "id": "7",
+        "name": "Gói âm thanh | Feed Me, High Noon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-7.png"
+    },
+    {
+        "id": "8",
+        "name": "Gói âm thanh | Dren, Death's Head Demolition",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-8.png"
+    },
+    {
+        "id": "9",
+        "name": "Gói âm thanh | Austin Wintory, Desert Fire",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-9.png"
+    },
+    {
+        "id": "10",
+        "name": "Gói âm thanh | Sasha, LNOE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-10.png"
+    },
+    {
+        "id": "11",
+        "name": "Gói âm thanh | Skog, Metal",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-11.png"
+    },
+    {
+        "id": "12",
+        "name": "Gói âm thanh | Midnight Riders, All I Want for Christmas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-12.png"
+    },
+    {
+        "id": "13",
+        "name": "Gói âm thanh | Matt Lange, IsoRhythm",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-13.png"
+    },
+    {
+        "id": "14",
+        "name": "Gói âm thanh | Mateo Messina, For No Mankind",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-14.png"
+    },
+    {
+        "id": "15",
+        "name": "Gói âm thanh | Nhiều nghệ sĩ, Hotline Miami",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-15.png"
+    },
+    {
+        "id": "16",
+        "name": "Gói âm thanh | Daniel Sadowski, Total Domination",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-16.png"
+    },
+    {
+        "id": "17",
+        "name": "Gói âm thanh | Damjan Mravunac, The Talos Principle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-17.png"
+    },
+    {
+        "id": "18",
+        "name": "Gói âm thanh | Proxy, Battlepack",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-18.png"
+    },
+    {
+        "id": "19",
+        "name": "Gói âm thanh | Ki:Theory, MOLOTOV",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-19.png"
+    },
+    {
+        "id": "20",
+        "name": "Gói âm thanh | Troels Folmann, Uber Blasto Phone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-20.png"
+    },
+    {
+        "id": "21",
+        "name": "Gói âm thanh | Kelly Bailey, Hazardous Environments",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-21.png"
+    },
+    {
+        "id": "22",
+        "name": "Gói âm thanh | Skog, II-Headshot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-22.png"
+    },
+    {
+        "id": "23",
+        "name": "Gói âm thanh | Daniel Sadowski, The 8-Bit Kit",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-23.png"
+    },
+    {
+        "id": "24",
+        "name": "Gói âm thanh | AWOLNATION, I Am",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-24.png"
+    },
+    {
+        "id": "25",
+        "name": "Gói âm thanh | Mord Fustang, Diamonds",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-25.png"
+    },
+    {
+        "id": "26",
+        "name": "Gói âm thanh | Michael Bross, Invasion!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-26.png"
+    },
+    {
+        "id": "27",
+        "name": "Gói âm thanh | Ian Hultquist, Lion's Mouth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-27.png"
+    },
+    {
+        "id": "28",
+        "name": "Gói âm thanh | New Beat Fund, Sponge Fingerz",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-28.png"
+    },
+    {
+        "id": "29",
+        "name": "Gói âm thanh | Beartooth, Disgusting",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-29.png"
+    },
+    {
+        "id": "30",
+        "name": "Gói âm thanh | Lennie Moore, Java Havana Funkaloo",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-30.png"
+    },
+    {
+        "id": "31",
+        "name": "Gói âm thanh | Darude, Moments CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-31.png"
+    },
+    {
+        "id": "32",
+        "name": "Gói âm thanh | Beartooth, Aggressive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32.png"
+    },
+    {
+        "id": "33",
+        "name": "Gói âm thanh | Blitz Kids, The Good Youth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33.png"
+    },
+    {
+        "id": "34",
+        "name": "Gói âm thanh | Hundredth, FREE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34.png"
+    },
+    {
+        "id": "35",
+        "name": "Gói âm thanh | Neck Deep, Life's Not Out To Get You",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35.png"
+    },
+    {
+        "id": "36",
+        "name": "Gói âm thanh | Roam, Backbone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36.png"
+    },
+    {
+        "id": "37",
+        "name": "Gói âm thanh | Twin Atlantic, GLA",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37.png"
+    },
+    {
+        "id": "38",
+        "name": "Gói âm thanh | Skog, III-Arena",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38.png"
+    },
+    {
+        "id": "39",
+        "name": "Gói âm thanh | The Verkkars, EZ4ENCE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-39.png"
+    },
+    {
+        "id": "40",
+        "name": "Halo, The Master Chief Collection",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-40.png"
+    },
+    {
+        "id": "41",
+        "name": "Gói âm thanh | Scarlxrd: King, Scar",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-41.png"
+    },
+    {
+        "id": "42",
+        "name": "Half-Life: Alyx, Anti-Citizen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-42.png"
+    },
+    {
+        "id": "43",
+        "name": "Gói âm thanh | Austin Wintory, Bachram",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-43.png"
+    },
+    {
+        "id": "44",
+        "name": "Gói âm thanh | Dren, Gunman Taco Truck",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-44.png"
+    },
+    {
+        "id": "45",
+        "name": "Gói âm thanh | Daniel Sadowski, Eye of the Dragon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-45.png"
+    },
+    {
+        "id": "46",
+        "name": "Gói âm thanh | Tree Adams and Ben Bromfield, M.U.D.D. FORCE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-46.png"
+    },
+    {
+        "id": "47",
+        "name": "Gói âm thanh | Tim Huling, Neo Noir",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-47.png"
+    },
+    {
+        "id": "48",
+        "name": "Gói âm thanh | Sam Marshall, Bodacious",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-48.png"
+    },
+    {
+        "id": "49",
+        "name": "Gói âm thanh | Matt Levine, Drifter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-49.png"
+    },
+    {
+        "id": "50",
+        "name": "Gói âm thanh | Amon Tobin, All for Dust",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-50.png"
+    },
+    {
+        "id": "51",
+        "name": "Darren Korb, Hades",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-51.png"
+    },
+    {
+        "id": "52",
+        "name": "Gói âm thanh | Neck Deep, The Lowlife Pack",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-52.png"
+    },
+    {
+        "id": "53",
+        "name": "Gói âm thanh | Scarlxrd, CHAIN$AW.LXADXUT.",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-53.png"
+    },
+    {
+        "id": "54",
+        "name": "Gói âm thanh | Austin Wintory, Mocha Petal",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-54.png"
+    },
+    {
+        "id": "55",
+        "name": "Gói âm thanh | Chipzel, ~Yellow Magic~",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-55.png"
+    },
+    {
+        "id": "56",
+        "name": "Gói âm thanh | Freaky DNA, Vici",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-56.png"
+    },
+    {
+        "id": "57",
+        "name": "Gói âm thanh | Jesse Harlin, Astro Bellum",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-57.png"
+    },
+    {
+        "id": "58",
+        "name": "Gói âm thanh | Laura Shigihara: Work Hard, Play Hard",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-58.png"
+    },
+    {
+        "id": "59",
+        "name": "Gói âm thanh | Sarah Schachner, KOLIBRI",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-59.png"
+    },
+    {
+        "id": "60",
+        "name": "Gói âm thanh | bbno$, u mad!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-60.png"
+    },
+    {
+        "id": "61",
+        "name": "Gói âm thanh | The Verkkars & n0thing — Flashbang Dance",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-61.png"
+    },
+    {
+        "id": "62",
+        "name": "Gói âm thanh | 3kliksphilip, Heading for the Source",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-62.png"
+    },
+    {
+        "id": "63",
+        "name": "Gói âm thanh | Humanity's Last Breath, Void",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-63.png"
+    },
+    {
+        "id": "64",
+        "name": "Gói âm thanh | Juelz, Shooters",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-64.png"
+    },
+    {
+        "id": "65",
+        "name": "Gói âm thanh | Knock2, dashstar*",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-65.png"
+    },
+    {
+        "id": "66",
+        "name": "Gói âm thanh | Meechy Darko, Gothic Luxury",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-66.png"
+    },
+    {
+        "id": "67",
+        "name": "Gói âm thanh | Sullivan King, Lock Me Up",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-67.png"
+    },
+    {
+        "id": "68",
+        "name": "Gói âm thanh | Perfect World, 花脸 (Hoa Liễm)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-68.png"
+    },
+    {
+        "id": "69",
+        "name": "Gói âm thanh | Denzel Curry, ULTIMATE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-69.png"
+    },
+    {
+        "id": "71",
+        "name": "Gói âm thanh | DRYDEN, Feel The Power",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-71.png"
+    },
+    {
+        "id": "72",
+        "name": "Gói âm thanh | ISOxo, inhuman",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-72.png"
+    },
+    {
+        "id": "73",
+        "name": "Gói âm thanh | KILL SCRIPT, All Night",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-73.png"
+    },
+    {
+        "id": "74",
+        "name": "Gói âm thanh | Knock2, Make U SWEAT!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-74.png"
+    },
+    {
+        "id": "75",
+        "name": "Gói âm thanh | Rad Cat, Reason",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-75.png"
+    },
+    {
+        "id": "76",
+        "name": "Gói âm thanh | TWERL, Ekko & Sidetrack, Under Bright Lights",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-76.png"
+    },
+    {
+        "id": "78",
+        "name": "Gói âm thanh | Austin Wintory, The Devil Went Clubbing In Georgia",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-78.png"
+    },
+    {
+        "id": "79",
+        "name": "Gói âm thanh | Ben Bromfield, Rabbit Hole",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-79.png"
+    },
+    {
+        "id": "80",
+        "name": "Gói âm thanh | Daniel Sadowski, Dead Shot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-80.png"
+    },
+    {
+        "id": "81",
+        "name": "Gói âm thanh | Dren McDonald, Coffee! Kofe! Kahveh!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-81.png"
+    },
+    {
+        "id": "82",
+        "name": "Gói âm thanh | Matt Levine, Agency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-82.png"
+    },
+    {
+        "id": "83",
+        "name": "Gói âm thanh | Sam Marshall, Clutch",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-83.png"
+    },
+    {
+        "id": "84",
+        "name": "Gói âm thanh | Tim Huling, Devil's Paintbrush",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-84.png"
+    },
+    {
+        "id": "85",
+        "name": "Gói âm thanh | Tree Adams, Seventh Moon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    }
+]

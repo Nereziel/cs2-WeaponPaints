@@ -1,0 +1,407 @@
+[
+    {
+        "id": "3",
+        "name": "音樂包 | Daniel Sadowski, Crimson Assault",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-3.png"
+    },
+    {
+        "id": "4",
+        "name": "音樂包 | Noisia, Sharpened",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-4.png"
+    },
+    {
+        "id": "5",
+        "name": "音樂包 | Robert Allaire, Insurgency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-5.png"
+    },
+    {
+        "id": "6",
+        "name": "音樂包 | Sean Murray, A*D*8",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-6.png"
+    },
+    {
+        "id": "7",
+        "name": "音樂包 | Feed Me, High Noon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-7.png"
+    },
+    {
+        "id": "8",
+        "name": "音樂包 | Dren, Death's Head Demolition",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-8.png"
+    },
+    {
+        "id": "9",
+        "name": "音樂包 | Austin Wintory, Desert Fire",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-9.png"
+    },
+    {
+        "id": "10",
+        "name": "音樂包 | Sasha, LNOE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-10.png"
+    },
+    {
+        "id": "11",
+        "name": "音樂包 | Skog, Metal",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-11.png"
+    },
+    {
+        "id": "12",
+        "name": "音樂包 | Midnight Riders, All I Want for Christmas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-12.png"
+    },
+    {
+        "id": "13",
+        "name": "音樂包 | Matt Lange, IsoRhythm",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-13.png"
+    },
+    {
+        "id": "14",
+        "name": "音樂包 | Mateo Messina, For No Mankind",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-14.png"
+    },
+    {
+        "id": "15",
+        "name": "音樂包 | Various Artists, Hotline Miami",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-15.png"
+    },
+    {
+        "id": "16",
+        "name": "音樂包 | Daniel Sadowski, Total Domination",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-16.png"
+    },
+    {
+        "id": "17",
+        "name": "音樂包 | Damjan Mravunac, The Talos Principle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-17.png"
+    },
+    {
+        "id": "18",
+        "name": "音樂包 | Proxy, Battlepack",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-18.png"
+    },
+    {
+        "id": "19",
+        "name": "音樂包 | Ki:Theory, MOLOTOV",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-19.png"
+    },
+    {
+        "id": "20",
+        "name": "音樂包 | Troels Folmann, Uber Blasto Phone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-20.png"
+    },
+    {
+        "id": "21",
+        "name": "音樂包 | Kelly Bailey, Hazardous Environments",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-21.png"
+    },
+    {
+        "id": "22",
+        "name": "音樂包 | Skog, II-Headshot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-22.png"
+    },
+    {
+        "id": "23",
+        "name": "音樂包 | Daniel Sadowski, The 8-Bit Kit",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-23.png"
+    },
+    {
+        "id": "24",
+        "name": "音樂包 | AWOLNATION, I Am",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-24.png"
+    },
+    {
+        "id": "25",
+        "name": "音樂包 | Mord Fustang, Diamonds",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-25.png"
+    },
+    {
+        "id": "26",
+        "name": "音樂包 | Michael Bross, Invasion!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-26.png"
+    },
+    {
+        "id": "27",
+        "name": "音樂包 | Ian Hultquist, Lion's Mouth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-27.png"
+    },
+    {
+        "id": "28",
+        "name": "音樂包 | New Beat Fund, Sponge Fingerz",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-28.png"
+    },
+    {
+        "id": "29",
+        "name": "音樂包 | Beartooth, Disgusting",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-29.png"
+    },
+    {
+        "id": "30",
+        "name": "音樂包 | Lennie Moore, Java Havana Funkaloo",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-30.png"
+    },
+    {
+        "id": "31",
+        "name": "音樂包 | Darude, Moments CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-31.png"
+    },
+    {
+        "id": "32",
+        "name": "音樂包 | Beartooth, Aggressive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32.png"
+    },
+    {
+        "id": "33",
+        "name": "音樂包 | Blitz Kids, The Good Youth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33.png"
+    },
+    {
+        "id": "34",
+        "name": "音樂包 | Hundredth, FREE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34.png"
+    },
+    {
+        "id": "35",
+        "name": "音樂包 | Neck Deep, Life's Not Out To Get You",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35.png"
+    },
+    {
+        "id": "36",
+        "name": "音樂包 | Roam, Backbone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36.png"
+    },
+    {
+        "id": "37",
+        "name": "音樂包 | Twin Atlantic, GLA",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37.png"
+    },
+    {
+        "id": "38",
+        "name": "音樂包 | Skog, III-Arena",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38.png"
+    },
+    {
+        "id": "39",
+        "name": "音樂包 | The Verkkars, EZ4ENCE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-39.png"
+    },
+    {
+        "id": "40",
+        "name": "Halo - The Master Chief Collection",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-40.png"
+    },
+    {
+        "id": "41",
+        "name": "音樂包 | Scarlxrd: King, Scar",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-41.png"
+    },
+    {
+        "id": "42",
+        "name": "《戰慄時空：艾莉克絲》- 反公民",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-42.png"
+    },
+    {
+        "id": "43",
+        "name": "音樂包 | Austin Wintory - Bachram",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-43.png"
+    },
+    {
+        "id": "44",
+        "name": "音樂包 | Dren - Gunman Taco Truck",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-44.png"
+    },
+    {
+        "id": "45",
+        "name": "音樂包 | Daniel Sadowski - Eye of the Dragon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-45.png"
+    },
+    {
+        "id": "46",
+        "name": "音樂包 | Tree Adams 與 Ben Bromfield - M.U.D.D. FORCE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-46.png"
+    },
+    {
+        "id": "47",
+        "name": "音樂包 | Tim Huling - Neo Noir",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-47.png"
+    },
+    {
+        "id": "48",
+        "name": "音樂包 | Sam Marshall - Bodacious",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-48.png"
+    },
+    {
+        "id": "49",
+        "name": "音樂包 | Matt Levine - Drifter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-49.png"
+    },
+    {
+        "id": "50",
+        "name": "音樂包 | Amon Tobin - All for Dust",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-50.png"
+    },
+    {
+        "id": "51",
+        "name": "Darren Kor -《Hades》音樂包",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-51.png"
+    },
+    {
+        "id": "52",
+        "name": "音樂包 | Neck Deep，《The Lowlife》組合",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-52.png"
+    },
+    {
+        "id": "53",
+        "name": "音樂包 | Scarlxrd，《CHAIN$AW.LXADXUT》",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-53.png"
+    },
+    {
+        "id": "54",
+        "name": "音樂包 | Austin Wintory - Mocha Petal",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-54.png"
+    },
+    {
+        "id": "55",
+        "name": "音樂包 | Chipzel - ~Yellow Magic~",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-55.png"
+    },
+    {
+        "id": "56",
+        "name": "音樂包 | Freaky DNA - Vici",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-56.png"
+    },
+    {
+        "id": "57",
+        "name": "音樂包 | Jesse Harlin - Astro Bellum",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-57.png"
+    },
+    {
+        "id": "58",
+        "name": "音樂包 | Laura Shigihara - Work Hard, Play Hard",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-58.png"
+    },
+    {
+        "id": "59",
+        "name": "音樂包 | Sarah Schachner - KOLIBRI",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-59.png"
+    },
+    {
+        "id": "60",
+        "name": "音樂包 | bbno$, u mad!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-60.png"
+    },
+    {
+        "id": "61",
+        "name": "音樂包 | The Verkkars & n0thing - Flashbang Dance",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-61.png"
+    },
+    {
+        "id": "62",
+        "name": "音樂包 | 3kliksphilip - Heading for the Source",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-62.png"
+    },
+    {
+        "id": "63",
+        "name": "音樂包 | Humanity's Last Breath - Void",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-63.png"
+    },
+    {
+        "id": "64",
+        "name": "音樂包 | Juelz - Shooters",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-64.png"
+    },
+    {
+        "id": "65",
+        "name": "音樂包 | Knock2 - dashstar*",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-65.png"
+    },
+    {
+        "id": "66",
+        "name": "音樂包 | Meechy Darko - Gothic Luxury",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-66.png"
+    },
+    {
+        "id": "67",
+        "name": "音樂包 | Sullivan King - Lock Me Up",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-67.png"
+    },
+    {
+        "id": "68",
+        "name": "音樂包 | 完美世界 - 花臉",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-68.png"
+    },
+    {
+        "id": "69",
+        "name": "音樂包 | Denzel Curry - ULTIMATE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-69.png"
+    },
+    {
+        "id": "71",
+        "name": "音樂包 | DRYDEN - Feel The Power",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-71.png"
+    },
+    {
+        "id": "72",
+        "name": "音樂包 | ISOxo - inhuman",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-72.png"
+    },
+    {
+        "id": "73",
+        "name": "音樂包 | KILL SCRIPT - All Night",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-73.png"
+    },
+    {
+        "id": "74",
+        "name": "音樂包 | Knock2 - Make U SWEAT!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-74.png"
+    },
+    {
+        "id": "75",
+        "name": "音樂包 | Rad Cat - Reason",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-75.png"
+    },
+    {
+        "id": "76",
+        "name": "音樂包 | TWERL、Ekko & Sidetrack - Under Bright Lights",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-76.png"
+    },
+    {
+        "id": "78",
+        "name": "音樂包 | Austin Wintory - The Devil Went Clubbing In Georgia",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-78.png"
+    },
+    {
+        "id": "79",
+        "name": "音樂包 | Ben Bromfield - Rabbit Hole",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-79.png"
+    },
+    {
+        "id": "80",
+        "name": "音樂包 | Daniel Sadowsk - Dead Shot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-80.png"
+    },
+    {
+        "id": "81",
+        "name": "音樂包 | Dren McDonald - Coffee! Kofe! Kahveh!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-81.png"
+    },
+    {
+        "id": "82",
+        "name": "音樂包 | Matt Levine - Agency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-82.png"
+    },
+    {
+        "id": "83",
+        "name": "音樂包 | Sam Marshall - Clutch",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-83.png"
+    },
+    {
+        "id": "84",
+        "name": "音樂包 | Tim Huling - Devil's Paintbrush",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-84.png"
+    },
+    {
+        "id": "85",
+        "name": "音樂包 | Tree Adams - Seventh Moon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    }
+]

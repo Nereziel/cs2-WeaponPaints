@@ -1,1 +1,440 @@
-[{"weapon_defindex":0,"paint":0,"image":"","paint_name":"Gloves | Default"}]
+[
+    {
+        "weapon_defindex": 0,
+        "paint": 0,
+        "image": "",
+        "paint_name": "Gloves | Default"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10085",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
+        "paint_name": "Găng tay Broken Fang (★) | Jade"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10086",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
+        "paint_name": "Găng tay Broken Fang (★) | Yellow-banded"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10087",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
+        "paint_name": "Găng tay Broken Fang (★) | Needle Point"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10088",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
+        "paint_name": "Găng tay Broken Fang (★) | Unhinged"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10006",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
+        "paint_name": "Găng tay Bloodhound (★) | Charred"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10007",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
+        "paint_name": "Găng tay Bloodhound (★) | Snakebite"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10008",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
+        "paint_name": "Găng tay Bloodhound (★) | Bronzed"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10039",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
+        "paint_name": "Găng tay Bloodhound (★) | Guerrilla"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
+        "paint_name": "Găng tay thể thao (★) | Superconductor"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
+        "paint_name": "Găng tay thể thao (★) | Arid"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10037",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
+        "paint_name": "Găng tay thể thao (★) | Pandora's Box"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10038",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
+        "paint_name": "Găng tay thể thao (★) | Hedge Maze"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10045",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
+        "paint_name": "Găng tay thể thao (★) | Amphibious"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10046",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
+        "paint_name": "Găng tay thể thao (★) | Bronze Morph"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10047",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
+        "paint_name": "Găng tay thể thao (★) | Omega"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10048",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
+        "paint_name": "Găng tay thể thao (★) | Vice"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10073",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
+        "paint_name": "Găng tay thể thao (★) | Slingshot"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10074",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
+        "paint_name": "Găng tay thể thao (★) | Big Game"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10075",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
+        "paint_name": "Găng tay thể thao (★) | Scarlet Shamagh"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10076",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
+        "paint_name": "Găng tay thể thao (★) | Nocts"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
+        "paint_name": "Găng tay lái xe (★) | Lunar Weave"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
+        "paint_name": "Găng tay lái xe (★) | Convoy"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
+        "paint_name": "Găng tay lái xe (★) | Crimson Weave"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10040",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
+        "paint_name": "Găng tay lái xe (★) | Diamondback"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10041",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
+        "paint_name": "Găng tay lái xe (★) | King Snake"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10042",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
+        "paint_name": "Găng tay lái xe (★) | Imperial Plaid"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10043",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
+        "paint_name": "Găng tay lái xe (★) | Overtake"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10044",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
+        "paint_name": "Găng tay lái xe (★) | Racing Green"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10069",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
+        "paint_name": "Găng tay lái xe (★) | Rezan the Red"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10070",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
+        "paint_name": "Găng tay lái xe (★) | Snow Leopard"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10071",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
+        "paint_name": "Găng tay lái xe (★) | Queen Jaguar"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10072",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
+        "paint_name": "Găng tay lái xe (★) | Black Tie"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10009",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
+        "paint_name": "Bọc tay (★) | Leather"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10010",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10010.png",
+        "paint_name": "Bọc tay (★) | Spruce DDPAT"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
+        "paint_name": "Bọc tay (★) | Slaughter"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10036",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10036.png",
+        "paint_name": "Bọc tay (★) | Badlands"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10053",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10053.png",
+        "paint_name": "Bọc tay (★) | Cobalt Skulls"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10054",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10054.png",
+        "paint_name": "Bọc tay (★) | Overprint"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10055",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
+        "paint_name": "Bọc tay (★) | Duct Tape"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10056",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10056.png",
+        "paint_name": "Bọc tay (★) | Arboreal"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10081",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
+        "paint_name": "Bọc tay (★) | Desert Shamagh"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10082",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
+        "paint_name": "Bọc tay (★) | Giraffe"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10083",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10083.png",
+        "paint_name": "Bọc tay (★) | Constrictor"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10084",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
+        "paint_name": "Bọc tay (★) | CAUTION!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10024.png",
+        "paint_name": "Găng tay mô tô (★) | Eclipse"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10026.png",
+        "paint_name": "Găng tay mô tô (★) | Spearmint"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10027",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10027.png",
+        "paint_name": "Găng tay mô tô (★) | Boom!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10028",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10028.png",
+        "paint_name": "Găng tay mô tô (★) | Cool Mint"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10049",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
+        "paint_name": "Găng tay mô tô (★) | POW!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10050",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
+        "paint_name": "Găng tay mô tô (★) | Turtle"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10051",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
+        "paint_name": "Găng tay mô tô (★) | Transport"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10052",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10052.png",
+        "paint_name": "Găng tay mô tô (★) | Polygon"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10077",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
+        "paint_name": "Găng tay mô tô (★) | Finish Line"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10078",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
+        "paint_name": "Găng tay mô tô (★) | Smoke Out"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10079",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
+        "paint_name": "Găng tay mô tô (★) | Blood Pressure"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10080",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
+        "paint_name": "Găng tay mô tô (★) | 3rd Commando Company"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10030",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10030.png",
+        "paint_name": "Găng tay chuyên viên (★) | Forest DDPAT"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10033",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
+        "paint_name": "Găng tay chuyên viên (★) | Crimson Kimono"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10034",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10034.png",
+        "paint_name": "Găng tay chuyên viên (★) | Emerald Web"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10035",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
+        "paint_name": "Găng tay chuyên viên (★) | Foundation"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10061",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
+        "paint_name": "Găng tay chuyên viên (★) | Crimson Web"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10062",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
+        "paint_name": "Găng tay chuyên viên (★) | Buckshot"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10063",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10063.png",
+        "paint_name": "Găng tay chuyên viên (★) | Fade"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10064",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
+        "paint_name": "Găng tay chuyên viên (★) | Mogul"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10065",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10065.png",
+        "paint_name": "Găng tay chuyên viên (★) | Marble Fade"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10066",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10066.png",
+        "paint_name": "Găng tay chuyên viên (★) | Lt. Commander"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10067",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10067.png",
+        "paint_name": "Găng tay chuyên viên (★) | Tiger Strike"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10068",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
+        "paint_name": "Găng tay chuyên viên (★) | Field Agent"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10057",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10057.png",
+        "paint_name": "Găng tay Hydra (★) | Emerald"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10058",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10058.png",
+        "paint_name": "Găng tay Hydra (★) | Mangrove"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10059",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10059.png",
+        "paint_name": "Găng tay Hydra (★) | Rattler"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10060",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
+        "paint_name": "Găng tay Hydra (★) | Case Hardened"
+    }
+]

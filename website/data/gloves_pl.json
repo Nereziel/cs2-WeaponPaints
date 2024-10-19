@@ -1,1 +1,440 @@
-[{"weapon_defindex":0,"paint":0,"image":"","paint_name":"Gloves | Default"}]
+[
+    {
+        "weapon_defindex": 0,
+        "paint": 0,
+        "image": "",
+        "paint_name": "Gloves | Default"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10085",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
+        "paint_name": "Rękawice Broken Fang (★) | Jadeit"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10086",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
+        "paint_name": "Rękawice Broken Fang (★) | Żółtopasy"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10087",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
+        "paint_name": "Rękawice Broken Fang (★) | Haft krzyżykowy"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10088",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
+        "paint_name": "Rękawice Broken Fang (★) | Nieposkromiony"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10006",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
+        "paint_name": "Rękawice Bloodhound (★) | Osmalone"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10007",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
+        "paint_name": "Rękawice Bloodhound (★) | Ukąszenie węża"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10008",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
+        "paint_name": "Rękawice Bloodhound (★) | Brązowe"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10039",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
+        "paint_name": "Rękawice Bloodhound (★) | Partyzantka"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
+        "paint_name": "Rękawice sportowe (★) | Nadprzewodnik"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
+        "paint_name": "Rękawice sportowe (★) | Pustynne"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10037",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
+        "paint_name": "Rękawice sportowe (★) | Puszka Pandory"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10038",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
+        "paint_name": "Rękawice sportowe (★) | Labirynt ogrodowy"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10045",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
+        "paint_name": "Rękawice sportowe (★) | Morskie"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10046",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
+        "paint_name": "Rękawice sportowe (★) | Brązowa przemiana"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10047",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
+        "paint_name": "Rękawice sportowe (★) | Omega"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10048",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
+        "paint_name": "Rękawice sportowe (★) | Vice"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10073",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
+        "paint_name": "Rękawice sportowe (★) | Miotacz"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10074",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
+        "paint_name": "Rękawice sportowe (★) | Wielka zwierzyna"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10075",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
+        "paint_name": "Rękawice sportowe (★) | Szkarłatna kefija"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10076",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
+        "paint_name": "Rękawice sportowe (★) | Mrok"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Splot księżycowy"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Konwój"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Szkarłatny splot"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10040",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Grzechotnik"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10041",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Królewski wąż"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10042",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Królewska krata"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10043",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Wyprzedzanie"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10044",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Wyścigowa zieleń"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10069",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Rezan Czerwony"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10070",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Irbis śnieżny"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10071",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Królowa jaguarów"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10072",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
+        "paint_name": "Rękawiczki samochodowe (★) | Strój galowy"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10009",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
+        "paint_name": "Bandaże bokserskie (★) | Skóra"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10010",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10010.png",
+        "paint_name": "Bandaże bokserskie (★) | Świerkowy DDPAT"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
+        "paint_name": "Bandaże bokserskie (★) | Rzeź"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10036",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10036.png",
+        "paint_name": "Bandaże bokserskie (★) | Badlandy"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10053",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10053.png",
+        "paint_name": "Bandaże bokserskie (★) | Kobaltowe czaszki"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10054",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10054.png",
+        "paint_name": "Bandaże bokserskie (★) | Nadruk"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10055",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
+        "paint_name": "Bandaże bokserskie (★) | Taśma izolacyjna"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10056",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10056.png",
+        "paint_name": "Bandaże bokserskie (★) | Leśne"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10081",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
+        "paint_name": "Bandaże bokserskie (★) | Pustynna kefija"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10082",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
+        "paint_name": "Bandaże bokserskie (★) | Żyrafa"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10083",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10083.png",
+        "paint_name": "Bandaże bokserskie (★) | Dusiciel"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10084",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
+        "paint_name": "Bandaże bokserskie (★) | UWAGA!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10024.png",
+        "paint_name": "Rękawice motocyklisty (★) | Zaćmienie"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10026.png",
+        "paint_name": "Rękawice motocyklisty (★) | Mięta zielona"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10027",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10027.png",
+        "paint_name": "Rękawice motocyklisty (★) | Bum!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10028",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10028.png",
+        "paint_name": "Rękawice motocyklisty (★) | Orzeźwiająca mięta"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10049",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
+        "paint_name": "Rękawice motocyklisty (★) | TRACH!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10050",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
+        "paint_name": "Rękawice motocyklisty (★) | Żółw"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10051",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
+        "paint_name": "Rękawice motocyklisty (★) | Transport"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10052",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10052.png",
+        "paint_name": "Rękawice motocyklisty (★) | Wielokąt"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10077",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
+        "paint_name": "Rękawice motocyklisty (★) | Linia mety"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10078",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
+        "paint_name": "Rękawice motocyklisty (★) | Lecący dym"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10079",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
+        "paint_name": "Rękawice motocyklisty (★) | Ciśnienie tętnicze"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10080",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
+        "paint_name": "Rękawice motocyklisty (★) | 3 Kompania Komandosów"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10030",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10030.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Leśny DDPAT"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10033",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Szkarłatne kimono"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10034",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10034.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Szmaragdowa sieć"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10035",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Podkład"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10061",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Szkarłatna sieć"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10062",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Loftka"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10063",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10063.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Gradient"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10064",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Mulda"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10065",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10065.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Marmurkowy gradient"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10066",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10066.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Komandor podporucznik"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10067",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10067.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Uderzenie tygrysa"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10068",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
+        "paint_name": "Rękawice specjalistyczne (★) | Agent terenowy"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10057",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10057.png",
+        "paint_name": "Rękawice Hydra (★) | Szmaragd"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10058",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10058.png",
+        "paint_name": "Rękawice Hydra (★) | Namorzyn"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10059",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10059.png",
+        "paint_name": "Rękawice Hydra (★) | Grzechotnik"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10060",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
+        "paint_name": "Rękawice Hydra (★) | Stal nawęglana"
+    }
+]

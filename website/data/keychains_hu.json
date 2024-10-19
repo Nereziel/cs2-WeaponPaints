@@ -1,1 +1,167 @@
-[{"id":"1","name":"Talizmán | Kicsi Ava","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-1.png"},{"id":"2","name":"Talizmán | Őrült Banán","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-2.png"},{"id":"3","name":"Talizmán | Kicsi Bajszos","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-3.png"},{"id":"4","name":"Talizmán | Kicsi Sandy","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-4.png"},{"id":"5","name":"Talizmán | Kicsi Csirke","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-5.png"},{"id":"6","name":"Talizmán | Kicsi Crass","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-6.png"},{"id":"7","name":"Talizmán | Szörny Virsli","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-7.png"},{"id":"8","name":"Talizmán | Nagy Kev","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-8.png"},{"id":"9","name":"Talizmán | Kicsi Szörny","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-9.png"},{"id":"10","name":"Talizmán | Csípős Szósz","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-10.png"},{"id":"11","name":"Talizmán | Gyémánt Virsli","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-11.png"},{"id":"12","name":"Talizmán | Csipet Só","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-12.png"},{"id":"13","name":"Talizmán | Büfévirsli","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-13.png"},{"id":"14","name":"Talizmán | Kicsi Csésze","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-14.png"},{"id":"15","name":"Talizmán | Kicsi SAS","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-15.png"},{"id":"16","name":"Talizmán | Lángolt Kolbász","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-16.png"},{"id":"17","name":"Talizmán | Mini AK","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-17.png"},{"id":"18","name":"Talizmán | Fröccsöntött AK","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-18.png"},{"id":"19","name":"Talizmán | Zseb-AWP","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-19.png"},{"id":"20","name":"Talizmán | Titááán AWP","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-20.png"},{"id":"21","name":"Talizmán | Mini Karat T-E","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-21.png"},{"id":"22","name":"Talizmán | Faragott Kés","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-22.png"},{"id":"23","name":"Talizmán | POP-Art","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-23.png"},{"id":"24","name":"Talizmán | Kicsi Spriccelő","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-24.png"},{"id":"25","name":"Talizmán | Diszkó MAC","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-25.png"},{"id":"26","name":"Talizmán | Visszafröccs","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-26.png"},{"id":"27","name":"Talizmán | Kis Dugós Puska","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-27.png"},{"id":"28","name":"Talizmán | Tüzes Kezek","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-28.png"},{"id":"29","name":"Talizmán | Féldrágakő","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-29.png"},{"id":"30","name":"Talizmán | Mini Karat T","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-30.png"},{"id":"31","name":"Talizmán | Ragyogó Lövés","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-31.png"},{"id":"32","name":"Talizmán | Be(t)öltve","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-32.png"},{"id":"33","name":"Talizmán | Kicsiláb","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"}]
+[
+    {
+        "id": "1",
+        "name": "Talizmán | Kicsi Ava",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-1.png"
+    },
+    {
+        "id": "2",
+        "name": "Talizmán | Őrült Banán",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-2.png"
+    },
+    {
+        "id": "3",
+        "name": "Talizmán | Kicsi Bajszos",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-3.png"
+    },
+    {
+        "id": "4",
+        "name": "Talizmán | Kicsi Sandy",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-4.png"
+    },
+    {
+        "id": "5",
+        "name": "Talizmán | Kicsi Csirke",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-5.png"
+    },
+    {
+        "id": "6",
+        "name": "Talizmán | Kicsi Crass",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-6.png"
+    },
+    {
+        "id": "7",
+        "name": "Talizmán | Szörny Virsli",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-7.png"
+    },
+    {
+        "id": "8",
+        "name": "Talizmán | Nagy Kev",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-8.png"
+    },
+    {
+        "id": "9",
+        "name": "Talizmán | Kicsi Szörny",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-9.png"
+    },
+    {
+        "id": "10",
+        "name": "Talizmán | Csípős Szósz",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-10.png"
+    },
+    {
+        "id": "11",
+        "name": "Talizmán | Gyémánt Virsli",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-11.png"
+    },
+    {
+        "id": "12",
+        "name": "Talizmán | Csipet Só",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-12.png"
+    },
+    {
+        "id": "13",
+        "name": "Talizmán | Büfévirsli",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-13.png"
+    },
+    {
+        "id": "14",
+        "name": "Talizmán | Kicsi Csésze",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-14.png"
+    },
+    {
+        "id": "15",
+        "name": "Talizmán | Kicsi SAS",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-15.png"
+    },
+    {
+        "id": "16",
+        "name": "Talizmán | Lángolt Kolbász",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-16.png"
+    },
+    {
+        "id": "17",
+        "name": "Talizmán | Mini AK",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-17.png"
+    },
+    {
+        "id": "18",
+        "name": "Talizmán | Fröccsöntött AK",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-18.png"
+    },
+    {
+        "id": "19",
+        "name": "Talizmán | Zseb-AWP",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-19.png"
+    },
+    {
+        "id": "20",
+        "name": "Talizmán | Titááán AWP",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-20.png"
+    },
+    {
+        "id": "21",
+        "name": "Talizmán | Mini Karat T-E",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-21.png"
+    },
+    {
+        "id": "22",
+        "name": "Talizmán | Faragott Kés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-22.png"
+    },
+    {
+        "id": "23",
+        "name": "Talizmán | POP-Art",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-23.png"
+    },
+    {
+        "id": "24",
+        "name": "Talizmán | Kicsi Spriccelő",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-24.png"
+    },
+    {
+        "id": "25",
+        "name": "Talizmán | Diszkó MAC",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-25.png"
+    },
+    {
+        "id": "26",
+        "name": "Talizmán | Visszafröccs",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-26.png"
+    },
+    {
+        "id": "27",
+        "name": "Talizmán | Kis Dugós Puska",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-27.png"
+    },
+    {
+        "id": "28",
+        "name": "Talizmán | Tüzes Kezek",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-28.png"
+    },
+    {
+        "id": "29",
+        "name": "Talizmán | Féldrágakő",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-29.png"
+    },
+    {
+        "id": "30",
+        "name": "Talizmán | Mini Karat T",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-30.png"
+    },
+    {
+        "id": "31",
+        "name": "Talizmán | Ragyogó Lövés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-31.png"
+    },
+    {
+        "id": "32",
+        "name": "Talizmán | Be(t)öltve",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-32.png"
+    },
+    {
+        "id": "33",
+        "name": "Talizmán | Kicsiláb",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"
+    }
+]

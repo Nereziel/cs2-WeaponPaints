@@ -1,1 +1,167 @@
-[{"id":"1","name":"Γούρι | Lil' Ava","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-1.png"},{"id":"2","name":"Γούρι | That's Bananas","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-2.png"},{"id":"3","name":"Γούρι | Lil' Whiskers","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-3.png"},{"id":"4","name":"Γούρι | Lil' Sandy","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-4.png"},{"id":"5","name":"Γούρι | Chicken Lil'","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-5.png"},{"id":"6","name":"Γούρι | Lil' Crass","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-6.png"},{"id":"7","name":"Γούρι | Hot Howl","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-7.png"},{"id":"8","name":"Γούρι | Big Kev","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-8.png"},{"id":"9","name":"Γούρι | Lil' Monster","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-9.png"},{"id":"10","name":"Γούρι | Hot Sauce","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-10.png"},{"id":"11","name":"Γούρι | Diamond Dog","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-11.png"},{"id":"12","name":"Γούρι | Pinch O' Salt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-12.png"},{"id":"13","name":"Γούρι | Diner Dog","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-13.png"},{"id":"14","name":"Γούρι | Lil' Teacup","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-14.png"},{"id":"15","name":"Γούρι | Lil' SAS","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-15.png"},{"id":"16","name":"Γούρι | Hot Wurst","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-16.png"},{"id":"17","name":"Γούρι | Baby's AK","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-17.png"},{"id":"18","name":"Γούρι | Die-cast AK","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-18.png"},{"id":"19","name":"Γούρι | Pocket AWP","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-19.png"},{"id":"20","name":"Γούρι | Titeenium AWP","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-20.png"},{"id":"21","name":"Γούρι | Baby Karat (ΑΤ)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-21.png"},{"id":"22","name":"Γούρι | Whittle Knife","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-22.png"},{"id":"23","name":"Γούρι | POP Art","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-23.png"},{"id":"24","name":"Γούρι | Lil' Squirt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-24.png"},{"id":"25","name":"Γούρι | Disco MAC","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-25.png"},{"id":"26","name":"Γούρι | Backsplash","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-26.png"},{"id":"27","name":"Γούρι | Lil' Cap Gun","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-27.png"},{"id":"28","name":"Γούρι | Hot Hands","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-28.png"},{"id":"29","name":"Γούρι | Semi-Precious","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-29.png"},{"id":"30","name":"Γούρι | Baby Karat (Τ)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-30.png"},{"id":"31","name":"Γούρι | Glamour Shot","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-31.png"},{"id":"32","name":"Γούρι | Stitch-Loaded","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-32.png"},{"id":"33","name":"Γούρι | Lil' Squatch","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"}]
+[
+    {
+        "id": "1",
+        "name": "Γούρι | Lil' Ava",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-1.png"
+    },
+    {
+        "id": "2",
+        "name": "Γούρι | That's Bananas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-2.png"
+    },
+    {
+        "id": "3",
+        "name": "Γούρι | Lil' Whiskers",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-3.png"
+    },
+    {
+        "id": "4",
+        "name": "Γούρι | Lil' Sandy",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-4.png"
+    },
+    {
+        "id": "5",
+        "name": "Γούρι | Chicken Lil'",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-5.png"
+    },
+    {
+        "id": "6",
+        "name": "Γούρι | Lil' Crass",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-6.png"
+    },
+    {
+        "id": "7",
+        "name": "Γούρι | Hot Howl",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-7.png"
+    },
+    {
+        "id": "8",
+        "name": "Γούρι | Big Kev",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-8.png"
+    },
+    {
+        "id": "9",
+        "name": "Γούρι | Lil' Monster",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-9.png"
+    },
+    {
+        "id": "10",
+        "name": "Γούρι | Hot Sauce",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-10.png"
+    },
+    {
+        "id": "11",
+        "name": "Γούρι | Diamond Dog",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-11.png"
+    },
+    {
+        "id": "12",
+        "name": "Γούρι | Pinch O' Salt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-12.png"
+    },
+    {
+        "id": "13",
+        "name": "Γούρι | Diner Dog",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-13.png"
+    },
+    {
+        "id": "14",
+        "name": "Γούρι | Lil' Teacup",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-14.png"
+    },
+    {
+        "id": "15",
+        "name": "Γούρι | Lil' SAS",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-15.png"
+    },
+    {
+        "id": "16",
+        "name": "Γούρι | Hot Wurst",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-16.png"
+    },
+    {
+        "id": "17",
+        "name": "Γούρι | Baby's AK",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-17.png"
+    },
+    {
+        "id": "18",
+        "name": "Γούρι | Die-cast AK",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-18.png"
+    },
+    {
+        "id": "19",
+        "name": "Γούρι | Pocket AWP",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-19.png"
+    },
+    {
+        "id": "20",
+        "name": "Γούρι | Titeenium AWP",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-20.png"
+    },
+    {
+        "id": "21",
+        "name": "Γούρι | Baby Karat (ΑΤ)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-21.png"
+    },
+    {
+        "id": "22",
+        "name": "Γούρι | Whittle Knife",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-22.png"
+    },
+    {
+        "id": "23",
+        "name": "Γούρι | POP Art",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-23.png"
+    },
+    {
+        "id": "24",
+        "name": "Γούρι | Lil' Squirt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-24.png"
+    },
+    {
+        "id": "25",
+        "name": "Γούρι | Disco MAC",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-25.png"
+    },
+    {
+        "id": "26",
+        "name": "Γούρι | Backsplash",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-26.png"
+    },
+    {
+        "id": "27",
+        "name": "Γούρι | Lil' Cap Gun",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-27.png"
+    },
+    {
+        "id": "28",
+        "name": "Γούρι | Hot Hands",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-28.png"
+    },
+    {
+        "id": "29",
+        "name": "Γούρι | Semi-Precious",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-29.png"
+    },
+    {
+        "id": "30",
+        "name": "Γούρι | Baby Karat (Τ)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-30.png"
+    },
+    {
+        "id": "31",
+        "name": "Γούρι | Glamour Shot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-31.png"
+    },
+    {
+        "id": "32",
+        "name": "Γούρι | Stitch-Loaded",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-32.png"
+    },
+    {
+        "id": "33",
+        "name": "Γούρι | Lil' Squatch",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"
+    }
+]

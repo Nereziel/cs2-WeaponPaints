@@ -1,0 +1,407 @@
+[
+    {
+        "id": "3",
+        "name": "Müzik Kiti | Daniel Sadowski, Crimson Assault",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-3.png"
+    },
+    {
+        "id": "4",
+        "name": "Müzik Kiti | Noisia, Sharpened",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-4.png"
+    },
+    {
+        "id": "5",
+        "name": "Müzik Kiti | Robert Allaire, Insurgency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-5.png"
+    },
+    {
+        "id": "6",
+        "name": "Müzik Kiti | Sean Murray, A*D*8",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-6.png"
+    },
+    {
+        "id": "7",
+        "name": "Müzik Kiti | Feed Me, High Noon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-7.png"
+    },
+    {
+        "id": "8",
+        "name": "Müzik Kiti | Dren, Death's Head Demolition",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-8.png"
+    },
+    {
+        "id": "9",
+        "name": "Müzik Kiti | Austin Wintory, Desert Fire",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-9.png"
+    },
+    {
+        "id": "10",
+        "name": "Müzik Kiti | Sasha, LNOE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-10.png"
+    },
+    {
+        "id": "11",
+        "name": "Müzik Kiti | Skog, Metal",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-11.png"
+    },
+    {
+        "id": "12",
+        "name": "Müzik Kiti | Midnight Riders, All I Want for Christmas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-12.png"
+    },
+    {
+        "id": "13",
+        "name": "Müzik Kiti | Matt Lange, IsoRhythm",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-13.png"
+    },
+    {
+        "id": "14",
+        "name": "Müzik Kiti | Mateo Messina, For No Mankind",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-14.png"
+    },
+    {
+        "id": "15",
+        "name": "Müzik Kiti | Çeşitli Sanatçılar, Hotline Miami",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-15.png"
+    },
+    {
+        "id": "16",
+        "name": "Müzik Kiti | Daniel Sadowski, Total Domination",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-16.png"
+    },
+    {
+        "id": "17",
+        "name": "Müzik Kiti  | Damjan Mravunac, The Talos Principle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-17.png"
+    },
+    {
+        "id": "18",
+        "name": "Müzik Kiti | Proxy, Battlepack",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-18.png"
+    },
+    {
+        "id": "19",
+        "name": "Müzik Kiti | Ki:Theory, MOLOTOV",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-19.png"
+    },
+    {
+        "id": "20",
+        "name": "Müzik Kiti | Troels Folmann, Uber Blasto Phone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-20.png"
+    },
+    {
+        "id": "21",
+        "name": "Müzik Kiti | Kelly Bailey, Hazardous Environments",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-21.png"
+    },
+    {
+        "id": "22",
+        "name": "Müzik Kiti | Skog, II-Headshot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-22.png"
+    },
+    {
+        "id": "23",
+        "name": "Müzik Kiti | Daniel Sadowski, The 8-Bit Kit",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-23.png"
+    },
+    {
+        "id": "24",
+        "name": "Müzik Kiti | AWOLNATION, I Am",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-24.png"
+    },
+    {
+        "id": "25",
+        "name": "Müzik Kiti | Mord Fustang, Diamonds",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-25.png"
+    },
+    {
+        "id": "26",
+        "name": "Müzik Kiti | Michael Bross, Invasion!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-26.png"
+    },
+    {
+        "id": "27",
+        "name": "Müzik Kiti | Ian Hultquist, Lion's Mouth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-27.png"
+    },
+    {
+        "id": "28",
+        "name": "Müzik Kiti | New Beat Fund, Sponge Fingerz",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-28.png"
+    },
+    {
+        "id": "29",
+        "name": "Müzik Kiti | Beartooth, Disgusting",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-29.png"
+    },
+    {
+        "id": "30",
+        "name": "Müzik Kiti | Lennie Moore, Java Havana Funkaloo",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-30.png"
+    },
+    {
+        "id": "31",
+        "name": "Müzik Kiti | Darude, Moments CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-31.png"
+    },
+    {
+        "id": "32",
+        "name": "Müzik Kiti | Beartooth, Aggressive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32.png"
+    },
+    {
+        "id": "33",
+        "name": "Müzik Kiti | Blitz Kids, The Good Youth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33.png"
+    },
+    {
+        "id": "34",
+        "name": "Müzik Kiti | Hundredth, FREE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34.png"
+    },
+    {
+        "id": "35",
+        "name": "Müzik Kiti | Neck Deep, Life's Not Out To Get You",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35.png"
+    },
+    {
+        "id": "36",
+        "name": "Müzik Kiti | Roam, Backbone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36.png"
+    },
+    {
+        "id": "37",
+        "name": "Müzik Kiti | Twin Atlantic, GLA",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37.png"
+    },
+    {
+        "id": "38",
+        "name": "Müzik Kiti | Skog, III-Arena",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38.png"
+    },
+    {
+        "id": "39",
+        "name": "Müzik Kiti | The Verkkars, EZ4ENCE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-39.png"
+    },
+    {
+        "id": "40",
+        "name": "Halo, The Master Chief Collection",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-40.png"
+    },
+    {
+        "id": "41",
+        "name": "Müzik Kiti | Scarlxrd: King, Scar",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-41.png"
+    },
+    {
+        "id": "42",
+        "name": "Half-Life: Alyx, Bölücü",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-42.png"
+    },
+    {
+        "id": "43",
+        "name": "Müzik Kiti | Austin Wintory, Bachram",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-43.png"
+    },
+    {
+        "id": "44",
+        "name": "Müzik Kiti | Dren, Gunman Taco Truck",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-44.png"
+    },
+    {
+        "id": "45",
+        "name": "Müzik Kiti | Daniel Sadowski, Eye of the Dragon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-45.png"
+    },
+    {
+        "id": "46",
+        "name": "Müzik Kiti | Tree Adams ve Ben Bromfield, M.U.D.D. FORCE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-46.png"
+    },
+    {
+        "id": "47",
+        "name": "Müzik Kiti | Tim Huling, Neo Noir",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-47.png"
+    },
+    {
+        "id": "48",
+        "name": "Müzik Kiti | Sam Marshall, Bodacious",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-48.png"
+    },
+    {
+        "id": "49",
+        "name": "Müzik Kiti | Matt Levine, Drifter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-49.png"
+    },
+    {
+        "id": "50",
+        "name": "Müzik Kiti | Amon Tobin, All for Dust",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-50.png"
+    },
+    {
+        "id": "51",
+        "name": "Darren Korb, Hades Müzik Kiti",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-51.png"
+    },
+    {
+        "id": "52",
+        "name": "Müzik Kiti | Neck Deep, The Lowlife Pack",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-52.png"
+    },
+    {
+        "id": "53",
+        "name": "Müzik Kiti | Scarlxrd, CHAIN$AW.LXADXUT.",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-53.png"
+    },
+    {
+        "id": "54",
+        "name": "Müzik Kiti | Austin Wintory, Mocha Petal",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-54.png"
+    },
+    {
+        "id": "55",
+        "name": "Müzik Kiti | Chipzel, ~Yellow Magic~",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-55.png"
+    },
+    {
+        "id": "56",
+        "name": "Müzik Kiti | Freaky DNA, Vici",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-56.png"
+    },
+    {
+        "id": "57",
+        "name": "Müzik Kiti | Jesse Harlin, Astro Bellum",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-57.png"
+    },
+    {
+        "id": "58",
+        "name": "Müzik Kiti | Laura Shigihara: Work Hard, Play Hard",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-58.png"
+    },
+    {
+        "id": "59",
+        "name": "Müzik Kiti | Sarah Schachner, KOLIBRI",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-59.png"
+    },
+    {
+        "id": "60",
+        "name": "Müzik Kiti | bbno$, u mad!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-60.png"
+    },
+    {
+        "id": "61",
+        "name": "Müzik Kiti | The Verkkars ve n0thing, Flashbang Dance",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-61.png"
+    },
+    {
+        "id": "62",
+        "name": "Müzik Kiti | 3kliksphilip, Heading for the Source",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-62.png"
+    },
+    {
+        "id": "63",
+        "name": "Müzik Kiti | Humanity's Last Breath, Void",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-63.png"
+    },
+    {
+        "id": "64",
+        "name": "Müzik Kiti | Juelz, Shooters",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-64.png"
+    },
+    {
+        "id": "65",
+        "name": "Müzik Kiti | Knock2, dashstar*",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-65.png"
+    },
+    {
+        "id": "66",
+        "name": "Müzik Kiti | Meechy Darko, Gothic Luxury",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-66.png"
+    },
+    {
+        "id": "67",
+        "name": "Müzik Kiti | Sullivan King, Lock Me Up",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-67.png"
+    },
+    {
+        "id": "68",
+        "name": "Müzik Kiti | Perfect World, 花脸 Hua Lian (Painted Face)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-68.png"
+    },
+    {
+        "id": "69",
+        "name": "Müzik Kiti | Denzel Curry, ULTIMATE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-69.png"
+    },
+    {
+        "id": "71",
+        "name": "Müzik Kiti | DRYDEN, Feel The Power",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-71.png"
+    },
+    {
+        "id": "72",
+        "name": "Müzik Kiti | ISOxo, inhuman",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-72.png"
+    },
+    {
+        "id": "73",
+        "name": "Müzik Kiti | KILL SCRIPT, All Night",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-73.png"
+    },
+    {
+        "id": "74",
+        "name": "Müzik Kiti | Knock2, Make U SWEAT!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-74.png"
+    },
+    {
+        "id": "75",
+        "name": "Müzik Kiti | Rad Cat, Reason",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-75.png"
+    },
+    {
+        "id": "76",
+        "name": "Müzik Kiti | TWERL ve Ekko & Sidetrack, Under Bright Lights",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-76.png"
+    },
+    {
+        "id": "78",
+        "name": "Müzik Kiti | Austin Wintory, The Devil Went Clubbing In Georgia",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-78.png"
+    },
+    {
+        "id": "79",
+        "name": "Müzik Kiti | Ben Bromfield, Rabbit Hole",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-79.png"
+    },
+    {
+        "id": "80",
+        "name": "Müzik Kiti | Daniel Sadowski, Dead Shot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-80.png"
+    },
+    {
+        "id": "81",
+        "name": "Muzik Kiti | Dren McDonald, Coffee! Kofe! Kahveh!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-81.png"
+    },
+    {
+        "id": "82",
+        "name": "Müzik Kiti | Matt Levine, Agency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-82.png"
+    },
+    {
+        "id": "83",
+        "name": "Müzik Kiti | Sam Marshall, Clutch",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-83.png"
+    },
+    {
+        "id": "84",
+        "name": "Müzik Kiti | Tim Huling, Devil's Paintbrush",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-84.png"
+    },
+    {
+        "id": "85",
+        "name": "Müzik Kiti | Tree Adams, Seventh Moon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    }
+]

@@ -1,1 +1,440 @@
-[{"weapon_defindex":0,"paint":0,"image":"","paint_name":"Gloves | Default"}]
+[
+    {
+        "weapon_defindex": 0,
+        "paint": 0,
+        "image": "",
+        "paint_name": "Gloves | Default"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10085",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
+        "paint_name": "Zerbrochener-Reißzahn-Handschuhe (★) | Jade"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10086",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
+        "paint_name": "Zerbrochener-Reißzahn-Handschuhe (★) | Gelbgebändert"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10087",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
+        "paint_name": "Zerbrochener-Reißzahn-Handschuhe (★) | Nadelspitze"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10088",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
+        "paint_name": "Zerbrochener-Reißzahn-Handschuhe (★) | Loser Kiefer"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10006",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
+        "paint_name": "Bloodhound-Handschuhe (★) | Verkohlt"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10007",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
+        "paint_name": "Bloodhound-Handschuhe (★) | Schlangenbiss"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10008",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
+        "paint_name": "Bloodhound-Handschuhe (★) | Brüniert"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10039",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
+        "paint_name": "Bloodhound-Handschuhe (★) | Guerilla"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
+        "paint_name": "Sporthandschuhe (★) | Supraleiter"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
+        "paint_name": "Sporthandschuhe (★) | Dürr"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10037",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
+        "paint_name": "Sporthandschuhe (★) | Pandoras Büchse"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10038",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
+        "paint_name": "Sporthandschuhe (★) | Heckenirrgarten"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10045",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
+        "paint_name": "Sporthandschuhe (★) | Amphibisch"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10046",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
+        "paint_name": "Sporthandschuhe (★) | Bronze Morph"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10047",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
+        "paint_name": "Sporthandschuhe (★) | Omega"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10048",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
+        "paint_name": "Sporthandschuhe (★) | Vice"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10073",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
+        "paint_name": "Sporthandschuhe (★) | Schleuder"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10074",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
+        "paint_name": "Sporthandschuhe (★) | Großwildjagd"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10075",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
+        "paint_name": "Sporthandschuhe (★) | Scharlachrote Kufiya"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10076",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
+        "paint_name": "Sporthandschuhe (★) | Nocts"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Mondgewebe"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Konvoi"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Purpurnes Gewebe"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10040",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Diamantenrücken"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10041",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Königsnatter"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10042",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Kaiserliches Karo"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10043",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Turbo"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10044",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Renn-Grün"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10069",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Rezan, der Rote"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10070",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Schneeleopard"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10071",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Jaguarkönigin"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10072",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
+        "paint_name": "Chauffeurshandschuhe (★) | Schwarze Fliege"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10009",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
+        "paint_name": "Handbandagen (★) | Leder"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10010",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10010.png",
+        "paint_name": "Handbandagen (★) | Spruce DDPAT"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
+        "paint_name": "Handbandagen (★) | Metzelei"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10036",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10036.png",
+        "paint_name": "Handbandagen (★) | Ödland"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10053",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10053.png",
+        "paint_name": "Handbandagen (★) | Kobaltblaue Totenschädel"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10054",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10054.png",
+        "paint_name": "Handbandagen (★) | Aufdruck"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10055",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
+        "paint_name": "Handbandagen (★) | Klebeband"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10056",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10056.png",
+        "paint_name": "Handbandagen (★) | Arboreal"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10081",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
+        "paint_name": "Handbandagen (★) | Wüsten-Kufiya"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10082",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
+        "paint_name": "Handbandagen (★) | Giraffe"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10083",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10083.png",
+        "paint_name": "Handbandagen (★) | Riesenschlange"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10084",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
+        "paint_name": "Handbandagen (★) | ACHTUNG!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10024.png",
+        "paint_name": "Motorradhandschuhe (★) | Finsternis"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10026.png",
+        "paint_name": "Motorradhandschuhe (★) | Grüne Minze"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10027",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10027.png",
+        "paint_name": "Motorradhandschuhe (★) | Bumm!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10028",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10028.png",
+        "paint_name": "Motorradhandschuhe (★) | Kühle Minze"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10049",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
+        "paint_name": "Motorradhandschuhe (★) | PENG!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10050",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
+        "paint_name": "Motorradhandschuhe (★) | Schildkröte"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10051",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
+        "paint_name": "Motorradhandschuhe (★) | Transport"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10052",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10052.png",
+        "paint_name": "Motorradhandschuhe (★) | Polygon"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10077",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
+        "paint_name": "Motorradhandschuhe (★) | Ziellinie"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10078",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
+        "paint_name": "Motorradhandschuhe (★) | Rauch"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10079",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
+        "paint_name": "Motorradhandschuhe (★) | Blutdruck"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10080",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
+        "paint_name": "Motorradhandschuhe (★) | 3. Kommandokompanie"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10030",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10030.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Wald-DDPAT"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10033",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Purpurner Kimono"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10034",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10034.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Smaragdgrünes Netz"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10035",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Fundierung"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10061",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Purpurnes Netz"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10062",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Schrot"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10063",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10063.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Farbverlauf"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10064",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Mogul"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10065",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10065.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Marmorfärbung"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10066",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10066.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Lt. Commander"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10067",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10067.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Tigerangriff"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10068",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
+        "paint_name": "Spezialistenhandschuhe (★) | Außendienstmitarbeiter"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10057",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10057.png",
+        "paint_name": "Hydra-Handschuhe (★) | Smaragd"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10058",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10058.png",
+        "paint_name": "Hydra-Handschuhe (★) | Mangrove"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10059",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10059.png",
+        "paint_name": "Hydra-Handschuhe (★) | Klapperschlange"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10060",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
+        "paint_name": "Hydra-Handschuhe (★) | Einsatzgehärtet"
+    }
+]
