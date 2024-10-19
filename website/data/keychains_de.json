@@ -1,1 +1,167 @@
-[{"id":"1","name":"Anhänger | Kleine Ava","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-1.png"},{"id":"2","name":"Anhänger | Total Banane","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-2.png"},{"id":"3","name":"Anhänger | Kleines Kätzchen","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-3.png"},{"id":"4","name":"Anhänger | Kleiner Strandgänger","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-4.png"},{"id":"5","name":"Anhänger | Kleines Hühnchen","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-5.png"},{"id":"6","name":"Anhänger | Kleiner Crass","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-6.png"},{"id":"7","name":"Anhänger | Heißer Heuler","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-7.png"},{"id":"8","name":"Anhänger | Großer Kev","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-8.png"},{"id":"9","name":"Anhänger | Kleines Monster","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-9.png"},{"id":"10","name":"Anhänger | Scharfe Soße","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-10.png"},{"id":"11","name":"Anhänger | Diamantwürstchen","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-11.png"},{"id":"12","name":"Anhänger | Prise Salz","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-12.png"},{"id":"13","name":"Anhänger | Imbissbuden-Würstchen","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-13.png"},{"id":"14","name":"Anhänger | Kleine Teetasse","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-14.png"},{"id":"15","name":"Anhänger | Kleiner SAS","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-15.png"},{"id":"16","name":"Anhänger | Bratwurst","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-16.png"},{"id":"17","name":"Anhänger | Kleine AK","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-17.png"},{"id":"18","name":"Anhänger | Druckguss-AK","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-18.png"},{"id":"19","name":"Anhänger | Taschen-AWP","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-19.png"},{"id":"20","name":"Anhänger | Kleine Titan-AWP","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-20.png"},{"id":"21","name":"Anhänger | Kleines Goldmesser (AT)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-21.png"},{"id":"22","name":"Anhänger | Geschnitztes Messer","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-22.png"},{"id":"23","name":"Anhänger | POP-Art","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-23.png"},{"id":"24","name":"Anhänger | Kleine Wasserpistole","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-24.png"},{"id":"25","name":"Anhänger | Disko-MAC","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-25.png"},{"id":"26","name":"Anhänger | Fliesenspiegel","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-26.png"},{"id":"27","name":"Anhänger | Kleine Spielzeugpistole","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-27.png"},{"id":"28","name":"Anhänger | Heiße Hände","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-28.png"},{"id":"29","name":"Anhänger | Halbedelstein","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-29.png"},{"id":"30","name":"Anhänger | Kleines Goldmesser (T)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-30.png"},{"id":"31","name":"Anhänger | Schicker Schuss","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-31.png"},{"id":"32","name":"Anhänger | Strickarbeit","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-32.png"},{"id":"33","name":"Anhänger | Kleiner Bigfoot","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"}]
+[
+    {
+        "id": "1",
+        "name": "Anhänger | Kleine Ava",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-1.png"
+    },
+    {
+        "id": "2",
+        "name": "Anhänger | Total Banane",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-2.png"
+    },
+    {
+        "id": "3",
+        "name": "Anhänger | Kleines Kätzchen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-3.png"
+    },
+    {
+        "id": "4",
+        "name": "Anhänger | Kleiner Strandgänger",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-4.png"
+    },
+    {
+        "id": "5",
+        "name": "Anhänger | Kleines Hühnchen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-5.png"
+    },
+    {
+        "id": "6",
+        "name": "Anhänger | Kleiner Crass",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-6.png"
+    },
+    {
+        "id": "7",
+        "name": "Anhänger | Heißer Heuler",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-7.png"
+    },
+    {
+        "id": "8",
+        "name": "Anhänger | Großer Kev",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-8.png"
+    },
+    {
+        "id": "9",
+        "name": "Anhänger | Kleines Monster",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-9.png"
+    },
+    {
+        "id": "10",
+        "name": "Anhänger | Scharfe Soße",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-10.png"
+    },
+    {
+        "id": "11",
+        "name": "Anhänger | Diamantwürstchen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-11.png"
+    },
+    {
+        "id": "12",
+        "name": "Anhänger | Prise Salz",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-12.png"
+    },
+    {
+        "id": "13",
+        "name": "Anhänger | Imbissbuden-Würstchen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-13.png"
+    },
+    {
+        "id": "14",
+        "name": "Anhänger | Kleine Teetasse",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-14.png"
+    },
+    {
+        "id": "15",
+        "name": "Anhänger | Kleiner SAS",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-15.png"
+    },
+    {
+        "id": "16",
+        "name": "Anhänger | Bratwurst",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-16.png"
+    },
+    {
+        "id": "17",
+        "name": "Anhänger | Kleine AK",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-17.png"
+    },
+    {
+        "id": "18",
+        "name": "Anhänger | Druckguss-AK",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-18.png"
+    },
+    {
+        "id": "19",
+        "name": "Anhänger | Taschen-AWP",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-19.png"
+    },
+    {
+        "id": "20",
+        "name": "Anhänger | Kleine Titan-AWP",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-20.png"
+    },
+    {
+        "id": "21",
+        "name": "Anhänger | Kleines Goldmesser (AT)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-21.png"
+    },
+    {
+        "id": "22",
+        "name": "Anhänger | Geschnitztes Messer",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-22.png"
+    },
+    {
+        "id": "23",
+        "name": "Anhänger | POP-Art",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-23.png"
+    },
+    {
+        "id": "24",
+        "name": "Anhänger | Kleine Wasserpistole",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-24.png"
+    },
+    {
+        "id": "25",
+        "name": "Anhänger | Disko-MAC",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-25.png"
+    },
+    {
+        "id": "26",
+        "name": "Anhänger | Fliesenspiegel",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-26.png"
+    },
+    {
+        "id": "27",
+        "name": "Anhänger | Kleine Spielzeugpistole",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-27.png"
+    },
+    {
+        "id": "28",
+        "name": "Anhänger | Heiße Hände",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-28.png"
+    },
+    {
+        "id": "29",
+        "name": "Anhänger | Halbedelstein",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-29.png"
+    },
+    {
+        "id": "30",
+        "name": "Anhänger | Kleines Goldmesser (T)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-30.png"
+    },
+    {
+        "id": "31",
+        "name": "Anhänger | Schicker Schuss",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-31.png"
+    },
+    {
+        "id": "32",
+        "name": "Anhänger | Strickarbeit",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-32.png"
+    },
+    {
+        "id": "33",
+        "name": "Anhänger | Kleiner Bigfoot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"
+    }
+]

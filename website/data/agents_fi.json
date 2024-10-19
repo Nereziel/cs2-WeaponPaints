@@ -1,1 +1,392 @@
-[{"team":2,"image":"","model":"null","agent_name":"Agent | Default"},{"team":3,"image":"","model":"null","agent_name":"Agent | Default"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4613.png","model":"tm_professional/tm_professional_varf5","agent_name":"Bloody Darryl The Strapped | Ammattilaiset"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4619.png","model":"ctm_st6/ctm_st6_variantj","agent_name":"\\\"Blueberries\\\" Buckshot | NSWC SEAL"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4680.png","model":"ctm_st6/ctm_st6_variantl","agent_name":"\\\"Two Times\\\" McCoy | TACP-ratsuväki"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4711.png","model":"ctm_swat/ctm_swat_variante","agent_name":"Komentaja Mae \\\"Dead Cold\\\" Jamison | SWAT"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4712.png","model":"ctm_swat/ctm_swat_variantf","agent_name":"Ensimmäinen luutnantti Farlow | SWAT"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4713.png","model":"ctm_swat/ctm_swat_variantg","agent_name":"John \\\"Van Healen\\\" Kask | SWAT"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4714.png","model":"ctm_swat/ctm_swat_varianth","agent_name":"Biologisten aseiden spesialisti | SWAT"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4715.png","model":"ctm_swat/ctm_swat_varianti","agent_name":"Kersantti Bombson | SWAT"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4716.png","model":"ctm_swat/ctm_swat_variantj","agent_name":"Kemiallisten aseiden spesialisti | SWAT"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4718.png","model":"tm_balkan/tm_balkan_variantk","agent_name":"Rezan the Redshirt | Sabre"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4726.png","model":"tm_professional/tm_professional_varf","agent_name":"Sir Bloody Miami Darryl | Ammattilaiset"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4727.png","model":"tm_professional/tm_professional_varg","agent_name":"Safecracker Voltzmann | Ammattilaiset"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4728.png","model":"tm_professional/tm_professional_varh","agent_name":"Little Kev | Ammattilaiset"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4730.png","model":"tm_professional/tm_professional_varj","agent_name":"Getaway Sally | Ammattilaiset"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4732.png","model":"tm_professional/tm_professional_vari","agent_name":"Number K | Ammattilaiset"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4733.png","model":"tm_professional/tm_professional_varf1","agent_name":"Sir Bloody Silent Darryl | Ammattilaiset"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4734.png","model":"tm_professional/tm_professional_varf2","agent_name":"Sir Bloody Skullhead Darryl | Ammattilaiset"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4735.png","model":"tm_professional/tm_professional_varf3","agent_name":"Sir Bloody Darryl Royale | Ammattilaiset"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4736.png","model":"tm_professional/tm_professional_varf4","agent_name":"Sir Bloody Loudmouth Darryl | Ammattilaiset"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4749.png","model":"ctm_gendarmerie/ctm_gendarmerie_varianta","agent_name":"Vänrikki, lääkintämies | Ranskan kansallinen santarmisto"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4750.png","model":"ctm_gendarmerie/ctm_gendarmerie_variantb","agent_name":"Kemiallisten aseiden kapteeni | Ranskan kansallinen santarmisto"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4751.png","model":"ctm_gendarmerie/ctm_gendarmerie_variantc","agent_name":"Majuri Rouchard | Ranskan kansallinen santarmisto"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4752.png","model":"ctm_gendarmerie/ctm_gendarmerie_variantd","agent_name":"Kokelas | Ranskan kansallinen santarmisto"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4753.png","model":"ctm_gendarmerie/ctm_gendarmerie_variante","agent_name":"Upseeri Jacques Beltram | Ranskan kansallinen santarmisto"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4756.png","model":"ctm_swat/ctm_swat_variantk","agent_name":"Luutnantti \\\"Tree Hugger\\\" Farlow | SWAT"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4757.png","model":"ctm_diver/ctm_diver_varianta","agent_name":"Komentajakapteeni Davida \\\"Goggles\\\" Fernandez | SEAL-sammakkomies"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4771.png","model":"ctm_diver/ctm_diver_variantb","agent_name":"Komentajakapteeni Frank \\\"Wet Sox\\\" Baroud | SEAL-sammakkomies"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4772.png","model":"ctm_diver/ctm_diver_variantc","agent_name":"Luutnantti Rex Krikey | SEAL-sammakkomies"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4773.png","model":"tm_jungle_raider/tm_jungle_raider_varianta","agent_name":"Eliittisieppaaja Solman | Guerrilla Warfare"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4774.png","model":"tm_jungle_raider/tm_jungle_raider_variantb","agent_name":"Crasswater The Forgotten | Guerrilla Warfare"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4775.png","model":"tm_jungle_raider/tm_jungle_raider_variantc","agent_name":"Arno The Overgrown | Guerrilla Warfare"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4776.png","model":"tm_jungle_raider/tm_jungle_raider_variantd","agent_name":"Eversti Mangos Dabisi | Guerrilla Warfare"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4777.png","model":"tm_jungle_raider/tm_jungle_raider_variante","agent_name":"Vallankumouksen Vypa Sista | Guerrilla Warfare"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4778.png","model":"tm_jungle_raider/tm_jungle_raider_variantf","agent_name":"Sieppaajien iskujoukko | Guerrilla Warfare"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4780.png","model":"tm_jungle_raider/tm_jungle_raider_variantb2","agent_name":"\\\"Medium Rare\\\" Crasswater | Guerrilla Warfare"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4781.png","model":"tm_jungle_raider/tm_jungle_raider_variantf2","agent_name":"Sieppaaja | Guerrilla Warfare"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5105.png","model":"tm_leet/tm_leet_variantg","agent_name":"Kapinallinen | Eliittijoukko"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5106.png","model":"tm_leet/tm_leet_varianth","agent_name":"Osiris | Eliittijoukko"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5107.png","model":"tm_leet/tm_leet_varianti","agent_name":"Prof. Shahmat | Eliittijoukko"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5108.png","model":"tm_leet/tm_leet_variantf","agent_name":"The Elite Mr. Muhlik | Eliittijoukko"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5109.png","model":"tm_leet/tm_leet_variantj","agent_name":"Viidakkokapinallinen | Eliittijoukko"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5205.png","model":"tm_phoenix/tm_phoenix_varianth","agent_name":"Sotilas | Phoenix"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5206.png","model":"tm_phoenix/tm_phoenix_variantf","agent_name":"Kurinpitäjä | Phoenix"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5207.png","model":"tm_phoenix/tm_phoenix_variantg","agent_name":"Slingshot | Phoenix"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5208.png","model":"tm_phoenix/tm_phoenix_varianti","agent_name":"Katutaistelija | Phoenix"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5305.png","model":"ctm_fbi/ctm_fbi_variantf","agent_name":"Operaattori | FBI SWAT"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5306.png","model":"ctm_fbi/ctm_fbi_variantg","agent_name":"Markus Delrow | FBI HRT"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5307.png","model":"ctm_fbi/ctm_fbi_varianth","agent_name":"Michael Syfers | FBI:n tarkka-ampuja"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5308.png","model":"ctm_fbi/ctm_fbi_variantb","agent_name":"Erikoisagentti Ava | FBI"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5400.png","model":"ctm_st6/ctm_st6_variantk","agent_name":"3. kommandokomppania | KSK"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5401.png","model":"ctm_st6/ctm_st6_variante","agent_name":"SEAL Team 6:n sotilas | NSWC SEAL"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5402.png","model":"ctm_st6/ctm_st6_variantg","agent_name":"Buckshot | NSWC SEAL"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5403.png","model":"ctm_st6/ctm_st6_variantm","agent_name":"\\\"Two Times\\\" McCoy | USAF TACP"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5404.png","model":"ctm_st6/ctm_st6_varianti","agent_name":"Komentajakapteeni Ricksaw | NSWC SEAL"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5405.png","model":"ctm_st6/ctm_st6_variantn","agent_name":"Primeiro Tenente | Brasilian 1. pataljoona"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5500.png","model":"tm_balkan/tm_balkan_variantf","agent_name":"Dragomir | Sabre"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5501.png","model":"tm_balkan/tm_balkan_varianti","agent_name":"Maximus | Sabre"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5502.png","model":"tm_balkan/tm_balkan_variantg","agent_name":"Rezan The Ready | Sabre"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5503.png","model":"tm_balkan/tm_balkan_variantj","agent_name":"Blackwolf | Sabre"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5504.png","model":"tm_balkan/tm_balkan_varianth","agent_name":"\\\"The Doctor\\\" Romanov | Sabre"},{"team":2,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5505.png","model":"tm_balkan/tm_balkan_variantl","agent_name":"Dragomir | Sabren jalkaväkisotilas"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5601.png","model":"ctm_sas/ctm_sas_variantf","agent_name":"B-joukkueen johtaja | SAS"},{"team":3,"image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5602.png","model":"ctm_sas/ctm_sas_variantg","agent_name":"D-joukkueen upseeri | NZSAS"}]
+[
+    {
+        "team": 2,
+        "image": "",
+        "model": "null",
+        "agent_name": "Agent | Default"
+    },
+    {
+        "team": 3,
+        "image": "",
+        "model": "null",
+        "agent_name": "Agent | Default"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4613.png",
+        "model": "tm_professional/tm_professional_varf5",
+        "agent_name": "Bloody Darryl The Strapped | Ammattilaiset"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4619.png",
+        "model": "ctm_st6/ctm_st6_variantj",
+        "agent_name": "\\\"Blueberries\\\" Buckshot | NSWC SEAL"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4680.png",
+        "model": "ctm_st6/ctm_st6_variantl",
+        "agent_name": "\\\"Two Times\\\" McCoy | TACP-ratsuväki"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4711.png",
+        "model": "ctm_swat/ctm_swat_variante",
+        "agent_name": "Komentaja Mae \\\"Dead Cold\\\" Jamison | SWAT"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4712.png",
+        "model": "ctm_swat/ctm_swat_variantf",
+        "agent_name": "Ensimmäinen luutnantti Farlow | SWAT"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4713.png",
+        "model": "ctm_swat/ctm_swat_variantg",
+        "agent_name": "John \\\"Van Healen\\\" Kask | SWAT"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4714.png",
+        "model": "ctm_swat/ctm_swat_varianth",
+        "agent_name": "Biologisten aseiden spesialisti | SWAT"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4715.png",
+        "model": "ctm_swat/ctm_swat_varianti",
+        "agent_name": "Kersantti Bombson | SWAT"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4716.png",
+        "model": "ctm_swat/ctm_swat_variantj",
+        "agent_name": "Kemiallisten aseiden spesialisti | SWAT"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4718.png",
+        "model": "tm_balkan/tm_balkan_variantk",
+        "agent_name": "Rezan the Redshirt | Sabre"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4726.png",
+        "model": "tm_professional/tm_professional_varf",
+        "agent_name": "Sir Bloody Miami Darryl | Ammattilaiset"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4727.png",
+        "model": "tm_professional/tm_professional_varg",
+        "agent_name": "Safecracker Voltzmann | Ammattilaiset"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4728.png",
+        "model": "tm_professional/tm_professional_varh",
+        "agent_name": "Little Kev | Ammattilaiset"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4730.png",
+        "model": "tm_professional/tm_professional_varj",
+        "agent_name": "Getaway Sally | Ammattilaiset"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4732.png",
+        "model": "tm_professional/tm_professional_vari",
+        "agent_name": "Number K | Ammattilaiset"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4733.png",
+        "model": "tm_professional/tm_professional_varf1",
+        "agent_name": "Sir Bloody Silent Darryl | Ammattilaiset"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4734.png",
+        "model": "tm_professional/tm_professional_varf2",
+        "agent_name": "Sir Bloody Skullhead Darryl | Ammattilaiset"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4735.png",
+        "model": "tm_professional/tm_professional_varf3",
+        "agent_name": "Sir Bloody Darryl Royale | Ammattilaiset"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4736.png",
+        "model": "tm_professional/tm_professional_varf4",
+        "agent_name": "Sir Bloody Loudmouth Darryl | Ammattilaiset"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4749.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_varianta",
+        "agent_name": "Vänrikki, lääkintämies | Ranskan kansallinen santarmisto"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4750.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_variantb",
+        "agent_name": "Kemiallisten aseiden kapteeni | Ranskan kansallinen santarmisto"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4751.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_variantc",
+        "agent_name": "Majuri Rouchard | Ranskan kansallinen santarmisto"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4752.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_variantd",
+        "agent_name": "Kokelas | Ranskan kansallinen santarmisto"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4753.png",
+        "model": "ctm_gendarmerie/ctm_gendarmerie_variante",
+        "agent_name": "Upseeri Jacques Beltram | Ranskan kansallinen santarmisto"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4756.png",
+        "model": "ctm_swat/ctm_swat_variantk",
+        "agent_name": "Luutnantti \\\"Tree Hugger\\\" Farlow | SWAT"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4757.png",
+        "model": "ctm_diver/ctm_diver_varianta",
+        "agent_name": "Komentajakapteeni Davida \\\"Goggles\\\" Fernandez | SEAL-sammakkomies"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4771.png",
+        "model": "ctm_diver/ctm_diver_variantb",
+        "agent_name": "Komentajakapteeni Frank \\\"Wet Sox\\\" Baroud | SEAL-sammakkomies"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4772.png",
+        "model": "ctm_diver/ctm_diver_variantc",
+        "agent_name": "Luutnantti Rex Krikey | SEAL-sammakkomies"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4773.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_varianta",
+        "agent_name": "Eliittisieppaaja Solman | Guerrilla Warfare"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4774.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantb",
+        "agent_name": "Crasswater The Forgotten | Guerrilla Warfare"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4775.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantc",
+        "agent_name": "Arno The Overgrown | Guerrilla Warfare"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4776.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantd",
+        "agent_name": "Eversti Mangos Dabisi | Guerrilla Warfare"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4777.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variante",
+        "agent_name": "Vallankumouksen Vypa Sista | Guerrilla Warfare"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4778.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantf",
+        "agent_name": "Sieppaajien iskujoukko | Guerrilla Warfare"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4780.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantb2",
+        "agent_name": "\\\"Medium Rare\\\" Crasswater | Guerrilla Warfare"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-4781.png",
+        "model": "tm_jungle_raider/tm_jungle_raider_variantf2",
+        "agent_name": "Sieppaaja | Guerrilla Warfare"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5105.png",
+        "model": "tm_leet/tm_leet_variantg",
+        "agent_name": "Kapinallinen | Eliittijoukko"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5106.png",
+        "model": "tm_leet/tm_leet_varianth",
+        "agent_name": "Osiris | Eliittijoukko"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5107.png",
+        "model": "tm_leet/tm_leet_varianti",
+        "agent_name": "Prof. Shahmat | Eliittijoukko"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5108.png",
+        "model": "tm_leet/tm_leet_variantf",
+        "agent_name": "The Elite Mr. Muhlik | Eliittijoukko"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5109.png",
+        "model": "tm_leet/tm_leet_variantj",
+        "agent_name": "Viidakkokapinallinen | Eliittijoukko"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5205.png",
+        "model": "tm_phoenix/tm_phoenix_varianth",
+        "agent_name": "Sotilas | Phoenix"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5206.png",
+        "model": "tm_phoenix/tm_phoenix_variantf",
+        "agent_name": "Kurinpitäjä | Phoenix"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5207.png",
+        "model": "tm_phoenix/tm_phoenix_variantg",
+        "agent_name": "Slingshot | Phoenix"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5208.png",
+        "model": "tm_phoenix/tm_phoenix_varianti",
+        "agent_name": "Katutaistelija | Phoenix"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5305.png",
+        "model": "ctm_fbi/ctm_fbi_variantf",
+        "agent_name": "Operaattori | FBI SWAT"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5306.png",
+        "model": "ctm_fbi/ctm_fbi_variantg",
+        "agent_name": "Markus Delrow | FBI HRT"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5307.png",
+        "model": "ctm_fbi/ctm_fbi_varianth",
+        "agent_name": "Michael Syfers | FBI:n tarkka-ampuja"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5308.png",
+        "model": "ctm_fbi/ctm_fbi_variantb",
+        "agent_name": "Erikoisagentti Ava | FBI"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5400.png",
+        "model": "ctm_st6/ctm_st6_variantk",
+        "agent_name": "3. kommandokomppania | KSK"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5401.png",
+        "model": "ctm_st6/ctm_st6_variante",
+        "agent_name": "SEAL Team 6:n sotilas | NSWC SEAL"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5402.png",
+        "model": "ctm_st6/ctm_st6_variantg",
+        "agent_name": "Buckshot | NSWC SEAL"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5403.png",
+        "model": "ctm_st6/ctm_st6_variantm",
+        "agent_name": "\\\"Two Times\\\" McCoy | USAF TACP"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5404.png",
+        "model": "ctm_st6/ctm_st6_varianti",
+        "agent_name": "Komentajakapteeni Ricksaw | NSWC SEAL"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5405.png",
+        "model": "ctm_st6/ctm_st6_variantn",
+        "agent_name": "Primeiro Tenente | Brasilian 1. pataljoona"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5500.png",
+        "model": "tm_balkan/tm_balkan_variantf",
+        "agent_name": "Dragomir | Sabre"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5501.png",
+        "model": "tm_balkan/tm_balkan_varianti",
+        "agent_name": "Maximus | Sabre"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5502.png",
+        "model": "tm_balkan/tm_balkan_variantg",
+        "agent_name": "Rezan The Ready | Sabre"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5503.png",
+        "model": "tm_balkan/tm_balkan_variantj",
+        "agent_name": "Blackwolf | Sabre"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5504.png",
+        "model": "tm_balkan/tm_balkan_varianth",
+        "agent_name": "\\\"The Doctor\\\" Romanov | Sabre"
+    },
+    {
+        "team": 2,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5505.png",
+        "model": "tm_balkan/tm_balkan_variantl",
+        "agent_name": "Dragomir | Sabren jalkaväkisotilas"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5601.png",
+        "model": "ctm_sas/ctm_sas_variantf",
+        "agent_name": "B-joukkueen johtaja | SAS"
+    },
+    {
+        "team": 3,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/agent-5602.png",
+        "model": "ctm_sas/ctm_sas_variantg",
+        "agent_name": "D-joukkueen upseeri | NZSAS"
+    }
+]

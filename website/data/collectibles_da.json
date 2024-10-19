@@ -1,1 +1,2227 @@
-[{"id":"875","name":"Vinder af DreamHack 2013","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-875.png"},{"id":"876","name":"Finalist ved DreamHack 2013","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-876.png"},{"id":"877","name":"Semifinalist ved DreamHack 2013","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-877.png"},{"id":"878","name":"Kvartfinalist ved DreamHack 2013","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-878.png"},{"id":"879","name":"Vinder af EMS One Katowice 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-879.png"},{"id":"880","name":"Finalist ved EMS One Katowice 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-880.png"},{"id":"881","name":"Semifinalist ved EMS One Katowice 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-881.png"},{"id":"882","name":"Kvartfinalist ved EMS One Katowice 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-882.png"},{"id":"883","name":"Vinder af ESL One Cologne 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-883.png"},{"id":"884","name":"Finalist ved ESL One Cologne 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-884.png"},{"id":"885","name":"Semifinalist ved ESL One Cologne 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-885.png"},{"id":"886","name":"Kvartfinalist ved ESL One Cologne 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-886.png"},{"id":"887","name":"Bronze Cologne 2014 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-887.png"},{"id":"888","name":"Sølv Cologne 2014 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-888.png"},{"id":"889","name":"Guld Cologne 2014 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-889.png"},{"id":"890","name":"Vinder af DreamHack Winter 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-890.png"},{"id":"891","name":"Finalist ved DreamHack Winter 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-891.png"},{"id":"892","name":"Semifinalist ved DreamHack Winter 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-892.png"},{"id":"893","name":"Kvartfinalist ved DreamHack Winter 2014","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-893.png"},{"id":"894","name":"Bronze DreamHack 2014 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-894.png"},{"id":"895","name":"Sølv DreamHack 2014 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-895.png"},{"id":"896","name":"Guld DreamHack 2014 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-896.png"},{"id":"897","name":"Vinder af ESL One Katowice 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-897.png"},{"id":"898","name":"Finalist ved ESL One Katowice 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-898.png"},{"id":"899","name":"Semifinalist ved ESL One Katowice 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-899.png"},{"id":"900","name":"Kvartfinalist ved ESL One Katowice 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-900.png"},{"id":"901","name":"Bronze Katowice 2015 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-901.png"},{"id":"902","name":"Sølv Katowice 2015 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-902.png"},{"id":"903","name":"Guld Katowice 2015 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-903.png"},{"id":"904","name":"Vinder af ESL One Cologne 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-904.png"},{"id":"905","name":"Finalist ved ESL One Cologne 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-905.png"},{"id":"906","name":"Semifinalist ved ESL One Cologne 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-906.png"},{"id":"907","name":"Kvartfinalist ved ESL One Cologne 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-907.png"},{"id":"908","name":"Bronze Cologne 2015 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-908.png"},{"id":"909","name":"Sølv Cologne 2015 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-909.png"},{"id":"910","name":"Guld Cologne 2015 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-910.png"},{"id":"911","name":"Bronze Cluj-Napoca 2015 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-911.png"},{"id":"912","name":"Sølv Cluj-Napoca 2015 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-912.png"},{"id":"913","name":"Guld Cluj-Napoca 2015 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-913.png"},{"id":"914","name":"Bronze Cluj-Napoca 2015-fantasitrofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-914.png"},{"id":"915","name":"Sølv Cluj-Napoca 2015-fantasitrofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-915.png"},{"id":"916","name":"Guld Cluj-Napoca 2015-fantasitrofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-916.png"},{"id":"917","name":"Vinder af DreamHack Cluj-Napoca 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-917.png"},{"id":"918","name":"Finalist ved DreamHack Cluj-Napoca 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-918.png"},{"id":"919","name":"Semifinalist ved DreamHack Cluj-Napoca 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-919.png"},{"id":"920","name":"Kvartfinalist ved DreamHack Cluj-Napoca 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-920.png"},{"id":"921","name":"Bronze Columbus 2016 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-921.png"},{"id":"922","name":"Sølv Columbus 2016 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-922.png"},{"id":"923","name":"Guld Columbus 2016 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-923.png"},{"id":"924","name":"Bronze Columbus 2016-fantasitrofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-924.png"},{"id":"925","name":"Sølv Columbus 2016-fantasitrofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-925.png"},{"id":"926","name":"Guld Columbus 2016-fantasitrofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-926.png"},{"id":"927","name":"Vinder af MLG Columbus 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-927.png"},{"id":"928","name":"Finalist ved MLG Columbus 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-928.png"},{"id":"929","name":"Semifinalist ved MLG Columbus 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-929.png"},{"id":"930","name":"Kvartfinalist ved MLG Columbus 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-930.png"},{"id":"931","name":"Vinder af ESL One Cologne 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-931.png"},{"id":"932","name":"Finalist ved ESL One Cologne 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-932.png"},{"id":"933","name":"Semifinalist ved ESL One Cologne 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-933.png"},{"id":"934","name":"Kvartfinalist ved ESL One Cologne 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-934.png"},{"id":"935","name":"Bronze Cologne 2016 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-935.png"},{"id":"936","name":"Sølv Cologne 2016 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-936.png"},{"id":"937","name":"Guld Cologne 2016 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-937.png"},{"id":"938","name":"Bronze Cologne 2016-fantasitrofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-938.png"},{"id":"939","name":"Sølv Cologne 2016-fantasitrofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-939.png"},{"id":"940","name":"Guld Cologne 2016-fantasitrofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-940.png"},{"id":"941","name":"Vinder af ELEAGUE Atlanta 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-941.png"},{"id":"942","name":"Finalist ved ELEAGUE Atlanta 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-942.png"},{"id":"943","name":"Semifinalist ved ELEAGUE Atlanta 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-943.png"},{"id":"944","name":"Kvartfinalist ved ELEAGUE Atlanta 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-944.png"},{"id":"945","name":"Bronze Atlanta 2017 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-945.png"},{"id":"946","name":"Sølv Atlanta 2017 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-946.png"},{"id":"947","name":"Guld Atlanta 2017 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-947.png"},{"id":"948","name":"Vinder af PGL Krakow 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-948.png"},{"id":"949","name":"Finalist ved PGL Krakow 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-949.png"},{"id":"950","name":"Semifinalist ved PGL Krakow 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-950.png"},{"id":"951","name":"Kvartfinalist ved PGL Krakow 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-951.png"},{"id":"952","name":"Bronze Krakow 2017 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-952.png"},{"id":"953","name":"Sølv Krakow 2017 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-953.png"},{"id":"954","name":"Guld Krakow 2017 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-954.png"},{"id":"955","name":"Vinder af ELEAGUE Boston 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-955.png"},{"id":"956","name":"Finalist ved ELEAGUE Boston 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-956.png"},{"id":"957","name":"Semifinalist ved ELEAGUE Boston 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-957.png"},{"id":"958","name":"Kvartfinalist ved ELEAGUE Boston 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-958.png"},{"id":"959","name":"Bronze Boston 2018 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-959.png"},{"id":"960","name":"Sølv Boston 2018 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-960.png"},{"id":"961","name":"Guld Boston 2018 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-961.png"},{"id":"962","name":"Vinder af FACEIT London 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-962.png"},{"id":"963","name":"Finalist ved FACEIT London 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-963.png"},{"id":"964","name":"Semifinalist ved FACEIT London 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-964.png"},{"id":"965","name":"Kvartfinalist ved FACEIT London 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-965.png"},{"id":"966","name":"Bronze London 2018 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-966.png"},{"id":"967","name":"Sølv London 2018 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-967.png"},{"id":"968","name":"Guld London 2018 Pick'Em-trofæ","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-968.png"},{"id":"971","name":"Vinder af IEM Katowice 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-971.png"},{"id":"972","name":"Finalist ved IEM Katowice 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-972.png"},{"id":"973","name":"Semifinalist ved IEM Katowice 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-973.png"},{"id":"974","name":"Kvartfinalist ved IEM Katowice 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-974.png"},{"id":"975","name":"Vinder ved StarLadder Berlin 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-975.png"},{"id":"976","name":"Finalist ved StarLadder Berlin 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-976.png"},{"id":"977","name":"Semifinalist ved StarLadder Berlin 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-977.png"},{"id":"978","name":"Kvartfinalist ved StarLadder Berlin 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-978.png"},{"id":"979","name":"Vinderen af PGL Stockholm 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-979.png"},{"id":"980","name":"Finalist ved PGL Stockholm 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-980.png"},{"id":"981","name":"Semifinalist ved PGL Stockholm 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-981.png"},{"id":"982","name":"Kvartfinalist ved PGL Stockholm 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-982.png"},{"id":"983","name":"Mester ved PGL Antwerp 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-983.png"},{"id":"984","name":"Finalist ved PGL Antwerp 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-984.png"},{"id":"985","name":"Semifinalist ved PGL Antwerp 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-985.png"},{"id":"986","name":"Kvartfinalist ved PGL Antwerp 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-986.png"},{"id":"988","name":"Vinder af IEM Rio 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-988.png"},{"id":"989","name":"Finalist ved IEM Rio 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-989.png"},{"id":"990","name":"Semifinalist ved IEM Rio 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-990.png"},{"id":"991","name":"Kvartfinalist ved IEM Rio 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-991.png"},{"id":"992","name":"Vinder af BLAST.tv Paris 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-992.png"},{"id":"993","name":"Finalist ved Blast.tv Paris 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-993.png"},{"id":"994","name":"Semifinalist ved Blast.tv Paris 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-994.png"},{"id":"995","name":"Kvartfinalist ved Blast.tv Paris 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-995.png"},{"id":"1001","name":"Operation Payback-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1001.png"},{"id":"1002","name":"Sølvmønt | Operation Payback","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1002.png"},{"id":"1003","name":"Guldmønt | Operation Payback","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1003.png"},{"id":"1004","name":"Banemønt: Museum","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1004.png"},{"id":"1005","name":"Banemønt: Downtown","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1005.png"},{"id":"1006","name":"Banemønt: Thunder","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1006.png"},{"id":"1007","name":"Banemønt: Favela","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1007.png"},{"id":"1008","name":"Banemønt: Motel","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1008.png"},{"id":"1009","name":"Banemønt: Seaside","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1009.png"},{"id":"1010","name":"Banemønt: Library","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1010.png"},{"id":"1013","name":"Operation Bravo-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1013.png"},{"id":"1014","name":"Sølvmønt | Operation Bravo","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1014.png"},{"id":"1015","name":"Guldmønt | Operation Bravo","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1015.png"},{"id":"1016","name":"Banemønt: Agency","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1016.png"},{"id":"1017","name":"Banemønt: Ali","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1017.png"},{"id":"1018","name":"Banemønt: Cache","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1018.png"},{"id":"1019","name":"Banemønt: Chinatown","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1019.png"},{"id":"1020","name":"Banemønt: Gwalior","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1020.png"},{"id":"1021","name":"Banemønt: Ruins","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1021.png"},{"id":"1022","name":"Banemønt: Siege","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1022.png"},{"id":"1024","name":"Operation Phoenix-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1024.png"},{"id":"1025","name":"Sølvmønt | Operation Phoenix","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1025.png"},{"id":"1026","name":"Guldmønt | Operation Phoenix","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1026.png"},{"id":"1028","name":"Operation Breakout-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1028.png"},{"id":"1029","name":"Sølvmønt | Operation Breakout","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1029.png"},{"id":"1030","name":"Guldmønt | Operation Breakout","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1030.png"},{"id":"1031","name":"Banemønt: Castle","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1031.png"},{"id":"1032","name":"Banemønt: Black Gold","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1032.png"},{"id":"1033","name":"Banemønt: Rush","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1033.png"},{"id":"1034","name":"Banemønt: Mist","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1034.png"},{"id":"1035","name":"Banemønt: Insertion","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1035.png"},{"id":"1036","name":"Banemønt: Overgrown","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1036.png"},{"id":"1037","name":"Banemønt: Marquis","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1037.png"},{"id":"1038","name":"Banemønt: Workout","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1038.png"},{"id":"1039","name":"Banemønt: Backalley","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1039.png"},{"id":"1040","name":"Banemønt: Season","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1040.png"},{"id":"1041","name":"Banemønt: Bazaar","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1041.png"},{"id":"1042","name":"Banemønt: Facade","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1042.png"},{"id":"1043","name":"Banemønt: Log","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1043.png"},{"id":"1044","name":"Banemønt: Rails","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1044.png"},{"id":"1045","name":"Banemønt: Resort","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1045.png"},{"id":"1046","name":"Banemønt: Zoo","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1046.png"},{"id":"1047","name":"Banemønt: Santorini","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1047.png"},{"id":"1048","name":"Banemønt: Coast","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1048.png"},{"id":"1049","name":"Banemønt: Mikla","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1049.png"},{"id":"1050","name":"Banemønt: Royal","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1050.png"},{"id":"1051","name":"Banemønt: Empire","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1051.png"},{"id":"1052","name":"Banemønt: Tulip","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1052.png"},{"id":"1053","name":"Banemønt: Cruise","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1053.png"},{"id":"1054","name":"Banemønt: Subzero","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1054.png"},{"id":"1055","name":"Banemønt: Biome","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1055.png"},{"id":"1056","name":"Banemønt: Abbey","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1056.png"},{"id":"1057","name":"Banemønt: Ruby","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1057.png"},{"id":"1058","name":"Banemønt: Breach","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1058.png"},{"id":"1059","name":"Banemønt: Studio","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1059.png"},{"id":"1060","name":"Banemønt: Jungle","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1060.png"},{"id":"1061","name":"Banemønt: Anubis","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1061.png"},{"id":"1062","name":"Banemønt: Chlorine","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1062.png"},{"id":"1063","name":"Banemønt: Mutiny","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1063.png"},{"id":"1064","name":"Banemønt: Swamp","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1064.png"},{"id":"1065","name":"Banemønt: Frostbite","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1065.png"},{"id":"1066","name":"Banemønt: Engage","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1066.png"},{"id":"1067","name":"Banemønt: Apollo","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1067.png"},{"id":"1068","name":"Banemønt: Guard","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1068.png"},{"id":"1069","name":"Banemønt: Elysion","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1069.png"},{"id":"1070","name":"Banemønt: Grind","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1070.png"},{"id":"1071","name":"Banemønt: Mocha","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1071.png"},{"id":"1072","name":"Banemønt: Calavera","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1072.png"},{"id":"1073","name":"Banemønt: Pitstop","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1073.png"},{"id":"1074","name":"Banemønt: Basalt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1074.png"},{"id":"1075","name":"Banemønt: Insertion II","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1075.png"},{"id":"1076","name":"Banemønt: Ravine","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1076.png"},{"id":"1077","name":"Banemønt: Extraction","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1077.png"},{"id":"1078","name":"Banemønt: County","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1078.png"},{"id":"1079","name":"Banemønt: Iris","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1079.png"},{"id":"1080","name":"Banemønt: Climb","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1080.png"},{"id":"1081","name":"Banemønt: Crete","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1081.png"},{"id":"1082","name":"Banemønt: Hive","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1082.png"},{"id":"1083","name":"Banemønt: Vineyard","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1083.png"},{"id":"1084","name":"Banemønt: Ember","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1084.png"},{"id":"1085","name":"Banemønt: Tuscan","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1085.png"},{"id":"1086","name":"Banemønt: Cascade","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1086.png"},{"id":"1087","name":"Banemønt: Blagai","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1087.png"},{"id":"1088","name":"Banemønt: Boyard","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1088.png"},{"id":"1089","name":"Banemønt: Chalice","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1089.png"},{"id":"1316","name":"Operation Vanguard-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1316.png"},{"id":"1317","name":"Sølvmønt | Operation Vanguard","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1317.png"},{"id":"1318","name":"Guldmønt | Operation Vanguard","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1318.png"},{"id":"1327","name":"Operation Bloodhound-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1327.png"},{"id":"1328","name":"Sølvmønt | Operation Bloodhound","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1328.png"},{"id":"1329","name":"Guldmønt | Operation Bloodhound","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1329.png"},{"id":"1331","name":"Tjenestemedalje 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1331.png"},{"id":"1332","name":"Tjenestemedalje 2015","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1332.png"},{"id":"1336","name":"Operation Wildfire-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1336.png"},{"id":"1337","name":"Sølvmønt | Operation Wildfire","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1337.png"},{"id":"1338","name":"Guldmønt | Operation Wildfire","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1338.png"},{"id":"1339","name":"Tjenestemedalje 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1339.png"},{"id":"1340","name":"Tjenestemedalje 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1340.png"},{"id":"1341","name":"Tjenestemedalje 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1341.png"},{"id":"1342","name":"Tjenestemedalje 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1342.png"},{"id":"1343","name":"Tjenestemedalje 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1343.png"},{"id":"1344","name":"Tjenestemedalje 2016","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1344.png"},{"id":"1357","name":"Tjenestemedalje 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1357.png"},{"id":"1358","name":"Tjenestemedalje 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1358.png"},{"id":"1359","name":"Tjenestemedalje 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1359.png"},{"id":"1360","name":"Tjenestemedalje 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1360.png"},{"id":"1361","name":"Tjenestemedalje 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1361.png"},{"id":"1362","name":"Tjenestemedalje 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1362.png"},{"id":"1363","name":"Tjenestemedalje 2017","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1363.png"},{"id":"1367","name":"Tjenestemedalje 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1367.png"},{"id":"1368","name":"Tjenestemedalje 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1368.png"},{"id":"1369","name":"Tjenestemedalje 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1369.png"},{"id":"1370","name":"Tjenestemedalje 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1370.png"},{"id":"1371","name":"Tjenestemedalje 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1371.png"},{"id":"1372","name":"Tjenestemedalje 2018","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1372.png"},{"id":"1376","name":"Tjenestemedalje 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1376.png"},{"id":"1377","name":"Tjenestemedalje 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1377.png"},{"id":"1378","name":"Tjenestemedalje 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1378.png"},{"id":"1379","name":"Tjenestemedalje 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1379.png"},{"id":"1380","name":"Tjenestemedalje 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1380.png"},{"id":"1381","name":"Tjenestemedalje 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1381.png"},{"id":"4353","name":"Operation Hydra-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4353.png"},{"id":"4354","name":"Sølvmønt | Operation Hydra","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4354.png"},{"id":"4355","name":"Guldmønt | Operation Hydra","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4355.png"},{"id":"4356","name":"Diamantmønt | Operation Hydra","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4356.png"},{"id":"4550","name":"Operation Shattered Web-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4550.png"},{"id":"4551","name":"Sølvmønt for Operation Shattered Web","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4551.png"},{"id":"4552","name":"Guldmønt for Operation Shattered Web","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4552.png"},{"id":"4553","name":"Diamantmønt | Operation Shattered Web","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4553.png"},{"id":"4555","name":"Mønt: Katowice 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4555.png"},{"id":"4556","name":"Sølvmønt: Katowice 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4556.png"},{"id":"4557","name":"Guldmønt: Katowice 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4557.png"},{"id":"4558","name":"Diamantmønt: Katowice 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4558.png"},{"id":"4623","name":"Mønt: Berlin 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4623.png"},{"id":"4624","name":"Sølvmønt: Berlin 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4624.png"},{"id":"4625","name":"Goldmønt: Berlin 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4625.png"},{"id":"4626","name":"Diamantmønt: Berlin 2019","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"},{"id":"4671","name":"1 stjerne til Operation Shattered Web","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4671.png"},{"id":"4672","name":"10 stjerner til Operation Shattered Web","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4672.png"},{"id":"4673","name":"100 stjerner til Operation Shattered Web","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4673.png"},{"id":"4674","name":"Tjenestemedalje 2020","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4674.png"},{"id":"4675","name":"Tjenestemedalje 2020","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4675.png"},{"id":"4676","name":"Tjenestemedalje 2020","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4676.png"},{"id":"4677","name":"Tjenestemedalje 2020","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4677.png"},{"id":"4678","name":"Tjenestemedalje 2020","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4678.png"},{"id":"4679","name":"Tjenestemedalje 2020","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4679.png"},{"id":"4682","name":"Civil Protection-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4682.png"},{"id":"4683","name":"Sustenance!-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4683.png"},{"id":"4684","name":"Vortigaunt-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4684.png"},{"id":"4685","name":"Headcrab Glyph-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4685.png"},{"id":"4686","name":"Health-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4686.png"},{"id":"4687","name":"Lambda-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4687.png"},{"id":"4688","name":"Copper Lambda-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4688.png"},{"id":"4689","name":"CMB-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4689.png"},{"id":"4690","name":"Black Mesa-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4690.png"},{"id":"4691","name":"Combine Helmet-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4691.png"},{"id":"4692","name":"City 17-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4692.png"},{"id":"4700","name":"Operation Broken Fang-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4700.png"},{"id":"4701","name":"Sølvmønt | Operation Broken Fang","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4701.png"},{"id":"4702","name":"Guldmønt | Operation Broken Fang","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4702.png"},{"id":"4703","name":"Diamantmønt | Operation Broken Fang","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4703.png"},{"id":"4704","name":"1 stjerne til Operation Broken Fang","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4704.png"},{"id":"4705","name":"10 stjerner til Operation Broken Fang","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4705.png"},{"id":"4706","name":"100 stjerner til Operation Broken Fang","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4706.png"},{"id":"4737","name":"Tjenestemedalje 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4737.png"},{"id":"4738","name":"Tjenestemedalje 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4738.png"},{"id":"4739","name":"Tjenestemedalje 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4739.png"},{"id":"4740","name":"Tjenestemedalje 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4740.png"},{"id":"4741","name":"Tjenestemedalje 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4741.png"},{"id":"4742","name":"Tjenestemedalje 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4742.png"},{"id":"4759","name":"Operation Riptide-udfordringsmønt","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4759.png"},{"id":"4760","name":"Sølvmønt | Operation Riptide","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4760.png"},{"id":"4761","name":"Guldmønt | Operation Riptide","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4761.png"},{"id":"4762","name":"Diamantmønt | Operation Riptide","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4762.png"},{"id":"4763","name":"1 stjerne til Operation Riptide","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4763.png"},{"id":"4764","name":"10 stjerner til Operation Riptide","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4764.png"},{"id":"4765","name":"100 stjerner til Operation Riptide","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"},{"id":"4797","name":"Mønt: Stockholm 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4797.png"},{"id":"4798","name":"Sølvmønt: Stockholm 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4798.png"},{"id":"4799","name":"Guldmønt: Stockholm 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4799.png"},{"id":"4800","name":"Diamantmønt: Stockholm 2021","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4800.png"},{"id":"4819","name":"Tjenestemedalje 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4819.png"},{"id":"4820","name":"Tjenestemedalje 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4820.png"},{"id":"4821","name":"Tjenestemedalje 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4821.png"},{"id":"4822","name":"Tjenestemedalje 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4822.png"},{"id":"4823","name":"Tjenestemedalje 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4823.png"},{"id":"4824","name":"Tjenestemedalje 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4824.png"},{"id":"4826","name":"Mønt: Antwerp 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4826.png"},{"id":"4827","name":"Sølvmønt: Antwerp 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4827.png"},{"id":"4828","name":"Guldmønt: Antwerp 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4828.png"},{"id":"4829","name":"Diamantmønt: Antwerp 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4829.png"},{"id":"4851","name":"Mønt: Rio 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4851.png"},{"id":"4852","name":"Sølvmønt: Rio 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4852.png"},{"id":"4853","name":"Guldmønt: Rio 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4853.png"},{"id":"4854","name":"Diamantmønt: Rio 2022","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4854.png"},{"id":"4873","name":"Tjenestemedalje 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4873.png"},{"id":"4874","name":"Tjenestemedalje 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4874.png"},{"id":"4875","name":"Tjenestemedalje 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4875.png"},{"id":"4876","name":"Tjenestemedalje 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4876.png"},{"id":"4877","name":"Tjenestemedalje 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4877.png"},{"id":"4878","name":"Tjenestemedalje 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4878.png"},{"id":"4884","name":"Mønt: Paris 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4884.png"},{"id":"4885","name":"Sølvmønt: Paris 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4885.png"},{"id":"4886","name":"Guldmønt: Paris 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4886.png"},{"id":"4887","name":"Diamantmønt: Paris 2023","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4887.png"},{"id":"4906","name":"Tjenestemedalje 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4906.png"},{"id":"4907","name":"Tjenestemedalje 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4907.png"},{"id":"4908","name":"Tjenestemedalje 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4908.png"},{"id":"4909","name":"Tjenestemedalje 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4909.png"},{"id":"4910","name":"Tjenestemedalje 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4910.png"},{"id":"4911","name":"Tjenestemedalje 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4911.png"},{"id":"4917","name":"Mønt: Copenhagen 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4917.png"},{"id":"4918","name":"Sølvmønt: Copenhagen 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4918.png"},{"id":"4919","name":"Guldmønt: Copenhagen 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4919.png"},{"id":"4920","name":"Diamantmønt: Copenhagen 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4920.png"},{"id":"4933","name":"Mester ved PGL Copenhagen 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4933.png"},{"id":"4934","name":"Finalist ved PGL Copenhagen 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4934.png"},{"id":"4935","name":"Semifinalist ved PGL Copenhagen 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4935.png"},{"id":"4936","name":"Kvartfinalist ved PGL Copenhagen 2024","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4936.png"},{"id":"4941","name":"Banemønt: Thera","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4941.png"},{"id":"4942","name":"Banemønt: Mills","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4942.png"},{"id":"4943","name":"Banemønt: Assembly","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4943.png"},{"id":"4944","name":"Banemønt: Memento","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4944.png"},{"id":"4945","name":"Banemønt: Pool Day","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4945.png"},{"id":"6001","name":"Dust II-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6001.png"},{"id":"6002","name":"Guardian Elite-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6002.png"},{"id":"6003","name":"Mirage-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6003.png"},{"id":"6004","name":"Inferno-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6004.png"},{"id":"6005","name":"Italy-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6005.png"},{"id":"6006","name":"Victory-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6006.png"},{"id":"6007","name":"Militia-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6007.png"},{"id":"6008","name":"Nuke-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6008.png"},{"id":"6009","name":"Train-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6009.png"},{"id":"6010","name":"Guardian-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6010.png"},{"id":"6011","name":"Tactics-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6011.png"},{"id":"6012","name":"Guardian 2-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6012.png"},{"id":"6013","name":"Bravo-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6013.png"},{"id":"6014","name":"Baggage-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6014.png"},{"id":"6015","name":"Phoenix-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6015.png"},{"id":"6016","name":"Office-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6016.png"},{"id":"6017","name":"Cobblestone-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6017.png"},{"id":"6018","name":"Overpass-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6018.png"},{"id":"6019","name":"Bloodhound-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6019.png"},{"id":"6020","name":"Cache-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6020.png"},{"id":"6021","name":"Valeria Phoenix-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6021.png"},{"id":"6022","name":"Chroma-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6022.png"},{"id":"6023","name":"Guardian 3-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6023.png"},{"id":"6024","name":"Canals-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6024.png"},{"id":"6025","name":"Welcome to the Clutch-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6025.png"},{"id":"6026","name":"Death Sentence-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6026.png"},{"id":"6027","name":"Inferno 2-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6027.png"},{"id":"6028","name":"Wildfire-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6028.png"},{"id":"6029","name":"Easy Peasy-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6029.png"},{"id":"6030","name":"Aces High-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6030.png"},{"id":"6031","name":"Hydra-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6031.png"},{"id":"6032","name":"Howl-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6032.png"},{"id":"6033","name":"Brigadegeneralsknappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6033.png"},{"id":"6034","name":"Alyx-knappenål (Ægte)","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6034.png"},{"id":"6101","name":"Dust II-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6101.png"},{"id":"6102","name":"Guardian Elite-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6102.png"},{"id":"6103","name":"Mirage-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6103.png"},{"id":"6104","name":"Inferno-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6104.png"},{"id":"6105","name":"Italy-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6105.png"},{"id":"6106","name":"Victory-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6106.png"},{"id":"6107","name":"Militia-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6107.png"},{"id":"6108","name":"Nuke-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6108.png"},{"id":"6109","name":"Train-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6109.png"},{"id":"6110","name":"Guardian-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6110.png"},{"id":"6111","name":"Tactics-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6111.png"},{"id":"6112","name":"Guardian 2-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6112.png"},{"id":"6113","name":"Bravo-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6113.png"},{"id":"6114","name":"Baggage-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6114.png"},{"id":"6115","name":"Phoenix-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6115.png"},{"id":"6116","name":"Office-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6116.png"},{"id":"6117","name":"Cobblestone-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6117.png"},{"id":"6118","name":"Overpass-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6118.png"},{"id":"6119","name":"Bloodhound-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6119.png"},{"id":"6120","name":"Cache-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6120.png"},{"id":"6121","name":"Valeria Phoenix-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6121.png"},{"id":"6122","name":"Chroma-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6122.png"},{"id":"6123","name":"Guardian 3-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6123.png"},{"id":"6124","name":"Canals-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6124.png"},{"id":"6125","name":"Welcome to the Clutch-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6125.png"},{"id":"6126","name":"Death Sentence-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6126.png"},{"id":"6127","name":"Inferno 2-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6127.png"},{"id":"6128","name":"Wildfire-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6128.png"},{"id":"6129","name":"Easy Peasy-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6129.png"},{"id":"6130","name":"Aces High-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6130.png"},{"id":"6131","name":"Hydra-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6131.png"},{"id":"6132","name":"Howl-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6132.png"},{"id":"6133","name":"Brigadegeneralsknappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6133.png"},{"id":"6134","name":"Alyx-knappenål","image":"https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6134.png"}]
+[
+    {
+        "id": "874",
+        "name": "5-års veteranmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-874.png"
+    },
+    {
+        "id": "875",
+        "name": "Vinder af DreamHack 2013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-875.png"
+    },
+    {
+        "id": "876",
+        "name": "Finalist ved DreamHack 2013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-876.png"
+    },
+    {
+        "id": "877",
+        "name": "Semifinalist ved DreamHack 2013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-877.png"
+    },
+    {
+        "id": "878",
+        "name": "Kvartfinalist ved DreamHack 2013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-878.png"
+    },
+    {
+        "id": "879",
+        "name": "Vinder af EMS One Katowice 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-879.png"
+    },
+    {
+        "id": "880",
+        "name": "Finalist ved EMS One Katowice 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-880.png"
+    },
+    {
+        "id": "881",
+        "name": "Semifinalist ved EMS One Katowice 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-881.png"
+    },
+    {
+        "id": "882",
+        "name": "Kvartfinalist ved EMS One Katowice 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-882.png"
+    },
+    {
+        "id": "883",
+        "name": "Vinder af ESL One Cologne 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-883.png"
+    },
+    {
+        "id": "884",
+        "name": "Finalist ved ESL One Cologne 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-884.png"
+    },
+    {
+        "id": "885",
+        "name": "Semifinalist ved ESL One Cologne 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-885.png"
+    },
+    {
+        "id": "886",
+        "name": "Kvartfinalist ved ESL One Cologne 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-886.png"
+    },
+    {
+        "id": "887",
+        "name": "Bronze Cologne 2014 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-887.png"
+    },
+    {
+        "id": "888",
+        "name": "Sølv Cologne 2014 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-888.png"
+    },
+    {
+        "id": "889",
+        "name": "Guld Cologne 2014 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-889.png"
+    },
+    {
+        "id": "890",
+        "name": "Vinder af DreamHack Winter 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-890.png"
+    },
+    {
+        "id": "891",
+        "name": "Finalist ved DreamHack Winter 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-891.png"
+    },
+    {
+        "id": "892",
+        "name": "Semifinalist ved DreamHack Winter 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-892.png"
+    },
+    {
+        "id": "893",
+        "name": "Kvartfinalist ved DreamHack Winter 2014",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-893.png"
+    },
+    {
+        "id": "894",
+        "name": "Bronze DreamHack 2014 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-894.png"
+    },
+    {
+        "id": "895",
+        "name": "Sølv DreamHack 2014 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-895.png"
+    },
+    {
+        "id": "896",
+        "name": "Guld DreamHack 2014 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-896.png"
+    },
+    {
+        "id": "897",
+        "name": "Vinder af ESL One Katowice 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-897.png"
+    },
+    {
+        "id": "898",
+        "name": "Finalist ved ESL One Katowice 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-898.png"
+    },
+    {
+        "id": "899",
+        "name": "Semifinalist ved ESL One Katowice 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-899.png"
+    },
+    {
+        "id": "900",
+        "name": "Kvartfinalist ved ESL One Katowice 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-900.png"
+    },
+    {
+        "id": "901",
+        "name": "Bronze Katowice 2015 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-901.png"
+    },
+    {
+        "id": "902",
+        "name": "Sølv Katowice 2015 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-902.png"
+    },
+    {
+        "id": "903",
+        "name": "Guld Katowice 2015 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-903.png"
+    },
+    {
+        "id": "904",
+        "name": "Vinder af ESL One Cologne 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-904.png"
+    },
+    {
+        "id": "905",
+        "name": "Finalist ved ESL One Cologne 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-905.png"
+    },
+    {
+        "id": "906",
+        "name": "Semifinalist ved ESL One Cologne 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-906.png"
+    },
+    {
+        "id": "907",
+        "name": "Kvartfinalist ved ESL One Cologne 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-907.png"
+    },
+    {
+        "id": "908",
+        "name": "Bronze Cologne 2015 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-908.png"
+    },
+    {
+        "id": "909",
+        "name": "Sølv Cologne 2015 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-909.png"
+    },
+    {
+        "id": "910",
+        "name": "Guld Cologne 2015 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-910.png"
+    },
+    {
+        "id": "911",
+        "name": "Bronze Cluj-Napoca 2015 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-911.png"
+    },
+    {
+        "id": "912",
+        "name": "Sølv Cluj-Napoca 2015 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-912.png"
+    },
+    {
+        "id": "913",
+        "name": "Guld Cluj-Napoca 2015 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-913.png"
+    },
+    {
+        "id": "914",
+        "name": "Bronze Cluj-Napoca 2015-fantasitrofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-914.png"
+    },
+    {
+        "id": "915",
+        "name": "Sølv Cluj-Napoca 2015-fantasitrofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-915.png"
+    },
+    {
+        "id": "916",
+        "name": "Guld Cluj-Napoca 2015-fantasitrofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-916.png"
+    },
+    {
+        "id": "917",
+        "name": "Vinder af DreamHack Cluj-Napoca 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-917.png"
+    },
+    {
+        "id": "918",
+        "name": "Finalist ved DreamHack Cluj-Napoca 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-918.png"
+    },
+    {
+        "id": "919",
+        "name": "Semifinalist ved DreamHack Cluj-Napoca 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-919.png"
+    },
+    {
+        "id": "920",
+        "name": "Kvartfinalist ved DreamHack Cluj-Napoca 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-920.png"
+    },
+    {
+        "id": "921",
+        "name": "Bronze Columbus 2016 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-921.png"
+    },
+    {
+        "id": "922",
+        "name": "Sølv Columbus 2016 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-922.png"
+    },
+    {
+        "id": "923",
+        "name": "Guld Columbus 2016 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-923.png"
+    },
+    {
+        "id": "924",
+        "name": "Bronze Columbus 2016-fantasitrofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-924.png"
+    },
+    {
+        "id": "925",
+        "name": "Sølv Columbus 2016-fantasitrofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-925.png"
+    },
+    {
+        "id": "926",
+        "name": "Guld Columbus 2016-fantasitrofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-926.png"
+    },
+    {
+        "id": "927",
+        "name": "Vinder af MLG Columbus 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-927.png"
+    },
+    {
+        "id": "928",
+        "name": "Finalist ved MLG Columbus 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-928.png"
+    },
+    {
+        "id": "929",
+        "name": "Semifinalist ved MLG Columbus 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-929.png"
+    },
+    {
+        "id": "930",
+        "name": "Kvartfinalist ved MLG Columbus 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-930.png"
+    },
+    {
+        "id": "931",
+        "name": "Vinder af ESL One Cologne 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-931.png"
+    },
+    {
+        "id": "932",
+        "name": "Finalist ved ESL One Cologne 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-932.png"
+    },
+    {
+        "id": "933",
+        "name": "Semifinalist ved ESL One Cologne 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-933.png"
+    },
+    {
+        "id": "934",
+        "name": "Kvartfinalist ved ESL One Cologne 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-934.png"
+    },
+    {
+        "id": "935",
+        "name": "Bronze Cologne 2016 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-935.png"
+    },
+    {
+        "id": "936",
+        "name": "Sølv Cologne 2016 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-936.png"
+    },
+    {
+        "id": "937",
+        "name": "Guld Cologne 2016 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-937.png"
+    },
+    {
+        "id": "938",
+        "name": "Bronze Cologne 2016-fantasitrofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-938.png"
+    },
+    {
+        "id": "939",
+        "name": "Sølv Cologne 2016-fantasitrofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-939.png"
+    },
+    {
+        "id": "940",
+        "name": "Guld Cologne 2016-fantasitrofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-940.png"
+    },
+    {
+        "id": "941",
+        "name": "Vinder af ELEAGUE Atlanta 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-941.png"
+    },
+    {
+        "id": "942",
+        "name": "Finalist ved ELEAGUE Atlanta 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-942.png"
+    },
+    {
+        "id": "943",
+        "name": "Semifinalist ved ELEAGUE Atlanta 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-943.png"
+    },
+    {
+        "id": "944",
+        "name": "Kvartfinalist ved ELEAGUE Atlanta 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-944.png"
+    },
+    {
+        "id": "945",
+        "name": "Bronze Atlanta 2017 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-945.png"
+    },
+    {
+        "id": "946",
+        "name": "Sølv Atlanta 2017 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-946.png"
+    },
+    {
+        "id": "947",
+        "name": "Guld Atlanta 2017 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-947.png"
+    },
+    {
+        "id": "948",
+        "name": "Vinder af PGL Krakow 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-948.png"
+    },
+    {
+        "id": "949",
+        "name": "Finalist ved PGL Krakow 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-949.png"
+    },
+    {
+        "id": "950",
+        "name": "Semifinalist ved PGL Krakow 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-950.png"
+    },
+    {
+        "id": "951",
+        "name": "Kvartfinalist ved PGL Krakow 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-951.png"
+    },
+    {
+        "id": "952",
+        "name": "Bronze Krakow 2017 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-952.png"
+    },
+    {
+        "id": "953",
+        "name": "Sølv Krakow 2017 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-953.png"
+    },
+    {
+        "id": "954",
+        "name": "Guld Krakow 2017 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-954.png"
+    },
+    {
+        "id": "955",
+        "name": "Vinder af ELEAGUE Boston 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-955.png"
+    },
+    {
+        "id": "956",
+        "name": "Finalist ved ELEAGUE Boston 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-956.png"
+    },
+    {
+        "id": "957",
+        "name": "Semifinalist ved ELEAGUE Boston 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-957.png"
+    },
+    {
+        "id": "958",
+        "name": "Kvartfinalist ved ELEAGUE Boston 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-958.png"
+    },
+    {
+        "id": "959",
+        "name": "Bronze Boston 2018 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-959.png"
+    },
+    {
+        "id": "960",
+        "name": "Sølv Boston 2018 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-960.png"
+    },
+    {
+        "id": "961",
+        "name": "Guld Boston 2018 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-961.png"
+    },
+    {
+        "id": "962",
+        "name": "Vinder af FACEIT London 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-962.png"
+    },
+    {
+        "id": "963",
+        "name": "Finalist ved FACEIT London 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-963.png"
+    },
+    {
+        "id": "964",
+        "name": "Semifinalist ved FACEIT London 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-964.png"
+    },
+    {
+        "id": "965",
+        "name": "Kvartfinalist ved FACEIT London 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-965.png"
+    },
+    {
+        "id": "966",
+        "name": "Bronze London 2018 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-966.png"
+    },
+    {
+        "id": "967",
+        "name": "Sølv London 2018 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-967.png"
+    },
+    {
+        "id": "968",
+        "name": "Guld London 2018 Pick'Em-trofæ",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-968.png"
+    },
+    {
+        "id": "969",
+        "name": "10-års veteranmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-969.png"
+    },
+    {
+        "id": "970",
+        "name": "Loyalitetsemblem",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-970.png"
+    },
+    {
+        "id": "971",
+        "name": "Vinder af IEM Katowice 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-971.png"
+    },
+    {
+        "id": "972",
+        "name": "Finalist ved IEM Katowice 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-972.png"
+    },
+    {
+        "id": "973",
+        "name": "Semifinalist ved IEM Katowice 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-973.png"
+    },
+    {
+        "id": "974",
+        "name": "Kvartfinalist ved IEM Katowice 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-974.png"
+    },
+    {
+        "id": "975",
+        "name": "Vinder ved StarLadder Berlin 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-975.png"
+    },
+    {
+        "id": "976",
+        "name": "Finalist ved StarLadder Berlin 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-976.png"
+    },
+    {
+        "id": "977",
+        "name": "Semifinalist ved StarLadder Berlin 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-977.png"
+    },
+    {
+        "id": "978",
+        "name": "Kvartfinalist ved StarLadder Berlin 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-978.png"
+    },
+    {
+        "id": "979",
+        "name": "Vinderen af PGL Stockholm 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-979.png"
+    },
+    {
+        "id": "980",
+        "name": "Finalist ved PGL Stockholm 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-980.png"
+    },
+    {
+        "id": "981",
+        "name": "Semifinalist ved PGL Stockholm 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-981.png"
+    },
+    {
+        "id": "982",
+        "name": "Kvartfinalist ved PGL Stockholm 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-982.png"
+    },
+    {
+        "id": "983",
+        "name": "Mester ved PGL Antwerp 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-983.png"
+    },
+    {
+        "id": "984",
+        "name": "Finalist ved PGL Antwerp 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-984.png"
+    },
+    {
+        "id": "985",
+        "name": "Semifinalist ved PGL Antwerp 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-985.png"
+    },
+    {
+        "id": "986",
+        "name": "Kvartfinalist ved PGL Antwerp 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-986.png"
+    },
+    {
+        "id": "987",
+        "name": "10-års fødselsdagsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-987.png"
+    },
+    {
+        "id": "988",
+        "name": "Vinder af IEM Rio 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-988.png"
+    },
+    {
+        "id": "989",
+        "name": "Finalist ved IEM Rio 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-989.png"
+    },
+    {
+        "id": "990",
+        "name": "Semifinalist ved IEM Rio 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-990.png"
+    },
+    {
+        "id": "991",
+        "name": "Kvartfinalist ved IEM Rio 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-991.png"
+    },
+    {
+        "id": "992",
+        "name": "Vinder af BLAST.tv Paris 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-992.png"
+    },
+    {
+        "id": "993",
+        "name": "Finalist ved Blast.tv Paris 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-993.png"
+    },
+    {
+        "id": "994",
+        "name": "Semifinalist ved Blast.tv Paris 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-994.png"
+    },
+    {
+        "id": "995",
+        "name": "Kvartfinalist ved Blast.tv Paris 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-995.png"
+    },
+    {
+        "id": "996",
+        "name": "Emblem: Global Offensive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-996.png"
+    },
+    {
+        "id": "1000",
+        "name": "Operation Payback-pas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1000.png"
+    },
+    {
+        "id": "1001",
+        "name": "Operation Payback-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1001.png"
+    },
+    {
+        "id": "1002",
+        "name": "Sølvmønt | Operation Payback",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1002.png"
+    },
+    {
+        "id": "1003",
+        "name": "Guldmønt | Operation Payback",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1003.png"
+    },
+    {
+        "id": "1004",
+        "name": "Banemønt: Museum",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1004.png"
+    },
+    {
+        "id": "1005",
+        "name": "Banemønt: Downtown",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1005.png"
+    },
+    {
+        "id": "1006",
+        "name": "Banemønt: Thunder",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1006.png"
+    },
+    {
+        "id": "1007",
+        "name": "Banemønt: Favela",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1007.png"
+    },
+    {
+        "id": "1008",
+        "name": "Banemønt: Motel",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1008.png"
+    },
+    {
+        "id": "1009",
+        "name": "Banemønt: Seaside",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1009.png"
+    },
+    {
+        "id": "1010",
+        "name": "Banemønt: Library",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1010.png"
+    },
+    {
+        "id": "1012",
+        "name": "Operation Bravo-pas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1012.png"
+    },
+    {
+        "id": "1013",
+        "name": "Operation Bravo-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1013.png"
+    },
+    {
+        "id": "1014",
+        "name": "Sølvmønt | Operation Bravo",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1014.png"
+    },
+    {
+        "id": "1015",
+        "name": "Guldmønt | Operation Bravo",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1015.png"
+    },
+    {
+        "id": "1016",
+        "name": "Banemønt: Agency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1016.png"
+    },
+    {
+        "id": "1017",
+        "name": "Banemønt: Ali",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1017.png"
+    },
+    {
+        "id": "1018",
+        "name": "Banemønt: Cache",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1018.png"
+    },
+    {
+        "id": "1019",
+        "name": "Banemønt: Chinatown",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1019.png"
+    },
+    {
+        "id": "1020",
+        "name": "Banemønt: Gwalior",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1020.png"
+    },
+    {
+        "id": "1021",
+        "name": "Banemønt: Ruins",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1021.png"
+    },
+    {
+        "id": "1022",
+        "name": "Banemønt: Siege",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1022.png"
+    },
+    {
+        "id": "1023",
+        "name": "Operation Phoenix-pas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1023.png"
+    },
+    {
+        "id": "1024",
+        "name": "Operation Phoenix-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1024.png"
+    },
+    {
+        "id": "1025",
+        "name": "Sølvmønt | Operation Phoenix",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1025.png"
+    },
+    {
+        "id": "1026",
+        "name": "Guldmønt | Operation Phoenix",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1026.png"
+    },
+    {
+        "id": "1027",
+        "name": "Operation Breakout All Access-pas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1027.png"
+    },
+    {
+        "id": "1028",
+        "name": "Operation Breakout-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1028.png"
+    },
+    {
+        "id": "1029",
+        "name": "Sølvmønt | Operation Breakout",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1029.png"
+    },
+    {
+        "id": "1030",
+        "name": "Guldmønt | Operation Breakout",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1030.png"
+    },
+    {
+        "id": "1031",
+        "name": "Banemønt: Castle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1031.png"
+    },
+    {
+        "id": "1032",
+        "name": "Banemønt: Black Gold",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1032.png"
+    },
+    {
+        "id": "1033",
+        "name": "Banemønt: Rush",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1033.png"
+    },
+    {
+        "id": "1034",
+        "name": "Banemønt: Mist",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1034.png"
+    },
+    {
+        "id": "1035",
+        "name": "Banemønt: Insertion",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1035.png"
+    },
+    {
+        "id": "1036",
+        "name": "Banemønt: Overgrown",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1036.png"
+    },
+    {
+        "id": "1037",
+        "name": "Banemønt: Marquis",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1037.png"
+    },
+    {
+        "id": "1038",
+        "name": "Banemønt: Workout",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1038.png"
+    },
+    {
+        "id": "1039",
+        "name": "Banemønt: Backalley",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1039.png"
+    },
+    {
+        "id": "1040",
+        "name": "Banemønt: Season",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1040.png"
+    },
+    {
+        "id": "1041",
+        "name": "Banemønt: Bazaar",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1041.png"
+    },
+    {
+        "id": "1042",
+        "name": "Banemønt: Facade",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1042.png"
+    },
+    {
+        "id": "1043",
+        "name": "Banemønt: Log",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1043.png"
+    },
+    {
+        "id": "1044",
+        "name": "Banemønt: Rails",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1044.png"
+    },
+    {
+        "id": "1045",
+        "name": "Banemønt: Resort",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1045.png"
+    },
+    {
+        "id": "1046",
+        "name": "Banemønt: Zoo",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1046.png"
+    },
+    {
+        "id": "1047",
+        "name": "Banemønt: Santorini",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1047.png"
+    },
+    {
+        "id": "1048",
+        "name": "Banemønt: Coast",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1048.png"
+    },
+    {
+        "id": "1049",
+        "name": "Banemønt: Mikla",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1049.png"
+    },
+    {
+        "id": "1050",
+        "name": "Banemønt: Royal",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1050.png"
+    },
+    {
+        "id": "1051",
+        "name": "Banemønt: Empire",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1051.png"
+    },
+    {
+        "id": "1052",
+        "name": "Banemønt: Tulip",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1052.png"
+    },
+    {
+        "id": "1053",
+        "name": "Banemønt: Cruise",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1053.png"
+    },
+    {
+        "id": "1054",
+        "name": "Banemønt: Subzero",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1054.png"
+    },
+    {
+        "id": "1055",
+        "name": "Banemønt: Biome",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1055.png"
+    },
+    {
+        "id": "1056",
+        "name": "Banemønt: Abbey",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1056.png"
+    },
+    {
+        "id": "1057",
+        "name": "Banemønt: Ruby",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1057.png"
+    },
+    {
+        "id": "1058",
+        "name": "Banemønt: Breach",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1058.png"
+    },
+    {
+        "id": "1059",
+        "name": "Banemønt: Studio",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1059.png"
+    },
+    {
+        "id": "1060",
+        "name": "Banemønt: Jungle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1060.png"
+    },
+    {
+        "id": "1061",
+        "name": "Banemønt: Anubis",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1061.png"
+    },
+    {
+        "id": "1062",
+        "name": "Banemønt: Chlorine",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1062.png"
+    },
+    {
+        "id": "1063",
+        "name": "Banemønt: Mutiny",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1063.png"
+    },
+    {
+        "id": "1064",
+        "name": "Banemønt: Swamp",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1064.png"
+    },
+    {
+        "id": "1065",
+        "name": "Banemønt: Frostbite",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1065.png"
+    },
+    {
+        "id": "1066",
+        "name": "Banemønt: Engage",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1066.png"
+    },
+    {
+        "id": "1067",
+        "name": "Banemønt: Apollo",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1067.png"
+    },
+    {
+        "id": "1068",
+        "name": "Banemønt: Guard",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1068.png"
+    },
+    {
+        "id": "1069",
+        "name": "Banemønt: Elysion",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1069.png"
+    },
+    {
+        "id": "1070",
+        "name": "Banemønt: Grind",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1070.png"
+    },
+    {
+        "id": "1071",
+        "name": "Banemønt: Mocha",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1071.png"
+    },
+    {
+        "id": "1072",
+        "name": "Banemønt: Calavera",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1072.png"
+    },
+    {
+        "id": "1073",
+        "name": "Banemønt: Pitstop",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1073.png"
+    },
+    {
+        "id": "1074",
+        "name": "Banemønt: Basalt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1074.png"
+    },
+    {
+        "id": "1075",
+        "name": "Banemønt: Insertion II",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1075.png"
+    },
+    {
+        "id": "1076",
+        "name": "Banemønt: Ravine",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1076.png"
+    },
+    {
+        "id": "1077",
+        "name": "Banemønt: Extraction",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1077.png"
+    },
+    {
+        "id": "1078",
+        "name": "Banemønt: County",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1078.png"
+    },
+    {
+        "id": "1079",
+        "name": "Banemønt: Iris",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1079.png"
+    },
+    {
+        "id": "1080",
+        "name": "Banemønt: Climb",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1080.png"
+    },
+    {
+        "id": "1081",
+        "name": "Banemønt: Crete",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1081.png"
+    },
+    {
+        "id": "1082",
+        "name": "Banemønt: Hive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1082.png"
+    },
+    {
+        "id": "1083",
+        "name": "Banemønt: Vineyard",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1083.png"
+    },
+    {
+        "id": "1084",
+        "name": "Banemønt: Ember",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1084.png"
+    },
+    {
+        "id": "1085",
+        "name": "Banemønt: Tuscan",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1085.png"
+    },
+    {
+        "id": "1086",
+        "name": "Banemønt: Cascade",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1086.png"
+    },
+    {
+        "id": "1087",
+        "name": "Banemønt: Blagai",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1087.png"
+    },
+    {
+        "id": "1088",
+        "name": "Banemønt: Boyard",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1088.png"
+    },
+    {
+        "id": "1089",
+        "name": "Banemønt: Chalice",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1089.png"
+    },
+    {
+        "id": "1315",
+        "name": "Operation Vanguard-adgangspas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1315.png"
+    },
+    {
+        "id": "1316",
+        "name": "Operation Vanguard-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1316.png"
+    },
+    {
+        "id": "1317",
+        "name": "Sølvmønt | Operation Vanguard",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1317.png"
+    },
+    {
+        "id": "1318",
+        "name": "Guldmønt | Operation Vanguard",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1318.png"
+    },
+    {
+        "id": "1326",
+        "name": "Operation Bloodhound-adgangspas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1326.png"
+    },
+    {
+        "id": "1327",
+        "name": "Operation Bloodhound-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1327.png"
+    },
+    {
+        "id": "1328",
+        "name": "Sølvmønt | Operation Bloodhound",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1328.png"
+    },
+    {
+        "id": "1329",
+        "name": "Guldmønt | Operation Bloodhound",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1329.png"
+    },
+    {
+        "id": "1331",
+        "name": "Tjenestemedalje 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1331.png"
+    },
+    {
+        "id": "1332",
+        "name": "Tjenestemedalje 2015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1332.png"
+    },
+    {
+        "id": "1335",
+        "name": "Operation Wildfire-adgangspas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1335.png"
+    },
+    {
+        "id": "1336",
+        "name": "Operation Wildfire-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1336.png"
+    },
+    {
+        "id": "1337",
+        "name": "Sølvmønt | Operation Wildfire",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1337.png"
+    },
+    {
+        "id": "1338",
+        "name": "Guldmønt | Operation Wildfire",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1338.png"
+    },
+    {
+        "id": "1339",
+        "name": "Tjenestemedalje 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1339.png"
+    },
+    {
+        "id": "1340",
+        "name": "Tjenestemedalje 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1340.png"
+    },
+    {
+        "id": "1341",
+        "name": "Tjenestemedalje 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1341.png"
+    },
+    {
+        "id": "1342",
+        "name": "Tjenestemedalje 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1342.png"
+    },
+    {
+        "id": "1343",
+        "name": "Tjenestemedalje 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1343.png"
+    },
+    {
+        "id": "1344",
+        "name": "Tjenestemedalje 2016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1344.png"
+    },
+    {
+        "id": "1352",
+        "name": "Operation Hydra-adgangspas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1352.png"
+    },
+    {
+        "id": "1357",
+        "name": "Tjenestemedalje 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1357.png"
+    },
+    {
+        "id": "1358",
+        "name": "Tjenestemedalje 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1358.png"
+    },
+    {
+        "id": "1359",
+        "name": "Tjenestemedalje 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1359.png"
+    },
+    {
+        "id": "1360",
+        "name": "Tjenestemedalje 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1360.png"
+    },
+    {
+        "id": "1361",
+        "name": "Tjenestemedalje 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1361.png"
+    },
+    {
+        "id": "1362",
+        "name": "Tjenestemedalje 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1362.png"
+    },
+    {
+        "id": "1363",
+        "name": "Tjenestemedalje 2017",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1363.png"
+    },
+    {
+        "id": "1367",
+        "name": "Tjenestemedalje 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1367.png"
+    },
+    {
+        "id": "1368",
+        "name": "Tjenestemedalje 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1368.png"
+    },
+    {
+        "id": "1369",
+        "name": "Tjenestemedalje 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1369.png"
+    },
+    {
+        "id": "1370",
+        "name": "Tjenestemedalje 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1370.png"
+    },
+    {
+        "id": "1371",
+        "name": "Tjenestemedalje 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1371.png"
+    },
+    {
+        "id": "1372",
+        "name": "Tjenestemedalje 2018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1372.png"
+    },
+    {
+        "id": "1376",
+        "name": "Tjenestemedalje 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1376.png"
+    },
+    {
+        "id": "1377",
+        "name": "Tjenestemedalje 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1377.png"
+    },
+    {
+        "id": "1378",
+        "name": "Tjenestemedalje 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1378.png"
+    },
+    {
+        "id": "1379",
+        "name": "Tjenestemedalje 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1379.png"
+    },
+    {
+        "id": "1380",
+        "name": "Tjenestemedalje 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1380.png"
+    },
+    {
+        "id": "1381",
+        "name": "Tjenestemedalje 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-1381.png"
+    },
+    {
+        "id": "4353",
+        "name": "Operation Hydra-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4353.png"
+    },
+    {
+        "id": "4354",
+        "name": "Sølvmønt | Operation Hydra",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4354.png"
+    },
+    {
+        "id": "4355",
+        "name": "Guldmønt | Operation Hydra",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4355.png"
+    },
+    {
+        "id": "4356",
+        "name": "Diamantmønt | Operation Hydra",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4356.png"
+    },
+    {
+        "id": "4549",
+        "name": "Premiumpas til Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4549.png"
+    },
+    {
+        "id": "4550",
+        "name": "Operation Shattered Web-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4550.png"
+    },
+    {
+        "id": "4551",
+        "name": "Sølvmønt for Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4551.png"
+    },
+    {
+        "id": "4552",
+        "name": "Guldmønt for Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4552.png"
+    },
+    {
+        "id": "4553",
+        "name": "Diamantmønt | Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4553.png"
+    },
+    {
+        "id": "4554",
+        "name": "Katowice 2019-seerpas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4554.png"
+    },
+    {
+        "id": "4555",
+        "name": "Mønt: Katowice 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4555.png"
+    },
+    {
+        "id": "4556",
+        "name": "Sølvmønt: Katowice 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4556.png"
+    },
+    {
+        "id": "4557",
+        "name": "Guldmønt: Katowice 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4557.png"
+    },
+    {
+        "id": "4558",
+        "name": "Diamantmønt: Katowice 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4558.png"
+    },
+    {
+        "id": "4622",
+        "name": "Berlin 2019-seerpas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4622.png"
+    },
+    {
+        "id": "4623",
+        "name": "Mønt: Berlin 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4623.png"
+    },
+    {
+        "id": "4624",
+        "name": "Sølvmønt: Berlin 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4624.png"
+    },
+    {
+        "id": "4625",
+        "name": "Goldmønt: Berlin 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4625.png"
+    },
+    {
+        "id": "4626",
+        "name": "Diamantmønt: Berlin 2019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"
+    },
+    {
+        "id": "4627",
+        "name": "Berlin 2019-seerpas + 3 souvenirpoletter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4627.png"
+    },
+    {
+        "id": "4628",
+        "name": "Berlin 2019-souvenirpolet",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4628.png"
+    },
+    {
+        "id": "4671",
+        "name": "1 stjerne til Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4671.png"
+    },
+    {
+        "id": "4672",
+        "name": "10 stjerner til Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4672.png"
+    },
+    {
+        "id": "4673",
+        "name": "100 stjerner til Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4673.png"
+    },
+    {
+        "id": "4674",
+        "name": "Tjenestemedalje 2020",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4674.png"
+    },
+    {
+        "id": "4675",
+        "name": "Tjenestemedalje 2020",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4675.png"
+    },
+    {
+        "id": "4676",
+        "name": "Tjenestemedalje 2020",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4676.png"
+    },
+    {
+        "id": "4677",
+        "name": "Tjenestemedalje 2020",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4677.png"
+    },
+    {
+        "id": "4678",
+        "name": "Tjenestemedalje 2020",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4678.png"
+    },
+    {
+        "id": "4679",
+        "name": "Tjenestemedalje 2020",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4679.png"
+    },
+    {
+        "id": "4682",
+        "name": "Civil Protection-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4682.png"
+    },
+    {
+        "id": "4683",
+        "name": "Sustenance!-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4683.png"
+    },
+    {
+        "id": "4684",
+        "name": "Vortigaunt-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4684.png"
+    },
+    {
+        "id": "4685",
+        "name": "Headcrab Glyph-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4685.png"
+    },
+    {
+        "id": "4686",
+        "name": "Health-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4686.png"
+    },
+    {
+        "id": "4687",
+        "name": "Lambda-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4687.png"
+    },
+    {
+        "id": "4688",
+        "name": "Copper Lambda-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4688.png"
+    },
+    {
+        "id": "4689",
+        "name": "CMB-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4689.png"
+    },
+    {
+        "id": "4690",
+        "name": "Black Mesa-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4690.png"
+    },
+    {
+        "id": "4691",
+        "name": "Combine Helmet-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4691.png"
+    },
+    {
+        "id": "4692",
+        "name": "City 17-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4692.png"
+    },
+    {
+        "id": "4699",
+        "name": "Premiumpas til Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4699.png"
+    },
+    {
+        "id": "4700",
+        "name": "Operation Broken Fang-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4700.png"
+    },
+    {
+        "id": "4701",
+        "name": "Sølvmønt | Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4701.png"
+    },
+    {
+        "id": "4702",
+        "name": "Guldmønt | Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4702.png"
+    },
+    {
+        "id": "4703",
+        "name": "Diamantmønt | Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4703.png"
+    },
+    {
+        "id": "4704",
+        "name": "1 stjerne til Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4704.png"
+    },
+    {
+        "id": "4705",
+        "name": "10 stjerner til Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4705.png"
+    },
+    {
+        "id": "4706",
+        "name": "100 stjerner til Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4706.png"
+    },
+    {
+        "id": "4737",
+        "name": "Tjenestemedalje 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4737.png"
+    },
+    {
+        "id": "4738",
+        "name": "Tjenestemedalje 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4738.png"
+    },
+    {
+        "id": "4739",
+        "name": "Tjenestemedalje 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4739.png"
+    },
+    {
+        "id": "4740",
+        "name": "Tjenestemedalje 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4740.png"
+    },
+    {
+        "id": "4741",
+        "name": "Tjenestemedalje 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4741.png"
+    },
+    {
+        "id": "4742",
+        "name": "Tjenestemedalje 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4742.png"
+    },
+    {
+        "id": "4758",
+        "name": "Premiumpas til Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4758.png"
+    },
+    {
+        "id": "4759",
+        "name": "Operation Riptide-udfordringsmønt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4759.png"
+    },
+    {
+        "id": "4760",
+        "name": "Sølvmønt | Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4760.png"
+    },
+    {
+        "id": "4761",
+        "name": "Guldmønt | Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4761.png"
+    },
+    {
+        "id": "4762",
+        "name": "Diamantmønt | Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4762.png"
+    },
+    {
+        "id": "4763",
+        "name": "1 stjerne til Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4763.png"
+    },
+    {
+        "id": "4764",
+        "name": "10 stjerner til Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4764.png"
+    },
+    {
+        "id": "4765",
+        "name": "100 stjerner til Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"
+    },
+    {
+        "id": "4796",
+        "name": "Stockholm 2021 – Seerpas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4796.png"
+    },
+    {
+        "id": "4797",
+        "name": "Mønt: Stockholm 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4797.png"
+    },
+    {
+        "id": "4798",
+        "name": "Sølvmønt: Stockholm 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4798.png"
+    },
+    {
+        "id": "4799",
+        "name": "Guldmønt: Stockholm 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4799.png"
+    },
+    {
+        "id": "4800",
+        "name": "Diamantmønt: Stockholm 2021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4800.png"
+    },
+    {
+        "id": "4801",
+        "name": "Stockholm 2021 – Seerpas + 3 souvenirpoletter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4801.png"
+    },
+    {
+        "id": "4802",
+        "name": "Stockholm 2021-souvenirpolet",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4802.png"
+    },
+    {
+        "id": "4819",
+        "name": "Tjenestemedalje 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4819.png"
+    },
+    {
+        "id": "4820",
+        "name": "Tjenestemedalje 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4820.png"
+    },
+    {
+        "id": "4821",
+        "name": "Tjenestemedalje 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4821.png"
+    },
+    {
+        "id": "4822",
+        "name": "Tjenestemedalje 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4822.png"
+    },
+    {
+        "id": "4823",
+        "name": "Tjenestemedalje 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4823.png"
+    },
+    {
+        "id": "4824",
+        "name": "Tjenestemedalje 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4824.png"
+    },
+    {
+        "id": "4825",
+        "name": "Antwerp 2022 – Seerpas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4825.png"
+    },
+    {
+        "id": "4826",
+        "name": "Mønt: Antwerp 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4826.png"
+    },
+    {
+        "id": "4827",
+        "name": "Sølvmønt: Antwerp 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4827.png"
+    },
+    {
+        "id": "4828",
+        "name": "Guldmønt: Antwerp 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4828.png"
+    },
+    {
+        "id": "4829",
+        "name": "Diamantmønt: Antwerp 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4829.png"
+    },
+    {
+        "id": "4830",
+        "name": "Seerpas til Antwerp 2022 + 3 souvenirpoletter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4830.png"
+    },
+    {
+        "id": "4831",
+        "name": "Antwerp 2022-souvenirpolet",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4831.png"
+    },
+    {
+        "id": "4850",
+        "name": "Rio 2022 – Seerpas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4850.png"
+    },
+    {
+        "id": "4851",
+        "name": "Mønt: Rio 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4851.png"
+    },
+    {
+        "id": "4852",
+        "name": "Sølvmønt: Rio 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4852.png"
+    },
+    {
+        "id": "4853",
+        "name": "Guldmønt: Rio 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4853.png"
+    },
+    {
+        "id": "4854",
+        "name": "Diamantmønt: Rio 2022",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4854.png"
+    },
+    {
+        "id": "4855",
+        "name": "Rio 2022-seerpas + 3 souvenirpoletter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4855.png"
+    },
+    {
+        "id": "4856",
+        "name": "Rio 2022-souvenirpolet",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4856.png"
+    },
+    {
+        "id": "4873",
+        "name": "Tjenestemedalje 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4873.png"
+    },
+    {
+        "id": "4874",
+        "name": "Tjenestemedalje 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4874.png"
+    },
+    {
+        "id": "4875",
+        "name": "Tjenestemedalje 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4875.png"
+    },
+    {
+        "id": "4876",
+        "name": "Tjenestemedalje 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4876.png"
+    },
+    {
+        "id": "4877",
+        "name": "Tjenestemedalje 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4877.png"
+    },
+    {
+        "id": "4878",
+        "name": "Tjenestemedalje 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4878.png"
+    },
+    {
+        "id": "4883",
+        "name": "Paris 2023 – Seerpas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4883.png"
+    },
+    {
+        "id": "4884",
+        "name": "Mønt: Paris 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4884.png"
+    },
+    {
+        "id": "4885",
+        "name": "Sølvmønt: Paris 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4885.png"
+    },
+    {
+        "id": "4886",
+        "name": "Guldmønt: Paris 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4886.png"
+    },
+    {
+        "id": "4887",
+        "name": "Diamantmønt: Paris 2023",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4887.png"
+    },
+    {
+        "id": "4888",
+        "name": "Paris 2023-seerpas + 3 souvenirpoletter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4888.png"
+    },
+    {
+        "id": "4889",
+        "name": "Paris 2023-souvenirpolet",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4889.png"
+    },
+    {
+        "id": "4906",
+        "name": "Tjenestemedalje 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4906.png"
+    },
+    {
+        "id": "4907",
+        "name": "Tjenestemedalje 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4907.png"
+    },
+    {
+        "id": "4908",
+        "name": "Tjenestemedalje 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4908.png"
+    },
+    {
+        "id": "4909",
+        "name": "Tjenestemedalje 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4909.png"
+    },
+    {
+        "id": "4910",
+        "name": "Tjenestemedalje 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4910.png"
+    },
+    {
+        "id": "4911",
+        "name": "Tjenestemedalje 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4911.png"
+    },
+    {
+        "id": "4916",
+        "name": "Copenhagen 2024-seerpas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4916.png"
+    },
+    {
+        "id": "4917",
+        "name": "Mønt: Copenhagen 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4917.png"
+    },
+    {
+        "id": "4918",
+        "name": "Sølvmønt: Copenhagen 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4918.png"
+    },
+    {
+        "id": "4919",
+        "name": "Guldmønt: Copenhagen 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4919.png"
+    },
+    {
+        "id": "4920",
+        "name": "Diamantmønt: Copenhagen 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4920.png"
+    },
+    {
+        "id": "4921",
+        "name": "Copenhagen 2024-seerpas + 3 souvenirpoletter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4921.png"
+    },
+    {
+        "id": "4922",
+        "name": "Copenhagen 2024-souvenirpakke",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4922.png"
+    },
+    {
+        "id": "4933",
+        "name": "Mester ved PGL Copenhagen 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4933.png"
+    },
+    {
+        "id": "4934",
+        "name": "Finalist ved PGL Copenhagen 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4934.png"
+    },
+    {
+        "id": "4935",
+        "name": "Semifinalist ved PGL Copenhagen 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4935.png"
+    },
+    {
+        "id": "4936",
+        "name": "Kvartfinalist ved PGL Copenhagen 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4936.png"
+    },
+    {
+        "id": "4941",
+        "name": "Banemønt: Thera",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4941.png"
+    },
+    {
+        "id": "4942",
+        "name": "Banemønt: Mills",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4942.png"
+    },
+    {
+        "id": "4943",
+        "name": "Banemønt: Assembly",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4943.png"
+    },
+    {
+        "id": "4944",
+        "name": "Banemønt: Memento",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4944.png"
+    },
+    {
+        "id": "4945",
+        "name": "Banemønt: Pool Day",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4945.png"
+    },
+    {
+        "id": "6001",
+        "name": "Dust II-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6001.png"
+    },
+    {
+        "id": "6002",
+        "name": "Guardian Elite-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6002.png"
+    },
+    {
+        "id": "6003",
+        "name": "Mirage-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6003.png"
+    },
+    {
+        "id": "6004",
+        "name": "Inferno-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6004.png"
+    },
+    {
+        "id": "6005",
+        "name": "Italy-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6005.png"
+    },
+    {
+        "id": "6006",
+        "name": "Victory-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6006.png"
+    },
+    {
+        "id": "6007",
+        "name": "Militia-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6007.png"
+    },
+    {
+        "id": "6008",
+        "name": "Nuke-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6008.png"
+    },
+    {
+        "id": "6009",
+        "name": "Train-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6009.png"
+    },
+    {
+        "id": "6010",
+        "name": "Guardian-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6010.png"
+    },
+    {
+        "id": "6011",
+        "name": "Tactics-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6011.png"
+    },
+    {
+        "id": "6012",
+        "name": "Guardian 2-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6012.png"
+    },
+    {
+        "id": "6013",
+        "name": "Bravo-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6013.png"
+    },
+    {
+        "id": "6014",
+        "name": "Baggage-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6014.png"
+    },
+    {
+        "id": "6015",
+        "name": "Phoenix-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6015.png"
+    },
+    {
+        "id": "6016",
+        "name": "Office-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6016.png"
+    },
+    {
+        "id": "6017",
+        "name": "Cobblestone-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6017.png"
+    },
+    {
+        "id": "6018",
+        "name": "Overpass-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6018.png"
+    },
+    {
+        "id": "6019",
+        "name": "Bloodhound-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6019.png"
+    },
+    {
+        "id": "6020",
+        "name": "Cache-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6020.png"
+    },
+    {
+        "id": "6021",
+        "name": "Valeria Phoenix-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6021.png"
+    },
+    {
+        "id": "6022",
+        "name": "Chroma-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6022.png"
+    },
+    {
+        "id": "6023",
+        "name": "Guardian 3-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6023.png"
+    },
+    {
+        "id": "6024",
+        "name": "Canals-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6024.png"
+    },
+    {
+        "id": "6025",
+        "name": "Welcome to the Clutch-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6025.png"
+    },
+    {
+        "id": "6026",
+        "name": "Death Sentence-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6026.png"
+    },
+    {
+        "id": "6027",
+        "name": "Inferno 2-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6027.png"
+    },
+    {
+        "id": "6028",
+        "name": "Wildfire-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6028.png"
+    },
+    {
+        "id": "6029",
+        "name": "Easy Peasy-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6029.png"
+    },
+    {
+        "id": "6030",
+        "name": "Aces High-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6030.png"
+    },
+    {
+        "id": "6031",
+        "name": "Hydra-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6031.png"
+    },
+    {
+        "id": "6032",
+        "name": "Howl-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6032.png"
+    },
+    {
+        "id": "6033",
+        "name": "Brigadegeneralsknappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6033.png"
+    },
+    {
+        "id": "6034",
+        "name": "Alyx-knappenål (Ægte)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6034.png"
+    },
+    {
+        "id": "6101",
+        "name": "Dust II-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6101.png"
+    },
+    {
+        "id": "6102",
+        "name": "Guardian Elite-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6102.png"
+    },
+    {
+        "id": "6103",
+        "name": "Mirage-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6103.png"
+    },
+    {
+        "id": "6104",
+        "name": "Inferno-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6104.png"
+    },
+    {
+        "id": "6105",
+        "name": "Italy-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6105.png"
+    },
+    {
+        "id": "6106",
+        "name": "Victory-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6106.png"
+    },
+    {
+        "id": "6107",
+        "name": "Militia-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6107.png"
+    },
+    {
+        "id": "6108",
+        "name": "Nuke-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6108.png"
+    },
+    {
+        "id": "6109",
+        "name": "Train-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6109.png"
+    },
+    {
+        "id": "6110",
+        "name": "Guardian-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6110.png"
+    },
+    {
+        "id": "6111",
+        "name": "Tactics-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6111.png"
+    },
+    {
+        "id": "6112",
+        "name": "Guardian 2-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6112.png"
+    },
+    {
+        "id": "6113",
+        "name": "Bravo-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6113.png"
+    },
+    {
+        "id": "6114",
+        "name": "Baggage-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6114.png"
+    },
+    {
+        "id": "6115",
+        "name": "Phoenix-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6115.png"
+    },
+    {
+        "id": "6116",
+        "name": "Office-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6116.png"
+    },
+    {
+        "id": "6117",
+        "name": "Cobblestone-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6117.png"
+    },
+    {
+        "id": "6118",
+        "name": "Overpass-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6118.png"
+    },
+    {
+        "id": "6119",
+        "name": "Bloodhound-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6119.png"
+    },
+    {
+        "id": "6120",
+        "name": "Cache-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6120.png"
+    },
+    {
+        "id": "6121",
+        "name": "Valeria Phoenix-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6121.png"
+    },
+    {
+        "id": "6122",
+        "name": "Chroma-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6122.png"
+    },
+    {
+        "id": "6123",
+        "name": "Guardian 3-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6123.png"
+    },
+    {
+        "id": "6124",
+        "name": "Canals-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6124.png"
+    },
+    {
+        "id": "6125",
+        "name": "Welcome to the Clutch-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6125.png"
+    },
+    {
+        "id": "6126",
+        "name": "Death Sentence-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6126.png"
+    },
+    {
+        "id": "6127",
+        "name": "Inferno 2-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6127.png"
+    },
+    {
+        "id": "6128",
+        "name": "Wildfire-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6128.png"
+    },
+    {
+        "id": "6129",
+        "name": "Easy Peasy-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6129.png"
+    },
+    {
+        "id": "6130",
+        "name": "Aces High-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6130.png"
+    },
+    {
+        "id": "6131",
+        "name": "Hydra-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6131.png"
+    },
+    {
+        "id": "6132",
+        "name": "Howl-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6132.png"
+    },
+    {
+        "id": "6133",
+        "name": "Brigadegeneralsknappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6133.png"
+    },
+    {
+        "id": "6134",
+        "name": "Alyx-knappenål",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-6134.png"
+    }
+]

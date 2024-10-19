@@ -1,0 +1,407 @@
+[
+    {
+        "id": "3",
+        "name": "Tema musicale | Daniel Sadowski, Crimson Assault",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-3.png"
+    },
+    {
+        "id": "4",
+        "name": "Tema musicale | Noisia, Sharpened",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-4.png"
+    },
+    {
+        "id": "5",
+        "name": "Tema musicale | Robert Allaire, Insurgency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-5.png"
+    },
+    {
+        "id": "6",
+        "name": "Tema musicale | Sean Murray, A*D*8",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-6.png"
+    },
+    {
+        "id": "7",
+        "name": "Tema musicale | Feed Me, High Noon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-7.png"
+    },
+    {
+        "id": "8",
+        "name": "Tema musicale | Dren, Death's Head Demolition",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-8.png"
+    },
+    {
+        "id": "9",
+        "name": "Tema musicale | Austin Wintory, Desert Fire",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-9.png"
+    },
+    {
+        "id": "10",
+        "name": "Tema musicale | Sasha, LNOE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-10.png"
+    },
+    {
+        "id": "11",
+        "name": "Tema musicale | Skog, Metal",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-11.png"
+    },
+    {
+        "id": "12",
+        "name": "Tema musicale | Midnight Riders, All I Want for Christmas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-12.png"
+    },
+    {
+        "id": "13",
+        "name": "Tema musicale | Matt Lange, IsoRhythm",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-13.png"
+    },
+    {
+        "id": "14",
+        "name": "Tema musicale | Mateo Messina, For No Mankind",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-14.png"
+    },
+    {
+        "id": "15",
+        "name": "Tema musicale | Artisti vari, Hotline Miami",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-15.png"
+    },
+    {
+        "id": "16",
+        "name": "Tema musicale | Daniel Sadowski, Total Domination",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-16.png"
+    },
+    {
+        "id": "17",
+        "name": "Tema musicale | Damjan Mravunac, The Talos Principle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-17.png"
+    },
+    {
+        "id": "18",
+        "name": "Tema musicale | Proxy, Battlepack",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-18.png"
+    },
+    {
+        "id": "19",
+        "name": "Tema musicale | Ki:Theory, MOLOTOV",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-19.png"
+    },
+    {
+        "id": "20",
+        "name": "Tema musicale | Troels Folmann, Uber Blasto Phone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-20.png"
+    },
+    {
+        "id": "21",
+        "name": "Tema musicale | Kelly Bailey, Hazardous Environments",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-21.png"
+    },
+    {
+        "id": "22",
+        "name": "Tema musicale | Skog, II-Headshot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-22.png"
+    },
+    {
+        "id": "23",
+        "name": "Tema musicale | Daniel Sadowski, The 8-Bit Kit",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-23.png"
+    },
+    {
+        "id": "24",
+        "name": "Tema musicale | AWOLNATION, I Am",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-24.png"
+    },
+    {
+        "id": "25",
+        "name": "Tema musicale | Mord Fustang, Diamonds",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-25.png"
+    },
+    {
+        "id": "26",
+        "name": "Tema musicale | Michael Bross, Invasion!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-26.png"
+    },
+    {
+        "id": "27",
+        "name": "Tema musicale | Ian Hultquist, Lion's Mouth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-27.png"
+    },
+    {
+        "id": "28",
+        "name": "Tema musicale | New Beat Fund, Sponge Fingerz",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-28.png"
+    },
+    {
+        "id": "29",
+        "name": "Tema musicale | Beartooth, Disgusting",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-29.png"
+    },
+    {
+        "id": "30",
+        "name": "Tema musicale | Lennie Moore, Java Havana Funkaloo",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-30.png"
+    },
+    {
+        "id": "31",
+        "name": "Tema musicale | Darude, Moments CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-31.png"
+    },
+    {
+        "id": "32",
+        "name": "Tema musicale | Beartooth, Aggressive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32.png"
+    },
+    {
+        "id": "33",
+        "name": "Tema musicale | Blitz Kids, The Good Youth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33.png"
+    },
+    {
+        "id": "34",
+        "name": "Tema musicale | Hundredth, FREE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34.png"
+    },
+    {
+        "id": "35",
+        "name": "Tema musicale | Neck Deep, Life's Not Out To Get You",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35.png"
+    },
+    {
+        "id": "36",
+        "name": "Tema musicale | Roam, Backbone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36.png"
+    },
+    {
+        "id": "37",
+        "name": "Tema musicale | Twin Atlantic, GLA",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37.png"
+    },
+    {
+        "id": "38",
+        "name": "Tema musicale | Skog, III-Arena",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38.png"
+    },
+    {
+        "id": "39",
+        "name": "Tema musicale | The Verkkars, EZ4ENCE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-39.png"
+    },
+    {
+        "id": "40",
+        "name": "Halo, la collezione di Master Chief",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-40.png"
+    },
+    {
+        "id": "41",
+        "name": "Tema musicale | Scarlxrd: King, Scar",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-41.png"
+    },
+    {
+        "id": "42",
+        "name": "Half-Life: Alyx, Anti-Citizen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-42.png"
+    },
+    {
+        "id": "43",
+        "name": "Tema musicale | Austin Wintory, Bachram",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-43.png"
+    },
+    {
+        "id": "44",
+        "name": "Tema musicale | Dren, Gunman Taco Truck",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-44.png"
+    },
+    {
+        "id": "45",
+        "name": "Tema musicale | Daniel Sadowski, Eye of the Dragon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-45.png"
+    },
+    {
+        "id": "46",
+        "name": "Tema musicale | Tree Adams e Ben Bromfield, M.U.D.D. FORCE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-46.png"
+    },
+    {
+        "id": "47",
+        "name": "Tema musicale | Tim Huling, Neo Noir",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-47.png"
+    },
+    {
+        "id": "48",
+        "name": "Tema musicale | Sam Marshall, Bodacious",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-48.png"
+    },
+    {
+        "id": "49",
+        "name": "Tema musicale | Matt Levine, Drifter",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-49.png"
+    },
+    {
+        "id": "50",
+        "name": "Tema musicale | Amon Tobin, All for Dust",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-50.png"
+    },
+    {
+        "id": "51",
+        "name": "Tema musicale Darren Korb, Hades",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-51.png"
+    },
+    {
+        "id": "52",
+        "name": "Tema musicale | Neck Deep, The Lowlife Pack",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-52.png"
+    },
+    {
+        "id": "53",
+        "name": "Tema musicale | Scarlxrd, CHAIN$AW.LXADXUT.",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-53.png"
+    },
+    {
+        "id": "54",
+        "name": "Tema musicale | Austin Wintory, Mocha Petal",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-54.png"
+    },
+    {
+        "id": "55",
+        "name": "Tema musicale | Chipzel, ~Yellow Magic~",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-55.png"
+    },
+    {
+        "id": "56",
+        "name": "Tema musicale | Freaky DNA, Vici",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-56.png"
+    },
+    {
+        "id": "57",
+        "name": "Tema musicale | Jesse Harlin, Astro Bellum",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-57.png"
+    },
+    {
+        "id": "58",
+        "name": "Tema musicale | Laura Shigihara: Work Hard, Play Hard",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-58.png"
+    },
+    {
+        "id": "59",
+        "name": "Tema musicale | Sarah Schachner, KOLIBRI",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-59.png"
+    },
+    {
+        "id": "60",
+        "name": "Tema musicale | bbno$, u mad!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-60.png"
+    },
+    {
+        "id": "61",
+        "name": "Tema musicale | The Verkkars & n0thing, Flashbang Dance",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-61.png"
+    },
+    {
+        "id": "62",
+        "name": "Tema musicale | 3kliksphilip, Heading for the Source",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-62.png"
+    },
+    {
+        "id": "63",
+        "name": "Tema musicale | Humanity's Last Breath, Void",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-63.png"
+    },
+    {
+        "id": "64",
+        "name": "Tema musicale | Juelz, Shooters",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-64.png"
+    },
+    {
+        "id": "65",
+        "name": "Tema musicale | Knock2, dashstar*",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-65.png"
+    },
+    {
+        "id": "66",
+        "name": "Tema musicale | Meechy Darko, Gothic Luxury",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-66.png"
+    },
+    {
+        "id": "67",
+        "name": "Tema musicale | Sullivan King, Lock Me Up",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-67.png"
+    },
+    {
+        "id": "68",
+        "name": "Tema musicale | Perfect World, 花脸 Hua Lian (Painted Face)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-68.png"
+    },
+    {
+        "id": "69",
+        "name": "Tema musicale | Denzel Curry, ULTIMATE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-69.png"
+    },
+    {
+        "id": "71",
+        "name": "Tema musicale | DRYDEN, Feel The Power",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-71.png"
+    },
+    {
+        "id": "72",
+        "name": "Tema musicale | ISOxo, inhuman",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-72.png"
+    },
+    {
+        "id": "73",
+        "name": "Tema musicale | KILL SCRIPT, All Night",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-73.png"
+    },
+    {
+        "id": "74",
+        "name": "Tema musicale | Knock2, Make U SWEAT!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-74.png"
+    },
+    {
+        "id": "75",
+        "name": "Tema musicale | Rad Cat, Reason",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-75.png"
+    },
+    {
+        "id": "76",
+        "name": "Tema musicale | TWERL, Ekko & Sidetrack, Under Bright Lights",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-76.png"
+    },
+    {
+        "id": "78",
+        "name": "Tema musicale | Austin Wintory, The Devil Went Clubbing in Georgia",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-78.png"
+    },
+    {
+        "id": "79",
+        "name": "Tema musicale | Ben Bromfield, Rabbit Hole",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-79.png"
+    },
+    {
+        "id": "80",
+        "name": "Tema musicale | Daniel Sadowski, Dead Shot",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-80.png"
+    },
+    {
+        "id": "81",
+        "name": "Tema musicale | Dren McDonald, Coffee! Kofe! Kahveh!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-81.png"
+    },
+    {
+        "id": "82",
+        "name": "Tema musicale | Matt Levine, Agency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-82.png"
+    },
+    {
+        "id": "83",
+        "name": "Tema musicale | Sam Marshall, Clutch",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-83.png"
+    },
+    {
+        "id": "84",
+        "name": "Tema musicale | Tim Huling, Devil's Paintbrush",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-84.png"
+    },
+    {
+        "id": "85",
+        "name": "Tema musicale | Tree Adams, Seventh Moon",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    }
+]
