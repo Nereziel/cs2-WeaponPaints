@@ -325,13 +325,13 @@ internal class WeaponSynchronization
 				if (weaponTeam == CsTeam.None)
 				{
 					// Assign music ID to both teams if weaponTeam is None
-					playerMusic[CsTeam.Terrorist] = row.music_id.Value;
-					playerMusic[CsTeam.CounterTerrorist] = row.music_id.Value;
+					playerMusic[CsTeam.Terrorist] = (ushort)row.music_id;
+					playerMusic[CsTeam.CounterTerrorist] = (ushort)row.music_id;
 				}
 				else
 				{
 					// Assign music ID to the specific team
-					playerMusic[weaponTeam] = row.music_id.Value;
+					playerMusic[weaponTeam] = (ushort)row.music_id;
 				}
 			}
 		}

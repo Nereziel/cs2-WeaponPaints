@@ -4,7 +4,7 @@ class UtilsClass
     public static function skinsFromJson(): array
     {
         $skins = [];
-        $json = json_decode(file_get_contents(__DIR__ . "/../data/skins.json"), true);
+        $json = json_decode(file_get_contents(__DIR__ . "/../data/".SKIN_LANGUAGE.".json"), true);
 
         foreach ($json as $skin) {
             $skins[(int) $skin['weapon_defindex']][(int) $skin['paint']] = [

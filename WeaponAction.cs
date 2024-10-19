@@ -482,6 +482,8 @@ namespace WeaponPaints
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
 			player.MusicKitID = musicId;
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitID");
+			player.MusicKitMVPs = musicId;
+			Utilities.SetStateChanged(player, "CCSPlayerController", "m_iMusicKitMVPs");
 		}
 
 		private static void GivePlayerPin(CCSPlayerController player)

@@ -1,4 +1,6 @@
 <?php
+define('SKIN_LANGUAGE', 'skins_en');
+
 define('DB_HOST', 'localhost');
 define('DB_PORT', '3306');
 define('DB_NAME', '');
