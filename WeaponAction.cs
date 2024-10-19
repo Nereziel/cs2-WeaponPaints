@@ -85,6 +85,9 @@ namespace WeaponPaints
 			var weaponInfo = value;
 			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
 
+			weapon.AttributeManager.Item.AttributeList.Attributes.RemoveAll();
+			weapon.AttributeManager.Item.NetworkedDynamicAttributes.Attributes.RemoveAll();
+			
 			weapon.AttributeManager.Item.ItemID = 16384;
 			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
 			weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
