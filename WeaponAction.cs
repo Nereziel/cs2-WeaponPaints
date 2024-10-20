@@ -85,7 +85,11 @@ namespace WeaponPaints
 				return;
 			}
 
-			if (!GPlayerWeaponsInfo[player.Slot][player.Team].TryGetValue(weaponDefIndex, out var value) || value.Paint == 0) return;
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var teamInfo) || 
+			    !teamInfo.TryGetValue(player.Team, out var teamWeapons) )
+				return;
+			if (!teamWeapons.TryGetValue(weaponDefIndex, out var value))
+				return;
 
 			var weaponInfo = value;
 			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
