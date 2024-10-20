@@ -23,6 +23,8 @@
 	"wp_skin_menu_weapon_title": "Ieroču Izvēlne",
 	"wp_skin_menu_skin_title": "Izvēlieties ādu priekš {lime}{0}{default}",
 	"wp_skin_menu_select": "Jūs esat izvēlējies {lime}{0}{default} kā savu ādu",
-
+	
+	"wp_stattrak_action": "Jūs veiksmīgi mainījāt stattrak iestatījumu",
+	
 	"None": "Nav"
 }

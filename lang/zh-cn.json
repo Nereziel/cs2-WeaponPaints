@@ -24,5 +24,7 @@
 	"wp_skin_menu_skin_title": "选择 {lime}{0}{default} 的皮肤",
 	"wp_skin_menu_select": "您选择了 {lime}{0}{default} 作为您的皮肤",
 
+	"wp_stattrak_action": "您已成功更改 StatTrak 设置",
+	
 	"None": "无"
 }

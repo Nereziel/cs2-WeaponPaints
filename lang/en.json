@@ -24,5 +24,7 @@
 	"wp_skin_menu_skin_title": "Select skin for {lime}{0}{default}",
 	"wp_skin_menu_select": "You have chosen {lime}{0}{default} as your skin",
 
+	"wp_stattrak_action": "You have successfully changed the stattrak setting",
+	
 	"None": "None"
 }

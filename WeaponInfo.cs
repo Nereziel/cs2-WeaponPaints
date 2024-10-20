@@ -6,7 +6,7 @@
 		public int Seed { get; set; }
 		public float Wear { get; set; }
 		public string Nametag { get; set; } = "";
-		public bool StatTrak { get; set; } = false;
+		public bool StatTrak { get; set; }
 		public int StatTrakCount { get; set; }
 		public KeyChainInfo? KeyChain { get; set; }
 		public List<StickerInfo> Stickers { get; set; } = new();
