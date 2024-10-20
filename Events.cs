@@ -121,6 +121,9 @@ namespace WeaponPaints
 			
 			if (Database != null)
 				WeaponSync = new WeaponSynchronization(Database, Config);
+
+			_fadeSeed = 0;
+			_nextItemId = MinimumCustomItemId;
 		}
 
 		private HookResult OnPlayerSpawn(EventPlayerSpawn @event, GameEventInfo info)

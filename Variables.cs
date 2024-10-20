@@ -165,4 +165,6 @@ public partial class WeaponPaints
 	
 	internal static IMenuApi? MenuApi;
 	private static readonly PluginCapability<IMenuApi> MenuCapability = new("menu:nfcore");
+	
+	private int _fadeSeed;
 }

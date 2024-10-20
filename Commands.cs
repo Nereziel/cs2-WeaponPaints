@@ -164,17 +164,9 @@ public partial class WeaponPaints
 		if (!teamWeapons.TryGetValue(weapon.AttributeManager.Item.ItemDefinitionIndex, out var teamWeapon))
 			return;
 
-		if (teamWeapon.StatTrak)
-		{
-			teamWeapon.StatTrak = false;
-			RefreshWeapons(player);
-		}
-		else
-		{
-			teamWeapon.StatTrak = true;
-			RefreshWeapons(player);
-		}
-		
+		teamWeapon.StatTrak = !teamWeapon.StatTrak;
+		RefreshWeapons(player);
+
 		if (!string.IsNullOrEmpty(Localizer["wp_stattrak_action"]))
 		{
 			player.Print(Localizer["wp_stattrak_action"]);
