@@ -172,10 +172,10 @@ namespace WeaponPaints
 				// 	$"sticker slot {stickerSlot} schema", stickerSlot);
 				// if (stickerSlot == 5)
 				// {
-				// 	// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				// 	// 	$"sticker slot {stickerSlot} offset x", 0.05f);
-				// 	// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				// 	// 	$"sticker slot {stickerSlot} offset y", 0.02f);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					$"sticker slot {stickerSlot} offset x", sticker.OffsetX);
+				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+					$"sticker slot {stickerSlot} offset y", sticker.OffsetY);
 				// }
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} wear", sticker.Wear);
