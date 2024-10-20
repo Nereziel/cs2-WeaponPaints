@@ -44,7 +44,7 @@ namespace WeaponPaints
 			UpdatePlayerEconItemId(weapon.AttributeManager.Item);
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
-			int fallbackPaintKit = 0;
+			int fallbackPaintKit;
 			
 			weapon.AttributeManager.Item.AccountID = (uint)player.SteamID;
 			
@@ -98,7 +98,16 @@ namespace WeaponPaints
 			weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
 			weapon.AttributeManager.Item.CustomName = weaponInfo.Nametag;
 			weapon.FallbackPaintKit = weaponInfo.Paint;
-			weapon.FallbackSeed = weaponInfo.Seed;
+			
+			if (weaponInfo is { Paint: 38, Seed: 0 })
+			{
+				weapon.FallbackSeed = _fadeSeed++;
+			}
+			else
+			{
+				weapon.FallbackSeed = weaponInfo.Seed;
+			}
+			
 			weapon.FallbackWear = weaponInfo.Wear;
 			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
 
