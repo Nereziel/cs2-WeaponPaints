@@ -24,5 +24,7 @@
 	"wp_skin_menu_skin_title": "{lime}{0}{default} için cilt seçin",
 	"wp_skin_menu_select": "{lime}{0}{default} olarak cildinizi seçtiniz",
 
+	"wp_stattrak_action": "StatTrak ayarını başarıyla değiştirdiniz",
+	
 	"None": "Hiçbiri"
 }

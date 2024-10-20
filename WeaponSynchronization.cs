@@ -566,7 +566,6 @@ internal class WeaponSynchronization
 	internal async Task SyncStatTrakToDatabase(PlayerInfo player)
 	{
 	    if (WeaponPaints.WeaponSync == null || WeaponPaints.GPlayerWeaponsInfo.IsEmpty) return;
-
 	    if (string.IsNullOrEmpty(player.SteamId))
 	        return;
 
@@ -578,7 +577,7 @@ internal class WeaponSynchronization
 	        // Check if player's slot exists in GPlayerWeaponsInfo
 	        if (!WeaponPaints.GPlayerWeaponsInfo.TryGetValue(player.Slot, out var teamWeaponsInfo))
 	            return;
-
+	        
 	        // Iterate through each team in the player's weapon info
 	        foreach (var teamInfo in teamWeaponsInfo)
 	        {
@@ -587,27 +586,33 @@ internal class WeaponSynchronization
 
 	            // Get StatTrak weapons for the current team
 	            var statTrakWeapons = weaponInfos
-	                .Where(w => w.Value is { StatTrak: true, StatTrakCount: > 0 })
-	                .ToDictionary(w => w.Key, w => w.Value.StatTrakCount);
+		            .ToDictionary(
+			            w => w.Key, 
+			            w => (w.Value.StatTrak, w.Value.StatTrakCount) // Store both StatTrak and StatTrakCount in a tuple
+		            );
 
 	            // Check if there are StatTrak weapons to sync
 	            if (statTrakWeapons.Count == 0) continue;
-
+	            
 	            // Get the current team ID
 	            int weaponTeam = (int)teamInfo.Key;
 
 	            // Sync StatTrak values for the current team
-	            foreach (var (defindex, statTrakCount) in statTrakWeapons)
+	            foreach (var (defindex, (statTrak, statTrakCount)) in statTrakWeapons)
 	            {
-	                const string query = @"
-	                    INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_stattrak_count`, `weapon_team`) 
-	                    VALUES (@steamid, @weaponDefIndex, @StatTrakCount, @weaponTeam) 
-	                    ON DUPLICATE KEY UPDATE `weapon_stattrak_count` = @StatTrakCount";
+		            const string query = @"
+					    UPDATE `wp_player_skins` 
+					    SET `weapon_stattrak` = @StatTrak, 
+					        `weapon_stattrak_count` = @StatTrakCount
+					    WHERE `steamid` = @steamid 
+					      AND `weapon_defindex` = @weaponDefIndex
+					      AND `weapon_team` = @weaponTeam";
 
 	                var parameters = new
 	                {
 	                    steamid = player.SteamId,
 	                    weaponDefIndex = defindex,
+	                    StatTrak = statTrak,
 	                    StatTrakCount = statTrakCount,
 	                    weaponTeam
 	                };

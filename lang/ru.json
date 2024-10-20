@@ -24,5 +24,7 @@
 	"wp_skin_menu_skin_title": "Выберите скин для {lime}{0}{default}",
 	"wp_skin_menu_select": "Вы выбрали {lime}{0}{default} в качестве вашего скина",
 
+	"wp_stattrak_action": "Вы успешно изменили настройки статтрак",
+	
 	"None": "Нет"
 }

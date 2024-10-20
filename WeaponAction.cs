@@ -36,6 +36,10 @@ namespace WeaponPaints
 				weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)newDefIndex.Key;
 				weapon.AttributeManager.Item.EntityQuality = 3;
 			}
+			else
+			{
+				weapon.AttributeManager.Item.EntityQuality = 0;
+			}
 			
 			UpdatePlayerEconItemId(weapon.AttributeManager.Item);
 
@@ -99,7 +103,9 @@ namespace WeaponPaints
 			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
 
 			if (weaponInfo.StatTrak)
-			{				
+			{			
+				weapon.AttributeManager.Item.EntityQuality = 7;
+
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater score type", 0);
 				

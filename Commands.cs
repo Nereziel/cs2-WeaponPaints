@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Menu;
@@ -106,6 +107,16 @@ public partial class WeaponPaints
 
 	private void RegisterCommands()
 	{
+		_config.Additional.CommandStattrak.ForEach(c =>
+		{
+			AddCommand($"css_{c}", "Stattrak toggle", (player, info) =>
+			{
+				if (!Utility.IsPlayerValid(player)) return;
+
+				OnCommandStattrak(player, info);
+			});
+		});
+
 		_config.Additional.CommandSkin.ForEach(c =>
 		{
 			AddCommand($"css_{c}", "Skins info", (player, info) =>
@@ -135,6 +146,38 @@ public partial class WeaponPaints
 					player.PlayerPawn.Value.CommitSuicide(true, false);
 				});
 			});
+		}
+	}
+
+	private void OnCommandStattrak(CCSPlayerController? player, CommandInfo commandInfo)
+	{
+		if (player == null || !player.IsValid) return;
+		
+		if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var teamInfo) || 
+		    !teamInfo.TryGetValue(player.Team, out var teamWeapons) )
+			return;
+		
+		var weapon = player.PlayerPawn.Value?.WeaponServices?.ActiveWeapon.Value;
+		
+		if (weapon == null || !weapon.IsValid)
+			return;
+		if (!teamWeapons.TryGetValue(weapon.AttributeManager.Item.ItemDefinitionIndex, out var teamWeapon))
+			return;
+
+		if (teamWeapon.StatTrak)
+		{
+			teamWeapon.StatTrak = false;
+			RefreshWeapons(player);
+		}
+		else
+		{
+			teamWeapon.StatTrak = true;
+			RefreshWeapons(player);
+		}
+		
+		if (!string.IsNullOrEmpty(Localizer["wp_stattrak_action"]))
+		{
+			player.Print(Localizer["wp_stattrak_action"]);
 		}
 	}
 

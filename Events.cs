@@ -80,7 +80,9 @@ namespace WeaponPaints
 			};
 
 			if (WeaponSync != null)
+			{
 				_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo));
+			}
 
 			if (Config.Additional.SkinEnabled)
 			{
@@ -106,7 +108,7 @@ namespace WeaponPaints
 			{
 				GPlayersPin.TryRemove(player.Slot, out _);
 			}
-
+			
 			_temporaryPlayerWeaponWear.TryRemove(player.Slot, out _);
 			CommandsCooldown.Remove(player.Slot);
 
@@ -116,7 +118,7 @@ namespace WeaponPaints
 		private void OnMapStart(string mapName)
 		{
 			if (Config.Additional is { KnifeEnabled: false, SkinEnabled: false, GloveEnabled: false }) return;
-
+			
 			if (Database != null)
 				WeaponSync = new WeaponSynchronization(Database, Config);
 		}

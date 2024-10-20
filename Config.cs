@@ -43,6 +43,9 @@ namespace WeaponPaints
 
 		[JsonPropertyName("CommandAgent")]
 		public List<string> CommandAgent { get; set; } = ["agents"];
+		
+		[JsonPropertyName("CommandStattrak")]
+		public List<string> CommandStattrak { get; set; } = ["stattrak", "st"];
 
 		[JsonPropertyName("CommandSkin")]
 		public List<string> CommandSkin { get; set; } = ["ws"];
@@ -68,7 +71,7 @@ namespace WeaponPaints
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 9;
+        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 10;
 
         [JsonPropertyName("SkinsLanguage")]
 		public string SkinsLanguage { get; set; } = "en";
@@ -89,7 +92,7 @@ namespace WeaponPaints
 		public string DatabaseName { get; set; } = "";
 
 		[JsonPropertyName("CmdRefreshCooldownSeconds")]
-		public int CmdRefreshCooldownSeconds { get; set; } = 10;
+		public int CmdRefreshCooldownSeconds { get; set; } = 3;
 
 		[JsonPropertyName("Website")]
 		public string Website { get; set; } = "example.com/skins";
