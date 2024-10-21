@@ -117,7 +117,7 @@ namespace WeaponPaints
 
 			if (weaponInfo.StatTrak)
 			{			
-				weapon.AttributeManager.Item.EntityQuality = 7;
+				weapon.AttributeManager.Item.EntityQuality = 9;
 
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater", ViewAsFloat((uint)weaponInfo.StatTrakCount));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "kill eater score type", 0);
@@ -131,8 +131,6 @@ namespace WeaponPaints
 			if (fallbackPaintKit == 0)
 				return;
 
-			if (isKnife) return;
-			
 			if (weaponInfo.KeyChain != null) SetKeychain(player, weapon);
 			if (weaponInfo.Stickers.Count > 0) SetStickers(player, weapon);
 
@@ -143,6 +141,7 @@ namespace WeaponPaints
 				.ToList();
 				
 			isLegacyModel = skinInfo.Count <= 0 || skinInfo[0].Value<bool>("legacy_model");
+
 			UpdatePlayerWeaponMeshGroupMask(player, weapon, isLegacyModel);
 		}
 
@@ -242,6 +241,7 @@ namespace WeaponPaints
 
 			//string knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
 			player.GiveNamedItem(CsItem.Knife);
+			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
 		}
 
 		private static bool PlayerHasKnife(CCSPlayerController? player)
@@ -284,6 +284,8 @@ namespace WeaponPaints
 			if (player.Team is CsTeam.None or CsTeam.Spectator)
 				return;
 
+			var hasKnife = false;
+			
 			Dictionary<string, List<(int, int)>> weaponsWithAmmo = [];
 
 			foreach (var weapon in weapons)
@@ -291,7 +293,7 @@ namespace WeaponPaints
 				if (!weapon.IsValid || weapon.Value == null ||
 					!weapon.Value.IsValid || !weapon.Value.DesignerName.Contains("weapon_"))
 					continue;
-
+				
 				CCSWeaponBaseGun gun = weapon.Value.As<CCSWeaponBaseGun>();
 
 				if (weapon.Value.Entity == null) continue;
@@ -330,6 +332,7 @@ namespace WeaponPaints
 					if (weaponData.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
 					{
 						weapon.Value?.AddEntityIOEvent("Kill", weapon.Value, null, "", 0.1f);
+						hasKnife = true;
 					}
 				}
 				catch (Exception ex)
@@ -341,9 +344,16 @@ namespace WeaponPaints
 			AddTimer(0.23f, () =>
 					{
 						if (!_gBCommandsAllowed) return;
-						
-						if (!PlayerHasKnife(player))
-							GiveKnifeToPlayer(player);
+
+						if (!PlayerHasKnife(player) && hasKnife)
+						{
+							var newKnife = new CBasePlayerWeapon(player.GiveNamedItem(CsItem.Knife));
+							newKnife.AddEntityIOEvent("Kill", newKnife, null, "", 0.01f);
+							var newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(CsItem.USP));
+							player.GiveNamedItem(CsItem.Knife);
+							player.ExecuteClientCommand("slot3");
+							newWeapon.AddEntityIOEvent("Kill", newWeapon, null, "", 0.01f);
+						}
 
 						foreach (var entry in weaponsWithAmmo)
 						{
@@ -462,6 +472,7 @@ namespace WeaponPaints
 			var viewModel = GetPlayerViewModel(player);
 			if (viewModel == null || viewModel.Weapon.Value == null ||
 			    viewModel.Weapon.Value.Index != weapon.Index) return;
+			
 			UpdateWeaponMeshGroupMask(viewModel, isLegacy);
 			Utilities.SetStateChanged(viewModel, "CBaseEntity", "m_CBodyComponent");
 		}
@@ -525,13 +536,23 @@ namespace WeaponPaints
 			
 			var myWeapons = pawn.WeaponServices?.MyWeapons;
 			if (myWeapons == null) return;
+			
 			foreach (var handle in myWeapons)
 			{
 				var weapon = handle.Value;
-				if (weapon != null && weapon.DesignerName.Contains("knife"))
+			
+				if (weapon == null || !weapon.IsValid) continue;
+				
+				if (myWeapons.Count == 1)
 				{
-					GivePlayerWeaponSkin(player, weapon);
+					var newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(CsItem.USP));
+					weapon.AddEntityIOEvent("Kill", weapon, null, "", 0.01f);
+					player.GiveNamedItem(CsItem.Knife);
+					player.ExecuteClientCommand("slot3");
+					newWeapon.AddEntityIOEvent("Kill", newWeapon, null, "", 0.01f);
 				}
+					
+				GivePlayerWeaponSkin(player, weapon);
 			}
 		}
 		

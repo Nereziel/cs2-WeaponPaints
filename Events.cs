@@ -2,6 +2,7 @@
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Entities;
+using CounterStrikeSharp.API.Modules.Entities.Constants;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 
@@ -79,15 +80,17 @@ namespace WeaponPaints
 				IpAddress = player.IpAddress?.Split(":")[0]
 			};
 
-			if (WeaponSync != null)
+			Task.Run(async () => 
 			{
-				_ = Task.Run(async () => await WeaponSync.SyncStatTrakToDatabase(playerInfo));
-			}
+				if (WeaponSync != null)
+					await WeaponSync.SyncStatTrakToDatabase(playerInfo);
 
-			if (Config.Additional.SkinEnabled)
-			{
-				GPlayerWeaponsInfo.TryRemove(player.Slot, out _);
-			}
+				if (Config.Additional.SkinEnabled)
+				{
+					GPlayerWeaponsInfo.TryRemove(player.Slot, out _);
+				}
+			});
+
 			if (Config.Additional.KnifeEnabled)
 			{
 				GPlayersKnife.TryRemove(player.Slot, out _);
@@ -202,7 +205,17 @@ namespace WeaponPaints
 
 				var player = GetPlayerFromItemServices(itemServices);
 				if (player != null)
+				{
+					var weaponServices = player.PlayerPawn.Value?.WeaponServices;
+					
 					GivePlayerWeaponSkin(player, weapon);
+					
+					if (weaponServices is { MyWeapons.Count: 1 })
+					{
+						// player.GiveNamedItem(CsItem.Healthshot);
+						// newWeapon.AddEntityIOEvent("Kill", newWeapon, null, "", 0.1f);
+					}
+				}
 			}
 			catch { }
 
@@ -274,9 +287,10 @@ namespace WeaponPaints
 		[GameEventHandler]
 		public HookResult OnItemPickup(EventItemPickup @event, GameEventInfo _)
 		{
-			if (!IsWindows) return HookResult.Continue;
-			
+			// if (!IsWindows) return HookResult.Continue;
 			var player = @event.Userid;
+			if (!@event.Item.Contains("knife")) return HookResult.Continue;
+			
 			if (player != null && player is { IsValid: true, Connected: PlayerConnectedState.PlayerConnected, PawnIsAlive: true, PlayerPawn.IsValid: true })
 			{
 				GiveOnItemPickup(player);
@@ -336,8 +350,7 @@ namespace WeaponPaints
 			if (Config.Additional.ShowSkinImage)
 				RegisterListener<Listeners.OnTick>(OnTick);
 
-			if (!IsWindows)
-				VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
+			VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
 		}
 	}
 }
