@@ -1,6 +1,7 @@
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
+using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
 
@@ -16,7 +17,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
     public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "3.0b";
+	public override string ModuleVersion => "3.0c";
 
 	public override void Load(bool hotReload)
 	{
@@ -39,6 +40,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 					         !string.IsNullOrEmpty(player.IpAddress) && player is
 						         { IsBot: false, Connected: PlayerConnectedState.PlayerConnected }))
 			{
+				GPlayersKnivesPickup[player.Slot] = 0;
 				var playerInfo = new PlayerInfo
 				{
 					UserId = player.UserId,

@@ -77,7 +77,8 @@ public partial class WeaponPaints
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersGlove = new();
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersMusic = new();
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersPin = new();
-	public static readonly ConcurrentDictionary<int, (string? CT, string? T)> GPlayersAgent = new();
+	internal static readonly ConcurrentDictionary<int, (string? CT, string? T)> GPlayersAgent = new();
+	internal static readonly Dictionary<int, int> GPlayersKnivesPickup = [];
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ConcurrentDictionary<int, WeaponInfo>>> GPlayerWeaponsInfo = new();
 	internal static List<JObject> SkinsList = [];
 	internal static List<JObject> PinsList = [];
@@ -92,7 +93,7 @@ public partial class WeaponPaints
 	internal static Database? Database;
 
 	private static readonly MemoryFunctionVoid<nint, string, float> CAttributeListSetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
-
+	
 	private static readonly MemoryFunctionWithReturn<nint, string, int, int> SetBodygroupFunc = new(
 		GameData.GetSignature("CBaseModelEntity_SetBodygroup"));
 
