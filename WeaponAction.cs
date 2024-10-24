@@ -20,8 +20,10 @@ namespace WeaponPaints
 
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
 
-			if (isKnife && !GPlayersKnife.ContainsKey(player.Slot) ||
-			    isKnife && GPlayersKnife[player.Slot][player.Team] == "weapon_knife") return;
+			if (isKnife && (!GPlayersKnife.ContainsKey(player.Slot) ||
+			                !GPlayersKnife[player.Slot].ContainsKey(player.Team) ||
+			                GPlayersKnife[player.Slot][player.Team] == "weapon_knife"))
+				return;
 
 			if (isKnife)
 			{
@@ -52,7 +54,9 @@ namespace WeaponPaints
 			bool isLegacyModel;
 
 			if (_config.Additional.GiveRandomSkin &&
-				 !GPlayerWeaponsInfo[player.Slot][player.Team].ContainsKey(weaponDefIndex))
+			    GPlayerWeaponsInfo.ContainsKey(player.Slot) &&
+			    (!GPlayerWeaponsInfo[player.Slot].ContainsKey(player.Team) ||
+			     !GPlayerWeaponsInfo[player.Slot][player.Team].ContainsKey(weaponDefIndex)))
 			{
 				// Random skins
 				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
@@ -103,14 +107,7 @@ namespace WeaponPaints
 			weapon.AttributeManager.Item.CustomName = weaponInfo.Nametag;
 			weapon.FallbackPaintKit = weaponInfo.Paint;
 			
-			if (weaponInfo is { Paint: 38, Seed: 0 })
-			{
-				weapon.FallbackSeed = _fadeSeed++;
-			}
-			else
-			{
-				weapon.FallbackSeed = weaponInfo.Seed;
-			}
+			weapon.FallbackSeed = weaponInfo is { Paint: 38, Seed: 0 } ? _fadeSeed++ : weaponInfo.Seed;
 			
 			weapon.FallbackWear = weaponInfo.Wear;
 			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
@@ -186,15 +183,13 @@ namespace WeaponPaints
 				
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} id", ViewAsFloat(sticker.Id));
-				// CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				// 	$"sticker slot {stickerSlot} schema", stickerSlot);
-				// if (stickerSlot == 5)
-				// {
+				if (sticker.OffsetX != 0 || sticker.OffsetY != 0)
+					CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+						$"sticker slot {stickerSlot} schema", 0);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} offset x", sticker.OffsetX);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} offset y", sticker.OffsetY);
-				// }
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} wear", sticker.Wear);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
@@ -217,8 +212,11 @@ namespace WeaponPaints
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
 			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeaponsInfo) ||
-			    !playerWeaponsInfo[player.Team].TryGetValue(weaponDefIndex, out var value) ||
-			    value.KeyChain == null) return;
+			    !playerWeaponsInfo.TryGetValue(player.Team, out var teamWeaponsInfo) ||
+			    !teamWeaponsInfo.TryGetValue(weaponDefIndex, out var value) ||
+			    value.KeyChain == null)
+				return;
+			
 			var keyChain = value.KeyChain;
 
 			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
@@ -406,9 +404,12 @@ namespace WeaponPaints
 						return;
 
 					if (!GPlayersGlove.TryGetValue(player.Slot, out var gloveInfo) ||
-					    !gloveInfo.TryGetValue(player.Team, out var gloveId) || gloveId == 0) return; 
-
-					WeaponInfo weaponInfo = GPlayerWeaponsInfo[player.Slot][player.Team][gloveId];
+					    !gloveInfo.TryGetValue(player.Team, out var gloveId) ||
+					    gloveId == 0 ||
+					    !GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeaponsInfo) ||
+					    !playerWeaponsInfo.TryGetValue(player.Team, out var teamWeaponsInfo) ||
+					    !teamWeaponsInfo.TryGetValue(gloveId, out var weaponInfo))
+						return;
 
 					item.ItemDefinitionIndex = gloveId;
 					item.ItemIDLow = 16384 & 0xFFFFFFFF;
