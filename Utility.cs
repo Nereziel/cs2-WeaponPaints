@@ -1,6 +1,8 @@
 ﻿using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Translations;
+using CounterStrikeSharp.API.Modules.Menu;
 using Dapper;
+using MenuManager;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -188,10 +190,32 @@ namespace WeaponPaints
 			Console.WriteLine("[WeaponPaints] " + message);
 			Console.ResetColor();
 		}
-
-		internal static string ReplaceTags(string message)
+		
+		internal static IMenu? CreateMenu(string title)
 		{
-			return message.ReplaceColorTags();
+			var menuType = WeaponPaints.Instance.Config.MenuType.ToLower();
+        
+			var menu = menuType switch
+			{
+				_ when menuType.Equals("selectable", StringComparison.CurrentCultureIgnoreCase) =>
+					WeaponPaints.MenuApi?.NewMenu(title),
+
+				_ when menuType.Equals("dynamic", StringComparison.CurrentCultureIgnoreCase) =>
+					WeaponPaints.MenuApi?.NewMenuForcetype(title, MenuType.ButtonMenu),
+
+				_ when menuType.Equals("center", StringComparison.CurrentCultureIgnoreCase) =>
+					WeaponPaints.MenuApi?.NewMenuForcetype(title, MenuType.CenterMenu),
+
+				_ when menuType.Equals("chat", StringComparison.CurrentCultureIgnoreCase) =>
+					WeaponPaints.MenuApi?.NewMenuForcetype(title, MenuType.ChatMenu),
+
+				_ when menuType.Equals("console", StringComparison.CurrentCultureIgnoreCase) =>
+					WeaponPaints.MenuApi?.NewMenuForcetype(title, MenuType.ConsoleMenu),
+
+				_ => WeaponPaints.MenuApi?.NewMenu(title)
+			};
+
+			return menu;
 		}
 
 		internal static async Task CheckVersion(string version, ILogger logger)

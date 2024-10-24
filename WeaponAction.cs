@@ -542,7 +542,6 @@ namespace WeaponPaints
 				var weapon = handle.Value;
 			
 				if (weapon == null || !weapon.IsValid) continue;
-				
 				if (myWeapons.Count == 1)
 				{
 					var newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(CsItem.USP));

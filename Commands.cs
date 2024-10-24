@@ -181,7 +181,7 @@ public partial class WeaponPaints
 			.Where(pair => pair.Key.StartsWith("weapon_knife") || pair.Key.StartsWith("weapon_bayonet"))
 			.ToDictionary(pair => pair.Key, pair => pair.Value);
 
-		var giveItemMenu = MenuApi?.NewMenu(Localizer["wp_knife_menu_title"]);
+		var giveItemMenu = Utility.CreateMenu(Localizer["wp_knife_menu_title"]);
 			
 		var handleGive = (CCSPlayerController player, ChatMenuOption option) =>
 		{
@@ -265,7 +265,7 @@ public partial class WeaponPaints
 			.Except([new KeyValuePair<string, string>("weapon_knife", "Default Knife")])
 			.ToDictionary(kvp => kvp.Value, kvp => kvp.Key);
 
-		var weaponSelectionMenu = MenuApi?.NewMenu(Localizer["wp_skin_menu_weapon_title"]);
+		var weaponSelectionMenu = Utility.CreateMenu(Localizer["wp_skin_menu_weapon_title"]);
 
 		// Function to handle skin selection for a specific weapon
 		var handleWeaponSelection = (CCSPlayerController? player, ChatMenuOption option) =>
@@ -280,7 +280,7 @@ public partial class WeaponPaints
 				weaponName?.ToString() == selectedWeaponClassname
 			)?.ToList();
 
-			var skinSubMenu = MenuApi?.NewMenu(Localizer["wp_skin_menu_skin_title", selectedWeapon]);
+			var skinSubMenu = Utility.CreateMenu(Localizer["wp_skin_menu_skin_title", selectedWeapon]);
 
 			// Function to handle skin selection for the chosen weapon
 			var handleSkinSelection = (CCSPlayerController p, ChatMenuOption opt) =>
@@ -416,7 +416,7 @@ public partial class WeaponPaints
 
 	private void SetupGlovesMenu()
 	{
-		var glovesSelectionMenu = MenuApi?.NewMenu(Localizer["wp_glove_menu_title"]);
+		var glovesSelectionMenu = Utility.CreateMenu(Localizer["wp_glove_menu_title"]);
 		if (glovesSelectionMenu == null) return;
 		glovesSelectionMenu.PostSelectAction = PostSelectAction.Close;
 			
@@ -625,7 +625,7 @@ public partial class WeaponPaints
 				if (!CommandsCooldown.TryGetValue(player.Slot, out DateTime cooldownEndTime) ||
 				    DateTime.UtcNow >= (CommandsCooldown.TryGetValue(player.Slot, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
 				{
-					var agentsSelectionMenu = MenuApi?.NewMenu(Localizer["wp_agent_menu_title"]);
+					var agentsSelectionMenu = Utility.CreateMenu(Localizer["wp_agent_menu_title"]);
 					if (agentsSelectionMenu == null) return;
 					agentsSelectionMenu.PostSelectAction = PostSelectAction.Close;
 
@@ -665,7 +665,7 @@ public partial class WeaponPaints
 
 	private void SetupMusicMenu()
 	{
-		var musicSelectionMenu = MenuApi?.NewMenu(Localizer["wp_music_menu_title"]);
+		var musicSelectionMenu = Utility.CreateMenu(Localizer["wp_music_menu_title"]);
 		if (musicSelectionMenu == null) return;
 		musicSelectionMenu.PostSelectAction = PostSelectAction.Close;
 
@@ -800,7 +800,7 @@ public partial class WeaponPaints
 	
 	private void SetupPinsMenu()
 	{
-		var pinsSelectionMenu = MenuApi?.NewMenu(Localizer["wp_pins_menu_title"]);
+		var pinsSelectionMenu = Utility.CreateMenu(Localizer["wp_pins_menu_title"]);
 		if (pinsSelectionMenu == null) return;
 		pinsSelectionMenu.PostSelectAction = PostSelectAction.Close;
 
