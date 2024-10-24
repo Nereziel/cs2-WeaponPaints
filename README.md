@@ -146,6 +146,20 @@ Set FollowCSGOGuidelines to false in cssharp’s core.jcon config
 **Database error table does not exists:**
 Plugin is not loaded or configured with mysql credentials. Tables are auto-created by plugin.
 
+**An error occured in Get....FromDatabase:**
+If you used WeaponPaints and you update to newer version you could get this error. You need to add this queries to Database:
+```
+ALTER TABLE wp_player_skins
+ADD COLUMN weapon_nametag VARCHAR(128) DEFAULT NULL,
+ADD COLUMN weapon_stattrak tinyint(1) NOT NULL,
+ADD COLUMN weapon_stattrak_count int(10) NOT NULL,
+ADD COLUMN weapon_sticker_0 VARCHAR(128) DEFAULT '0;0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+ADD COLUMN weapon_sticker_1 VARCHAR(128) DEFAULT '0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+ADD COLUMN weapon_sticker_2 VARCHAR(128) DEFAULT '0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+ADD COLUMN weapon_sticker_3 VARCHAR(128) DEFAULT '0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+ADD COLUMN weapon_sticker_4 VARCHAR(128) DEFAULT '0;0;0;0;0;0' COMMENT 'id;schema;x;y;wear;scale;rotation',
+ADD COLUMN weapon_keychain VARCHAR(128) DEFAULT '0;0;0;0;0' COMMENT 'id;x;y;z;seed';
+```
 </details>
 
 ### Use this plugin at your own risk! Using this may lead to GSLT ban or something else Valve come with. [Valve Server guidelines](https://blog.counter-strike.net/index.php/server_guidelines/)
