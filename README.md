@@ -140,6 +140,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
  - **[CS2-WeaponPaints-Web](https://github.com/rogeraabbccdd/CS2-WeaponPaints-Web)**
 ## 🤔 Troubleshooting
 <details>
+
 **Skins are not changing:**
 Set FollowCSGOGuidelines to false in cssharp’s core.jcon config
 
