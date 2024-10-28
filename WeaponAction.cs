@@ -20,29 +20,30 @@ namespace WeaponPaints
 
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
 
-			if (isKnife && (!GPlayersKnife.ContainsKey(player.Slot) ||
-			                !GPlayersKnife[player.Slot].ContainsKey(player.Team) ||
-			                GPlayersKnife[player.Slot][player.Team] == "weapon_knife"))
-				return;
-
-			if (isKnife)
+			switch (isKnife)
 			{
-				var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == GPlayersKnife[player.Slot][player.Team]);
-				if (newDefIndex.Key == 0) return;
-
-				if (weapon.AttributeManager.Item.ItemDefinitionIndex != newDefIndex.Key)
+				case true when !HasChangedKnife(player, out var _):
+					return;
+				
+				case true:
 				{
-					SubclassChange(weapon, (ushort)newDefIndex.Key);
-				}
+					var newDefIndex = WeaponDefindex.FirstOrDefault(x => x.Value == GPlayersKnife[player.Slot][player.Team]);
+					if (newDefIndex.Key == 0) return;
 
-				weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)newDefIndex.Key;
-				weapon.AttributeManager.Item.EntityQuality = 3;
+					if (weapon.AttributeManager.Item.ItemDefinitionIndex != newDefIndex.Key)
+					{
+						SubclassChange(weapon, (ushort)newDefIndex.Key);
+					}
+
+					weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)newDefIndex.Key;
+					weapon.AttributeManager.Item.EntityQuality = 3;
+					break;
+				}
+				default:
+					weapon.AttributeManager.Item.EntityQuality = 0;
+					break;
 			}
-			else
-			{
-				weapon.AttributeManager.Item.EntityQuality = 0;
-			}
-			
+
 			UpdatePlayerEconItemId(weapon.AttributeManager.Item);
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
@@ -54,9 +55,7 @@ namespace WeaponPaints
 			bool isLegacyModel;
 
 			if (_config.Additional.GiveRandomSkin &&
-			    GPlayerWeaponsInfo.ContainsKey(player.Slot) &&
-			    (!GPlayerWeaponsInfo[player.Slot].ContainsKey(player.Team) ||
-			     !GPlayerWeaponsInfo[player.Slot][player.Team].ContainsKey(weaponDefIndex)))
+			    !HasChangedPaint(player, weaponDefIndex, out _))
 			{
 				// Random skins
 				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
@@ -89,13 +88,9 @@ namespace WeaponPaints
 				return;
 			}
 
-			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var teamInfo) || 
-			    !teamInfo.TryGetValue(player.Team, out var teamWeapons) )
-				return;
-			if (!teamWeapons.TryGetValue(weaponDefIndex, out var value))
+			if (!HasChangedPaint(player, weaponDefIndex, out var weaponInfo) || weaponInfo == null)
 				return;
 
-			var weaponInfo = value;
 			//Log($"Apply on {weapon.DesignerName}({weapon.AttributeManager.Item.ItemDefinitionIndex}) paint {gPlayerWeaponPaints[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} seed {gPlayerWeaponSeed[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]} wear {gPlayerWeaponWear[steamId.SteamId64][weapon.AttributeManager.Item.ItemDefinitionIndex]}");
 
 			weapon.AttributeManager.Item.AttributeList.Attributes.RemoveAll();
@@ -146,9 +141,7 @@ namespace WeaponPaints
 		private void IncrementWearForWeaponWithStickers(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
-			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) ||
-			    !playerWeapons.TryGetValue(player.Team, out var weaponInfoDict) ||
-			    !weaponInfoDict.TryGetValue(weaponDefIndex, out var weaponInfo) ||
+			if (!HasChangedPaint(player, weaponDefIndex, out var weaponInfo) || weaponInfo == null ||
 			    weaponInfo.Stickers.Count <= 0) return;
 			
 			float wearIncrement = 0.001f;
@@ -171,11 +164,8 @@ namespace WeaponPaints
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeapons) ||
-			    !playerWeapons[player.Team].TryGetValue(weaponDefIndex, out var weaponInfo))
-			{
+			if (!HasChangedPaint(player ,weaponDefIndex, out var weaponInfo) || weaponInfo == null)
 				return;
-			}
 
 			foreach (var sticker in weaponInfo.Stickers)
 			{
@@ -211,10 +201,7 @@ namespace WeaponPaints
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeaponsInfo) ||
-			    !playerWeaponsInfo.TryGetValue(player.Team, out var teamWeaponsInfo) ||
-			    !teamWeaponsInfo.TryGetValue(weaponDefIndex, out var value) ||
-			    value.KeyChain == null)
+			if (!HasChangedPaint(player, weaponDefIndex, out var value) || value?.KeyChain == null)
 				return;
 			
 			var keyChain = value.KeyChain;
@@ -406,9 +393,7 @@ namespace WeaponPaints
 					if (!GPlayersGlove.TryGetValue(player.Slot, out var gloveInfo) ||
 					    !gloveInfo.TryGetValue(player.Team, out var gloveId) ||
 					    gloveId == 0 ||
-					    !GPlayerWeaponsInfo.TryGetValue(player.Slot, out var playerWeaponsInfo) ||
-					    !playerWeaponsInfo.TryGetValue(player.Team, out var teamWeaponsInfo) ||
-					    !teamWeaponsInfo.TryGetValue(gloveId, out var weaponInfo))
+					    !HasChangedPaint(player, gloveId, out var weaponInfo) || weaponInfo == null)
 						return;
 
 					item.ItemDefinitionIndex = gloveId;
@@ -581,6 +566,36 @@ namespace WeaponPaints
 			var references = MemoryMarshal.CreateSpan(ref ptr, 3);
 			var viewModel = (CHandle<CBaseViewModel>)Activator.CreateInstance(typeof(CHandle<CBaseViewModel>), references[0])!;
 			return viewModel.Value == null ? null : viewModel.Value;
+		}
+
+		private static bool HasChangedKnife(CCSPlayerController player, out string? knifeValue)
+		{
+			knifeValue = null;
+
+			// Check if player has knife info for their slot and team
+			if (!GPlayersKnife.TryGetValue(player.Slot, out var knife) ||
+			    !knife.TryGetValue(player.Team, out var value) ||
+			    value == "weapon_knife") return false;
+			knifeValue = value; // Assign the knife value to the out parameter
+			return true;
+		}
+		
+		private static bool HasChangedPaint(CCSPlayerController player, int weaponDefIndex, out WeaponInfo? weaponInfo)
+		{
+			weaponInfo = null;
+
+			// Check if player has weapons info for their slot and team
+			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var teamInfo) || 
+			    !teamInfo.TryGetValue(player.Team, out var teamWeapons))
+			{
+				return false;
+			}
+
+			// Check if the specified weapon has a paint/skin change
+			if (!teamWeapons.TryGetValue(weaponDefIndex, out var value) || value.Paint <= 0) return false;
+			
+			weaponInfo = value; // Assign the out variable when it exists
+			return true;
 		}
 
 		private static float ViewAsFloat(uint value)

@@ -78,7 +78,6 @@ public partial class WeaponPaints
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersMusic = new();
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersPin = new();
 	internal static readonly ConcurrentDictionary<int, (string? CT, string? T)> GPlayersAgent = new();
-	internal static readonly Dictionary<int, int> GPlayersKnivesPickup = [];
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ConcurrentDictionary<int, WeaponInfo>>> GPlayerWeaponsInfo = new();
 	internal static List<JObject> SkinsList = [];
 	internal static List<JObject> PinsList = [];
