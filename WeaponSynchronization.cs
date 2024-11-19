@@ -2,6 +2,7 @@
 using MySqlConnector;
 using System.Collections.Concurrent;
 using CounterStrikeSharp.API.Modules.Utils;
+using System.Globalization;
 
 namespace WeaponPaints;
 
@@ -197,9 +198,9 @@ internal class WeaponSynchronization
 
 				if (keyChainParts!.Length == 5 &&
 				    uint.TryParse(keyChainParts[0], out uint keyChainId) &&
-				    float.TryParse(keyChainParts[1], out float keyChainOffsetX) &&
-				    float.TryParse(keyChainParts[2], out float keyChainOffsetY) &&
-				    float.TryParse(keyChainParts[3], out float keyChainOffsetZ) &&
+				    float.TryParse(keyChainParts[1], NumberStyles.Float, CultureInfo.InvariantCulture, out float keyChainOffsetX) &&
+				    float.TryParse(keyChainParts[2], NumberStyles.Float, CultureInfo.InvariantCulture, out float keyChainOffsetY) &&
+				    float.TryParse(keyChainParts[3], NumberStyles.Float, CultureInfo.InvariantCulture, out float keyChainOffsetZ) &&
 				    uint.TryParse(keyChainParts[4], out uint keyChainSeed))
 				{
 					// Successfully parsed the values
@@ -246,11 +247,11 @@ internal class WeaponSynchronization
 					if (parts.Length != 7 ||
 					    !uint.TryParse(parts[0], out uint stickerId) ||
 					    !uint.TryParse(parts[1], out uint stickerSchema) ||
-					    !float.TryParse(parts[2], out float stickerOffsetX) ||
-					    !float.TryParse(parts[3], out float stickerOffsetY) ||
-					    !float.TryParse(parts[4], out float stickerWear) ||
-					    !float.TryParse(parts[5], out float stickerScale) ||
-					    !float.TryParse(parts[6], out float stickerRotation)) continue;
+					    !float.TryParse(parts[2], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerOffsetX) ||
+					    !float.TryParse(parts[3], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerOffsetY) ||
+					    !float.TryParse(parts[4], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerWear) ||
+					    !float.TryParse(parts[5], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerScale) ||
+					    !float.TryParse(parts[6], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerRotation)) continue;
 						
 					StickerInfo stickerInfo = new StickerInfo
 					{
