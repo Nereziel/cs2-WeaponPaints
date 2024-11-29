@@ -381,7 +381,7 @@
     },
     {
         "id": "81",
-        "name": "Music Kit | Dren McDonald, Coffee! Kofe! Kahveh!",
+        "name": "Kit de Música | Dren McDonald, Coffee! Kofe! Kahveh!",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-81.png"
     },
     {
@@ -403,5 +403,10 @@
         "id": "85",
         "name": "Kit de Música | Tree Adams, Seventh Moon",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    },
+    {
+        "id": "86",
+        "name": "Kit de Música | Perfect World, Ay Hey",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-86.png"
     }
 ]
