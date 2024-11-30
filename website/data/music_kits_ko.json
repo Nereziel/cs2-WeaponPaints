@@ -403,5 +403,10 @@
         "id": "85",
         "name": "음악 키트 | Tree Adams, Seventh Moon",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    },
+    {
+        "id": "86",
+        "name": "음악 키트 | Perfect World, Ay Hey",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-86.png"
     }
 ]

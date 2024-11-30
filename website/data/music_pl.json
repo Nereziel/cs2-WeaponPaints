@@ -386,7 +386,7 @@
     },
     {
         "id": "82",
-        "name": "Music Kit | Matt Levine, Agency",
+        "name": "Zestaw utworów | Matt Levine, Agency",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-82.png"
     },
     {
@@ -396,12 +396,17 @@
     },
     {
         "id": "84",
-        "name": "Music Kit | Tim Huling, Devil's Paintbrush",
+        "name": "Zestaw utworów | Tim Huling, Devil's Paintbrush",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-84.png"
     },
     {
         "id": "85",
         "name": "Zestaw utworów | Tree Adams, Seventh Moon",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    },
+    {
+        "id": "86",
+        "name": "Zestaw utworów | Perfect World, Ay Hey",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-86.png"
     }
 ]
