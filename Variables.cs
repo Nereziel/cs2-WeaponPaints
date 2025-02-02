@@ -14,7 +14,6 @@ public partial class WeaponPaints
 {
 	private static readonly Dictionary<string, string> WeaponList = new()
 	{
-
         	{"weapon_knife_karambit", "Karambit"},
         	{"weapon_knife_m9_bayonet", "M9 Bayonet"},
         	{"weapon_bayonet", "Bayonet"},
@@ -22,16 +21,18 @@ public partial class WeaponPaints
         	{"weapon_knife", "Default Knife"},
         	{"weapon_usp_silencer", "USP-S"},
        		{"weapon_deagle", "Desert Eagle"},
+        	{"weapon_ak47", "AK-47"},
 		{"weapon_m4a1_silencer", "M4A1-S"},
         	{"weapon_m4a1", "M4A4"},
-        	{"weapon_ak47", "AK-47"},
         	{"weapon_awp", "AWP"},
+		{"weapon_ssg08", "SSG 08"},
 		{"weapon_aug", "AUG"},
         	{"weapon_famas", "FAMAS"},
-        	{"weapon_g3sg1", "G3SG1"},
        	 	{"weapon_galilar", "Galil AR"},
+		{"weapon_mac10", "MAC-10"},
+		{"weapon_sg556", "SG 553"},
         	{"weapon_m249", "M249"},
-        	{"weapon_mac10", "MAC-10"},
+        	{"weapon_g3sg1", "G3SG1"},
         	{"weapon_p90", "P90"},
         	{"weapon_mp5sd", "MP5-SD"},
         	{"weapon_ump45", "UMP-45"},
@@ -50,11 +51,8 @@ public partial class WeaponPaints
         	{"weapon_nova", "Nova"},
         	{"weapon_p250", "P250"},
         	{"weapon_scar20", "SCAR-20"},
-        	{"weapon_sg556", "SG 553"},
-        	{"weapon_ssg08", "SSG 08"},
         	{"weapon_cz75a", "CZ75-Auto"},
         	{"weapon_revolver", "R8 Revolver"},
-        
         	{"weapon_knife_survival_bowie", "Bowie Knife"},
         	{"weapon_knife_falchion", "Falchion Knife"},
         	{"weapon_knife_flip", "Flip Knife"},
