@@ -1275,21 +1275,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"
     },
     {
-        "id": "4671",
-        "name": "1 顆《裂網行動》之星",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4671.png"
-    },
-    {
-        "id": "4672",
-        "name": "10 顆《裂網行動》之星",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4672.png"
-    },
-    {
-        "id": "4673",
-        "name": "100 顆《裂網行動》之星",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4673.png"
-    },
-    {
         "id": "4674",
         "name": "2020 年服役勳章",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4674.png"
@@ -1395,21 +1380,6 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4703.png"
     },
     {
-        "id": "4704",
-        "name": "1 顆「狂牙行動」之星",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4704.png"
-    },
-    {
-        "id": "4705",
-        "name": "10 顆「狂牙行動」之星",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4705.png"
-    },
-    {
-        "id": "4706",
-        "name": "100 顆「狂牙行動」之星",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4706.png"
-    },
-    {
         "id": "4737",
         "name": "2021 年服役勳章",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4737.png"
@@ -1458,21 +1428,6 @@
         "id": "4762",
         "name": "《猛潮行動》鑽石幣",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4762.png"
-    },
-    {
-        "id": "4763",
-        "name": "一顆《猛潮行動》的行動之星",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4763.png"
-    },
-    {
-        "id": "4764",
-        "name": "10 顆《猛潮行動》的行動之星",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4764.png"
-    },
-    {
-        "id": "4765",
-        "name": "100 顆《猛潮行動》的行動之星",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"
     },
     {
         "id": "4797",
@@ -1798,6 +1753,191 @@
         "id": "4985",
         "name": "Basalt 地圖硬幣",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4985.png"
+    },
+    {
+        "id": "4986",
+        "name": "優先權第 1 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4986.png"
+    },
+    {
+        "id": "4987",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4987.png"
+    },
+    {
+        "id": "4988",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4988.png"
+    },
+    {
+        "id": "4989",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4989.png"
+    },
+    {
+        "id": "4990",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4990.png"
+    },
+    {
+        "id": "4991",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4991.png"
+    },
+    {
+        "id": "4992",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4992.png"
+    },
+    {
+        "id": "4993",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4993.png"
+    },
+    {
+        "id": "4994",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4994.png"
+    },
+    {
+        "id": "4995",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4995.png"
+    },
+    {
+        "id": "4996",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4996.png"
+    },
+    {
+        "id": "4997",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4997.png"
+    },
+    {
+        "id": "4998",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4998.png"
+    },
+    {
+        "id": "4999",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4999.png"
+    },
+    {
+        "id": "5000",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5000.png"
+    },
+    {
+        "id": "5001",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5001.png"
+    },
+    {
+        "id": "5002",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5002.png"
+    },
+    {
+        "id": "5003",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5003.png"
+    },
+    {
+        "id": "5004",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5004.png"
+    },
+    {
+        "id": "5005",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5005.png"
+    },
+    {
+        "id": "5006",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5006.png"
+    },
+    {
+        "id": "5007",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5007.png"
+    },
+    {
+        "id": "5008",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5008.png"
+    },
+    {
+        "id": "5009",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5009.png"
+    },
+    {
+        "id": "5010",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5010.png"
+    },
+    {
+        "id": "5011",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5011.png"
+    },
+    {
+        "id": "5012",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5012.png"
+    },
+    {
+        "id": "5013",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5013.png"
+    },
+    {
+        "id": "5014",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5014.png"
+    },
+    {
+        "id": "5015",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5015.png"
+    },
+    {
+        "id": "5016",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5016.png"
+    },
+    {
+        "id": "5017",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5017.png"
+    },
+    {
+        "id": "5018",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5018.png"
+    },
+    {
+        "id": "5019",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5019.png"
+    },
+    {
+        "id": "5020",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5020.png"
+    },
+    {
+        "id": "5021",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5021.png"
+    },
+    {
+        "id": "5022",
+        "name": "優先權第 2 賽季勳章",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5022.png"
     },
     {
         "id": "6001",
