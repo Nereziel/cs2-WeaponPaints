@@ -6,202 +6,16 @@
         "paint_name": "Gloves | Default"
     },
     {
-        "weapon_defindex": 4725,
-        "paint": "10085",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
-        "paint_name": "★ Перчатки «Сломанный клык» | Нефрит"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10086",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
-        "paint_name": "★ Перчатки «Сломанный клык» | Жёлтые полосы"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10087",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
-        "paint_name": "★ Перчатки «Сломанный клык» | Остриё иглы"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10088",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
-        "paint_name": "★ Перчатки «Сломанный клык» | Без тормозов"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10006",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
-        "paint_name": "★ Перчатки «Бладхаунд» | Зола"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10007",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
-        "paint_name": "★ Перчатки «Бладхаунд» | Укус змеи"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10008",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
-        "paint_name": "★ Перчатки «Бладхаунд» | Бронза"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10039",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
-        "paint_name": "★ Перчатки «Бладхаунд» | Диверсант"
-    },
-    {
         "weapon_defindex": 5030,
         "paint": "10018",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
         "paint_name": "★ Спортивные перчатки | Сверхпроводник"
     },
     {
-        "weapon_defindex": 5030,
-        "paint": "10019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
-        "paint_name": "★ Спортивные перчатки | Засуха"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10037",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
-        "paint_name": "★ Спортивные перчатки | Ящик Пандоры"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10038",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
-        "paint_name": "★ Спортивные перчатки | Живая изгородь"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10045",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
-        "paint_name": "★ Спортивные перчатки | Амфибия"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10046",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
-        "paint_name": "★ Спортивные перчатки | Окисление бронзы"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10047",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
-        "paint_name": "★ Спортивные перчатки | Омега"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10048",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
-        "paint_name": "★ Спортивные перчатки | Порок"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10073",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
-        "paint_name": "★ Спортивные перчатки | Мясник"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10074",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
-        "paint_name": "★ Спортивные перчатки | Крупная добыча"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10075",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
-        "paint_name": "★ Спортивные перчатки | Кровавый шемах"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10076",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
-        "paint_name": "★ Спортивные перчатки | Ноктс"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10013",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
-        "paint_name": "★ Водительские перчатки | Лунный узор"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10015",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
-        "paint_name": "★ Водительские перчатки | Конвой"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10016",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
-        "paint_name": "★ Водительские перчатки | Багряный узор"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10040",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
-        "paint_name": "★ Водительские перчатки | Гремучая змея"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10041",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
-        "paint_name": "★ Водительские перчатки | Королевский змей"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10042",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
-        "paint_name": "★ Водительские перчатки | Имперская клетка"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10043",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
-        "paint_name": "★ Водительские перчатки | Обгон"
-    },
-    {
         "weapon_defindex": 5031,
         "paint": "10044",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
         "paint_name": "★ Водительские перчатки | Гоночный зелёный"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10069",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
-        "paint_name": "★ Водительские перчатки | Резан Красный"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10070",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
-        "paint_name": "★ Водительские перчатки | Снежный барс"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10071",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
-        "paint_name": "★ Водительские перчатки | Королева ягуаров"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10072",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
-        "paint_name": "★ Водительские перчатки | Чёрный галстук"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10009",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
-        "paint_name": "★ Обмотки рук | Кожа"
     },
     {
         "weapon_defindex": 5032,
@@ -211,15 +25,27 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10021",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
-        "paint_name": "★ Обмотки рук | Бойня"
+        "paint": "10081",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
+        "paint_name": "★ Обмотки рук | Пустынный шемах"
     },
     {
         "weapon_defindex": 5032,
         "paint": "10036",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10036.png",
         "paint_name": "★ Обмотки рук | Пустошь"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10084",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
+        "paint_name": "★ Обмотки рук | ОСТОРОЖНО!"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10055",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
+        "paint_name": "★ Обмотки рук | Скотч"
     },
     {
         "weapon_defindex": 5032,
@@ -235,9 +61,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10055",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
-        "paint_name": "★ Обмотки рук | Скотч"
+        "paint": "10082",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
+        "paint_name": "★ Обмотки рук | Жираф"
     },
     {
         "weapon_defindex": 5032,
@@ -247,15 +73,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10081",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
-        "paint_name": "★ Обмотки рук | Пустынный шемах"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10082",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
-        "paint_name": "★ Обмотки рук | Жираф"
+        "paint": "10009",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
+        "paint_name": "★ Обмотки рук | Кожа"
     },
     {
         "weapon_defindex": 5032,
@@ -265,15 +85,45 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10084",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
-        "paint_name": "★ Обмотки рук | ОСТОРОЖНО!"
+        "paint": "10021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
+        "paint_name": "★ Обмотки рук | Бойня"
     },
     {
         "weapon_defindex": 5033,
         "paint": "10024",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10024.png",
         "paint_name": "★ Мотоциклетные перчатки | Затмение"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10050",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
+        "paint_name": "★ Мотоциклетные перчатки | Черепаха"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10079",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
+        "paint_name": "★ Мотоциклетные перчатки | Кровяное давление"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10077",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
+        "paint_name": "★ Мотоциклетные перчатки | Финишная линия"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10049",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
+        "paint_name": "★ Мотоциклетные перчатки | БУХ!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10080",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
+        "paint_name": "★ Мотоциклетные перчатки | Третья рота коммандо"
     },
     {
         "weapon_defindex": 5033,
@@ -289,27 +139,15 @@
     },
     {
         "weapon_defindex": 5033,
+        "paint": "10078",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
+        "paint_name": "★ Мотоциклетные перчатки | Бросаю дымовую"
+    },
+    {
+        "weapon_defindex": 5033,
         "paint": "10028",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10028.png",
         "paint_name": "★ Мотоциклетные перчатки | Мятная прохлада"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10049",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
-        "paint_name": "★ Мотоциклетные перчатки | БУХ!"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10050",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
-        "paint_name": "★ Мотоциклетные перчатки | Черепаха"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10051",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
-        "paint_name": "★ Мотоциклетные перчатки | Транспорт"
     },
     {
         "weapon_defindex": 5033,
@@ -319,27 +157,75 @@
     },
     {
         "weapon_defindex": 5033,
-        "paint": "10077",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
-        "paint_name": "★ Мотоциклетные перчатки | Финишная линия"
+        "paint": "10051",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
+        "paint_name": "★ Мотоциклетные перчатки | Транспорт"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10078",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
-        "paint_name": "★ Мотоциклетные перчатки | Бросаю дымовую"
+        "weapon_defindex": 5031,
+        "paint": "10013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
+        "paint_name": "★ Водительские перчатки | Лунный узор"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10079",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
-        "paint_name": "★ Мотоциклетные перчатки | Кровяное давление"
+        "weapon_defindex": 5031,
+        "paint": "10070",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
+        "paint_name": "★ Водительские перчатки | Снежный барс"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10080",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
-        "paint_name": "★ Мотоциклетные перчатки | Третья рота коммандо"
+        "weapon_defindex": 5031,
+        "paint": "10071",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
+        "paint_name": "★ Водительские перчатки | Королева ягуаров"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
+        "paint_name": "★ Водительские перчатки | Конвой"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10042",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
+        "paint_name": "★ Водительские перчатки | Имперская клетка"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
+        "paint_name": "★ Водительские перчатки | Багряный узор"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10069",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
+        "paint_name": "★ Водительские перчатки | Резан Красный"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10041",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
+        "paint_name": "★ Водительские перчатки | Королевский змей"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10040",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
+        "paint_name": "★ Водительские перчатки | Гремучая змея"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10043",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
+        "paint_name": "★ Водительские перчатки | Обгон"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10072",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
+        "paint_name": "★ Водительские перчатки | Чёрный галстук"
     },
     {
         "weapon_defindex": 5034,
@@ -349,33 +235,9 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10033",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
-        "paint_name": "★ Перчатки спецназа | Кровавое кимоно"
-    },
-    {
-        "weapon_defindex": 5034,
         "paint": "10034",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10034.png",
         "paint_name": "★ Перчатки спецназа | Изумрудная сеть"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10035",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
-        "paint_name": "★ Перчатки спецназа | Основа"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10061",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
-        "paint_name": "★ Перчатки спецназа | Кровавая паутина"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10062",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
-        "paint_name": "★ Перчатки спецназа | Дробь"
     },
     {
         "weapon_defindex": 5034,
@@ -385,15 +247,33 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10064",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
-        "paint_name": "★ Перчатки спецназа | Покоритель гор"
+        "paint": "10068",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
+        "paint_name": "★ Перчатки спецназа | Полевой агент"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10062",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
+        "paint_name": "★ Перчатки спецназа | Дробь"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10033",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
+        "paint_name": "★ Перчатки спецназа | Кровавое кимоно"
     },
     {
         "weapon_defindex": 5034,
         "paint": "10065",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10065.png",
         "paint_name": "★ Перчатки спецназа | Мраморный градиент"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10035",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
+        "paint_name": "★ Перчатки спецназа | Основа"
     },
     {
         "weapon_defindex": 5034,
@@ -409,15 +289,141 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10068",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
-        "paint_name": "★ Перчатки спецназа | Полевой агент"
+        "paint": "10061",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
+        "paint_name": "★ Перчатки спецназа | Кровавая паутина"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10064",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
+        "paint_name": "★ Перчатки спецназа | Покоритель гор"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10047",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
+        "paint_name": "★ Спортивные перчатки | Омега"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10048",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
+        "paint_name": "★ Спортивные перчатки | Порок"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10038",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
+        "paint_name": "★ Спортивные перчатки | Живая изгородь"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10075",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
+        "paint_name": "★ Спортивные перчатки | Кровавый шемах"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10074",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
+        "paint_name": "★ Спортивные перчатки | Крупная добыча"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10076",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
+        "paint_name": "★ Спортивные перчатки | Ноктс"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
+        "paint_name": "★ Спортивные перчатки | Засуха"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10045",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
+        "paint_name": "★ Спортивные перчатки | Амфибия"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10046",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
+        "paint_name": "★ Спортивные перчатки | Окисление бронзы"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10037",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
+        "paint_name": "★ Спортивные перчатки | Ящик Пандоры"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10073",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
+        "paint_name": "★ Спортивные перчатки | Мясник"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10006",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
+        "paint_name": "★ Перчатки «Бладхаунд» | Зола"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10039",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
+        "paint_name": "★ Перчатки «Бладхаунд» | Диверсант"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10008",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
+        "paint_name": "★ Перчатки «Бладхаунд» | Бронза"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10007",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
+        "paint_name": "★ Перчатки «Бладхаунд» | Укус змеи"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10087",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
+        "paint_name": "★ Перчатки «Сломанный клык» | Остриё иглы"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10085",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
+        "paint_name": "★ Перчатки «Сломанный клык» | Нефрит"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10086",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
+        "paint_name": "★ Перчатки «Сломанный клык» | Жёлтые полосы"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10088",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
+        "paint_name": "★ Перчатки «Сломанный клык» | Без тормозов"
     },
     {
         "weapon_defindex": 5035,
         "paint": "10057",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10057.png",
         "paint_name": "★ Перчатки «Гидра» | Изумруд"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10060",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
+        "paint_name": "★ Перчатки «Гидра» | Поверхностная закалка"
     },
     {
         "weapon_defindex": 5035,
@@ -430,11 +436,5 @@
         "paint": "10059",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10059.png",
         "paint_name": "★ Перчатки «Гидра» | Гремучая змея"
-    },
-    {
-        "weapon_defindex": 5035,
-        "paint": "10060",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
-        "paint_name": "★ Перчатки «Гидра» | Поверхностная закалка"
     }
 ]

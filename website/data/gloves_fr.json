@@ -6,202 +6,16 @@
         "paint_name": "Gloves | Default"
     },
     {
-        "weapon_defindex": 4725,
-        "paint": "10085",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
-        "paint_name": "Gants Broken Fang (★) | Jade"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10086",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
-        "paint_name": "Gants Broken Fang (★) | Rainette jaguar"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10087",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
-        "paint_name": "Gants Broken Fang (★) | Point d'aiguille"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10088",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
-        "paint_name": "Gants Broken Fang (★) | Gueule béante"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10006",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
-        "paint_name": "Gants Bloodhound (★) | Calcination"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10007",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
-        "paint_name": "Gants Bloodhound (★) | Morsure de serpent"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10008",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
-        "paint_name": "Gants Bloodhound (★) | Bronze"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10039",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
-        "paint_name": "Gants Bloodhound (★) | Guérilla"
-    },
-    {
         "weapon_defindex": 5030,
         "paint": "10018",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
         "paint_name": "Gants de sport (★) | Supraconducteur"
     },
     {
-        "weapon_defindex": 5030,
-        "paint": "10019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
-        "paint_name": "Gants de sport (★) | Aride"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10037",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
-        "paint_name": "Gants de sport (★) | Boîte de Pandore"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10038",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
-        "paint_name": "Gants de sport (★) | Labyrinthe de haies"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10045",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
-        "paint_name": "Gants de sport (★) | Amphibie"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10046",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
-        "paint_name": "Gants de sport (★) | Dendrobates auratus"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10047",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
-        "paint_name": "Gants de sport (★) | Oméga"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10048",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
-        "paint_name": "Gants de sport (★) | Vice"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10073",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
-        "paint_name": "Gants de sport (★) | Survivaliste"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10074",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
-        "paint_name": "Gants de sport (★) | Gros gibier"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10075",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
-        "paint_name": "Gants de sport (★) | Shemagh rouge"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10076",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
-        "paint_name": "Gants de sport (★) | Nocts"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10013",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
-        "paint_name": "Gants de pilote (★) | Tissage lunaire"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10015",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
-        "paint_name": "Gants de pilote (★) | Convoi"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10016",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
-        "paint_name": "Gants de pilote (★) | Tissage pourpre"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10040",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
-        "paint_name": "Gants de pilote (★) | Diamantin"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10041",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
-        "paint_name": "Gants de pilote (★) | Serpent royal"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10042",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
-        "paint_name": "Gants de pilote (★) | Tartan impérial"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10043",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
-        "paint_name": "Gants de pilote (★) | Turbo"
-    },
-    {
         "weapon_defindex": 5031,
         "paint": "10044",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
         "paint_name": "Gants de pilote (★) | Vert bolide"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10069",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
-        "paint_name": "Gants de pilote (★) | Rezan le rouge"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10070",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
-        "paint_name": "Gants de pilote (★) | Léopard des neiges"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10071",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
-        "paint_name": "Gants de pilote (★) | Reine jaguar"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10072",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
-        "paint_name": "Gants de pilote (★) | Smoking"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10009",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
-        "paint_name": "Bandages (★) | Cuir"
     },
     {
         "weapon_defindex": 5032,
@@ -211,15 +25,27 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10021",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
-        "paint_name": "Bandages (★) | Carnage"
+        "paint": "10081",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
+        "paint_name": "Bandages (★) | Shemagh du désert"
     },
     {
         "weapon_defindex": 5032,
         "paint": "10036",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10036.png",
         "paint_name": "Bandages (★) | Badlands"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10084",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
+        "paint_name": "Bandages (★) | ATTENTION !"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10055",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
+        "paint_name": "Bandages (★) | Ruban adhésif"
     },
     {
         "weapon_defindex": 5032,
@@ -235,9 +61,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10055",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
-        "paint_name": "Bandages (★) | Ruban adhésif"
+        "paint": "10082",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
+        "paint_name": "Bandages (★) | Girafe"
     },
     {
         "weapon_defindex": 5032,
@@ -247,15 +73,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10081",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
-        "paint_name": "Bandages (★) | Shemagh du désert"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10082",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
-        "paint_name": "Bandages (★) | Girafe"
+        "paint": "10009",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
+        "paint_name": "Bandages (★) | Cuir"
     },
     {
         "weapon_defindex": 5032,
@@ -265,15 +85,45 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10084",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
-        "paint_name": "Bandages (★) | ATTENTION !"
+        "paint": "10021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
+        "paint_name": "Bandages (★) | Carnage"
     },
     {
         "weapon_defindex": 5033,
         "paint": "10024",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10024.png",
         "paint_name": "Gants de moto (★) | Éclipse"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10050",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
+        "paint_name": "Gants de moto (★) | Tortue"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10079",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
+        "paint_name": "Gants de moto (★) | Hypertension"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10077",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
+        "paint_name": "Gants de moto (★) | Ligne d'arrivée"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10049",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
+        "paint_name": "Gants de moto (★) | POW !"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10080",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
+        "paint_name": "Gants de moto (★) | 3ᵉ compagnie de commandos"
     },
     {
         "weapon_defindex": 5033,
@@ -289,27 +139,15 @@
     },
     {
         "weapon_defindex": 5033,
+        "paint": "10078",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
+        "paint_name": "Gants de moto (★) | Pleins gaz"
+    },
+    {
+        "weapon_defindex": 5033,
         "paint": "10028",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10028.png",
         "paint_name": "Gants de moto (★) | Menthe fraîche"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10049",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
-        "paint_name": "Gants de moto (★) | POW !"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10050",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
-        "paint_name": "Gants de moto (★) | Tortue"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10051",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
-        "paint_name": "Gants de moto (★) | Transport"
     },
     {
         "weapon_defindex": 5033,
@@ -319,27 +157,75 @@
     },
     {
         "weapon_defindex": 5033,
-        "paint": "10077",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
-        "paint_name": "Gants de moto (★) | Ligne d'arrivée"
+        "paint": "10051",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
+        "paint_name": "Gants de moto (★) | Transport"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10078",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
-        "paint_name": "Gants de moto (★) | Pleins gaz"
+        "weapon_defindex": 5031,
+        "paint": "10013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
+        "paint_name": "Gants de pilote (★) | Tissage lunaire"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10079",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
-        "paint_name": "Gants de moto (★) | Hypertension"
+        "weapon_defindex": 5031,
+        "paint": "10070",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
+        "paint_name": "Gants de pilote (★) | Léopard des neiges"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10080",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
-        "paint_name": "Gants de moto (★) | 3ᵉ compagnie de commandos"
+        "weapon_defindex": 5031,
+        "paint": "10071",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
+        "paint_name": "Gants de pilote (★) | Reine jaguar"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
+        "paint_name": "Gants de pilote (★) | Convoi"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10042",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
+        "paint_name": "Gants de pilote (★) | Tartan impérial"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
+        "paint_name": "Gants de pilote (★) | Tissage pourpre"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10069",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
+        "paint_name": "Gants de pilote (★) | Rezan le rouge"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10041",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
+        "paint_name": "Gants de pilote (★) | Serpent royal"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10040",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
+        "paint_name": "Gants de pilote (★) | Diamantin"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10043",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
+        "paint_name": "Gants de pilote (★) | Turbo"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10072",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
+        "paint_name": "Gants de pilote (★) | Smoking"
     },
     {
         "weapon_defindex": 5034,
@@ -349,33 +235,9 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10033",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
-        "paint_name": "Gants de spécialiste (★) | Kimono pourpre"
-    },
-    {
-        "weapon_defindex": 5034,
         "paint": "10034",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10034.png",
         "paint_name": "Gants de spécialiste (★) | Toile émeraude"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10035",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
-        "paint_name": "Gants de spécialiste (★) | Fondation"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10061",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
-        "paint_name": "Gants de spécialiste (★) | Toile pourpre"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10062",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
-        "paint_name": "Gants de spécialiste (★) | Chevrotine"
     },
     {
         "weapon_defindex": 5034,
@@ -385,15 +247,33 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10064",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
-        "paint_name": "Gants de spécialiste (★) | Moghol"
+        "paint": "10068",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
+        "paint_name": "Gants de spécialiste (★) | Spécialiste du terrain"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10062",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
+        "paint_name": "Gants de spécialiste (★) | Chevrotine"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10033",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
+        "paint_name": "Gants de spécialiste (★) | Kimono pourpre"
     },
     {
         "weapon_defindex": 5034,
         "paint": "10065",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10065.png",
         "paint_name": "Gants de spécialiste (★) | Dégradé de marbre"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10035",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
+        "paint_name": "Gants de spécialiste (★) | Fondation"
     },
     {
         "weapon_defindex": 5034,
@@ -409,15 +289,141 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10068",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
-        "paint_name": "Gants de spécialiste (★) | Spécialiste du terrain"
+        "paint": "10061",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
+        "paint_name": "Gants de spécialiste (★) | Toile pourpre"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10064",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
+        "paint_name": "Gants de spécialiste (★) | Moghol"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10047",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
+        "paint_name": "Gants de sport (★) | Oméga"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10048",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
+        "paint_name": "Gants de sport (★) | Vice"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10038",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
+        "paint_name": "Gants de sport (★) | Labyrinthe de haies"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10075",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
+        "paint_name": "Gants de sport (★) | Shemagh rouge"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10074",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
+        "paint_name": "Gants de sport (★) | Gros gibier"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10076",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
+        "paint_name": "Gants de sport (★) | Nocts"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
+        "paint_name": "Gants de sport (★) | Aride"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10045",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
+        "paint_name": "Gants de sport (★) | Amphibie"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10046",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
+        "paint_name": "Gants de sport (★) | Dendrobates auratus"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10037",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
+        "paint_name": "Gants de sport (★) | Boîte de Pandore"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10073",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
+        "paint_name": "Gants de sport (★) | Survivaliste"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10006",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
+        "paint_name": "Gants Bloodhound (★) | Calcination"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10039",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
+        "paint_name": "Gants Bloodhound (★) | Guérilla"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10008",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
+        "paint_name": "Gants Bloodhound (★) | Bronze"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10007",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
+        "paint_name": "Gants Bloodhound (★) | Morsure de serpent"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10087",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
+        "paint_name": "Gants Broken Fang (★) | Point d'aiguille"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10085",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
+        "paint_name": "Gants Broken Fang (★) | Jade"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10086",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
+        "paint_name": "Gants Broken Fang (★) | Rainette jaguar"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10088",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
+        "paint_name": "Gants Broken Fang (★) | Gueule béante"
     },
     {
         "weapon_defindex": 5035,
         "paint": "10057",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10057.png",
         "paint_name": "Gants Hydra (★) | Émeraude"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10060",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
+        "paint_name": "Gants Hydra (★) | Cémenté"
     },
     {
         "weapon_defindex": 5035,
@@ -430,11 +436,5 @@
         "paint": "10059",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10059.png",
         "paint_name": "Gants Hydra (★) | Crotale"
-    },
-    {
-        "weapon_defindex": 5035,
-        "paint": "10060",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
-        "paint_name": "Gants Hydra (★) | Cémenté"
     }
 ]

@@ -6,202 +6,16 @@
         "paint_name": "Gloves | Default"
     },
     {
-        "weapon_defindex": 4725,
-        "paint": "10085",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
-        "paint_name": "Broken Fang kesztyűk (★) | Jáde"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10086",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
-        "paint_name": "Broken Fang kesztyűk (★) | Sárga Csíkos"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10087",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
-        "paint_name": "Broken Fang kesztyűk (★) | Tűhegy"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10088",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
-        "paint_name": "Broken Fang kesztyűk (★) | Zavaros"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10006",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
-        "paint_name": "Véreb-kesztyűk (★) | Elszenesedett"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10007",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
-        "paint_name": "Véreb-kesztyűk (★) | Kígyómarás"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10008",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
-        "paint_name": "Véreb-kesztyűk (★) | Bronzosított"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10039",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
-        "paint_name": "Véreb-kesztyűk (★) | Gerilla"
-    },
-    {
         "weapon_defindex": 5030,
         "paint": "10018",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
         "paint_name": "Sportkesztyűk (★) | Szupravezető"
     },
     {
-        "weapon_defindex": 5030,
-        "paint": "10019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
-        "paint_name": "Sportkesztyűk (★) | Száraz"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10037",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
-        "paint_name": "Sportkesztyűk (★) | Pandóra Szelencéje"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10038",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
-        "paint_name": "Sportkesztyűk (★) | Sövényútvesztő"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10045",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
-        "paint_name": "Sportkesztyűk (★) | Kétéltű"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10046",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
-        "paint_name": "Sportkesztyűk (★) | Bronz Alak"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10047",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
-        "paint_name": "Sportkesztyűk (★) | Omega"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10048",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
-        "paint_name": "Sportkesztyűk (★) | Bűn"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10073",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
-        "paint_name": "Sportkesztyűk (★) | Csúzli"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10074",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
-        "paint_name": "Sportkesztyűk (★) | Nagyvad"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10075",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
-        "paint_name": "Sportkesztyűk (★) | Skarlát Shemagh"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10076",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
-        "paint_name": "Sportkesztyűk (★) | Nocts"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10013",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
-        "paint_name": "Sofőrkesztyű (★) | Hold-szövet"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10015",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
-        "paint_name": "Sofőrkesztyű (★) | Konvoj"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10016",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
-        "paint_name": "Sofőrkesztyű (★) | Karmazsin Szövet"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10040",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
-        "paint_name": "Sofőrkesztyű (★) | Csörgőkígyó"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10041",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
-        "paint_name": "Sofőrkesztyű (★) | Királysikló"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10042",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
-        "paint_name": "Sofőrkesztyű (★) | Birodalmi Takaró"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10043",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
-        "paint_name": "Sofőrkesztyű (★) | Előzés"
-    },
-    {
         "weapon_defindex": 5031,
         "paint": "10044",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
         "paint_name": "Sofőrkesztyű (★) | Versenyzöld"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10069",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
-        "paint_name": "Sofőrkesztyű (★) | Vörös Rezan"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10070",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
-        "paint_name": "Sofőrkesztyű (★) | Hópárduc"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10071",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
-        "paint_name": "Sofőrkesztyű (★) | Jaguárkirálynő"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10072",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
-        "paint_name": "Sofőrkesztyű (★) | Fekete Nyakkendő"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10009",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
-        "paint_name": "Kézkötések (★) | Bőr"
     },
     {
         "weapon_defindex": 5032,
@@ -211,15 +25,27 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10021",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
-        "paint_name": "Kézkötések (★) | Mészárlás"
+        "paint": "10081",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
+        "paint_name": "Kézkötések (★) | Sivatagi Shemagh"
     },
     {
         "weapon_defindex": 5032,
         "paint": "10036",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10036.png",
         "paint_name": "Kézkötések (★) | Terméketlen Vidék"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10084",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
+        "paint_name": "Kézkötések (★) | VIGYÁZAT!"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10055",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
+        "paint_name": "Kézkötések (★) | Szigszalag"
     },
     {
         "weapon_defindex": 5032,
@@ -235,9 +61,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10055",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
-        "paint_name": "Kézkötések (★) | Szigszalag"
+        "paint": "10082",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
+        "paint_name": "Kézkötések (★) | Zsiráf"
     },
     {
         "weapon_defindex": 5032,
@@ -247,15 +73,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10081",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
-        "paint_name": "Kézkötések (★) | Sivatagi Shemagh"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10082",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
-        "paint_name": "Kézkötések (★) | Zsiráf"
+        "paint": "10009",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
+        "paint_name": "Kézkötések (★) | Bőr"
     },
     {
         "weapon_defindex": 5032,
@@ -265,15 +85,45 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10084",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
-        "paint_name": "Kézkötések (★) | VIGYÁZAT!"
+        "paint": "10021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
+        "paint_name": "Kézkötések (★) | Mészárlás"
     },
     {
         "weapon_defindex": 5033,
         "paint": "10024",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10024.png",
         "paint_name": "Motoroskesztyűk (★) | Fogyatkozás"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10050",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
+        "paint_name": "Motoroskesztyűk (★) | Teknős"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10079",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
+        "paint_name": "Motoroskesztyűk (★) | Vérnyomás"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10077",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
+        "paint_name": "Motoroskesztyűk (★) | Célvonal"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10049",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
+        "paint_name": "Motoroskesztyűk (★) | PUFF!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10080",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
+        "paint_name": "Motoroskesztyűk (★) | 3. Kommandós Század"
     },
     {
         "weapon_defindex": 5033,
@@ -289,27 +139,15 @@
     },
     {
         "weapon_defindex": 5033,
+        "paint": "10078",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
+        "paint_name": "Motoroskesztyűk (★) | Kifüstölve"
+    },
+    {
+        "weapon_defindex": 5033,
         "paint": "10028",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10028.png",
         "paint_name": "Motoroskesztyűk (★) | Hűsítő Menta"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10049",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
-        "paint_name": "Motoroskesztyűk (★) | PUFF!"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10050",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
-        "paint_name": "Motoroskesztyűk (★) | Teknős"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10051",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
-        "paint_name": "Motoroskesztyűk (★) | Fuvar"
     },
     {
         "weapon_defindex": 5033,
@@ -319,27 +157,75 @@
     },
     {
         "weapon_defindex": 5033,
-        "paint": "10077",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
-        "paint_name": "Motoroskesztyűk (★) | Célvonal"
+        "paint": "10051",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
+        "paint_name": "Motoroskesztyűk (★) | Fuvar"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10078",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
-        "paint_name": "Motoroskesztyűk (★) | Kifüstölve"
+        "weapon_defindex": 5031,
+        "paint": "10013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
+        "paint_name": "Sofőrkesztyű (★) | Hold-szövet"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10079",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
-        "paint_name": "Motoroskesztyűk (★) | Vérnyomás"
+        "weapon_defindex": 5031,
+        "paint": "10070",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
+        "paint_name": "Sofőrkesztyű (★) | Hópárduc"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10080",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
-        "paint_name": "Motoroskesztyűk (★) | 3. Kommandós Század"
+        "weapon_defindex": 5031,
+        "paint": "10071",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
+        "paint_name": "Sofőrkesztyű (★) | Jaguárkirálynő"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
+        "paint_name": "Sofőrkesztyű (★) | Konvoj"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10042",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
+        "paint_name": "Sofőrkesztyű (★) | Birodalmi Takaró"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
+        "paint_name": "Sofőrkesztyű (★) | Karmazsin Szövet"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10069",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
+        "paint_name": "Sofőrkesztyű (★) | Vörös Rezan"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10041",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
+        "paint_name": "Sofőrkesztyű (★) | Királysikló"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10040",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
+        "paint_name": "Sofőrkesztyű (★) | Csörgőkígyó"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10043",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
+        "paint_name": "Sofőrkesztyű (★) | Előzés"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10072",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
+        "paint_name": "Sofőrkesztyű (★) | Fekete Nyakkendő"
     },
     {
         "weapon_defindex": 5034,
@@ -349,33 +235,9 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10033",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
-        "paint_name": "Specialista kesztyűk (★) | Karmazsin Kimonó"
-    },
-    {
-        "weapon_defindex": 5034,
         "paint": "10034",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10034.png",
         "paint_name": "Specialista kesztyűk (★) | Smaragdháló"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10035",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
-        "paint_name": "Specialista kesztyűk (★) | Alapítvány"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10061",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
-        "paint_name": "Specialista kesztyűk (★) | Karmazsin Háló"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10062",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
-        "paint_name": "Specialista kesztyűk (★) | Sörét"
     },
     {
         "weapon_defindex": 5034,
@@ -385,15 +247,33 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10064",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
-        "paint_name": "Specialista kesztyűk (★) | Mogul"
+        "paint": "10068",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
+        "paint_name": "Specialista kesztyűk (★) | Terepi Ügynök"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10062",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
+        "paint_name": "Specialista kesztyűk (★) | Sörét"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10033",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
+        "paint_name": "Specialista kesztyűk (★) | Karmazsin Kimonó"
     },
     {
         "weapon_defindex": 5034,
         "paint": "10065",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10065.png",
         "paint_name": "Specialista kesztyűk (★) | Fakuló Márvány"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10035",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
+        "paint_name": "Specialista kesztyűk (★) | Alapítvány"
     },
     {
         "weapon_defindex": 5034,
@@ -409,15 +289,141 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10068",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
-        "paint_name": "Specialista kesztyűk (★) | Terepi Ügynök"
+        "paint": "10061",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
+        "paint_name": "Specialista kesztyűk (★) | Karmazsin Háló"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10064",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
+        "paint_name": "Specialista kesztyűk (★) | Mogul"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10047",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
+        "paint_name": "Sportkesztyűk (★) | Omega"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10048",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
+        "paint_name": "Sportkesztyűk (★) | Bűn"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10038",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
+        "paint_name": "Sportkesztyűk (★) | Sövényútvesztő"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10075",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
+        "paint_name": "Sportkesztyűk (★) | Skarlát Shemagh"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10074",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
+        "paint_name": "Sportkesztyűk (★) | Nagyvad"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10076",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
+        "paint_name": "Sportkesztyűk (★) | Nocts"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
+        "paint_name": "Sportkesztyűk (★) | Száraz"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10045",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
+        "paint_name": "Sportkesztyűk (★) | Kétéltű"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10046",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
+        "paint_name": "Sportkesztyűk (★) | Bronz Alak"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10037",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
+        "paint_name": "Sportkesztyűk (★) | Pandóra Szelencéje"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10073",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
+        "paint_name": "Sportkesztyűk (★) | Csúzli"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10006",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
+        "paint_name": "Véreb-kesztyűk (★) | Elszenesedett"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10039",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
+        "paint_name": "Véreb-kesztyűk (★) | Gerilla"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10008",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
+        "paint_name": "Véreb-kesztyűk (★) | Bronzosított"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10007",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
+        "paint_name": "Véreb-kesztyűk (★) | Kígyómarás"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10087",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
+        "paint_name": "Broken Fang kesztyűk (★) | Tűhegy"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10085",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
+        "paint_name": "Broken Fang kesztyűk (★) | Jáde"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10086",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
+        "paint_name": "Broken Fang kesztyűk (★) | Sárga Csíkos"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10088",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
+        "paint_name": "Broken Fang kesztyűk (★) | Zavaros"
     },
     {
         "weapon_defindex": 5035,
         "paint": "10057",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10057.png",
         "paint_name": "Hydra kesztyűk (★) | Smaragdsikló"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10060",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
+        "paint_name": "Hydra kesztyűk (★) | Fémezett"
     },
     {
         "weapon_defindex": 5035,
@@ -430,11 +436,5 @@
         "paint": "10059",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10059.png",
         "paint_name": "Hydra kesztyűk (★) | Csörgőkígyó"
-    },
-    {
-        "weapon_defindex": 5035,
-        "paint": "10060",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
-        "paint_name": "Hydra kesztyűk (★) | Fémezett"
     }
 ]
