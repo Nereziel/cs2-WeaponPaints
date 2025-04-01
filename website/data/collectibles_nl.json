@@ -531,42 +531,42 @@
     },
     {
         "id": "983",
-        "name": "Champion at PGL Antwerp 2022",
+        "name": "Kampioen van PGL Antwerp 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-983.png"
     },
     {
         "id": "984",
-        "name": "Finalist at PGL Antwerp 2022",
+        "name": "Finalist van PGL Antwerp 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-984.png"
     },
     {
         "id": "985",
-        "name": "Semifinalist at PGL Antwerp 2022",
+        "name": "Halvefinalist van PGL Antwerp 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-985.png"
     },
     {
         "id": "986",
-        "name": "Quarterfinalist at PGL Antwerp 2022",
+        "name": "Kwartfinalist van PGL Antwerp 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-986.png"
     },
     {
         "id": "988",
-        "name": "Champion at IEM Rio 2022",
+        "name": "Kampioen van IEM Rio 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-988.png"
     },
     {
         "id": "989",
-        "name": "Finalist at IEM Rio 2022",
+        "name": "Finalist van IEM Rio 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-989.png"
     },
     {
         "id": "990",
-        "name": "Semifinalist at IEM Rio 2022",
+        "name": "Halvefinalist van IEM Rio 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-990.png"
     },
     {
         "id": "991",
-        "name": "Quarterfinalist at IEM Rio 2022",
+        "name": "Kwartfinalist van IEM Rio 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-991.png"
     },
     {
@@ -1261,18 +1261,33 @@
     },
     {
         "id": "4624",
-        "name": "Berlin 2019 Silver Coin",
+        "name": "Zilveren Berlin 2019-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4624.png"
     },
     {
         "id": "4625",
-        "name": "Berlin 2019 Gold Coin",
+        "name": "Gouden Berlin 2019-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4625.png"
     },
     {
         "id": "4626",
         "name": "Diamanten Berlin 2019-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"
+    },
+    {
+        "id": "4671",
+        "name": "1 ster voor Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4671.png"
+    },
+    {
+        "id": "4672",
+        "name": "10 sterren voor Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4672.png"
+    },
+    {
+        "id": "4673",
+        "name": "100 sterren voor Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4673.png"
     },
     {
         "id": "4674",
@@ -1380,6 +1395,21 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4703.png"
     },
     {
+        "id": "4704",
+        "name": "1 ster voor Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4704.png"
+    },
+    {
+        "id": "4705",
+        "name": "10 sterren voor Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4705.png"
+    },
+    {
+        "id": "4706",
+        "name": "100 sterren voor Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4706.png"
+    },
+    {
         "id": "4737",
         "name": "Dienstmedaille 2021",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4737.png"
@@ -1428,6 +1458,21 @@
         "id": "4762",
         "name": "Diamanten Operation Riptide-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4762.png"
+    },
+    {
+        "id": "4763",
+        "name": "1 ster voor Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4763.png"
+    },
+    {
+        "id": "4764",
+        "name": "10 sterren voor Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4764.png"
+    },
+    {
+        "id": "4765",
+        "name": "100 sterren voor Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"
     },
     {
         "id": "4797",
@@ -1481,42 +1526,42 @@
     },
     {
         "id": "4826",
-        "name": "Antwerp 2022 Coin",
+        "name": "Antwerp 2022-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4826.png"
     },
     {
         "id": "4827",
-        "name": "Antwerp 2022 Silver Coin",
+        "name": "Zilveren Antwerp 2022-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4827.png"
     },
     {
         "id": "4828",
-        "name": "Antwerp 2022 Gold Coin",
+        "name": "Gouden Antwerp 2022-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4828.png"
     },
     {
         "id": "4829",
-        "name": "Antwerp 2022 Diamond Coin",
+        "name": "Diamanten Antwerp 2022-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4829.png"
     },
     {
         "id": "4851",
-        "name": "Rio 2022 Coin",
+        "name": "Rio 2022-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4851.png"
     },
     {
         "id": "4852",
-        "name": "Rio 2022 Silver Coin",
+        "name": "Zilveren Rio 2022-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4852.png"
     },
     {
         "id": "4853",
-        "name": "Rio 2022 Gold Coin",
+        "name": "Gouden Rio 2022-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4853.png"
     },
     {
         "id": "4854",
-        "name": "Rio 2022 Diamond Coin",
+        "name": "Diamanten Rio 2022-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4854.png"
     },
     {
@@ -1551,22 +1596,22 @@
     },
     {
         "id": "4884",
-        "name": "Paris 2023 Coin",
+        "name": "Paris 2023-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4884.png"
     },
     {
         "id": "4885",
-        "name": "Paris 2023 Silver Coin",
+        "name": "Zilveren Paris 2023-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4885.png"
     },
     {
         "id": "4886",
-        "name": "Paris 2023 Gold Coin",
+        "name": "Gouden Paris 2023-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4886.png"
     },
     {
         "id": "4887",
-        "name": "Paris 2023 Diamond Coin",
+        "name": "Diamanten Paris 2023-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4887.png"
     },
     {
@@ -1601,22 +1646,22 @@
     },
     {
         "id": "4917",
-        "name": "Copenhagen 2024 Coin",
+        "name": "Copenhagen 2024-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4917.png"
     },
     {
         "id": "4918",
-        "name": "Copenhagen 2024 Silver Coin",
+        "name": "Zilveren Copenhagen 2024-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4918.png"
     },
     {
         "id": "4919",
-        "name": "Copenhagen 2024 Gold Coin",
+        "name": "Gouden Copenhagen 2024-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4919.png"
     },
     {
         "id": "4920",
-        "name": "Copenhagen 2024 Diamond Coin",
+        "name": "Diamanten Copenhagen 2024-munt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4920.png"
     },
     {
@@ -1663,6 +1708,96 @@
         "id": "4945",
         "name": "Pool Day-mapmunt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4945.png"
+    },
+    {
+        "id": "4951",
+        "name": "Dienstmedaille 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4951.png"
+    },
+    {
+        "id": "4952",
+        "name": "Dienstmedaille 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4952.png"
+    },
+    {
+        "id": "4953",
+        "name": "Dienstmedaille 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4953.png"
+    },
+    {
+        "id": "4954",
+        "name": "Dienstmedaille 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4954.png"
+    },
+    {
+        "id": "4955",
+        "name": "Dienstmedaille 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4955.png"
+    },
+    {
+        "id": "4956",
+        "name": "Dienstmedaille 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4956.png"
+    },
+    {
+        "id": "4958",
+        "name": "Shanghai 2024-munt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4958.png"
+    },
+    {
+        "id": "4959",
+        "name": "Zilveren Shanghai 2024-munt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4959.png"
+    },
+    {
+        "id": "4960",
+        "name": "Gouden Shanghai 2024-munt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4960.png"
+    },
+    {
+        "id": "4961",
+        "name": "Diamanten Shanghai 2024-munt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4961.png"
+    },
+    {
+        "id": "4974",
+        "name": "Kampioen van Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4974.png"
+    },
+    {
+        "id": "4975",
+        "name": "Finalist van Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4975.png"
+    },
+    {
+        "id": "4976",
+        "name": "Halvefinalist van Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4976.png"
+    },
+    {
+        "id": "4977",
+        "name": "Kwartfinalist van Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4977.png"
+    },
+    {
+        "id": "4982",
+        "name": "Whistle-mapmunt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4982.png"
+    },
+    {
+        "id": "4983",
+        "name": "Palais-mapmunt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4983.png"
+    },
+    {
+        "id": "4984",
+        "name": "Edin-mapmunt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4984.png"
+    },
+    {
+        "id": "4985",
+        "name": "Basalt-mapmunt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4985.png"
     },
     {
         "id": "6001",

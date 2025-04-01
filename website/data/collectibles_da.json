@@ -1275,6 +1275,21 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"
     },
     {
+        "id": "4671",
+        "name": "1 stjerne til Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4671.png"
+    },
+    {
+        "id": "4672",
+        "name": "10 stjerner til Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4672.png"
+    },
+    {
+        "id": "4673",
+        "name": "100 stjerner til Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4673.png"
+    },
+    {
         "id": "4674",
         "name": "Tjenestemedalje 2020",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4674.png"
@@ -1380,6 +1395,21 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4703.png"
     },
     {
+        "id": "4704",
+        "name": "1 stjerne til Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4704.png"
+    },
+    {
+        "id": "4705",
+        "name": "10 stjerner til Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4705.png"
+    },
+    {
+        "id": "4706",
+        "name": "100 stjerner til Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4706.png"
+    },
+    {
         "id": "4737",
         "name": "Tjenestemedalje 2021",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4737.png"
@@ -1428,6 +1458,21 @@
         "id": "4762",
         "name": "Diamantmønt | Operation Riptide",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4762.png"
+    },
+    {
+        "id": "4763",
+        "name": "1 stjerne til Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4763.png"
+    },
+    {
+        "id": "4764",
+        "name": "10 stjerner til Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4764.png"
+    },
+    {
+        "id": "4765",
+        "name": "100 stjerner til Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"
     },
     {
         "id": "4797",
@@ -1663,6 +1708,96 @@
         "id": "4945",
         "name": "Banemønt: Pool Day",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4945.png"
+    },
+    {
+        "id": "4951",
+        "name": "Tjenestemedalje 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4951.png"
+    },
+    {
+        "id": "4952",
+        "name": "Tjenestemedalje 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4952.png"
+    },
+    {
+        "id": "4953",
+        "name": "Tjenestemedalje 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4953.png"
+    },
+    {
+        "id": "4954",
+        "name": "Tjenestemedalje 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4954.png"
+    },
+    {
+        "id": "4955",
+        "name": "Tjenestemedalje 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4955.png"
+    },
+    {
+        "id": "4956",
+        "name": "Tjenestemedalje 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4956.png"
+    },
+    {
+        "id": "4958",
+        "name": "Mønt: Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4958.png"
+    },
+    {
+        "id": "4959",
+        "name": "Sølvmønt: Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4959.png"
+    },
+    {
+        "id": "4960",
+        "name": "Guldmønt: Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4960.png"
+    },
+    {
+        "id": "4961",
+        "name": "Diamantmønt: Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4961.png"
+    },
+    {
+        "id": "4974",
+        "name": "Mester ved Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4974.png"
+    },
+    {
+        "id": "4975",
+        "name": "Finalist ved Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4975.png"
+    },
+    {
+        "id": "4976",
+        "name": "Semifinalist ved Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4976.png"
+    },
+    {
+        "id": "4977",
+        "name": "Kvartfinalist ved Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4977.png"
+    },
+    {
+        "id": "4982",
+        "name": "Banemønt: Whistle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4982.png"
+    },
+    {
+        "id": "4983",
+        "name": "Banemønt: Palais",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4983.png"
+    },
+    {
+        "id": "4984",
+        "name": "Banemønt: Edin",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4984.png"
+    },
+    {
+        "id": "4985",
+        "name": "Banemønt: Basalt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4985.png"
     },
     {
         "id": "6001",

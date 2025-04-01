@@ -1,5 +1,15 @@
 [
     {
+        "id": "1",
+        "name": "Valve — Counter-Strike 2",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-1.png"
+    },
+    {
+        "id": "2",
+        "name": "Valve — CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-2.png"
+    },
+    {
         "id": "3",
         "name": "Набор музыки | Daniel Sadowski — Crimson Assault",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-3.png"
@@ -146,38 +156,38 @@
     },
     {
         "id": "32",
-        "name": "Набор музыки | Beartooth — Aggressive",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32.png"
+        "name": "StatTrak™ Набор музыки | Beartooth — Aggressive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32_st.png"
     },
     {
         "id": "33",
-        "name": "Набор музыки | Blitz Kids — The Good Youth",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33.png"
+        "name": "StatTrak™ Набор музыки | Blitz Kids — The Good Youth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33_st.png"
     },
     {
         "id": "34",
-        "name": "Набор музыки | Hundredth — FREE",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34.png"
+        "name": "StatTrak™ Набор музыки | Hundredth — FREE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34_st.png"
     },
     {
         "id": "35",
-        "name": "Набор музыки | Neck Deep — Life's Not Out To Get You",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35.png"
+        "name": "StatTrak™ Набор музыки | Neck Deep — Life's Not Out To Get You",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35_st.png"
     },
     {
         "id": "36",
-        "name": "Набор музыки | Roam — Backbone",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36.png"
+        "name": "StatTrak™ Набор музыки | Roam — Backbone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36_st.png"
     },
     {
         "id": "37",
-        "name": "Набор музыки | Twin Atlantic — GLA",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37.png"
+        "name": "StatTrak™ Набор музыки | Twin Atlantic — GLA",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37_st.png"
     },
     {
         "id": "38",
-        "name": "Набор музыки | Skog — III-Arena",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38.png"
+        "name": "StatTrak™ Набор музыки | Skog — III-Arena",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38_st.png"
     },
     {
         "id": "39",
@@ -335,6 +345,11 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-69.png"
     },
     {
+        "id": "70",
+        "name": "Valve — CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-70.png"
+    },
+    {
         "id": "71",
         "name": "Набор музыки | DRYDEN — Feel The Power",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-71.png"
@@ -403,5 +418,10 @@
         "id": "85",
         "name": "Набор музыки | Tree Adams — Seventh Moon",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    },
+    {
+        "id": "86",
+        "name": "Набор музыки | Perfect World — Ay Hey",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-86.png"
     }
 ]
