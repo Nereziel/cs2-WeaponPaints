@@ -1261,7 +1261,7 @@
     },
     {
         "id": "4624",
-        "name": "Silvermynt för Berlin 2019",
+        "name": "Berlin 2019 – silvermynt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4624.png"
     },
     {
@@ -1273,6 +1273,21 @@
         "id": "4626",
         "name": "Diamantmynt för Berlin 2019",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4626.png"
+    },
+    {
+        "id": "4671",
+        "name": "1 stjärna för Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4671.png"
+    },
+    {
+        "id": "4672",
+        "name": "10 stjärnor för Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4672.png"
+    },
+    {
+        "id": "4673",
+        "name": "100 stjärnor för Operation Shattered Web",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4673.png"
     },
     {
         "id": "4674",
@@ -1380,6 +1395,21 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4703.png"
     },
     {
+        "id": "4704",
+        "name": "1 stjärna för Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4704.png"
+    },
+    {
+        "id": "4705",
+        "name": "10 stjärnor för Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4705.png"
+    },
+    {
+        "id": "4706",
+        "name": "100 stjärnor för Operation Broken Fang",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4706.png"
+    },
+    {
         "id": "4737",
         "name": "2021 års tjänstemedalj",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4737.png"
@@ -1430,13 +1460,28 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4762.png"
     },
     {
+        "id": "4763",
+        "name": "1 stjärna för Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4763.png"
+    },
+    {
+        "id": "4764",
+        "name": "10 stjärnor för Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4764.png"
+    },
+    {
+        "id": "4765",
+        "name": "100 stjärnor för Operation Riptide",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4765.png"
+    },
+    {
         "id": "4797",
         "name": "Stockholm 2021-mynt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4797.png"
     },
     {
         "id": "4798",
-        "name": "Stockholm 2021-silvermynt",
+        "name": "Stockholm 2021 – silvermynt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4798.png"
     },
     {
@@ -1486,7 +1531,7 @@
     },
     {
         "id": "4827",
-        "name": "Antwerp 2022 – Silvermynt",
+        "name": "Antwerp 2022 – silvermynt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4827.png"
     },
     {
@@ -1506,7 +1551,7 @@
     },
     {
         "id": "4852",
-        "name": "Rio 2022 – Silvermynt",
+        "name": "Rio 2022 – silvermynt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4852.png"
     },
     {
@@ -1556,7 +1601,7 @@
     },
     {
         "id": "4885",
-        "name": "Paris 2023 Silver Coin",
+        "name": "Paris 2023 – silvermynt",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4885.png"
     },
     {
@@ -1663,6 +1708,96 @@
         "id": "4945",
         "name": "Banmynt för Pool Day",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4945.png"
+    },
+    {
+        "id": "4951",
+        "name": "2025 års tjänstemedalj",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4951.png"
+    },
+    {
+        "id": "4952",
+        "name": "2025 års tjänstemedalj",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4952.png"
+    },
+    {
+        "id": "4953",
+        "name": "2025 års tjänstemedalj",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4953.png"
+    },
+    {
+        "id": "4954",
+        "name": "2025 års tjänstemedalj",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4954.png"
+    },
+    {
+        "id": "4955",
+        "name": "2025 års tjänstemedalj",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4955.png"
+    },
+    {
+        "id": "4956",
+        "name": "2025 års tjänstemedalj",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4956.png"
+    },
+    {
+        "id": "4958",
+        "name": "Shanghai 2024 – mynt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4958.png"
+    },
+    {
+        "id": "4959",
+        "name": "Shanghai 2024 – silvermynt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4959.png"
+    },
+    {
+        "id": "4960",
+        "name": "Shanghai 2024 – guldmynt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4960.png"
+    },
+    {
+        "id": "4961",
+        "name": "Shanghai 2024 – diamantmynt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4961.png"
+    },
+    {
+        "id": "4974",
+        "name": "Vinnare av Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4974.png"
+    },
+    {
+        "id": "4975",
+        "name": "Finalist på Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4975.png"
+    },
+    {
+        "id": "4976",
+        "name": "Semifinalist på Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4976.png"
+    },
+    {
+        "id": "4977",
+        "name": "Kvartsfinalist på Perfect World Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4977.png"
+    },
+    {
+        "id": "4982",
+        "name": "Banmynt för Whistle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4982.png"
+    },
+    {
+        "id": "4983",
+        "name": "Banmynt för Palais",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4983.png"
+    },
+    {
+        "id": "4984",
+        "name": "Banmynt för Edin",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4984.png"
+    },
+    {
+        "id": "4985",
+        "name": "Banmynt för Basalt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-4985.png"
     },
     {
         "id": "6001",

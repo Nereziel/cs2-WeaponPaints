@@ -1,5 +1,15 @@
 [
     {
+        "id": "1",
+        "name": "Valve, Counter-Strike 2",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-1.png"
+    },
+    {
+        "id": "2",
+        "name": "Valve, CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-2.png"
+    },
+    {
         "id": "3",
         "name": "Trilha Sonora | Daniel Sadowski, Crimson Assault",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-3.png"
@@ -146,38 +156,38 @@
     },
     {
         "id": "32",
-        "name": "Trilha Sonora | Beartooth, Aggressive",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32.png"
+        "name": "Trilha Sonora StatTrak™ | Beartooth, Aggressive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32_st.png"
     },
     {
         "id": "33",
-        "name": "Trilha Sonora | Blitz Kids, The Good Youth",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33.png"
+        "name": "Trilha Sonora StatTrak™ | Blitz Kids, The Good Youth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33_st.png"
     },
     {
         "id": "34",
-        "name": "Trilha Sonora | Hundredth, FREE",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34.png"
+        "name": "Trilha Sonora StatTrak™ | Hundredth, FREE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34_st.png"
     },
     {
         "id": "35",
-        "name": "Trilha Sonora | Neck Deep, Life's Not Out To Get You",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35.png"
+        "name": "Trilha Sonora StatTrak™ | Neck Deep, Life's Not Out To Get You",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35_st.png"
     },
     {
         "id": "36",
-        "name": "Trilha Sonora | Roam, Backbone",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36.png"
+        "name": "Trilha Sonora StatTrak™ | Roam, Backbone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36_st.png"
     },
     {
         "id": "37",
-        "name": "Trilha Sonora | Twin Atlantic, GLA",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37.png"
+        "name": "Trilha Sonora StatTrak™ | Twin Atlantic, GLA",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37_st.png"
     },
     {
         "id": "38",
-        "name": "Trilha Sonora | Skog, III-Arena",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38.png"
+        "name": "Trilha Sonora StatTrak™ | Skog, III-Arena",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38_st.png"
     },
     {
         "id": "39",
@@ -333,6 +343,11 @@
         "id": "69",
         "name": "Trilha Sonora | Denzel Curry, ULTIMATE",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-69.png"
+    },
+    {
+        "id": "70",
+        "name": "Valve, CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-70.png"
     },
     {
         "id": "71",

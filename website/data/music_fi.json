@@ -1,5 +1,15 @@
 [
     {
+        "id": "1",
+        "name": "Valve – Counter-Strike 2",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-1.png"
+    },
+    {
+        "id": "2",
+        "name": "Valve – CS2",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-2.png"
+    },
+    {
         "id": "3",
         "name": "Musiikkipakkaus | Daniel Sadowski, Crimson Assault",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-3.png"
@@ -146,38 +156,38 @@
     },
     {
         "id": "32",
-        "name": "Musiikkipakkaus | Beartooth, Aggressive",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32.png"
+        "name": "StatTrak™-musiikkipakkaus | Beartooth, Aggressive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32_st.png"
     },
     {
         "id": "33",
-        "name": "Musiikkipakkaus | Blitz Kids, The Good Youth",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33.png"
+        "name": "StatTrak™-musiikkipakkaus | Blitz Kids, The Good Youth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33_st.png"
     },
     {
         "id": "34",
-        "name": "Musiikkipakkaus | Hundredth, FREE",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34.png"
+        "name": "StatTrak™-musiikkipakkaus | Hundredth, FREE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34_st.png"
     },
     {
         "id": "35",
-        "name": "Musiikkipakkaus | Neck Deep, Life's Not Out To Get You",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35.png"
+        "name": "StatTrak™-musiikkipakkaus | Neck Deep, Life's Not Out To Get You",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35_st.png"
     },
     {
         "id": "36",
-        "name": "Musiikkipakkaus | Roam, Backbone",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36.png"
+        "name": "StatTrak™-musiikkipakkaus | Roam, Backbone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36_st.png"
     },
     {
         "id": "37",
-        "name": "Musiikkipakkaus | Twin Atlantic, GLA",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37.png"
+        "name": "StatTrak™-musiikkipakkaus | Twin Atlantic, GLA",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37_st.png"
     },
     {
         "id": "38",
-        "name": "Musiikkipakkaus | Skog, III-Arena",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38.png"
+        "name": "StatTrak™-musiikkipakkaus | Skog, III-Arena",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38_st.png"
     },
     {
         "id": "39",
@@ -335,6 +345,11 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-69.png"
     },
     {
+        "id": "70",
+        "name": "Valve – CS2",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-70.png"
+    },
+    {
         "id": "71",
         "name": "Musiikkipakkaus | DRYDEN: Feel The Power",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-71.png"
@@ -406,7 +421,7 @@
     },
     {
         "id": "86",
-        "name": "Musiikkipakkaus | Perfect World, Ay Hey",
+        "name": "Musiikkipakkaus | Perfect World – Ay Hey",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-86.png"
     }
 ]
