@@ -168,34 +168,59 @@ if (isset($_SESSION['steamid'])) {
 							</div>
 						</div>
 
-						<!-- Weapons -->
-						<?php foreach ($weapons as $defindex => $weapon): ?>
-							<div class="loadout-item" data-weapon-id="<?php echo $defindex; ?>" <?php echo array_key_exists($defindex, $selectedSkins) ? 'data-equipped="true"' : ''; ?>>
-								<div class="item-image-container">
-									<?php if (array_key_exists($defindex, $selectedSkins)): ?>
-										<img src="<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['image_url']; ?>" 
-											 alt="<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['paint_name']; ?>" 
+						<!-- Only show equipped weapons -->
+						<?php foreach ($selectedSkins as $defindex => $selectedSkin): ?>
+							<?php if (isset($weapons[$defindex])): ?>
+								<div class="loadout-item" data-weapon-id="<?php echo $defindex; ?>" data-equipped="true">
+									<div class="item-image-container">
+										<img src="<?php echo $skins[$defindex][$selectedSkin['weapon_paint_id']]['image_url']; ?>" 
+											 alt="<?php echo $skins[$defindex][$selectedSkin['weapon_paint_id']]['paint_name']; ?>" 
 											 class="item-image">
 										<div class="item-overlay">
 											<button class="customize-btn" onclick="openCustomizeModal('weapon', <?php echo $defindex; ?>)">Customize</button>
 										</div>
-									<?php else: ?>
-										<img src="<?php echo $weapon['image_url']; ?>" alt="<?php echo $weapon['paint_name']; ?>" class="item-image">
-										<div class="item-overlay">
-											<button class="equip-btn" onclick="showWeaponSkins(<?php echo $defindex; ?>)">Equip Skin</button>
-										</div>
-									<?php endif; ?>
-								</div>
-								<div class="item-info">
-									<div class="item-category"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapon['weapon_name']))); ?></div>
-									<div class="item-name">
-										<?php echo array_key_exists($defindex, $selectedSkins) ? 
-											$skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['paint_name'] : 
-											$weapon['paint_name']; ?>
+									</div>
+									<div class="item-info">
+										<div class="item-category"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapons[$defindex]['weapon_name']))); ?></div>
+										<div class="item-name"><?php echo $skins[$defindex][$selectedSkin['weapon_paint_id']]['paint_name']; ?></div>
 									</div>
 								</div>
-							</div>
+							<?php endif; ?>
 						<?php endforeach; ?>
+
+						<!-- Show message if no weapons equipped -->
+						<?php if (empty($selectedSkins)): ?>
+							<div class="empty-loadout">
+								<div class="empty-message">
+									<h3>No weapons equipped</h3>
+									<p>Browse weapons below to equip skins</p>
+								</div>
+							</div>
+						<?php endif; ?>
+					</div>
+
+					<!-- Weapon Browser Section -->
+					<div class="weapon-browser">
+						<div class="browser-header">
+							<h2>Weapon Browser</h2>
+							<p>Click on any weapon to equip a skin</p>
+						</div>
+						<div class="browser-grid" id="weaponBrowser">
+							<?php foreach ($weapons as $defindex => $weapon): ?>
+								<div class="browser-item" data-weapon-id="<?php echo $defindex; ?>" onclick="showWeaponSkins(<?php echo $defindex; ?>)">
+									<div class="browser-image-container">
+										<img src="<?php echo $weapon['image_url']; ?>" alt="<?php echo $weapon['paint_name']; ?>" class="browser-image">
+										<div class="browser-overlay">
+											<span class="equip-text">Equip Skin</span>
+										</div>
+									</div>
+									<div class="browser-info">
+										<div class="browser-category"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapon['weapon_name']))); ?></div>
+										<div class="browser-name"><?php echo $weapon['paint_name']; ?></div>
+									</div>
+								</div>
+							<?php endforeach; ?>
+						</div>
 					</div>
 				</main>
 			</div>
@@ -306,7 +331,9 @@ if (isset($_SESSION['steamid'])) {
 
 			function filterWeaponsByCategory(category) {
 				const loadoutItems = document.querySelectorAll('.loadout-item');
+				const browserItems = document.querySelectorAll('.browser-item');
 				
+				// Filter loadout items
 				loadoutItems.forEach(item => {
 					const weaponId = item.dataset.weaponId;
 					const weaponType = item.dataset.weaponType;
@@ -328,22 +355,52 @@ if (isset($_SESSION['steamid'])) {
 					}
 				});
 
-				// Update header
+				// Filter browser items
+				browserItems.forEach(item => {
+					const weaponId = item.dataset.weaponId;
+					let shouldShow = false;
+
+					if (category !== 'knives' && weaponId && weaponCategories[category.charAt(0).toUpperCase() + category.slice(1)]) {
+						shouldShow = weaponCategories[category.charAt(0).toUpperCase() + category.slice(1)].includes(parseInt(weaponId));
+					}
+
+					if (shouldShow) {
+						item.style.display = 'block';
+						item.style.opacity = '1';
+						item.style.transform = 'scale(1)';
+					} else {
+						item.style.display = 'none';
+					}
+				});
+
+				// Update headers
 				const loadoutHeader = document.querySelector('.loadout-header h2');
+				const browserHeader = document.querySelector('.browser-header h2');
 				loadoutHeader.textContent = `${category.charAt(0).toUpperCase() + category.slice(1)} Loadout`;
+				browserHeader.textContent = `${category.charAt(0).toUpperCase() + category.slice(1)} Browser`;
 			}
 
 			function showAllWeapons() {
 				const loadoutItems = document.querySelectorAll('.loadout-item');
+				const browserItems = document.querySelectorAll('.browser-item');
+				
 				loadoutItems.forEach(item => {
 					item.style.display = 'block';
 					item.style.opacity = '1';
 					item.style.transform = 'scale(1)';
 				});
 
-				// Reset header
+				browserItems.forEach(item => {
+					item.style.display = 'block';
+					item.style.opacity = '1';
+					item.style.transform = 'scale(1)';
+				});
+
+				// Reset headers
 				const loadoutHeader = document.querySelector('.loadout-header h2');
+				const browserHeader = document.querySelector('.browser-header h2');
 				loadoutHeader.textContent = 'Current Loadout';
+				browserHeader.textContent = 'Weapon Browser';
 			}
 
 			function searchWeapons(query) {
@@ -358,8 +415,10 @@ if (isset($_SESSION['steamid'])) {
 				}
 
 				const loadoutItems = document.querySelectorAll('.loadout-item');
+				const browserItems = document.querySelectorAll('.browser-item');
 				const searchTerm = query.toLowerCase();
 
+				// Search loadout items
 				loadoutItems.forEach(item => {
 					const weaponId = item.dataset.weaponId;
 					const weaponType = item.dataset.weaponType;
@@ -386,9 +445,33 @@ if (isset($_SESSION['steamid'])) {
 					}
 				});
 
-				// Update header
+				// Search browser items
+				browserItems.forEach(item => {
+					const weaponId = item.dataset.weaponId;
+					let weaponName = '';
+					let skinName = '';
+
+					if (weaponId && weaponsData[weaponId]) {
+						weaponName = weaponsData[weaponId].weapon_name.replace('weapon_', '').toLowerCase();
+						skinName = item.querySelector('.browser-name').textContent.toLowerCase();
+					}
+
+					const matches = weaponName.includes(searchTerm) || skinName.includes(searchTerm);
+
+					if (matches) {
+						item.style.display = 'block';
+						item.style.opacity = '1';
+						item.style.transform = 'scale(1)';
+					} else {
+						item.style.display = 'none';
+					}
+				});
+
+				// Update headers
 				const loadoutHeader = document.querySelector('.loadout-header h2');
+				const browserHeader = document.querySelector('.browser-header h2');
 				loadoutHeader.textContent = `Search Results: "${query}"`;
+				browserHeader.textContent = `Search Results: "${query}"`;
 			}
 
 			function showWeaponSkins(weaponId) {
