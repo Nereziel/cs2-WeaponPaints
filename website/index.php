@@ -28,12 +28,34 @@ if (isset($_SESSION['steamid'])) {
 		$ex = explode("-", $_POST['forma']);
 
 		if ($ex[0] == "knife") {
-			$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 2) ON DUPLICATE KEY UPDATE `knife` = :knife", ["steamid" => $steamid, "knife" => $knifes[$ex[1]]['weapon_name']]);
-			$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 3) ON DUPLICATE KEY UPDATE `knife` = :knife", ["steamid" => $steamid, "knife" => $knifes[$ex[1]]['weapon_name']]);
+			// Handle knife selection - use the knife key directly
+			if (isset($knifes[$ex[1]])) {
+				$knifeData = $knifes[$ex[1]];
+				
+				// Clear any existing knife skins first
+				$db->query("DELETE FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` IN (500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526)", ["steamid" => $steamid]);
+				
+				// Clear any existing basic knife selection first
+				$db->query("DELETE FROM `wp_player_knife` WHERE `steamid` = :steamid", ["steamid" => $steamid]);
+				
+				// Set the new basic knife selection
+				$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 2)", ["steamid" => $steamid, "knife" => $knifeData['weapon_name']]);
+				$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 3)", ["steamid" => $steamid, "knife" => $knifeData['weapon_name']]);
+			}
 		} else {
 			if (array_key_exists($ex[1], $skins[$ex[0]]) && isset($_POST['wear']) && $_POST['wear'] >= 0.00 && $_POST['wear'] <= 1.00 && isset($_POST['seed'])) {
 				$wear = floatval($_POST['wear']);
 				$seed = intval($_POST['seed']);
+				
+				// If this is a knife skin, clear basic knife selection AND other knife skins
+				if (in_array($ex[0], [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])) {
+					// Clear basic knife selection
+					$db->query("DELETE FROM `wp_player_knife` WHERE `steamid` = :steamid", ["steamid" => $steamid]);
+					
+					// Clear ALL other knife skins (to handle switching between knife types)
+					$db->query("DELETE FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` IN (500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526) AND `weapon_defindex` != :current_defindex", ["steamid" => $steamid, "current_defindex" => $ex[0]]);
+				}
+				
 				if (array_key_exists($ex[0], $selectedSkins)) {
 					$db->query("UPDATE wp_player_skins SET weapon_paint_id = :weapon_paint_id, weapon_wear = :weapon_wear, weapon_seed = :weapon_seed WHERE steamid = :steamid AND weapon_defindex = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
 				} else {
@@ -188,6 +210,9 @@ if (isset($_SESSION['steamid'])) {
 						$displayKnifeSkin = null;
 						$knifeSource = '';
 						
+						// Debug: Show what's in selectedKnife
+						// echo "<!-- Debug: selectedKnife = " . print_r($selectedKnife, true) . " -->";
+						
 						// Check if there's a knife skin equipped (from selectedSkins for knife defindexes)
 						foreach ($selectedSkins as $defindex => $selectedSkin) {
 							if (in_array($defindex, [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])) {
@@ -200,8 +225,8 @@ if (isset($_SESSION['steamid'])) {
 						}
 						
 						// If no knife skin, check for basic knife selection
-						if (!$displayKnifeSkin && $selectedKnife != null) {
-							foreach ($knifes as $knife) {
+						if (!$displayKnifeSkin && $selectedKnife != null && !empty($selectedKnife)) {
+							foreach ($knifes as $knifeKey => $knife) {
 								if ($selectedKnife[0]['knife'] == $knife['weapon_name']) {
 									$displayKnife = $knife;
 									$knifeSource = 'basic';
@@ -276,16 +301,10 @@ if (isset($_SESSION['steamid'])) {
 								</div>
 							<?php endif; ?>
 						<?php endforeach; ?>
-
-
 					</div>
-
-
 				</main>
 			</div>
 		</div>
-
-
 
 		<!-- Customize Modal -->
 		<div id="customizeModal" class="modal hidden">
@@ -531,7 +550,28 @@ if (isset($_SESSION['steamid'])) {
 				// Clear previous content
 				skinGrid.innerHTML = '';
 				
-				// Check if this knife type has skins in the skins data
+				// ALWAYS show the basic knife option first
+				const knife = knivesData[knifeType];
+				if (knife) {
+					const basicKnifeOption = document.createElement('div');
+					basicKnifeOption.className = 'skin-option';
+					
+					// Check if basic knife is currently selected (no knife skins equipped for this type)
+					if (!selectedSkinsData[knifeType]) {
+						basicKnifeOption.classList.add('active');
+					}
+					
+					basicKnifeOption.onclick = () => equipKnife(knifeType);
+					
+					basicKnifeOption.innerHTML = `
+						<img src="${knife.image_url}" alt="${knife.paint_name}">
+						<div class="skin-option-name">Default</div>
+					`;
+					
+					skinsContainer.appendChild(basicKnifeOption);
+				}
+				
+				// Then show knife skins if available
 				if (skinsData[knifeType]) {
 					// This knife type has multiple skins
 					Object.entries(skinsData[knifeType]).forEach(([paintId, skin]) => {
@@ -552,22 +592,6 @@ if (isset($_SESSION['steamid'])) {
 						
 						skinsContainer.appendChild(skinOption);
 					});
-				} else {
-					// This knife type has only one variant (the knife itself)
-					const knife = knivesData[knifeType];
-					if (knife) {
-						const skinOption = document.createElement('div');
-						skinOption.className = 'skin-option';
-						
-						skinOption.onclick = () => equipKnife(knifeType);
-						
-						skinOption.innerHTML = `
-							<img src="${knife.image_url}" alt="${knife.paint_name}">
-							<div class="skin-option-name">Default</div>
-						`;
-						
-						skinsContainer.appendChild(skinOption);
-					}
 				}
 				
 				skinGrid.appendChild(skinsContainer);
