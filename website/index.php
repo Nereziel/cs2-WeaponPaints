@@ -236,35 +236,48 @@ if (isset($_SESSION['steamid'])) {
 							</div>
 						<?php endif; ?>
 
-						<!-- Only show equipped weapons (exclude knives) -->
-						<?php foreach ($selectedSkins as $defindex => $selectedSkin): ?>
-							<?php if (isset($weapons[$defindex]) && !in_array($defindex, [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])): ?>
-								<div class="loadout-item" data-weapon-id="<?php echo $defindex; ?>" data-equipped="true">
+						<!-- Show all weapons (exclude knives) - either with custom skin or default -->
+						<?php foreach ($weapons as $defindex => $weapon): ?>
+							<?php if (!in_array($defindex, [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])): ?>
+								<?php 
+								$hasCustomSkin = array_key_exists($defindex, $selectedSkins);
+								$isEquipped = $hasCustomSkin ? 'true' : 'false';
+								?>
+								<div class="loadout-item" data-weapon-id="<?php echo $defindex; ?>" data-equipped="<?php echo $isEquipped; ?>">
 									<div class="item-image-container">
-										<img src="<?php echo $skins[$defindex][$selectedSkin['weapon_paint_id']]['image_url']; ?>" 
-											 alt="<?php echo $skins[$defindex][$selectedSkin['weapon_paint_id']]['paint_name']; ?>" 
-											 class="item-image">
-										<div class="item-overlay">
-											<button class="customize-btn" onclick="openCustomizeModal('weapon', <?php echo $defindex; ?>)">Customize</button>
-										</div>
+										<?php if ($hasCustomSkin): ?>
+											<!-- Show custom skin -->
+											<img src="<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['image_url']; ?>" 
+												 alt="<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['paint_name']; ?>" 
+												 class="item-image">
+											<div class="item-overlay">
+												<button class="customize-btn" onclick="openCustomizeModal('weapon', <?php echo $defindex; ?>)">Customize</button>
+											</div>
+										<?php else: ?>
+											<!-- Show default weapon -->
+											<img src="<?php echo $weapon['image_url']; ?>" 
+												 alt="<?php echo $weapon['paint_name']; ?>" 
+												 class="item-image">
+											<div class="item-overlay">
+												<button class="equip-btn" onclick="toggleWeaponSkins(<?php echo $defindex; ?>)">Equip Skin</button>
+											</div>
+										<?php endif; ?>
 									</div>
 									<div class="item-info">
-										<div class="item-category"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapons[$defindex]['weapon_name']))); ?></div>
-										<div class="item-name"><?php echo $skins[$defindex][$selectedSkin['weapon_paint_id']]['paint_name']; ?></div>
+										<div class="item-category"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapon['weapon_name']))); ?></div>
+										<div class="item-name">
+											<?php if ($hasCustomSkin): ?>
+												<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['paint_name']; ?>
+											<?php else: ?>
+												<?php echo $weapon['paint_name']; ?>
+											<?php endif; ?>
+										</div>
 									</div>
 								</div>
 							<?php endif; ?>
 						<?php endforeach; ?>
 
-						<!-- Show message if no weapons equipped -->
-						<?php if (empty($selectedSkins)): ?>
-							<div class="empty-loadout">
-								<div class="empty-message">
-									<h3>No weapons equipped</h3>
-									<p>Browse weapons in the sidebar to equip skins</p>
-								</div>
-							</div>
-						<?php endif; ?>
+
 					</div>
 
 
