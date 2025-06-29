@@ -47,13 +47,44 @@ if (isset($_SESSION['steamid'])) {
 				$wear = floatval($_POST['wear']);
 				$seed = intval($_POST['seed']);
 				
-				// If this is a knife skin, clear basic knife selection AND other knife skins
+				// If this is a knife skin, automatically equip the corresponding knife type
 				if (in_array($ex[0], [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])) {
-					// Clear basic knife selection
+					// Map defindex to knife weapon_name
+					$knifeMapping = [
+						500 => 'weapon_bayonet',
+						503 => 'weapon_knife_css',
+						505 => 'weapon_knife_flip',
+						506 => 'weapon_knife_gut',
+						507 => 'weapon_knife_karambit',
+						508 => 'weapon_knife_m9_bayonet',
+						509 => 'weapon_knife_tactical',
+						512 => 'weapon_knife_falchion',
+						514 => 'weapon_knife_survival_bowie',
+						515 => 'weapon_knife_butterfly',
+						516 => 'weapon_knife_push',
+						517 => 'weapon_knife_cord',
+						518 => 'weapon_knife_canis',
+						519 => 'weapon_knife_ursus',
+						520 => 'weapon_knife_gypsy_jackknife',
+						521 => 'weapon_knife_outdoor',
+						522 => 'weapon_knife_stiletto',
+						523 => 'weapon_knife_widowmaker',
+						525 => 'weapon_knife_skeleton',
+						526 => 'weapon_knife_css'
+					];
+					
+					// Clear any existing basic knife selection
 					$db->query("DELETE FROM `wp_player_knife` WHERE `steamid` = :steamid", ["steamid" => $steamid]);
 					
 					// Clear ALL other knife skins (to handle switching between knife types)
 					$db->query("DELETE FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` IN (500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526) AND `weapon_defindex` != :current_defindex", ["steamid" => $steamid, "current_defindex" => $ex[0]]);
+					
+					// Set the corresponding knife type in wp_player_knife table
+					if (isset($knifeMapping[$ex[0]])) {
+						$knifeWeaponName = $knifeMapping[$ex[0]];
+						$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 2)", ["steamid" => $steamid, "knife" => $knifeWeaponName]);
+						$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 3)", ["steamid" => $steamid, "knife" => $knifeWeaponName]);
+					}
 				}
 				
 				if (array_key_exists($ex[0], $selectedSkins)) {
