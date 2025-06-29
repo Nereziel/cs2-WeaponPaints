@@ -29,8 +29,8 @@ if (isset($_SESSION['steamid'])) {
 			$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 3) ON DUPLICATE KEY UPDATE `knife` = :knife", ["steamid" => $steamid, "knife" => $knifes[$ex[1]]['weapon_name']]);
 		} else {
 			if (array_key_exists($ex[1], $skins[$ex[0]]) && isset($_POST['wear']) && $_POST['wear'] >= 0.00 && $_POST['wear'] <= 1.00 && isset($_POST['seed'])) {
-				$wear = floatval($_POST['wear']); // wear
-				$seed = intval($_POST['seed']); // seed
+				$wear = floatval($_POST['wear']);
+				$seed = intval($_POST['seed']);
 				if (array_key_exists($ex[0], $selectedSkins)) {
 					$db->query("UPDATE wp_player_skins SET weapon_paint_id = :weapon_paint_id, weapon_wear = :weapon_wear, weapon_seed = :weapon_seed WHERE steamid = :steamid AND weapon_defindex = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
 				} else {
@@ -41,228 +41,470 @@ if (isset($_SESSION['steamid'])) {
 		}
 		header("Location: {$_SERVER['PHP_SELF']}");
 	}
+
+	// Organize weapons by categories
+	$weaponCategories = [
+		'Knives' => [],
+		'Gloves' => [],
+		'Rifles' => [7, 8, 10, 13, 16, 60, 39, 40, 38],
+		'Pistols' => [1, 2, 3, 4, 30, 32, 36, 61, 63, 64],
+		'SMGs' => [17, 19, 24, 26, 33, 34],
+		'Shotguns' => [25, 27, 29, 35],
+		'Snipers' => [9, 11, 38],
+		'Machine Guns' => [14, 28],
+		'Grenades' => [43, 44, 45, 46, 47, 48]
+	];
+
+	// Add knives to categories
+	foreach ($knifes as $knifeKey => $knife) {
+		if ($knifeKey != 0) {
+			$weaponCategories['Knives'][$knifeKey] = $knife;
+		}
+	}
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en"<?php if(WEB_STYLE_DARK) echo 'data-bs-theme="dark"'?>>
+<html lang="en" data-theme="dark">
 
 <head>
 	<meta charset="utf-8">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
-	<title>CS2 Simple Weapon Paints</title>
+	<title>CS2 Weapon Paints</title>
 </head>
 
 <body>
 
-	<?php
-	if (!isset($_SESSION['steamid'])) {
-		echo "<div class='bg-primary'><h2>To choose weapon paints loadout, you need to ";
-		loginbutton("rectangle");
-		echo "</h2></div>";
-	} else {
-		echo "<div class='bg-primary'><h2>Your current weapon skin loadout <a class='btn btn-danger' href='{$_SERVER['PHP_SELF']}?logout'>Logout</a></h2> </div>";
-		echo "<div class='card-group mt-2'>";
-	?>
-
-		<div class="col-sm-2">
-			<div class="card text-center mb-3 border border-primary">
-				<div class="card-body">
-					<?php
-					$actualKnife = $knifes[0];
-					if ($selectedKnife != null)
-					{
-						foreach ($knifes as $knife) {
-							if ($selectedKnife[0]['knife'] == $knife['weapon_name']) {
-								$actualKnife = $knife;
-								break;
-							}
-						}
-					}
-
-					echo "<div class='card-header'>";
-					echo "<h6 class='card-title item-name'>Knife type</h6>";
-					echo "<h5 class='card-title item-name'>{$actualKnife["paint_name"]}</h5>";
-					echo "</div>";
-					echo "<img src='{$actualKnife["image_url"]}' class='skin-image'>";
-					?>
+	<?php if (!isset($_SESSION['steamid'])): ?>
+		<div class="login-container">
+			<div class="login-card">
+				<h1>CS2 Weapon Paints</h1>
+				<p>Connect your Steam account to customize your weapon loadout</p>
+				<?php loginbutton("rectangle"); ?>
+			</div>
+		</div>
+	<?php else: ?>
+		<div class="app-container">
+			<!-- Header -->
+			<header class="app-header">
+				<div class="header-left">
+					<h1>CS2 Weapon Paints</h1>
 				</div>
-				<div class="card-footer">
-					<form action="" method="POST">
-						<select name="forma" class="form-control select" onchange="this.form.submit()" class="SelectWeapon">
-							<option disabled>Select knife</option>
+				<div class="header-right">
+					<span class="user-info">Welcome, <?php echo $_SESSION['steam_personaname'] ?? 'Player'; ?></span>
+					<a href="<?php echo $_SERVER['PHP_SELF']; ?>?logout" class="logout-btn">Logout</a>
+				</div>
+			</header>
+
+			<div class="app-main">
+				<!-- Sidebar -->
+				<aside class="sidebar">
+					<div class="sidebar-header">
+						<h3>Weapons</h3>
+						<div class="search-container">
+							<input type="text" id="weaponSearch" placeholder="Search weapons..." onkeyup="searchWeapons(this.value)">
+						</div>
+					</div>
+					<nav class="sidebar-nav">
+						<?php foreach ($weaponCategories as $categoryName => $categoryWeapons): ?>
+							<?php 
+								// Count weapons in this category
+								$weaponCount = 0;
+								if ($categoryName == 'Knives') {
+									$weaponCount = count($knifes) - 1; // Exclude default knife
+								} else {
+									foreach ($categoryWeapons as $weaponDefindex) {
+										if (isset($weapons[$weaponDefindex])) {
+											$weaponCount++;
+										}
+									}
+								}
+							?>
+							<div class="nav-item" data-category="<?php echo strtolower($categoryName); ?>" onclick="toggleCategory('<?php echo strtolower($categoryName); ?>')">
+								<span class="nav-icon">
+									<?php echo $categoryName == 'Knives' ? '🗡️' : ($categoryName == 'Gloves' ? '🧤' : ($categoryName == 'Rifles' ? '🔫' : ($categoryName == 'Pistols' ? '🔫' : ($categoryName == 'SMGs' ? '🔫' : ($categoryName == 'Shotguns' ? '🔫' : ($categoryName == 'Snipers' ? '🎯' : ($categoryName == 'Machine Guns' ? '⚡' : '💣'))))))); ?>
+								</span>
+								<div class="nav-content">
+									<span class="nav-text"><?php echo $categoryName; ?></span>
+									<span class="nav-count"><?php echo $weaponCount; ?></span>
+								</div>
+								<span class="nav-arrow">▶</span>
+							</div>
+						<?php endforeach; ?>
+					</nav>
+				</aside>
+
+				<!-- Main Content -->
+				<main class="main-content">
+					<div class="loadout-header">
+						<h2>Current Loadout</h2>
+						<p>Hover over items to customize</p>
+					</div>
+
+					<div class="loadout-grid">
+						<!-- Knife -->
+						<div class="loadout-item" data-weapon-type="knife">
 							<?php
-							foreach ($knifes as $knifeKey => $knife) {
-								if ($selectedKnife[0]['knife'] == $knife['weapon_name'])
-									echo "<option selected value=\"knife-{$knifeKey}\">{$knife['paint_name']}</option>";
-								else
-									echo "<option value=\"knife-{$knifeKey}\">{$knife['paint_name']}</option>";
+							$actualKnife = $knifes[0];
+							if ($selectedKnife != null) {
+								foreach ($knifes as $knife) {
+									if ($selectedKnife[0]['knife'] == $knife['weapon_name']) {
+										$actualKnife = $knife;
+										break;
+									}
+								}
 							}
 							?>
-						</select>
+							<div class="item-image-container">
+								<img src="<?php echo $actualKnife['image_url']; ?>" alt="<?php echo $actualKnife['paint_name']; ?>" class="item-image">
+								<div class="item-overlay">
+									<button class="customize-btn" onclick="openCustomizeModal('knife', 0)">Customize</button>
+								</div>
+							</div>
+							<div class="item-info">
+								<div class="item-category">Knife</div>
+								<div class="item-name"><?php echo $actualKnife['paint_name']; ?></div>
+							</div>
+						</div>
+
+						<!-- Weapons -->
+						<?php foreach ($weapons as $defindex => $weapon): ?>
+							<div class="loadout-item" data-weapon-id="<?php echo $defindex; ?>" <?php echo array_key_exists($defindex, $selectedSkins) ? 'data-equipped="true"' : ''; ?>>
+								<div class="item-image-container">
+									<?php if (array_key_exists($defindex, $selectedSkins)): ?>
+										<img src="<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['image_url']; ?>" 
+											 alt="<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['paint_name']; ?>" 
+											 class="item-image">
+										<div class="item-overlay">
+											<button class="customize-btn" onclick="openCustomizeModal('weapon', <?php echo $defindex; ?>)">Customize</button>
+										</div>
+									<?php else: ?>
+										<img src="<?php echo $weapon['image_url']; ?>" alt="<?php echo $weapon['paint_name']; ?>" class="item-image">
+										<div class="item-overlay">
+											<button class="equip-btn" onclick="showWeaponSkins(<?php echo $defindex; ?>)">Equip Skin</button>
+										</div>
+									<?php endif; ?>
+								</div>
+								<div class="item-info">
+									<div class="item-category"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapon['weapon_name']))); ?></div>
+									<div class="item-name">
+										<?php echo array_key_exists($defindex, $selectedSkins) ? 
+											$skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['paint_name'] : 
+											$weapon['paint_name']; ?>
+									</div>
+								</div>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<!-- Skin Selection Overlay -->
+		<div id="skinSelectionOverlay" class="overlay hidden">
+			<div class="overlay-content">
+				<div class="overlay-header">
+					<h3 id="overlayTitle">Select Skin</h3>
+					<button class="close-btn" onclick="closeSkinSelection()">&times;</button>
+				</div>
+				<div class="skin-grid" id="skinGrid">
+					<!-- Skins will be populated here by JavaScript -->
+				</div>
+			</div>
+		</div>
+
+		<!-- Customize Modal -->
+		<div id="customizeModal" class="modal hidden">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 id="modalTitle">Customize Weapon</h3>
+					<button class="close-btn" onclick="closeCustomizeModal()">&times;</button>
+				</div>
+				<div class="modal-body">
+					<form id="customizeForm" method="POST">
+						<input type="hidden" id="customizeWeaponId" name="forma" value="">
+						
+						<div class="customize-grid">
+							<div class="customize-section">
+								<label for="wearSelect">Wear Condition</label>
+								<select id="wearSelect" name="wearSelect" onchange="updateWearValue(this.value)">
+									<option value="0.00">Factory New</option>
+									<option value="0.07">Minimal Wear</option>
+									<option value="0.15">Field-Tested</option>
+									<option value="0.38">Well-Worn</option>
+									<option value="0.45">Battle-Scarred</option>
+								</select>
+							</div>
+
+							<div class="customize-section">
+								<label for="wearInput">Float Value</label>
+								<input type="number" id="wearInput" name="wear" min="0" max="1" step="0.001" value="0.00">
+							</div>
+
+							<div class="customize-section">
+								<label for="seedInput">Pattern Seed</label>
+								<input type="number" id="seedInput" name="seed" min="0" max="1000" value="0">
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" onclick="closeCustomizeModal()">Cancel</button>
+							<button type="submit" class="btn btn-primary">Apply Changes</button>
+						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 
-		<?php
-		foreach ($weapons as $defindex => $default) { ?>
-			<div class="col-sm-2">
-				<div class="card text-center mb-3">
-					<div class="card-body">
-						<?php
-						if (array_key_exists($defindex, $selectedSkins)) {
-							echo "<div class='card-header'>";
-							echo "<h5 class='card-title item-name'>{$skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]["paint_name"]}</h5>";
-							echo "</div>";
-							echo "<img src='{$skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['image_url']}' class='skin-image'>";
-						} else {
-							echo "<div class='card-header'>";
-							echo "<h5 class='card-title item-name'>{$default["paint_name"]}</h5>";
-							echo "</div>";
-							echo "<img src='{$default["image_url"]}' class='skin-image'>";
-						}
-						?>
-					</div>
-					<div class="card-footer">
-						<form action="" method="POST">
-							<select name="forma" class="form-control select" onchange="this.form.submit()" class="SelectWeapon">
-								<option disabled>Select skin</option>
-								<?php
-								foreach ($skins[$defindex] as $paintKey => $paint) {
-									if (array_key_exists($defindex, $selectedSkins) && $selectedSkins[$defindex]['weapon_paint_id'] == $paintKey)
-										echo "<option selected value=\"{$defindex}-{$paintKey}\">{$paint['paint_name']}</option>";
-									else
-										echo "<option value=\"{$defindex}-{$paintKey}\">{$paint['paint_name']}</option>";
-								}
-								?>
-							</select>
-							<br></br>
-							<?php
-							$selectedSkinInfo = isset($selectedSkins[$defindex]) ? $selectedSkins[$defindex] : null;
-							$steamid = $_SESSION['steamid'];
+		<script>
+			// Store weapon and skin data for JavaScript
+			const weaponsData = <?php echo json_encode($weapons); ?>;
+			const skinsData = <?php echo json_encode($skins); ?>;
+			const selectedSkinsData = <?php echo json_encode($selectedSkins); ?>;
+			const knivesData = <?php echo json_encode($knifes); ?>;
+			const weaponCategories = <?php echo json_encode($weaponCategories); ?>;
 
-							if ($selectedSkinInfo) :
-							?>
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#weaponModal<?php echo $defindex ?>">
-									Settings
-								</button>
-							<?php else : ?>
-								<button type="button" class="btn btn-primary" onclick="showSkinSelectionAlert()">
-									Settings
-								</button>
-								<script>
-									function showSkinSelectionAlert() {
-										alert("You need to select a skin first.");
-									}
-								</script>
-							<?php endif; ?>
+			let currentFilter = 'all';
 
-					</div>
-
-					<?php
-					// wear value 
-					$selectedSkinInfo = isset($selectedSkins[$defindex]['weapon_paint_id']) ? $selectedSkins[$defindex] : null;
-					$queryWear = $selectedSkins[$defindex]['weapon_wear'] ?? 1.0;
-					$initialWearValue = isset($selectedSkinInfo['weapon_wear']) ? $selectedSkinInfo['weapon_wear'] : (isset($queryWear[0]['weapon_wear']) ? $queryWear[0] : 0.0);
-
-					// seed value 
-					$querySeed = $selectedSkins[$defindex]['weapon_seed'] ?? 0;
-					$initialSeedValue = isset($selectedSkinInfo['weapon_seed']) ? $selectedSkinInfo['weapon_seed'] : 0;
-					?>
-
-
-					<div class="modal fade" id="weaponModal<?php echo $defindex ?>" tabindex="-1" role="dialog" aria-labelledby="weaponModalLabel<?php echo $defindex ?>" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class='card-title item-name'>
-										<?php
-										if (array_key_exists($defindex, $selectedSkins)) {
-											echo "{$skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]["paint_name"]} Settings";
-										} else {
-											echo "{$default["paint_name"]} Settings";
-										}
-										?>
-									</h5>
-								</div>
-								<div class="modal-body">
-									<div class="form-group">
-										<select class="form-select" id="wearSelect<?php echo $defindex ?>" name="wearSelect" onchange="updateWearValue<?php echo $defindex ?>(this.value)">
-											<option disabled>Select Wear</option>
-											<option value="0.00" <?php echo ($initialWearValue == 0.00) ? 'selected' : ''; ?>>Factory New</option>
-											<option value="0.07" <?php echo ($initialWearValue == 0.07) ? 'selected' : ''; ?>>Minimal Wear</option>
-											<option value="0.15" <?php echo ($initialWearValue == 0.15) ? 'selected' : ''; ?>>Field-Tested</option>
-											<option value="0.38" <?php echo ($initialWearValue == 0.38) ? 'selected' : ''; ?>>Well-Worn</option>
-											<option value="0.45" <?php echo ($initialWearValue == 0.45) ? 'selected' : ''; ?>>Battle-Scarred</option>
-										</select>
-
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-group">
-												<label for="wear">Wear:</label>
-												<input type="text" value="<?php echo $initialWearValue; ?>" class="form-control" id="wear<?php echo $defindex ?>" name="wear">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label for="seed">Seed:</label>
-												<input type="text" value="<?php echo $initialSeedValue; ?>" class="form-control" id="seed<?php echo $defindex ?>" name="seed" oninput="validateSeed(this)">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									<button type="submit" class="btn btn-danger">Use</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<script>
-				//  wear
-				function updateWearValue<?php echo $defindex ?>(selectedValue) {
-					var wearInputElement = document.getElementById("wear<?php echo $defindex ?>");
-					wearInputElement.value = selectedValue;
+			function toggleCategory(category) {
+				const navItem = document.querySelector(`[data-category="${category}"]`);
+				const arrow = navItem.querySelector('.nav-arrow');
+				
+				// Check if already active
+				if (navItem.classList.contains('active')) {
+					// Deactivate and show all
+					arrow.textContent = '▶';
+					hideCategoryWeapons(category);
+					showAllWeapons();
+					currentFilter = 'all';
+				} else {
+					// Activate and filter
+					arrow.textContent = '▼';
+					showCategoryWeapons(category);
+					filterWeaponsByCategory(category);
+					currentFilter = category;
 				}
+			}
 
-				function validateWear(inputElement) {
-					inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
-				}
-				// seed
-				function validateSeed(input) {
-					// Check entered value
-					var inputValue = input.value.replace(/[^0-9]/g, ''); // Just get the numbers
+			function showCategoryWeapons(category) {
+				// Clear all active states
+				document.querySelectorAll('.nav-item').forEach(item => {
+					item.classList.remove('active');
+					item.querySelector('.nav-arrow').textContent = '▶';
+				});
+				
+				// Set active state
+				const navItem = document.querySelector(`[data-category="${category}"]`);
+				navItem.classList.add('active');
+				navItem.querySelector('.nav-arrow').textContent = '▼';
+			}
 
-					if (inputValue === "") {
-						input.value = 0; // Set to 0 if empty or no numbers
+			function hideCategoryWeapons(category) {
+				document.querySelector(`[data-category="${category}"]`).classList.remove('active');
+			}
+
+			function filterWeaponsByCategory(category) {
+				const loadoutItems = document.querySelectorAll('.loadout-item');
+				
+				loadoutItems.forEach(item => {
+					const weaponId = item.dataset.weaponId;
+					const weaponType = item.dataset.weaponType;
+					let shouldShow = false;
+
+					if (category === 'knives' && weaponType === 'knife') {
+						shouldShow = true;
+					} else if (category !== 'knives' && weaponId && weaponCategories[category.charAt(0).toUpperCase() + category.slice(1)]) {
+						shouldShow = weaponCategories[category.charAt(0).toUpperCase() + category.slice(1)].includes(parseInt(weaponId));
+					}
+
+					if (shouldShow) {
+						item.style.display = 'block';
+						item.style.opacity = '1';
+						item.style.transform = 'scale(1)';
 					} else {
-						var numericValue = parseInt(inputValue);
-						numericValue = Math.min(1000, Math.max(1, numericValue)); // Interval control
+						item.style.opacity = '0.3';
+						item.style.transform = 'scale(0.95)';
+					}
+				});
 
-						input.value = numericValue;
+				// Update header
+				const loadoutHeader = document.querySelector('.loadout-header h2');
+				loadoutHeader.textContent = `${category.charAt(0).toUpperCase() + category.slice(1)} Loadout`;
+			}
+
+			function showAllWeapons() {
+				const loadoutItems = document.querySelectorAll('.loadout-item');
+				loadoutItems.forEach(item => {
+					item.style.display = 'block';
+					item.style.opacity = '1';
+					item.style.transform = 'scale(1)';
+				});
+
+				// Reset header
+				const loadoutHeader = document.querySelector('.loadout-header h2');
+				loadoutHeader.textContent = 'Current Loadout';
+			}
+
+			function searchWeapons(query) {
+				if (!query.trim()) {
+					// If search is empty, apply current filter or show all
+					if (currentFilter === 'all') {
+						showAllWeapons();
+					} else {
+						filterWeaponsByCategory(currentFilter);
+					}
+					return;
+				}
+
+				const loadoutItems = document.querySelectorAll('.loadout-item');
+				const searchTerm = query.toLowerCase();
+
+				loadoutItems.forEach(item => {
+					const weaponId = item.dataset.weaponId;
+					const weaponType = item.dataset.weaponType;
+					let weaponName = '';
+					let skinName = '';
+
+					if (weaponType === 'knife') {
+						weaponName = 'knife';
+						skinName = item.querySelector('.item-name').textContent.toLowerCase();
+					} else if (weaponId && weaponsData[weaponId]) {
+						weaponName = weaponsData[weaponId].weapon_name.replace('weapon_', '').toLowerCase();
+						skinName = item.querySelector('.item-name').textContent.toLowerCase();
+					}
+
+					const matches = weaponName.includes(searchTerm) || skinName.includes(searchTerm);
+
+					if (matches) {
+						item.style.display = 'block';
+						item.style.opacity = '1';
+						item.style.transform = 'scale(1)';
+					} else {
+						item.style.opacity = '0.3';
+						item.style.transform = 'scale(0.95)';
+					}
+				});
+
+				// Update header
+				const loadoutHeader = document.querySelector('.loadout-header h2');
+				loadoutHeader.textContent = `Search Results: "${query}"`;
+			}
+
+			function showWeaponSkins(weaponId) {
+				const overlay = document.getElementById('skinSelectionOverlay');
+				const title = document.getElementById('overlayTitle');
+				const skinGrid = document.getElementById('skinGrid');
+
+				if (!skinsData[weaponId]) return;
+
+				title.textContent = `Select ${weaponsData[weaponId].weapon_name.replace('weapon_', '').toUpperCase()} Skin`;
+				
+				// Clear previous skins
+				skinGrid.innerHTML = '';
+
+				// Populate skins
+				Object.entries(skinsData[weaponId]).forEach(([paintId, skin]) => {
+					const skinItem = document.createElement('div');
+					skinItem.className = 'skin-item';
+					skinItem.onclick = () => equipSkin(weaponId, paintId);
+					
+					skinItem.innerHTML = `
+						<img src="${skin.image_url}" alt="${skin.paint_name}" class="skin-image">
+						<div class="skin-name">${skin.paint_name}</div>
+					`;
+					
+					skinGrid.appendChild(skinItem);
+				});
+
+				overlay.classList.remove('hidden');
+			}
+
+			function closeSkinSelection() {
+				document.getElementById('skinSelectionOverlay').classList.add('hidden');
+			}
+
+			function equipSkin(weaponId, paintId) {
+				// Create form and submit
+				const form = document.createElement('form');
+				form.method = 'POST';
+				form.style.display = 'none';
+
+				const formaInput = document.createElement('input');
+				formaInput.name = 'forma';
+				formaInput.value = `${weaponId}-${paintId}`;
+
+				const wearInput = document.createElement('input');
+				wearInput.name = 'wear';
+				wearInput.value = '0.00';
+
+				const seedInput = document.createElement('input');
+				seedInput.name = 'seed';
+				seedInput.value = '0';
+
+				form.appendChild(formaInput);
+				form.appendChild(wearInput);
+				form.appendChild(seedInput);
+				document.body.appendChild(form);
+				form.submit();
+			}
+
+			function openCustomizeModal(type, weaponId) {
+				const modal = document.getElementById('customizeModal');
+				const title = document.getElementById('modalTitle');
+				const form = document.getElementById('customizeForm');
+				const weaponIdInput = document.getElementById('customizeWeaponId');
+				const wearSelect = document.getElementById('wearSelect');
+				const wearInput = document.getElementById('wearInput');
+				const seedInput = document.getElementById('seedInput');
+
+				if (type === 'knife') {
+					title.textContent = 'Customize Knife';
+					weaponIdInput.value = 'knife-0';
+				} else {
+					title.textContent = `Customize ${weaponsData[weaponId].weapon_name.replace('weapon_', '').toUpperCase()}`;
+					weaponIdInput.value = `${weaponId}-${selectedSkinsData[weaponId]?.weapon_paint_id || 0}`;
+					
+					// Set current values
+					if (selectedSkinsData[weaponId]) {
+						wearInput.value = selectedSkinsData[weaponId].weapon_wear;
+						seedInput.value = selectedSkinsData[weaponId].weapon_seed;
+						
+						// Set wear select based on value
+						const wear = parseFloat(selectedSkinsData[weaponId].weapon_wear);
+						if (wear <= 0.00) wearSelect.value = "0.00";
+						else if (wear <= 0.07) wearSelect.value = "0.07";
+						else if (wear <= 0.15) wearSelect.value = "0.15";
+						else if (wear <= 0.38) wearSelect.value = "0.38";
+						else wearSelect.value = "0.45";
 					}
 				}
-			</script>
-		<?php } ?>
-	<?php } ?>
-	</div>
-	</div>
-	<div class="container">
-		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-			<div class="col-md-4 d-flex align-items-center">
-				<span class="mb-3 mb-md-0 text-body-secondary">© 2023 <a href="https://github.com/Nereziel/cs2-WeaponPaints">Nereziel/cs2-WeaponPaints</a></span>
-			</div>
-		</footer>
-	</div>
-</body>
 
+				modal.classList.remove('hidden');
+			}
+
+			function closeCustomizeModal() {
+				document.getElementById('customizeModal').classList.add('hidden');
+			}
+
+			function updateWearValue(selectedValue) {
+				document.getElementById('wearInput').value = selectedValue;
+			}
+
+			// Close overlays when clicking outside
+			document.addEventListener('click', function(e) {
+				const overlay = document.getElementById('skinSelectionOverlay');
+				const modal = document.getElementById('customizeModal');
+				
+				if (e.target === overlay) {
+					closeSkinSelection();
+				}
+				if (e.target === modal) {
+					closeCustomizeModal();
+				}
+			});
+		</script>
+	<?php endif; ?>
+
+</body>
 </html>
