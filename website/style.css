@@ -120,6 +120,7 @@ body {
 	display: flex;
 	flex: 1;
 	overflow: hidden;
+	min-height: 0;
 }
 
 /* Sidebar */
@@ -130,7 +131,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	max-height: 100vh;
+	align-self: stretch;
 	overflow: hidden;
 }
 
@@ -376,7 +377,7 @@ body {
 	border-top: 1px solid var(--border-color);
 	padding: 1rem 0;
 	text-align: center;
-	margin-top: 2rem;
+	margin-top: auto;
 }
 
 .footer-content {
