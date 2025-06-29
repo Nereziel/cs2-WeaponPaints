@@ -121,15 +121,39 @@ if (isset($_SESSION['steamid'])) {
 									}
 								}
 							?>
-							<div class="nav-item" data-category="<?php echo strtolower($categoryName); ?>" onclick="toggleCategory('<?php echo strtolower($categoryName); ?>')">
-								<span class="nav-icon">
-									<?php echo $categoryName == 'Knives' ? '🗡️' : ($categoryName == 'Gloves' ? '🧤' : ($categoryName == 'Rifles' ? '🔫' : ($categoryName == 'Pistols' ? '🔫' : ($categoryName == 'SMGs' ? '🔫' : ($categoryName == 'Shotguns' ? '🔫' : ($categoryName == 'Snipers' ? '🎯' : ($categoryName == 'Machine Guns' ? '⚡' : '💣'))))))); ?>
-								</span>
-								<div class="nav-content">
-									<span class="nav-text"><?php echo $categoryName; ?></span>
-									<span class="nav-count"><?php echo $weaponCount; ?></span>
+							<div class="nav-category">
+								<div class="nav-item category-header" data-category="<?php echo strtolower($categoryName); ?>" onclick="toggleCategory('<?php echo strtolower($categoryName); ?>')">
+									<span class="nav-icon">
+										<?php echo $categoryName == 'Knives' ? '🗡️' : ($categoryName == 'Gloves' ? '🧤' : ($categoryName == 'Rifles' ? '🔫' : ($categoryName == 'Pistols' ? '🔫' : ($categoryName == 'SMGs' ? '🔫' : ($categoryName == 'Shotguns' ? '🔫' : ($categoryName == 'Snipers' ? '🎯' : ($categoryName == 'Machine Guns' ? '⚡' : '💣'))))))); ?>
+									</span>
+									<div class="nav-content">
+										<span class="nav-text"><?php echo $categoryName; ?></span>
+										<span class="nav-count"><?php echo $weaponCount; ?></span>
+									</div>
+									<span class="nav-arrow">▶</span>
 								</div>
-								<span class="nav-arrow">▶</span>
+								
+								<div class="weapon-list" data-category="<?php echo strtolower($categoryName); ?>">
+									<?php if ($categoryName == 'Knives'): ?>
+										<?php foreach ($knifes as $knifeKey => $knife): ?>
+											<?php if ($knifeKey != 0): ?>
+												<div class="weapon-item" onclick="showKnifeSkins()">
+													<img src="<?php echo $knife['image_url']; ?>" alt="<?php echo $knife['paint_name']; ?>" class="weapon-icon">
+													<span class="weapon-name"><?php echo $knife['paint_name']; ?></span>
+												</div>
+											<?php endif; ?>
+										<?php endforeach; ?>
+									<?php else: ?>
+										<?php foreach ($categoryWeapons as $weaponDefindex): ?>
+											<?php if (isset($weapons[$weaponDefindex])): ?>
+												<div class="weapon-item" onclick="showWeaponSkins(<?php echo $weaponDefindex; ?>)">
+													<img src="<?php echo $weapons[$weaponDefindex]['image_url']; ?>" alt="<?php echo $weapons[$weaponDefindex]['paint_name']; ?>" class="weapon-icon">
+													<span class="weapon-name"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapons[$weaponDefindex]['weapon_name']))); ?></span>
+												</div>
+											<?php endif; ?>
+										<?php endforeach; ?>
+									<?php endif; ?>
+								</div>
 							</div>
 						<?php endforeach; ?>
 					</nav>
@@ -193,35 +217,13 @@ if (isset($_SESSION['steamid'])) {
 							<div class="empty-loadout">
 								<div class="empty-message">
 									<h3>No weapons equipped</h3>
-									<p>Browse weapons below to equip skins</p>
+									<p>Browse weapons in the sidebar to equip skins</p>
 								</div>
 							</div>
 						<?php endif; ?>
 					</div>
 
-					<!-- Weapon Browser Section -->
-					<div class="weapon-browser">
-						<div class="browser-header">
-							<h2>Weapon Browser</h2>
-							<p>Click on any weapon to equip a skin</p>
-						</div>
-						<div class="browser-grid" id="weaponBrowser">
-							<?php foreach ($weapons as $defindex => $weapon): ?>
-								<div class="browser-item" data-weapon-id="<?php echo $defindex; ?>" onclick="showWeaponSkins(<?php echo $defindex; ?>)">
-									<div class="browser-image-container">
-										<img src="<?php echo $weapon['image_url']; ?>" alt="<?php echo $weapon['paint_name']; ?>" class="browser-image">
-										<div class="browser-overlay">
-											<span class="equip-text">Equip Skin</span>
-										</div>
-									</div>
-									<div class="browser-info">
-										<div class="browser-category"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapon['weapon_name']))); ?></div>
-										<div class="browser-name"><?php echo $weapon['paint_name']; ?></div>
-									</div>
-								</div>
-							<?php endforeach; ?>
-						</div>
-					</div>
+
 				</main>
 			</div>
 		</div>
@@ -290,188 +292,133 @@ if (isset($_SESSION['steamid'])) {
 			const knivesData = <?php echo json_encode($knifes); ?>;
 			const weaponCategories = <?php echo json_encode($weaponCategories); ?>;
 
-			let currentFilter = 'all';
+
 
 			function toggleCategory(category) {
-				const navItem = document.querySelector(`[data-category="${category}"]`);
-				const arrow = navItem.querySelector('.nav-arrow');
+				const categoryHeader = document.querySelector(`.category-header[data-category="${category}"]`);
+				const weaponList = document.querySelector(`.weapon-list[data-category="${category}"]`);
+				const arrow = categoryHeader.querySelector('.nav-arrow');
 				
-				// Check if already active
-				if (navItem.classList.contains('active')) {
-					// Deactivate and show all
+				// Toggle the weapon list
+				if (weaponList.classList.contains('expanded')) {
+					// Collapse
+					weaponList.classList.remove('expanded');
 					arrow.textContent = '▶';
-					hideCategoryWeapons(category);
-					showAllWeapons();
-					currentFilter = 'all';
+					categoryHeader.classList.remove('active');
 				} else {
-					// Activate and filter
+					// Collapse all other categories first
+					document.querySelectorAll('.weapon-list').forEach(list => {
+						list.classList.remove('expanded');
+					});
+					document.querySelectorAll('.category-header').forEach(header => {
+						header.classList.remove('active');
+						header.querySelector('.nav-arrow').textContent = '▶';
+					});
+					
+					// Expand this category
+					weaponList.classList.add('expanded');
 					arrow.textContent = '▼';
-					showCategoryWeapons(category);
-					filterWeaponsByCategory(category);
-					currentFilter = category;
+					categoryHeader.classList.add('active');
 				}
 			}
 
-			function showCategoryWeapons(category) {
-				// Clear all active states
-				document.querySelectorAll('.nav-item').forEach(item => {
-					item.classList.remove('active');
-					item.querySelector('.nav-arrow').textContent = '▶';
-				});
+			function showKnifeSkins() {
+				const overlay = document.getElementById('skinSelectionOverlay');
+				const title = document.getElementById('overlayTitle');
+				const skinGrid = document.getElementById('skinGrid');
+
+				title.textContent = 'Select Knife Skin';
 				
-				// Set active state
-				const navItem = document.querySelector(`[data-category="${category}"]`);
-				navItem.classList.add('active');
-				navItem.querySelector('.nav-arrow').textContent = '▼';
+				// Clear previous skins
+				skinGrid.innerHTML = '';
+
+				// Populate knife skins (all knife types)
+				Object.entries(knivesData).forEach(([knifeId, knife]) => {
+					if (knifeId != 0) { // Skip default knife
+						const skinItem = document.createElement('div');
+						skinItem.className = 'skin-item';
+						skinItem.onclick = () => equipKnife(knifeId);
+						
+						skinItem.innerHTML = `
+							<img src="${knife.image_url}" alt="${knife.paint_name}" class="skin-image">
+							<div class="skin-name">${knife.paint_name}</div>
+						`;
+						
+						skinGrid.appendChild(skinItem);
+					}
+				});
+
+				overlay.classList.remove('hidden');
 			}
 
-			function hideCategoryWeapons(category) {
-				document.querySelector(`[data-category="${category}"]`).classList.remove('active');
-			}
+			function equipKnife(knifeId) {
+				// Create form and submit
+				const form = document.createElement('form');
+				form.method = 'POST';
+				form.style.display = 'none';
 
-			function filterWeaponsByCategory(category) {
-				const loadoutItems = document.querySelectorAll('.loadout-item');
-				const browserItems = document.querySelectorAll('.browser-item');
-				
-				// Filter loadout items
-				loadoutItems.forEach(item => {
-					const weaponId = item.dataset.weaponId;
-					const weaponType = item.dataset.weaponType;
-					let shouldShow = false;
+				const formaInput = document.createElement('input');
+				formaInput.name = 'forma';
+				formaInput.value = `knife-${knifeId}`;
 
-					if (category === 'knives' && weaponType === 'knife') {
-						shouldShow = true;
-					} else if (category !== 'knives' && weaponId && weaponCategories[category.charAt(0).toUpperCase() + category.slice(1)]) {
-						shouldShow = weaponCategories[category.charAt(0).toUpperCase() + category.slice(1)].includes(parseInt(weaponId));
-					}
-
-					if (shouldShow) {
-						item.style.display = 'block';
-						item.style.opacity = '1';
-						item.style.transform = 'scale(1)';
-					} else {
-						item.style.opacity = '0.3';
-						item.style.transform = 'scale(0.95)';
-					}
-				});
-
-				// Filter browser items
-				browserItems.forEach(item => {
-					const weaponId = item.dataset.weaponId;
-					let shouldShow = false;
-
-					if (category !== 'knives' && weaponId && weaponCategories[category.charAt(0).toUpperCase() + category.slice(1)]) {
-						shouldShow = weaponCategories[category.charAt(0).toUpperCase() + category.slice(1)].includes(parseInt(weaponId));
-					}
-
-					if (shouldShow) {
-						item.style.display = 'block';
-						item.style.opacity = '1';
-						item.style.transform = 'scale(1)';
-					} else {
-						item.style.display = 'none';
-					}
-				});
-
-				// Update headers
-				const loadoutHeader = document.querySelector('.loadout-header h2');
-				const browserHeader = document.querySelector('.browser-header h2');
-				loadoutHeader.textContent = `${category.charAt(0).toUpperCase() + category.slice(1)} Loadout`;
-				browserHeader.textContent = `${category.charAt(0).toUpperCase() + category.slice(1)} Browser`;
-			}
-
-			function showAllWeapons() {
-				const loadoutItems = document.querySelectorAll('.loadout-item');
-				const browserItems = document.querySelectorAll('.browser-item');
-				
-				loadoutItems.forEach(item => {
-					item.style.display = 'block';
-					item.style.opacity = '1';
-					item.style.transform = 'scale(1)';
-				});
-
-				browserItems.forEach(item => {
-					item.style.display = 'block';
-					item.style.opacity = '1';
-					item.style.transform = 'scale(1)';
-				});
-
-				// Reset headers
-				const loadoutHeader = document.querySelector('.loadout-header h2');
-				const browserHeader = document.querySelector('.browser-header h2');
-				loadoutHeader.textContent = 'Current Loadout';
-				browserHeader.textContent = 'Weapon Browser';
+				form.appendChild(formaInput);
+				document.body.appendChild(form);
+				form.submit();
 			}
 
 			function searchWeapons(query) {
 				if (!query.trim()) {
-					// If search is empty, apply current filter or show all
-					if (currentFilter === 'all') {
-						showAllWeapons();
-					} else {
-						filterWeaponsByCategory(currentFilter);
-					}
+					// Reset search - show all categories and hide all weapon lists
+					document.querySelectorAll('.nav-category').forEach(category => {
+						category.style.display = 'block';
+					});
+					document.querySelectorAll('.weapon-list').forEach(list => {
+						list.classList.remove('expanded');
+					});
+					document.querySelectorAll('.category-header').forEach(header => {
+						header.classList.remove('active');
+						header.querySelector('.nav-arrow').textContent = '▶';
+					});
 					return;
 				}
 
-				const loadoutItems = document.querySelectorAll('.loadout-item');
-				const browserItems = document.querySelectorAll('.browser-item');
 				const searchTerm = query.toLowerCase();
 
-				// Search loadout items
-				loadoutItems.forEach(item => {
-					const weaponId = item.dataset.weaponId;
-					const weaponType = item.dataset.weaponType;
-					let weaponName = '';
-					let skinName = '';
+				// Search through categories and weapons
+				document.querySelectorAll('.nav-category').forEach(category => {
+					const categoryName = category.querySelector('.nav-text').textContent.toLowerCase();
+					const weaponItems = category.querySelectorAll('.weapon-item');
+					let categoryMatches = categoryName.includes(searchTerm);
+					let hasMatchingWeapons = false;
 
-					if (weaponType === 'knife') {
-						weaponName = 'knife';
-						skinName = item.querySelector('.item-name').textContent.toLowerCase();
-					} else if (weaponId && weaponsData[weaponId]) {
-						weaponName = weaponsData[weaponId].weapon_name.replace('weapon_', '').toLowerCase();
-						skinName = item.querySelector('.item-name').textContent.toLowerCase();
-					}
+					// Check if any weapons in this category match
+					weaponItems.forEach(weaponItem => {
+						const weaponName = weaponItem.querySelector('.weapon-name').textContent.toLowerCase();
+						const matches = weaponName.includes(searchTerm);
+						
+						if (matches) {
+							hasMatchingWeapons = true;
+							weaponItem.style.display = 'flex';
+						} else {
+							weaponItem.style.display = 'none';
+						}
+					});
 
-					const matches = weaponName.includes(searchTerm) || skinName.includes(searchTerm);
-
-					if (matches) {
-						item.style.display = 'block';
-						item.style.opacity = '1';
-						item.style.transform = 'scale(1)';
+					// Show/hide category based on matches
+					if (categoryMatches || hasMatchingWeapons) {
+						category.style.display = 'block';
+						if (hasMatchingWeapons) {
+							// Expand the category to show matching weapons
+							const weaponList = category.querySelector('.weapon-list');
+							const header = category.querySelector('.category-header');
+							weaponList.classList.add('expanded');
+							header.classList.add('active');
+							header.querySelector('.nav-arrow').textContent = '▼';
+						}
 					} else {
-						item.style.opacity = '0.3';
-						item.style.transform = 'scale(0.95)';
+						category.style.display = 'none';
 					}
 				});
-
-				// Search browser items
-				browserItems.forEach(item => {
-					const weaponId = item.dataset.weaponId;
-					let weaponName = '';
-					let skinName = '';
-
-					if (weaponId && weaponsData[weaponId]) {
-						weaponName = weaponsData[weaponId].weapon_name.replace('weapon_', '').toLowerCase();
-						skinName = item.querySelector('.browser-name').textContent.toLowerCase();
-					}
-
-					const matches = weaponName.includes(searchTerm) || skinName.includes(searchTerm);
-
-					if (matches) {
-						item.style.display = 'block';
-						item.style.opacity = '1';
-						item.style.transform = 'scale(1)';
-					} else {
-						item.style.display = 'none';
-					}
-				});
-
-				// Update headers
-				const loadoutHeader = document.querySelector('.loadout-header h2');
-				const browserHeader = document.querySelector('.browser-header h2');
-				loadoutHeader.textContent = `Search Results: "${query}"`;
-				browserHeader.textContent = `Search Results: "${query}"`;
 			}
 
 			function showWeaponSkins(weaponId) {
