@@ -471,7 +471,7 @@ body {
 
 .skin-item .skin-image {
 	width: 100%;
-	height: 120px;
+	height: 250px;
 	object-fit: contain;
 	background: linear-gradient(145deg, #333, #222);
 	padding: 0.5rem;
