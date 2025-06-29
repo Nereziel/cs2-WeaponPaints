@@ -486,8 +486,25 @@ if (isset($_SESSION['steamid'])) {
 				// Clear previous skins
 				skinGrid.innerHTML = '';
 
-				// Populate skins with lazy loading
+				// Populate skins with intersection observer lazy loading
 				const skinEntries = Object.entries(skinsData[weaponId]);
+				
+				// Create intersection observer for lazy loading
+				const imageObserver = new IntersectionObserver((entries, observer) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							const img = entry.target;
+							const imageUrl = img.dataset.src;
+							if (imageUrl && !img.src) {
+								img.setAttribute('data-loading', 'true');
+								img.src = imageUrl;
+								observer.unobserve(img);
+							}
+						}
+					});
+				}, {
+					rootMargin: '100px' // Load images 100px before they're visible
+				});
 				
 				skinEntries.forEach(([paintId, skin], index) => {
 					const skinItem = document.createElement('div');
@@ -498,28 +515,25 @@ if (isset($_SESSION['steamid'])) {
 					const img = document.createElement('img');
 					img.alt = skin.paint_name;
 					img.className = 'skin-image';
+					img.style.minHeight = '300px';
 					
-					// Add loading placeholder
-					img.style.background = 'linear-gradient(145deg, #333, #222)';
-					img.style.minHeight = '180px';
-					
-					// Lazy load: only load first 12 images immediately, rest on scroll/delay
-					if (index < 12) {
+					// Only load first 8 images immediately, rest use intersection observer
+					if (index < 8) {
 						img.src = skin.image_url;
 					} else {
-						// Load after a delay or when scrolled into view
-						setTimeout(() => {
-							img.src = skin.image_url;
-						}, index * 50); // Stagger loading
+						// Store URL in data attribute for lazy loading
+						img.dataset.src = skin.image_url;
+						imageObserver.observe(img);
 					}
 					
 					img.onerror = function() {
 						console.log('Failed to load image:', skin.image_url);
-						this.style.background = '#333';
-						this.style.content = '""';
+						this.style.background = '#444';
+						this.removeAttribute('data-loading');
 					};
 					img.onload = function() {
 						this.style.background = 'transparent';
+						this.removeAttribute('data-loading');
 						console.log('Successfully loaded image:', skin.image_url);
 					};
 					
