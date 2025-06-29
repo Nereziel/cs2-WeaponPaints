@@ -182,34 +182,63 @@ if (isset($_SESSION['steamid'])) {
 					</div>
 
 					<div class="loadout-grid">
-						<!-- Knife -->
-						<div class="loadout-item" data-weapon-type="knife">
-							<?php
-							$actualKnife = $knifes[0];
-							if ($selectedKnife != null) {
-								foreach ($knifes as $knife) {
-									if ($selectedKnife[0]['knife'] == $knife['weapon_name']) {
-										$actualKnife = $knife;
-										break;
-									}
+						<!-- Knife - Show the currently equipped knife (either basic knife or knife skin) -->
+						<?php
+						$displayKnife = null;
+						$displayKnifeSkin = null;
+						$knifeSource = '';
+						
+						// Check if there's a knife skin equipped (from selectedSkins for knife defindexes)
+						foreach ($selectedSkins as $defindex => $selectedSkin) {
+							if (in_array($defindex, [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])) {
+								if (isset($skins[$defindex][$selectedSkin['weapon_paint_id']])) {
+									$displayKnifeSkin = $skins[$defindex][$selectedSkin['weapon_paint_id']];
+									$knifeSource = 'skin';
+									break; // Use the first knife skin found
 								}
 							}
-							?>
-							<div class="item-image-container">
-								<img src="<?php echo $actualKnife['image_url']; ?>" alt="<?php echo $actualKnife['paint_name']; ?>" class="item-image">
-								<div class="item-overlay">
-									<button class="customize-btn" onclick="openCustomizeModal('knife', 0)">Customize</button>
+						}
+						
+						// If no knife skin, check for basic knife selection
+						if (!$displayKnifeSkin && $selectedKnife != null) {
+							foreach ($knifes as $knife) {
+								if ($selectedKnife[0]['knife'] == $knife['weapon_name']) {
+									$displayKnife = $knife;
+									$knifeSource = 'basic';
+									break;
+								}
+							}
+						}
+						?>
+						
+						<?php if ($displayKnifeSkin || $displayKnife): ?>
+							<div class="loadout-item" data-weapon-type="knife">
+								<div class="item-image-container">
+									<?php if ($knifeSource == 'skin'): ?>
+										<img src="<?php echo $displayKnifeSkin['image_url']; ?>" alt="<?php echo $displayKnifeSkin['paint_name']; ?>" class="item-image">
+									<?php else: ?>
+										<img src="<?php echo $displayKnife['image_url']; ?>" alt="<?php echo $displayKnife['paint_name']; ?>" class="item-image">
+									<?php endif; ?>
+									<div class="item-overlay">
+										<button class="customize-btn" onclick="openCustomizeModal('knife', 0)">Customize</button>
+									</div>
+								</div>
+								<div class="item-info">
+									<div class="item-category">Knife</div>
+									<div class="item-name">
+										<?php if ($knifeSource == 'skin'): ?>
+											<?php echo $displayKnifeSkin['paint_name']; ?>
+										<?php else: ?>
+											<?php echo $displayKnife['paint_name']; ?>
+										<?php endif; ?>
+									</div>
 								</div>
 							</div>
-							<div class="item-info">
-								<div class="item-category">Knife</div>
-								<div class="item-name"><?php echo $actualKnife['paint_name']; ?></div>
-							</div>
-						</div>
+						<?php endif; ?>
 
-						<!-- Only show equipped weapons -->
+						<!-- Only show equipped weapons (exclude knives) -->
 						<?php foreach ($selectedSkins as $defindex => $selectedSkin): ?>
-							<?php if (isset($weapons[$defindex])): ?>
+							<?php if (isset($weapons[$defindex]) && !in_array($defindex, [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])): ?>
 								<div class="loadout-item" data-weapon-id="<?php echo $defindex; ?>" data-equipped="true">
 									<div class="item-image-container">
 										<img src="<?php echo $skins[$defindex][$selectedSkin['weapon_paint_id']]['image_url']; ?>" 
