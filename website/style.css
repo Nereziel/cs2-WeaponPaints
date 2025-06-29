@@ -130,6 +130,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	max-height: 100vh;
+	overflow: hidden;
 }
 
 .sidebar-header {
@@ -172,6 +174,8 @@ body {
 .sidebar-nav {
 	flex: 1;
 	padding: 1rem 0;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .nav-item {
@@ -721,7 +725,7 @@ body {
 }
 
 .weapon-list.expanded {
-	max-height: 500px;
+	max-height: 300px;
 	padding: 0.5rem 0;
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -792,7 +796,7 @@ body {
 }
 
 .weapon-skins-grid.expanded {
-	max-height: 400px;
+	max-height: 250px;
 	padding: 1rem;
 	overflow-y: auto;
 	overflow-x: hidden;

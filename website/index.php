@@ -8,6 +8,9 @@ $db = new DataBase();
 if (isset($_SESSION['steamid'])) {
 
 	$steamid = $_SESSION['steamid'];
+	
+	// Fetch Steam user information
+	require_once 'steamauth/userInfo.php';
 
 	$weapons = UtilsClass::getWeaponsFromArray();
 	$skins = UtilsClass::skinsFromJson();
@@ -135,16 +138,20 @@ if (isset($_SESSION['steamid'])) {
 								
 								<div class="weapon-list" data-category="<?php echo strtolower($categoryName); ?>">
 									<?php if ($categoryName == 'Knives'): ?>
-										<div class="weapon-container">
-											<div class="weapon-item" onclick="toggleKnifeSkins()">
-												<img src="<?php echo $knifes[0]['image_url']; ?>" alt="Knives" class="weapon-icon">
-												<span class="weapon-name">Knives</span>
-												<span class="weapon-arrow">▶</span>
-											</div>
-											<div class="weapon-skins-grid" data-weapon="knives">
-												<!-- Knife skins will be populated by JavaScript -->
-											</div>
-										</div>
+										<?php foreach ($knifes as $knifeKey => $knife): ?>
+											<?php if ($knifeKey != 0): ?>
+												<div class="weapon-container">
+													<div class="weapon-item" onclick="toggleKnifeSkins(<?php echo $knifeKey; ?>)">
+														<img src="<?php echo $knife['image_url']; ?>" alt="<?php echo $knife['paint_name']; ?>" class="weapon-icon">
+														<span class="weapon-name"><?php echo $knife['paint_name']; ?></span>
+														<span class="weapon-arrow">▶</span>
+													</div>
+													<div class="weapon-skins-grid" data-weapon="knife-<?php echo $knifeKey; ?>">
+														<!-- Knife skins will be populated by JavaScript -->
+													</div>
+												</div>
+											<?php endif; ?>
+										<?php endforeach; ?>
 									<?php else: ?>
 										<?php foreach ($categoryWeapons as $weaponDefindex): ?>
 											<?php if (isset($weapons[$weaponDefindex])): ?>
@@ -449,7 +456,7 @@ if (isset($_SESSION['steamid'])) {
 				skinGrid.appendChild(skinsContainer);
 			}
 
-			function toggleKnifeSkins() {
+			function toggleKnifeSkins(knifeType) {
 				const weaponItem = event.target.closest('.weapon-item');
 				const skinGrid = weaponItem.parentNode.querySelector('.weapon-skins-grid');
 
@@ -467,14 +474,14 @@ if (isset($_SESSION['steamid'])) {
 						item.classList.remove('expanded');
 					});
 					
-					// Expand knife skin grid
-					populateKnifeSkins(skinGrid);
+					// Expand this knife type's skin grid
+					populateKnifeTypeSkins(knifeType, skinGrid);
 					skinGrid.classList.add('expanded');
 					weaponItem.classList.add('expanded');
 				}
 			}
 
-			function populateKnifeSkins(skinGrid) {
+			function populateKnifeTypeSkins(knifeType, skinGrid) {
 				// Create skins container
 				const skinsContainer = document.createElement('div');
 				skinsContainer.className = 'skins-container';
@@ -482,22 +489,44 @@ if (isset($_SESSION['steamid'])) {
 				// Clear previous content
 				skinGrid.innerHTML = '';
 				
-				// Populate knife skins in 3-column grid
-				Object.entries(knivesData).forEach(([knifeId, knife]) => {
-					if (knifeId != 0) { // Skip default knife
+				// Check if this knife type has skins in the skins data
+				if (skinsData[knifeType]) {
+					// This knife type has multiple skins
+					Object.entries(skinsData[knifeType]).forEach(([paintId, skin]) => {
 						const skinOption = document.createElement('div');
 						skinOption.className = 'skin-option';
 						
-						skinOption.onclick = () => equipKnife(knifeId);
+						// Check if this skin is currently equipped
+						if (selectedSkinsData[knifeType] && selectedSkinsData[knifeType].weapon_paint_id == paintId) {
+							skinOption.classList.add('active');
+						}
+						
+						skinOption.onclick = () => equipSkin(knifeType, paintId);
+						
+						skinOption.innerHTML = `
+							<img src="${skin.image_url}" alt="${skin.paint_name}">
+							<div class="skin-option-name">${skin.paint_name.replace(/.*\| /, '')}</div>
+						`;
+						
+						skinsContainer.appendChild(skinOption);
+					});
+				} else {
+					// This knife type has only one variant (the knife itself)
+					const knife = knivesData[knifeType];
+					if (knife) {
+						const skinOption = document.createElement('div');
+						skinOption.className = 'skin-option';
+						
+						skinOption.onclick = () => equipKnife(knifeType);
 						
 						skinOption.innerHTML = `
 							<img src="${knife.image_url}" alt="${knife.paint_name}">
-							<div class="skin-option-name">${knife.paint_name}</div>
+							<div class="skin-option-name">Default</div>
 						`;
 						
 						skinsContainer.appendChild(skinOption);
 					}
-				});
+				}
 				
 				skinGrid.appendChild(skinsContainer);
 			}
