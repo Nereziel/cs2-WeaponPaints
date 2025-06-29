@@ -243,6 +243,7 @@ if (isset($_SESSION['steamid'])) {
 						?>
 						
 						<!-- Always show a knife (either selected or default) -->
+						<?php if ($displayKnifeSkin || $displayKnife): ?>
 							<div class="loadout-item" data-weapon-type="knife">
 								<div class="item-image-container">
 									<?php if ($knifeSource == 'skin'): ?>
@@ -265,10 +266,22 @@ if (isset($_SESSION['steamid'])) {
 									</div>
 								</div>
 							</div>
+						<?php endif; ?>
 
 						<!-- Show all weapons (exclude knives) - either with custom skin or default -->
 						<?php foreach ($weapons as $defindex => $weapon): ?>
-							<?php if (!in_array($defindex, [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])): ?>
+							<?php 
+							// Skip ALL knives - comprehensive check
+							$isKnifeWeapon = in_array($defindex, [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526]);
+							$isDefaultKnife = ($weapon['weapon_name'] == 'weapon_knife');
+							$isKnifeVariant = (strpos($weapon['weapon_name'], 'knife') !== false);
+							$isKnifePaint = (strpos($weapon['paint_name'], '★') !== false); // Knife skins have ★ in name
+							
+							// Skip ANY knife-related weapon
+							if ($isKnifeWeapon || $isDefaultKnife || $isKnifeVariant || $isKnifePaint) {
+								continue;
+							}
+							?>
 								<?php 
 								$hasCustomSkin = array_key_exists($defindex, $selectedSkins);
 								$isEquipped = $hasCustomSkin ? 'true' : 'false';
@@ -288,9 +301,7 @@ if (isset($_SESSION['steamid'])) {
 											<img src="<?php echo $weapon['image_url']; ?>" 
 												 alt="<?php echo $weapon['paint_name']; ?>" 
 												 class="item-image">
-											<div class="item-overlay">
-												<button class="equip-btn" onclick="toggleWeaponSkins(<?php echo $defindex; ?>)">Equip Skin</button>
-											</div>
+											<!-- No overlay button for default weapons -->
 										<?php endif; ?>
 									</div>
 									<div class="item-info">
@@ -304,7 +315,6 @@ if (isset($_SESSION['steamid'])) {
 										</div>
 									</div>
 								</div>
-							<?php endif; ?>
 						<?php endforeach; ?>
 					</div>
 				</main>
@@ -580,6 +590,11 @@ if (isset($_SESSION['steamid'])) {
 				if (skinsData[knifeType]) {
 					// This knife type has multiple skins
 					Object.entries(skinsData[knifeType]).forEach(([paintId, skin]) => {
+						// Skip the default skin (paint ID 0) since we already show it as "Default" option above
+						if (paintId == '0') {
+							return;
+						}
+						
 						const skinOption = document.createElement('div');
 						skinOption.className = 'skin-option';
 						
