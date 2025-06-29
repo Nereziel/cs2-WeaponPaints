@@ -124,7 +124,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-	width: 280px;
+	width: 320px;
 	background: var(--bg-secondary);
 	border-right: 1px solid var(--border-color);
 	display: flex;
@@ -725,17 +725,21 @@ body {
 	padding: 0.5rem 0;
 }
 
+.weapon-container {
+	border-bottom: 1px solid var(--border-color);
+}
+
+.weapon-container:last-child {
+	border-bottom: none;
+}
+
 .weapon-item {
 	display: flex;
 	align-items: center;
 	padding: 0.75rem 1rem;
 	cursor: pointer;
 	transition: var(--transition);
-	border-bottom: 1px solid var(--border-color);
-}
-
-.weapon-item:last-child {
-	border-bottom: none;
+	position: relative;
 }
 
 .weapon-item:hover {
@@ -743,18 +747,96 @@ body {
 	padding-left: 1.25rem;
 }
 
+.weapon-item.expanded {
+	background: var(--bg-hover);
+	border-bottom: 1px solid var(--border-color);
+}
+
 .weapon-icon {
-	width: 32px;
-	height: 20px;
+	width: 48px;
+	height: 32px;
 	object-fit: contain;
 	margin-right: 0.75rem;
 	background: linear-gradient(145deg, #333, #222);
 	border-radius: 4px;
-	padding: 2px;
+	padding: 4px;
 }
 
 .weapon-name {
 	color: var(--text-primary);
 	font-size: 0.85rem;
 	font-weight: 500;
+	flex: 1;
+}
+
+.weapon-arrow {
+	color: var(--text-muted);
+	font-size: 0.7rem;
+	transition: var(--transition);
+	margin-left: 0.5rem;
+}
+
+.weapon-item.expanded .weapon-arrow {
+	transform: rotate(90deg);
+	color: var(--accent-blue);
+}
+
+.weapon-skins-grid {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+	background: var(--bg-primary);
+	padding: 0;
+}
+
+.weapon-skins-grid.expanded {
+	max-height: 400px;
+	padding: 1rem;
+}
+
+.skins-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.5rem;
+}
+
+.skin-option {
+	background: var(--bg-secondary);
+	border-radius: var(--border-radius);
+	border: 1px solid var(--border-color);
+	overflow: hidden;
+	cursor: pointer;
+	transition: var(--transition);
+	aspect-ratio: 16/10;
+}
+
+.skin-option:hover {
+	border-color: var(--accent-blue);
+	transform: scale(1.02);
+}
+
+.skin-option.active {
+	border-color: var(--accent-green);
+	box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+}
+
+.skin-option img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	background: linear-gradient(145deg, #333, #222);
+	padding: 4px;
+	box-sizing: border-box;
+}
+
+.skin-option-name {
+	padding: 0.25rem;
+	font-size: 0.7rem;
+	color: var(--text-secondary);
+	text-align: center;
+	background: var(--bg-tertiary);
+	border-top: 1px solid var(--border-color);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
