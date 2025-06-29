@@ -792,6 +792,8 @@ body {
 .weapon-skins-grid.expanded {
 	max-height: 400px;
 	padding: 1rem;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .skins-container {
