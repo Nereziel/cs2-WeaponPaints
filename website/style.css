@@ -473,20 +473,12 @@ body {
 
 .skin-item .skin-image {
 	width: 100%;
-	height: 300px;
+	height: 280px;
 	object-fit: contain;
 	background: linear-gradient(145deg, #333, #222);
-	padding: 0.5rem;
+	padding: 1rem;
 	display: block;
 	box-sizing: border-box;
-	transform: scale(1.6);
-	transform-origin: center;
-	transition: opacity 0.3s ease;
-}
-
-.skin-item .skin-image[data-loading="true"] {
-	opacity: 0.6;
-	background: linear-gradient(145deg, #444, #333);
 }
 
 .skin-name {
