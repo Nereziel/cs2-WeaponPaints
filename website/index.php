@@ -145,6 +145,11 @@ if (isset($_SESSION['steamid'])) {
 										}
 									}
 								}
+								
+								// Skip categories with 0 items
+								if ($weaponCount == 0) {
+									continue;
+								}
 							?>
 							<div class="nav-category">
 								<div class="nav-item category-header" data-category="<?php echo strtolower($categoryName); ?>" onclick="toggleCategory('<?php echo strtolower($categoryName); ?>')">
