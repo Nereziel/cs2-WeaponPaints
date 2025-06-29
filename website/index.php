@@ -280,7 +280,11 @@ if (isset($_SESSION['steamid'])) {
 						
 						<!-- Always show a knife (either selected or default) -->
 						<?php if ($displayKnifeSkin || $displayKnife): ?>
-							<div class="loadout-item" data-weapon-type="knife">
+							<?php 
+							// Set equipped status for knife - only true if it's a custom skin
+							$knifeEquipped = ($knifeSource == 'skin') ? 'true' : 'false';
+							?>
+							<div class="loadout-item" data-weapon-type="knife" data-equipped="<?php echo $knifeEquipped; ?>">
 								<div class="item-image-container">
 									<?php if ($knifeSource == 'skin'): ?>
 										<img src="<?php echo $displayKnifeSkin['image_url']; ?>" alt="<?php echo $displayKnifeSkin['paint_name']; ?>" class="item-image">
