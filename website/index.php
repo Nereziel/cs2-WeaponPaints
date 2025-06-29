@@ -234,9 +234,15 @@ if (isset($_SESSION['steamid'])) {
 								}
 							}
 						}
+						
+						// If no knife selected at all, show default knife
+						if (!$displayKnifeSkin && !$displayKnife && isset($knifes[0])) {
+							$displayKnife = $knifes[0]; // Default knife
+							$knifeSource = 'default';
+						}
 						?>
 						
-						<?php if ($displayKnifeSkin || $displayKnife): ?>
+						<!-- Always show a knife (either selected or default) -->
 							<div class="loadout-item" data-weapon-type="knife">
 								<div class="item-image-container">
 									<?php if ($knifeSource == 'skin'): ?>
@@ -259,7 +265,6 @@ if (isset($_SESSION['steamid'])) {
 									</div>
 								</div>
 							</div>
-						<?php endif; ?>
 
 						<!-- Show all weapons (exclude knives) - either with custom skin or default -->
 						<?php foreach ($weapons as $defindex => $weapon): ?>
