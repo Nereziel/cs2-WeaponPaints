@@ -486,17 +486,49 @@ if (isset($_SESSION['steamid'])) {
 				// Clear previous skins
 				skinGrid.innerHTML = '';
 
-				// Populate skins
-				Object.entries(skinsData[weaponId]).forEach(([paintId, skin]) => {
+				// Populate skins with lazy loading
+				const skinEntries = Object.entries(skinsData[weaponId]);
+				
+				skinEntries.forEach(([paintId, skin], index) => {
 					const skinItem = document.createElement('div');
 					skinItem.className = 'skin-item';
 					skinItem.onclick = () => equipSkin(weaponId, paintId);
 					
-					skinItem.innerHTML = `
-						<img src="${skin.image_url}" alt="${skin.paint_name}" class="skin-image">
-						<div class="skin-name">${skin.paint_name}</div>
-					`;
+					// Create image element with lazy loading
+					const img = document.createElement('img');
+					img.alt = skin.paint_name;
+					img.className = 'skin-image';
 					
+					// Add loading placeholder
+					img.style.background = 'linear-gradient(145deg, #333, #222)';
+					img.style.minHeight = '180px';
+					
+					// Lazy load: only load first 12 images immediately, rest on scroll/delay
+					if (index < 12) {
+						img.src = skin.image_url;
+					} else {
+						// Load after a delay or when scrolled into view
+						setTimeout(() => {
+							img.src = skin.image_url;
+						}, index * 50); // Stagger loading
+					}
+					
+					img.onerror = function() {
+						console.log('Failed to load image:', skin.image_url);
+						this.style.background = '#333';
+						this.style.content = '""';
+					};
+					img.onload = function() {
+						this.style.background = 'transparent';
+						console.log('Successfully loaded image:', skin.image_url);
+					};
+					
+					const nameDiv = document.createElement('div');
+					nameDiv.className = 'skin-name';
+					nameDiv.textContent = skin.paint_name;
+					
+					skinItem.appendChild(img);
+					skinItem.appendChild(nameDiv);
 					skinGrid.appendChild(skinItem);
 				});
 
