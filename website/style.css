@@ -723,6 +723,8 @@ body {
 .weapon-list.expanded {
 	max-height: 500px;
 	padding: 0.5rem 0;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .weapon-container {
