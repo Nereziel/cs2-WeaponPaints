@@ -321,6 +321,13 @@ if (isset($_SESSION['steamid'])) {
 			</div>
 		</div>
 
+		<!-- Footer -->
+		<footer class="app-footer">
+			<div class="footer-content">
+				<p>Created with ❤️ by <strong><a target="_blank" href="https://github.com/BramSuurdje" rel="noopener noreferrer">Bram</a></strong></p>
+			</div>
+		</footer>
+
 		<!-- Customize Modal -->
 		<div id="customizeModal" class="modal hidden">
 			<div class="modal-content">

@@ -370,6 +370,38 @@ body {
 	line-height: 1.3;
 }
 
+/* Footer */
+.app-footer {
+	background: var(--bg-secondary);
+	border-top: 1px solid var(--border-color);
+	padding: 1rem 0;
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.footer-content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.footer-content p {
+	margin: 0;
+	color: var(--text-muted);
+	font-size: 0.9rem;
+}
+
+.footer-content a {
+	color: var(--accent-blue);
+	text-decoration: none;
+	transition: var(--transition);
+}
+
+.footer-content a:hover {
+	color: var(--accent-blue-hover);
+	text-decoration: underline;
+}
+
 /* Overlays and Modals */
 .overlay,
 .modal {
