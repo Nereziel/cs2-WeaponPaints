@@ -3,120 +3,25 @@ require_once 'class/config.php';
 require_once 'class/database.php';
 require_once 'steamauth/steamauth.php';
 require_once 'class/utils.php';
+require_once 'class/weapon_handler.php';
 
-$db = new DataBase();
-if (isset($_SESSION['steamid'])) {
-
-	$steamid = $_SESSION['steamid'];
-	
-	// Fetch Steam user information
-	require_once 'steamauth/userInfo.php';
-
-	$weapons = UtilsClass::getWeaponsFromArray();
-	$skins = UtilsClass::skinsFromJson();
-    $querySelected = $db->select("
-        SELECT `weapon_defindex`, MAX(`weapon_paint_id`) AS `weapon_paint_id`, MAX(`weapon_wear`) AS `weapon_wear`, MAX(`weapon_seed`) AS `weapon_seed`
-        FROM `wp_player_skins`
-        WHERE `steamid` = :steamid
-        GROUP BY `weapon_defindex`, `steamid`
-    ", ["steamid" => $steamid]);
-	$selectedSkins = UtilsClass::getSelectedSkins($querySelected);
-	$selectedKnife = $db->select("SELECT * FROM `wp_player_knife` WHERE `wp_player_knife`.`steamid` = :steamid LIMIT 1", ["steamid" => $steamid]);
-	$knifes = UtilsClass::getKnifeTypes();
-
-	if (isset($_POST['forma'])) {
-		$ex = explode("-", $_POST['forma']);
-
-		if ($ex[0] == "knife") {
-			// Handle knife selection - use the knife key directly
-			if (isset($knifes[$ex[1]])) {
-				$knifeData = $knifes[$ex[1]];
-				
-				// Clear any existing knife skins first
-				$db->query("DELETE FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` IN (500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526)", ["steamid" => $steamid]);
-				
-				// Clear any existing basic knife selection first
-				$db->query("DELETE FROM `wp_player_knife` WHERE `steamid` = :steamid", ["steamid" => $steamid]);
-				
-				// Set the new basic knife selection
-				$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 2)", ["steamid" => $steamid, "knife" => $knifeData['weapon_name']]);
-				$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 3)", ["steamid" => $steamid, "knife" => $knifeData['weapon_name']]);
-			}
-		} else {
-			if (array_key_exists($ex[1], $skins[$ex[0]]) && isset($_POST['wear']) && $_POST['wear'] >= 0.00 && $_POST['wear'] <= 1.00 && isset($_POST['seed'])) {
-				$wear = floatval($_POST['wear']);
-				$seed = intval($_POST['seed']);
-				
-				// If this is a knife skin, automatically equip the corresponding knife type
-				if (in_array($ex[0], [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])) {
-					// Map defindex to knife weapon_name
-					$knifeMapping = [
-						500 => 'weapon_bayonet',
-						503 => 'weapon_knife_css',
-						505 => 'weapon_knife_flip',
-						506 => 'weapon_knife_gut',
-						507 => 'weapon_knife_karambit',
-						508 => 'weapon_knife_m9_bayonet',
-						509 => 'weapon_knife_tactical',
-						512 => 'weapon_knife_falchion',
-						514 => 'weapon_knife_survival_bowie',
-						515 => 'weapon_knife_butterfly',
-						516 => 'weapon_knife_push',
-						517 => 'weapon_knife_cord',
-						518 => 'weapon_knife_canis',
-						519 => 'weapon_knife_ursus',
-						520 => 'weapon_knife_gypsy_jackknife',
-						521 => 'weapon_knife_outdoor',
-						522 => 'weapon_knife_stiletto',
-						523 => 'weapon_knife_widowmaker',
-						525 => 'weapon_knife_skeleton',
-						526 => 'weapon_knife_css'
-					];
-					
-					// Clear any existing basic knife selection
-					$db->query("DELETE FROM `wp_player_knife` WHERE `steamid` = :steamid", ["steamid" => $steamid]);
-					
-					// Clear ALL other knife skins (to handle switching between knife types)
-					$db->query("DELETE FROM `wp_player_skins` WHERE `steamid` = :steamid AND `weapon_defindex` IN (500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526) AND `weapon_defindex` != :current_defindex", ["steamid" => $steamid, "current_defindex" => $ex[0]]);
-					
-					// Set the corresponding knife type in wp_player_knife table
-					if (isset($knifeMapping[$ex[0]])) {
-						$knifeWeaponName = $knifeMapping[$ex[0]];
-						$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 2)", ["steamid" => $steamid, "knife" => $knifeWeaponName]);
-						$db->query("INSERT INTO `wp_player_knife` (`steamid`, `knife`, `weapon_team`) VALUES(:steamid, :knife, 3)", ["steamid" => $steamid, "knife" => $knifeWeaponName]);
-					}
-				}
-				
-				if (array_key_exists($ex[0], $selectedSkins)) {
-					$db->query("UPDATE wp_player_skins SET weapon_paint_id = :weapon_paint_id, weapon_wear = :weapon_wear, weapon_seed = :weapon_seed WHERE steamid = :steamid AND weapon_defindex = :weapon_defindex", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
-				} else {
-					$db->query("INSERT INTO wp_player_skins (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`, `weapon_team`) VALUES (:steamid, :weapon_defindex, :weapon_paint_id, :weapon_wear, :weapon_seed, 2)", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
-					$db->query("INSERT INTO wp_player_skins (`steamid`, `weapon_defindex`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`, `weapon_team`) VALUES (:steamid, :weapon_defindex, :weapon_paint_id, :weapon_wear, :weapon_seed, 3)", ["steamid" => $steamid, "weapon_defindex" => $ex[0], "weapon_paint_id" => $ex[1], "weapon_wear" => $wear, "weapon_seed" => $seed]);
-				}
-			}
-		}
+// Handle weapon updates
+if (isset($_SESSION['steamid']) && isset($_POST['forma'])) {
+	$weaponHandler = new WeaponHandler($_SESSION['steamid']);
+	if ($weaponHandler->handleWeaponUpdate($_POST)) {
 		header("Location: {$_SERVER['PHP_SELF']}");
+		exit;
 	}
+}
 
-	// Organize weapons by categories
-	$weaponCategories = [
-		'Knives' => [],
-		'Gloves' => [],
-		'Rifles' => [7, 8, 10, 13, 16, 60, 39, 40, 38],
-		'Pistols' => [1, 2, 3, 4, 30, 32, 36, 61, 63, 64],
-		'SMGs' => [17, 19, 24, 26, 33, 34],
-		'Shotguns' => [25, 27, 29, 35],
-		'Snipers' => [9, 11, 38],
-		'Machine Guns' => [14, 28],
-		'Grenades' => [43, 44, 45, 46, 47, 48]
-	];
-
-	// Add knives to categories
-	foreach ($knifes as $knifeKey => $knife) {
-		if ($knifeKey != 0) {
-			$weaponCategories['Knives'][$knifeKey] = $knife;
-		}
-	}
+// Get loadout data for logged in users
+$loadoutData = null;
+$weaponCategories = [];
+if (isset($_SESSION['steamid'])) {
+	require_once 'steamauth/userInfo.php';
+	$weaponHandler = new WeaponHandler($_SESSION['steamid']);
+	$loadoutData = $weaponHandler->getLoadoutData();
+	$weaponCategories = $weaponHandler->getOrganizedWeapons();
 }
 ?>
 
@@ -148,7 +53,7 @@ if (isset($_SESSION['steamid'])) {
 					<h1>CS2 Weapon Paints</h1>
 				</div>
 				<div class="header-right">
-					<span class="user-info">Welcome, <?php echo $_SESSION['steam_personaname'] ?? 'Player'; ?></span>
+					<span class="user-info">Welcome, <?php echo htmlspecialchars($_SESSION['steam_personaname'] ?? 'Player'); ?></span>
 					<a href="<?php echo $_SERVER['PHP_SELF']; ?>?logout" class="logout-btn">Logout</a>
 				</div>
 			</header>
@@ -164,66 +69,39 @@ if (isset($_SESSION['steamid'])) {
 					</div>
 					<nav class="sidebar-nav">
 						<?php foreach ($weaponCategories as $categoryName => $categoryWeapons): ?>
-							<?php 
-								// Count weapons in this category
-								$weaponCount = 0;
-								if ($categoryName == 'Knives') {
-									$weaponCount = count($knifes) - 1; // Exclude default knife
-								} else {
-									foreach ($categoryWeapons as $weaponDefindex) {
-										if (isset($weapons[$weaponDefindex])) {
-											$weaponCount++;
-										}
-									}
-								}
-								
-								// Skip categories with 0 items
-								if ($weaponCount == 0) {
-									continue;
-								}
-							?>
+							<?php if (empty($categoryWeapons)) continue; ?>
 							<div class="nav-category">
 								<div class="nav-item category-header" data-category="<?php echo strtolower($categoryName); ?>" onclick="toggleCategory('<?php echo strtolower($categoryName); ?>')">
-									<span class="nav-icon">
-										<?php echo $categoryName == 'Knives' ? '🗡️' : ($categoryName == 'Gloves' ? '🧤' : ($categoryName == 'Rifles' ? '🔫' : ($categoryName == 'Pistols' ? '🔫' : ($categoryName == 'SMGs' ? '🔫' : ($categoryName == 'Shotguns' ? '🔫' : ($categoryName == 'Snipers' ? '🎯' : ($categoryName == 'Machine Guns' ? '⚡' : '💣'))))))); ?>
-									</span>
+									<span class="nav-icon"><?php echo getCategoryIcon($categoryName); ?></span>
 									<div class="nav-content">
 										<span class="nav-text"><?php echo $categoryName; ?></span>
-										<span class="nav-count"><?php echo $weaponCount; ?></span>
+										<span class="nav-count"><?php echo count($categoryWeapons); ?></span>
 									</div>
 									<span class="nav-arrow">▶</span>
 								</div>
 								
 								<div class="weapon-list" data-category="<?php echo strtolower($categoryName); ?>">
-									<?php if ($categoryName == 'Knives'): ?>
-										<?php foreach ($knifes as $knifeKey => $knife): ?>
-											<?php if ($knifeKey != 0): ?>
-												<div class="weapon-container">
-													<div class="weapon-item" onclick="toggleKnifeSkins(<?php echo $knifeKey; ?>)">
-														<img src="<?php echo $knife['image_url']; ?>" alt="<?php echo $knife['paint_name']; ?>" class="weapon-icon">
-														<span class="weapon-name"><?php echo $knife['paint_name']; ?></span>
-														<span class="weapon-arrow">▶</span>
-													</div>
-													<div class="weapon-skins-grid" data-weapon="knife-<?php echo $knifeKey; ?>">
-														<!-- Knife skins will be populated by JavaScript -->
-													</div>
+									<?php if ($categoryName === 'Knives'): ?>
+										<?php foreach ($categoryWeapons as $knifeId => $knife): ?>
+											<div class="weapon-container">
+												<div class="weapon-item" onclick="toggleKnifeSkins(<?php echo $knifeId; ?>)">
+													<img src="<?php echo htmlspecialchars($knife['image_url']); ?>" alt="<?php echo htmlspecialchars($knife['paint_name']); ?>" class="weapon-icon">
+													<span class="weapon-name"><?php echo htmlspecialchars($knife['paint_name']); ?></span>
+													<span class="weapon-arrow">▶</span>
 												</div>
-											<?php endif; ?>
+												<div class="weapon-skins-grid" data-weapon="knife-<?php echo $knifeId; ?>"></div>
+											</div>
 										<?php endforeach; ?>
 									<?php else: ?>
-										<?php foreach ($categoryWeapons as $weaponDefindex): ?>
-											<?php if (isset($weapons[$weaponDefindex])): ?>
-												<div class="weapon-container">
-													<div class="weapon-item" onclick="toggleWeaponSkins(<?php echo $weaponDefindex; ?>)">
-														<img src="<?php echo $weapons[$weaponDefindex]['image_url']; ?>" alt="<?php echo $weapons[$weaponDefindex]['paint_name']; ?>" class="weapon-icon">
-														<span class="weapon-name"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapons[$weaponDefindex]['weapon_name']))); ?></span>
-														<span class="weapon-arrow">▶</span>
-													</div>
-													<div class="weapon-skins-grid" data-weapon="<?php echo $weaponDefindex; ?>">
-														<!-- Skins will be populated by JavaScript -->
-													</div>
+										<?php foreach ($categoryWeapons as $weaponId => $weapon): ?>
+											<div class="weapon-container">
+												<div class="weapon-item" onclick="toggleWeaponSkins(<?php echo $weaponId; ?>)">
+													<img src="<?php echo htmlspecialchars($weapon['image_url']); ?>" alt="<?php echo htmlspecialchars($weapon['paint_name']); ?>" class="weapon-icon">
+													<span class="weapon-name"><?php echo htmlspecialchars(ucfirst(strtolower(str_replace('weapon_', '', $weapon['weapon_name'])))); ?></span>
+													<span class="weapon-arrow">▶</span>
 												</div>
-											<?php endif; ?>
+												<div class="weapon-skins-grid" data-weapon="<?php echo $weaponId; ?>"></div>
+											</div>
 										<?php endforeach; ?>
 									<?php endif; ?>
 								</div>
@@ -240,121 +118,62 @@ if (isset($_SESSION['steamid'])) {
 					</div>
 
 					<div class="loadout-grid">
-						<!-- Knife - Show the currently equipped knife (either basic knife or knife skin) -->
-						<?php
-						$displayKnife = null;
-						$displayKnifeSkin = null;
-						$knifeSource = '';
-						
-						// Debug: Show what's in selectedKnife
-						// echo "<!-- Debug: selectedKnife = " . print_r($selectedKnife, true) . " -->";
-						
-						// Check if there's a knife skin equipped (from selectedSkins for knife defindexes)
-						foreach ($selectedSkins as $defindex => $selectedSkin) {
-							if (in_array($defindex, [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526])) {
-								if (isset($skins[$defindex][$selectedSkin['weapon_paint_id']])) {
-									$displayKnifeSkin = $skins[$defindex][$selectedSkin['weapon_paint_id']];
-									$knifeSource = 'skin';
-									break; // Use the first knife skin found
-								}
-							}
-						}
-						
-						// If no knife skin, check for basic knife selection
-						if (!$displayKnifeSkin && $selectedKnife != null && !empty($selectedKnife)) {
-							foreach ($knifes as $knifeKey => $knife) {
-								if ($selectedKnife[0]['knife'] == $knife['weapon_name']) {
-									$displayKnife = $knife;
-									$knifeSource = 'basic';
-									break;
-								}
-							}
-						}
-						
-						// If no knife selected at all, show default knife
-						if (!$displayKnifeSkin && !$displayKnife && isset($knifes[0])) {
-							$displayKnife = $knifes[0]; // Default knife
-							$knifeSource = 'default';
-						}
+						<?php 
+						$displayKnife = $loadoutData['displayKnife'];
+						$knifeEquipped = ($displayKnife['source'] === 'skin') ? 'true' : 'false';
 						?>
 						
-						<!-- Always show a knife (either selected or default) -->
-						<?php if ($displayKnifeSkin || $displayKnife): ?>
+						<div class="loadout-item" data-weapon-type="knife" data-equipped="<?php echo $knifeEquipped; ?>">
+							<div class="item-image-container">
+								<img src="<?php echo htmlspecialchars($displayKnife['data']['image_url']); ?>" 
+									 alt="<?php echo htmlspecialchars($displayKnife['data']['paint_name']); ?>" 
+									 class="item-image">
+								<div class="item-overlay">
+									<button class="customize-btn" onclick="openCustomizeModal('knife', 0)">Customize</button>
+								</div>
+							</div>
+							<div class="item-info">
+								<div class="item-category">Knife</div>
+								<div class="item-name"><?php echo htmlspecialchars($displayKnife['data']['paint_name']); ?></div>
+							</div>
+						</div>
+
+						<?php foreach ($loadoutData['weapons'] as $defindex => $weapon): ?>
+							<?php if (UtilsClass::isKnifeWeapon($weapon)) continue; ?>
 							<?php 
-							// Set equipped status for knife - only true if it's a custom skin
-							$knifeEquipped = ($knifeSource == 'skin') ? 'true' : 'false';
+							$hasCustomSkin = array_key_exists($defindex, $loadoutData['selectedSkins']);
+							$isEquipped = $hasCustomSkin ? 'true' : 'false';
 							?>
-							<div class="loadout-item" data-weapon-type="knife" data-equipped="<?php echo $knifeEquipped; ?>">
+							<div class="loadout-item" data-weapon-id="<?php echo $defindex; ?>" data-equipped="<?php echo $isEquipped; ?>">
 								<div class="item-image-container">
-									<?php if ($knifeSource == 'skin'): ?>
-										<img src="<?php echo $displayKnifeSkin['image_url']; ?>" alt="<?php echo $displayKnifeSkin['paint_name']; ?>" class="item-image">
+									<?php if ($hasCustomSkin): ?>
+										<?php 
+										$skins = UtilsClass::skinsFromJson();
+										$selectedSkin = $skins[$defindex][$loadoutData['selectedSkins'][$defindex]['weapon_paint_id']];
+										?>
+										<img src="<?php echo htmlspecialchars($selectedSkin['image_url']); ?>" 
+											 alt="<?php echo htmlspecialchars($selectedSkin['paint_name']); ?>" 
+											 class="item-image">
+										<div class="item-overlay">
+											<button class="customize-btn" onclick="openCustomizeModal('weapon', <?php echo $defindex; ?>)">Customize</button>
+										</div>
 									<?php else: ?>
-										<img src="<?php echo $displayKnife['image_url']; ?>" alt="<?php echo $displayKnife['paint_name']; ?>" class="item-image">
+										<img src="<?php echo htmlspecialchars($weapon['image_url']); ?>" 
+											 alt="<?php echo htmlspecialchars($weapon['paint_name']); ?>" 
+											 class="item-image">
 									<?php endif; ?>
-									<div class="item-overlay">
-										<button class="customize-btn" onclick="openCustomizeModal('knife', 0)">Customize</button>
-									</div>
 								</div>
 								<div class="item-info">
-									<div class="item-category">Knife</div>
+									<div class="item-category"><?php echo htmlspecialchars(ucfirst(strtolower(str_replace('weapon_', '', $weapon['weapon_name'])))); ?></div>
 									<div class="item-name">
-										<?php if ($knifeSource == 'skin'): ?>
-											<?php echo $displayKnifeSkin['paint_name']; ?>
+										<?php if ($hasCustomSkin): ?>
+											<?php echo htmlspecialchars($selectedSkin['paint_name']); ?>
 										<?php else: ?>
-											<?php echo $displayKnife['paint_name']; ?>
+											<?php echo htmlspecialchars($weapon['paint_name']); ?>
 										<?php endif; ?>
 									</div>
 								</div>
 							</div>
-						<?php endif; ?>
-
-						<!-- Show all weapons (exclude knives) - either with custom skin or default -->
-						<?php foreach ($weapons as $defindex => $weapon): ?>
-							<?php 
-							// Skip ALL knives - comprehensive check
-							$isKnifeWeapon = in_array($defindex, [500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526]);
-							$isDefaultKnife = ($weapon['weapon_name'] == 'weapon_knife');
-							$isKnifeVariant = (strpos($weapon['weapon_name'], 'knife') !== false);
-							$isKnifePaint = (strpos($weapon['paint_name'], '★') !== false); // Knife skins have ★ in name
-							
-							// Skip ANY knife-related weapon
-							if ($isKnifeWeapon || $isDefaultKnife || $isKnifeVariant || $isKnifePaint) {
-								continue;
-							}
-							?>
-								<?php 
-								$hasCustomSkin = array_key_exists($defindex, $selectedSkins);
-								$isEquipped = $hasCustomSkin ? 'true' : 'false';
-								?>
-								<div class="loadout-item" data-weapon-id="<?php echo $defindex; ?>" data-equipped="<?php echo $isEquipped; ?>">
-									<div class="item-image-container">
-										<?php if ($hasCustomSkin): ?>
-											<!-- Show custom skin -->
-											<img src="<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['image_url']; ?>" 
-												 alt="<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['paint_name']; ?>" 
-												 class="item-image">
-											<div class="item-overlay">
-												<button class="customize-btn" onclick="openCustomizeModal('weapon', <?php echo $defindex; ?>)">Customize</button>
-											</div>
-										<?php else: ?>
-											<!-- Show default weapon -->
-											<img src="<?php echo $weapon['image_url']; ?>" 
-												 alt="<?php echo $weapon['paint_name']; ?>" 
-												 class="item-image">
-											<!-- No overlay button for default weapons -->
-										<?php endif; ?>
-									</div>
-									<div class="item-info">
-										<div class="item-category"><?php echo ucfirst(strtolower(str_replace('weapon_', '', $weapon['weapon_name']))); ?></div>
-										<div class="item-name">
-											<?php if ($hasCustomSkin): ?>
-												<?php echo $skins[$defindex][$selectedSkins[$defindex]['weapon_paint_id']]['paint_name']; ?>
-											<?php else: ?>
-												<?php echo $weapon['paint_name']; ?>
-											<?php endif; ?>
-										</div>
-									</div>
-								</div>
 						<?php endforeach; ?>
 					</div>
 				</main>
@@ -411,335 +230,311 @@ if (isset($_SESSION['steamid'])) {
 		</div>
 
 		<script>
-			// Store weapon and skin data for JavaScript
-			const weaponsData = <?php echo json_encode($weapons); ?>;
-			const skinsData = <?php echo json_encode($skins); ?>;
-			const selectedSkinsData = <?php echo json_encode($selectedSkins); ?>;
-			const knivesData = <?php echo json_encode($knifes); ?>;
-			const weaponCategories = <?php echo json_encode($weaponCategories); ?>;
+			// Optimized JavaScript with embedded data (restored functionality)
+			const weaponsData = <?php echo json_encode($loadoutData['weapons']); ?>;
+			const skinsData = <?php echo json_encode(UtilsClass::skinsFromJson()); ?>;
+			const selectedSkinsData = <?php echo json_encode($loadoutData['selectedSkins']); ?>;
+			const knivesData = <?php echo json_encode($loadoutData['knifes']); ?>;
 
+			const WeaponApp = {
+				init() {
+					this.bindEvents();
+				},
 
-
-			function toggleCategory(category) {
-				const categoryHeader = document.querySelector(`.category-header[data-category="${category}"]`);
-				const weaponList = document.querySelector(`.weapon-list[data-category="${category}"]`);
-				const arrow = categoryHeader.querySelector('.nav-arrow');
-				
-				// Toggle the weapon list
-				if (weaponList.classList.contains('expanded')) {
-					// Collapse
-					weaponList.classList.remove('expanded');
-					arrow.textContent = '▶';
-					categoryHeader.classList.remove('active');
-				} else {
-					// Collapse all other categories first
-					document.querySelectorAll('.weapon-list').forEach(list => {
-						list.classList.remove('expanded');
-					});
-					document.querySelectorAll('.category-header').forEach(header => {
-						header.classList.remove('active');
-						header.querySelector('.nav-arrow').textContent = '▶';
-					});
-					
-					// Expand this category
-					weaponList.classList.add('expanded');
-					arrow.textContent = '▼';
-					categoryHeader.classList.add('active');
-				}
-			}
-
-
-
-			function equipKnife(knifeId) {
-				// Create form and submit
-				const form = document.createElement('form');
-				form.method = 'POST';
-				form.style.display = 'none';
-
-				const formaInput = document.createElement('input');
-				formaInput.name = 'forma';
-				formaInput.value = `knife-${knifeId}`;
-
-				form.appendChild(formaInput);
-				document.body.appendChild(form);
-				form.submit();
-			}
-
-			function searchWeapons(query) {
-				if (!query.trim()) {
-					// Reset search - show all categories and hide all weapon lists
-					document.querySelectorAll('.nav-category').forEach(category => {
-						category.style.display = 'block';
-					});
-					document.querySelectorAll('.weapon-list').forEach(list => {
-						list.classList.remove('expanded');
-					});
-					document.querySelectorAll('.category-header').forEach(header => {
-						header.classList.remove('active');
-						header.querySelector('.nav-arrow').textContent = '▶';
-					});
-					return;
-				}
-
-				const searchTerm = query.toLowerCase();
-
-				// Search through categories and weapons
-				document.querySelectorAll('.nav-category').forEach(category => {
-					const categoryName = category.querySelector('.nav-text').textContent.toLowerCase();
-					const weaponItems = category.querySelectorAll('.weapon-item');
-					let categoryMatches = categoryName.includes(searchTerm);
-					let hasMatchingWeapons = false;
-
-					// Check if any weapons in this category match
-					weaponItems.forEach(weaponItem => {
-						const weaponName = weaponItem.querySelector('.weapon-name').textContent.toLowerCase();
-						const matches = weaponName.includes(searchTerm);
-						
-						if (matches) {
-							hasMatchingWeapons = true;
-							weaponItem.style.display = 'flex';
-						} else {
-							weaponItem.style.display = 'none';
+				bindEvents() {
+					document.addEventListener('click', (e) => {
+						if (e.target.id === 'customizeModal') {
+							this.closeCustomizeModal();
 						}
 					});
+				},
 
-					// Show/hide category based on matches
-					if (categoryMatches || hasMatchingWeapons) {
-						category.style.display = 'block';
-						if (hasMatchingWeapons) {
-							// Expand the category to show matching weapons
+				toggleCategory(category) {
+					const categoryHeader = document.querySelector(`.category-header[data-category="${category}"]`);
+					const weaponList = document.querySelector(`.weapon-list[data-category="${category}"]`);
+					const arrow = categoryHeader.querySelector('.nav-arrow');
+					
+					if (weaponList.classList.contains('expanded')) {
+						weaponList.classList.remove('expanded');
+						arrow.textContent = '▶';
+						categoryHeader.classList.remove('active');
+					} else {
+						// Collapse other categories
+						document.querySelectorAll('.weapon-list').forEach(list => list.classList.remove('expanded'));
+						document.querySelectorAll('.category-header').forEach(header => {
+							header.classList.remove('active');
+							header.querySelector('.nav-arrow').textContent = '▶';
+						});
+						
+						weaponList.classList.add('expanded');
+						arrow.textContent = '▼';
+						categoryHeader.classList.add('active');
+					}
+				},
+
+				searchWeapons(query) {
+					const searchTerm = query.toLowerCase().trim();
+					
+					if (!searchTerm) {
+						document.querySelectorAll('.nav-category').forEach(category => category.style.display = 'block');
+						document.querySelectorAll('.weapon-list').forEach(list => list.classList.remove('expanded'));
+						document.querySelectorAll('.category-header').forEach(header => {
+							header.classList.remove('active');
+							header.querySelector('.nav-arrow').textContent = '▶';
+						});
+						return;
+					}
+
+					document.querySelectorAll('.nav-category').forEach(category => {
+						const categoryName = category.querySelector('.nav-text').textContent.toLowerCase();
+						const weaponItems = category.querySelectorAll('.weapon-item');
+						let hasMatches = categoryName.includes(searchTerm);
+
+						weaponItems.forEach(item => {
+							const weaponName = item.querySelector('.weapon-name').textContent.toLowerCase();
+							const matches = weaponName.includes(searchTerm);
+							item.style.display = matches ? 'flex' : 'none';
+							if (matches) hasMatches = true;
+						});
+
+						category.style.display = hasMatches ? 'block' : 'none';
+						if (hasMatches) {
 							const weaponList = category.querySelector('.weapon-list');
 							const header = category.querySelector('.category-header');
 							weaponList.classList.add('expanded');
 							header.classList.add('active');
 							header.querySelector('.nav-arrow').textContent = '▼';
 						}
-					} else {
-						category.style.display = 'none';
+					});
+				},
+
+				toggleWeaponSkins(weaponId) {
+					const weaponItem = event.target.closest('.weapon-item');
+					const skinGrid = weaponItem.parentNode.querySelector('.weapon-skins-grid');
+
+					if (!skinsData[weaponId]) return;
+
+					if (skinGrid.classList.contains('expanded')) {
+						skinGrid.classList.remove('expanded');
+						weaponItem.classList.remove('expanded');
+						return;
 					}
-				});
-			}
 
-			function toggleWeaponSkins(weaponId) {
-				const weaponItem = event.target.closest('.weapon-item');
-				const skinGrid = weaponItem.parentNode.querySelector('.weapon-skins-grid');
+					// Collapse others
+					document.querySelectorAll('.weapon-skins-grid').forEach(grid => grid.classList.remove('expanded'));
+					document.querySelectorAll('.weapon-item').forEach(item => item.classList.remove('expanded'));
 
-				if (!skinsData[weaponId]) return;
-
-				// Toggle the weapon item and skin grid
-				if (skinGrid.classList.contains('expanded')) {
-					// Collapse
-					skinGrid.classList.remove('expanded');
-					weaponItem.classList.remove('expanded');
-				} else {
-					// Collapse all other weapon skin grids first
-					document.querySelectorAll('.weapon-skins-grid').forEach(grid => {
-						grid.classList.remove('expanded');
-					});
-					document.querySelectorAll('.weapon-item').forEach(item => {
-						item.classList.remove('expanded');
-					});
-					
-					// Expand this weapon's skin grid
-					populateWeaponSkins(weaponId, skinGrid);
+					this.populateWeaponSkins(weaponId, skinGrid);
 					skinGrid.classList.add('expanded');
 					weaponItem.classList.add('expanded');
-				}
-			}
+				},
 
-			function populateWeaponSkins(weaponId, skinGrid) {
-				// Create skins container
-				const skinsContainer = document.createElement('div');
-				skinsContainer.className = 'skins-container';
-				
-				// Clear previous content
-				skinGrid.innerHTML = '';
-				
-				// Populate skins in 3-column grid
-				Object.entries(skinsData[weaponId]).forEach(([paintId, skin]) => {
-					const skinOption = document.createElement('div');
-					skinOption.className = 'skin-option';
-					
-					// Check if this skin is currently equipped
-					if (selectedSkinsData[weaponId] && selectedSkinsData[weaponId].weapon_paint_id == paintId) {
-						skinOption.classList.add('active');
+				toggleKnifeSkins(knifeType) {
+					const weaponItem = event.target.closest('.weapon-item');
+					const skinGrid = weaponItem.parentNode.querySelector('.weapon-skins-grid');
+
+					if (skinGrid.classList.contains('expanded')) {
+						skinGrid.classList.remove('expanded');
+						weaponItem.classList.remove('expanded');
+						return;
 					}
-					
-					skinOption.onclick = () => equipSkin(weaponId, paintId);
-					
-					skinOption.innerHTML = `
-						<img src="${skin.image_url}" alt="${skin.paint_name}">
-						<div class="skin-option-name">${skin.paint_name.replace(/.*\| /, '')}</div>
-					`;
-					
-					skinsContainer.appendChild(skinOption);
-				});
-				
-				skinGrid.appendChild(skinsContainer);
-			}
 
-			function toggleKnifeSkins(knifeType) {
-				const weaponItem = event.target.closest('.weapon-item');
-				const skinGrid = weaponItem.parentNode.querySelector('.weapon-skins-grid');
+					// Collapse others
+					document.querySelectorAll('.weapon-skins-grid').forEach(grid => grid.classList.remove('expanded'));
+					document.querySelectorAll('.weapon-item').forEach(item => item.classList.remove('expanded'));
 
-				// Toggle the weapon item and skin grid
-				if (skinGrid.classList.contains('expanded')) {
-					// Collapse
-					skinGrid.classList.remove('expanded');
-					weaponItem.classList.remove('expanded');
-				} else {
-					// Collapse all other weapon skin grids first
-					document.querySelectorAll('.weapon-skins-grid').forEach(grid => {
-						grid.classList.remove('expanded');
-					});
-					document.querySelectorAll('.weapon-item').forEach(item => {
-						item.classList.remove('expanded');
-					});
-					
-					// Expand this knife type's skin grid
-					populateKnifeTypeSkins(knifeType, skinGrid);
+					this.populateKnifeTypeSkins(knifeType, skinGrid);
 					skinGrid.classList.add('expanded');
 					weaponItem.classList.add('expanded');
-				}
-			}
+				},
 
-			function populateKnifeTypeSkins(knifeType, skinGrid) {
-				// Create skins container
-				const skinsContainer = document.createElement('div');
-				skinsContainer.className = 'skins-container';
-				
-				// Clear previous content
-				skinGrid.innerHTML = '';
-				
-				// ALWAYS show the basic knife option first
-				const knife = knivesData[knifeType];
-				if (knife) {
-					const basicKnifeOption = document.createElement('div');
-					basicKnifeOption.className = 'skin-option';
+				populateWeaponSkins(weaponId, skinGrid) {
+					const skinsContainer = document.createElement('div');
+					skinsContainer.className = 'skins-container';
 					
-					// Check if basic knife is currently selected (no knife skins equipped for this type)
-					if (!selectedSkinsData[knifeType]) {
-						basicKnifeOption.classList.add('active');
-					}
+					skinGrid.innerHTML = '';
 					
-					basicKnifeOption.onclick = () => equipKnife(knifeType);
-					
-					basicKnifeOption.innerHTML = `
-						<img src="${knife.image_url}" alt="${knife.paint_name}">
-						<div class="skin-option-name">Default</div>
-					`;
-					
-					skinsContainer.appendChild(basicKnifeOption);
-				}
-				
-				// Then show knife skins if available
-				if (skinsData[knifeType]) {
-					// This knife type has multiple skins
-					Object.entries(skinsData[knifeType]).forEach(([paintId, skin]) => {
-						// Skip the default skin (paint ID 0) since we already show it as "Default" option above
-						if (paintId == '0') {
-							return;
-						}
-						
+					Object.entries(skinsData[weaponId]).forEach(([paintId, skin]) => {
 						const skinOption = document.createElement('div');
 						skinOption.className = 'skin-option';
 						
-						// Check if this skin is currently equipped
-						if (selectedSkinsData[knifeType] && selectedSkinsData[knifeType].weapon_paint_id == paintId) {
+						if (selectedSkinsData[weaponId] && selectedSkinsData[weaponId].weapon_paint_id == paintId) {
 							skinOption.classList.add('active');
 						}
 						
-						skinOption.onclick = () => equipSkin(knifeType, paintId);
+						skinOption.onclick = () => this.equipSkin(weaponId, paintId);
 						
 						skinOption.innerHTML = `
-							<img src="${skin.image_url}" alt="${skin.paint_name}">
+							<img src="${skin.image_url}" alt="${skin.paint_name}" loading="lazy">
 							<div class="skin-option-name">${skin.paint_name.replace(/.*\| /, '')}</div>
 						`;
 						
 						skinsContainer.appendChild(skinOption);
 					});
-				}
-				
-				skinGrid.appendChild(skinsContainer);
-			}
-
-			function equipSkin(weaponId, paintId) {
-				// Create form and submit
-				const form = document.createElement('form');
-				form.method = 'POST';
-				form.style.display = 'none';
-
-				const formaInput = document.createElement('input');
-				formaInput.name = 'forma';
-				formaInput.value = `${weaponId}-${paintId}`;
-
-				const wearInput = document.createElement('input');
-				wearInput.name = 'wear';
-				wearInput.value = '0.00';
-
-				const seedInput = document.createElement('input');
-				seedInput.name = 'seed';
-				seedInput.value = '0';
-
-				form.appendChild(formaInput);
-				form.appendChild(wearInput);
-				form.appendChild(seedInput);
-				document.body.appendChild(form);
-				form.submit();
-			}
-
-			function openCustomizeModal(type, weaponId) {
-				const modal = document.getElementById('customizeModal');
-				const title = document.getElementById('modalTitle');
-				const form = document.getElementById('customizeForm');
-				const weaponIdInput = document.getElementById('customizeWeaponId');
-				const wearSelect = document.getElementById('wearSelect');
-				const wearInput = document.getElementById('wearInput');
-				const seedInput = document.getElementById('seedInput');
-
-				if (type === 'knife') {
-					title.textContent = 'Customize Knife';
-					weaponIdInput.value = 'knife-0';
-				} else {
-					title.textContent = `Customize ${weaponsData[weaponId].weapon_name.replace('weapon_', '').toUpperCase()}`;
-					weaponIdInput.value = `${weaponId}-${selectedSkinsData[weaponId]?.weapon_paint_id || 0}`;
 					
-					// Set current values
-					if (selectedSkinsData[weaponId]) {
-						wearInput.value = selectedSkinsData[weaponId].weapon_wear;
-						seedInput.value = selectedSkinsData[weaponId].weapon_seed;
+					skinGrid.appendChild(skinsContainer);
+				},
+
+				populateKnifeTypeSkins(knifeType, skinGrid) {
+					const skinsContainer = document.createElement('div');
+					skinsContainer.className = 'skins-container';
+					
+					skinGrid.innerHTML = '';
+					
+					// ALWAYS show the basic knife option first
+					const knife = knivesData[knifeType];
+					if (knife) {
+						const basicKnifeOption = document.createElement('div');
+						basicKnifeOption.className = 'skin-option';
 						
-						// Set wear select based on value
-						const wear = parseFloat(selectedSkinsData[weaponId].weapon_wear);
-						if (wear <= 0.00) wearSelect.value = "0.00";
-						else if (wear <= 0.07) wearSelect.value = "0.07";
-						else if (wear <= 0.15) wearSelect.value = "0.15";
-						else if (wear <= 0.38) wearSelect.value = "0.38";
-						else wearSelect.value = "0.45";
+						// Check if basic knife is currently selected (no knife skins equipped for this type)
+						if (!selectedSkinsData[knifeType]) {
+							basicKnifeOption.classList.add('active');
+						}
+						
+						basicKnifeOption.onclick = () => this.equipKnife(knifeType);
+						
+						basicKnifeOption.innerHTML = `
+							<img src="${knife.image_url}" alt="${knife.paint_name}" loading="lazy">
+							<div class="skin-option-name">Default</div>
+						`;
+						
+						skinsContainer.appendChild(basicKnifeOption);
 					}
+					
+					// Then show knife skins if available
+					if (skinsData[knifeType]) {
+						Object.entries(skinsData[knifeType]).forEach(([paintId, skin]) => {
+							// Skip the default skin (paint ID 0) since we already show it as "Default" option above
+							if (paintId == '0') {
+								return;
+							}
+							
+							const skinOption = document.createElement('div');
+							skinOption.className = 'skin-option';
+							
+							// Check if this skin is currently equipped
+							if (selectedSkinsData[knifeType] && selectedSkinsData[knifeType].weapon_paint_id == paintId) {
+								skinOption.classList.add('active');
+							}
+							
+							skinOption.onclick = () => this.equipSkin(knifeType, paintId);
+							
+							skinOption.innerHTML = `
+								<img src="${skin.image_url}" alt="${skin.paint_name}" loading="lazy">
+								<div class="skin-option-name">${skin.paint_name.replace(/.*\| /, '')}</div>
+							`;
+							
+							skinsContainer.appendChild(skinOption);
+						});
+					}
+					
+					skinGrid.appendChild(skinsContainer);
+				},
+
+				equipSkin(weaponId, paintId) {
+					this.submitForm(`${weaponId}-${paintId}`, { wear: '0.00', seed: '0' });
+				},
+
+				equipKnife(knifeId) {
+					this.submitForm(`knife-${knifeId}`);
+				},
+
+				submitForm(forma, additionalData = {}) {
+					const form = document.createElement('form');
+					form.method = 'POST';
+					form.style.display = 'none';
+
+					const formaInput = document.createElement('input');
+					formaInput.name = 'forma';
+					formaInput.value = forma;
+					form.appendChild(formaInput);
+
+					Object.entries(additionalData).forEach(([name, value]) => {
+						const input = document.createElement('input');
+						input.name = name;
+						input.value = value;
+						form.appendChild(input);
+					});
+
+					document.body.appendChild(form);
+					form.submit();
+				},
+
+				openCustomizeModal(type, weaponId) {
+					const modal = document.getElementById('customizeModal');
+					const title = document.getElementById('modalTitle');
+					const weaponIdInput = document.getElementById('customizeWeaponId');
+					const wearSelect = document.getElementById('wearSelect');
+					const wearInput = document.getElementById('wearInput');
+					const seedInput = document.getElementById('seedInput');
+
+					if (type === 'knife') {
+						title.textContent = 'Customize Knife';
+						weaponIdInput.value = 'knife-0';
+					} else {
+						const weaponName = weaponsData[weaponId] ? weaponsData[weaponId].weapon_name.replace('weapon_', '').toUpperCase() : 'Weapon';
+						title.textContent = `Customize ${weaponName}`;
+						weaponIdInput.value = `${weaponId}-${selectedSkinsData[weaponId]?.weapon_paint_id || 0}`;
+						
+						if (selectedSkinsData[weaponId]) {
+							const wear = parseFloat(selectedSkinsData[weaponId].weapon_wear);
+							wearInput.value = selectedSkinsData[weaponId].weapon_wear;
+							seedInput.value = selectedSkinsData[weaponId].weapon_seed;
+							
+							// Set wear select
+							if (wear <= 0.00) wearSelect.value = "0.00";
+							else if (wear <= 0.07) wearSelect.value = "0.07";
+							else if (wear <= 0.15) wearSelect.value = "0.15";
+							else if (wear <= 0.38) wearSelect.value = "0.38";
+							else wearSelect.value = "0.45";
+						}
+					}
+
+					modal.classList.remove('hidden');
+				},
+
+				closeCustomizeModal() {
+					document.getElementById('customizeModal').classList.add('hidden');
+				},
+
+				updateWearValue(selectedValue) {
+					document.getElementById('wearInput').value = selectedValue;
 				}
+			};
 
-				modal.classList.remove('hidden');
-			}
+			// Global functions for onclick handlers
+			const toggleCategory = (category) => WeaponApp.toggleCategory(category);
+			const searchWeapons = (query) => WeaponApp.searchWeapons(query);
+			const toggleWeaponSkins = (weaponId) => WeaponApp.toggleWeaponSkins(weaponId);
+			const toggleKnifeSkins = (knifeType) => WeaponApp.toggleKnifeSkins(knifeType);
+			const openCustomizeModal = (type, weaponId) => WeaponApp.openCustomizeModal(type, weaponId);
+			const closeCustomizeModal = () => WeaponApp.closeCustomizeModal();
+			const updateWearValue = (value) => WeaponApp.updateWearValue(value);
 
-			function closeCustomizeModal() {
-				document.getElementById('customizeModal').classList.add('hidden');
-			}
-
-			function updateWearValue(selectedValue) {
-				document.getElementById('wearInput').value = selectedValue;
-			}
-
-			// Close modals when clicking outside
-			document.addEventListener('click', function(e) {
-				const modal = document.getElementById('customizeModal');
-				
-				if (e.target === modal) {
-					closeCustomizeModal();
-				}
-			});
+			// Initialize app
+			WeaponApp.init();
 		</script>
 	<?php endif; ?>
 
 </body>
 </html>
+
+<?php
+// Helper function for category icons
+function getCategoryIcon($categoryName) {
+	$icons = [
+		'Knives' => '🗡️',
+		'Gloves' => '🧤', 
+		'Rifles' => '🔫',
+		'Pistols' => '🔫',
+		'SMGs' => '🔫',
+		'Shotguns' => '🔫',
+		'Snipers' => '🎯',
+		'Machine Guns' => '⚡',
+		'Grenades' => '💣'
+	];
+	
+	return $icons[$categoryName] ?? '🔫';
+}
+?>
