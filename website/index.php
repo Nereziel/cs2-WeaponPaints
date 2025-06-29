@@ -72,7 +72,6 @@ if (isset($_SESSION['steamid'])) {
 							<?php if (empty($categoryWeapons)) continue; ?>
 							<div class="nav-category">
 								<div class="nav-item category-header" data-category="<?php echo strtolower($categoryName); ?>" onclick="toggleCategory('<?php echo strtolower($categoryName); ?>')">
-									<span class="nav-icon"><?php echo getCategoryIcon($categoryName); ?></span>
 									<div class="nav-content">
 										<span class="nav-text"><?php echo $categoryName; ?></span>
 										<span class="nav-count"><?php echo count($categoryWeapons); ?></span>
@@ -519,22 +518,3 @@ if (isset($_SESSION['steamid'])) {
 
 </body>
 </html>
-
-<?php
-// Helper function for category icons
-function getCategoryIcon($categoryName) {
-	$icons = [
-		'Knives' => '🗡️',
-		'Gloves' => '🧤', 
-		'Rifles' => '🔫',
-		'Pistols' => '🔫',
-		'SMGs' => '🔫',
-		'Shotguns' => '🔫',
-		'Snipers' => '🎯',
-		'Machine Guns' => '⚡',
-		'Grenades' => '💣'
-	];
-	
-	return $icons[$categoryName] ?? '🔫';
-}
-?>
