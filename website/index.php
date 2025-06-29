@@ -486,63 +486,17 @@ if (isset($_SESSION['steamid'])) {
 				// Clear previous skins
 				skinGrid.innerHTML = '';
 
-				// Populate skins with intersection observer lazy loading
-				const skinEntries = Object.entries(skinsData[weaponId]);
-				
-				// Create intersection observer for lazy loading
-				const imageObserver = new IntersectionObserver((entries, observer) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							const img = entry.target;
-							const imageUrl = img.dataset.src;
-							if (imageUrl && !img.src) {
-								img.setAttribute('data-loading', 'true');
-								img.src = imageUrl;
-								observer.unobserve(img);
-							}
-						}
-					});
-				}, {
-					rootMargin: '100px' // Load images 100px before they're visible
-				});
-				
-				skinEntries.forEach(([paintId, skin], index) => {
+				// Populate skins
+				Object.entries(skinsData[weaponId]).forEach(([paintId, skin]) => {
 					const skinItem = document.createElement('div');
 					skinItem.className = 'skin-item';
 					skinItem.onclick = () => equipSkin(weaponId, paintId);
 					
-					// Create image element with lazy loading
-					const img = document.createElement('img');
-					img.alt = skin.paint_name;
-					img.className = 'skin-image';
-					img.style.minHeight = '300px';
+					skinItem.innerHTML = `
+						<img src="${skin.image_url}" alt="${skin.paint_name}" class="skin-image">
+						<div class="skin-name">${skin.paint_name}</div>
+					`;
 					
-					// Only load first 8 images immediately, rest use intersection observer
-					if (index < 8) {
-						img.src = skin.image_url;
-					} else {
-						// Store URL in data attribute for lazy loading
-						img.dataset.src = skin.image_url;
-						imageObserver.observe(img);
-					}
-					
-					img.onerror = function() {
-						console.log('Failed to load image:', skin.image_url);
-						this.style.background = '#444';
-						this.removeAttribute('data-loading');
-					};
-					img.onload = function() {
-						this.style.background = 'transparent';
-						this.removeAttribute('data-loading');
-						console.log('Successfully loaded image:', skin.image_url);
-					};
-					
-					const nameDiv = document.createElement('div');
-					nameDiv.className = 'skin-name';
-					nameDiv.textContent = skin.paint_name;
-					
-					skinItem.appendChild(img);
-					skinItem.appendChild(nameDiv);
 					skinGrid.appendChild(skinItem);
 				});
 
