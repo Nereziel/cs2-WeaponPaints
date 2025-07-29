@@ -13,4 +13,3 @@ define('STEAM_API_KEY', '');
 define('STEAM_DOMAIN_NAME', '');
 define('STEAM_LOGOUT_PAGE', '');
 define('STEAM_LOGIN_PAGE', '');
-
