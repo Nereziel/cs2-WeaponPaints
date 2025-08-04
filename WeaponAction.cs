@@ -405,7 +405,7 @@ namespace WeaponPaints
 
 					item.Initialized = true;
 
-					SetBodygroup(pawn.Handle, "default_gloves", 1);
+					SetBodygroup(pawn, "default_gloves", 1);
 				}
 				catch (Exception) { }
 			}, TimerFlags.STOP_ON_MAPCHANGE);
@@ -429,13 +429,15 @@ namespace WeaponPaints
 			return int.TryParse(randomWeapon["paint"]?.ToString(), out var paintValue) ? paintValue : 0;
 		}
 
-		private static void SubclassChange(CBasePlayerWeapon weapon, ushort itemD)
+		//xstage idea on css discord
+		public static void SubclassChange(CBasePlayerWeapon weapon, ushort itemD)
 		{
-			var subclassChangeFunc = VirtualFunction.Create<nint, string, int>(
-				GameData.GetSignature("ChangeSubclass")
-			);
+			weapon.AcceptInput("ChangeSubclass", value: itemD.ToString());
+		}
 
-			subclassChangeFunc(weapon.Handle, itemD.ToString());
+		public static void SetBodygroup(CCSPlayerPawn pawn, string group, int value)
+		{
+			pawn.AcceptInput("SetBodygroup", value:$"{group},{value}");
 		}
 
 		private static void UpdateWeaponMeshGroupMask(CBaseEntity weapon, bool isLegacy = false)
