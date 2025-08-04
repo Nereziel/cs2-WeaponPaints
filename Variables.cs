@@ -93,10 +93,11 @@ public partial class WeaponPaints
 
 	private static readonly MemoryFunctionVoid<nint, string, float> CAttributeListSetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
 	
-	private static readonly MemoryFunctionWithReturn<nint, string, int, int> SetBodygroupFunc = new(
-		GameData.GetSignature("CBaseModelEntity_SetBodygroup"));
+	//we dont need anymore because we use AcceptInput
+	//private static readonly MemoryFunctionWithReturn<nint, string, int, int> SetBodygroupFunc = new(
+	//	GameData.GetSignature("CBaseModelEntity_SetBodygroup"));
 
-	private static readonly Func<nint, string, int, int> SetBodygroup = SetBodygroupFunc.Invoke;
+	//private static readonly Func<nint, string, int, int> SetBodygroup = SetBodygroupFunc.Invoke;
 
 	private static Dictionary<int, string> WeaponDefindex { get; } = new()
 	{
