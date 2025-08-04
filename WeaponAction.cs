@@ -285,7 +285,6 @@ namespace WeaponPaints
 				if (!weapon.Value.OwnerEntity.IsValid) continue;
 				if (gun.Entity == null) continue;
 				if (!gun.IsValid) continue;
-				if (!gun.VisibleinPVS) continue;
 
 				try
 				{
@@ -454,13 +453,6 @@ namespace WeaponPaints
 		private static void UpdatePlayerWeaponMeshGroupMask(CCSPlayerController player, CBasePlayerWeapon weapon, bool isLegacy)
 		{
 			UpdateWeaponMeshGroupMask(weapon, isLegacy);
-
-			var viewModel = GetPlayerViewModel(player);
-			if (viewModel == null || viewModel.Weapon.Value == null ||
-			    viewModel.Weapon.Value.Index != weapon.Index) return;
-			
-			UpdateWeaponMeshGroupMask(viewModel, isLegacy);
-			Utilities.SetStateChanged(viewModel, "CBaseEntity", "m_CBodyComponent");
 		}
 
 		private static void GivePlayerAgent(CCSPlayerController player)
@@ -556,16 +548,6 @@ namespace WeaponPaints
 			if (!pawn.IsValid || !pawn.Controller.IsValid || pawn.Controller.Value == null) return null;
 			var player = new CCSPlayerController(pawn.Controller.Value.Handle);
 			return !Utility.IsPlayerValid(player) ? null : player;
-		}
-
-		private static unsafe CBaseViewModel? GetPlayerViewModel(CCSPlayerController player)
-		{
-			if (player.PlayerPawn.Value == null || player.PlayerPawn.Value.ViewModelServices == null) return null;
-			CCSPlayer_ViewModelServices viewModelServices = new(player.PlayerPawn.Value.ViewModelServices!.Handle);
-			var ptr = viewModelServices.Handle + Schema.GetSchemaOffset("CCSPlayer_ViewModelServices", "m_hViewModel");
-			var references = MemoryMarshal.CreateSpan(ref ptr, 3);
-			var viewModel = (CHandle<CBaseViewModel>)Activator.CreateInstance(typeof(CHandle<CBaseViewModel>), references[0])!;
-			return viewModel.Value == null ? null : viewModel.Value;
 		}
 
 		private static bool HasChangedKnife(CCSPlayerController player, out string? knifeValue)
