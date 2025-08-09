@@ -2,6 +2,7 @@
 using MySqlConnector;
 using System.Collections.Concurrent;
 using CounterStrikeSharp.API.Modules.Utils;
+using System.Globalization;
 
 namespace WeaponPaints;
 
@@ -49,7 +50,7 @@ internal class WeaponSynchronization
 			if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player?.SteamId))
 				return;
 
-			const string query = "SELECT `knife`, `weapon_team` FROM `wp_player_knife` WHERE `steamid` = @steamid";
+			const string query = "SELECT `knife`, `weapon_team` FROM `wp_player_knife` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var rows = connection.Query<dynamic>(query, new { steamid = player.SteamId }); // Retrieve all records for the player
 
 			foreach (var row in rows)
@@ -60,9 +61,9 @@ internal class WeaponSynchronization
 				// Determine the weapon team based on the query result
 				CsTeam weaponTeam = (int)row.weapon_team switch
 				{
-					0 => CsTeam.None,
 					2 => CsTeam.Terrorist,
-					_ => CsTeam.CounterTerrorist
+					3 => CsTeam.CounterTerrorist,
+					_ => CsTeam.None,
 				};
 
 				// Get or create entries for the player’s slot
@@ -94,7 +95,7 @@ internal class WeaponSynchronization
 			if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player?.SteamId))
 				return;
 
-			const string query = "SELECT `weapon_defindex`, `weapon_team` FROM `wp_player_gloves` WHERE `steamid` = @steamid";
+			const string query = "SELECT `weapon_defindex`, `weapon_team` FROM `wp_player_gloves` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var rows = connection.Query<dynamic>(query, new { steamid = player.SteamId }); // Retrieve all records for the player
 
 			foreach (var row in rows)
@@ -105,9 +106,9 @@ internal class WeaponSynchronization
 				var playerGloves = WeaponPaints.GPlayersGlove.GetOrAdd(player.Slot, _ => new ConcurrentDictionary<CsTeam, ushort>());
 				CsTeam weaponTeam = (int)row.weapon_team switch
 				{
-					0 => CsTeam.None,
 					2 => CsTeam.Terrorist,
-					_ => CsTeam.CounterTerrorist
+					3 => CsTeam.CounterTerrorist,
+					_ => CsTeam.None,
 				};
 
 				// Get or create entries for the player’s slot
@@ -171,36 +172,35 @@ internal class WeaponSynchronization
 
 			// var weaponInfos = new ConcurrentDictionary<int, WeaponInfo>();
 
-			const string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid";
+			const string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var playerSkins = connection.Query<dynamic>(query, new { steamid = player.SteamId });
 
 			foreach (var row in playerSkins)
 			{
-				int weaponDefIndex = row?.weapon_defindex ?? 0;
-				int weaponPaintId = row?.weapon_paint_id ?? 0;
-				float weaponWear = row?.weapon_wear ?? 0f;
-				int weaponSeed = row?.weapon_seed ?? 0;
-				string weaponNameTag = row?.weapon_nametag ?? "";
-				bool weaponStatTrak = row?.weapon_stattrak ?? false;
-				int weaponStatTrakCount = row?.weapon_stattrak_count ?? 0;
+				int weaponDefIndex = row.weapon_defindex ?? 0;
+				int weaponPaintId = row.weapon_paint_id ?? 0;
+				float weaponWear = row.weapon_wear ?? 0f;
+				int weaponSeed = row.weapon_seed ?? 0;
+				string weaponNameTag = row.weapon_nametag ?? "";
+				bool weaponStatTrak = row.weapon_stattrak ?? false;
+				int weaponStatTrakCount = row.weapon_stattrak_count ?? 0;
 				
-				CsTeam weaponTeam = row?.weapon_team switch
+				CsTeam weaponTeam = row.weapon_team switch
 				{
-					null => CsTeam.None,
-					0 => CsTeam.None,
 					2 => CsTeam.Terrorist,
-					_ => CsTeam.CounterTerrorist
+					3 => CsTeam.CounterTerrorist,
+					_ => CsTeam.None,
 				};
 						
-				string[]? keyChainParts = row?.weapon_keychain?.ToString().Split(';');
+				string[]? keyChainParts = row.weapon_keychain?.ToString().Split(';');
 
 				KeyChainInfo keyChainInfo = new KeyChainInfo();
 
 				if (keyChainParts!.Length == 5 &&
 				    uint.TryParse(keyChainParts[0], out uint keyChainId) &&
-				    float.TryParse(keyChainParts[1], out float keyChainOffsetX) &&
-				    float.TryParse(keyChainParts[2], out float keyChainOffsetY) &&
-				    float.TryParse(keyChainParts[3], out float keyChainOffsetZ) &&
+				    float.TryParse(keyChainParts[1], NumberStyles.Float, CultureInfo.InvariantCulture, out float keyChainOffsetX) &&
+				    float.TryParse(keyChainParts[2], NumberStyles.Float, CultureInfo.InvariantCulture, out float keyChainOffsetY) &&
+				    float.TryParse(keyChainParts[3], NumberStyles.Float, CultureInfo.InvariantCulture, out float keyChainOffsetZ) &&
 				    uint.TryParse(keyChainParts[4], out uint keyChainSeed))
 				{
 					// Successfully parsed the values
@@ -247,11 +247,11 @@ internal class WeaponSynchronization
 					if (parts.Length != 7 ||
 					    !uint.TryParse(parts[0], out uint stickerId) ||
 					    !uint.TryParse(parts[1], out uint stickerSchema) ||
-					    !float.TryParse(parts[2], out float stickerOffsetX) ||
-					    !float.TryParse(parts[3], out float stickerOffsetY) ||
-					    !float.TryParse(parts[4], out float stickerWear) ||
-					    !float.TryParse(parts[5], out float stickerScale) ||
-					    !float.TryParse(parts[6], out float stickerRotation)) continue;
+					    !float.TryParse(parts[2], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerOffsetX) ||
+					    !float.TryParse(parts[3], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerOffsetY) ||
+					    !float.TryParse(parts[4], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerWear) ||
+					    !float.TryParse(parts[5], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerScale) ||
+					    !float.TryParse(parts[6], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerRotation)) continue;
 						
 					StickerInfo stickerInfo = new StickerInfo
 					{
@@ -302,7 +302,7 @@ internal class WeaponSynchronization
 			if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player?.SteamId))
 				return;
 
-			const string query = "SELECT `music_id`, `weapon_team` FROM `wp_player_music` WHERE `steamid` = @steamid";
+			const string query = "SELECT `music_id`, `weapon_team` FROM `wp_player_music` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var rows = connection.Query<dynamic>(query, new { steamid = player.SteamId }); // Retrieve all records for the player
 
 			foreach (var row in rows)
@@ -313,9 +313,9 @@ internal class WeaponSynchronization
 				// Determine the weapon team based on the query result
 				CsTeam weaponTeam = (int)row.weapon_team switch
 				{
-					0 => CsTeam.None,
 					2 => CsTeam.Terrorist,
-					_ => CsTeam.CounterTerrorist
+					3 => CsTeam.CounterTerrorist,
+					_ => CsTeam.None,
 				};
 
 				// Get or create entries for the player’s slot
@@ -347,7 +347,7 @@ internal class WeaponSynchronization
 			if (string.IsNullOrEmpty(player?.SteamId))
 				return;
 
-			const string query = "SELECT `id`, `weapon_team` FROM `wp_player_pins` WHERE `steamid` = @steamid";
+			const string query = "SELECT `id`, `weapon_team` FROM `wp_player_pins` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var rows = connection.Query<dynamic>(query, new { steamid = player.SteamId }); // Retrieve all records for the player
 
 			foreach (var row in rows)
@@ -358,9 +358,9 @@ internal class WeaponSynchronization
 				// Determine the weapon team based on the query result
 				CsTeam weaponTeam = (int)row.weapon_team switch
 				{
-					0 => CsTeam.None,
 					2 => CsTeam.Terrorist,
-					_ => CsTeam.CounterTerrorist
+					3 => CsTeam.CounterTerrorist,
+					_ => CsTeam.None,
 				};
 
 				// Get or create entries for the player’s slot

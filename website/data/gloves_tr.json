@@ -6,202 +6,16 @@
         "paint_name": "Gloves | Default"
     },
     {
-        "weapon_defindex": 4725,
-        "paint": "10085",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
-        "paint_name": "★ Kırık Diş Eldivenleri | Yeşim"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10086",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
-        "paint_name": "★ Kırık Diş Eldivenleri | Sarı Çizgili"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10087",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
-        "paint_name": "★ Kırık Diş Eldivenleri | İğne Ucu"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10088",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
-        "paint_name": "★ Kırık Diş Eldivenleri | Gevşek Çene"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10006",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
-        "paint_name": "★ Kan Tazısı Eldivenleri | Alazlanmış"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10007",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
-        "paint_name": "★ Kan Tazısı Eldivenleri | Yılan Isırığı"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10008",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
-        "paint_name": "★ Kan Tazısı Eldivenleri | Bronzlaştırılmış"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10039",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
-        "paint_name": "★ Kan Tazısı Eldivenleri | Gerilla"
-    },
-    {
         "weapon_defindex": 5030,
         "paint": "10018",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
         "paint_name": "★ Spor Eldivenler | Süper İletken"
     },
     {
-        "weapon_defindex": 5030,
-        "paint": "10019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
-        "paint_name": "★ Spor Eldivenler | Kurak"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10037",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
-        "paint_name": "★ Spor Eldivenler | Pandora'nın Kutusu"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10038",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
-        "paint_name": "★ Spor Eldivenler | Labirent"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10045",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
-        "paint_name": "★ Spor Eldivenler | Amfibik"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10046",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
-        "paint_name": "★ Spor Eldivenler | Bronz Karışımı"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10047",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
-        "paint_name": "★ Spor Eldivenler | Omega"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10048",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
-        "paint_name": "★ Spor Eldivenler | Vice"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10073",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
-        "paint_name": "★ Spor Eldivenler | Sapan"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10074",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
-        "paint_name": "★ Spor Eldivenler | Büyük Av"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10075",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
-        "paint_name": "★ Spor Eldivenler | Al Poşu"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10076",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
-        "paint_name": "★ Spor Eldivenler | Nocts"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10013",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
-        "paint_name": "★ Sürücü Eldivenleri | Gümüş Örgü"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10015",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
-        "paint_name": "★ Sürücü Eldivenleri | Konvoy"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10016",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
-        "paint_name": "★ Sürücü Eldivenleri | Kızıl Örgü"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10040",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
-        "paint_name": "★ Sürücü Eldivenleri | Çıngıraklı Yılan"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10041",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
-        "paint_name": "★ Sürücü Eldivenleri | Kral Yılanı"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10042",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
-        "paint_name": "★ Sürücü Eldivenleri | İmparatorluk Ekosesi"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10043",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
-        "paint_name": "★ Sürücü Eldivenleri | Geçiş"
-    },
-    {
         "weapon_defindex": 5031,
         "paint": "10044",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
         "paint_name": "★ Sürücü Eldivenleri | Yarış Yeşili"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10069",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
-        "paint_name": "★ Sürücü Eldivenleri | Kırmızı Rezan"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10070",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
-        "paint_name": "★ Sürücü Eldivenleri | Kar Leoparı"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10071",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
-        "paint_name": "★ Sürücü Eldivenleri | Kraliçe Jaguar"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10072",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
-        "paint_name": "★ Sürücü Eldivenleri | Siyah Kravat"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10009",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
-        "paint_name": "★ El Sargıları | Deri"
     },
     {
         "weapon_defindex": 5032,
@@ -211,15 +25,27 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10021",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
-        "paint_name": "★ El Sargıları | Katliam"
+        "paint": "10081",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
+        "paint_name": "★ El Sargıları | Çöl Poşusu"
     },
     {
         "weapon_defindex": 5032,
         "paint": "10036",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10036.png",
         "paint_name": "★ El Sargıları | Çorak Arazi"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10084",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
+        "paint_name": "★ El Sargıları | DİKKAT!"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10055",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
+        "paint_name": "★ El Sargıları | Koli Bandı"
     },
     {
         "weapon_defindex": 5032,
@@ -235,9 +61,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10055",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
-        "paint_name": "★ El Sargıları | Koli Bandı"
+        "paint": "10082",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
+        "paint_name": "★ El Sargıları | Zürafa"
     },
     {
         "weapon_defindex": 5032,
@@ -247,15 +73,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10081",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
-        "paint_name": "★ El Sargıları | Çöl Poşusu"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10082",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
-        "paint_name": "★ El Sargıları | Zürafa"
+        "paint": "10009",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
+        "paint_name": "★ El Sargıları | Deri"
     },
     {
         "weapon_defindex": 5032,
@@ -265,15 +85,45 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10084",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
-        "paint_name": "★ El Sargıları | DİKKAT!"
+        "paint": "10021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
+        "paint_name": "★ El Sargıları | Katliam"
     },
     {
         "weapon_defindex": 5033,
         "paint": "10024",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10024.png",
         "paint_name": "★ Motorcu Eldivenleri | Tutulma"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10050",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
+        "paint_name": "★ Motorcu Eldivenleri | Kaplumbağa"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10079",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
+        "paint_name": "★ Motorcu Eldivenleri | Tansiyon"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10077",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
+        "paint_name": "★ Motorcu Eldivenleri | Bitiş Çizgisi"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10049",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
+        "paint_name": "★ Motorcu Eldivenleri | POW!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10080",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
+        "paint_name": "★ Motorcu Eldivenleri | 3. Komando Bölüğü"
     },
     {
         "weapon_defindex": 5033,
@@ -289,27 +139,15 @@
     },
     {
         "weapon_defindex": 5033,
+        "paint": "10078",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
+        "paint_name": "★ Motorcu Eldivenleri | Egzoz Dumanı"
+    },
+    {
+        "weapon_defindex": 5033,
         "paint": "10028",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10028.png",
         "paint_name": "★ Motorcu Eldivenleri | Serin Esinti"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10049",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
-        "paint_name": "★ Motorcu Eldivenleri | POW!"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10050",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
-        "paint_name": "★ Motorcu Eldivenleri | Kaplumbağa"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10051",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
-        "paint_name": "★ Motorcu Eldivenleri | Nakil"
     },
     {
         "weapon_defindex": 5033,
@@ -319,27 +157,75 @@
     },
     {
         "weapon_defindex": 5033,
-        "paint": "10077",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
-        "paint_name": "★ Motorcu Eldivenleri | Bitiş Çizgisi"
+        "paint": "10051",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
+        "paint_name": "★ Motorcu Eldivenleri | Nakil"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10078",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
-        "paint_name": "★ Motorcu Eldivenleri | Egzoz Dumanı"
+        "weapon_defindex": 5031,
+        "paint": "10013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
+        "paint_name": "★ Sürücü Eldivenleri | Gümüş Örgü"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10079",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
-        "paint_name": "★ Motorcu Eldivenleri | Tansiyon"
+        "weapon_defindex": 5031,
+        "paint": "10070",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
+        "paint_name": "★ Sürücü Eldivenleri | Kar Leoparı"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10080",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
-        "paint_name": "★ Motorcu Eldivenleri | 3. Komando Bölüğü"
+        "weapon_defindex": 5031,
+        "paint": "10071",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
+        "paint_name": "★ Sürücü Eldivenleri | Kraliçe Jaguar"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
+        "paint_name": "★ Sürücü Eldivenleri | Konvoy"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10042",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
+        "paint_name": "★ Sürücü Eldivenleri | İmparatorluk Ekosesi"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
+        "paint_name": "★ Sürücü Eldivenleri | Kızıl Örgü"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10069",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
+        "paint_name": "★ Sürücü Eldivenleri | Kırmızı Rezan"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10041",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
+        "paint_name": "★ Sürücü Eldivenleri | Kral Yılanı"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10040",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
+        "paint_name": "★ Sürücü Eldivenleri | Çıngıraklı Yılan"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10043",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
+        "paint_name": "★ Sürücü Eldivenleri | Geçiş"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10072",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
+        "paint_name": "★ Sürücü Eldivenleri | Siyah Kravat"
     },
     {
         "weapon_defindex": 5034,
@@ -349,33 +235,9 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10033",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
-        "paint_name": "★ Uzman Eldivenleri | Kızıl Kimono"
-    },
-    {
-        "weapon_defindex": 5034,
         "paint": "10034",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10034.png",
         "paint_name": "★ Uzman Eldivenleri | Zümrüt Ağ"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10035",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
-        "paint_name": "★ Uzman Eldivenleri | Temel"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10061",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
-        "paint_name": "★ Uzman Eldivenleri | Kızıl Ağ"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10062",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
-        "paint_name": "★ Uzman Eldivenleri | Saçma"
     },
     {
         "weapon_defindex": 5034,
@@ -385,15 +247,33 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10064",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
-        "paint_name": "★ Uzman Eldivenleri | Mogul"
+        "paint": "10068",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
+        "paint_name": "★ Uzman Eldivenleri | Saha Ajanı"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10062",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
+        "paint_name": "★ Uzman Eldivenleri | Saçma"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10033",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
+        "paint_name": "★ Uzman Eldivenleri | Kızıl Kimono"
     },
     {
         "weapon_defindex": 5034,
         "paint": "10065",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10065.png",
         "paint_name": "★ Uzman Eldivenleri | Solgun Mermer"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10035",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
+        "paint_name": "★ Uzman Eldivenleri | Temel"
     },
     {
         "weapon_defindex": 5034,
@@ -409,15 +289,141 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10068",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
-        "paint_name": "★ Uzman Eldivenleri | Saha Ajanı"
+        "paint": "10061",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
+        "paint_name": "★ Uzman Eldivenleri | Kızıl Ağ"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10064",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
+        "paint_name": "★ Uzman Eldivenleri | Mogul"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10047",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
+        "paint_name": "★ Spor Eldivenler | Omega"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10048",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
+        "paint_name": "★ Spor Eldivenler | Vice"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10038",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
+        "paint_name": "★ Spor Eldivenler | Labirent"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10075",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
+        "paint_name": "★ Spor Eldivenler | Al Poşu"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10074",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
+        "paint_name": "★ Spor Eldivenler | Büyük Av"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10076",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
+        "paint_name": "★ Spor Eldivenler | Nocts"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
+        "paint_name": "★ Spor Eldivenler | Kurak"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10045",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
+        "paint_name": "★ Spor Eldivenler | Amfibik"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10046",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
+        "paint_name": "★ Spor Eldivenler | Bronz Karışımı"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10037",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
+        "paint_name": "★ Spor Eldivenler | Pandora'nın Kutusu"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10073",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
+        "paint_name": "★ Spor Eldivenler | Sapan"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10006",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
+        "paint_name": "★ Kan Tazısı Eldivenleri | Alazlanmış"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10039",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
+        "paint_name": "★ Kan Tazısı Eldivenleri | Gerilla"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10008",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
+        "paint_name": "★ Kan Tazısı Eldivenleri | Bronzlaştırılmış"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10007",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
+        "paint_name": "★ Kan Tazısı Eldivenleri | Yılan Isırığı"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10087",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
+        "paint_name": "★ Kırık Diş Eldivenleri | İğne Ucu"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10085",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
+        "paint_name": "★ Kırık Diş Eldivenleri | Yeşim"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10086",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
+        "paint_name": "★ Kırık Diş Eldivenleri | Sarı Çizgili"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10088",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
+        "paint_name": "★ Kırık Diş Eldivenleri | Gevşek Çene"
     },
     {
         "weapon_defindex": 5035,
         "paint": "10057",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10057.png",
         "paint_name": "★ Hydra Eldivenleri | Zümrüt"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10060",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
+        "paint_name": "★ Hydra Eldivenleri | Sertleştirilmiş Kabuk"
     },
     {
         "weapon_defindex": 5035,
@@ -430,11 +436,5 @@
         "paint": "10059",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10059.png",
         "paint_name": "★ Hydra Eldivenleri | Çıngıraklı Yılan"
-    },
-    {
-        "weapon_defindex": 5035,
-        "paint": "10060",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
-        "paint_name": "★ Hydra Eldivenleri | Sertleştirilmiş Kabuk"
     }
 ]

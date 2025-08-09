@@ -153,18 +153,15 @@ public partial class WeaponPaints
 	{
 		if (player == null || !player.IsValid) return;
 		
-		if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var teamInfo) || 
-		    !teamInfo.TryGetValue(player.Team, out var teamWeapons) )
-			return;
-		
 		var weapon = player.PlayerPawn.Value?.WeaponServices?.ActiveWeapon.Value;
 		
 		if (weapon == null || !weapon.IsValid)
 			return;
-		if (!teamWeapons.TryGetValue(weapon.AttributeManager.Item.ItemDefinitionIndex, out var teamWeapon))
-			return;
 
-		teamWeapon.StatTrak = !teamWeapon.StatTrak;
+		if (!HasChangedPaint(player, weapon.AttributeManager.Item.ItemDefinitionIndex, out var weaponInfo) || weaponInfo == null)
+			return;
+		
+		weaponInfo.StatTrak = !weaponInfo.StatTrak;
 		RefreshWeapons(player);
 
 		if (!string.IsNullOrEmpty(Localizer["wp_stattrak_action"]))
@@ -337,7 +334,7 @@ public partial class WeaponPaints
 						value.Seed = 0;
 					}
 
-					PlayerInfo playerInfo = new PlayerInfo
+					var playerInfo = new PlayerInfo
 					{
 						UserId = p.UserId,
 						Slot = p.Slot,

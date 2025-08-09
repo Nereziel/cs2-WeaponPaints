@@ -6,202 +6,16 @@
         "paint_name": "Gloves | Default"
     },
     {
-        "weapon_defindex": 4725,
-        "paint": "10085",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
-        "paint_name": "Guantes Broken Fang ★ | Jade"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10086",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
-        "paint_name": "Guantes Broken Fang ★ | Con franjas amarillas"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10087",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
-        "paint_name": "Guantes Broken Fang ★ | Punta de aguja"
-    },
-    {
-        "weapon_defindex": 4725,
-        "paint": "10088",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
-        "paint_name": "Guantes Broken Fang ★ | Inestable"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10006",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
-        "paint_name": "Guantes Bloodhound ★ | Chamuscado"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10007",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
-        "paint_name": "Guantes Bloodhound ★ | Mordedura de serpiente"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10008",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
-        "paint_name": "Guantes Bloodhound ★ | Bronceado"
-    },
-    {
-        "weapon_defindex": 5027,
-        "paint": "10039",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
-        "paint_name": "Guantes Bloodhound ★ | Guerrilla"
-    },
-    {
         "weapon_defindex": 5030,
         "paint": "10018",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
         "paint_name": "Guantes de deporte ★ | Superconductor"
     },
     {
-        "weapon_defindex": 5030,
-        "paint": "10019",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
-        "paint_name": "Guantes de deporte ★ | Árido"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10037",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
-        "paint_name": "Guantes de deporte ★ | Caja de Pandora"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10038",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
-        "paint_name": "Guantes de deporte ★ | Laberinto de setos"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10045",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
-        "paint_name": "Guantes de deporte ★ | Anfibio"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10046",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
-        "paint_name": "Guantes de deporte ★ | Metamorfosis broncínea"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10047",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
-        "paint_name": "Guantes de deporte ★ | Omega"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10048",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
-        "paint_name": "Guantes de deporte ★ | Antivicio"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10073",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
-        "paint_name": "Guantes de deporte ★ | Slingshot"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10074",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
-        "paint_name": "Guantes de deporte ★ | Cacería grande"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10075",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
-        "paint_name": "Guantes de deporte ★ | Kufiya escarlata"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "10076",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
-        "paint_name": "Guantes de deporte ★ | Nocts"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10013",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
-        "paint_name": "Guantes de conductor ★ | Entrelazado lunar"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10015",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
-        "paint_name": "Guantes de conductor ★ | Convoy"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10016",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
-        "paint_name": "Guantes de conductor ★ | Entrelazado carmesí"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10040",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
-        "paint_name": "Guantes de conductor ★ | Diamantino"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10041",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
-        "paint_name": "Guantes de conductor ★ | Serpiente rey"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10042",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
-        "paint_name": "Guantes de conductor ★ | Tartán imperial"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10043",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
-        "paint_name": "Guantes de conductor ★ | Adelantamiento"
-    },
-    {
         "weapon_defindex": 5031,
         "paint": "10044",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
-        "paint_name": "Guantes de conductor ★ | Verde de competición"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10069",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
-        "paint_name": "Guantes de conductor ★ | Rezan el Rojo"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10070",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
-        "paint_name": "Guantes de conductor ★ | Irbis"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10071",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
-        "paint_name": "Guantes de conductor ★ | Reina jaguar"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10072",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
-        "paint_name": "Guantes de conductor ★ | De punta en blanco"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10009",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
-        "paint_name": "Vendas de cuero ★ | Cuero"
+        "paint_name": "Guantes de conductor ★ | Verde de competencia"
     },
     {
         "weapon_defindex": 5032,
@@ -211,15 +25,27 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10021",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
-        "paint_name": "Vendas de cuero ★ | Masacre"
+        "paint": "10081",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
+        "paint_name": "Vendas de cuero ★ | Kufiya del desierto"
     },
     {
         "weapon_defindex": 5032,
         "paint": "10036",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10036.png",
         "paint_name": "Vendas de cuero ★ | Tierra yerma"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10084",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
+        "paint_name": "Vendas de cuero ★ | ¡PRECAUCIÓN!"
+    },
+    {
+        "weapon_defindex": 5032,
+        "paint": "10055",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
+        "paint_name": "Vendas de cuero ★ | Cinta adhesiva"
     },
     {
         "weapon_defindex": 5032,
@@ -235,9 +61,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10055",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10055.png",
-        "paint_name": "Vendas de cuero ★ | Cinta adhesiva"
+        "paint": "10082",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
+        "paint_name": "Vendas de cuero ★ | Jirafa"
     },
     {
         "weapon_defindex": 5032,
@@ -247,15 +73,9 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10081",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10081.png",
-        "paint_name": "Vendas de cuero ★ | Kufiya del desierto"
-    },
-    {
-        "weapon_defindex": 5032,
-        "paint": "10082",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10082.png",
-        "paint_name": "Vendas de cuero ★ | Jirafa"
+        "paint": "10009",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10009.png",
+        "paint_name": "Vendas de cuero ★ | Cuero"
     },
     {
         "weapon_defindex": 5032,
@@ -265,15 +85,45 @@
     },
     {
         "weapon_defindex": 5032,
-        "paint": "10084",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10084.png",
-        "paint_name": "Vendas de cuero ★ | ¡PRECAUCIÓN!"
+        "paint": "10021",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10021.png",
+        "paint_name": "Vendas de cuero ★ | Masacre"
     },
     {
         "weapon_defindex": 5033,
         "paint": "10024",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10024.png",
         "paint_name": "Guantes para moto ★ | Eclipse"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10050",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
+        "paint_name": "Guantes para moto ★ | Tortuga"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10079",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
+        "paint_name": "Guantes para moto ★ | Presión sanguínea"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10077",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
+        "paint_name": "Guantes para moto ★ | Línea de meta"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10049",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
+        "paint_name": "Guantes para moto ★ | ¡PLAS!"
+    },
+    {
+        "weapon_defindex": 5033,
+        "paint": "10080",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
+        "paint_name": "Guantes para moto ★ | 3.ª Compañía de Comandos"
     },
     {
         "weapon_defindex": 5033,
@@ -289,27 +139,15 @@
     },
     {
         "weapon_defindex": 5033,
+        "paint": "10078",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
+        "paint_name": "Guantes para moto ★ | Va humo"
+    },
+    {
+        "weapon_defindex": 5033,
         "paint": "10028",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10028.png",
         "paint_name": "Guantes para moto ★ | Menta fresca"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10049",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10049.png",
-        "paint_name": "Guantes para moto ★ | ¡PLAS!"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10050",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10050.png",
-        "paint_name": "Guantes para moto ★ | Tortuga"
-    },
-    {
-        "weapon_defindex": 5033,
-        "paint": "10051",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
-        "paint_name": "Guantes para moto ★ | Transporte"
     },
     {
         "weapon_defindex": 5033,
@@ -319,27 +157,75 @@
     },
     {
         "weapon_defindex": 5033,
-        "paint": "10077",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10077.png",
-        "paint_name": "Guantes para moto ★ | Línea de meta"
+        "paint": "10051",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10051.png",
+        "paint_name": "Guantes para moto ★ | Transporte"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10078",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10078.png",
-        "paint_name": "Guantes para moto ★ | Va humo"
+        "weapon_defindex": 5031,
+        "paint": "10013",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
+        "paint_name": "Guantes de conductor ★ | Entrelazado lunar"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10079",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10079.png",
-        "paint_name": "Guantes para moto ★ | Presión sanguínea"
+        "weapon_defindex": 5031,
+        "paint": "10070",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10070.png",
+        "paint_name": "Guantes de conductor ★ | Irbis"
     },
     {
-        "weapon_defindex": 5033,
-        "paint": "10080",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/motorcycle_gloves-10080.png",
-        "paint_name": "Guantes para moto ★ | 3.ª Compañía de Comandos"
+        "weapon_defindex": 5031,
+        "paint": "10071",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10071.png",
+        "paint_name": "Guantes de conductor ★ | Reina jaguar"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10015",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10015.png",
+        "paint_name": "Guantes de conductor ★ | Convoy"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10042",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10042.png",
+        "paint_name": "Guantes de conductor ★ | Tartán imperial"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10016",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10016.png",
+        "paint_name": "Guantes de conductor ★ | Entrelazado carmesí"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10069",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10069.png",
+        "paint_name": "Guantes de conductor ★ | Rezan el Rojo"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10041",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10041.png",
+        "paint_name": "Guantes de conductor ★ | Serpiente rey"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10040",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10040.png",
+        "paint_name": "Guantes de conductor ★ | Diamantino"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10043",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10043.png",
+        "paint_name": "Guantes de conductor ★ | Adelantamiento"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "10072",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10072.png",
+        "paint_name": "Guantes de conductor ★ | De punta en blanco"
     },
     {
         "weapon_defindex": 5034,
@@ -349,33 +235,9 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10033",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
-        "paint_name": "Guantes de especialista ★ | Kimono carmesí"
-    },
-    {
-        "weapon_defindex": 5034,
         "paint": "10034",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10034.png",
         "paint_name": "Guantes de especialista ★ | Telaraña esmeralda"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10035",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
-        "paint_name": "Guantes de especialista ★ | Fundación"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10061",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
-        "paint_name": "Guantes de especialista ★ | Tela escarlata"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "10062",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
-        "paint_name": "Guantes de especialista ★ | Perdigón"
     },
     {
         "weapon_defindex": 5034,
@@ -385,15 +247,33 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10064",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
-        "paint_name": "Guantes de especialista ★ | Mogul"
+        "paint": "10068",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
+        "paint_name": "Guantes de especialista ★ | Agente de campo"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10062",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10062.png",
+        "paint_name": "Guantes de especialista ★ | Perdigón"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10033",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10033.png",
+        "paint_name": "Guantes de especialista ★ | Kimono carmesí"
     },
     {
         "weapon_defindex": 5034,
         "paint": "10065",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10065.png",
         "paint_name": "Guantes de especialista ★ | Mármol desteñido"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10035",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10035.png",
+        "paint_name": "Guantes de especialista ★ | Fundación"
     },
     {
         "weapon_defindex": 5034,
@@ -409,15 +289,141 @@
     },
     {
         "weapon_defindex": 5034,
-        "paint": "10068",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10068.png",
-        "paint_name": "Guantes de especialista ★ | Agente de campo"
+        "paint": "10061",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10061.png",
+        "paint_name": "Guantes de especialista ★ | Tela escarlata"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "10064",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
+        "paint_name": "Guantes de especialista ★ | Mogul"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10047",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10047.png",
+        "paint_name": "Guantes de deporte ★ | Omega"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10048",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10048.png",
+        "paint_name": "Guantes de deporte ★ | Antivicio"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10038",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10038.png",
+        "paint_name": "Guantes de deporte ★ | Laberinto de setos"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10075",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10075.png",
+        "paint_name": "Guantes de deporte ★ | Kufiya escarlata"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10074",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10074.png",
+        "paint_name": "Guantes de deporte ★ | Cacería grande"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10076",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
+        "paint_name": "Guantes de deporte ★ | Nocts"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10019",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10019.png",
+        "paint_name": "Guantes de deporte ★ | Árido"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10045",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10045.png",
+        "paint_name": "Guantes de deporte ★ | Anfibio"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10046",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10046.png",
+        "paint_name": "Guantes de deporte ★ | Metamorfosis broncínea"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10037",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10037.png",
+        "paint_name": "Guantes de deporte ★ | Caja de Pandora"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10073",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10073.png",
+        "paint_name": "Guantes de deporte ★ | Slingshot"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10006",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10006.png",
+        "paint_name": "Guantes Bloodhound ★ | Chamuscado"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10039",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10039.png",
+        "paint_name": "Guantes Bloodhound ★ | Guerrilla"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10008",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10008.png",
+        "paint_name": "Guantes Bloodhound ★ | Bronceado"
+    },
+    {
+        "weapon_defindex": 5027,
+        "paint": "10007",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_bloodhound_gloves-10007.png",
+        "paint_name": "Guantes Bloodhound ★ | Mordedura de serpiente"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10087",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10087.png",
+        "paint_name": "Guantes Broken Fang ★ | Punta de aguja"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10085",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10085.png",
+        "paint_name": "Guantes Broken Fang ★ | Jade"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10086",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10086.png",
+        "paint_name": "Guantes Broken Fang ★ | Con franjas amarillas"
+    },
+    {
+        "weapon_defindex": 4725,
+        "paint": "10088",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_brokenfang_gloves-10088.png",
+        "paint_name": "Guantes Broken Fang ★ | Inestable"
     },
     {
         "weapon_defindex": 5035,
         "paint": "10057",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10057.png",
         "paint_name": "Guantes Hydra ★ | Esmeralda"
+    },
+    {
+        "weapon_defindex": 5035,
+        "paint": "10060",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
+        "paint_name": "Guantes Hydra ★ | Acero templado"
     },
     {
         "weapon_defindex": 5035,
@@ -430,11 +436,5 @@
         "paint": "10059",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10059.png",
         "paint_name": "Guantes Hydra ★ | Cascabel"
-    },
-    {
-        "weapon_defindex": 5035,
-        "paint": "10060",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/studded_hydra_gloves-10060.png",
-        "paint_name": "Guantes Hydra ★ | Acero templado"
     }
 ]

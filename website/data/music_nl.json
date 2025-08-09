@@ -1,5 +1,15 @@
 [
     {
+        "id": "1",
+        "name": "Valve, Counter-Strike 2",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-1.png"
+    },
+    {
+        "id": "2",
+        "name": "Valve, CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-2.png"
+    },
+    {
         "id": "3",
         "name": "Muziekset | Daniel Sadowski, Crimson Assault",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-3.png"
@@ -146,38 +156,38 @@
     },
     {
         "id": "32",
-        "name": "Muziekset | Beartooth, Aggressive",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32.png"
+        "name": "StatTrak™-muziekset | Beartooth, Aggressive",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32_st.png"
     },
     {
         "id": "33",
-        "name": "Muziekset | Blitz Kids, The Good Youth",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33.png"
+        "name": "StatTrak™-muziekset | Blitz Kids, The Good Youth",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33_st.png"
     },
     {
         "id": "34",
-        "name": "Muziekset | Hundredth, FREE",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34.png"
+        "name": "StatTrak™-muziekset | Hundredth, FREE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34_st.png"
     },
     {
         "id": "35",
-        "name": "Muziekset | Neck Deep, Life's Not Out To Get You",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35.png"
+        "name": "StatTrak™-muziekset | Neck Deep, Life's Not Out To Get You",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35_st.png"
     },
     {
         "id": "36",
-        "name": "Muziekset | Roam, Backbone",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36.png"
+        "name": "StatTrak™-muziekset | Roam, Backbone",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36_st.png"
     },
     {
         "id": "37",
-        "name": "Muziekset | Twin Atlantic, GLA",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37.png"
+        "name": "StatTrak™-muziekset | Twin Atlantic, GLA",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37_st.png"
     },
     {
         "id": "38",
-        "name": "Muziekset | Skog, III-Arena",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38.png"
+        "name": "StatTrak™-muziekset | Skog, III-Arena",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38_st.png"
     },
     {
         "id": "39",
@@ -335,33 +345,38 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-69.png"
     },
     {
+        "id": "70",
+        "name": "Valve, CS:GO",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-70.png"
+    },
+    {
         "id": "71",
-        "name": "Music Kit | DRYDEN, Feel The Power",
+        "name": "Muziekset | DRYDEN, Feel The Power",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-71.png"
     },
     {
         "id": "72",
-        "name": "Music Kit | ISOxo, inhuman",
+        "name": "Muziekset | ISOxo, inhuman",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-72.png"
     },
     {
         "id": "73",
-        "name": "Music Kit | KILL SCRIPT, All Night",
+        "name": "Muziekset | KILL SCRIPT, All Night",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-73.png"
     },
     {
         "id": "74",
-        "name": "Music Kit | Knock2, Make U SWEAT!",
+        "name": "Muziekset | Knock2, Make U SWEAT!",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-74.png"
     },
     {
         "id": "75",
-        "name": "Music Kit | Rad Cat, Reason",
+        "name": "Muziekset | Rad Cat, Reason",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-75.png"
     },
     {
         "id": "76",
-        "name": "Music Kit | TWERL, Ekko & Sidetrack, Under Bright Lights",
+        "name": "Muziekset | TWERL en Ekko & Sidetrack, Under Bright Lights",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-76.png"
     },
     {
@@ -403,5 +418,10 @@
         "id": "85",
         "name": "Muziekset | Tree Adams, Seventh Moon",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    },
+    {
+        "id": "86",
+        "name": "Muziekset | Perfect World, Ay Hey",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-86.png"
     }
 ]

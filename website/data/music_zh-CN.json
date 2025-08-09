@@ -1,5 +1,15 @@
 [
     {
+        "id": "1",
+        "name": "Valve，《反恐精英：全球攻势》",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-1.png"
+    },
+    {
+        "id": "2",
+        "name": "Valve，《反恐精英：全球攻势》",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-2.png"
+    },
+    {
         "id": "3",
         "name": "音乐盒 | Daniel Sadowski - 深红突击",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-3.png"
@@ -146,38 +156,38 @@
     },
     {
         "id": "32",
-        "name": "音乐盒 | Beartooth - 咄咄逼人",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32.png"
+        "name": "StatTrak™ 音乐盒 | Beartooth - 咄咄逼人",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-32_st.png"
     },
     {
         "id": "33",
-        "name": "音乐盒 | Blitz Kids - 有为青年",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33.png"
+        "name": "StatTrak™ 音乐盒 | Blitz Kids - 有为青年",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-33_st.png"
     },
     {
         "id": "34",
-        "name": "音乐盒 | Hundredth - 冲破藩篱",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34.png"
+        "name": "StatTrak™ 音乐盒 | Hundredth - 冲破藩篱",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-34_st.png"
     },
     {
         "id": "35",
-        "name": "音乐盒 | Neck Deep - 人生何处不青山",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35.png"
+        "name": "StatTrak™ 音乐盒 | Neck Deep - 人生何处不青山",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-35_st.png"
     },
     {
         "id": "36",
-        "name": "音乐盒 | Roam - 决心",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36.png"
+        "name": "StatTrak™ 音乐盒 | Roam - 决心",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-36_st.png"
     },
     {
         "id": "37",
-        "name": "音乐盒 | Twin Atlantic - GLA",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37.png"
+        "name": "StatTrak™ 音乐盒 | Twin Atlantic - GLA",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-37_st.png"
     },
     {
         "id": "38",
-        "name": "音乐盒 | Skog - III-竞技场",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38.png"
+        "name": "StatTrak™ 音乐盒 | Skog - III-竞技场",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-38_st.png"
     },
     {
         "id": "39",
@@ -335,6 +345,11 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-69.png"
     },
     {
+        "id": "70",
+        "name": "Valve，《反恐精英：全球攻势》",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-70.png"
+    },
+    {
         "id": "71",
         "name": "音乐盒 | DRYDEN - 触摸能量",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-71.png"
@@ -403,5 +418,10 @@
         "id": "85",
         "name": "音乐盒 | Tree Adams，柒月",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-85.png"
+    },
+    {
+        "id": "86",
+        "name": "音乐盒 | 完美世界 - 诶嘿",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-86.png"
     }
 ]

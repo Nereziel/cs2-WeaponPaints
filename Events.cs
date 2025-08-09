@@ -2,7 +2,6 @@
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Entities;
-using CounterStrikeSharp.API.Modules.Entities.Constants;
 using CounterStrikeSharp.API.Modules.Memory;
 using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 
@@ -194,7 +193,7 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
-		public HookResult OnGiveNamedItemPost(DynamicHook hook)
+		private HookResult OnGiveNamedItemPost(DynamicHook hook)
 		{
 			try
 			{
@@ -206,15 +205,7 @@ namespace WeaponPaints
 				var player = GetPlayerFromItemServices(itemServices);
 				if (player != null)
 				{
-					var weaponServices = player.PlayerPawn.Value?.WeaponServices;
-					
 					GivePlayerWeaponSkin(player, weapon);
-					
-					if (weaponServices is { MyWeapons.Count: 1 })
-					{
-						// player.GiveNamedItem(CsItem.Healthshot);
-						// newWeapon.AddEntityIOEvent("Kill", newWeapon, null, "", 0.1f);
-					}
 				}
 			}
 			catch { }
@@ -222,7 +213,7 @@ namespace WeaponPaints
 			return HookResult.Continue;
 		}
 
-		public void OnEntityCreated(CEntityInstance entity)
+		private void OnEntityCreated(CEntityInstance entity)
 		{
 			var designerName = entity.DesignerName;
 
@@ -289,9 +280,15 @@ namespace WeaponPaints
 		{
 			// if (!IsWindows) return HookResult.Continue;
 			var player = @event.Userid;
+			if (player == null || !player.IsValid || player.IsBot) return HookResult.Continue;
 			if (!@event.Item.Contains("knife")) return HookResult.Continue;
+
+			var weaponDefIndex = (int)@event.Defindex;
+				
+			if (!HasChangedKnife(player, out var _) || !HasChangedPaint(player, weaponDefIndex, out var _))
+				return HookResult.Continue;
 			
-			if (player != null && player is { IsValid: true, Connected: PlayerConnectedState.PlayerConnected, PawnIsAlive: true, PlayerPawn.IsValid: true })
+			if (player is { Connected: PlayerConnectedState.PlayerConnected, PawnIsAlive: true, PlayerPawn.IsValid: true })
 			{
 				GiveOnItemPickup(player);
 			}
@@ -309,20 +306,16 @@ namespace WeaponPaints
 			
 			if (victim == null || !victim.IsValid || victim == player)
 				return HookResult.Continue;
-
-			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out var teamInfo) || 
-			    !teamInfo.TryGetValue(player.Team, out var teamWeapons) )
-				return HookResult.Continue;
-
+			
 			CBasePlayerWeapon? weapon = player.PlayerPawn.Value?.WeaponServices?.ActiveWeapon.Value;
 
 			if (weapon == null) return HookResult.Continue;
 
 			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-			if (!teamWeapons.TryGetValue(weaponDefIndex, out var weaponInfo) || weaponInfo.Paint == 0)
+			if (!HasChangedPaint(player, weaponDefIndex, out var weaponInfo) || weaponInfo == null)
 				return HookResult.Continue;
-			
+				
 			if (!weaponInfo.StatTrak) return HookResult.Continue;
 			
 			weaponInfo.StatTrakCount += 1;

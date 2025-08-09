@@ -21486,12 +21486,12 @@
     },
     {
         "id": "4647",
-        "name": "Tarra | Syvältä",
+        "name": "Tarra | Lonkero",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-4647.png"
     },
     {
         "id": "4648",
-        "name": "Tarra | Häikäisy",
+        "name": "Tarra | Tuijotus",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-4648.png"
     },
     {
@@ -33611,7 +33611,7 @@
     },
     {
         "id": "7238",
-        "name": "Tarra | Kukkuluuruu",
+        "name": "Tarra | Kukkuu",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7238.png"
     },
     {
@@ -36696,7 +36696,7 @@
     },
     {
         "id": "7880",
-        "name": "Tarra | Punasävyjä (kiilto)",
+        "name": "Tarra | Punaiset linssit (kiilto)",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7880.png"
     },
     {
@@ -36721,7 +36721,7 @@
     },
     {
         "id": "7885",
-        "name": "Tarra | Aika lämmin",
+        "name": "Tarra | Tulikuuma",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7885.png"
     },
     {
@@ -36736,7 +36736,7 @@
     },
     {
         "id": "7888",
-        "name": "Tarra | Kiertävä kärvennys",
+        "name": "Tarra | Kärvennyskiemura",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7888.png"
     },
     {
@@ -36816,7 +36816,7 @@
     },
     {
         "id": "7904",
-        "name": "Tarra | Kiertävä kärvennys (kiilto)",
+        "name": "Tarra | Kärvennyskiemura (kiilto)",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7904.png"
     },
     {
@@ -36861,7 +36861,7 @@
     },
     {
         "id": "7914",
-        "name": "Tarra | Syvältä (hile)",
+        "name": "Tarra | Lonkero (hile)",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7914.png"
     },
     {
@@ -36891,7 +36891,7 @@
     },
     {
         "id": "7921",
-        "name": "Tarra | Tuijotus (holo)",
+        "name": "Tarra | Hypnoottinen katse (holo)",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7921.png"
     },
     {
@@ -36901,7 +36901,7 @@
     },
     {
         "id": "7923",
-        "name": "Tarra | Virtaus",
+        "name": "Tarra | Roiskaus",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7923.png"
     },
     {
@@ -36911,17 +36911,3017 @@
     },
     {
         "id": "7925",
-        "name": "Tarra | Rubiinivirta (live)",
+        "name": "Tarra | Rubiininpunainen roiskaus (live)",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7925.png"
     },
     {
         "id": "7926",
-        "name": "Tarra | Rubiiniaalto (live)",
+        "name": "Tarra | Rubiinipunainen aalto (live)",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7926.png"
     },
     {
         "id": "7927",
         "name": "Tarra | Asento!",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7927.png"
+    },
+    {
+        "id": "7928",
+        "name": "Tarra | G2 Esports | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7928.png"
+    },
+    {
+        "id": "7929",
+        "name": "Tarra | G2 Esports (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7929.png"
+    },
+    {
+        "id": "7930",
+        "name": "Tarra | G2 Esports (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7930.png"
+    },
+    {
+        "id": "7931",
+        "name": "Tarra | G2 Esports (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7931.png"
+    },
+    {
+        "id": "7932",
+        "name": "Tarra | Natus Vincere | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7932.png"
+    },
+    {
+        "id": "7933",
+        "name": "Tarra | Natus Vincere (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7933.png"
+    },
+    {
+        "id": "7934",
+        "name": "Tarra | Natus Vincere (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7934.png"
+    },
+    {
+        "id": "7935",
+        "name": "Tarra | Natus Vincere (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7935.png"
+    },
+    {
+        "id": "7936",
+        "name": "Tarra | Vitality | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7936.png"
+    },
+    {
+        "id": "7937",
+        "name": "Tarra | Vitality (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7937.png"
+    },
+    {
+        "id": "7938",
+        "name": "Tarra | Vitality (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7938.png"
+    },
+    {
+        "id": "7939",
+        "name": "Tarra | Vitality (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7939.png"
+    },
+    {
+        "id": "7940",
+        "name": "Tarra | Team Spirit | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7940.png"
+    },
+    {
+        "id": "7941",
+        "name": "Tarra | Team Spirit (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7941.png"
+    },
+    {
+        "id": "7942",
+        "name": "Tarra | Team Spirit (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7942.png"
+    },
+    {
+        "id": "7943",
+        "name": "Tarra | Team Spirit (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7943.png"
+    },
+    {
+        "id": "7944",
+        "name": "Tarra | MOUZ | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7944.png"
+    },
+    {
+        "id": "7945",
+        "name": "Tarra | MOUZ (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7945.png"
+    },
+    {
+        "id": "7946",
+        "name": "Tarra | MOUZ (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7946.png"
+    },
+    {
+        "id": "7947",
+        "name": "Tarra | MOUZ (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7947.png"
+    },
+    {
+        "id": "7948",
+        "name": "Tarra | FaZe Clan | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7948.png"
+    },
+    {
+        "id": "7949",
+        "name": "Tarra | FaZe Clan (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7949.png"
+    },
+    {
+        "id": "7950",
+        "name": "Tarra | FaZe Clan (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7950.png"
+    },
+    {
+        "id": "7951",
+        "name": "Tarra | FaZe Clan (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7951.png"
+    },
+    {
+        "id": "7952",
+        "name": "Tarra | HEROIC | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7952.png"
+    },
+    {
+        "id": "7953",
+        "name": "Tarra | HEROIC (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7953.png"
+    },
+    {
+        "id": "7954",
+        "name": "Tarra | HEROIC (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7954.png"
+    },
+    {
+        "id": "7955",
+        "name": "Tarra | HEROIC (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7955.png"
+    },
+    {
+        "id": "7956",
+        "name": "Tarra | 3DMAX | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7956.png"
+    },
+    {
+        "id": "7957",
+        "name": "Tarra | 3DMAX (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7957.png"
+    },
+    {
+        "id": "7958",
+        "name": "Tarra | 3DMAX (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7958.png"
+    },
+    {
+        "id": "7959",
+        "name": "Tarra | 3DMAX (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7959.png"
+    },
+    {
+        "id": "7960",
+        "name": "Tarra | FURIA | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7960.png"
+    },
+    {
+        "id": "7961",
+        "name": "Tarra | FURIA (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7961.png"
+    },
+    {
+        "id": "7962",
+        "name": "Tarra | FURIA (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7962.png"
+    },
+    {
+        "id": "7963",
+        "name": "Tarra | FURIA (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7963.png"
+    },
+    {
+        "id": "7964",
+        "name": "Tarra | Virtus.pro | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7964.png"
+    },
+    {
+        "id": "7965",
+        "name": "Tarra | Virtus.pro (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7965.png"
+    },
+    {
+        "id": "7966",
+        "name": "Tarra | Virtus.pro (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7966.png"
+    },
+    {
+        "id": "7967",
+        "name": "Tarra | Virtus.pro (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7967.png"
+    },
+    {
+        "id": "7968",
+        "name": "Tarra | Team Liquid | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7968.png"
+    },
+    {
+        "id": "7969",
+        "name": "Tarra | Team Liquid (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7969.png"
+    },
+    {
+        "id": "7970",
+        "name": "Tarra | Team Liquid (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7970.png"
+    },
+    {
+        "id": "7971",
+        "name": "Tarra | Team Liquid (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7971.png"
+    },
+    {
+        "id": "7972",
+        "name": "Tarra | Complexity Gaming | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7972.png"
+    },
+    {
+        "id": "7973",
+        "name": "Tarra | Complexity Gaming (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7973.png"
+    },
+    {
+        "id": "7974",
+        "name": "Tarra | Complexity Gaming (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7974.png"
+    },
+    {
+        "id": "7975",
+        "name": "Tarra | Complexity Gaming (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7975.png"
+    },
+    {
+        "id": "7976",
+        "name": "Tarra | BIG | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7976.png"
+    },
+    {
+        "id": "7977",
+        "name": "Tarra | BIG (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7977.png"
+    },
+    {
+        "id": "7978",
+        "name": "Tarra | BIG (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7978.png"
+    },
+    {
+        "id": "7979",
+        "name": "Tarra | BIG (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7979.png"
+    },
+    {
+        "id": "7980",
+        "name": "Tarra | Fnatic | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7980.png"
+    },
+    {
+        "id": "7981",
+        "name": "Tarra | Fnatic (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7981.png"
+    },
+    {
+        "id": "7982",
+        "name": "Tarra | Fnatic (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7982.png"
+    },
+    {
+        "id": "7983",
+        "name": "Tarra | Fnatic (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7983.png"
+    },
+    {
+        "id": "7984",
+        "name": "Tarra | The MongolZ | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7984.png"
+    },
+    {
+        "id": "7985",
+        "name": "Tarra | The MongolZ (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7985.png"
+    },
+    {
+        "id": "7986",
+        "name": "Tarra | The MongolZ (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7986.png"
+    },
+    {
+        "id": "7987",
+        "name": "Tarra | The MongolZ (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7987.png"
+    },
+    {
+        "id": "7988",
+        "name": "Tarra | paiN Gaming | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7988.png"
+    },
+    {
+        "id": "7989",
+        "name": "Tarra | paiN Gaming (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7989.png"
+    },
+    {
+        "id": "7990",
+        "name": "Tarra | paiN Gaming (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7990.png"
+    },
+    {
+        "id": "7991",
+        "name": "Tarra | paiN Gaming (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7991.png"
+    },
+    {
+        "id": "7992",
+        "name": "Tarra | GamerLegion | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7992.png"
+    },
+    {
+        "id": "7993",
+        "name": "Tarra | GamerLegion (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7993.png"
+    },
+    {
+        "id": "7994",
+        "name": "Tarra | GamerLegion (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7994.png"
+    },
+    {
+        "id": "7995",
+        "name": "Tarra | GamerLegion (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7995.png"
+    },
+    {
+        "id": "7996",
+        "name": "Tarra | MIBR | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7996.png"
+    },
+    {
+        "id": "7997",
+        "name": "Tarra | MIBR (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7997.png"
+    },
+    {
+        "id": "7998",
+        "name": "Tarra | MIBR (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7998.png"
+    },
+    {
+        "id": "7999",
+        "name": "Tarra | MIBR (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-7999.png"
+    },
+    {
+        "id": "8000",
+        "name": "Tarra | Cloud9 | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8000.png"
+    },
+    {
+        "id": "8001",
+        "name": "Tarra | Cloud9 (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8001.png"
+    },
+    {
+        "id": "8002",
+        "name": "Tarra | Cloud9 (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8002.png"
+    },
+    {
+        "id": "8003",
+        "name": "Tarra | Cloud9 (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8003.png"
+    },
+    {
+        "id": "8004",
+        "name": "Tarra | FlyQuest | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8004.png"
+    },
+    {
+        "id": "8005",
+        "name": "Tarra | FlyQuest (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8005.png"
+    },
+    {
+        "id": "8006",
+        "name": "Tarra | FlyQuest (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8006.png"
+    },
+    {
+        "id": "8007",
+        "name": "Tarra | FlyQuest (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8007.png"
+    },
+    {
+        "id": "8008",
+        "name": "Tarra | Passion UA | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8008.png"
+    },
+    {
+        "id": "8009",
+        "name": "Tarra | Passion UA (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8009.png"
+    },
+    {
+        "id": "8010",
+        "name": "Tarra | Passion UA (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8010.png"
+    },
+    {
+        "id": "8011",
+        "name": "Tarra | Passion UA (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8011.png"
+    },
+    {
+        "id": "8012",
+        "name": "Tarra | Wildcard | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8012.png"
+    },
+    {
+        "id": "8013",
+        "name": "Tarra | Wildcard (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8013.png"
+    },
+    {
+        "id": "8014",
+        "name": "Tarra | Wildcard (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8014.png"
+    },
+    {
+        "id": "8015",
+        "name": "Tarra | Wildcard (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8015.png"
+    },
+    {
+        "id": "8016",
+        "name": "Tarra | Rare Atom | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8016.png"
+    },
+    {
+        "id": "8017",
+        "name": "Tarra | Rare Atom (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8017.png"
+    },
+    {
+        "id": "8018",
+        "name": "Tarra | Rare Atom (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8018.png"
+    },
+    {
+        "id": "8019",
+        "name": "Tarra | Rare Atom (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8019.png"
+    },
+    {
+        "id": "8020",
+        "name": "Tarra | Imperial Esports | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8020.png"
+    },
+    {
+        "id": "8021",
+        "name": "Tarra | Imperial Esports (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8021.png"
+    },
+    {
+        "id": "8022",
+        "name": "Tarra | Imperial Esports (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8022.png"
+    },
+    {
+        "id": "8023",
+        "name": "Tarra | Imperial Esports (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8023.png"
+    },
+    {
+        "id": "8024",
+        "name": "Tarra | Perfect World | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8024.png"
+    },
+    {
+        "id": "8025",
+        "name": "Tarra | Perfect World (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8025.png"
+    },
+    {
+        "id": "8026",
+        "name": "Tarra | Perfect World (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8026.png"
+    },
+    {
+        "id": "8027",
+        "name": "Tarra | Perfect World (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8027.png"
+    },
+    {
+        "id": "8053",
+        "name": "Tarra | Snax | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8053.png"
+    },
+    {
+        "id": "8054",
+        "name": "Tarra | Snax (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8054.png"
+    },
+    {
+        "id": "8055",
+        "name": "Tarra | Snax (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8055.png"
+    },
+    {
+        "id": "8056",
+        "name": "Tarra | Snax (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8056.png"
+    },
+    {
+        "id": "8057",
+        "name": "Tarra | huNter- | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8057.png"
+    },
+    {
+        "id": "8058",
+        "name": "Tarra | huNter- (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8058.png"
+    },
+    {
+        "id": "8059",
+        "name": "Tarra | huNter- (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8059.png"
+    },
+    {
+        "id": "8060",
+        "name": "Tarra | huNter- (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8060.png"
+    },
+    {
+        "id": "8061",
+        "name": "Tarra | malbsMd | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8061.png"
+    },
+    {
+        "id": "8062",
+        "name": "Tarra | malbsMd (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8062.png"
+    },
+    {
+        "id": "8063",
+        "name": "Tarra | malbsMd (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8063.png"
+    },
+    {
+        "id": "8064",
+        "name": "Tarra | malbsMd (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8064.png"
+    },
+    {
+        "id": "8065",
+        "name": "Tarra | m0NESY | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8065.png"
+    },
+    {
+        "id": "8066",
+        "name": "Tarra | m0NESY (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8066.png"
+    },
+    {
+        "id": "8067",
+        "name": "Tarra | m0NESY (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8067.png"
+    },
+    {
+        "id": "8068",
+        "name": "Tarra | m0NESY (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8068.png"
+    },
+    {
+        "id": "8069",
+        "name": "Tarra | NiKo | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8069.png"
+    },
+    {
+        "id": "8070",
+        "name": "Tarra | NiKo (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8070.png"
+    },
+    {
+        "id": "8071",
+        "name": "Tarra | NiKo (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8071.png"
+    },
+    {
+        "id": "8072",
+        "name": "Tarra | NiKo (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8072.png"
+    },
+    {
+        "id": "8073",
+        "name": "Tarra | w0nderful | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8073.png"
+    },
+    {
+        "id": "8074",
+        "name": "Tarra | w0nderful (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8074.png"
+    },
+    {
+        "id": "8075",
+        "name": "Tarra | w0nderful (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8075.png"
+    },
+    {
+        "id": "8076",
+        "name": "Tarra | w0nderful (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8076.png"
+    },
+    {
+        "id": "8077",
+        "name": "Tarra | Aleksib | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8077.png"
+    },
+    {
+        "id": "8078",
+        "name": "Tarra | Aleksib (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8078.png"
+    },
+    {
+        "id": "8079",
+        "name": "Tarra | Aleksib (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8079.png"
+    },
+    {
+        "id": "8080",
+        "name": "Tarra | Aleksib (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8080.png"
+    },
+    {
+        "id": "8081",
+        "name": "Tarra | jL | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8081.png"
+    },
+    {
+        "id": "8082",
+        "name": "Tarra | jL (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8082.png"
+    },
+    {
+        "id": "8083",
+        "name": "Tarra | jL (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8083.png"
+    },
+    {
+        "id": "8084",
+        "name": "Tarra | jL (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8084.png"
+    },
+    {
+        "id": "8085",
+        "name": "Tarra | b1t | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8085.png"
+    },
+    {
+        "id": "8086",
+        "name": "Tarra | b1t (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8086.png"
+    },
+    {
+        "id": "8087",
+        "name": "Tarra | b1t (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8087.png"
+    },
+    {
+        "id": "8088",
+        "name": "Tarra | b1t (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8088.png"
+    },
+    {
+        "id": "8089",
+        "name": "Tarra | iM | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8089.png"
+    },
+    {
+        "id": "8090",
+        "name": "Tarra | iM (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8090.png"
+    },
+    {
+        "id": "8091",
+        "name": "Tarra | iM (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8091.png"
+    },
+    {
+        "id": "8092",
+        "name": "Tarra | iM (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8092.png"
+    },
+    {
+        "id": "8093",
+        "name": "Tarra | ZywOo | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8093.png"
+    },
+    {
+        "id": "8094",
+        "name": "Tarra | ZywOo (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8094.png"
+    },
+    {
+        "id": "8095",
+        "name": "Tarra | ZywOo (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8095.png"
+    },
+    {
+        "id": "8096",
+        "name": "Tarra | ZywOo (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8096.png"
+    },
+    {
+        "id": "8097",
+        "name": "Tarra | apEX | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8097.png"
+    },
+    {
+        "id": "8098",
+        "name": "Tarra | apEX (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8098.png"
+    },
+    {
+        "id": "8099",
+        "name": "Tarra | apEX (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8099.png"
+    },
+    {
+        "id": "8100",
+        "name": "Tarra | apEX (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8100.png"
+    },
+    {
+        "id": "8101",
+        "name": "Tarra | mezii | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8101.png"
+    },
+    {
+        "id": "8102",
+        "name": "Tarra | mezii (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8102.png"
+    },
+    {
+        "id": "8103",
+        "name": "Tarra | mezii (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8103.png"
+    },
+    {
+        "id": "8104",
+        "name": "Tarra | mezii (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8104.png"
+    },
+    {
+        "id": "8105",
+        "name": "Tarra | FlameZ | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8105.png"
+    },
+    {
+        "id": "8106",
+        "name": "Tarra | FlameZ (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8106.png"
+    },
+    {
+        "id": "8107",
+        "name": "Tarra | FlameZ (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8107.png"
+    },
+    {
+        "id": "8108",
+        "name": "Tarra | FlameZ (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8108.png"
+    },
+    {
+        "id": "8109",
+        "name": "Tarra | Spinx | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8109.png"
+    },
+    {
+        "id": "8110",
+        "name": "Tarra | Spinx (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8110.png"
+    },
+    {
+        "id": "8111",
+        "name": "Tarra | Spinx (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8111.png"
+    },
+    {
+        "id": "8112",
+        "name": "Tarra | Spinx (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8112.png"
+    },
+    {
+        "id": "8113",
+        "name": "Tarra | chopper | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8113.png"
+    },
+    {
+        "id": "8114",
+        "name": "Tarra | chopper (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8114.png"
+    },
+    {
+        "id": "8115",
+        "name": "Tarra | chopper (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8115.png"
+    },
+    {
+        "id": "8116",
+        "name": "Tarra | chopper (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8116.png"
+    },
+    {
+        "id": "8117",
+        "name": "Tarra | magixx | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8117.png"
+    },
+    {
+        "id": "8118",
+        "name": "Tarra | magixx (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8118.png"
+    },
+    {
+        "id": "8119",
+        "name": "Tarra | magixx (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8119.png"
+    },
+    {
+        "id": "8120",
+        "name": "Tarra | magixx (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8120.png"
+    },
+    {
+        "id": "8121",
+        "name": "Tarra | donk | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8121.png"
+    },
+    {
+        "id": "8122",
+        "name": "Tarra | donk (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8122.png"
+    },
+    {
+        "id": "8123",
+        "name": "Tarra | donk (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8123.png"
+    },
+    {
+        "id": "8124",
+        "name": "Tarra | donk (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8124.png"
+    },
+    {
+        "id": "8125",
+        "name": "Tarra | sh1ro | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8125.png"
+    },
+    {
+        "id": "8126",
+        "name": "Tarra | sh1ro (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8126.png"
+    },
+    {
+        "id": "8127",
+        "name": "Tarra | sh1ro (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8127.png"
+    },
+    {
+        "id": "8128",
+        "name": "Tarra | sh1ro (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8128.png"
+    },
+    {
+        "id": "8129",
+        "name": "Tarra | zont1x | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8129.png"
+    },
+    {
+        "id": "8130",
+        "name": "Tarra | zont1x (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8130.png"
+    },
+    {
+        "id": "8131",
+        "name": "Tarra | zont1x (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8131.png"
+    },
+    {
+        "id": "8132",
+        "name": "Tarra | zont1x (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8132.png"
+    },
+    {
+        "id": "8133",
+        "name": "Tarra | torzsi | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8133.png"
+    },
+    {
+        "id": "8134",
+        "name": "Tarra | torzsi (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8134.png"
+    },
+    {
+        "id": "8135",
+        "name": "Tarra | torzsi (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8135.png"
+    },
+    {
+        "id": "8136",
+        "name": "Tarra | torzsi (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8136.png"
+    },
+    {
+        "id": "8137",
+        "name": "Tarra | xertioN | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8137.png"
+    },
+    {
+        "id": "8138",
+        "name": "Tarra | xertioN (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8138.png"
+    },
+    {
+        "id": "8139",
+        "name": "Tarra | xertioN (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8139.png"
+    },
+    {
+        "id": "8140",
+        "name": "Tarra | xERtion (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8140.png"
+    },
+    {
+        "id": "8141",
+        "name": "Tarra | Brollan | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8141.png"
+    },
+    {
+        "id": "8142",
+        "name": "Tarra | Brollan (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8142.png"
+    },
+    {
+        "id": "8143",
+        "name": "Tarra | Brollan (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8143.png"
+    },
+    {
+        "id": "8144",
+        "name": "Tarra | Brollan (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8144.png"
+    },
+    {
+        "id": "8145",
+        "name": "Tarra | Jimpphat | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8145.png"
+    },
+    {
+        "id": "8146",
+        "name": "Tarra | Jimpphat (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8146.png"
+    },
+    {
+        "id": "8147",
+        "name": "Tarra | Jimpphat (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8147.png"
+    },
+    {
+        "id": "8148",
+        "name": "Tarra | Jimpphat (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8148.png"
+    },
+    {
+        "id": "8149",
+        "name": "Tarra | siuhy | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8149.png"
+    },
+    {
+        "id": "8150",
+        "name": "Tarra | siuhy (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8150.png"
+    },
+    {
+        "id": "8151",
+        "name": "Tarra | siuhy (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8151.png"
+    },
+    {
+        "id": "8152",
+        "name": "Tarra | siuhy (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8152.png"
+    },
+    {
+        "id": "8153",
+        "name": "Tarra | karrigan | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8153.png"
+    },
+    {
+        "id": "8154",
+        "name": "Tarra | karrigan (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8154.png"
+    },
+    {
+        "id": "8155",
+        "name": "Tarra | karrigan (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8155.png"
+    },
+    {
+        "id": "8156",
+        "name": "Tarra | karrigan (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8156.png"
+    },
+    {
+        "id": "8157",
+        "name": "Tarra | rain | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8157.png"
+    },
+    {
+        "id": "8158",
+        "name": "Tarra | rain (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8158.png"
+    },
+    {
+        "id": "8159",
+        "name": "Tarra | rain (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8159.png"
+    },
+    {
+        "id": "8160",
+        "name": "Tarra | rain (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8160.png"
+    },
+    {
+        "id": "8161",
+        "name": "Tarra | ropz | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8161.png"
+    },
+    {
+        "id": "8162",
+        "name": "Tarra | ropz (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8162.png"
+    },
+    {
+        "id": "8163",
+        "name": "Tarra | ropz (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8163.png"
+    },
+    {
+        "id": "8164",
+        "name": "Tarra | ropz (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8164.png"
+    },
+    {
+        "id": "8165",
+        "name": "Tarra | broky | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8165.png"
+    },
+    {
+        "id": "8166",
+        "name": "Tarra | broky (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8166.png"
+    },
+    {
+        "id": "8167",
+        "name": "Tarra | broky (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8167.png"
+    },
+    {
+        "id": "8168",
+        "name": "Tarra | broky (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8168.png"
+    },
+    {
+        "id": "8169",
+        "name": "Tarra | frozen | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8169.png"
+    },
+    {
+        "id": "8170",
+        "name": "Tarra | frozen (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8170.png"
+    },
+    {
+        "id": "8171",
+        "name": "Tarra | frozen (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8171.png"
+    },
+    {
+        "id": "8172",
+        "name": "Tarra | frozen (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8172.png"
+    },
+    {
+        "id": "8173",
+        "name": "Tarra | TeSeS | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8173.png"
+    },
+    {
+        "id": "8174",
+        "name": "Tarra | TeSeS (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8174.png"
+    },
+    {
+        "id": "8175",
+        "name": "Tarra | TeSeS (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8175.png"
+    },
+    {
+        "id": "8176",
+        "name": "Tarra | TeSeS (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8176.png"
+    },
+    {
+        "id": "8177",
+        "name": "Tarra | sjuush | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8177.png"
+    },
+    {
+        "id": "8178",
+        "name": "Tarra | sjuush (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8178.png"
+    },
+    {
+        "id": "8179",
+        "name": "Tarra | sjuush (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8179.png"
+    },
+    {
+        "id": "8180",
+        "name": "Tarra | sjuush (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8180.png"
+    },
+    {
+        "id": "8181",
+        "name": "Tarra | kyxsan | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8181.png"
+    },
+    {
+        "id": "8182",
+        "name": "Tarra | kyxsan (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8182.png"
+    },
+    {
+        "id": "8183",
+        "name": "Tarra | kyxsan (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8183.png"
+    },
+    {
+        "id": "8184",
+        "name": "Tarra | kyxsan (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8184.png"
+    },
+    {
+        "id": "8185",
+        "name": "Tarra | NertZ | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8185.png"
+    },
+    {
+        "id": "8186",
+        "name": "Tarra | NertZ (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8186.png"
+    },
+    {
+        "id": "8187",
+        "name": "Tarra | NertZ (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8187.png"
+    },
+    {
+        "id": "8188",
+        "name": "Tarra | NertZ (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8188.png"
+    },
+    {
+        "id": "8189",
+        "name": "Tarra | degster | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8189.png"
+    },
+    {
+        "id": "8190",
+        "name": "Tarra | degster (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8190.png"
+    },
+    {
+        "id": "8191",
+        "name": "Tarra | degster (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8191.png"
+    },
+    {
+        "id": "8192",
+        "name": "Tarra | degster (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8192.png"
+    },
+    {
+        "id": "8193",
+        "name": "Tarra | Ex3rcice | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8193.png"
+    },
+    {
+        "id": "8194",
+        "name": "Tarra | Ex3rcice (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8194.png"
+    },
+    {
+        "id": "8195",
+        "name": "Tarra | Ex3rcice (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8195.png"
+    },
+    {
+        "id": "8196",
+        "name": "Tarra | Ex3rcice (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8196.png"
+    },
+    {
+        "id": "8197",
+        "name": "Tarra | Djoko | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8197.png"
+    },
+    {
+        "id": "8198",
+        "name": "Tarra | Djoko (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8198.png"
+    },
+    {
+        "id": "8199",
+        "name": "Tarra | Djoko (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8199.png"
+    },
+    {
+        "id": "8200",
+        "name": "Tarra | Djoko (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8200.png"
+    },
+    {
+        "id": "8201",
+        "name": "Tarra | Maka | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8201.png"
+    },
+    {
+        "id": "8202",
+        "name": "Tarra | Maka (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8202.png"
+    },
+    {
+        "id": "8203",
+        "name": "Tarra | Maka (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8203.png"
+    },
+    {
+        "id": "8204",
+        "name": "Tarra | Maka (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8204.png"
+    },
+    {
+        "id": "8205",
+        "name": "Tarra | Lucky | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8205.png"
+    },
+    {
+        "id": "8206",
+        "name": "Tarra | Lucky (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8206.png"
+    },
+    {
+        "id": "8207",
+        "name": "Tarra | Lucky (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8207.png"
+    },
+    {
+        "id": "8208",
+        "name": "Tarra | Lucky (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8208.png"
+    },
+    {
+        "id": "8209",
+        "name": "Tarra | Graviti | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8209.png"
+    },
+    {
+        "id": "8210",
+        "name": "Tarra | Graviti (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8210.png"
+    },
+    {
+        "id": "8211",
+        "name": "Tarra | Graviti (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8211.png"
+    },
+    {
+        "id": "8212",
+        "name": "Tarra | Graviti (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8212.png"
+    },
+    {
+        "id": "8213",
+        "name": "Tarra | FalleN | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8213.png"
+    },
+    {
+        "id": "8214",
+        "name": "Tarra | FalleN (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8214.png"
+    },
+    {
+        "id": "8215",
+        "name": "Tarra | FalleN (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8215.png"
+    },
+    {
+        "id": "8216",
+        "name": "Tarra | FalleN (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8216.png"
+    },
+    {
+        "id": "8217",
+        "name": "Tarra | chelo | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8217.png"
+    },
+    {
+        "id": "8218",
+        "name": "Tarra | chelo (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8218.png"
+    },
+    {
+        "id": "8219",
+        "name": "Tarra | chelo (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8219.png"
+    },
+    {
+        "id": "8220",
+        "name": "Tarra | chelo (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8220.png"
+    },
+    {
+        "id": "8221",
+        "name": "Tarra | yuurih | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8221.png"
+    },
+    {
+        "id": "8222",
+        "name": "Tarra | yuurih (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8222.png"
+    },
+    {
+        "id": "8223",
+        "name": "Tarra | yuurih (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8223.png"
+    },
+    {
+        "id": "8224",
+        "name": "Tarra | yuurih (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8224.png"
+    },
+    {
+        "id": "8225",
+        "name": "Tarra | KSCERATO | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8225.png"
+    },
+    {
+        "id": "8226",
+        "name": "Tarra | KSCERATO (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8226.png"
+    },
+    {
+        "id": "8227",
+        "name": "Tarra | KSCERATO (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8227.png"
+    },
+    {
+        "id": "8228",
+        "name": "Tarra | KSCERATO (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8228.png"
+    },
+    {
+        "id": "8229",
+        "name": "Tarra | skullz | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8229.png"
+    },
+    {
+        "id": "8230",
+        "name": "Tarra | skullz (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8230.png"
+    },
+    {
+        "id": "8231",
+        "name": "Tarra | skullz (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8231.png"
+    },
+    {
+        "id": "8232",
+        "name": "Tarra | skullz (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8232.png"
+    },
+    {
+        "id": "8233",
+        "name": "Tarra | FL1T | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8233.png"
+    },
+    {
+        "id": "8234",
+        "name": "Tarra | FL1T (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8234.png"
+    },
+    {
+        "id": "8235",
+        "name": "Tarra | FL1T (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8235.png"
+    },
+    {
+        "id": "8236",
+        "name": "Tarra | FL1T (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8236.png"
+    },
+    {
+        "id": "8237",
+        "name": "Tarra | Jame | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8237.png"
+    },
+    {
+        "id": "8238",
+        "name": "Tarra | Jame (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8238.png"
+    },
+    {
+        "id": "8239",
+        "name": "Tarra | Jame (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8239.png"
+    },
+    {
+        "id": "8240",
+        "name": "Tarra | Jame (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8240.png"
+    },
+    {
+        "id": "8241",
+        "name": "Tarra | fame | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8241.png"
+    },
+    {
+        "id": "8242",
+        "name": "Tarra | fame (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8242.png"
+    },
+    {
+        "id": "8243",
+        "name": "Tarra | fame (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8243.png"
+    },
+    {
+        "id": "8244",
+        "name": "Tarra | fame (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8244.png"
+    },
+    {
+        "id": "8245",
+        "name": "Tarra | n0rb3r7 | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8245.png"
+    },
+    {
+        "id": "8246",
+        "name": "Tarra | n0rb3r7 (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8246.png"
+    },
+    {
+        "id": "8247",
+        "name": "Tarra | n0rb3r7 (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8247.png"
+    },
+    {
+        "id": "8248",
+        "name": "Tarra | n0rb3r7 (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8248.png"
+    },
+    {
+        "id": "8249",
+        "name": "Tarra | electronic | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8249.png"
+    },
+    {
+        "id": "8250",
+        "name": "Tarra | electronic (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8250.png"
+    },
+    {
+        "id": "8251",
+        "name": "Tarra | electronic (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8251.png"
+    },
+    {
+        "id": "8252",
+        "name": "Tarra | electronic (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8252.png"
+    },
+    {
+        "id": "8253",
+        "name": "Tarra | Twistzz | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8253.png"
+    },
+    {
+        "id": "8254",
+        "name": "Tarra | Twistzz (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8254.png"
+    },
+    {
+        "id": "8255",
+        "name": "Tarra | Twistzz (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8255.png"
+    },
+    {
+        "id": "8256",
+        "name": "Tarra | Twistzz (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8256.png"
+    },
+    {
+        "id": "8257",
+        "name": "Tarra | ultimate | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8257.png"
+    },
+    {
+        "id": "8258",
+        "name": "Tarra | ultimate (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8258.png"
+    },
+    {
+        "id": "8259",
+        "name": "Tarra | ultimate (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8259.png"
+    },
+    {
+        "id": "8260",
+        "name": "Tarra | ultimate (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8260.png"
+    },
+    {
+        "id": "8261",
+        "name": "Tarra | YEKINDAR | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8261.png"
+    },
+    {
+        "id": "8262",
+        "name": "Tarra | YEKINDAR (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8262.png"
+    },
+    {
+        "id": "8263",
+        "name": "Tarra | YEKINDAR (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8263.png"
+    },
+    {
+        "id": "8264",
+        "name": "Tarra | YEKINDAR (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8264.png"
+    },
+    {
+        "id": "8265",
+        "name": "Tarra | jks | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8265.png"
+    },
+    {
+        "id": "8266",
+        "name": "Tarra | jks (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8266.png"
+    },
+    {
+        "id": "8267",
+        "name": "Tarra | jks (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8267.png"
+    },
+    {
+        "id": "8268",
+        "name": "Tarra | jks (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8268.png"
+    },
+    {
+        "id": "8269",
+        "name": "Tarra | NAF | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8269.png"
+    },
+    {
+        "id": "8270",
+        "name": "Tarra | NAF (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8270.png"
+    },
+    {
+        "id": "8271",
+        "name": "Tarra | NAF (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8271.png"
+    },
+    {
+        "id": "8272",
+        "name": "Tarra | NAF (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8272.png"
+    },
+    {
+        "id": "8273",
+        "name": "Tarra | EliGE | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8273.png"
+    },
+    {
+        "id": "8274",
+        "name": "Tarra | EliGE (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8274.png"
+    },
+    {
+        "id": "8275",
+        "name": "Tarra | EliGE (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8275.png"
+    },
+    {
+        "id": "8276",
+        "name": "Tarra | EliGE (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8276.png"
+    },
+    {
+        "id": "8277",
+        "name": "Tarra | floppy | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8277.png"
+    },
+    {
+        "id": "8278",
+        "name": "Tarra | floppy (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8278.png"
+    },
+    {
+        "id": "8279",
+        "name": "Tarra | floppy (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8279.png"
+    },
+    {
+        "id": "8280",
+        "name": "Tarra | floppy (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8280.png"
+    },
+    {
+        "id": "8281",
+        "name": "Tarra | Grim | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8281.png"
+    },
+    {
+        "id": "8282",
+        "name": "Tarra | Grim (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8282.png"
+    },
+    {
+        "id": "8283",
+        "name": "Tarra | Grim (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8283.png"
+    },
+    {
+        "id": "8284",
+        "name": "Tarra | Grim (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8284.png"
+    },
+    {
+        "id": "8285",
+        "name": "Tarra | hallzerk | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8285.png"
+    },
+    {
+        "id": "8286",
+        "name": "Tarra | hallzerk (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8286.png"
+    },
+    {
+        "id": "8287",
+        "name": "Tarra | hallzerk (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8287.png"
+    },
+    {
+        "id": "8288",
+        "name": "Tarra | hallzerk (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8288.png"
+    },
+    {
+        "id": "8289",
+        "name": "Tarra | JT | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8289.png"
+    },
+    {
+        "id": "8290",
+        "name": "Tarra | JT (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8290.png"
+    },
+    {
+        "id": "8291",
+        "name": "Tarra | JT (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8291.png"
+    },
+    {
+        "id": "8292",
+        "name": "Tarra | JT (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8292.png"
+    },
+    {
+        "id": "8293",
+        "name": "Tarra | tabseN | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8293.png"
+    },
+    {
+        "id": "8294",
+        "name": "Tarra | tabseN (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8294.png"
+    },
+    {
+        "id": "8295",
+        "name": "Tarra | tabseN (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8295.png"
+    },
+    {
+        "id": "8296",
+        "name": "Tarra | tabseN (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8296.png"
+    },
+    {
+        "id": "8297",
+        "name": "Tarra | Krimbo | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8297.png"
+    },
+    {
+        "id": "8298",
+        "name": "Tarra | Krimbo (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8298.png"
+    },
+    {
+        "id": "8299",
+        "name": "Tarra | Krimbo (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8299.png"
+    },
+    {
+        "id": "8300",
+        "name": "Tarra | Krimbo (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8300.png"
+    },
+    {
+        "id": "8301",
+        "name": "Tarra | JDC | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8301.png"
+    },
+    {
+        "id": "8302",
+        "name": "Tarra | JDC (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8302.png"
+    },
+    {
+        "id": "8303",
+        "name": "Tarra | JDC (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8303.png"
+    },
+    {
+        "id": "8304",
+        "name": "Tarra | JDC (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8304.png"
+    },
+    {
+        "id": "8305",
+        "name": "Tarra | syrsoN | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8305.png"
+    },
+    {
+        "id": "8306",
+        "name": "Tarra | syrsoN (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8306.png"
+    },
+    {
+        "id": "8307",
+        "name": "Tarra | syrsoN (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8307.png"
+    },
+    {
+        "id": "8308",
+        "name": "Tarra | syrsoN (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8308.png"
+    },
+    {
+        "id": "8309",
+        "name": "Tarra | rigoN | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8309.png"
+    },
+    {
+        "id": "8310",
+        "name": "Tarra | rigoN (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8310.png"
+    },
+    {
+        "id": "8311",
+        "name": "Tarra | rigoN (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8311.png"
+    },
+    {
+        "id": "8312",
+        "name": "Tarra | rigoN (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8312.png"
+    },
+    {
+        "id": "8313",
+        "name": "Tarra | KRIMZ | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8313.png"
+    },
+    {
+        "id": "8314",
+        "name": "Tarra | KRIMZ (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8314.png"
+    },
+    {
+        "id": "8315",
+        "name": "Tarra | KRIMZ (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8315.png"
+    },
+    {
+        "id": "8316",
+        "name": "Tarra | KRIMZ (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8316.png"
+    },
+    {
+        "id": "8317",
+        "name": "Tarra | bodyy | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8317.png"
+    },
+    {
+        "id": "8318",
+        "name": "Tarra | bodyy (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8318.png"
+    },
+    {
+        "id": "8319",
+        "name": "Tarra | bodyy (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8319.png"
+    },
+    {
+        "id": "8320",
+        "name": "Tarra | bodyy (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8320.png"
+    },
+    {
+        "id": "8321",
+        "name": "Tarra | MATYS | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8321.png"
+    },
+    {
+        "id": "8322",
+        "name": "Tarra | MATYS (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8322.png"
+    },
+    {
+        "id": "8323",
+        "name": "Tarra | MATYS (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8323.png"
+    },
+    {
+        "id": "8324",
+        "name": "Tarra | MATYS (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8324.png"
+    },
+    {
+        "id": "8325",
+        "name": "Tarra | blameF | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8325.png"
+    },
+    {
+        "id": "8326",
+        "name": "Tarra | blameF (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8326.png"
+    },
+    {
+        "id": "8327",
+        "name": "Tarra | blameF (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8327.png"
+    },
+    {
+        "id": "8328",
+        "name": "Tarra | blameF (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8328.png"
+    },
+    {
+        "id": "8329",
+        "name": "Tarra | afro | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8329.png"
+    },
+    {
+        "id": "8330",
+        "name": "Tarra | afro (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8330.png"
+    },
+    {
+        "id": "8331",
+        "name": "Tarra | afro (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8331.png"
+    },
+    {
+        "id": "8332",
+        "name": "Tarra | afro (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8332.png"
+    },
+    {
+        "id": "8333",
+        "name": "Tarra | bLitz | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8333.png"
+    },
+    {
+        "id": "8334",
+        "name": "Tarra | bLitz (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8334.png"
+    },
+    {
+        "id": "8335",
+        "name": "Tarra | bLitz (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8335.png"
+    },
+    {
+        "id": "8336",
+        "name": "Tarra | bLitz (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8336.png"
+    },
+    {
+        "id": "8337",
+        "name": "Tarra | 910 | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8337.png"
+    },
+    {
+        "id": "8338",
+        "name": "Tarra | 910 (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8338.png"
+    },
+    {
+        "id": "8339",
+        "name": "Tarra | 910 (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8339.png"
+    },
+    {
+        "id": "8340",
+        "name": "Tarra | 910 (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8340.png"
+    },
+    {
+        "id": "8341",
+        "name": "Tarra | Techno4K | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8341.png"
+    },
+    {
+        "id": "8342",
+        "name": "Tarra | Techno4K (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8342.png"
+    },
+    {
+        "id": "8343",
+        "name": "Tarra | Techno4K (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8343.png"
+    },
+    {
+        "id": "8344",
+        "name": "Tarra | Techno4K (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8344.png"
+    },
+    {
+        "id": "8345",
+        "name": "Tarra | Senzu | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8345.png"
+    },
+    {
+        "id": "8346",
+        "name": "Tarra | Senzu (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8346.png"
+    },
+    {
+        "id": "8347",
+        "name": "Tarra | Senzu (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8347.png"
+    },
+    {
+        "id": "8348",
+        "name": "Tarra | Senzu (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8348.png"
+    },
+    {
+        "id": "8349",
+        "name": "Tarra | mzinho | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8349.png"
+    },
+    {
+        "id": "8350",
+        "name": "Tarra | mzinho (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8350.png"
+    },
+    {
+        "id": "8351",
+        "name": "Tarra | mzinho (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8351.png"
+    },
+    {
+        "id": "8352",
+        "name": "Tarra | mzinho (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8352.png"
+    },
+    {
+        "id": "8353",
+        "name": "Tarra | biguzera | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8353.png"
+    },
+    {
+        "id": "8354",
+        "name": "Tarra | biguzera (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8354.png"
+    },
+    {
+        "id": "8355",
+        "name": "Tarra | biguzera (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8355.png"
+    },
+    {
+        "id": "8356",
+        "name": "Tarra | biguzera (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8356.png"
+    },
+    {
+        "id": "8357",
+        "name": "Tarra | lux | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8357.png"
+    },
+    {
+        "id": "8358",
+        "name": "Tarra | lux (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8358.png"
+    },
+    {
+        "id": "8359",
+        "name": "Tarra | lux (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8359.png"
+    },
+    {
+        "id": "8360",
+        "name": "Tarra | lux (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8360.png"
+    },
+    {
+        "id": "8361",
+        "name": "Tarra | kauez | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8361.png"
+    },
+    {
+        "id": "8362",
+        "name": "Tarra | kauez (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8362.png"
+    },
+    {
+        "id": "8363",
+        "name": "Tarra | kauez (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8363.png"
+    },
+    {
+        "id": "8364",
+        "name": "Tarra | kauez (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8364.png"
+    },
+    {
+        "id": "8365",
+        "name": "Tarra | NQZ | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8365.png"
+    },
+    {
+        "id": "8366",
+        "name": "Tarra | NQZ (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8366.png"
+    },
+    {
+        "id": "8367",
+        "name": "Tarra | NQZ (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8367.png"
+    },
+    {
+        "id": "8368",
+        "name": "Tarra | NQZ (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8368.png"
+    },
+    {
+        "id": "8369",
+        "name": "Tarra | snow | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8369.png"
+    },
+    {
+        "id": "8370",
+        "name": "Tarra | snow (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8370.png"
+    },
+    {
+        "id": "8371",
+        "name": "Tarra | snow (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8371.png"
+    },
+    {
+        "id": "8372",
+        "name": "Tarra | snow (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8372.png"
+    },
+    {
+        "id": "8373",
+        "name": "Tarra | ztr | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8373.png"
+    },
+    {
+        "id": "8374",
+        "name": "Tarra | ztr (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8374.png"
+    },
+    {
+        "id": "8375",
+        "name": "Tarra | ztr (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8375.png"
+    },
+    {
+        "id": "8376",
+        "name": "Tarra | ztr (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8376.png"
+    },
+    {
+        "id": "8377",
+        "name": "Tarra | sl3nd | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8377.png"
+    },
+    {
+        "id": "8378",
+        "name": "Tarra | sl3nd (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8378.png"
+    },
+    {
+        "id": "8379",
+        "name": "Tarra | sl3nd (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8379.png"
+    },
+    {
+        "id": "8380",
+        "name": "Tarra | sl3nd (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8380.png"
+    },
+    {
+        "id": "8381",
+        "name": "Tarra | volt | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8381.png"
+    },
+    {
+        "id": "8382",
+        "name": "Tarra | volt (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8382.png"
+    },
+    {
+        "id": "8383",
+        "name": "Tarra | volt (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8383.png"
+    },
+    {
+        "id": "8384",
+        "name": "Tarra | volt (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8384.png"
+    },
+    {
+        "id": "8385",
+        "name": "Tarra | FL4MUS | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8385.png"
+    },
+    {
+        "id": "8386",
+        "name": "Tarra | FL4MUS (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8386.png"
+    },
+    {
+        "id": "8387",
+        "name": "Tarra | FL4MUS (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8387.png"
+    },
+    {
+        "id": "8388",
+        "name": "Tarra | FL4MUS (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8388.png"
+    },
+    {
+        "id": "8389",
+        "name": "Tarra | aNdu | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8389.png"
+    },
+    {
+        "id": "8390",
+        "name": "Tarra | aNdu (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8390.png"
+    },
+    {
+        "id": "8391",
+        "name": "Tarra | aNdu (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8391.png"
+    },
+    {
+        "id": "8392",
+        "name": "Tarra | aNdu (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8392.png"
+    },
+    {
+        "id": "8393",
+        "name": "Tarra | drop | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8393.png"
+    },
+    {
+        "id": "8394",
+        "name": "Tarra | drop (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8394.png"
+    },
+    {
+        "id": "8395",
+        "name": "Tarra | drop (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8395.png"
+    },
+    {
+        "id": "8396",
+        "name": "Tarra | drop (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8396.png"
+    },
+    {
+        "id": "8397",
+        "name": "Tarra | saffee | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8397.png"
+    },
+    {
+        "id": "8398",
+        "name": "Tarra | saffee (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8398.png"
+    },
+    {
+        "id": "8399",
+        "name": "Tarra | saffee (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8399.png"
+    },
+    {
+        "id": "8400",
+        "name": "Tarra | saffee (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8400.png"
+    },
+    {
+        "id": "8401",
+        "name": "Tarra | insani | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8401.png"
+    },
+    {
+        "id": "8402",
+        "name": "Tarra | insani (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8402.png"
+    },
+    {
+        "id": "8403",
+        "name": "Tarra | insani (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8403.png"
+    },
+    {
+        "id": "8404",
+        "name": "Tarra | insani (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8404.png"
+    },
+    {
+        "id": "8405",
+        "name": "Tarra | brnz4n | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8405.png"
+    },
+    {
+        "id": "8406",
+        "name": "Tarra | brnz4n (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8406.png"
+    },
+    {
+        "id": "8407",
+        "name": "Tarra | brnz4n (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8407.png"
+    },
+    {
+        "id": "8408",
+        "name": "Tarra | brnz4n (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8408.png"
+    },
+    {
+        "id": "8409",
+        "name": "Tarra | exit | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8409.png"
+    },
+    {
+        "id": "8410",
+        "name": "Tarra | exit (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8410.png"
+    },
+    {
+        "id": "8411",
+        "name": "Tarra | exit (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8411.png"
+    },
+    {
+        "id": "8412",
+        "name": "Tarra | exit (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8412.png"
+    },
+    {
+        "id": "8413",
+        "name": "Tarra | Boombl4 | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8413.png"
+    },
+    {
+        "id": "8414",
+        "name": "Tarra | Boombl4 (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8414.png"
+    },
+    {
+        "id": "8415",
+        "name": "Tarra | Boombl4 (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8415.png"
+    },
+    {
+        "id": "8416",
+        "name": "Tarra | Boombl4 (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8416.png"
+    },
+    {
+        "id": "8417",
+        "name": "Tarra | Ax1Le | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8417.png"
+    },
+    {
+        "id": "8418",
+        "name": "Tarra | Ax1Le (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8418.png"
+    },
+    {
+        "id": "8419",
+        "name": "Tarra | Ax1Le (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8419.png"
+    },
+    {
+        "id": "8420",
+        "name": "Tarra | Ax1Le (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8420.png"
+    },
+    {
+        "id": "8421",
+        "name": "Tarra | Heavygod | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8421.png"
+    },
+    {
+        "id": "8422",
+        "name": "Tarra | Heavygod (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8422.png"
+    },
+    {
+        "id": "8423",
+        "name": "Tarra | Heavygod (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8423.png"
+    },
+    {
+        "id": "8424",
+        "name": "Tarra | Heavygod (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8424.png"
+    },
+    {
+        "id": "8425",
+        "name": "Tarra | ICY | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8425.png"
+    },
+    {
+        "id": "8426",
+        "name": "Tarra | ICY (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8426.png"
+    },
+    {
+        "id": "8427",
+        "name": "Tarra | ICY (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8427.png"
+    },
+    {
+        "id": "8428",
+        "name": "Tarra | ICY (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8428.png"
+    },
+    {
+        "id": "8429",
+        "name": "Tarra | Perfecto | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8429.png"
+    },
+    {
+        "id": "8430",
+        "name": "Tarra | Perfecto (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8430.png"
+    },
+    {
+        "id": "8431",
+        "name": "Tarra | Perfecto (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8431.png"
+    },
+    {
+        "id": "8432",
+        "name": "Tarra | Perfecto (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8432.png"
+    },
+    {
+        "id": "8433",
+        "name": "Tarra | dexter | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8433.png"
+    },
+    {
+        "id": "8434",
+        "name": "Tarra | dexter (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8434.png"
+    },
+    {
+        "id": "8435",
+        "name": "Tarra | dexter (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8435.png"
+    },
+    {
+        "id": "8436",
+        "name": "Tarra | dexter (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8436.png"
+    },
+    {
+        "id": "8437",
+        "name": "Tarra | Liazz | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8437.png"
+    },
+    {
+        "id": "8438",
+        "name": "Tarra | Liazz (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8438.png"
+    },
+    {
+        "id": "8439",
+        "name": "Tarra | Liazz (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8439.png"
+    },
+    {
+        "id": "8440",
+        "name": "Tarra | Liazz (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8440.png"
+    },
+    {
+        "id": "8441",
+        "name": "Tarra | aliStair | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8441.png"
+    },
+    {
+        "id": "8442",
+        "name": "Tarra | aliStair (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8442.png"
+    },
+    {
+        "id": "8443",
+        "name": "Tarra | aliStair (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8443.png"
+    },
+    {
+        "id": "8444",
+        "name": "Tarra | aliStair (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8444.png"
+    },
+    {
+        "id": "8445",
+        "name": "Tarra | INS | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8445.png"
+    },
+    {
+        "id": "8446",
+        "name": "Tarra | INS (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8446.png"
+    },
+    {
+        "id": "8447",
+        "name": "Tarra | INS (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8447.png"
+    },
+    {
+        "id": "8448",
+        "name": "Tarra | INS (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8448.png"
+    },
+    {
+        "id": "8449",
+        "name": "Tarra | vexite | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8449.png"
+    },
+    {
+        "id": "8450",
+        "name": "Tarra | vexite (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8450.png"
+    },
+    {
+        "id": "8451",
+        "name": "Tarra | vexite (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8451.png"
+    },
+    {
+        "id": "8452",
+        "name": "Tarra | vexite (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8452.png"
+    },
+    {
+        "id": "8453",
+        "name": "Tarra | fEAR | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8453.png"
+    },
+    {
+        "id": "8454",
+        "name": "Tarra | fEAR (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8454.png"
+    },
+    {
+        "id": "8455",
+        "name": "Tarra | fEAR (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8455.png"
+    },
+    {
+        "id": "8456",
+        "name": "Tarra | fEAR (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8456.png"
+    },
+    {
+        "id": "8457",
+        "name": "Tarra | jambo | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8457.png"
+    },
+    {
+        "id": "8458",
+        "name": "Tarra | jambo (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8458.png"
+    },
+    {
+        "id": "8459",
+        "name": "Tarra | jambo (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8459.png"
+    },
+    {
+        "id": "8460",
+        "name": "Tarra | jambo (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8460.png"
+    },
+    {
+        "id": "8461",
+        "name": "Tarra | jackasmo | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8461.png"
+    },
+    {
+        "id": "8462",
+        "name": "Tarra | jackasmo (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8462.png"
+    },
+    {
+        "id": "8463",
+        "name": "Tarra | jackasmo (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8463.png"
+    },
+    {
+        "id": "8464",
+        "name": "Tarra | jackasmo (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8464.png"
+    },
+    {
+        "id": "8465",
+        "name": "Tarra | s-chilla | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8465.png"
+    },
+    {
+        "id": "8466",
+        "name": "Tarra | s-chilla (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8466.png"
+    },
+    {
+        "id": "8467",
+        "name": "Tarra | s-chilla (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8467.png"
+    },
+    {
+        "id": "8468",
+        "name": "Tarra | s-chilla (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8468.png"
+    },
+    {
+        "id": "8469",
+        "name": "Tarra | zeRRoFIX | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8469.png"
+    },
+    {
+        "id": "8470",
+        "name": "Tarra | zeRRoFIX (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8470.png"
+    },
+    {
+        "id": "8471",
+        "name": "Tarra | zeRRoFIX (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8471.png"
+    },
+    {
+        "id": "8472",
+        "name": "Tarra | zeRRoFIX (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8472.png"
+    },
+    {
+        "id": "8473",
+        "name": "Tarra | stanislaw | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8473.png"
+    },
+    {
+        "id": "8474",
+        "name": "Tarra | stanislaw (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8474.png"
+    },
+    {
+        "id": "8475",
+        "name": "Tarra | stanislaw (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8475.png"
+    },
+    {
+        "id": "8476",
+        "name": "Tarra | stanislaw (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8476.png"
+    },
+    {
+        "id": "8477",
+        "name": "Tarra | Sonic | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8477.png"
+    },
+    {
+        "id": "8478",
+        "name": "Tarra | Sonic (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8478.png"
+    },
+    {
+        "id": "8479",
+        "name": "Tarra | Sonic (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8479.png"
+    },
+    {
+        "id": "8480",
+        "name": "Tarra | Sonic (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8480.png"
+    },
+    {
+        "id": "8481",
+        "name": "Tarra | JBa | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8481.png"
+    },
+    {
+        "id": "8482",
+        "name": "Tarra | JBa (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8482.png"
+    },
+    {
+        "id": "8483",
+        "name": "Tarra | JBa (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8483.png"
+    },
+    {
+        "id": "8484",
+        "name": "Tarra | JBa (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8484.png"
+    },
+    {
+        "id": "8485",
+        "name": "Tarra | phzy | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8485.png"
+    },
+    {
+        "id": "8486",
+        "name": "Tarra | phzy (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8486.png"
+    },
+    {
+        "id": "8487",
+        "name": "Tarra | phzy (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8487.png"
+    },
+    {
+        "id": "8488",
+        "name": "Tarra | phzy (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8488.png"
+    },
+    {
+        "id": "8489",
+        "name": "Tarra | susp | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8489.png"
+    },
+    {
+        "id": "8490",
+        "name": "Tarra | susp (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8490.png"
+    },
+    {
+        "id": "8491",
+        "name": "Tarra | susp (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8491.png"
+    },
+    {
+        "id": "8492",
+        "name": "Tarra | susp (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8492.png"
+    },
+    {
+        "id": "8493",
+        "name": "Tarra | Summer | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8493.png"
+    },
+    {
+        "id": "8494",
+        "name": "Tarra | Summer (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8494.png"
+    },
+    {
+        "id": "8495",
+        "name": "Tarra | Summer (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8495.png"
+    },
+    {
+        "id": "8496",
+        "name": "Tarra | Summer (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8496.png"
+    },
+    {
+        "id": "8497",
+        "name": "Tarra | ChildKing | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8497.png"
+    },
+    {
+        "id": "8498",
+        "name": "Tarra | ChildKing (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8498.png"
+    },
+    {
+        "id": "8499",
+        "name": "Tarra | ChildKing (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8499.png"
+    },
+    {
+        "id": "8500",
+        "name": "Tarra | ChildKing (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8500.png"
+    },
+    {
+        "id": "8501",
+        "name": "Tarra | somebody | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8501.png"
+    },
+    {
+        "id": "8502",
+        "name": "Tarra | somebody (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8502.png"
+    },
+    {
+        "id": "8503",
+        "name": "Tarra | somebody (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8503.png"
+    },
+    {
+        "id": "8504",
+        "name": "Tarra | somebody (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8504.png"
+    },
+    {
+        "id": "8505",
+        "name": "Tarra | L1haNg | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8505.png"
+    },
+    {
+        "id": "8506",
+        "name": "Tarra | L1haNg (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8506.png"
+    },
+    {
+        "id": "8507",
+        "name": "Tarra | L1haNg (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8507.png"
+    },
+    {
+        "id": "8508",
+        "name": "Tarra | L1hang (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8508.png"
+    },
+    {
+        "id": "8509",
+        "name": "Tarra | Kaze | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8509.png"
+    },
+    {
+        "id": "8510",
+        "name": "Tarra | Kaze (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8510.png"
+    },
+    {
+        "id": "8511",
+        "name": "Tarra | Kaze (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8511.png"
+    },
+    {
+        "id": "8512",
+        "name": "Tarra | Kaze (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8512.png"
+    },
+    {
+        "id": "8513",
+        "name": "Tarra | VINI | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8513.png"
+    },
+    {
+        "id": "8514",
+        "name": "Tarra | VINI (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8514.png"
+    },
+    {
+        "id": "8515",
+        "name": "Tarra | VINI (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8515.png"
+    },
+    {
+        "id": "8516",
+        "name": "Tarra | VINI (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8516.png"
+    },
+    {
+        "id": "8517",
+        "name": "Tarra | felps | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8517.png"
+    },
+    {
+        "id": "8518",
+        "name": "Tarra | felps (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8518.png"
+    },
+    {
+        "id": "8519",
+        "name": "Tarra | felps (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8519.png"
+    },
+    {
+        "id": "8520",
+        "name": "Tarra | felps (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8520.png"
+    },
+    {
+        "id": "8521",
+        "name": "Tarra | TRY | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8521.png"
+    },
+    {
+        "id": "8522",
+        "name": "Tarra | TRY (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8522.png"
+    },
+    {
+        "id": "8523",
+        "name": "Tarra | TRY (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8523.png"
+    },
+    {
+        "id": "8524",
+        "name": "Tarra | TRY (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8524.png"
+    },
+    {
+        "id": "8525",
+        "name": "Tarra | decenty | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8525.png"
+    },
+    {
+        "id": "8526",
+        "name": "Tarra | decenty (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8526.png"
+    },
+    {
+        "id": "8527",
+        "name": "Tarra | decenty (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8527.png"
+    },
+    {
+        "id": "8528",
+        "name": "Tarra | decenty (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8528.png"
+    },
+    {
+        "id": "8529",
+        "name": "Tarra | noway | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8529.png"
+    },
+    {
+        "id": "8530",
+        "name": "Tarra | noway (hile) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8530.png"
+    },
+    {
+        "id": "8531",
+        "name": "Tarra | noway (holo) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8531.png"
+    },
+    {
+        "id": "8532",
+        "name": "Tarra | noway (kulta) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8532.png"
+    },
+    {
+        "id": "8533",
+        "name": "Tarra | chopper (mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8533.png"
+    },
+    {
+        "id": "8534",
+        "name": "Tarra | chopper (hile, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8534.png"
+    },
+    {
+        "id": "8535",
+        "name": "Tarra | chopper (holo, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8535.png"
+    },
+    {
+        "id": "8536",
+        "name": "Tarra | chopper (kulta, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8536.png"
+    },
+    {
+        "id": "8537",
+        "name": "Tarra | magixx (mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8537.png"
+    },
+    {
+        "id": "8538",
+        "name": "Tarra | magixx (hile, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8538.png"
+    },
+    {
+        "id": "8539",
+        "name": "Tarra | magixx (holo, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8539.png"
+    },
+    {
+        "id": "8540",
+        "name": "Tarra | magixx (kulta, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8540.png"
+    },
+    {
+        "id": "8541",
+        "name": "Tarra | donk (mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8541.png"
+    },
+    {
+        "id": "8542",
+        "name": "Tarra | donk (hile, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8542.png"
+    },
+    {
+        "id": "8543",
+        "name": "Tarra | donk (holo, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8543.png"
+    },
+    {
+        "id": "8544",
+        "name": "Tarra | donk (kulta, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8544.png"
+    },
+    {
+        "id": "8545",
+        "name": "Tarra | sh1ro (mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8545.png"
+    },
+    {
+        "id": "8546",
+        "name": "Tarra | sh1ro (hile, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8546.png"
+    },
+    {
+        "id": "8547",
+        "name": "Tarra | sh1ro (holo, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8547.png"
+    },
+    {
+        "id": "8548",
+        "name": "Tarra | sh1ro (kulta, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8548.png"
+    },
+    {
+        "id": "8549",
+        "name": "Tarra | zont1x (mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8549.png"
+    },
+    {
+        "id": "8550",
+        "name": "Tarra | zont1x (hile, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8550.png"
+    },
+    {
+        "id": "8551",
+        "name": "Tarra | zont1x (holo, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8551.png"
+    },
+    {
+        "id": "8552",
+        "name": "Tarra | zont1x (kulta, mestari) | Shanghai 2024",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-8552.png"
     }
 ]
