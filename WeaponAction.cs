@@ -37,6 +37,9 @@ namespace WeaponPaints
 
 					weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)newDefIndex.Key;
 					weapon.AttributeManager.Item.EntityQuality = 3;
+					
+					weapon.AttributeManager.Item.AttributeList.Attributes.RemoveAll();
+					weapon.AttributeManager.Item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 					break;
 				}
 				default:
@@ -96,9 +99,8 @@ namespace WeaponPaints
 			weapon.AttributeManager.Item.AttributeList.Attributes.RemoveAll();
 			weapon.AttributeManager.Item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 			
-			weapon.AttributeManager.Item.ItemID = 16384;
-			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
-			weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
+			UpdatePlayerEconItemId(weapon.AttributeManager.Item);
+
 			weapon.AttributeManager.Item.CustomName = weaponInfo.Nametag;
 			weapon.FallbackPaintKit = weaponInfo.Paint;
 			
@@ -373,13 +375,19 @@ namespace WeaponPaints
 						return;
 
 					item.ItemDefinitionIndex = gloveId;
-					item.ItemIDLow = 16384 & 0xFFFFFFFF;
-					item.ItemIDHigh = 16384;
+					
+					UpdatePlayerEconItemId(item);
 
+					item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weaponInfo.Paint);
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture seed", weaponInfo.Seed);
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture wear", weaponInfo.Wear);
 
+					item.AttributeList.Attributes.RemoveAll();
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture prefab", weaponInfo.Paint);
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture seed", weaponInfo.Seed);
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture wear", weaponInfo.Wear);
+					
 					item.Initialized = true;
 
 					SetBodygroup(pawn, "default_gloves", 1);
