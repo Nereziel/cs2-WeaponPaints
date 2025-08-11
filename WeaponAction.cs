@@ -357,9 +357,14 @@ namespace WeaponPaints
 				pawn.SetModel(model);
 			}
 
+			CEconItemView item = pawn.EconGloves;
+
+			item.NetworkedDynamicAttributes.Attributes.RemoveAll();
+			item.AttributeList.Attributes.RemoveAll();
+
+
 			Instance.AddTimer(0.08f, () =>
-			{
-				CEconItemView item = pawn.EconGloves;
+			{	
 				try
 				{
 					if (!player.IsValid)
