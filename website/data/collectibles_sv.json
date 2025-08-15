@@ -561,7 +561,7 @@
     },
     {
         "id": "990",
-        "name": "Semifinalist at IEM Rio 2022",
+        "name": "Semifinalist i IEM Rio 2022",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-990.png"
     },
     {
@@ -1938,6 +1938,251 @@
         "id": "5022",
         "name": "Medalj för säsong två av Premier",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5022.png"
+    },
+    {
+        "id": "5111",
+        "name": "Mynt: Austin 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5111.png"
+    },
+    {
+        "id": "5112",
+        "name": "Silvermynt: Austin 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5112.png"
+    },
+    {
+        "id": "5113",
+        "name": "Guldmynt: Austin 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5113.png"
+    },
+    {
+        "id": "5114",
+        "name": "Diamantmynt: Austin 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5114.png"
+    },
+    {
+        "id": "5127",
+        "name": "Mästare vid BLAST.tv Austin 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5127.png"
+    },
+    {
+        "id": "5128",
+        "name": "Finalist vid BLAST.tv Austin 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5128.png"
+    },
+    {
+        "id": "5129",
+        "name": "Semifinalist vid BLAST.tv Austin 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5129.png"
+    },
+    {
+        "id": "5130",
+        "name": "Kvartsfinalist vid BLAST.tv Austin 2025",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5130.png"
+    },
+    {
+        "id": "5135",
+        "name": "Banmynt för Agency",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5135.png"
+    },
+    {
+        "id": "5136",
+        "name": "Banmynt för Jura",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5136.png"
+    },
+    {
+        "id": "5137",
+        "name": "Banmynt för Grail",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5137.png"
+    },
+    {
+        "id": "5138",
+        "name": "Banmynt för Dogtown",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5138.png"
+    },
+    {
+        "id": "5139",
+        "name": "Banmynt för Brewery",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5139.png"
+    },
+    {
+        "id": "5140",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5140.png"
+    },
+    {
+        "id": "5141",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5141.png"
+    },
+    {
+        "id": "5142",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5142.png"
+    },
+    {
+        "id": "5143",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5143.png"
+    },
+    {
+        "id": "5144",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5144.png"
+    },
+    {
+        "id": "5145",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5145.png"
+    },
+    {
+        "id": "5146",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5146.png"
+    },
+    {
+        "id": "5147",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5147.png"
+    },
+    {
+        "id": "5148",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5148.png"
+    },
+    {
+        "id": "5149",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5149.png"
+    },
+    {
+        "id": "5150",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5150.png"
+    },
+    {
+        "id": "5151",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5151.png"
+    },
+    {
+        "id": "5152",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5152.png"
+    },
+    {
+        "id": "5153",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5153.png"
+    },
+    {
+        "id": "5154",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5154.png"
+    },
+    {
+        "id": "5155",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5155.png"
+    },
+    {
+        "id": "5156",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5156.png"
+    },
+    {
+        "id": "5157",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5157.png"
+    },
+    {
+        "id": "5158",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5158.png"
+    },
+    {
+        "id": "5159",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5159.png"
+    },
+    {
+        "id": "5160",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5160.png"
+    },
+    {
+        "id": "5161",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5161.png"
+    },
+    {
+        "id": "5162",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5162.png"
+    },
+    {
+        "id": "5163",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5163.png"
+    },
+    {
+        "id": "5164",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5164.png"
+    },
+    {
+        "id": "5165",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5165.png"
+    },
+    {
+        "id": "5166",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5166.png"
+    },
+    {
+        "id": "5167",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5167.png"
+    },
+    {
+        "id": "5168",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5168.png"
+    },
+    {
+        "id": "5169",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5169.png"
+    },
+    {
+        "id": "5170",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5170.png"
+    },
+    {
+        "id": "5171",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5171.png"
+    },
+    {
+        "id": "5172",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5172.png"
+    },
+    {
+        "id": "5173",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5173.png"
+    },
+    {
+        "id": "5174",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5174.png"
+    },
+    {
+        "id": "5175",
+        "name": "Medalj för säsong tre av Premier",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/collectible-5175.png"
     },
     {
         "id": "6001",

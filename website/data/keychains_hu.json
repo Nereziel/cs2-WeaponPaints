@@ -163,5 +163,165 @@
         "id": "33",
         "name": "Talizmán | Kicsiláb",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"
+    },
+    {
+        "id": "202521",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | chopper dupla ölés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper2kvsmouzonmirage1.png"
+    },
+    {
+        "id": "2025100",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | 100 kelléksebzés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopperdiesfrom100byutilityvsmouzonmirage.png"
+    },
+    {
+        "id": "202511",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | 1v2 megtagadva",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopperwins1v1vsbrollanonmiragemouz.png"
+    },
+    {
+        "id": "20253",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | chopper tripla belépő",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper3ktowinmap.png"
+    },
+    {
+        "id": "20252",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Dupla pisztolyos ölés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk2kvsmouzonmirage.png"
+    },
+    {
+        "id": "2025311",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Tripla ölés és hatástalanítás",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk3with1v1win.png"
+    },
+    {
+        "id": "202541",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Jimpphat négyes ölés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat4kvsspiritonmirage1.png"
+    },
+    {
+        "id": "2025",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Cserbenhagyásos lövöldözés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphatrunninghsvsspiritonmirage.png"
+    },
+    {
+        "id": "202512",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | 1v2 szóló",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_magix1v2tosecureot.png"
+    },
+    {
+        "id": "2025413",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Szóló Király",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_magix4kand1v3winvsmouzonmirage.png"
+    },
+    {
+        "id": "20251",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Gyors reakciók",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_shirofastawpflickvsmouzonmirage1.png"
+    },
+    {
+        "id": "202531",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Két gránát a képébe",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_spinxnadedto3hpvsspiritonmirage1.png"
+    },
+    {
+        "id": "20254",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Spinx négyes ölés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_spinxinsane4kclutchvsspiritonmirage.png"
+    },
+    {
+        "id": "202522",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Brollan dupla ölés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollan2kvsspiritondust2.png"
+    },
+    {
+        "id": "202532",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Brollan tripla ölés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollan3kvsspiritondust2.png"
+    },
+    {
+        "id": "202510002",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | A vasember",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollandiesfrom100to0fromutilityvsspiritondust2.png"
+    },
+    {
+        "id": "2025392",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | A repülő golyószóró",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper3kmp9vsspiritondust2.png"
+    },
+    {
+        "id": "20254112",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Majdnem ász",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk4kandfailed1v1vsmouzondust2.png"
+    },
+    {
+        "id": "202542",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Itt vagyok mögöttetek",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat4konretakevspsiritondust2.png"
+    },
+    {
+        "id": "2025122",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | AWP megtagadva",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_shirothrowawayawpin1v2ondust2vsmouz.png"
+    },
+    {
+        "id": "202529",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | 3-2-1-RAJTA!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat2kmp9vsspiritonnuke.png"
+    },
+    {
+        "id": "202513",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | dgt majdnem-szóló",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dgtfailed1v3vsfuriaonnuke.png"
+    },
+    {
+        "id": "20259",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Tec-9 mester",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_fallentec9mastervspainonnuke.png"
+    },
+    {
+        "id": "2025112",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | dav1deuS dupla Anubis ölés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dav1deus1v2vsfuriaonanubis.png"
+    },
+    {
+        "id": "2025113",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Leszólózás",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dav1deus1v3vsfuriaonanubis.png"
+    },
+    {
+        "id": "2025910",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Deagle felsőbbrendűség",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_910doubledeaglevsfazeonmirage.png"
+    },
+    {
+        "id": "20259102",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | 2 pisztolyos fejlövés",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9102kpistolvsfazeonmirage.png"
+    },
+    {
+        "id": "20259103",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | 910 tripla ölés FaZe ellen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9103ktowinmapvsfazeonmirage.png"
+    },
+    {
+        "id": "2025210",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | A futó MAC-10",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_karrigan2kmac10vsmongolzonanubis.png"
+    },
+    {
+        "id": "20259101",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Egy ölés elég",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9101kvspainonmirage.png"
+    },
+    {
+        "id": "2025132",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Félj tőle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_mzinhoclose1v3vsvitalityondust2.png"
+    },
+    {
+        "id": "2025123",
+        "name": "Souvenir Charm | Austin 2025 Kiemelt pillanat | Próba, egy-kettő-három",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_flameztesting123vsthemongolzoninferno.png"
     }
 ]
