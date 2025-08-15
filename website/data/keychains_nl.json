@@ -163,5 +163,165 @@
         "id": "33",
         "name": "Hangertje | Lil' Squatch",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"
+    },
+    {
+        "id": "202521",
+        "name": "Souvenir Charm | Austin 2025-highlight | Dubbele kill chopper",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper2kvsmouzonmirage1.png"
+    },
+    {
+        "id": "2025100",
+        "name": "Souvenir Charm | Austin 2025-highlight | 100 schade door granaten",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopperdiesfrom100byutilityvsmouzonmirage.png"
+    },
+    {
+        "id": "202511",
+        "name": "Souvenir Charm | Austin 2025-highlight | Geen 1-tegen-2-clutch",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopperwins1v1vsbrollanonmiragemouz.png"
+    },
+    {
+        "id": "20253",
+        "name": "Souvenir Charm | Austin 2025-highlight | choppers hattrick",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper3ktowinmap.png"
+    },
+    {
+        "id": "20252",
+        "name": "Souvenir Charm | Austin 2025-highlight | Dubbele pistoolkill",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk2kvsmouzonmirage.png"
+    },
+    {
+        "id": "2025311",
+        "name": "Souvenir Charm | Austin 2025-highlight | Drie kills en een ontmanteling",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk3with1v1win.png"
+    },
+    {
+        "id": "202541",
+        "name": "Souvenir Charm | Austin 2025-highlight | Jimpphats vierdubbele kill",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat4kvsspiritonmirage1.png"
+    },
+    {
+        "id": "2025",
+        "name": "Souvenir Charm | Austin 2025-highlight | Rennen en schieten",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphatrunninghsvsspiritonmirage.png"
+    },
+    {
+        "id": "202512",
+        "name": "Souvenir Charm | Austin 2025-highlight | 1-tegen-2-clutch",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_magix1v2tosecureot.png"
+    },
+    {
+        "id": "2025413",
+        "name": "Souvenir Charm | Austin 2025-highlight | Koning Clutch",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_magix4kand1v3winvsmouzonmirage.png"
+    },
+    {
+        "id": "20251",
+        "name": "Souvenir Charm | Austin 2025-highlight | Bliksemsnel",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_shirofastawpflickvsmouzonmirage1.png"
+    },
+    {
+        "id": "202531",
+        "name": "Souvenir Charm | Austin 2025-highlight | Granatenkopper",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_spinxnadedto3hpvsspiritonmirage1.png"
+    },
+    {
+        "id": "20254",
+        "name": "Souvenir Charm | Austin 2025-highlight | Spinx' vierdubbele kill",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_spinxinsane4kclutchvsspiritonmirage.png"
+    },
+    {
+        "id": "202522",
+        "name": "Souvenir Charm | Austin 2025-highlight | Brollans dubbele kill",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollan2kvsspiritondust2.png"
+    },
+    {
+        "id": "202532",
+        "name": "Souvenir Charm | Austin 2025-highlight | Brollans driedubbele kill",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollan3kvsspiritondust2.png"
+    },
+    {
+        "id": "202510002",
+        "name": "Souvenir Charm | Austin 2025-highlight | Wanhoopsdaad",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollandiesfrom100to0fromutilityvsspiritondust2.png"
+    },
+    {
+        "id": "2025392",
+        "name": "Souvenir Charm | Austin 2025-highlight | Luchtaanval",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper3kmp9vsspiritondust2.png"
+    },
+    {
+        "id": "20254112",
+        "name": "Souvenir Charm | Austin 2025-highlight | Bijna de aas",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk4kandfailed1v1vsmouzondust2.png"
+    },
+    {
+        "id": "202542",
+        "name": "Souvenir Charm | Austin 2025-highlight | Achter je",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat4konretakevspsiritondust2.png"
+    },
+    {
+        "id": "2025122",
+        "name": "Souvenir Charm | Austin 2025-highlight | Nee, AWP",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_shirothrowawayawpin1v2ondust2vsmouz.png"
+    },
+    {
+        "id": "202529",
+        "name": "Souvenir Charm | Austin 2025-highlight | 3, 2, 1, GO!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat2kmp9vsspiritonnuke.png"
+    },
+    {
+        "id": "202513",
+        "name": "Souvenir Charm | Austin 2025-highlight | dgt raakt de clutch kwijt",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dgtfailed1v3vsfuriaonnuke.png"
+    },
+    {
+        "id": "20259",
+        "name": "Souvenir Charm | Austin 2025-highlight | Meester van de Tec-9",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_fallentec9mastervspainonnuke.png"
+    },
+    {
+        "id": "2025112",
+        "name": "Souvenir Charm | Austin 2025-highlight | dav1deuS' dubbele kill op Anubis",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dav1deus1v2vsfuriaonanubis.png"
+    },
+    {
+        "id": "2025113",
+        "name": "Souvenir Charm | Austin 2025-highlight | Geen toeval",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dav1deus1v3vsfuriaonanubis.png"
+    },
+    {
+        "id": "2025910",
+        "name": "Souvenir Charm | Austin 2025-highlight | Desert Eagles slaan toe",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_910doubledeaglevsfazeonmirage.png"
+    },
+    {
+        "id": "20259102",
+        "name": "Souvenir Charm | Austin 2025-highlight | 2 headshots met pistolen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9102kpistolvsfazeonmirage.png"
+    },
+    {
+        "id": "20259103",
+        "name": "Souvenir Charm | Austin 2025-highlight | 910's driedubbele kill vs. FaZe",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9103ktowinmapvsfazeonmirage.png"
+    },
+    {
+        "id": "2025210",
+        "name": "Souvenir Charm | Austin 2025-highlight | De rennende MAC-10",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_karrigan2kmac10vsmongolzonanubis.png"
+    },
+    {
+        "id": "20259101",
+        "name": "Souvenir Charm | Austin 2025-highlight | Eén kill volstaat",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9101kvspainonmirage.png"
+    },
+    {
+        "id": "2025132",
+        "name": "Souvenir Charm | Austin 2025-highlight | Zo dichtbij",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_mzinhoclose1v3vsvitalityondust2.png"
+    },
+    {
+        "id": "2025123",
+        "name": "Souvenir Charm | Austin 2025-highlight | Test, 1, 2, 3",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_flameztesting123vsthemongolzoninferno.png"
     }
 ]

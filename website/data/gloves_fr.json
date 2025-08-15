@@ -6,18 +6,6 @@
         "paint_name": "Gloves | Default"
     },
     {
-        "weapon_defindex": 5030,
-        "paint": "10018",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
-        "paint_name": "Gants de sport (★) | Supraconducteur"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "10044",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
-        "paint_name": "Gants de pilote (★) | Vert bolide"
-    },
-    {
         "weapon_defindex": 5032,
         "paint": "10010",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/leather_handwraps-10010.png",
@@ -228,6 +216,12 @@
         "paint_name": "Gants de pilote (★) | Smoking"
     },
     {
+        "weapon_defindex": 5031,
+        "paint": "10044",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10044.png",
+        "paint_name": "Gants de pilote (★) | Vert bolide"
+    },
+    {
         "weapon_defindex": 5034,
         "paint": "10030",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10030.png",
@@ -334,6 +328,12 @@
         "paint": "10076",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10076.png",
         "paint_name": "Gants de sport (★) | Nocts"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "10018",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-10018.png",
+        "paint_name": "Gants de sport (★) | Supraconducteur"
     },
     {
         "weapon_defindex": 5030,

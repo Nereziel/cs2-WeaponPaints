@@ -163,5 +163,165 @@
         "id": "33",
         "name": "Anheng | Lil' Squatch",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"
+    },
+    {
+        "id": "202521",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | chopper – dobbeltdrap",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper2kvsmouzonmirage1.png"
+    },
+    {
+        "id": "2025100",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | 100 skade fra granater",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopperdiesfrom100byutilityvsmouzonmirage.png"
+    },
+    {
+        "id": "202511",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | 1 mot 2 avverget",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopperwins1v1vsbrollanonmiragemouz.png"
+    },
+    {
+        "id": "20253",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | chopper – trippelåpning",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper3ktowinmap.png"
+    },
+    {
+        "id": "20252",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Dobbelt pistoldrap",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk2kvsmouzonmirage.png"
+    },
+    {
+        "id": "2025311",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Tre drap og en desarmering",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk3with1v1win.png"
+    },
+    {
+        "id": "202541",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Jimpphat – firedobbelt drap",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat4kvsspiritonmirage1.png"
+    },
+    {
+        "id": "2025",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Gønner på",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphatrunninghsvsspiritonmirage.png"
+    },
+    {
+        "id": "202512",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Clutch 1 mot 2",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_magix1v2tosecureot.png"
+    },
+    {
+        "id": "2025413",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Kløtsjekongen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_magix4kand1v3winvsmouzonmirage.png"
+    },
+    {
+        "id": "20251",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Kjappe reaksjonsevner",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_shirofastawpflickvsmouzonmirage1.png"
+    },
+    {
+        "id": "202531",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | To granater til hodet",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_spinxnadedto3hpvsspiritonmirage1.png"
+    },
+    {
+        "id": "20254",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Spinx – firedobbelt drap",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_spinxinsane4kclutchvsspiritonmirage.png"
+    },
+    {
+        "id": "202522",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Brollan – dobbeltdrap",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollan2kvsspiritondust2.png"
+    },
+    {
+        "id": "202532",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Brollan – trippeldrap",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollan3kvsspiritondust2.png"
+    },
+    {
+        "id": "202510002",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Jernmannen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollandiesfrom100to0fromutilityvsspiritondust2.png"
+    },
+    {
+        "id": "2025392",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Flygende skuddveksling",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper3kmp9vsspiritondust2.png"
+    },
+    {
+        "id": "20254112",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Nesten ess",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk4kandfailed1v1vsmouzondust2.png"
+    },
+    {
+        "id": "202542",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Jeg er rett bak deg",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat4konretakevspsiritondust2.png"
+    },
+    {
+        "id": "2025122",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | AWP nektet",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_shirothrowawayawpin1v2ondust2vsmouz.png"
+    },
+    {
+        "id": "202529",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | 3, 2, 1, GÅ!",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat2kmp9vsspiritonnuke.png"
+    },
+    {
+        "id": "202513",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | dgt – nesten kløtsj",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dgtfailed1v3vsfuriaonnuke.png"
+    },
+    {
+        "id": "20259",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Tec-9-mesteren",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_fallentec9mastervspainonnuke.png"
+    },
+    {
+        "id": "2025112",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | dav1deuS – dobbeltdrap på Anubis",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dav1deus1v2vsfuriaonanubis.png"
+    },
+    {
+        "id": "2025113",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Enda en stengt dør",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dav1deus1v3vsfuriaonanubis.png"
+    },
+    {
+        "id": "2025910",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Overlegen Deagle",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_910doubledeaglevsfazeonmirage.png"
+    },
+    {
+        "id": "20259102",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | 2 hodeskudd med pistol",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9102kpistolvsfazeonmirage.png"
+    },
+    {
+        "id": "20259103",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | 910 – trippeldrap mot FaZe",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9103ktowinmapvsfazeonmirage.png"
+    },
+    {
+        "id": "2025210",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Løpende MAC-10",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_karrigan2kmac10vsmongolzonanubis.png"
+    },
+    {
+        "id": "20259101",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Ett drap er nok",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9101kvspainonmirage.png"
+    },
+    {
+        "id": "2025132",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Frykt ham",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_mzinhoclose1v3vsvitalityondust2.png"
+    },
+    {
+        "id": "2025123",
+        "name": "Souvenir Charm | Høydepunkt – Austin 2025 | Tester 1-2-3",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_flameztesting123vsthemongolzoninferno.png"
     }
 ]

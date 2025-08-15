@@ -163,5 +163,165 @@
         "id": "33",
         "name": "挂件 | 小脚怪",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/keychain-33.png"
+    },
+    {
+        "id": "202521",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 双杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper2kvsmouzonmirage1.png"
+    },
+    {
+        "id": "2025100",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 天雷地火无处逃",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopperdiesfrom100byutilityvsmouzonmirage.png"
+    },
+    {
+        "id": "202511",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 1v2残局大超关键",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopperwins1v1vsbrollanonmiragemouz.png"
+    },
+    {
+        "id": "20253",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 关键3杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper3ktowinmap.png"
+    },
+    {
+        "id": "20252",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 手枪双杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk2kvsmouzonmirage.png"
+    },
+    {
+        "id": "2025311",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 三杀并拆除炸弹",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk3with1v1win.png"
+    },
+    {
+        "id": "202541",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 四杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat4kvsspiritonmirage1.png"
+    },
+    {
+        "id": "2025",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 跑打",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphatrunninghsvsspiritonmirage.png"
+    },
+    {
+        "id": "202512",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 1v2残局",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_magix1v2tosecureot.png"
+    },
+    {
+        "id": "2025413",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 残局王者",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_magix4kand1v3winvsmouzonmirage.png"
+    },
+    {
+        "id": "20251",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 反应又快又准",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_shirofastawpflickvsmouzonmirage1.png"
+    },
+    {
+        "id": "202531",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 两颗满雷炸丝血",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_spinxnadedto3hpvsspiritonmirage1.png"
+    },
+    {
+        "id": "20254",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 四杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_spinxinsane4kclutchvsspiritonmirage.png"
+    },
+    {
+        "id": "202522",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 双杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollan2kvsspiritondust2.png"
+    },
+    {
+        "id": "202532",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 3杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollan3kvsspiritondust2.png"
+    },
+    {
+        "id": "202510002",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 天雷地火无处藏",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_brollandiesfrom100to0fromutilityvsspiritondust2.png"
+    },
+    {
+        "id": "2025392",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 吹风机王朝跳爆",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_chopper3kmp9vsspiritondust2.png"
+    },
+    {
+        "id": "20254112",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 可惜差点五杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_donk4kandfailed1v1vsmouzondust2.png"
+    },
+    {
+        "id": "202542",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 露就秒",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat4konretakevspsiritondust2.png"
+    },
+    {
+        "id": "2025122",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 我用不了你也别用",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_shirothrowawayawpin1v2ondust2vsmouz.png"
+    },
+    {
+        "id": "202529",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 3，2，1，冲！",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_jimpphat2kmp9vsspiritonnuke.png"
+    },
+    {
+        "id": "202513",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 可惜！就差一点",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dgtfailed1v3vsfuriaonnuke.png"
+    },
+    {
+        "id": "20259",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | TEC9大师",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_fallentec9mastervspainonnuke.png"
+    },
+    {
+        "id": "2025112",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 双杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dav1deus1v2vsfuriaonanubis.png"
+    },
+    {
+        "id": "2025113",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 精彩残局",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_dav1deus1v3vsfuriaonanubis.png"
+    },
+    {
+        "id": "2025910",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 至尊沙鹰",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_910doubledeaglevsfazeonmirage.png"
+    },
+    {
+        "id": "20259102",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 手枪双爆",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9102kpistolvsfazeonmirage.png"
+    },
+    {
+        "id": "20259103",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 三杀",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9103ktowinmapvsfazeonmirage.png"
+    },
+    {
+        "id": "2025210",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 跑打吹风机",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_karrigan2kmac10vsmongolzonanubis.png"
+    },
+    {
+        "id": "20259101",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 单杀但退敌",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_9101kvspainonmirage.png"
+    },
+    {
+        "id": "2025132",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 致命空枪",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_mzinhoclose1v3vsvitalityondust2.png"
+    },
+    {
+        "id": "2025123",
+        "name": "Souvenir Charm | 2025年奥斯汀锦标赛高光时刻 | 敢于尝试新战",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/highlight-aus2025_flameztesting123vsthemongolzoninferno.png"
     }
 ]
