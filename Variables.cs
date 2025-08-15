@@ -25,7 +25,7 @@ public partial class WeaponPaints
 		{"weapon_g3sg1", "G3SG1"},
 		{"weapon_galilar", "Galil AR"},
 		{"weapon_m249", "M249"},
-		{"weapon_m4a1", "M4A1"},
+		{"weapon_m4a1", "M4A4"},
 		{"weapon_mac10", "MAC-10"},
 		{"weapon_p90", "P90"},
 		{"weapon_mp5sd", "MP5-SD"},

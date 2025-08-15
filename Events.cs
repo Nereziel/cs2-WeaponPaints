@@ -13,7 +13,7 @@ namespace WeaponPaints
 		
 		[GameEventHandler]
 		public HookResult OnClientFullConnect(EventPlayerConnectFull @event, GameEventInfo info)
-		{
+     	{
 			CCSPlayerController? player = @event.Userid;
 
 			if (player is null || !player.IsValid || player.IsBot ||
@@ -142,7 +142,10 @@ namespace WeaponPaints
 
 			GivePlayerMusicKit(player);
 			GivePlayerAgent(player);
-			GivePlayerGloves(player);
+			Server.NextFrame(() =>
+			{
+				GivePlayerGloves(player);
+			});
 			GivePlayerPin(player);
 
 			return HookResult.Continue;
