@@ -162,17 +162,16 @@ public partial class WeaponPaints
 			
 		if (string.IsNullOrEmpty(args))
 		{
-			Console.WriteLine("[WeaponPaints] Usage: wp_refresh <player_name|steamid>");
+			Console.WriteLine("[WeaponPaints] Usage: wp_refresh <steamid64|all>");
 			Console.WriteLine("[WeaponPaints] Examples:");
-			Console.WriteLine("[WeaponPaints]   wp_refresh - Refresh skins for all players");
-			Console.WriteLine("[WeaponPaints]   wp_refresh PlayerName - Refresh skins for a specific player");
-			Console.WriteLine("[WeaponPaints]   wp_refresh STEAM_1:0:123456789 - Refresh skins by SteamID");
+			Console.WriteLine("[WeaponPaints]   wp_refresh all - Refresh skins for all players");
+			Console.WriteLine("[WeaponPaints]   wp_refresh 76561198012345678 - Refresh skins by SteamID64");
 			return;
 		}
 
 		var targetPlayers = new List<CCSPlayerController>();
 
-		if (args.ToLower() == "")
+		if (args.Equals("all", StringComparison.OrdinalIgnoreCase))
 		{
 			targetPlayers = Utilities.GetPlayers().Where(p => 
 				p != null && p.IsValid && !p.IsBot && p.UserId != null).ToList();
@@ -189,12 +188,11 @@ public partial class WeaponPaints
 		{
 			var foundPlayer = Utilities.GetPlayers().FirstOrDefault(p => 
 				p != null && p.IsValid && !p.IsBot && p.UserId != null && 
-				(p.PlayerName?.Contains(args, StringComparison.OrdinalIgnoreCase) == true || 
-				 p.SteamID.ToString() == args));
+				 p.SteamID.ToString() == args);
 
 			if (foundPlayer == null)
 			{
-				Console.WriteLine($"[WeaponPaints] Player '{args}' not found.");
+				Console.WriteLine($"[WeaponPaints] Player with SteamID64 '{args}' not found.");
 				return;
 			}
 
@@ -242,6 +240,7 @@ public partial class WeaponPaints
 
 		Console.WriteLine("[WeaponPaints] Refresh process completed.");
 	}
+
 
 	private void OnCommandStattrak(CCSPlayerController? player, CommandInfo commandInfo)
 	{
