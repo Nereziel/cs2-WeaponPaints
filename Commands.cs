@@ -147,6 +147,100 @@ public partial class WeaponPaints
 				});
 			});
 		}
+
+		AddCommand("wp_refresh", "Admin refresh player skins", (player, info) =>
+		{
+			OnCommandSkinRefresh(player, info);
+		});
+	}
+
+	private void OnCommandSkinRefresh(CCSPlayerController? player, CommandInfo command)
+	{
+		if (!Config.Additional.CommandWpEnabled || !Config.Additional.SkinEnabled || !_gBCommandsAllowed) return;
+
+		var args = command.GetArg(1);
+			
+		if (string.IsNullOrEmpty(args))
+		{
+			Console.WriteLine("[WeaponPaints] Usage: wp_refresh <player_name|steamid>");
+			Console.WriteLine("[WeaponPaints] Examples:");
+			Console.WriteLine("[WeaponPaints]   wp_refresh - Refresh skins for all players");
+			Console.WriteLine("[WeaponPaints]   wp_refresh PlayerName - Refresh skins for a specific player");
+			Console.WriteLine("[WeaponPaints]   wp_refresh STEAM_1:0:123456789 - Refresh skins by SteamID");
+			return;
+		}
+
+		var targetPlayers = new List<CCSPlayerController>();
+
+		if (args.ToLower() == "")
+		{
+			targetPlayers = Utilities.GetPlayers().Where(p => 
+				p != null && p.IsValid && !p.IsBot && p.UserId != null).ToList();
+			
+			if (targetPlayers.Count == 0)
+			{
+				Console.WriteLine("[WeaponPaints] No players connected to refresh.");
+				return;
+			}
+			
+			Console.WriteLine($"[WeaponPaints] Refreshing skins for {targetPlayers.Count} players...");
+		}
+		else
+		{
+			var foundPlayer = Utilities.GetPlayers().FirstOrDefault(p => 
+				p != null && p.IsValid && !p.IsBot && p.UserId != null && 
+				(p.PlayerName?.Contains(args, StringComparison.OrdinalIgnoreCase) == true || 
+				 p.SteamID.ToString() == args));
+
+			if (foundPlayer == null)
+			{
+				Console.WriteLine($"[WeaponPaints] Player '{args}' not found.");
+				return;
+			}
+
+			targetPlayers.Add(foundPlayer);
+			Console.WriteLine($"[WeaponPaints] Refreshing skins for {foundPlayer.PlayerName}...");
+		}
+
+		foreach (var targetPlayer in targetPlayers)
+		{
+			try
+			{
+				PlayerInfo? playerInfo = new PlayerInfo
+				{
+					UserId = targetPlayer.UserId,
+					Slot = targetPlayer.Slot,
+					Index = (int)targetPlayer.Index,
+					SteamId = targetPlayer.SteamID.ToString(),
+					Name = targetPlayer.PlayerName,
+					IpAddress = targetPlayer.IpAddress?.Split(":")[0]
+				};
+
+				if (WeaponSync != null)
+				{
+					_ = Task.Run(async () => await WeaponSync.GetPlayerData(playerInfo));
+				}
+
+				GivePlayerGloves(targetPlayer);
+				RefreshWeapons(targetPlayer);
+				GivePlayerAgent(targetPlayer);
+				GivePlayerMusicKit(targetPlayer);
+				AddTimer(0.15f, () => GivePlayerPin(targetPlayer));
+
+				if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
+				{
+					targetPlayer.Print(Localizer["wp_command_refresh_done"]);
+				}
+
+				Console.WriteLine($"[WeaponPaints] Skins refreshed for {targetPlayer.PlayerName}");
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"[WeaponPaints] Error refreshing skins for {targetPlayer.PlayerName}: {ex.Message}");
+			}
+		}
+
+		Console.WriteLine("[WeaponPaints] Refresh process completed.");
 	}
 
 	private void OnCommandStattrak(CCSPlayerController? player, CommandInfo commandInfo)
