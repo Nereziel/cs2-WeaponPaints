@@ -37,6 +37,9 @@ namespace WeaponPaints
 
 					weapon.AttributeManager.Item.ItemDefinitionIndex = (ushort)newDefIndex.Key;
 					weapon.AttributeManager.Item.EntityQuality = 3;
+					
+					weapon.AttributeManager.Item.AttributeList.Attributes.RemoveAll();
+					weapon.AttributeManager.Item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 					break;
 				}
 				default:
@@ -96,9 +99,8 @@ namespace WeaponPaints
 			weapon.AttributeManager.Item.AttributeList.Attributes.RemoveAll();
 			weapon.AttributeManager.Item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 			
-			weapon.AttributeManager.Item.ItemID = 16384;
-			weapon.AttributeManager.Item.ItemIDLow = 16384 & 0xFFFFFFFF;
-			weapon.AttributeManager.Item.ItemIDHigh = weapon.AttributeManager.Item.ItemIDLow >> 32;
+			UpdatePlayerEconItemId(weapon.AttributeManager.Item);
+
 			weapon.AttributeManager.Item.CustomName = weaponInfo.Nametag;
 			weapon.FallbackPaintKit = weaponInfo.Paint;
 			
@@ -136,7 +138,7 @@ namespace WeaponPaints
 
 			UpdatePlayerWeaponMeshGroupMask(player, weapon, isLegacyModel);
 		}
-
+		
 		// silly method to update sticker when call RefreshWeapons()
 		private void IncrementWearForWeaponWithStickers(CCSPlayerController player, CBasePlayerWeapon weapon)
 		{
@@ -170,7 +172,7 @@ namespace WeaponPaints
 			foreach (var sticker in weaponInfo.Stickers)
 			{
 				int stickerSlot = weaponInfo.Stickers.IndexOf(sticker);
-				
+
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} id", ViewAsFloat(sticker.Id));
 				if (sticker.OffsetX != 0 || sticker.OffsetY != 0)
@@ -187,7 +189,7 @@ namespace WeaponPaints
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} rotation", sticker.Rotation);
 			}
-			
+
 			if (_temporaryPlayerWeaponWear.TryGetValue(player.Slot, out var playerWear) &&
 				playerWear.TryGetValue(weaponDefIndex, out float storedWear))
 			{
@@ -215,7 +217,7 @@ namespace WeaponPaints
 			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 				"keychain slot 0 offset z", keyChain.OffsetZ);
 			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				"keychain slot 0 seed", keyChain.Seed);
+				"keychain slot 0 seed", ViewAsFloat(keyChain.Seed));
 		}
 
 		private static void GiveKnifeToPlayer(CCSPlayerController? player)
@@ -378,9 +380,14 @@ namespace WeaponPaints
 				pawn.SetModel(model);
 			}
 
+			CEconItemView item = pawn.EconGloves;
+
+			item.NetworkedDynamicAttributes.Attributes.RemoveAll();
+			item.AttributeList.Attributes.RemoveAll();
+
+
 			Instance.AddTimer(0.08f, () =>
-			{
-				CEconItemView item = pawn.EconGloves;
+			{	
 				try
 				{
 					if (!player.IsValid)
@@ -396,13 +403,19 @@ namespace WeaponPaints
 						return;
 
 					item.ItemDefinitionIndex = gloveId;
-					item.ItemIDLow = 16384 & 0xFFFFFFFF;
-					item.ItemIDHigh = 16384;
+					
+					UpdatePlayerEconItemId(item);
 
+					item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weaponInfo.Paint);
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture seed", weaponInfo.Seed);
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture wear", weaponInfo.Wear);
 
+					item.AttributeList.Attributes.RemoveAll();
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture prefab", weaponInfo.Paint);
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture seed", weaponInfo.Seed);
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture wear", weaponInfo.Wear);
+					
 					item.Initialized = true;
 
 					SetBodygroup(pawn, "default_gloves", 1);
