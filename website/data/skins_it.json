@@ -18,6 +18,14 @@
     {
         "weapon_defindex": 7,
         "weapon_name": "weapon_ak47",
+        "paint": "1352",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47-1352.png",
+        "paint_name": "AK-47 | The Oligarch",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 7,
+        "weapon_name": "weapon_ak47",
         "paint": "113",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47-113.png",
         "paint_name": "AK-47 | The Outsiders",
@@ -554,6 +562,14 @@
     {
         "weapon_defindex": 8,
         "weapon_name": "weapon_aug",
+        "paint": "1339",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug-1339.png",
+        "paint_name": "AUG | Trigger Discipline",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 8,
+        "weapon_name": "weapon_aug",
         "paint": "455",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug-455.png",
         "paint_name": "AUG | Akihabara Accept",
@@ -854,6 +870,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-424.png",
         "paint_name": "AWP | Worm God",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 9,
+        "weapon_name": "weapon_awp",
+        "paint": "1346",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-1346.png",
+        "paint_name": "AWP | Ice Coaled",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 9,
@@ -2501,6 +2525,14 @@
         "paint": "1169",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite-1169.png",
         "paint_name": "Doppia Beretta | Hideout",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 2,
+        "weapon_name": "weapon_elite",
+        "paint": "1347",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite-1347.png",
+        "paint_name": "Doppia Beretta | Angel Eyes",
         "legacy_model": false
     },
     {
@@ -4210,6 +4242,14 @@
     {
         "weapon_defindex": 4,
         "weapon_name": "weapon_glock",
+        "paint": "1348",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1348.png",
+        "paint_name": "Glock-18 | Mirror Mosaic",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 4,
+        "weapon_name": "weapon_glock",
         "paint": "1208",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1208.png",
         "paint_name": "Glock-18 | Shinobu",
@@ -4606,6 +4646,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000-275.png",
         "paint_name": "P2000 | Red FragCam",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 32,
+        "weapon_name": "weapon_hkp2000",
+        "paint": "1342",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000-1342.png",
+        "paint_name": "P2000 | Red Wing",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 32,
@@ -9506,6 +9554,14 @@
     {
         "weapon_defindex": 16,
         "weapon_name": "weapon_m4a1",
+        "paint": "1353",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1353.png",
+        "paint_name": "M4A4 | Full Throttle",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 16,
+        "weapon_name": "weapon_m4a1",
         "paint": "1165",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1165.png",
         "paint_name": "M4A4 | Etch Lord",
@@ -9821,6 +9877,14 @@
         "paint": "1166",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1166.png",
         "paint_name": "M4A1-S | Black Lotus",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 60,
+        "weapon_name": "weapon_m4a1_silencer",
+        "paint": "1340",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1340.png",
+        "paint_name": "M4A1-S | Liquidation",
         "legacy_model": false
     },
     {
@@ -10258,6 +10322,14 @@
     {
         "weapon_defindex": 17,
         "weapon_name": "weapon_mac10",
+        "paint": "1349",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10-1349.png",
+        "paint_name": "MAC-10 | Cat Fight",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 17,
+        "weapon_name": "weapon_mac10",
         "paint": "126",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10-126.png",
         "paint_name": "MAC-10 | Saibā Oni",
@@ -10570,6 +10642,14 @@
     {
         "weapon_defindex": 27,
         "weapon_name": "weapon_mag7",
+        "paint": "1355",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7-1355.png",
+        "paint_name": "MAG-7 | MAGnitude",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 27,
+        "weapon_name": "weapon_mag7",
         "paint": "473",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7-473.png",
         "paint_name": "MAG-7 | Seabird",
@@ -10781,6 +10861,14 @@
         "paint": "1180",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd-1180.png",
         "paint_name": "MP5-SD | Statics",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 23,
+        "weapon_name": "weapon_mp5sd",
+        "paint": "1344",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd-1344.png",
+        "paint_name": "MP5-SD | Focus",
         "legacy_model": false
     },
     {
@@ -11021,6 +11109,14 @@
         "paint": "1163",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1163.png",
         "paint_name": "MP7 | Just Smile",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 33,
+        "weapon_name": "weapon_mp7",
+        "paint": "1354",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1354.png",
+        "paint_name": "MP7 | Smoking Kills",
         "legacy_model": false
     },
     {
@@ -11389,6 +11485,14 @@
         "paint": "1193",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1193.png",
         "paint_name": "MP9 | Nexus",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 34,
+        "weapon_name": "weapon_mp9",
+        "paint": "1341",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1341.png",
+        "paint_name": "MP9 | Broken Record",
         "legacy_model": false
     },
     {
@@ -11914,6 +12018,14 @@
     {
         "weapon_defindex": 35,
         "weapon_name": "weapon_nova",
+        "paint": "1350",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova-1350.png",
+        "paint_name": "Nova | Ocular",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 35,
+        "weapon_name": "weapon_nova",
         "paint": "1192",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova-1192.png",
         "paint_name": "Nova | Sole nascente",
@@ -12349,6 +12461,14 @@
         "paint": "1315",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1315.png",
         "paint_name": "P250 | Red Tide",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 36,
+        "weapon_name": "weapon_p250",
+        "paint": "1345",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1345.png",
+        "paint_name": "P250 | Bullfrog",
         "legacy_model": false
     },
     {
@@ -13509,6 +13629,14 @@
         "paint": "117",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20-117.png",
         "paint_name": "SCAR-20 | Trail Blazer",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 38,
+        "weapon_name": "weapon_scar20",
+        "paint": "1343",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20-1343.png",
+        "paint_name": "SCAR-20 | Caged",
         "legacy_model": false
     },
     {
@@ -14949,6 +15077,14 @@
         "paint": "1175",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1175.png",
         "paint_name": "UMP-45 | Motorized",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 24,
+        "weapon_name": "weapon_ump45",
+        "paint": "1351",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1351.png",
+        "paint_name": "UMP-45 | Continuum",
         "legacy_model": false
     },
     {

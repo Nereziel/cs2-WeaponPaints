@@ -2,12 +2,15 @@ using System.Runtime.InteropServices;
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
+using CounterStrikeSharp.API.Core.Attributes.Registration;
+using CounterStrikeSharp.API.Modules.Commands;
+using CounterStrikeSharp.API.Modules.Entities.Constants;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(276)]
+[MinimumApiVersion(380)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
@@ -17,7 +20,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
     public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "3.1d";
+	public override string ModuleVersion => "3.2a";
 
 	public override void Load(bool hotReload)
 	{
