@@ -452,12 +452,11 @@ namespace WeaponPaints
 
 		private void UpdateWeaponMeshGroupMask(CBaseEntity weapon, bool isLegacy = false)
 		{
-				if (!weapon.DesignerName.Contains("ak47")) return;
 				if (weapon.CBodyComponent?.SceneNode == null) return;
-				var skeleton = weapon.CBodyComponent.SceneNode.GetSkeletonInstance();
+				//var skeleton = weapon.CBodyComponent.SceneNode.GetSkeletonInstance();
+				// skeleton.ModelState.MeshGroupMask = isLegacy ? 2UL : 1UL;
 
 				weapon.AcceptInput("SetBodygroup", value: $"body,{(isLegacy ? 1 : 0)}");
-				// skeleton.ModelState.MeshGroupMask = isLegacy ? 2UL : 1UL;
 		}
 
 		private void UpdatePlayerWeaponMeshGroupMask(CCSPlayerController player, CBasePlayerWeapon weapon, bool isLegacy)
