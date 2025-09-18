@@ -18,6 +18,14 @@
     {
         "weapon_defindex": 7,
         "weapon_name": "weapon_ak47",
+        "paint": "1352",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47-1352.png",
+        "paint_name": "AK-47 | The Oligarch",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 7,
+        "weapon_name": "weapon_ak47",
         "paint": "113",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47-113.png",
         "paint_name": "AK-47 | The Outsiders",
@@ -554,6 +562,14 @@
     {
         "weapon_defindex": 8,
         "weapon_name": "weapon_aug",
+        "paint": "1339",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug-1339.png",
+        "paint_name": "AUG | Trigger Discipline",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 8,
+        "weapon_name": "weapon_aug",
         "paint": "455",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug-455.png",
         "paint_name": "AUG | Akihabara Accept",
@@ -854,6 +870,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-424.png",
         "paint_name": "AWP | Worm God",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 9,
+        "weapon_name": "weapon_awp",
+        "paint": "1346",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-1346.png",
+        "paint_name": "AWP | Ice Coaled",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 9,
@@ -2501,6 +2525,14 @@
         "paint": "1169",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite-1169.png",
         "paint_name": "Dual Berettas | Hideout",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 2,
+        "weapon_name": "weapon_elite",
+        "paint": "1347",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite-1347.png",
+        "paint_name": "Dual Berettas | Angel Eyes",
         "legacy_model": false
     },
     {
@@ -4210,6 +4242,14 @@
     {
         "weapon_defindex": 4,
         "weapon_name": "weapon_glock",
+        "paint": "1348",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1348.png",
+        "paint_name": "Glock-18 | Mirror Mosaic",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 4,
+        "weapon_name": "weapon_glock",
         "paint": "1208",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1208.png",
         "paint_name": "Glock-18 | Shinobu",
@@ -4606,6 +4646,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000-275.png",
         "paint_name": "P2000 | Red FragCam",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 32,
+        "weapon_name": "weapon_hkp2000",
+        "paint": "1342",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000-1342.png",
+        "paint_name": "P2000 | Red Wing",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 32,
@@ -5724,7 +5772,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip.png",
-        "paint_name": "★ 折りたたみナイフ  | Default",
+        "paint_name": "★ Flip ナイフ  | Default",
         "legacy_model": false
     },
     {
@@ -5732,7 +5780,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "38",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-38.png",
-        "paint_name": "★ 折りたたみナイフ | Fade",
+        "paint_name": "★ Flip ナイフ | Fade",
         "legacy_model": false
     },
     {
@@ -5740,7 +5788,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "417",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-417.png",
-        "paint_name": "★ 折りたたみナイフ | Doppler",
+        "paint_name": "★ Flip ナイフ | Doppler",
         "legacy_model": false
     },
     {
@@ -5748,7 +5796,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "418",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-418.png",
-        "paint_name": "★ 折りたたみナイフ | Doppler",
+        "paint_name": "★ Flip ナイフ | Doppler",
         "legacy_model": false
     },
     {
@@ -5756,7 +5804,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "419",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-419.png",
-        "paint_name": "★ 折りたたみナイフ | Doppler",
+        "paint_name": "★ Flip ナイフ | Doppler",
         "legacy_model": false
     },
     {
@@ -5764,7 +5812,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "420",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-420.png",
-        "paint_name": "★ 折りたたみナイフ | Doppler",
+        "paint_name": "★ Flip ナイフ | Doppler",
         "legacy_model": false
     },
     {
@@ -5772,7 +5820,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "421",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-421.png",
-        "paint_name": "★ 折りたたみナイフ | Doppler",
+        "paint_name": "★ Flip ナイフ | Doppler",
         "legacy_model": false
     },
     {
@@ -5780,7 +5828,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "568",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-568.png",
-        "paint_name": "★ 折りたたみナイフ | Gamma Doppler",
+        "paint_name": "★ Flip ナイフ | Gamma Doppler",
         "legacy_model": false
     },
     {
@@ -5788,7 +5836,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "569",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-569.png",
-        "paint_name": "★ 折りたたみナイフ | Gamma Doppler",
+        "paint_name": "★ Flip ナイフ | Gamma Doppler",
         "legacy_model": false
     },
     {
@@ -5796,7 +5844,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "570",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-570.png",
-        "paint_name": "★ 折りたたみナイフ | Gamma Doppler",
+        "paint_name": "★ Flip ナイフ | Gamma Doppler",
         "legacy_model": false
     },
     {
@@ -5804,7 +5852,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "571",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-571.png",
-        "paint_name": "★ 折りたたみナイフ | Gamma Doppler",
+        "paint_name": "★ Flip ナイフ | Gamma Doppler",
         "legacy_model": false
     },
     {
@@ -5812,7 +5860,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "572",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-572.png",
-        "paint_name": "★ 折りたたみナイフ | Gamma Doppler",
+        "paint_name": "★ Flip ナイフ | Gamma Doppler",
         "legacy_model": false
     },
     {
@@ -5820,7 +5868,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-413.png",
-        "paint_name": "★ 折りたたみナイフ | Marble Fade",
+        "paint_name": "★ Flip ナイフ | Marble Fade",
         "legacy_model": true
     },
     {
@@ -5828,7 +5876,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "580",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-580.png",
-        "paint_name": "★ 折りたたみナイフ | Freehand",
+        "paint_name": "★ Flip ナイフ | Freehand",
         "legacy_model": true
     },
     {
@@ -5836,7 +5884,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "415",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-415.png",
-        "paint_name": "★ 折りたたみナイフ | Doppler",
+        "paint_name": "★ Flip ナイフ | Doppler",
         "legacy_model": false
     },
     {
@@ -5844,7 +5892,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "416",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-416.png",
-        "paint_name": "★ 折りたたみナイフ | Doppler",
+        "paint_name": "★ Flip ナイフ | Doppler",
         "legacy_model": false
     },
     {
@@ -5852,7 +5900,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-59.png",
-        "paint_name": "★ 折りたたみナイフ | Slaughter",
+        "paint_name": "★ Flip ナイフ | Slaughter",
         "legacy_model": true
     },
     {
@@ -5860,7 +5908,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-409.png",
-        "paint_name": "★ 折りたたみナイフ | Tiger Tooth",
+        "paint_name": "★ Flip ナイフ | Tiger Tooth",
         "legacy_model": true
     },
     {
@@ -5868,7 +5916,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "42",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-42.png",
-        "paint_name": "★ 折りたたみナイフ | Blue Steel",
+        "paint_name": "★ Flip ナイフ | Blue Steel",
         "legacy_model": true
     },
     {
@@ -5876,7 +5924,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-410.png",
-        "paint_name": "★ 折りたたみナイフ | Damascus Steel",
+        "paint_name": "★ Flip ナイフ | Damascus Steel",
         "legacy_model": true
     },
     {
@@ -5884,7 +5932,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-43.png",
-        "paint_name": "★ 折りたたみナイフ | Stained",
+        "paint_name": "★ Flip ナイフ | Stained",
         "legacy_model": true
     },
     {
@@ -5892,7 +5940,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "44",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-44.png",
-        "paint_name": "★ 折りたたみナイフ | Case Hardened",
+        "paint_name": "★ Flip ナイフ | Case Hardened",
         "legacy_model": true
     },
     {
@@ -5900,7 +5948,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-414.png",
-        "paint_name": "★ 折りたたみナイフ | Rust Coat",
+        "paint_name": "★ Flip ナイフ | Rust Coat",
         "legacy_model": true
     },
     {
@@ -5908,7 +5956,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "559",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-559.png",
-        "paint_name": "★ 折りたたみナイフ | Lore",
+        "paint_name": "★ Flip ナイフ | Lore",
         "legacy_model": true
     },
     {
@@ -5916,7 +5964,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "564",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-564.png",
-        "paint_name": "★ 折りたたみナイフ | Black Laminate",
+        "paint_name": "★ Flip ナイフ | Black Laminate",
         "legacy_model": true
     },
     {
@@ -5924,7 +5972,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "574",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-574.png",
-        "paint_name": "★ 折りたたみナイフ | Autotronic",
+        "paint_name": "★ Flip ナイフ | Autotronic",
         "legacy_model": true
     },
     {
@@ -5932,7 +5980,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-5.png",
-        "paint_name": "★ 折りたたみナイフ | Forest DDPAT",
+        "paint_name": "★ Flip ナイフ | Forest DDPAT",
         "legacy_model": true
     },
     {
@@ -5940,7 +5988,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-77.png",
-        "paint_name": "★ 折りたたみナイフ | Boreal Forest",
+        "paint_name": "★ Flip ナイフ | Boreal Forest",
         "legacy_model": true
     },
     {
@@ -5948,7 +5996,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "578",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-578.png",
-        "paint_name": "★ 折りたたみナイフ | Bright Water",
+        "paint_name": "★ Flip ナイフ | Bright Water",
         "legacy_model": true
     },
     {
@@ -5956,7 +6004,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "12",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-12.png",
-        "paint_name": "★ 折りたたみナイフ | Crimson Web",
+        "paint_name": "★ Flip ナイフ | Crimson Web",
         "legacy_model": true
     },
     {
@@ -5964,7 +6012,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "40",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-40.png",
-        "paint_name": "★ 折りたたみナイフ | Night",
+        "paint_name": "★ Flip ナイフ | Night",
         "legacy_model": false
     },
     {
@@ -5972,7 +6020,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "98",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-98.png",
-        "paint_name": "★ 折りたたみナイフ | Ultraviolet",
+        "paint_name": "★ Flip ナイフ | Ultraviolet",
         "legacy_model": false
     },
     {
@@ -5980,7 +6028,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "175",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-175.png",
-        "paint_name": "★ 折りたたみナイフ | Scorched",
+        "paint_name": "★ Flip ナイフ | Scorched",
         "legacy_model": false
     },
     {
@@ -5988,7 +6036,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "72",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-72.png",
-        "paint_name": "★ 折りたたみナイフ | Safari Mesh",
+        "paint_name": "★ Flip ナイフ | Safari Mesh",
         "legacy_model": false
     },
     {
@@ -5996,7 +6044,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "143",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-143.png",
-        "paint_name": "★ 折りたたみナイフ | Urban Masked",
+        "paint_name": "★ Flip ナイフ | Urban Masked",
         "legacy_model": false
     },
     {
@@ -9506,6 +9554,14 @@
     {
         "weapon_defindex": 16,
         "weapon_name": "weapon_m4a1",
+        "paint": "1353",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1353.png",
+        "paint_name": "M4A4 | Full Throttle",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 16,
+        "weapon_name": "weapon_m4a1",
         "paint": "1165",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1165.png",
         "paint_name": "M4A4 | Etch Lord",
@@ -9821,6 +9877,14 @@
         "paint": "1166",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1166.png",
         "paint_name": "M4A1-S | Black Lotus",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 60,
+        "weapon_name": "weapon_m4a1_silencer",
+        "paint": "1340",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1340.png",
+        "paint_name": "M4A1-S | Liquidation",
         "legacy_model": false
     },
     {
@@ -10258,6 +10322,14 @@
     {
         "weapon_defindex": 17,
         "weapon_name": "weapon_mac10",
+        "paint": "1349",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10-1349.png",
+        "paint_name": "MAC-10 | Cat Fight",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 17,
+        "weapon_name": "weapon_mac10",
         "paint": "126",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10-126.png",
         "paint_name": "MAC-10 | Saibā Oni",
@@ -10570,6 +10642,14 @@
     {
         "weapon_defindex": 27,
         "weapon_name": "weapon_mag7",
+        "paint": "1355",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7-1355.png",
+        "paint_name": "MAG-7 | MAGnitude",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 27,
+        "weapon_name": "weapon_mag7",
         "paint": "473",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7-473.png",
         "paint_name": "MAG-7 | 海鳥",
@@ -10781,6 +10861,14 @@
         "paint": "1180",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd-1180.png",
         "paint_name": "MP5-SD | Statics",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 23,
+        "weapon_name": "weapon_mp5sd",
+        "paint": "1344",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd-1344.png",
+        "paint_name": "MP5-SD | Focus",
         "legacy_model": false
     },
     {
@@ -11021,6 +11109,14 @@
         "paint": "1163",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1163.png",
         "paint_name": "MP7 | Just Smile",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 33,
+        "weapon_name": "weapon_mp7",
+        "paint": "1354",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1354.png",
+        "paint_name": "MP7 | Smoking Kills",
         "legacy_model": false
     },
     {
@@ -11389,6 +11485,14 @@
         "paint": "1193",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1193.png",
         "paint_name": "MP9 | Nexus",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 34,
+        "weapon_name": "weapon_mp9",
+        "paint": "1341",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1341.png",
+        "paint_name": "MP9 | Broken Record",
         "legacy_model": false
     },
     {
@@ -11914,6 +12018,14 @@
     {
         "weapon_defindex": 35,
         "weapon_name": "weapon_nova",
+        "paint": "1350",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova-1350.png",
+        "paint_name": "Nova | Ocular",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 35,
+        "weapon_name": "weapon_nova",
         "paint": "1192",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova-1192.png",
         "paint_name": "Nova | Rising Sun",
@@ -12349,6 +12461,14 @@
         "paint": "1315",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1315.png",
         "paint_name": "P250 | Red Tide",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 36,
+        "weapon_name": "weapon_p250",
+        "paint": "1345",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1345.png",
+        "paint_name": "P250 | Bullfrog",
         "legacy_model": false
     },
     {
@@ -13509,6 +13629,14 @@
         "paint": "117",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20-117.png",
         "paint_name": "SCAR-20 | Trail Blazer",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 38,
+        "weapon_name": "weapon_scar20",
+        "paint": "1343",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20-1343.png",
+        "paint_name": "SCAR-20 | Caged",
         "legacy_model": false
     },
     {
@@ -14949,6 +15077,14 @@
         "paint": "1175",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1175.png",
         "paint_name": "UMP-45 | Motorized",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 24,
+        "weapon_name": "weapon_ump45",
+        "paint": "1351",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1351.png",
+        "paint_name": "UMP-45 | Continuum",
         "legacy_model": false
     },
     {

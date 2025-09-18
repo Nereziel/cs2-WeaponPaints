@@ -18,6 +18,14 @@
     {
         "weapon_defindex": 7,
         "weapon_name": "weapon_ak47",
+        "paint": "1352",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47-1352.png",
+        "paint_name": "AK-47 | The Oligarch",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 7,
+        "weapon_name": "weapon_ak47",
         "paint": "113",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47-113.png",
         "paint_name": "AK-47 | The Outsiders",
@@ -554,6 +562,14 @@
     {
         "weapon_defindex": 8,
         "weapon_name": "weapon_aug",
+        "paint": "1339",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug-1339.png",
+        "paint_name": "AUG | Trigger Discipline",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 8,
+        "weapon_name": "weapon_aug",
         "paint": "455",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug-455.png",
         "paint_name": "AUG | Akihabara Accept",
@@ -854,6 +870,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-424.png",
         "paint_name": "AWP | Worm God",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 9,
+        "weapon_name": "weapon_awp",
+        "paint": "1346",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-1346.png",
+        "paint_name": "AWP | Ice Coaled",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 9,
@@ -2501,6 +2525,14 @@
         "paint": "1169",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite-1169.png",
         "paint_name": "Dual Berettas | Hideout",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 2,
+        "weapon_name": "weapon_elite",
+        "paint": "1347",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite-1347.png",
+        "paint_name": "Dual Berettas | Angel Eyes",
         "legacy_model": false
     },
     {
@@ -4210,6 +4242,14 @@
     {
         "weapon_defindex": 4,
         "weapon_name": "weapon_glock",
+        "paint": "1348",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1348.png",
+        "paint_name": "Glock-18 | Mirror Mosaic",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 4,
+        "weapon_name": "weapon_glock",
         "paint": "1208",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1208.png",
         "paint_name": "Glock-18 | Shinobu",
@@ -4606,6 +4646,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000-275.png",
         "paint_name": "P2000 | Red FragCam",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 32,
+        "weapon_name": "weapon_hkp2000",
+        "paint": "1342",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000-1342.png",
+        "paint_name": "P2000 | Red Wing",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 32,
@@ -6764,7 +6812,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri.png",
-        "paint_name": "★ Kukri-mes  | Default",
+        "paint_name": "★ Kukri  | Default",
         "legacy_model": false
     },
     {
@@ -6772,7 +6820,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "38",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-38.png",
-        "paint_name": "★ Kukri-mes | Fade",
+        "paint_name": "★ Kukri | Fade",
         "legacy_model": false
     },
     {
@@ -6780,7 +6828,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-59.png",
-        "paint_name": "★ Kukri-mes | Slaughter",
+        "paint_name": "★ Kukri | Slaughter",
         "legacy_model": true
     },
     {
@@ -6788,7 +6836,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "42",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-42.png",
-        "paint_name": "★ Kukri-mes | Blue Steel",
+        "paint_name": "★ Kukri | Blue Steel",
         "legacy_model": true
     },
     {
@@ -6796,7 +6844,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-43.png",
-        "paint_name": "★ Kukri-mes | Stained",
+        "paint_name": "★ Kukri | Stained",
         "legacy_model": true
     },
     {
@@ -6804,7 +6852,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "44",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-44.png",
-        "paint_name": "★ Kukri-mes | Case Hardened",
+        "paint_name": "★ Kukri | Case Hardened",
         "legacy_model": true
     },
     {
@@ -6812,7 +6860,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-5.png",
-        "paint_name": "★ Kukri-mes | Forest DDPAT",
+        "paint_name": "★ Kukri | Forest DDPAT",
         "legacy_model": true
     },
     {
@@ -6820,7 +6868,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-77.png",
-        "paint_name": "★ Kukri-mes | Boreal Forest",
+        "paint_name": "★ Kukri | Boreal Forest",
         "legacy_model": true
     },
     {
@@ -6828,7 +6876,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "12",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-12.png",
-        "paint_name": "★ Kukri-mes | Crimson Web",
+        "paint_name": "★ Kukri | Crimson Web",
         "legacy_model": true
     },
     {
@@ -6836,7 +6884,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "175",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-175.png",
-        "paint_name": "★ Kukri-mes | Scorched",
+        "paint_name": "★ Kukri | Scorched",
         "legacy_model": false
     },
     {
@@ -6844,7 +6892,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "72",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-72.png",
-        "paint_name": "★ Kukri-mes | Safari Mesh",
+        "paint_name": "★ Kukri | Safari Mesh",
         "legacy_model": false
     },
     {
@@ -6852,7 +6900,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "735",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-735.png",
-        "paint_name": "★ Kukri-mes | Night Stripe",
+        "paint_name": "★ Kukri | Night Stripe",
         "legacy_model": false
     },
     {
@@ -6860,7 +6908,7 @@
         "weapon_name": "weapon_knife_kukri",
         "paint": "143",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-143.png",
-        "paint_name": "★ Kukri-mes | Urban Masked",
+        "paint_name": "★ Kukri | Urban Masked",
         "legacy_model": false
     },
     {
@@ -7148,7 +7196,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor.png",
-        "paint_name": "★ Nomadenmes  | Default",
+        "paint_name": "★ Nomademes  | Default",
         "legacy_model": false
     },
     {
@@ -7156,7 +7204,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "38",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-38.png",
-        "paint_name": "★ Nomadenmes | Fade",
+        "paint_name": "★ Nomademes | Fade",
         "legacy_model": false
     },
     {
@@ -7164,7 +7212,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "417",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-417.png",
-        "paint_name": "★ Nomadenmes | Doppler",
+        "paint_name": "★ Nomademes | Doppler",
         "legacy_model": false
     },
     {
@@ -7172,7 +7220,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "418",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-418.png",
-        "paint_name": "★ Nomadenmes | Doppler",
+        "paint_name": "★ Nomademes | Doppler",
         "legacy_model": false
     },
     {
@@ -7180,7 +7228,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "419",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-419.png",
-        "paint_name": "★ Nomadenmes | Doppler",
+        "paint_name": "★ Nomademes | Doppler",
         "legacy_model": false
     },
     {
@@ -7188,7 +7236,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "420",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-420.png",
-        "paint_name": "★ Nomadenmes | Doppler",
+        "paint_name": "★ Nomademes | Doppler",
         "legacy_model": false
     },
     {
@@ -7196,7 +7244,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "421",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-421.png",
-        "paint_name": "★ Nomadenmes | Doppler",
+        "paint_name": "★ Nomademes | Doppler",
         "legacy_model": false
     },
     {
@@ -7204,7 +7252,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-413.png",
-        "paint_name": "★ Nomadenmes | Marble Fade",
+        "paint_name": "★ Nomademes | Marble Fade",
         "legacy_model": true
     },
     {
@@ -7212,7 +7260,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "415",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-415.png",
-        "paint_name": "★ Nomadenmes | Doppler",
+        "paint_name": "★ Nomademes | Doppler",
         "legacy_model": false
     },
     {
@@ -7220,7 +7268,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "416",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-416.png",
-        "paint_name": "★ Nomadenmes | Doppler",
+        "paint_name": "★ Nomademes | Doppler",
         "legacy_model": false
     },
     {
@@ -7228,7 +7276,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-59.png",
-        "paint_name": "★ Nomadenmes | Slaughter",
+        "paint_name": "★ Nomademes | Slaughter",
         "legacy_model": true
     },
     {
@@ -7236,7 +7284,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-409.png",
-        "paint_name": "★ Nomadenmes | Tiger Tooth",
+        "paint_name": "★ Nomademes | Tiger Tooth",
         "legacy_model": true
     },
     {
@@ -7244,7 +7292,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "42",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-42.png",
-        "paint_name": "★ Nomadenmes | Blue Steel",
+        "paint_name": "★ Nomademes | Blue Steel",
         "legacy_model": true
     },
     {
@@ -7252,7 +7300,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-410.png",
-        "paint_name": "★ Nomadenmes | Damascus Steel",
+        "paint_name": "★ Nomademes | Damascus Steel",
         "legacy_model": true
     },
     {
@@ -7260,7 +7308,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-43.png",
-        "paint_name": "★ Nomadenmes | Stained",
+        "paint_name": "★ Nomademes | Stained",
         "legacy_model": true
     },
     {
@@ -7268,7 +7316,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "44",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-44.png",
-        "paint_name": "★ Nomadenmes | Case Hardened",
+        "paint_name": "★ Nomademes | Case Hardened",
         "legacy_model": true
     },
     {
@@ -7276,7 +7324,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-414.png",
-        "paint_name": "★ Nomadenmes | Rust Coat",
+        "paint_name": "★ Nomademes | Rust Coat",
         "legacy_model": true
     },
     {
@@ -7284,7 +7332,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-5.png",
-        "paint_name": "★ Nomadenmes | Forest DDPAT",
+        "paint_name": "★ Nomademes | Forest DDPAT",
         "legacy_model": true
     },
     {
@@ -7292,7 +7340,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-77.png",
-        "paint_name": "★ Nomadenmes | Boreal Forest",
+        "paint_name": "★ Nomademes | Boreal Forest",
         "legacy_model": true
     },
     {
@@ -7300,7 +7348,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "12",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-12.png",
-        "paint_name": "★ Nomadenmes | Crimson Web",
+        "paint_name": "★ Nomademes | Crimson Web",
         "legacy_model": true
     },
     {
@@ -7308,7 +7356,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "98",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-98.png",
-        "paint_name": "★ Nomadenmes | Ultraviolet",
+        "paint_name": "★ Nomademes | Ultraviolet",
         "legacy_model": false
     },
     {
@@ -7316,7 +7364,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "175",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-175.png",
-        "paint_name": "★ Nomadenmes | Scorched",
+        "paint_name": "★ Nomademes | Scorched",
         "legacy_model": false
     },
     {
@@ -7324,7 +7372,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "72",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-72.png",
-        "paint_name": "★ Nomadenmes | Safari Mesh",
+        "paint_name": "★ Nomademes | Safari Mesh",
         "legacy_model": false
     },
     {
@@ -7332,7 +7380,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "735",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-735.png",
-        "paint_name": "★ Nomadenmes | Night Stripe",
+        "paint_name": "★ Nomademes | Night Stripe",
         "legacy_model": false
     },
     {
@@ -7340,7 +7388,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "143",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-143.png",
-        "paint_name": "★ Nomadenmes | Urban Masked",
+        "paint_name": "★ Nomademes | Urban Masked",
         "legacy_model": false
     },
     {
@@ -7628,7 +7676,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton.png",
-        "paint_name": "★ Skelettenmes  | Default",
+        "paint_name": "★ Skeletonmes  | Default",
         "legacy_model": false
     },
     {
@@ -7636,7 +7684,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "38",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-38.png",
-        "paint_name": "★ Skelettenmes | Fade",
+        "paint_name": "★ Skeletonmes | Fade",
         "legacy_model": false
     },
     {
@@ -7644,7 +7692,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "417",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-417.png",
-        "paint_name": "★ Skelettenmes | Doppler",
+        "paint_name": "★ Skeletonmes | Doppler",
         "legacy_model": false
     },
     {
@@ -7652,7 +7700,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "418",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-418.png",
-        "paint_name": "★ Skelettenmes | Doppler",
+        "paint_name": "★ Skeletonmes | Doppler",
         "legacy_model": false
     },
     {
@@ -7660,7 +7708,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "419",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-419.png",
-        "paint_name": "★ Skelettenmes | Doppler",
+        "paint_name": "★ Skeletonmes | Doppler",
         "legacy_model": false
     },
     {
@@ -7668,7 +7716,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "420",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-420.png",
-        "paint_name": "★ Skelettenmes | Doppler",
+        "paint_name": "★ Skeletonmes | Doppler",
         "legacy_model": false
     },
     {
@@ -7676,7 +7724,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "421",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-421.png",
-        "paint_name": "★ Skelettenmes | Doppler",
+        "paint_name": "★ Skeletonmes | Doppler",
         "legacy_model": false
     },
     {
@@ -7684,7 +7732,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-413.png",
-        "paint_name": "★ Skelettenmes | Marble Fade",
+        "paint_name": "★ Skeletonmes | Marble Fade",
         "legacy_model": true
     },
     {
@@ -7692,7 +7740,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "415",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-415.png",
-        "paint_name": "★ Skelettenmes | Doppler",
+        "paint_name": "★ Skeletonmes | Doppler",
         "legacy_model": false
     },
     {
@@ -7700,7 +7748,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "416",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-416.png",
-        "paint_name": "★ Skelettenmes | Doppler",
+        "paint_name": "★ Skeletonmes | Doppler",
         "legacy_model": false
     },
     {
@@ -7708,7 +7756,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-59.png",
-        "paint_name": "★ Skelettenmes | Slaughter",
+        "paint_name": "★ Skeletonmes | Slaughter",
         "legacy_model": true
     },
     {
@@ -7716,7 +7764,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-409.png",
-        "paint_name": "★ Skelettenmes | Tiger Tooth",
+        "paint_name": "★ Skeletonmes | Tiger Tooth",
         "legacy_model": true
     },
     {
@@ -7724,7 +7772,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "42",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-42.png",
-        "paint_name": "★ Skelettenmes | Blue Steel",
+        "paint_name": "★ Skeletonmes | Blue Steel",
         "legacy_model": true
     },
     {
@@ -7732,7 +7780,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-410.png",
-        "paint_name": "★ Skelettenmes | Damascus Steel",
+        "paint_name": "★ Skeletonmes | Damascus Steel",
         "legacy_model": true
     },
     {
@@ -7740,7 +7788,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-43.png",
-        "paint_name": "★ Skelettenmes | Stained",
+        "paint_name": "★ Skeletonmes | Stained",
         "legacy_model": true
     },
     {
@@ -7748,7 +7796,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "44",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-44.png",
-        "paint_name": "★ Skelettenmes | Case Hardened",
+        "paint_name": "★ Skeletonmes | Case Hardened",
         "legacy_model": true
     },
     {
@@ -7756,7 +7804,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-414.png",
-        "paint_name": "★ Skelettenmes | Rust Coat",
+        "paint_name": "★ Skeletonmes | Rust Coat",
         "legacy_model": true
     },
     {
@@ -7764,7 +7812,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-5.png",
-        "paint_name": "★ Skelettenmes | Forest DDPAT",
+        "paint_name": "★ Skeletonmes | Forest DDPAT",
         "legacy_model": true
     },
     {
@@ -7772,7 +7820,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-77.png",
-        "paint_name": "★ Skelettenmes | Boreal Forest",
+        "paint_name": "★ Skeletonmes | Boreal Forest",
         "legacy_model": true
     },
     {
@@ -7780,7 +7828,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "12",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-12.png",
-        "paint_name": "★ Skelettenmes | Crimson Web",
+        "paint_name": "★ Skeletonmes | Crimson Web",
         "legacy_model": true
     },
     {
@@ -7788,7 +7836,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "98",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-98.png",
-        "paint_name": "★ Skelettenmes | Ultraviolet",
+        "paint_name": "★ Skeletonmes | Ultraviolet",
         "legacy_model": false
     },
     {
@@ -7796,7 +7844,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "175",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-175.png",
-        "paint_name": "★ Skelettenmes | Scorched",
+        "paint_name": "★ Skeletonmes | Scorched",
         "legacy_model": false
     },
     {
@@ -7804,7 +7852,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "72",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-72.png",
-        "paint_name": "★ Skelettenmes | Safari Mesh",
+        "paint_name": "★ Skeletonmes | Safari Mesh",
         "legacy_model": false
     },
     {
@@ -7812,7 +7860,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "735",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-735.png",
-        "paint_name": "★ Skelettenmes | Night Stripe",
+        "paint_name": "★ Skeletonmes | Night Stripe",
         "legacy_model": false
     },
     {
@@ -7820,7 +7868,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "143",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-143.png",
-        "paint_name": "★ Skelettenmes | Urban Masked",
+        "paint_name": "★ Skeletonmes | Urban Masked",
         "legacy_model": false
     },
     {
@@ -9506,6 +9554,14 @@
     {
         "weapon_defindex": 16,
         "weapon_name": "weapon_m4a1",
+        "paint": "1353",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1353.png",
+        "paint_name": "M4A4 | Full Throttle",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 16,
+        "weapon_name": "weapon_m4a1",
         "paint": "1165",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1165.png",
         "paint_name": "M4A4 | Etch Lord",
@@ -9821,6 +9877,14 @@
         "paint": "1166",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1166.png",
         "paint_name": "M4A1-S | Black Lotus",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 60,
+        "weapon_name": "weapon_m4a1_silencer",
+        "paint": "1340",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1340.png",
+        "paint_name": "M4A1-S | Liquidation",
         "legacy_model": false
     },
     {
@@ -10258,6 +10322,14 @@
     {
         "weapon_defindex": 17,
         "weapon_name": "weapon_mac10",
+        "paint": "1349",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10-1349.png",
+        "paint_name": "MAC-10 | Cat Fight",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 17,
+        "weapon_name": "weapon_mac10",
         "paint": "126",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10-126.png",
         "paint_name": "MAC-10 | Saibā Oni",
@@ -10570,6 +10642,14 @@
     {
         "weapon_defindex": 27,
         "weapon_name": "weapon_mag7",
+        "paint": "1355",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7-1355.png",
+        "paint_name": "MAG-7 | MAGnitude",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 27,
+        "weapon_name": "weapon_mag7",
         "paint": "473",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7-473.png",
         "paint_name": "MAG-7 | Seabird",
@@ -10781,6 +10861,14 @@
         "paint": "1180",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd-1180.png",
         "paint_name": "MP5-SD | Statics",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 23,
+        "weapon_name": "weapon_mp5sd",
+        "paint": "1344",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd-1344.png",
+        "paint_name": "MP5-SD | Focus",
         "legacy_model": false
     },
     {
@@ -11021,6 +11109,14 @@
         "paint": "1163",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1163.png",
         "paint_name": "MP7 | Just Smile",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 33,
+        "weapon_name": "weapon_mp7",
+        "paint": "1354",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1354.png",
+        "paint_name": "MP7 | Smoking Kills",
         "legacy_model": false
     },
     {
@@ -11389,6 +11485,14 @@
         "paint": "1193",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1193.png",
         "paint_name": "MP9 | Nexus",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 34,
+        "weapon_name": "weapon_mp9",
+        "paint": "1341",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1341.png",
+        "paint_name": "MP9 | Broken Record",
         "legacy_model": false
     },
     {
@@ -11914,6 +12018,14 @@
     {
         "weapon_defindex": 35,
         "weapon_name": "weapon_nova",
+        "paint": "1350",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova-1350.png",
+        "paint_name": "Nova | Ocular",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 35,
+        "weapon_name": "weapon_nova",
         "paint": "1192",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova-1192.png",
         "paint_name": "Nova | Rising Sun",
@@ -12349,6 +12461,14 @@
         "paint": "1315",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1315.png",
         "paint_name": "P250 | Red Tide",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 36,
+        "weapon_name": "weapon_p250",
+        "paint": "1345",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1345.png",
+        "paint_name": "P250 | Bullfrog",
         "legacy_model": false
     },
     {
@@ -13509,6 +13629,14 @@
         "paint": "117",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20-117.png",
         "paint_name": "SCAR-20 | Trail Blazer",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 38,
+        "weapon_name": "weapon_scar20",
+        "paint": "1343",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20-1343.png",
+        "paint_name": "SCAR-20 | Caged",
         "legacy_model": false
     },
     {
@@ -14949,6 +15077,14 @@
         "paint": "1175",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1175.png",
         "paint_name": "UMP-45 | Motorized",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 24,
+        "weapon_name": "weapon_ump45",
+        "paint": "1351",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1351.png",
+        "paint_name": "UMP-45 | Continuum",
         "legacy_model": false
     },
     {

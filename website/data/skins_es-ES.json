@@ -18,6 +18,14 @@
     {
         "weapon_defindex": 7,
         "weapon_name": "weapon_ak47",
+        "paint": "1352",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47-1352.png",
+        "paint_name": "AK-47 | The Oligarch",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 7,
+        "weapon_name": "weapon_ak47",
         "paint": "113",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47-113.png",
         "paint_name": "AK-47 | Los forasteros",
@@ -554,6 +562,14 @@
     {
         "weapon_defindex": 8,
         "weapon_name": "weapon_aug",
+        "paint": "1339",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug-1339.png",
+        "paint_name": "AUG | Disciplina de gatillo",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 8,
+        "weapon_name": "weapon_aug",
         "paint": "455",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug-455.png",
         "paint_name": "AUG | Akihabara",
@@ -854,6 +870,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-424.png",
         "paint_name": "AWP | Rey gusano",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 9,
+        "weapon_name": "weapon_awp",
+        "paint": "1346",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-1346.png",
+        "paint_name": "AWP | Hielo carbonizado",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 9,
@@ -2501,6 +2525,14 @@
         "paint": "1169",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite-1169.png",
         "paint_name": "Berettas dobles | Guarida",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 2,
+        "weapon_name": "weapon_elite",
+        "paint": "1347",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite-1347.png",
+        "paint_name": "Berettas dobles | Angel Eyes",
         "legacy_model": false
     },
     {
@@ -4210,6 +4242,14 @@
     {
         "weapon_defindex": 4,
         "weapon_name": "weapon_glock",
+        "paint": "1348",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1348.png",
+        "paint_name": "Glock-18 | Mirror Mosaic",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 4,
+        "weapon_name": "weapon_glock",
         "paint": "1208",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1208.png",
         "paint_name": "Glock-18 | Shinobu",
@@ -4606,6 +4646,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000-275.png",
         "paint_name": "P2000 | Camuflaje fragmentado rojo",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 32,
+        "weapon_name": "weapon_hkp2000",
+        "paint": "1342",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000-1342.png",
+        "paint_name": "P2000 | Red Wing",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 32,
@@ -8788,7 +8836,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker.png",
-        "paint_name": "Cuchillo talón ★  | Default",
+        "paint_name": "Cuchillo Garra ★  | Default",
         "legacy_model": false
     },
     {
@@ -8796,7 +8844,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "38",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-38.png",
-        "paint_name": "Cuchillo talón ★ | Desteñido",
+        "paint_name": "Cuchillo Garra ★ | Desteñido",
         "legacy_model": false
     },
     {
@@ -8804,7 +8852,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "417",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-417.png",
-        "paint_name": "Cuchillo talón ★ | Doppler",
+        "paint_name": "Cuchillo Garra ★ | Doppler",
         "legacy_model": false
     },
     {
@@ -8812,7 +8860,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "852",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-852.png",
-        "paint_name": "Cuchillo talón ★ | Doppler",
+        "paint_name": "Cuchillo Garra ★ | Doppler",
         "legacy_model": false
     },
     {
@@ -8820,7 +8868,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "853",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-853.png",
-        "paint_name": "Cuchillo talón ★ | Doppler",
+        "paint_name": "Cuchillo Garra ★ | Doppler",
         "legacy_model": false
     },
     {
@@ -8828,7 +8876,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "854",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-854.png",
-        "paint_name": "Cuchillo talón ★ | Doppler",
+        "paint_name": "Cuchillo Garra ★ | Doppler",
         "legacy_model": false
     },
     {
@@ -8836,7 +8884,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "855",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-855.png",
-        "paint_name": "Cuchillo talón ★ | Doppler",
+        "paint_name": "Cuchillo Garra ★ | Doppler",
         "legacy_model": false
     },
     {
@@ -8844,7 +8892,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "856",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-856.png",
-        "paint_name": "Cuchillo talón ★ | Mármol desteñido",
+        "paint_name": "Cuchillo Garra ★ | Mármol desteñido",
         "legacy_model": true
     },
     {
@@ -8852,7 +8900,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "415",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-415.png",
-        "paint_name": "Cuchillo talón ★ | Doppler",
+        "paint_name": "Cuchillo Garra ★ | Doppler",
         "legacy_model": false
     },
     {
@@ -8860,7 +8908,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "416",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-416.png",
-        "paint_name": "Cuchillo talón ★ | Doppler",
+        "paint_name": "Cuchillo Garra ★ | Doppler",
         "legacy_model": false
     },
     {
@@ -8868,7 +8916,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-59.png",
-        "paint_name": "Cuchillo talón ★ | Masacre",
+        "paint_name": "Cuchillo Garra ★ | Masacre",
         "legacy_model": true
     },
     {
@@ -8876,7 +8924,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-409.png",
-        "paint_name": "Cuchillo talón ★ | Diente de tigre",
+        "paint_name": "Cuchillo Garra ★ | Diente de tigre",
         "legacy_model": true
     },
     {
@@ -8884,7 +8932,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "42",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-42.png",
-        "paint_name": "Cuchillo talón ★ | Azul metalizado",
+        "paint_name": "Cuchillo Garra ★ | Azul metalizado",
         "legacy_model": true
     },
     {
@@ -8892,7 +8940,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "858",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-858.png",
-        "paint_name": "Cuchillo talón ★ | Acero de damasco",
+        "paint_name": "Cuchillo Garra ★ | Acero de damasco",
         "legacy_model": true
     },
     {
@@ -8900,7 +8948,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-43.png",
-        "paint_name": "Cuchillo talón ★ | Manchado",
+        "paint_name": "Cuchillo Garra ★ | Manchado",
         "legacy_model": true
     },
     {
@@ -8908,7 +8956,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "44",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-44.png",
-        "paint_name": "Cuchillo talón ★ | Acero templado",
+        "paint_name": "Cuchillo Garra ★ | Acero templado",
         "legacy_model": true
     },
     {
@@ -8916,7 +8964,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-414.png",
-        "paint_name": "Cuchillo talón ★ | Capa de herrumbre",
+        "paint_name": "Cuchillo Garra ★ | Capa de herrumbre",
         "legacy_model": true
     },
     {
@@ -8924,7 +8972,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-5.png",
-        "paint_name": "Cuchillo talón ★ | DDPAT bosque",
+        "paint_name": "Cuchillo Garra ★ | DDPAT bosque",
         "legacy_model": true
     },
     {
@@ -8932,7 +8980,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-77.png",
-        "paint_name": "Cuchillo talón ★ | Bosque boreal",
+        "paint_name": "Cuchillo Garra ★ | Bosque boreal",
         "legacy_model": true
     },
     {
@@ -8940,7 +8988,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "12",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-12.png",
-        "paint_name": "Cuchillo talón ★ | Tela escarlata",
+        "paint_name": "Cuchillo Garra ★ | Tela escarlata",
         "legacy_model": true
     },
     {
@@ -8948,7 +8996,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "98",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-98.png",
-        "paint_name": "Cuchillo talón ★ | Ultravioleta",
+        "paint_name": "Cuchillo Garra ★ | Ultravioleta",
         "legacy_model": false
     },
     {
@@ -8956,7 +9004,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "175",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-175.png",
-        "paint_name": "Cuchillo talón ★ | Chamuscado",
+        "paint_name": "Cuchillo Garra ★ | Chamuscado",
         "legacy_model": false
     },
     {
@@ -8964,7 +9012,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "72",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-72.png",
-        "paint_name": "Cuchillo talón ★ | Malla de safari",
+        "paint_name": "Cuchillo Garra ★ | Malla de safari",
         "legacy_model": false
     },
     {
@@ -8972,7 +9020,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "735",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-735.png",
-        "paint_name": "Cuchillo talón ★ | Franja nocturna",
+        "paint_name": "Cuchillo Garra ★ | Franja nocturna",
         "legacy_model": false
     },
     {
@@ -8980,7 +9028,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "143",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-143.png",
-        "paint_name": "Cuchillo talón ★ | Pátina urbana",
+        "paint_name": "Cuchillo Garra ★ | Pátina urbana",
         "legacy_model": false
     },
     {
@@ -9506,6 +9554,14 @@
     {
         "weapon_defindex": 16,
         "weapon_name": "weapon_m4a1",
+        "paint": "1353",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1353.png",
+        "paint_name": "M4A4 | Full Throttle",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 16,
+        "weapon_name": "weapon_m4a1",
         "paint": "1165",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1165.png",
         "paint_name": "M4A4 | Rey del grabado",
@@ -9821,6 +9877,14 @@
         "paint": "1166",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1166.png",
         "paint_name": "M4A1-S | Loto negro",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 60,
+        "weapon_name": "weapon_m4a1_silencer",
+        "paint": "1340",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1340.png",
+        "paint_name": "M4A1-S | Liquidación",
         "legacy_model": false
     },
     {
@@ -10258,6 +10322,14 @@
     {
         "weapon_defindex": 17,
         "weapon_name": "weapon_mac10",
+        "paint": "1349",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10-1349.png",
+        "paint_name": "MAC-10 | Cat Fight",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 17,
+        "weapon_name": "weapon_mac10",
         "paint": "126",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10-126.png",
         "paint_name": "MAC-10 | Saibā Oni",
@@ -10570,6 +10642,14 @@
     {
         "weapon_defindex": 27,
         "weapon_name": "weapon_mag7",
+        "paint": "1355",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7-1355.png",
+        "paint_name": "MAG-7 | MAGnitude",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 27,
+        "weapon_name": "weapon_mag7",
         "paint": "473",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7-473.png",
         "paint_name": "MAG-7 | Ave marina",
@@ -10781,6 +10861,14 @@
         "paint": "1180",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd-1180.png",
         "paint_name": "MP5-SD | Estática",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 23,
+        "weapon_name": "weapon_mp5sd",
+        "paint": "1344",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd-1344.png",
+        "paint_name": "MP5-SD | Focus",
         "legacy_model": false
     },
     {
@@ -11021,6 +11109,14 @@
         "paint": "1163",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1163.png",
         "paint_name": "MP7 | Just Smile",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 33,
+        "weapon_name": "weapon_mp7",
+        "paint": "1354",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1354.png",
+        "paint_name": "MP7 | Smoking Kills",
         "legacy_model": false
     },
     {
@@ -11389,6 +11485,14 @@
         "paint": "1193",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1193.png",
         "paint_name": "MP9 | Nexus",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 34,
+        "weapon_name": "weapon_mp9",
+        "paint": "1341",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1341.png",
+        "paint_name": "MP9 | Broken Record",
         "legacy_model": false
     },
     {
@@ -11914,6 +12018,14 @@
     {
         "weapon_defindex": 35,
         "weapon_name": "weapon_nova",
+        "paint": "1350",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova-1350.png",
+        "paint_name": "Nova | Ocular",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 35,
+        "weapon_name": "weapon_nova",
         "paint": "1192",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova-1192.png",
         "paint_name": "Nova | Sol naciente",
@@ -12349,6 +12461,14 @@
         "paint": "1315",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1315.png",
         "paint_name": "P250 | Marea roja",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 36,
+        "weapon_name": "weapon_p250",
+        "paint": "1345",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1345.png",
+        "paint_name": "P250 | Bullfrog",
         "legacy_model": false
     },
     {
@@ -13509,6 +13629,14 @@
         "paint": "117",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20-117.png",
         "paint_name": "SCAR-20 | Pionero",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 38,
+        "weapon_name": "weapon_scar20",
+        "paint": "1343",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20-1343.png",
+        "paint_name": "SCAR-20 | Caged",
         "legacy_model": false
     },
     {
@@ -14949,6 +15077,14 @@
         "paint": "1175",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1175.png",
         "paint_name": "UMP-45 | Motorizado",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 24,
+        "weapon_name": "weapon_ump45",
+        "paint": "1351",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1351.png",
+        "paint_name": "UMP-45 | Continuum",
         "legacy_model": false
     },
     {

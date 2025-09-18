@@ -6,7 +6,6 @@ using CounterStrikeSharp.API.Modules.Timers;
 using CounterStrikeSharp.API.Modules.Utils;
 using Microsoft.Extensions.Logging;
 using System.Collections.Concurrent;
-using System.Runtime.InteropServices;
 using Newtonsoft.Json.Linq;
 
 namespace WeaponPaints
@@ -17,9 +16,9 @@ namespace WeaponPaints
 		{
 			if (!Config.Additional.SkinEnabled) return;
 			if (!GPlayerWeaponsInfo.TryGetValue(player.Slot, out _)) return;
-
+			
 			bool isKnife = weapon.DesignerName.Contains("knife") || weapon.DesignerName.Contains("bayonet");
-
+			
 			switch (isKnife)
 			{
 				case true when !HasChangedKnife(player, out var _):
@@ -64,22 +63,22 @@ namespace WeaponPaints
 				weapon.FallbackPaintKit = GetRandomPaint(weaponDefIndex);
 				weapon.FallbackSeed = 0;
 				weapon.FallbackWear = 0.01f;
-
+			
 				weapon.AttributeManager.Item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", GetRandomPaint(weaponDefIndex));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture seed", 0);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture wear", 0.01f);
-
+			
 				weapon.AttributeManager.Item.AttributeList.Attributes.RemoveAll();
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture prefab", GetRandomPaint(weaponDefIndex));
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture seed", 0);
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture wear", 0.01f);
-
+			
 				fallbackPaintKit = weapon.FallbackPaintKit;
-
+			
 				if (fallbackPaintKit == 0)
 					return;
-
+			
 				skinInfo = SkinsList
 					.Where(w => 
 						w["weapon_defindex"]?.ToObject<int>() == weaponDefIndex && 
@@ -135,7 +134,6 @@ namespace WeaponPaints
 				.ToList();
 				
 			isLegacyModel = skinInfo.Count <= 0 || skinInfo[0].Value<bool>("legacy_model");
-
 			UpdatePlayerWeaponMeshGroupMask(player, weapon, isLegacyModel);
 		}
 		
@@ -385,7 +383,6 @@ namespace WeaponPaints
 			item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 			item.AttributeList.Attributes.RemoveAll();
 
-
 			Instance.AddTimer(0.08f, () =>
 			{	
 				try
@@ -453,19 +450,17 @@ namespace WeaponPaints
 			pawn.AcceptInput("SetBodygroup", value:$"{group},{value}");
 		}
 
-		private static void UpdateWeaponMeshGroupMask(CBaseEntity weapon, bool isLegacy = false)
+		private void UpdateWeaponMeshGroupMask(CBaseEntity weapon, bool isLegacy = false)
 		{
-			if (weapon.CBodyComponent?.SceneNode == null) return;
-			var skeleton = weapon.CBodyComponent.SceneNode.GetSkeletonInstance();
-			var value = (ulong)(isLegacy ? 2 : 1);
+				if (!weapon.DesignerName.Contains("ak47")) return;
+				if (weapon.CBodyComponent?.SceneNode == null) return;
+				var skeleton = weapon.CBodyComponent.SceneNode.GetSkeletonInstance();
 
-			if (skeleton.ModelState.MeshGroupMask != value)
-			{
-				skeleton.ModelState.MeshGroupMask = value;
-			}
+				weapon.AcceptInput("SetBodygroup", value: $"body,{(isLegacy ? 1 : 0)}");
+				// skeleton.ModelState.MeshGroupMask = isLegacy ? 2UL : 1UL;
 		}
 
-		private static void UpdatePlayerWeaponMeshGroupMask(CCSPlayerController player, CBasePlayerWeapon weapon, bool isLegacy)
+		private void UpdatePlayerWeaponMeshGroupMask(CCSPlayerController player, CBasePlayerWeapon weapon, bool isLegacy)
 		{
 			UpdateWeaponMeshGroupMask(weapon, isLegacy);
 		}
