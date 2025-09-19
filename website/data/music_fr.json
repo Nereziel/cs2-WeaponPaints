@@ -423,5 +423,55 @@
         "id": "86",
         "name": "Kit de musiques | Perfect World, Ay Hey",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-86.png"
+    },
+    {
+        "id": "87",
+        "name": "Kit de musiques | Adam Beyer, Red Room",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-87.png"
+    },
+    {
+        "id": "88",
+        "name": "Kit de musiques | Ghost, Skeletá",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-88.png"
+    },
+    {
+        "id": "89",
+        "name": "Kit de musiques | HEALTH, RAT WARS",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-89.png"
+    },
+    {
+        "id": "90",
+        "name": "Kit de musiques | James and the Cold Gun, Chewing Glass",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-90.png"
+    },
+    {
+        "id": "91",
+        "name": "Kit de musiques | Jonathan Young, Starship Velociraptor",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-91.png"
+    },
+    {
+        "id": "92",
+        "name": "Kit de musiques | Juelz, Floorspace",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-92.png"
+    },
+    {
+        "id": "93",
+        "name": "Kit de musiques | Killer Mike, MICHAEL",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-93.png"
+    },
+    {
+        "id": "94",
+        "name": "Kit de musiques | PVRIS, Evergreen",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-94.png"
+    },
+    {
+        "id": "95",
+        "name": "Kit de musiques | Selective Response, No Love Only Pleasure",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-95.png"
+    },
+    {
+        "id": "96",
+        "name": "Kit de musiques | Tigercub, The Perfume of Decay",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-96.png"
     }
 ]
