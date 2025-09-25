@@ -1,0 +1,30 @@
+{
+	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
+	"wp_info_website": "Navštiv {lime}{0}{default} kde si můžeš změnit skiny",
+	"wp_info_refresh": "Napiš {lime}!wp{default} pro synchronizaci vybraných skinů",
+	"wp_info_knife": "Napiš {lime}!knife{default} pro otevření menu nožů",
+	"wp_info_glove": "Napiš {lime}!gloves{default} pro otevření menu rukavic",
+	"wp_info_agent": "Napiš {lime}!agents{default} pro otevření menu agentů",
+	"wp_info_music": "Napiš {lime}!music{default} pro otevření menu MVP hudeb",
+	"wp_info_pin": "Napiš {lime}!pins{default} pro otevření menu odznaků",
+	"wp_command_cooldown": "{lightred}Skiny nelze nýni obnovit!",
+	"wp_command_refresh_done": "{lime}Obnovuji skiny",
+	"wp_knife_menu_select": "Vybral jsi si {lime}{0}{default} jako tvůj nůž",
+	"wp_knife_menu_kill": "",
+	"wp_knife_menu_title": "Menu nožů",
+	"wp_glove_menu_select": "Vybral jsi si {lime}{0}{default} jako tvoje rukavice",
+	"wp_glove_menu_title": "Menu rukavic",
+	"wp_agent_menu_select": "Vybral jsi si {lime}{0}{default} jako tvůj agent",
+	"wp_agent_menu_title": "Menu agentů",
+	"wp_music_menu_title": "Menu MVP hudeb",
+	"wp_music_menu_select": "Vybral jsi si {lime}{0}{default} jako tvojí MVP hudbu",
+	"wp_pins_menu_title": "Menu odznaků",
+	"wp_pins_menu_select": "Vybral jsi si {lime}{0}{default} jako tvůj odznak",
+	"wp_skin_menu_weapon_title": "Menu zbraní",
+	"wp_skin_menu_skin_title": "Vyběr skinů pro {lime}{0}{default}",
+	"wp_skin_menu_select": "Vybral jsi si {lime}{0}{default} jako tvůj skin",
+
+	"wp_stattrak_action": "Úspěšně jste změnil nastavení stattraku",
+	
+	"None": "Žádné"
+}
