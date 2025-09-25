@@ -14,6 +14,7 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Data syncs on player connect
 - Added command **`!wp`** to refresh skins ***(with cooldown in seconds can be configured)***
 - Added command **`!ws`** to show website
+- Added command **`!skins`** to show menu with skins
 - Added command **`!knife`** to show menu with knives
 - Added command **`!gloves`** to show menu with gloves
 - Added command **`!agents`** to show menu with agents
