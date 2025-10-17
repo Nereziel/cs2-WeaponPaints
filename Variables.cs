@@ -168,4 +168,6 @@ public partial class WeaponPaints
 	private static readonly PluginCapability<IMenuApi> MenuCapability = new("menu:nfcore");
 	
 	private int _fadeSeed;
+
+	internal List<CCSPlayerController> Players = [];
 }

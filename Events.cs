@@ -59,6 +59,8 @@ namespace WeaponPaints
 			catch
 			{
 			}
+			
+			Players.Add(player);
 
 			return HookResult.Continue;
 		}
@@ -114,6 +116,7 @@ namespace WeaponPaints
 			
 			_temporaryPlayerWeaponWear.TryRemove(player.Slot, out _);
 			CommandsCooldown.Remove(player.Slot);
+			Players.Remove(player);
 
 			return HookResult.Continue;
 		}
@@ -239,7 +242,7 @@ namespace WeaponPaints
 
 						if (steamid != null && steamid.IsValid())
 						{
-							player = Utilities.GetPlayers().FirstOrDefault(p => p.IsValid && p.SteamID == steamid.SteamId64);
+							player = Players.FirstOrDefault(p => p.IsValid && p.SteamID == steamid.SteamId64);
 
 							if (player == null)
 								player = Utilities.GetPlayerFromSteamId(weapon.OriginalOwnerXuidLow);
@@ -266,11 +269,7 @@ namespace WeaponPaints
 		{
 			if (!Config.Additional.ShowSkinImage) return;
 
-			foreach (var player in Utilities.GetPlayers().Where(p =>
-							p is { IsValid: true, PlayerPawn.IsValid: true, IsBot: false } and
-								{ Connected: PlayerConnectedState.PlayerConnected }
-							)
-				)
+			foreach (var player in Players)
 			{
 				if (_playerWeaponImage.TryGetValue(player.Slot, out var value) && !string.IsNullOrEmpty(value))
 				{
