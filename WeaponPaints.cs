@@ -80,9 +80,28 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		Config = config;
 		_config = config;
 
-		if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
+		// Validar configurações de banco de dados
+		if (config.DatabaseType.ToLower() == "mysql")
 		{
-			Logger.LogError("You need to setup Database credentials in \"configs/plugins/WeaponPaints/WeaponPaints.json\"!");
+			if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
+			{
+				Logger.LogError("You need to setup MySQL Database credentials in \"configs/plugins/WeaponPaints/WeaponPaints.json\"!");
+				Unload(false);
+				return;
+			}
+		}
+		else if (config.DatabaseType.ToLower() == "sqlite")
+		{
+			if (string.IsNullOrEmpty(config.DatabasePath))
+			{
+				Logger.LogError("You need to setup SQLite Database path in \"configs/plugins/WeaponPaints/WeaponPaints.json\"!");
+				Unload(false);
+				return;
+			}
+		}
+		else
+		{
+			Logger.LogError("Invalid DatabaseType. Use 'mysql' or 'sqlite'.");
 			Unload(false);
 			return;
 		}
@@ -94,23 +113,43 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			return;
 		}
 		
-		var builder = new MySqlConnectionStringBuilder
+		// Criar conexão baseada no tipo de banco
+		IDatabaseConnection connection;
+		if (config.DatabaseType.ToLower() == "mysql")
 		{
-			Server = config.DatabaseHost,
-			UserID = config.DatabaseUser,
-			Password = config.DatabasePassword,
-			Database = config.DatabaseName,
-			Port = (uint)config.DatabasePort,
-			Pooling = true,
-			MaximumPoolSize = 640,
-		};
+			var builder = new MySqlConnectionStringBuilder
+			{
+				Server = config.DatabaseHost,
+				UserID = config.DatabaseUser,
+				Password = config.DatabasePassword,
+				Database = config.DatabaseName,
+				Port = (uint)config.DatabasePort,
+				Pooling = true,
+				MaximumPoolSize = 640,
+			};
+			connection = new MySQLConnection(builder.ConnectionString, Logger);
+		}
+		else // SQLite
+		{
+			// Garantir que o diretório existe
+			var dbPath = Path.GetFullPath(config.DatabasePath);
+			var dbDirectory = Path.GetDirectoryName(dbPath);
+			if (!string.IsNullOrEmpty(dbDirectory) && !Directory.Exists(dbDirectory))
+			{
+				Directory.CreateDirectory(dbDirectory);
+			}
+			
+			var connectionString = $"Data Source={dbPath}";
+			Logger.LogInformation($"[WeaponPaints] SQLite database path: {dbPath}");
+			
+			connection = new SQLiteConnection(connectionString, Logger);
+		}
 
-		Database = new Database(builder.ConnectionString);
-
-		_ = Utility.CheckDatabaseTables();
-		_localizer = Localizer;
+		Database = new Database(connection);
 
 		Utility.Config = config;
+		Task.Run(async () => await Utility.CheckDatabaseTables());
+		_localizer = Localizer;
 		Utility.ShowAd(ModuleVersion);
 		Task.Run(async () => await Utility.CheckVersion(ModuleVersion, Logger));
 	}
