@@ -1,0 +1,30 @@
+{
+	"wp_prefix": "{lightblue}[WeaponPaints] {default}",
+	"wp_info_website": "Tape {lime}!skins{default} ou visite {lime}{0}{default} pour changer les skins.",
+	"wp_info_refresh": "Tape {lime}!wp{default} pour synchroniser les skins.",
+	"wp_info_knife": "Tape {lime}!knife{default} pour ouvrir le menu knife.",
+	"wp_info_glove": "Tape {lime}!gants{default} pour ouvrir le menu gants.",
+	"wp_info_agent": "Tape {lime}!agents{default} pour ouvrir le menu agents.",
+	"wp_info_music": "Tape {lime}!musique{default} pour ouvrir le menu musique.",
+	"wp_info_pin": "Tape {lime}!pins{default} pour ouvrir le menu pins.",
+	"wp_command_cooldown": "{lightred}Tu ne peux pas synchroniser pour le moment.",
+	"wp_command_refresh_done": "{lime}Synchro en cours...",
+	"wp_knife_menu_select": "Tu as choisi le couteau {lime}{0}{default}.",
+	"wp_knife_menu_kill": "",
+	"wp_knife_menu_title": "Menu Knife",
+	"wp_glove_menu_select": "Tu as choisi les gants {lime}{0}{default}.",
+	"wp_glove_menu_title": "Menu Gants",
+	"wp_agent_menu_select": "Tu as choisi l'agent {lime}{0}{default}.",
+	"wp_agent_menu_title": "Menu Agents",
+	"wp_music_menu_title": "Menu Musique",
+	"wp_music_menu_select": "Tu as choisi le kit de musique {lime}{0}{default}.",
+	"wp_pins_menu_title": "Pins Menu",
+	"wp_pins_menu_select": "Tu as choisi le pin {lime}{0}{default.",
+	"wp_skin_menu_weapon_title": "Menu Arme",
+	"wp_skin_menu_skin_title": "Choisis le skin pour {lime}{0}{default}",
+	"wp_skin_menu_select": "Tu as choisi le skin {lime}{0}{default}.",
+
+	"wp_stattrak_action": "Tu as bien changé le stattrak.",
+	
+	"None": "Rien"
+}
