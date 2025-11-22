@@ -3,6 +3,7 @@
 	"wp_info_website": "Visite {lime}{0}{default}, onde pode alterar as skins",
 	"wp_info_refresh": "Digite {lime}!wp{default} para sincronizar as skins escolhidas",
 	"wp_info_knife": "Digite {lime}!knife{default} para abrir o menu de facas",
+        "wp_info_skins": "Digite {lime}!skins{default} para abrir o menu de skins",
 	"wp_info_glove": "Digite {lime}!gloves{default} para abrir o menu de luvas",
 	"wp_info_agent": "Digite {lime}!agents{default} para abrir o menu de agentes",
 	"wp_info_music": "Digite {lime}!music{default} para abrir o menu de música",

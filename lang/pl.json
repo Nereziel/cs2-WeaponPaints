@@ -3,6 +3,7 @@
 	"wp_info_website": "Odwiedź {lime}{0}{default}, gdzie możesz zmieniać skórki",
 	"wp_info_refresh": "Wpisz {lime}!wp{default}, aby zsynchronizować wybrane skórki",
 	"wp_info_knife": "Wpisz {lime}!knife{default}, aby otworzyć menu noży",
+        "wp_info_skins": "Wpisz {lime}!skins{default}, aby otworzyć menu skinów",
 	"wp_info_glove": "Wpisz {lime}!gloves{default}, aby otworzyć menu rękawic",
 	"wp_info_agent": "Wpisz {lime}!agents{default}, aby otworzyć menu agentów",
 	"wp_info_music": "Wpisz {lime}!music{default}, aby otworzyć menu muzyczne",

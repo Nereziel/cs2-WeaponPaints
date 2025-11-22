@@ -3,6 +3,7 @@
 	"wp_info_website": "Apmeklē {lime}{0}{default}, kur varat mainīt ādas",
 	"wp_info_refresh": "Ievadiet {lime}!wp{default}, lai sinhronizētu izvēlētās ādas",
 	"wp_info_knife": "Ievadiet {lime}!knife{default}, lai atvērtu nazis izvēlni",
+        "wp_info_skins": "Ievadiet {lime}!skins{default}, lai atvērtu skinu izvēlni",
 	"wp_info_glove": "Ievadiet {lime}!gloves{default}, lai atvērtu cimdi izvēlni",
 	"wp_info_agent": "Ievadiet {lime}!agents{default}, lai atvērtu aģentu izvēlni",
 	"wp_info_music": "Ievadiet {lime}!music{default}, lai atvērtu mūzikas izvēlni",

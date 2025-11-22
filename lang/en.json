@@ -3,6 +3,7 @@
 	"wp_info_website": "Visit {lime}{0}{default} where you can change skins",
 	"wp_info_refresh": "Type {lime}!wp{default} to synchronize chosen skins",
 	"wp_info_knife": "Type {lime}!knife{default} to open knife menu",
+        "wp_info_skins": "Type {lime}!skins{default} to open skins menu",
 	"wp_info_glove": "Type {lime}!gloves{default} to open gloves menu",
 	"wp_info_agent": "Type {lime}!agents{default} to open agents menu",
 	"wp_info_music": "Type {lime}!music{default} to open music menu",
@@ -25,6 +26,6 @@
 	"wp_skin_menu_select": "You have chosen {lime}{0}{default} as your skin",
 
 	"wp_stattrak_action": "You have successfully changed the stattrak setting",
-	
+
 	"None": "None"
 }
