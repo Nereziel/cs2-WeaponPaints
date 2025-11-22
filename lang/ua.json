@@ -3,7 +3,7 @@
 	"wp_info_website": "Відвідайте {lime}{0}{default}, де ви можете змінити шкури",
 	"wp_info_refresh": "Введіть {lime}!wp{default}, щоб синхронізувати обрані шкури",
 	"wp_info_knife": "Введіть {lime}!knife{default}, щоб відкрити меню ножів",
-        "wp_info_skins": "Введіть {lime}!skins{default}, щоб відкрити меню скінів",
+	"wp_info_skins": "Введіть {lime}!skins{default}, щоб відкрити меню скінів",
 	"wp_info_glove": "Введіть {lime}!gloves{default}, щоб відкрити меню рукавичок",
 	"wp_info_agent": "Введіть {lime}!agents{default}, щоб відкрити меню агентів",
 	"wp_info_music": "Введіть {lime}!music{default}, щоб відкрити меню музики",
@@ -24,8 +24,6 @@
 	"wp_skin_menu_weapon_title": "Меню Зброї",
 	"wp_skin_menu_skin_title": "Виберіть шкіру для {lime}{0}{default}",
 	"wp_skin_menu_select": "Ви обрали {lime}{0}{default} як свою шкіру",
-
 	"wp_stattrak_action": "Ви успішно змінили налаштування статтрака",
-	
 	"None": "Немає"
 }

@@ -3,7 +3,7 @@
 	"wp_info_website": "Ziyaret edin {lime}{0}{default}, nerede derileri değiştirebilirsiniz",
 	"wp_info_refresh": "Senkronize etmek için {lime}!wp{default} yazın seçilen deriler",
 	"wp_info_knife": "Bıçak menüsünü açmak için {lime}!knife{default} yazın",
-        "wp_info_skins": "Skin menüsünü açmak için {lime}!skins{default} yazin",
+	"wp_info_skins": "Skin menüsünü açmak için {lime}!skins{default} yazin",
 	"wp_info_glove": "Handskar menüsünü açmak için {lime}!gloves{default} yazın",
 	"wp_info_agent": "Ajan menüsünü açmak için {lime}!agents{default} yazın",
 	"wp_info_music": "Müzik menüsünü açmak için {lime}!music{default} yazın",
@@ -24,8 +24,6 @@
 	"wp_skin_menu_weapon_title": "Silah Menüsü",
 	"wp_skin_menu_skin_title": "{lime}{0}{default} için cilt seçin",
 	"wp_skin_menu_select": "{lime}{0}{default} olarak cildinizi seçtiniz",
-
 	"wp_stattrak_action": "StatTrak ayarını başarıyla değiştirdiniz",
-	
 	"None": "Hiçbiri"
 }

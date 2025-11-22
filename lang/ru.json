@@ -3,7 +3,7 @@
 	"wp_info_website": "Посетите {lime}{0}{default}, где вы можете изменить скины",
 	"wp_info_refresh": "Введите {lime}!wp{default}, чтобы синхронизировать выбранные скины",
 	"wp_info_knife": "Введите {lime}!knife{default}, чтобы открыть меню ножей",
-        "wp_info_skins": "Введите {lime}!skins{default}, чтобы открыть меню скинов",
+	"wp_info_skins": "Введите {lime}!skins{default}, чтобы открыть меню скинов",
 	"wp_info_glove": "Введите {lime}!gloves{default}, чтобы открыть меню перчаток",
 	"wp_info_agent": "Введите {lime}!agents{default}, чтобы открыть меню агентов",
 	"wp_info_music": "Введите {lime}!music{default}, чтобы открыть меню музыки",
@@ -24,8 +24,6 @@
 	"wp_skin_menu_weapon_title": "Меню Оружия",
 	"wp_skin_menu_skin_title": "Выберите скин для {lime}{0}{default}",
 	"wp_skin_menu_select": "Вы выбрали {lime}{0}{default} в качестве вашего скина",
-
 	"wp_stattrak_action": "Вы успешно изменили настройки статтрак",
-	
 	"None": "Нет"
 }

@@ -3,7 +3,7 @@
 	"wp_info_website": "Visite {lime}{0}{default}, onde você pode alterar as skins",
 	"wp_info_refresh": "Digite {lime}!wp{default} para sincronizar as skins escolhidas",
 	"wp_info_knife": "Digite {lime}!knife{default} para abrir o menu de facas",
-        "wp_info_skins": "Digite {lime}!skins{default} para abrir o menu de skins",
+	"wp_info_skins": "Digite {lime}!skins{default} para abrir o menu de skins",
 	"wp_info_glove": "Digite {lime}!gloves{default} para abrir o menu de luvas",
 	"wp_info_agent": "Digite {lime}!agents{default} para abrir o menu de agentes",
 	"wp_info_music": "Digite {lime}!music{default} para abrir o menu de música",
@@ -24,8 +24,6 @@
 	"wp_skin_menu_weapon_title": "Menu de Armas",
 	"wp_skin_menu_skin_title": "Selecione a skin para {lime}{0}{default}",
 	"wp_skin_menu_select": "Você escolheu {lime}{0}{default} como sua skin",
-
 	"wp_stattrak_action": "Você alterou a configuração de stattrak com sucesso",
-	
 	"None": "Nenhum"
 }
