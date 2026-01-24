@@ -1,23 +1,21 @@
 ﻿using Microsoft.Extensions.Logging;
-using MySqlConnector;
 
 namespace WeaponPaints
 {
-	public class Database(string dbConnectionString)
-	{
-		public async Task<MySqlConnection> GetConnectionAsync()
-		{
-			try
-			{
-				var connection = new MySqlConnection(dbConnectionString);
-				await connection.OpenAsync();
-				return connection;
-			}
-			catch (Exception ex)
-			{
-				WeaponPaints.Instance.Logger.LogError($"Unable to connect to database: {ex.Message}");
-				throw;
-			}
-		}
-	}
+    public class Database
+    {
+        private readonly Func<IDatabaseConnection> _connectionFactory;
+
+        public Database(Func<IDatabaseConnection> connectionFactory)
+        {
+            _connectionFactory = connectionFactory;
+        }
+
+        public async Task<IDatabaseConnection> GetConnectionAsync()
+        {
+            var connection = _connectionFactory();
+            await connection.OpenAsync();
+            return connection;
+        }
+    }
 }

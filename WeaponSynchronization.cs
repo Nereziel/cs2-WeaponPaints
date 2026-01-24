@@ -1,8 +1,8 @@
 ﻿using Dapper;
-using MySqlConnector;
 using System.Collections.Concurrent;
 using CounterStrikeSharp.API.Modules.Utils;
 using System.Globalization;
+using System.Data;
 
 namespace WeaponPaints;
 
@@ -24,17 +24,17 @@ internal class WeaponSynchronization
 			await using var connection = await _database.GetConnectionAsync();
 
 			if (_config.Additional.KnifeEnabled)
-				GetKnifeFromDatabase(player, connection);
+				GetKnifeFromDatabase(player, connection.GetConnection());
 			if (_config.Additional.GloveEnabled)
-				GetGloveFromDatabase(player, connection);
+				GetGloveFromDatabase(player, connection.GetConnection());
 			if (_config.Additional.AgentEnabled)
-				GetAgentFromDatabase(player, connection);
+				GetAgentFromDatabase(player, connection.GetConnection());
 			if (_config.Additional.MusicEnabled)
-				GetMusicFromDatabase(player, connection);
+				GetMusicFromDatabase(player, connection.GetConnection());
 			if (_config.Additional.SkinEnabled)
-				GetWeaponPaintsFromDatabase(player, connection);
+				GetWeaponPaintsFromDatabase(player, connection.GetConnection());
 			if (_config.Additional.PinsEnabled)
-				GetPinsFromDatabase(player, connection);
+				GetPinsFromDatabase(player, connection.GetConnection());
 		}
 		catch (Exception ex)
 		{
@@ -43,14 +43,16 @@ internal class WeaponSynchronization
 		}
 	}
 
-	private void GetKnifeFromDatabase(PlayerInfo? player, MySqlConnection connection)
+	private void GetKnifeFromDatabase(PlayerInfo? player, IDbConnection connection)
 	{
 		try
 		{
 			if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player?.SteamId))
 				return;
 
-			const string query = "SELECT `knife`, `weapon_team` FROM `wp_player_knife` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
+			string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+				? "SELECT knife, weapon_team FROM wp_player_knife WHERE steamid = @steamid ORDER BY weapon_team ASC"
+				: "SELECT `knife`, `weapon_team` FROM `wp_player_knife` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var rows = connection.Query<dynamic>(query, new { steamid = player.SteamId }); // Retrieve all records for the player
 
 			foreach (var row in rows)
@@ -59,14 +61,14 @@ internal class WeaponSynchronization
 				if (string.IsNullOrEmpty(row.knife)) continue;
 
 				// Determine the weapon team based on the query result
-				CsTeam weaponTeam = (int)row.weapon_team switch
+				CsTeam weaponTeam = Convert.ToInt32(row.weapon_team) switch
 				{
 					2 => CsTeam.Terrorist,
 					3 => CsTeam.CounterTerrorist,
 					_ => CsTeam.None,
 				};
 
-				// Get or create entries for the player’s slot
+				// Get or create entries for the player's slot
 				var playerKnives = WeaponPaints.GPlayersKnife.GetOrAdd(player.Slot, _ => new ConcurrentDictionary<CsTeam, string>());
 
 				if (weaponTeam == CsTeam.None)
@@ -88,14 +90,16 @@ internal class WeaponSynchronization
 		}
 	}
 
-	private void GetGloveFromDatabase(PlayerInfo? player, MySqlConnection connection)
+	private void GetGloveFromDatabase(PlayerInfo? player, IDbConnection connection)
 	{
 		try
 		{
 			if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player?.SteamId))
 				return;
 
-			const string query = "SELECT `weapon_defindex`, `weapon_team` FROM `wp_player_gloves` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
+			string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+				? "SELECT weapon_defindex, weapon_team FROM wp_player_gloves WHERE steamid = @steamid ORDER BY weapon_team ASC"
+				: "SELECT `weapon_defindex`, `weapon_team` FROM `wp_player_gloves` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var rows = connection.Query<dynamic>(query, new { steamid = player.SteamId }); // Retrieve all records for the player
 
 			foreach (var row in rows)
@@ -104,7 +108,7 @@ internal class WeaponSynchronization
 				if (row.weapon_defindex == null) continue;
 				// Determine the weapon team based on the query result
 				var playerGloves = WeaponPaints.GPlayersGlove.GetOrAdd(player.Slot, _ => new ConcurrentDictionary<CsTeam, ushort>());
-				CsTeam weaponTeam = (int)row.weapon_team switch
+				CsTeam weaponTeam = Convert.ToInt32(row.weapon_team) switch
 				{
 					2 => CsTeam.Terrorist,
 					3 => CsTeam.CounterTerrorist,
@@ -116,13 +120,13 @@ internal class WeaponSynchronization
 				if (weaponTeam == CsTeam.None)
 				{
 					// Assign glove ID to both teams if weaponTeam is None
-					playerGloves[CsTeam.Terrorist] = (ushort)row.weapon_defindex;
-					playerGloves[CsTeam.CounterTerrorist] = (ushort)row.weapon_defindex;
+					playerGloves[CsTeam.Terrorist] = Convert.ToUInt16(row.weapon_defindex);
+					playerGloves[CsTeam.CounterTerrorist] = Convert.ToUInt16(row.weapon_defindex);
 				}
 				else
 				{
 					// Assign glove ID to the specific team
-					playerGloves[weaponTeam] = (ushort)row.weapon_defindex;
+					playerGloves[weaponTeam] = Convert.ToUInt16(row.weapon_defindex);
 				}
 			}
 		}
@@ -132,14 +136,16 @@ internal class WeaponSynchronization
 		}
 	}
 
-	private void GetAgentFromDatabase(PlayerInfo? player, MySqlConnection connection)
+	private void GetAgentFromDatabase(PlayerInfo? player, IDbConnection connection)
 	{
 		try
 		{
 			if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player?.SteamId))
 				return;
 
-			const string query = "SELECT `agent_ct`, `agent_t` FROM `wp_player_agents` WHERE `steamid` = @steamid";
+			string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+				? "SELECT agent_ct, agent_t FROM wp_player_agents WHERE steamid = @steamid"
+				: "SELECT `agent_ct`, `agent_t` FROM `wp_player_agents` WHERE `steamid` = @steamid";
 			var agentData = connection.QueryFirstOrDefault<(string, string)>(query, new { steamid = player.SteamId });
 
 			if (agentData == default) return;
@@ -160,7 +166,7 @@ internal class WeaponSynchronization
 		}
 	}
 
-	private void GetWeaponPaintsFromDatabase(PlayerInfo? player, MySqlConnection connection)
+	private void GetWeaponPaintsFromDatabase(PlayerInfo? player, IDbConnection connection)
 	{
 		try
 		{
@@ -172,20 +178,22 @@ internal class WeaponSynchronization
 
 			// var weaponInfos = new ConcurrentDictionary<int, WeaponInfo>();
 
-			const string query = "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
+			string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+				? "SELECT * FROM wp_player_skins WHERE steamid = @steamid ORDER BY weapon_team ASC"
+				: "SELECT * FROM `wp_player_skins` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var playerSkins = connection.Query<dynamic>(query, new { steamid = player.SteamId });
 
 			foreach (var row in playerSkins)
 			{
-				int weaponDefIndex = row.weapon_defindex ?? 0;
-				int weaponPaintId = row.weapon_paint_id ?? 0;
-				float weaponWear = row.weapon_wear ?? 0f;
-				int weaponSeed = row.weapon_seed ?? 0;
-				string weaponNameTag = row.weapon_nametag ?? "";
-				bool weaponStatTrak = row.weapon_stattrak ?? false;
-				int weaponStatTrakCount = row.weapon_stattrak_count ?? 0;
+				int weaponDefIndex = Convert.ToInt32(row.weapon_defindex ?? 0);
+				int weaponPaintId = Convert.ToInt32(row.weapon_paint_id ?? 0);
+				float weaponWear = Convert.ToSingle(row.weapon_wear ?? 0f);
+				int weaponSeed = Convert.ToInt32(row.weapon_seed ?? 0);
+				string weaponNameTag = row.weapon_nametag?.ToString() ?? "";
+				bool weaponStatTrak = Convert.ToBoolean(row.weapon_stattrak ?? false);
+				int weaponStatTrakCount = Convert.ToInt32(row.weapon_stattrak_count ?? 0);
 				
-				CsTeam weaponTeam = row.weapon_team switch
+				CsTeam weaponTeam = Convert.ToInt32(row.weapon_team) switch
 				{
 					2 => CsTeam.Terrorist,
 					3 => CsTeam.CounterTerrorist,
@@ -295,14 +303,16 @@ internal class WeaponSynchronization
 		}
 	}
 
-	private void GetMusicFromDatabase(PlayerInfo? player, MySqlConnection connection)
+	private void GetMusicFromDatabase(PlayerInfo? player, IDbConnection connection)
 	{
 		try
 		{
 			if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player?.SteamId))
 				return;
 
-			const string query = "SELECT `music_id`, `weapon_team` FROM `wp_player_music` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
+			string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+				? "SELECT music_id, weapon_team FROM wp_player_music WHERE steamid = @steamid ORDER BY weapon_team ASC"
+				: "SELECT `music_id`, `weapon_team` FROM `wp_player_music` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var rows = connection.Query<dynamic>(query, new { steamid = player.SteamId }); // Retrieve all records for the player
 
 			foreach (var row in rows)
@@ -311,26 +321,26 @@ internal class WeaponSynchronization
 				if (row.music_id == null) continue;
 
 				// Determine the weapon team based on the query result
-				CsTeam weaponTeam = (int)row.weapon_team switch
+				CsTeam weaponTeam = Convert.ToInt32(row.weapon_team) switch
 				{
 					2 => CsTeam.Terrorist,
 					3 => CsTeam.CounterTerrorist,
 					_ => CsTeam.None,
 				};
 
-				// Get or create entries for the player’s slot
+				// Get or create entries for the player's slot
 				var playerMusic = WeaponPaints.GPlayersMusic.GetOrAdd(player.Slot, _ => new ConcurrentDictionary<CsTeam, ushort>());
 
 				if (weaponTeam == CsTeam.None)
 				{
 					// Assign music ID to both teams if weaponTeam is None
-					playerMusic[CsTeam.Terrorist] = (ushort)row.music_id;
-					playerMusic[CsTeam.CounterTerrorist] = (ushort)row.music_id;
+					playerMusic[CsTeam.Terrorist] = Convert.ToUInt16(row.music_id);
+					playerMusic[CsTeam.CounterTerrorist] = Convert.ToUInt16(row.music_id);
 				}
 				else
 				{
 					// Assign music ID to the specific team
-					playerMusic[weaponTeam] = (ushort)row.music_id;
+					playerMusic[weaponTeam] = Convert.ToUInt16(row.music_id);
 				}
 			}
 		}
@@ -340,14 +350,16 @@ internal class WeaponSynchronization
 		}
 	}
 
-	private void GetPinsFromDatabase(PlayerInfo? player, MySqlConnection connection)
+	private void GetPinsFromDatabase(PlayerInfo? player, IDbConnection connection)
 	{
 		try
 		{
 			if (string.IsNullOrEmpty(player?.SteamId))
 				return;
 
-			const string query = "SELECT `id`, `weapon_team` FROM `wp_player_pins` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
+			string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+				? "SELECT id, weapon_team FROM wp_player_pins WHERE steamid = @steamid ORDER BY weapon_team ASC"
+				: "SELECT `id`, `weapon_team` FROM `wp_player_pins` WHERE `steamid` = @steamid ORDER BY `weapon_team` ASC";
 			var rows = connection.Query<dynamic>(query, new { steamid = player.SteamId }); // Retrieve all records for the player
 
 			foreach (var row in rows)
@@ -356,26 +368,26 @@ internal class WeaponSynchronization
 				if (row.id == null) continue;
 
 				// Determine the weapon team based on the query result
-				CsTeam weaponTeam = (int)row.weapon_team switch
+				CsTeam weaponTeam = Convert.ToInt32(row.weapon_team) switch
 				{
 					2 => CsTeam.Terrorist,
 					3 => CsTeam.CounterTerrorist,
 					_ => CsTeam.None,
 				};
 
-				// Get or create entries for the player’s slot
+				// Get or create entries for the player's slot
 				var playerPins = WeaponPaints.GPlayersPin.GetOrAdd(player.Slot, _ => new ConcurrentDictionary<CsTeam, ushort>());
 
 				if (weaponTeam == CsTeam.None)
 				{
 					// Assign pin ID to both teams if weaponTeam is None
-					playerPins[CsTeam.Terrorist] = (ushort)row.id;
-					playerPins[CsTeam.CounterTerrorist] = (ushort)row.id;
+					playerPins[CsTeam.Terrorist] = Convert.ToUInt16(row.id);
+					playerPins[CsTeam.CounterTerrorist] = Convert.ToUInt16(row.id);
 				}
 				else
 				{
 					// Assign pin ID to the specific team
-					playerPins[weaponTeam] = (ushort)row.id;
+					playerPins[weaponTeam] = Convert.ToUInt16(row.id);
 				}
 			}
 		}
@@ -389,7 +401,9 @@ internal class WeaponSynchronization
 	{
 		if (!_config.Additional.KnifeEnabled || string.IsNullOrEmpty(player.SteamId) || string.IsNullOrEmpty(knife) || teams.Length == 0) return;
 
-		const string query = "INSERT INTO `wp_player_knife` (`steamid`, `weapon_team`, `knife`) VALUES(@steamid, @team, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
+		string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite" 
+			? "INSERT OR REPLACE INTO wp_player_knife (steamid, weapon_team, knife) VALUES(@steamid, @team, @newKnife)"
+			: "INSERT INTO `wp_player_knife` (`steamid`, `weapon_team`, `knife`) VALUES(@steamid, @team, @newKnife) ON DUPLICATE KEY UPDATE `knife` = @newKnife";
 
 		try
 		{
@@ -398,7 +412,7 @@ internal class WeaponSynchronization
 			// Loop through each team and insert/update accordingly
 			foreach (var team in teams)
 			{
-				await connection.ExecuteAsync(query, new { steamid = player.SteamId, team, newKnife = knife });
+				await connection.GetConnection().ExecuteAsync(query, new { steamid = player.SteamId, team, newKnife = knife });
 			}
 		}
 		catch (Exception e)
@@ -413,8 +427,9 @@ internal class WeaponSynchronization
 		if (!_config.Additional.GloveEnabled || string.IsNullOrEmpty(player.SteamId) || teams.Length == 0) 
 			return;
 
-		const string query = @"
-        INSERT INTO `wp_player_gloves` (`steamid`, `weapon_team`, `weapon_defindex`) 
+		string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+			? "INSERT OR REPLACE INTO wp_player_gloves (steamid, weapon_team, weapon_defindex) VALUES(@steamid, @team, @gloveDefIndex)"
+			: @"INSERT INTO `wp_player_gloves` (`steamid`, `weapon_team`, `weapon_defindex`) 
         VALUES(@steamid, @team, @gloveDefIndex) 
         ON DUPLICATE KEY UPDATE `weapon_defindex` = @gloveDefIndex";
 
@@ -427,7 +442,7 @@ internal class WeaponSynchronization
 			foreach (var team in teams)
 			{
 				// Execute the SQL command for each team
-				await connection.ExecuteAsync(query, new { 
+				await connection.GetConnection().ExecuteAsync(query, new { 
 					steamid = player.SteamId, 
 					team = (int)team, // Cast the CsTeam enum to int for insertion
 					gloveDefIndex 
@@ -445,18 +460,14 @@ internal class WeaponSynchronization
 	{
 		if (!_config.Additional.AgentEnabled || string.IsNullOrEmpty(player.SteamId)) return;
 
-		const string query = """
-		                     					INSERT INTO `wp_player_agents` (`steamid`, `agent_ct`, `agent_t`)
-		                     					VALUES(@steamid, @agent_ct, @agent_t)
-		                     					ON DUPLICATE KEY UPDATE
-		                     						`agent_ct` = @agent_ct,
-		                     						`agent_t` = @agent_t
-		                     """;
+		string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+			? "INSERT OR REPLACE INTO wp_player_agents (steamid, agent_ct, agent_t) VALUES(@steamid, @agent_ct, @agent_t)"
+			: "INSERT INTO `wp_player_agents` (`steamid`, `agent_ct`, `agent_t`) VALUES(@steamid, @agent_ct, @agent_t) ON DUPLICATE KEY UPDATE `agent_ct` = @agent_ct, `agent_t` = @agent_t";
 		try
 		{
 			await using var connection = await _database.GetConnectionAsync();
 
-			await connection.ExecuteAsync(query, new { steamid = player.SteamId, agent_ct = WeaponPaints.GPlayersAgent[player.Slot].CT, agent_t = WeaponPaints.GPlayersAgent[player.Slot].T });
+			await connection.GetConnection().ExecuteAsync(query, new { steamid = player.SteamId, agent_ct = WeaponPaints.GPlayersAgent[player.Slot].CT, agent_t = WeaponPaints.GPlayersAgent[player.Slot].T });
 		}
 		catch (Exception e)
 		{
@@ -483,9 +494,11 @@ internal class WeaponSynchronization
 					var seed = weaponInfo.Seed;
 
 					// Prepare the queries to check and update/insert weapon skin data
-					const string queryCheckExistence = "SELECT COUNT(*) FROM `wp_player_skins` WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex AND `weapon_team` = @weaponTeam";
+					string queryCheckExistence = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+						? "SELECT COUNT(*) FROM wp_player_skins WHERE steamid = @steamid AND weapon_defindex = @weaponDefIndex AND weapon_team = @weaponTeam"
+						: "SELECT COUNT(*) FROM `wp_player_skins` WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex AND `weapon_team` = @weaponTeam";
 		                
-					var existingRecordCount = await connection.ExecuteScalarAsync<int>(
+					var existingRecordCount = await connection.GetConnection().ExecuteScalarAsync<int>(
 						queryCheckExistence, 
 						new { steamid = player.SteamId, weaponDefIndex, weaponTeam = teamId }
 					);
@@ -496,19 +509,21 @@ internal class WeaponSynchronization
 					if (existingRecordCount > 0)
 					{
 						// Update existing record
-						query = "UPDATE `wp_player_skins` SET `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed " +
-						        "WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex AND `weapon_team` = @weaponTeam";
+						query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+							? "UPDATE wp_player_skins SET weapon_paint_id = @paintId, weapon_wear = @wear, weapon_seed = @seed WHERE steamid = @steamid AND weapon_defindex = @weaponDefIndex AND weapon_team = @weaponTeam"
+							: "UPDATE `wp_player_skins` SET `weapon_paint_id` = @paintId, `weapon_wear` = @wear, `weapon_seed` = @seed WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex AND `weapon_team` = @weaponTeam";
 						parameters = new { steamid = player.SteamId, weaponDefIndex, weaponTeam = (int)teamId, paintId, wear, seed };
 					}
 					else
 					{
 						// Insert new record
-						query = "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_team`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) " +
-						        "VALUES (@steamid, @weaponDefIndex, @weaponTeam, @paintId, @wear, @seed)";
+						query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+							? "INSERT INTO wp_player_skins (steamid, weapon_defindex, weapon_team, weapon_paint_id, weapon_wear, weapon_seed) VALUES (@steamid, @weaponDefIndex, @weaponTeam, @paintId, @wear, @seed)"
+							: "INSERT INTO `wp_player_skins` (`steamid`, `weapon_defindex`, `weapon_team`, `weapon_paint_id`, `weapon_wear`, `weapon_seed`) VALUES (@steamid, @weaponDefIndex, @weaponTeam, @paintId, @wear, @seed)";
 						parameters = new { steamid = player.SteamId, weaponDefIndex, weaponTeam = (int)teamId, paintId, wear, seed };
 					}
 
-					await connection.ExecuteAsync(query, parameters);
+					await connection.GetConnection().ExecuteAsync(query, parameters);
 				}
 			}
 		}
@@ -522,7 +537,9 @@ internal class WeaponSynchronization
 	{
 		if (!_config.Additional.MusicEnabled || string.IsNullOrEmpty(player.SteamId)) return;
 
-		const string query = "INSERT INTO `wp_player_music` (`steamid`, `weapon_team`, `music_id`) VALUES(@steamid, @team, @newMusic) ON DUPLICATE KEY UPDATE `music_id` = @newMusic";
+		string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+			? "INSERT OR REPLACE INTO wp_player_music (steamid, weapon_team, music_id) VALUES(@steamid, @team, @newMusic)"
+			: "INSERT INTO `wp_player_music` (`steamid`, `weapon_team`, `music_id`) VALUES(@steamid, @team, @newMusic) ON DUPLICATE KEY UPDATE `music_id` = @newMusic";
 
 		try
 		{
@@ -531,7 +548,7 @@ internal class WeaponSynchronization
 			// Loop through each team and insert/update accordingly
 			foreach (var team in teams)
 			{
-				await connection.ExecuteAsync(query, new { steamid = player.SteamId, team, newMusic = music });
+				await connection.GetConnection().ExecuteAsync(query, new { steamid = player.SteamId, team, newMusic = music });
 			}
 		}
 		catch (Exception e)
@@ -544,7 +561,9 @@ internal class WeaponSynchronization
 	{
 		if (!_config.Additional.PinsEnabled || string.IsNullOrEmpty(player.SteamId)) return;
 
-		const string query = "INSERT INTO `wp_player_pins` (`steamid`, `weapon_team`, `id`) VALUES(@steamid, @team, @newPin) ON DUPLICATE KEY UPDATE `id` = @newPin";
+		string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+			? "INSERT OR REPLACE INTO wp_player_pins (steamid, weapon_team, id) VALUES(@steamid, @team, @newPin)"
+			: "INSERT INTO `wp_player_pins` (`steamid`, `weapon_team`, `id`) VALUES(@steamid, @team, @newPin) ON DUPLICATE KEY UPDATE `id` = @newPin";
 
 		try
 		{
@@ -553,7 +572,7 @@ internal class WeaponSynchronization
 			// Loop through each team and insert/update accordingly
 			foreach (var team in teams)
 			{
-				await connection.ExecuteAsync(query, new { steamid = player.SteamId, team, newPin = pin });
+				await connection.GetConnection().ExecuteAsync(query, new { steamid = player.SteamId, team, newPin = pin });
 			}
 		}
 		catch (Exception e)
@@ -571,7 +590,7 @@ internal class WeaponSynchronization
 	    try
 	    {
 	        await using var connection = await _database.GetConnectionAsync();
-	        await using var transaction = await connection.BeginTransactionAsync();
+	        using var transaction = await connection.BeginTransactionAsync();
 
 	        // Check if player's slot exists in GPlayerWeaponsInfo
 	        if (!WeaponPaints.GPlayerWeaponsInfo.TryGetValue(player.Slot, out var teamWeaponsInfo))
@@ -599,8 +618,9 @@ internal class WeaponSynchronization
 	            // Sync StatTrak values for the current team
 	            foreach (var (defindex, (statTrak, statTrakCount)) in statTrakWeapons)
 	            {
-		            const string query = @"
-					    UPDATE `wp_player_skins` 
+		            string query = Utility.Config?.DatabaseType?.ToLower() == "sqlite"
+			            ? "UPDATE wp_player_skins SET weapon_stattrak = @StatTrak, weapon_stattrak_count = @StatTrakCount WHERE steamid = @steamid AND weapon_defindex = @weaponDefIndex AND weapon_team = @weaponTeam"
+			            : @"UPDATE `wp_player_skins` 
 					    SET `weapon_stattrak` = @StatTrak, 
 					        `weapon_stattrak_count` = @StatTrakCount
 					    WHERE `steamid` = @steamid 
@@ -616,11 +636,11 @@ internal class WeaponSynchronization
 	                    weaponTeam
 	                };
 
-	                await connection.ExecuteAsync(query, parameters, transaction);
+	                await connection.GetConnection().ExecuteAsync(query, parameters, transaction);
 	            }
 	        }
 
-	        await transaction.CommitAsync();
+	        await connection.CommitTransactionAsync(transaction);
 	    }
 	    catch (Exception e)
 	    {

@@ -91,6 +91,12 @@ namespace WeaponPaints
 		[JsonPropertyName("DatabaseName")]
 		public string DatabaseName { get; set; } = "";
 
+		[JsonPropertyName("DatabaseType")]
+		public string DatabaseType { get; set; } = "mysql";
+
+		[JsonPropertyName("DatabasePath")]
+		public string DatabasePath { get; set; } = "weaponpaints.db";
+
 		[JsonPropertyName("CmdRefreshCooldownSeconds")]
 		public int CmdRefreshCooldownSeconds { get; set; } = 3;
 
