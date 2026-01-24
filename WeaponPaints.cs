@@ -10,7 +10,7 @@ using MySqlConnector;
 
 namespace WeaponPaints;
 
-[MinimumApiVersion(338)]
+[MinimumApiVersion(358)]
 public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig>
 {
 	internal static WeaponPaints Instance { get; private set; } = new();
@@ -20,7 +20,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
     public override string ModuleAuthor => "Nereziel & daffyy";
 	public override string ModuleDescription => "Skin, gloves, agents and knife selector, standalone and web-based";
 	public override string ModuleName => "WeaponPaints";
-	public override string ModuleVersion => "3.2a";
+	public override string ModuleVersion => "3.2c";
 
 	public override void Load(bool hotReload)
 	{
@@ -113,6 +113,12 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		Utility.Config = config;
 		Utility.ShowAd(ModuleVersion);
 		Task.Run(async () => await Utility.CheckVersion(ModuleVersion, Logger));
+
+		if (Database != null)
+		{
+			_cleanupService = new DatabaseCleanupService(Database, config, Logger);
+			_cleanupService.Initialize();
+		}
 	}
 
 	public override void OnAllPluginsLoaded(bool hotReload)
@@ -142,5 +148,11 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			Logger.LogError("Error while loading required plugins");
 			throw;
 		}
+	}
+
+	public override void Unload(bool hotReload)
+	{
+		_cleanupService?.Dispose();
+		base.Unload(hotReload);
 	}
 }

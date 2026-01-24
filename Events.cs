@@ -55,6 +55,11 @@ namespace WeaponPaints
 					_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
 				}
 				*/
+				
+				if (_cleanupService != null)
+				{
+					_ = Task.Run(async () => await _cleanupService.UpdatePlayerActivity(playerInfo.SteamId ?? ""));
+				}
 			}
 			catch
 			{

@@ -34,7 +34,7 @@ namespace WeaponPaints
 
 		[JsonPropertyName("CommandMusic")]
 		public List<string> CommandMusic { get; set; } = ["music"];
-		
+
 		[JsonPropertyName("CommandPin")]
 		public List<string> CommandPin { get; set; } = ["pin", "pins", "coin", "coins"];
 
@@ -43,7 +43,7 @@ namespace WeaponPaints
 
 		[JsonPropertyName("CommandAgent")]
 		public List<string> CommandAgent { get; set; } = ["agents"];
-		
+
 		[JsonPropertyName("CommandStattrak")]
 		public List<string> CommandStattrak { get; set; } = ["stattrak", "st"];
 
@@ -69,11 +69,29 @@ namespace WeaponPaints
 		public bool ShowSkinImage { get; set; } = true;
 	}
 
+	public class DatabaseCleanup
+	{
+		[JsonPropertyName("Enabled")]
+		public bool Enabled { get; set; } = false;
+
+		[JsonPropertyName("InactiveDays")]
+		public int InactiveDays { get; set; } = 30;
+
+		[JsonPropertyName("CleanupIntervalMinutes")]
+		public int CleanupIntervalMinutes { get; set; } = 360;
+
+		[JsonPropertyName("RunOnStartup")]
+		public bool RunOnStartup { get; set; } = true;
+
+		[JsonPropertyName("LogCleanup")]
+		public bool LogCleanup { get; set; } = true;
+	}
+
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 10;
+		[JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 11;
 
-        [JsonPropertyName("SkinsLanguage")]
+		[JsonPropertyName("SkinsLanguage")]
 		public string SkinsLanguage { get; set; } = "en";
 
 		[JsonPropertyName("DatabaseHost")]
@@ -99,8 +117,11 @@ namespace WeaponPaints
 
 		[JsonPropertyName("Additional")]
 		public Additional Additional { get; set; } = new();
-		
+
 		[JsonPropertyName("MenuType")]
 		public string MenuType { get; set; } = "selectable";
+
+		[JsonPropertyName("DatabaseCleanup")]
+		public DatabaseCleanup DatabaseCleanup { get; set; } = new();
 	}
 }

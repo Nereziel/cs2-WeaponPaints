@@ -90,6 +90,7 @@ public partial class WeaponPaints
 
 	private static readonly Dictionary<int, DateTime> CommandsCooldown = new();
 	internal static Database? Database;
+	private DatabaseCleanupService? _cleanupService;
 
 	private static readonly MemoryFunctionVoid<nint, string, float> CAttributeListSetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
 	
