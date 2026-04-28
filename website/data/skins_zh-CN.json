@@ -1,18 +1,10 @@
 [
     {
-        "weapon_defindex": 9,
-        "weapon_name": "weapon_awp",
-        "paint": "1422",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-1422.png",
-        "paint_name": "AWP | Queen's Gambit",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 4,
-        "weapon_name": "weapon_glock",
-        "paint": "1421",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1421.png",
-        "paint_name": "Glock-18 | Fully Tuned",
+        "weapon_defindex": 7,
+        "weapon_name": "weapon_ak47",
+        "paint": 0,
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47.png",
+        "paint_name": "AK-47  | Default",
         "legacy_model": false
     },
     {
@@ -21,126 +13,6 @@
         "paint": "1425",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47-1425.png",
         "paint_name": "AK-47 | Crane Flight",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 19,
-        "weapon_name": "weapon_p90",
-        "paint": "1419",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p90-1419.png",
-        "paint_name": "P90 | Deathgaze",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 36,
-        "weapon_name": "weapon_p250",
-        "paint": "1420",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1420.png",
-        "paint_name": "P250 | Kintsugi",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 34,
-        "weapon_name": "weapon_mp9",
-        "paint": "1423",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1423.png",
-        "paint_name": "MP9 | Urban Sovereign",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 33,
-        "weapon_name": "weapon_mp7",
-        "paint": "1436",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1436.png",
-        "paint_name": "MP7 | Amberline",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 60,
-        "weapon_name": "weapon_m4a1_silencer",
-        "paint": "1433",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1433.png",
-        "paint_name": "M4A1-S | Electrum",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 13,
-        "weapon_name": "weapon_galilar",
-        "paint": "1434",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_galilar-1434.png",
-        "paint_name": "Galil AR | Galigator",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 1,
-        "weapon_name": "weapon_deagle",
-        "paint": "1430",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_deagle-1430.png",
-        "paint_name": "Desert Eagle | Firebreathing",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 61,
-        "weapon_name": "weapon_usp_silencer",
-        "paint": "1431",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_usp_silencer-1431.png",
-        "paint_name": "USP-S | Silent Shot",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 24,
-        "weapon_name": "weapon_ump45",
-        "paint": "1426",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1426.png",
-        "paint_name": "UMP-45 | Fragment",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 29,
-        "weapon_name": "weapon_sawedoff",
-        "paint": "1427",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_sawedoff-1427.png",
-        "paint_name": "Sawed-Off | Fusion",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 26,
-        "weapon_name": "weapon_bizon",
-        "paint": "1418",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bizon-1418.png",
-        "paint_name": "PP-Bizon | RMX",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 16,
-        "weapon_name": "weapon_m4a1",
-        "paint": "1432",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1432.png",
-        "paint_name": "M4A4 | Zubastick",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 14,
-        "weapon_name": "weapon_m249",
-        "paint": "1435",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m249-1435.png",
-        "paint_name": "M249 | Bock Blocks",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 3,
-        "weapon_name": "weapon_fiveseven",
-        "paint": "1429",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_fiveseven-1429.png",
-        "paint_name": "Five-SeveN | Dark Polymer",
-        "legacy_model": false
-    },
-    {
-        "weapon_defindex": 7,
-        "weapon_name": "weapon_ak47",
-        "paint": 0,
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47.png",
-        "paint_name": "AK-47  | Default",
         "legacy_model": false
     },
     {
@@ -978,6 +850,14 @@
     {
         "weapon_defindex": 9,
         "weapon_name": "weapon_awp",
+        "paint": "1422",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-1422.png",
+        "paint_name": "AWP | Queen's Gambit",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 9,
+        "weapon_name": "weapon_awp",
         "paint": "1026",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp-1026.png",
         "paint_name": "AWP | 渐变之色",
@@ -1658,6 +1538,14 @@
     {
         "weapon_defindex": 26,
         "weapon_name": "weapon_bizon",
+        "paint": "1418",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bizon-1418.png",
+        "paint_name": "PP-Bizon | RMX",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 26,
+        "weapon_name": "weapon_bizon",
         "paint": "1083",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bizon-1083.png",
         "paint_name": "PP-野牛 | 开关箱",
@@ -2253,6 +2141,14 @@
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_deagle.png",
         "paint_name": "沙漠之鹰  | Default",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 1,
+        "weapon_name": "weapon_deagle",
+        "paint": "1430",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_deagle-1430.png",
+        "paint_name": "Desert Eagle | Firebreathing",
         "legacy_model": false
     },
     {
@@ -3298,6 +3194,14 @@
     {
         "weapon_defindex": 3,
         "weapon_name": "weapon_fiveseven",
+        "paint": "1429",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_fiveseven-1429.png",
+        "paint_name": "Five-SeveN | Dark Polymer",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 3,
+        "weapon_name": "weapon_fiveseven",
         "paint": "1002",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_fiveseven-1002.png",
         "paint_name": "FN57 | 蓝莓樱桃",
@@ -3874,6 +3778,14 @@
     {
         "weapon_defindex": 13,
         "weapon_name": "weapon_galilar",
+        "paint": "1434",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_galilar-1434.png",
+        "paint_name": "Galil AR | Galigator",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 13,
+        "weapon_name": "weapon_galilar",
         "paint": "246",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_galilar-246.png",
         "paint_name": "加利尔AR | 渐变琥珀",
@@ -4221,6 +4133,14 @@
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock.png",
         "paint_name": "格洛克18型  | Default",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 4,
+        "weapon_name": "weapon_glock",
+        "paint": "1421",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock-1421.png",
+        "paint_name": "Glock-18 | Fully Tuned",
         "legacy_model": false
     },
     {
@@ -9306,6 +9226,14 @@
     {
         "weapon_defindex": 14,
         "weapon_name": "weapon_m249",
+        "paint": "1435",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m249-1435.png",
+        "paint_name": "M249 | Bock Blocks",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 14,
+        "weapon_name": "weapon_m249",
         "paint": "902",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m249-902.png",
         "paint_name": "M249 | 阿兹特克",
@@ -9509,6 +9437,14 @@
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1.png",
         "paint_name": "M4A4  | Default",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 16,
+        "weapon_name": "weapon_m4a1",
+        "paint": "1432",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1-1432.png",
+        "paint_name": "M4A4 | Zubastick",
         "legacy_model": false
     },
     {
@@ -9853,6 +9789,14 @@
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer.png",
         "paint_name": "M4A1消音版  | Default",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 60,
+        "weapon_name": "weapon_m4a1_silencer",
+        "paint": "1433",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer-1433.png",
+        "paint_name": "M4A1-S | Electrum",
         "legacy_model": false
     },
     {
@@ -11226,6 +11170,14 @@
     {
         "weapon_defindex": 33,
         "weapon_name": "weapon_mp7",
+        "paint": "1436",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-1436.png",
+        "paint_name": "MP7 | Amberline",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 33,
+        "weapon_name": "weapon_mp7",
         "paint": "752",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7-752.png",
         "paint_name": "MP7 | 渐变之色",
@@ -11533,6 +11485,14 @@
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9.png",
         "paint_name": "MP9  | Default",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 34,
+        "weapon_name": "weapon_mp9",
+        "paint": "1423",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9-1423.png",
+        "paint_name": "MP9 | Urban Sovereign",
         "legacy_model": false
     },
     {
@@ -12474,6 +12434,14 @@
     {
         "weapon_defindex": 36,
         "weapon_name": "weapon_p250",
+        "paint": "1420",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-1420.png",
+        "paint_name": "P250 | Kintsugi",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 36,
+        "weapon_name": "weapon_p250",
         "paint": "813",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250-813.png",
         "paint_name": "P250 | 影魔",
@@ -12925,6 +12893,14 @@
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p90.png",
         "paint_name": "P90  | Default",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 19,
+        "weapon_name": "weapon_p90",
+        "paint": "1419",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p90-1419.png",
+        "paint_name": "P90 | Deathgaze",
         "legacy_model": false
     },
     {
@@ -13557,6 +13533,14 @@
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_sawedoff.png",
         "paint_name": "截短霰弹枪  | Default",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 29,
+        "weapon_name": "weapon_sawedoff",
+        "paint": "1427",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_sawedoff-1427.png",
+        "paint_name": "Sawed-Off | Fusion",
         "legacy_model": false
     },
     {
@@ -15202,6 +15186,14 @@
     {
         "weapon_defindex": 24,
         "weapon_name": "weapon_ump45",
+        "paint": "1426",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1426.png",
+        "paint_name": "UMP-45 | Fragment",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 24,
+        "weapon_name": "weapon_ump45",
         "paint": "1085",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45-1085.png",
         "paint_name": "UMP-45 | 机械装置",
@@ -15557,6 +15549,14 @@
         "paint": 0,
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_usp_silencer.png",
         "paint_name": "USP消音版  | Default",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 61,
+        "weapon_name": "weapon_usp_silencer",
+        "paint": "1431",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_usp_silencer-1431.png",
+        "paint_name": "USP-S | Silent Shot",
         "legacy_model": false
     },
     {

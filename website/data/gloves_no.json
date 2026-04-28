@@ -1,137 +1,5 @@
 [
     {
-        "weapon_defindex": 5030,
-        "paint": "1405",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1405.png",
-        "paint_name": "★ Sport Gloves | Violet Beadwork"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "1410",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1410.png",
-        "paint_name": "★ Sport Gloves | Ultra Violent"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "1409",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1409.png",
-        "paint_name": "★ Sport Gloves | Red Racer"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "1417",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1417.png",
-        "paint_name": "★ Sport Gloves | Occult"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "1406",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1406.png",
-        "paint_name": "★ Sport Gloves | Frosty"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "1408",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1408.png",
-        "paint_name": "★ Sport Gloves | Creme Pinstripe"
-    },
-    {
-        "weapon_defindex": 5030,
-        "paint": "1407",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1407.png",
-        "paint_name": "★ Sport Gloves | Blaze"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "1416",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1416.png",
-        "paint_name": "★ Specialist Gloves | Sunburst"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "1438",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1438.png",
-        "paint_name": "★ Specialist Gloves | Pillow Punchers"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "1413",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1413.png",
-        "paint_name": "★ Specialist Gloves | Lime Polycam"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "1440",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1440.png",
-        "paint_name": "★ Specialist Gloves | Cloud Chaser"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "1415",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1415.png",
-        "paint_name": "★ Specialist Gloves | Chocolate Chesterfield"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "1414",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1414.png",
-        "paint_name": "★ Specialist Gloves | Blackbook"
-    },
-    {
-        "weapon_defindex": 5034,
-        "paint": "1437",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1437.png",
-        "paint_name": "★ Specialist Gloves | Big Swell"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "1398",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1398.png",
-        "paint_name": "★ Driver Gloves | Wave Chaser"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "1404",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1404.png",
-        "paint_name": "★ Driver Gloves | Seigaiha"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "1412",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1412.png",
-        "paint_name": "★ Driver Gloves | Plum Quill"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "1439",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1439.png",
-        "paint_name": "★ Driver Gloves | Hand Sweaters"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "1402",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1402.png",
-        "paint_name": "★ Driver Gloves | Garden"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "1401",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1401.png",
-        "paint_name": "★ Driver Gloves | Dragon Fists"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "1400",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1400.png",
-        "paint_name": "★ Driver Gloves | Brocade Flowers"
-    },
-    {
-        "weapon_defindex": 5031,
-        "paint": "1399",
-        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1399.png",
-        "paint_name": "★ Driver Gloves | Brocade Crane"
-    },
-    {
         "weapon_defindex": 0,
         "paint": 0,
         "image": "",
@@ -283,6 +151,54 @@
     },
     {
         "weapon_defindex": 5031,
+        "paint": "1398",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1398.png",
+        "paint_name": "★ Driver Gloves | Wave Chaser"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "1404",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1404.png",
+        "paint_name": "★ Driver Gloves | Seigaiha"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "1412",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1412.png",
+        "paint_name": "★ Driver Gloves | Plum Quill"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "1439",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1439.png",
+        "paint_name": "★ Driver Gloves | Hand Sweaters"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "1402",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1402.png",
+        "paint_name": "★ Driver Gloves | Garden"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "1401",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1401.png",
+        "paint_name": "★ Driver Gloves | Dragon Fists"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "1400",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1400.png",
+        "paint_name": "★ Driver Gloves | Brocade Flowers"
+    },
+    {
+        "weapon_defindex": 5031,
+        "paint": "1399",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-1399.png",
+        "paint_name": "★ Driver Gloves | Brocade Crane"
+    },
+    {
+        "weapon_defindex": 5031,
         "paint": "10013",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/slick_gloves-10013.png",
         "paint_name": "Kjørehansker (★) | Lunar Weave"
@@ -355,6 +271,48 @@
     },
     {
         "weapon_defindex": 5034,
+        "paint": "1416",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1416.png",
+        "paint_name": "★ Specialist Gloves | Sunburst"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "1438",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1438.png",
+        "paint_name": "★ Specialist Gloves | Pillow Punchers"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "1413",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1413.png",
+        "paint_name": "★ Specialist Gloves | Lime Polycam"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "1440",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1440.png",
+        "paint_name": "★ Specialist Gloves | Cloud Chaser"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "1415",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1415.png",
+        "paint_name": "★ Specialist Gloves | Chocolate Chesterfield"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "1414",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1414.png",
+        "paint_name": "★ Specialist Gloves | Blackbook"
+    },
+    {
+        "weapon_defindex": 5034,
+        "paint": "1437",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-1437.png",
+        "paint_name": "★ Specialist Gloves | Big Swell"
+    },
+    {
+        "weapon_defindex": 5034,
         "paint": "10030",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10030.png",
         "paint_name": "Spesialisthansker (★) | Forest DDPAT"
@@ -424,6 +382,48 @@
         "paint": "10064",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/specialist_gloves-10064.png",
         "paint_name": "Spesialisthansker (★) | Mogul"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "1405",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1405.png",
+        "paint_name": "★ Sport Gloves | Violet Beadwork"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "1410",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1410.png",
+        "paint_name": "★ Sport Gloves | Ultra Violent"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "1409",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1409.png",
+        "paint_name": "★ Sport Gloves | Red Racer"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "1417",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1417.png",
+        "paint_name": "★ Sport Gloves | Occult"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "1406",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1406.png",
+        "paint_name": "★ Sport Gloves | Frosty"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "1408",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1408.png",
+        "paint_name": "★ Sport Gloves | Creme Pinstripe"
+    },
+    {
+        "weapon_defindex": 5030,
+        "paint": "1407",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sporty_gloves-1407.png",
+        "paint_name": "★ Sport Gloves | Blaze"
     },
     {
         "weapon_defindex": 5030,
