@@ -57,7 +57,7 @@ public partial class WeaponPaints
 		{
 			if (player != null && !CommandsCooldown.TryGetValue(player.Slot, out var cooldownEndTime) ||
 			    player != null && DateTime.UtcNow >= (CommandsCooldown.TryGetValue(player.Slot, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
-		{
+			{
 				CommandsCooldown[player.Slot] = DateTime.UtcNow.AddSeconds(Config.CmdRefreshCooldownSeconds);
 
 				if (WeaponSync != null)
@@ -75,10 +75,10 @@ public partial class WeaponPaints
 				{
 					player.Print(Localizer["wp_command_refresh_done"]);
 				}
-			return;
+				return;
 			}
 			if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
-		{
+			{
 				player!.Print(Localizer["wp_command_cooldown"]);
 			}
 		}
@@ -101,25 +101,25 @@ public partial class WeaponPaints
 
 		if (Config.Additional.GloveEnabled)
 			if (!string.IsNullOrEmpty(Localizer["wp_info_glove"]))
-		{
+			{
 				player!.Print(Localizer["wp_info_glove"]);
 			}
 
 		if (Config.Additional.AgentEnabled)
 			if (!string.IsNullOrEmpty(Localizer["wp_info_agent"]))
-		{
+			{
 				player!.Print(Localizer["wp_info_agent"]);
 			}
 
 		if (Config.Additional.MusicEnabled)
 			if (!string.IsNullOrEmpty(Localizer["wp_info_music"]))
-		{
+			{
 				player!.Print(Localizer["wp_info_music"]);
 			}
 		
 		if (Config.Additional.PinsEnabled)
 			if (!string.IsNullOrEmpty(Localizer["wp_info_pin"]))
-		{
+			{
 				player!.Print(Localizer["wp_info_pin"]);
 			}
 
@@ -145,7 +145,7 @@ public partial class WeaponPaints
 		_config.Additional.CommandStattrak.ForEach(c =>
 		{
 			AddCommand($"css_{c}", "Stattrak toggle", (player, info) =>
-		{
+			{
 				if (!Utility.IsPlayerValid(player)) return;
 
 				OnCommandStattrak(player, info);
@@ -178,7 +178,7 @@ public partial class WeaponPaints
 		_config.Additional.CommandSkin.ForEach(c =>
 		{
 			AddCommand($"css_{c}", "Skins info", (player, info) =>
-		{
+			{
 				if (!Utility.IsPlayerValid(player)) return;
 				OnCommandWS(player, info);
 			});
@@ -196,7 +196,7 @@ public partial class WeaponPaints
 		if (Config.Additional.CommandKillEnabled)
 		{
 			_config.Additional.CommandKill.ForEach(c =>
-		{
+			{
 				AddCommand($"css_{c}", "kill yourself", (player, _) =>
 				{
 					if (player == null || !Utility.IsPlayerValid(player) || player.PlayerPawn.Value == null || !player.PlayerPawn.IsValid) return;
@@ -239,9 +239,9 @@ public partial class WeaponPaints
 				p != null && p.IsValid && !p.IsBot && p.UserId != null).ToList();
 			
 			if (targetPlayers.Count == 0)
-		{
+			{
 				Console.WriteLine("[WeaponPaints] No players connected to refresh.");
-			return;
+				return;
 			}
 			
 			Console.WriteLine($"[WeaponPaints] Refreshing skins for {targetPlayers.Count} players...");
@@ -255,7 +255,7 @@ public partial class WeaponPaints
 			if (foundPlayer == null)
 		{
 				Console.WriteLine($"[WeaponPaints] Player with SteamID64 '{args}' not found.");
-			return;
+				return;
 			}
 
 			targetPlayers.Add(foundPlayer);
@@ -265,7 +265,7 @@ public partial class WeaponPaints
 		foreach (var targetPlayer in targetPlayers)
 		{
 			try
-		{
+			{
 				PlayerInfo? playerInfo = new PlayerInfo
 				{
 					UserId = targetPlayer.UserId,
@@ -1397,7 +1397,7 @@ public partial class WeaponPaints
 
 			var selectedMusic = MusicList.FirstOrDefault(g => g.ContainsKey("name") && g["name"]?.ToString() == selectedPaintName);
 			if (selectedMusic != null)
-		{
+			{
 				if (!selectedMusic.ContainsKey("id") ||
 				    !selectedMusic.ContainsKey("name") ||
 				    !int.TryParse(selectedMusic["id"]?.ToString(), out var paint)) return;
@@ -1449,7 +1449,7 @@ public partial class WeaponPaints
 				}
 			}
 			else
-		{
+			{
 				PlayerInfo playerInfo = new PlayerInfo
 				{
 					UserId = player.UserId,
@@ -2382,7 +2382,6 @@ public partial class WeaponPaints
 					pinsSelectionMenu.Open(player);
 					return;
 				}
-
 				if (!string.IsNullOrEmpty(Localizer["wp_command_cooldown"]))
 				{
 					player.Print(Localizer["wp_command_cooldown"]);
