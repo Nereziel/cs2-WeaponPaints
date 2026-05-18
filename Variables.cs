@@ -75,8 +75,11 @@ public partial class WeaponPaints
 	public static IStringLocalizer? _localizer;
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, string>> GPlayersKnife = new();
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersGlove = new();
+	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, NativeGloveSnapshot>> GPlayersNativeGlove = new();
+	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<string, WeaponPaintCustomization>> GPlayerWeaponPaintCustomizations = new();
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersMusic = new();
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersPin = new();
+	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, MedalRank_t>> GPlayersNativePin = new();
 	internal static readonly ConcurrentDictionary<int, (string? CT, string? T)> GPlayersAgent = new();
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ConcurrentDictionary<int, WeaponInfo>>> GPlayerWeaponsInfo = new();
 	internal static List<JObject> SkinsList = [];
@@ -84,6 +87,7 @@ public partial class WeaponPaints
 	internal static List<JObject> GlovesList = [];
 	internal static List<JObject> AgentsList = [];
 	internal static List<JObject> MusicList = [];
+	internal static List<JObject> StickersList = [];
 	internal static WeaponSynchronization? WeaponSync;
 	private static bool _gBCommandsAllowed = true;
 	private readonly Dictionary<int, string> _playerWeaponImage = new();
@@ -162,6 +166,7 @@ public partial class WeaponPaints
 	private ulong _nextItemId = MinimumCustomItemId;
 	private static readonly bool IsWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
 
+	private const float DefaultFactoryNewWear = 0.0f;
 	private readonly ConcurrentDictionary<int, ConcurrentDictionary<int, float>> _temporaryPlayerWeaponWear = new();
 	
 	internal static IMenuApi? MenuApi;
@@ -170,4 +175,24 @@ public partial class WeaponPaints
 	private int _fadeSeed;
 
 	internal List<CCSPlayerController> Players = [];
+}
+internal sealed class WeaponPaintCustomization
+{
+	internal float Wear { get; set; } = 0.0f;
+	internal int Seed { get; set; } = 0;
+}
+
+internal sealed class NativeGloveSnapshot
+{
+	internal ushort ItemDefinitionIndex { get; init; }
+	internal int EntityQuality { get; init; }
+	internal uint EntityLevel { get; init; }
+	internal ulong ItemID { get; init; }
+	internal uint ItemIDHigh { get; init; }
+	internal uint ItemIDLow { get; init; }
+	internal uint AccountID { get; init; }
+	internal uint InventoryPosition { get; init; }
+	internal bool Initialized { get; init; }
+	internal string CustomName { get; init; } = string.Empty;
+	internal string CustomNameOverride { get; init; } = string.Empty;
 }
