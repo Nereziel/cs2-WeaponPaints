@@ -39,7 +39,10 @@ Only players with the configured permission can use !stickers
 
 # Auto Skin Data Updater
 
-WeaponPaints can load fresh skin data automatically from an online JSON API when the server starts.
+WeaponPaints can load fresh skin data automatically from an online JSON API when the server starts API URL can be change via config.
+
+```"SkinApiURL": "https://cdn.jsdelivr.net/gh/ByMykel/CSGO-API@main/public/api",``` 
+- if you want API that update asap use original API URL ```https://raw.githubusercontent.com/ByMykel/CSGO-API/refs/heads/main/public/api``` but it is slower to load when server start
 
 # Seed / Pattern Command
 
