@@ -2012,8 +2012,7 @@ public partial class WeaponPaints
 		if (string.IsNullOrWhiteSpace(stickerName)) return string.Empty;
 
 		var name = NormalizeMenuText(stickerName);
-		if (IsMajorStickerEvent(name)) return "Major Stickers";
-		if (IsTournamentSticker(name)) return "Tournament Stickers";
+		if (IsMajorStickerEvent(name) || IsTournamentSticker(name)) return "Major Stickers";
 		if (name.Contains("Operation", StringComparison.OrdinalIgnoreCase)) return "Operation Stickers";
 		if (name.Contains("Community", StringComparison.OrdinalIgnoreCase) ||
 		    name.Contains("Workshop", StringComparison.OrdinalIgnoreCase) ||
@@ -2029,10 +2028,9 @@ public partial class WeaponPaints
 		return source switch
 		{
 			"Major Stickers" => 0,
-			"Tournament Stickers" => 1,
-			"Operation Stickers" => 2,
-			"Community / Workshop Stickers" => 3,
-			"Capsule Stickers" => 4,
+			"Operation Stickers" => 1,
+			"Community / Workshop Stickers" => 2,
+			"Capsule Stickers" => 3,
 			_ => 99
 		};
 	}
@@ -2077,6 +2075,15 @@ public partial class WeaponPaints
 	{
 		if (string.Equals(eventName, "Other", StringComparison.OrdinalIgnoreCase)) return 999999;
 
+		var year = ExtractStickerEventYear(eventName);
+		if (year > 0)
+		{
+			var knownIndex = Array.FindIndex(KnownStickerEvents, knownEvent =>
+				string.Equals(eventName, knownEvent, StringComparison.OrdinalIgnoreCase));
+
+			return ((3000 - year) * 1000) + (knownIndex >= 0 ? knownIndex : 500);
+		}
+
 		for (var index = 0; index < KnownStickerEvents.Length; index++)
 		{
 			if (string.Equals(eventName, KnownStickerEvents[index], StringComparison.OrdinalIgnoreCase))
@@ -2085,8 +2092,7 @@ public partial class WeaponPaints
 			}
 		}
 
-		var year = ExtractStickerEventYear(eventName);
-		return year > 0 ? (3000 - year) * 100 : 999998;
+		return 999998;
 	}
 
 	private static int ExtractStickerEventYear(string value)
