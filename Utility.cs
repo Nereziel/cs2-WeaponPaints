@@ -466,14 +466,30 @@ namespace WeaponPaints
 						["image"] = item["image"]?.ToString() ?? string.Empty
 					};
 
+					CopyStickerField(item, converted, "market_hash_name");
+					CopyStickerField(item, converted, "effect");
+					CopyStickerField(item, converted, "type");
 					CopyStickerField(item, converted, "tournament_event");
 					CopyStickerField(item, converted, "tournament_team");
 					CopyStickerField(item, converted, "tournament_player");
-					CopyStickerField(item, converted, "team");
+					CopyStickerNamedField(item, converted, "team", "team");
 					CopyStickerField(item, converted, "team_name");
-					CopyStickerField(item, converted, "player");
+					CopyStickerNamedField(item, converted, "player", "player");
 					CopyStickerField(item, converted, "player_name");
-					CopyStickerField(item, converted, "type");
+					CopyStickerToken(item, converted, "crates");
+					CopyStickerToken(item, converted, "collections");
+					CopyStickerToken(item, converted, "tournament");
+
+					if (item["tournament"] is JObject tournament)
+					{
+						CopyStickerTournamentField(tournament, converted, "event", "tournament_event");
+						CopyStickerTournamentField(tournament, converted, "event_name", "tournament_event");
+						CopyStickerTournamentField(tournament, converted, "name", "tournament_event");
+						CopyStickerTournamentField(tournament, converted, "team", "tournament_team");
+						CopyStickerTournamentField(tournament, converted, "team_name", "tournament_team");
+						CopyStickerTournamentField(tournament, converted, "player", "tournament_player");
+						CopyStickerTournamentField(tournament, converted, "player_name", "tournament_player");
+					}
 
 					return converted;
 				})
@@ -489,6 +505,53 @@ namespace WeaponPaints
 			{
 				target[fieldName] = value;
 			}
+		}
+
+		private static void CopyStickerNamedField(JObject source, JObject target, string sourceFieldName, string targetFieldName)
+		{
+			var value = ReadStickerObjectName(source[sourceFieldName]);
+			if (!string.IsNullOrWhiteSpace(value))
+			{
+				target[targetFieldName] = value;
+			}
+		}
+
+		private static void CopyStickerTournamentField(JObject tournament, JObject target, string sourceFieldName, string targetFieldName)
+		{
+			if (!string.IsNullOrWhiteSpace(target[targetFieldName]?.ToString())) return;
+
+			var value = ReadStickerObjectName(tournament[sourceFieldName]);
+			if (!string.IsNullOrWhiteSpace(value))
+			{
+				target[targetFieldName] = value;
+			}
+		}
+
+		private static void CopyStickerToken(JObject source, JObject target, string fieldName)
+		{
+			var token = source[fieldName];
+			if (token != null)
+			{
+				target[fieldName] = token.DeepClone();
+			}
+		}
+
+		private static string ReadStickerObjectName(JToken? token)
+		{
+			if (token == null) return string.Empty;
+
+			if (token is JObject obj)
+			{
+				foreach (var key in new[] { "name", "event", "event_name", "market_hash_name", "id" })
+				{
+					var value = obj[key]?.ToString();
+					if (!string.IsNullOrWhiteSpace(value)) return value;
+				}
+
+				return string.Empty;
+			}
+
+			return token.Type == JTokenType.String ? token.ToString() : string.Empty;
 		}
 
 		private static string ReadStickerId(JObject item)
