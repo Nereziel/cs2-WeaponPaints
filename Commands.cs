@@ -1645,9 +1645,11 @@ public partial class WeaponPaints
 			{
 				Sticker = sticker,
 				Name = sticker["name"]?.ToString() ?? string.Empty,
-				Source = GetStickerSourceMenuGroup(sticker["name"]?.ToString())
+				Source = GetStickerSourceMenuGroup(sticker)
 			})
-			.Where(sticker => sticker.Name.Length > 0 && sticker.Source.Length > 0)
+			.Where(sticker => sticker.Name.Length > 0 &&
+			                  sticker.Source.Length > 0 &&
+			                  !string.Equals(sticker.Source, "Other Stickers", StringComparison.OrdinalIgnoreCase))
 			.GroupBy(sticker => sticker.Source, StringComparer.OrdinalIgnoreCase)
 			.OrderBy(group => GetStickerSourceMenuGroupOrder(group.Key))
 			.ThenBy(group => group.Key, StringComparer.OrdinalIgnoreCase)
@@ -1656,7 +1658,16 @@ public partial class WeaponPaints
 		foreach (var sourceGroup in stickerSources)
 		{
 			var sourceName = sourceGroup.Key;
-			sourceMenu.AddMenuOption(sourceName, (menuPlayer, _) => OpenStickerEventMenu(menuPlayer, stickerSlot, sourceName));
+			sourceMenu.AddMenuOption(sourceName, (menuPlayer, _) =>
+			{
+				if (IsCommunityWorkshopStickerSource(sourceName))
+				{
+					OpenStickerTypeMenu(menuPlayer, stickerSlot, sourceName, sourceName);
+					return;
+				}
+
+				OpenStickerEventMenu(menuPlayer, stickerSlot, sourceName);
+			});
 		}
 
 		AddTimer(0.05f, () =>
@@ -1683,14 +1694,14 @@ public partial class WeaponPaints
 			{
 				Sticker = sticker,
 				Name = sticker["name"]?.ToString() ?? string.Empty,
-				Source = GetStickerSourceMenuGroup(sticker["name"]?.ToString()),
-				Event = GetStickerEventMenuGroup(sticker)
+				Source = GetStickerSourceMenuGroup(sticker),
+				Event = GetStickerEventMenuGroup(sticker, stickerSource)
 			})
 			.Where(sticker => sticker.Name.Length > 0 &&
 			                  string.Equals(sticker.Source, stickerSource, StringComparison.OrdinalIgnoreCase) &&
 			                  sticker.Event.Length > 0)
 			.GroupBy(sticker => sticker.Event, StringComparer.OrdinalIgnoreCase)
-			.OrderBy(group => GetStickerEventMenuGroupOrder(group.Key))
+			.OrderBy(group => GetStickerEventMenuGroupOrder(group.Key, stickerSource))
 			.ThenBy(group => group.Key, StringComparer.OrdinalIgnoreCase)
 			.ToList();
 
@@ -1717,16 +1728,25 @@ public partial class WeaponPaints
 		if (typeMenu == null) return;
 		typeMenu.PostSelectAction = PostSelectAction.Nothing;
 
-		typeMenu.AddMenuOption(BackMenuLabel, (menuPlayer, _) => OpenStickerEventMenu(menuPlayer, stickerSlot, stickerSource));
+		typeMenu.AddMenuOption(BackMenuLabel, (menuPlayer, _) =>
+		{
+			if (IsCommunityWorkshopStickerSource(stickerSource))
+			{
+				OpenStickerSourceMenu(menuPlayer, stickerSlot);
+				return;
+			}
+
+			OpenStickerEventMenu(menuPlayer, stickerSlot, stickerSource);
+		});
 
 		var stickerTypes = StickersList
 			.Select(sticker => new
 			{
 				Sticker = sticker,
 				Name = sticker["name"]?.ToString() ?? string.Empty,
-				Source = GetStickerSourceMenuGroup(sticker["name"]?.ToString()),
-				Event = GetStickerEventMenuGroup(sticker),
-				Type = GetStickerTypeMenuGroup(sticker["name"]?.ToString())
+				Source = GetStickerSourceMenuGroup(sticker),
+				Event = GetStickerEventMenuGroup(sticker, stickerSource),
+				Type = GetStickerTypeMenuGroup(sticker)
 			})
 			.Where(sticker => sticker.Name.Length > 0 &&
 			                  string.Equals(sticker.Source, stickerSource, StringComparison.OrdinalIgnoreCase) &&
@@ -1740,7 +1760,16 @@ public partial class WeaponPaints
 		foreach (var typeGroup in stickerTypes)
 		{
 			var stickerType = typeGroup.Key;
-			typeMenu.AddMenuOption(stickerType, (menuPlayer, _) => OpenStickerAudienceMenu(menuPlayer, stickerSlot, stickerSource, stickerEvent, stickerType));
+			typeMenu.AddMenuOption(stickerType, (menuPlayer, _) =>
+			{
+				if (ShouldShowStickerAudienceMenu(stickerSource, stickerEvent, stickerType))
+				{
+					OpenStickerAudienceMenu(menuPlayer, stickerSlot, stickerSource, stickerEvent, stickerType);
+					return;
+				}
+
+				OpenStickerListMenu(menuPlayer, stickerSlot, stickerSource, stickerEvent, stickerType, null);
+			});
 		}
 
 		AddTimer(0.05f, () =>
@@ -1773,7 +1802,7 @@ public partial class WeaponPaints
 		}, TimerFlags.STOP_ON_MAPCHANGE);
 	}
 
-	private void OpenStickerListMenu(CCSPlayerController? player, int stickerSlot, string stickerSource, string stickerEvent, string stickerType, StickerAudience stickerAudience)
+	private void OpenStickerListMenu(CCSPlayerController? player, int stickerSlot, string stickerSource, string stickerEvent, string stickerType, StickerAudience? stickerAudience)
 	{
 		if (!Utility.IsPlayerValid(player) || player is null) return;
 
@@ -1781,13 +1810,20 @@ public partial class WeaponPaints
 		if (stickerMenu == null) return;
 		stickerMenu.PostSelectAction = PostSelectAction.Nothing;
 
-		stickerMenu.AddMenuOption(BackMenuLabel, (menuPlayer, _) => OpenStickerAudienceMenu(menuPlayer, stickerSlot, stickerSource, stickerEvent, stickerType));
+		if (stickerAudience.HasValue)
+		{
+			stickerMenu.AddMenuOption(BackMenuLabel, (menuPlayer, _) => OpenStickerAudienceMenu(menuPlayer, stickerSlot, stickerSource, stickerEvent, stickerType));
+		}
+		else
+		{
+			stickerMenu.AddMenuOption(BackMenuLabel, (menuPlayer, _) => OpenStickerTypeMenu(menuPlayer, stickerSlot, stickerSource, stickerEvent));
+		}
 
 		var stickers = StickersList
-			.Where(sticker => string.Equals(GetStickerSourceMenuGroup(sticker["name"]?.ToString()), stickerSource, StringComparison.OrdinalIgnoreCase) &&
-			                  string.Equals(GetStickerEventMenuGroup(sticker), stickerEvent, StringComparison.OrdinalIgnoreCase) &&
-			                  string.Equals(GetStickerTypeMenuGroup(sticker["name"]?.ToString()), stickerType, StringComparison.OrdinalIgnoreCase) &&
-			                  GetStickerAudience(sticker) == stickerAudience)
+			.Where(sticker => string.Equals(GetStickerSourceMenuGroup(sticker), stickerSource, StringComparison.OrdinalIgnoreCase) &&
+			                  string.Equals(GetStickerEventMenuGroup(sticker, stickerSource), stickerEvent, StringComparison.OrdinalIgnoreCase) &&
+			                  string.Equals(GetStickerTypeMenuGroup(sticker), stickerType, StringComparison.OrdinalIgnoreCase) &&
+			                  (!stickerAudience.HasValue || GetStickerAudience(sticker) == stickerAudience.Value))
 			.OrderBy(sticker => GetStickerMenuName(sticker["name"]?.ToString() ?? string.Empty), StringComparer.OrdinalIgnoreCase)
 			.ToList();
 
@@ -1815,6 +1851,17 @@ public partial class WeaponPaints
 				stickerMenu.Open(player);
 			}
 		}, TimerFlags.STOP_ON_MAPCHANGE);
+	}
+
+	private bool ShouldShowStickerAudienceMenu(string stickerSource, string stickerEvent, string stickerType)
+	{
+		if (!string.Equals(stickerSource, "Major Stickers", StringComparison.OrdinalIgnoreCase)) return false;
+
+		return StickersList.Any(sticker =>
+			string.Equals(GetStickerSourceMenuGroup(sticker), stickerSource, StringComparison.OrdinalIgnoreCase) &&
+			string.Equals(GetStickerEventMenuGroup(sticker, stickerSource), stickerEvent, StringComparison.OrdinalIgnoreCase) &&
+			string.Equals(GetStickerTypeMenuGroup(sticker), stickerType, StringComparison.OrdinalIgnoreCase) &&
+			GetStickerAudience(sticker) == StickerAudience.Players);
 	}
 
 	private void ApplyStickerSelection(CCSPlayerController? player, int stickerSlot, JObject? selectedSticker)
@@ -1978,6 +2025,12 @@ public partial class WeaponPaints
 			: stickerName.Replace("Sticker |", string.Empty, StringComparison.OrdinalIgnoreCase).Trim();
 	}
 
+	private static string GetStickerTypeMenuGroup(JObject sticker)
+	{
+		var effect = NormalizeStickerEffect(sticker["effect"]?.ToString());
+		return !string.IsNullOrWhiteSpace(effect) ? effect : GetStickerTypeMenuGroup(sticker["name"]?.ToString());
+	}
+
 	private static string GetStickerTypeMenuGroup(string? stickerName)
 	{
 		var name = stickerName ?? string.Empty;
@@ -1990,6 +2043,25 @@ public partial class WeaponPaints
 		if (name.Contains("(Paper)", StringComparison.OrdinalIgnoreCase)) return "Paper";
 
 		return "Normal";
+	}
+
+	private static string NormalizeStickerEffect(string? effect)
+	{
+		if (string.IsNullOrWhiteSpace(effect)) return string.Empty;
+
+		var value = NormalizeMenuText(effect);
+		return value.ToLowerInvariant() switch
+		{
+			"gold" => "Gold",
+			"holo" => "Holo",
+			"foil" => "Foil",
+			"glitter" => "Glitter",
+			"lenticular" => "Lenticular",
+			"paper" => "Paper",
+			"normal" => "Normal",
+			"other" => string.Empty,
+			_ => string.Empty
+		};
 	}
 
 	private static int GetStickerTypeMenuGroupOrder(string type)
@@ -2007,18 +2079,16 @@ public partial class WeaponPaints
 		};
 	}
 
-	private static string GetStickerSourceMenuGroup(string? stickerName)
+	private static string GetStickerSourceMenuGroup(JObject sticker)
 	{
-		if (string.IsNullOrWhiteSpace(stickerName)) return string.Empty;
+		if (!string.IsNullOrWhiteSpace(GetMajorStickerEventName(sticker))) return "Major Stickers";
+		if (!string.IsNullOrWhiteSpace(GetStickerOperationMenuGroup(sticker))) return "Operation Stickers";
+		if (!string.IsNullOrWhiteSpace(GetStickerCapsuleMenuGroup(sticker))) return "Capsule Stickers";
 
-		var name = NormalizeMenuText(stickerName);
-		if (IsMajorStickerEvent(name) || IsTournamentSticker(name)) return "Major Stickers";
-		if (name.Contains("Operation", StringComparison.OrdinalIgnoreCase)) return "Operation Stickers";
-		if (name.Contains("Community", StringComparison.OrdinalIgnoreCase) ||
-		    name.Contains("Workshop", StringComparison.OrdinalIgnoreCase) ||
-		    name.Contains("Map", StringComparison.OrdinalIgnoreCase)) return "Community / Workshop Stickers";
-		if (name.Contains("Capsule", StringComparison.OrdinalIgnoreCase) ||
-		    name.Contains("Collection", StringComparison.OrdinalIgnoreCase)) return "Capsule Stickers";
+		var text = GetStickerSearchText(sticker);
+		if (text.Contains("Community", StringComparison.OrdinalIgnoreCase) ||
+		    text.Contains("Workshop", StringComparison.OrdinalIgnoreCase) ||
+		    text.Contains("Map", StringComparison.OrdinalIgnoreCase)) return "Community / Workshop Stickers";
 
 		return "Other Stickers";
 	}
@@ -2029,13 +2099,43 @@ public partial class WeaponPaints
 		{
 			"Major Stickers" => 0,
 			"Operation Stickers" => 1,
-			"Community / Workshop Stickers" => 2,
-			"Capsule Stickers" => 3,
+			"Capsule Stickers" => 2,
+			"Community / Workshop Stickers" => 3,
 			_ => 99
 		};
 	}
 
-	private static string GetStickerEventMenuGroup(JObject sticker)
+	private static string GetStickerEventMenuGroup(JObject sticker, string stickerSource)
+	{
+		if (string.Equals(stickerSource, "Major Stickers", StringComparison.OrdinalIgnoreCase))
+		{
+			return GetMajorStickerEventName(sticker);
+		}
+
+		if (string.Equals(stickerSource, "Operation Stickers", StringComparison.OrdinalIgnoreCase))
+		{
+			return GetStickerOperationMenuGroup(sticker);
+		}
+
+		if (string.Equals(stickerSource, "Capsule Stickers", StringComparison.OrdinalIgnoreCase))
+		{
+			return GetStickerCapsuleMenuGroup(sticker);
+		}
+
+		if (IsCommunityWorkshopStickerSource(stickerSource))
+		{
+			return stickerSource;
+		}
+
+		return GetGenericStickerEventMenuGroup(sticker);
+	}
+
+	private static bool IsCommunityWorkshopStickerSource(string stickerSource)
+	{
+		return string.Equals(stickerSource, "Community / Workshop Stickers", StringComparison.OrdinalIgnoreCase);
+	}
+
+	private static string GetGenericStickerEventMenuGroup(JObject sticker)
 	{
 		string[] eventKeys =
 		[
@@ -2044,7 +2144,7 @@ public partial class WeaponPaints
 
 		foreach (var key in eventKeys)
 		{
-			var value = NormalizeMenuText(sticker[key]?.ToString());
+			var value = NormalizeMenuText(GetStickerTokenText(sticker[key]));
 			if (!string.IsNullOrWhiteSpace(value))
 			{
 				return value;
@@ -2060,28 +2160,30 @@ public partial class WeaponPaints
 			return NormalizeMenuText(parts[^1]);
 		}
 
-		foreach (var knownEvent in KnownStickerEvents)
-		{
-			if (name.Contains(knownEvent, StringComparison.OrdinalIgnoreCase))
-			{
-				return knownEvent;
-			}
-		}
-
 		return "Other";
 	}
 
-	private static int GetStickerEventMenuGroupOrder(string eventName)
+	private static int GetStickerEventMenuGroupOrder(string eventName, string stickerSource)
 	{
 		if (string.Equals(eventName, "Other", StringComparison.OrdinalIgnoreCase)) return 999999;
+
+		if (string.Equals(stickerSource, "Operation Stickers", StringComparison.OrdinalIgnoreCase))
+		{
+			var operationIndex = Array.FindIndex(KnownOperationStickerGroups, group => string.Equals(group, eventName, StringComparison.OrdinalIgnoreCase));
+			return operationIndex >= 0 ? operationIndex : 999998;
+		}
+
+		if (string.Equals(stickerSource, "Capsule Stickers", StringComparison.OrdinalIgnoreCase))
+		{
+			var capsuleIndex = Array.FindIndex(KnownCapsuleStickerGroups, group => string.Equals(group, eventName, StringComparison.OrdinalIgnoreCase));
+			return capsuleIndex >= 0 ? capsuleIndex : 999998;
+		}
 
 		var year = ExtractStickerEventYear(eventName);
 		if (year > 0)
 		{
-			var knownIndex = Array.FindIndex(KnownStickerEvents, knownEvent =>
-				string.Equals(eventName, knownEvent, StringComparison.OrdinalIgnoreCase));
-
-			return ((3000 - year) * 1000) + (knownIndex >= 0 ? knownIndex : 500);
+			var knownIndex = Array.FindIndex(KnownStickerEvents, knownEvent => string.Equals(knownEvent, eventName, StringComparison.OrdinalIgnoreCase));
+			return (3000 - year) * 100 + (knownIndex >= 0 ? knownIndex : 50);
 		}
 
 		for (var index = 0; index < KnownStickerEvents.Length; index++)
@@ -2110,19 +2212,215 @@ public partial class WeaponPaints
 		return 0;
 	}
 
+	private static string GetMajorStickerEventName(JObject sticker)
+	{
+		var tournament = sticker["tournament"] as JObject;
+		if (tournament != null)
+		{
+			foreach (var key in new[] { "event", "event_name", "name", "tournament_event", "tournament_name" })
+			{
+				var value = NormalizeMajorStickerEventName(GetStickerTokenText(tournament[key]));
+				if (!string.IsNullOrWhiteSpace(value)) return value;
+			}
+		}
+
+		foreach (var key in new[] { "tournament_event", "event", "event_name", "tournament_name" })
+		{
+			var value = NormalizeMajorStickerEventName(GetStickerTokenText(sticker[key]));
+			if (!string.IsNullOrWhiteSpace(value)) return value;
+		}
+
+		var name = NormalizeMenuText(sticker["name"]?.ToString());
+		var parts = name.Split('|', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+		if (parts.Length >= 3)
+		{
+			var partEvent = NormalizeMajorStickerEventName(parts[^1]);
+			if (!string.IsNullOrWhiteSpace(partEvent)) return partEvent;
+		}
+
+		return NormalizeMajorStickerEventName(GetStickerSearchText(sticker));
+	}
+
+	private static string NormalizeMajorStickerEventName(string? value)
+	{
+		var text = NormalizeMenuText(value);
+		if (string.IsNullOrWhiteSpace(text)) return string.Empty;
+
+		foreach (var knownEvent in KnownStickerEvents)
+		{
+			if (text.Contains(knownEvent, StringComparison.OrdinalIgnoreCase))
+			{
+				return knownEvent;
+			}
+		}
+
+		var year = ExtractStickerEventYear(text);
+		if (year <= 0) return string.Empty;
+
+		foreach (var city in KnownMajorStickerEventNames)
+		{
+			if (text.Contains(city, StringComparison.OrdinalIgnoreCase))
+			{
+				return $"{city} {year}";
+			}
+		}
+
+		return text.Contains("Major", StringComparison.OrdinalIgnoreCase) ? text : string.Empty;
+	}
+
+	private static string GetStickerOperationMenuGroup(JObject sticker)
+	{
+		foreach (var text in GetStickerMenuSearchParts(sticker))
+		{
+			if (text.Contains("Shattered Web", StringComparison.OrdinalIgnoreCase)) return "Shattered Web";
+			if (text.Contains("Riptide", StringComparison.OrdinalIgnoreCase)) return "Riptide";
+			if (text.Contains("Broken Fang", StringComparison.OrdinalIgnoreCase)) return "Broken Fang";
+		}
+
+		var subject = GetStickerSubject(sticker["name"]?.ToString());
+		if (KnownShatteredWebStickerSubjects.Contains(subject, StringComparer.OrdinalIgnoreCase)) return "Shattered Web";
+		if (KnownRiptideStickerSubjects.Contains(subject, StringComparer.OrdinalIgnoreCase)) return "Riptide";
+		if (KnownBrokenFangStickerSubjects.Contains(subject, StringComparer.OrdinalIgnoreCase)) return "Broken Fang";
+
+		return string.Empty;
+	}
+
+	private static string GetStickerCapsuleMenuGroup(JObject sticker)
+	{
+		foreach (var text in GetStickerMenuSearchParts(sticker))
+		{
+			var capsuleGroup = NormalizeStickerCapsuleGroup(text);
+			if (!string.IsNullOrWhiteSpace(capsuleGroup)) return capsuleGroup;
+		}
+
+		var subject = GetStickerSubject(sticker["name"]?.ToString());
+		if (KnownStickerCapsule2Subjects.Contains(subject, StringComparer.OrdinalIgnoreCase)) return "Sticker Capsule 2";
+		if (KnownAmbushStickerSubjects.Contains(subject, StringComparer.OrdinalIgnoreCase)) return "Ambush";
+
+		return string.Empty;
+	}
+
+	private static string NormalizeStickerCapsuleGroup(string? value)
+	{
+		var text = NormalizeMenuText(value);
+		if (string.IsNullOrWhiteSpace(text)) return string.Empty;
+
+		if (text.Contains("Warhammer 40,000", StringComparison.OrdinalIgnoreCase)) return "Warhammer";
+		if (text.Contains("Sticker Capsule 2", StringComparison.OrdinalIgnoreCase)) return "Sticker Capsule 2";
+		if (string.Equals(text, "Sticker Capsule", StringComparison.OrdinalIgnoreCase) ||
+		    text.EndsWith("/ Sticker Capsule", StringComparison.OrdinalIgnoreCase)) return "Sticker Capsule";
+		if (text.Contains("CS20", StringComparison.OrdinalIgnoreCase)) return "CS20";
+		if (text.Contains("Community", StringComparison.OrdinalIgnoreCase) && text.Contains("2018", StringComparison.OrdinalIgnoreCase)) return "Community 2018";
+		if (text.Contains("2021", StringComparison.OrdinalIgnoreCase) && text.Contains("Community", StringComparison.OrdinalIgnoreCase)) return "2021 Community";
+		if (text.Contains("Community", StringComparison.OrdinalIgnoreCase) && text.Contains("1", StringComparison.OrdinalIgnoreCase)) return "Community 1";
+		if (text.Contains("10 Year Birthday", StringComparison.OrdinalIgnoreCase)) return "10 Year Birthday";
+		if (text.Contains("Ambush", StringComparison.OrdinalIgnoreCase)) return "Ambush";
+		if (text.Contains("Pinups", StringComparison.OrdinalIgnoreCase)) return "Pinups";
+		if (text.Contains("Enfu", StringComparison.OrdinalIgnoreCase)) return "Enfu";
+		if (text.Contains("Perfect World", StringComparison.OrdinalIgnoreCase) && text.Contains("2", StringComparison.OrdinalIgnoreCase)) return "Perfect World 2";
+		if (text.Contains("Perfect World", StringComparison.OrdinalIgnoreCase) && text.Contains("1", StringComparison.OrdinalIgnoreCase)) return "Perfect World 1";
+		if (text.Contains("The Boardroom", StringComparison.OrdinalIgnoreCase)) return "The Boardroom";
+		if (text.Contains("Half-Life", StringComparison.OrdinalIgnoreCase) || text.Contains("Alyx", StringComparison.OrdinalIgnoreCase)) return "Half-Life: Alyx";
+		if (text.Contains("Halo", StringComparison.OrdinalIgnoreCase)) return "Halo";
+		if (text.Contains("Skill Groups", StringComparison.OrdinalIgnoreCase)) return "Skill Groups";
+		if (text.Contains("Espionage", StringComparison.OrdinalIgnoreCase)) return "Espionage";
+		if (text.Contains("Poorly Drawn", StringComparison.OrdinalIgnoreCase)) return "Poorly Drawn";
+		if (text.Contains("Team Roles", StringComparison.OrdinalIgnoreCase)) return "Team Roles";
+		if (text.Contains("Recoil", StringComparison.OrdinalIgnoreCase)) return "Recoil";
+		if (text.Contains("Bestiary", StringComparison.OrdinalIgnoreCase)) return "Bestiary";
+		if (text.Contains("Slid3", StringComparison.OrdinalIgnoreCase)) return "Slid3";
+		if (text.Contains("Chicken", StringComparison.OrdinalIgnoreCase)) return "Chicken";
+		if (text.Contains("Sugarface", StringComparison.OrdinalIgnoreCase)) return "Sugarface";
+		if (text.Contains("Feral Predators", StringComparison.OrdinalIgnoreCase)) return "Feral Predators";
+		if (text.Contains("Battlefield 2042", StringComparison.OrdinalIgnoreCase)) return "Battlefield 2042";
+
+		return string.Empty;
+	}
+
+	private static IEnumerable<string> GetStickerMenuSearchParts(JObject sticker)
+	{
+		var parts = new List<string>();
+
+		void AddPart(string? value)
+		{
+			var normalized = NormalizeMenuText(value);
+			if (!string.IsNullOrWhiteSpace(normalized)) parts.Add(normalized);
+		}
+
+		AddPart(sticker["name"]?.ToString());
+		AddPart(sticker["market_hash_name"]?.ToString());
+		AddPart(sticker["source"]?.ToString());
+		AddPart(sticker["capsule"]?.ToString());
+
+		foreach (var containerName in GetStickerContainerNames(sticker))
+		{
+			AddPart(containerName);
+		}
+
+		return parts;
+	}
+
+	private static IEnumerable<string> GetStickerContainerNames(JObject sticker)
+	{
+		foreach (var key in new[] { "crates", "collections" })
+		{
+			var token = sticker[key];
+			if (token is JArray array)
+			{
+				foreach (var item in array)
+				{
+					var value = GetStickerTokenText(item);
+					if (!string.IsNullOrWhiteSpace(value)) yield return value;
+				}
+				continue;
+			}
+
+			var singleValue = GetStickerTokenText(token);
+			if (!string.IsNullOrWhiteSpace(singleValue)) yield return singleValue;
+		}
+	}
+
+	private static string GetStickerSearchText(JObject sticker)
+	{
+		return string.Join(" ", GetStickerMenuSearchParts(sticker));
+	}
+
+	private static string GetStickerTokenText(JToken? token)
+	{
+		if (token == null) return string.Empty;
+
+		if (token is JObject obj)
+		{
+			foreach (var key in new[] { "name", "event", "event_name", "tournament_event", "market_hash_name", "id" })
+			{
+				var value = obj[key]?.ToString();
+				if (!string.IsNullOrWhiteSpace(value)) return value;
+			}
+		}
+
+		return token.Type == JTokenType.String ? token.ToString() : string.Empty;
+	}
+
 	private static StickerAudience GetStickerAudience(JObject sticker)
 	{
 		string[] playerKeys = ["tournament_player", "player", "player_name", "pro_player", "autograph"];
 		string[] teamKeys = ["tournament_team", "team", "team_name", "organization"];
 
-		if (playerKeys.Any(key => !string.IsNullOrWhiteSpace(sticker[key]?.ToString())))
+		if (playerKeys.Any(key => !string.IsNullOrWhiteSpace(GetStickerTokenText(sticker[key]))))
 		{
 			return StickerAudience.Players;
 		}
 
-		if (teamKeys.Any(key => !string.IsNullOrWhiteSpace(sticker[key]?.ToString())))
+		if (teamKeys.Any(key => !string.IsNullOrWhiteSpace(GetStickerTokenText(sticker[key]))))
 		{
 			return StickerAudience.Teams;
+		}
+
+		var tournament = sticker["tournament"] as JObject;
+		if (tournament != null)
+		{
+			if (!string.IsNullOrWhiteSpace(GetStickerTokenText(tournament["player"]))) return StickerAudience.Players;
+			if (!string.IsNullOrWhiteSpace(GetStickerTokenText(tournament["team"]))) return StickerAudience.Teams;
 		}
 
 		var stickerSubject = GetStickerSubject(sticker["name"]?.ToString());
@@ -2151,38 +2449,60 @@ public partial class WeaponPaints
 		return KnownStickerTeams.Any(team => string.Equals(subject, team, StringComparison.OrdinalIgnoreCase));
 	}
 
-	private static bool IsMajorStickerEvent(string name)
-	{
-		return KnownMajorStickerEvents.Any(eventName => name.Contains(eventName, StringComparison.OrdinalIgnoreCase));
-	}
-
-	private static bool IsTournamentSticker(string name)
-	{
-		string[] tournamentTerms =
-		[
-			"RMR", "ESL", "PGL", "StarLadder", "BLAST", "ELEAGUE", "FACEIT", "IEM",
-			"ESWC", "DreamHack", "Cologne", "Katowice", "Major"
-		];
-
-		return tournamentTerms.Any(term => name.Contains(term, StringComparison.OrdinalIgnoreCase));
-	}
-
 	private static readonly string[] KnownStickerEvents =
 	[
-		"Budapest 2025", "Austin 2025", "Shanghai 2024", "Copenhagen 2024", "Paris 2023",
+		"Cologne 2026", "Budapest 2025", "Austin 2025", "Shanghai 2024", "Copenhagen 2024", "Paris 2023",
 		"Rio 2022", "Antwerp 2022", "Stockholm 2021", "2020 RMR", "Berlin 2019", "Katowice 2019",
 		"London 2018", "Boston 2018", "Krakow 2017", "Atlanta 2017", "Cologne 2016",
 		"MLG Columbus 2016", "Cluj-Napoca 2015", "Cologne 2015", "Katowice 2015",
 		"DreamHack 2014", "Cologne 2014", "Katowice 2014"
 	];
 
-	private static readonly string[] KnownMajorStickerEvents =
+	private static readonly string[] KnownMajorStickerEventNames =
 	[
-		"Budapest 2025", "Austin 2025", "Shanghai 2024", "Copenhagen 2024", "Paris 2023",
-		"Rio 2022", "Antwerp 2022", "Stockholm 2021", "Berlin 2019", "Katowice 2019",
-		"London 2018", "Boston 2018", "Krakow 2017", "Atlanta 2017", "Cologne 2016",
-		"MLG Columbus 2016", "Cluj-Napoca 2015", "Cologne 2015", "Katowice 2015",
-		"DreamHack 2014", "Cologne 2014", "Katowice 2014"
+		"Budapest", "Austin", "Shanghai", "Copenhagen", "Paris", "Rio", "Antwerp", "Stockholm",
+		"Berlin", "Katowice", "London", "Boston", "Krakow", "Atlanta", "Cologne",
+		"MLG Columbus", "Cluj-Napoca", "DreamHack"
+	];
+
+	private static readonly string[] KnownOperationStickerGroups =
+	[
+		"Shattered Web", "Riptide", "Broken Fang"
+	];
+
+	private static readonly string[] KnownCapsuleStickerGroups =
+	[
+		"Sticker Capsule", "Sticker Capsule 2", "CS20", "Community 1", "10 Year Birthday",
+		"Warhammer", "Ambush", "Pinups", "Enfu", "Community 2018", "Perfect World 1",
+		"The Boardroom", "Half-Life: Alyx", "2021 Community", "Halo", "Skill Groups",
+		"Espionage", "Perfect World 2", "Poorly Drawn", "Team Roles", "Recoil", "Bestiary",
+		"Slid3", "Chicken", "Sugarface", "Feral Predators", "Battlefield 2042"
+	];
+
+	private static readonly string[] KnownShatteredWebStickerSubjects =
+	[
+		"Counter-Tech", "Gold Web", "Mastermind", "Shattered Web", "Terrorist-Tech", "Web Stuck"
+	];
+
+	private static readonly string[] KnownRiptideStickerSubjects =
+	[
+		"Seeing Red", "Dead Eye", "Great Wave", "Gutted", "Kill Count", "Operation Riptide", "Liquid Fire", "Chicken of the Sky"
+	];
+
+	private static readonly string[] KnownBrokenFangStickerSubjects =
+	[
+		"Ancient Beast", "Ancient Marauder", "Ancient Protector", "Badge of Service", "Battle Scarred",
+		"Broken Fang", "Coiled Strike", "Enemy Spotted", "Stalking Prey", "Stone Scales"
+	];
+
+	private static readonly string[] KnownStickerCapsule2Subjects =
+	[
+		"Crown"
+	];
+
+	private static readonly string[] KnownAmbushStickerSubjects =
+	[
+		"Boom Detonation", "Boom Epicenter", "Boom Blast", "Boom Trail", "Rainbow Route"
 	];
 
 	private static readonly string[] KnownStickerTeams =
