@@ -1,4 +1,4 @@
-﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Entities.Constants;
 using CounterStrikeSharp.API.Modules.Memory;
@@ -167,25 +167,36 @@ namespace WeaponPaints
 			if (!HasChangedPaint(player ,weaponDefIndex, out var weaponInfo) || weaponInfo == null)
 				return;
 
-			foreach (var sticker in weaponInfo.Stickers)
+			for (var stickerSlot = 0; stickerSlot < weaponInfo.Stickers.Count; stickerSlot++)
 			{
-				int stickerSlot = weaponInfo.Stickers.IndexOf(sticker);
+				var sticker = weaponInfo.Stickers[stickerSlot];
+				if (sticker.Id == 0) continue;
 
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} id", ViewAsFloat(sticker.Id));
-				if (sticker.OffsetX != 0 || sticker.OffsetY != 0)
+
+				if (sticker.Schema != 0)
 					CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-						$"sticker slot {stickerSlot} schema", 0);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} offset x", sticker.OffsetX);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} offset y", sticker.OffsetY);
+						$"sticker slot {stickerSlot} schema", ViewAsFloat(sticker.Schema));
+
+				if (sticker.OffsetX != 0)
+					CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+						$"sticker slot {stickerSlot} offset x", sticker.OffsetX);
+
+				if (sticker.OffsetY != 0)
+					CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+						$"sticker slot {stickerSlot} offset y", sticker.OffsetY);
+
 				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
 					$"sticker slot {stickerSlot} wear", sticker.Wear);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} scale", sticker.Scale);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} rotation", sticker.Rotation);
+
+				if (sticker.Scale != 0)
+					CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+						$"sticker slot {stickerSlot} scale", sticker.Scale);
+
+				if (sticker.Rotation != 0)
+					CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+						$"sticker slot {stickerSlot} rotation", sticker.Rotation);
 			}
 
 			if (_temporaryPlayerWeaponWear.TryGetValue(player.Slot, out var playerWear) &&
@@ -224,8 +235,7 @@ namespace WeaponPaints
 
 			if (PlayerHasKnife(player)) return;
 
-			//string knifeToGive = (CsTeam)player.TeamNum == CsTeam.Terrorist ? "weapon_knife_t" : "weapon_knife";
-			player.GiveNamedItem(CsItem.Knife);
+			player.GiveNamedItem(GetDefaultKnifeForTeam(player));
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
 		}
 
@@ -254,6 +264,26 @@ namespace WeaponPaints
 			return false;
 		}
 
+		private void RestoreActiveWeaponSlot(CCSPlayerController player, string? activeSlotCommand)
+		{
+			if (string.IsNullOrEmpty(activeSlotCommand)) return;
+
+			AddTimer(0.05f, () =>
+			{
+				try
+				{
+					if (Utility.IsPlayerValid(player) && player.PawnIsAlive)
+					{
+						player.ExecuteClientCommand(activeSlotCommand);
+					}
+				}
+				catch (Exception ex)
+				{
+					Logger.LogWarning("Error restoring active weapon slot: " + ex.Message);
+				}
+			}, TimerFlags.STOP_ON_MAPCHANGE);
+		}
+
 		private void RefreshWeapons(CCSPlayerController? player)
 		{
 			if (!_gBCommandsAllowed) return;
@@ -262,6 +292,7 @@ namespace WeaponPaints
 			if (player.PlayerPawn.Value.WeaponServices == null || player.PlayerPawn.Value.ItemServices == null)
 				return;
 
+			var activeSlotCommand = GetActiveWeaponSlotCommand(player);
 			var weapons = player.PlayerPawn.Value.WeaponServices.MyWeapons;
 
 			if (weapons.Count == 0)
@@ -331,9 +362,9 @@ namespace WeaponPaints
 
 						if (!PlayerHasKnife(player) && hasKnife)
 						{
-							var newKnife = new CBasePlayerWeapon(player.GiveNamedItem(CsItem.Knife));
+							var newKnife = new CBasePlayerWeapon(player.GiveNamedItem(GetDefaultKnifeForTeam(player)));
 							var newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(CsItem.USP));
-							player.GiveNamedItem(CsItem.Knife);
+							player.GiveNamedItem(GetDefaultKnifeForTeam(player));
 							player.ExecuteClientCommand("slot3");
 
 							Server.NextFrame(() =>
@@ -374,6 +405,8 @@ namespace WeaponPaints
 						});
 							}
 						}
+
+						RestoreActiveWeaponSlot(player, activeSlotCommand);
 					}, TimerFlags.STOP_ON_MAPCHANGE);
 		}
 
@@ -385,13 +418,12 @@ namespace WeaponPaints
 			if (pawn == null || !pawn.IsValid)
 				return;
 
+			var activeSlotCommand = GetActiveWeaponSlotCommand(player);
 			CEconItemView item = pawn.EconGloves;
 
 			item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 			item.AttributeList.Attributes.RemoveAll();
 
-			//force gloves model refresh to prevent model overlap
-			player.ExecuteClientCommand("lastinv");
 			Instance.AddTimer(0.08f, () =>
 			{	
 				try
@@ -424,10 +456,15 @@ namespace WeaponPaints
 
 					item.Initialized = true;
 				
-					//force gloves model refresh to prevent model overlap
-					player.ExecuteClientCommand("lastinv");
-					SetBodygroup(pawn, "first_or_third_person", 0);
-					AddTimer(0.2f, () => SetBodygroup(pawn, "first_or_third_person", 1), TimerFlags.STOP_ON_MAPCHANGE);
+					TouchGloveState(pawn);
+					if (activeSlotCommand == "slot3")
+					{
+						RefreshKnifeEntityForGloves(player);
+					}
+					else
+					{
+						RestoreActiveWeaponSlot(player, activeSlotCommand);
+					}
 				}
 				catch (Exception) { }
 			}, TimerFlags.STOP_ON_MAPCHANGE);
@@ -521,10 +558,12 @@ namespace WeaponPaints
 		private static void GivePlayerPin(CCSPlayerController player)
 		{
 			if (!GPlayersPin.TryGetValue(player.Slot, out var pinInfo) ||
-			    !pinInfo.TryGetValue(player.Team, out var pinId)) return;
+			    !pinInfo.TryGetValue(player.Team, out var pinId) ||
+			    pinId == 0) return;
 			if (player.InventoryServices == null) return;
-			
-			player.InventoryServices.Rank[5] = pinId > 0 ? (MedalRank_t)pinId : MedalRank_t.MEDAL_RANK_NONE;
+
+			CacheCurrentNativePin(player);
+			player.InventoryServices.Rank[5] = (MedalRank_t)pinId;
 			Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
 		}
 		
@@ -545,7 +584,7 @@ namespace WeaponPaints
 				{
 					var newWeapon = new CBasePlayerWeapon(player.GiveNamedItem(CsItem.USP));
 					weapon.AddEntityIOEvent("Kill", weapon, null, "", 0.01f);
-					player.GiveNamedItem(CsItem.Knife);
+					player.GiveNamedItem(GetDefaultKnifeForTeam(player));
 					player.ExecuteClientCommand("slot3");
 					newWeapon.AddEntityIOEvent("Kill", newWeapon, null, "", 0.01f);
 				}

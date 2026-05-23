@@ -39,8 +39,11 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			GPlayerWeaponsInfo.Clear();
 			GPlayersKnife.Clear();
 			GPlayersGlove.Clear();
+			GPlayersNativeGlove.Clear();
+			GPlayerWeaponPaintCustomizations.Clear();
 			GPlayersAgent.Clear();
 			GPlayersPin.Clear();
+			GPlayersNativePin.Clear();
 			GPlayersMusic.Clear();
 
 			foreach (var player in Enumerable
@@ -66,11 +69,7 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 			}
 		}
 
-		Utility.LoadSkinsFromFile(ModuleDirectory + $"/data/skins_{_config.SkinsLanguage}.json", Logger);
-		Utility.LoadGlovesFromFile(ModuleDirectory + $"/data/gloves_{_config.SkinsLanguage}.json", Logger);
-		Utility.LoadAgentsFromFile(ModuleDirectory + $"/data/agents_{_config.SkinsLanguage}.json", Logger);
-		Utility.LoadMusicFromFile(ModuleDirectory + $"/data/music_{_config.SkinsLanguage}.json", Logger);
-		Utility.LoadPinsFromFile(ModuleDirectory + $"/data/collectibles_{_config.SkinsLanguage}.json", Logger);
+		Utility.LoadSkinDataAsync(ModuleDirectory, _config, Logger).GetAwaiter().GetResult();
 
 		RegisterListeners();
 	}
@@ -133,6 +132,8 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 				SetupMusicMenu();
 			if (Config.Additional.PinsEnabled)
 				SetupPinsMenu();
+			if (Config.Additional.SkinEnabled)
+				SetupStickersMenu();
 		
 			RegisterCommands();
 		}

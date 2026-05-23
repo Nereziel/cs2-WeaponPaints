@@ -47,11 +47,26 @@ namespace WeaponPaints
 		[JsonPropertyName("CommandStattrak")]
 		public List<string> CommandStattrak { get; set; } = ["stattrak", "st"];
 
+		[JsonPropertyName("CommandSeed")]
+		public List<string> CommandSeed { get; set; } = ["seed", "pattern"];
+
+		[JsonPropertyName("CommandWear")]
+		public List<string> CommandWear { get; set; } = ["wear", "float"];
+
 		[JsonPropertyName("CommandSkin")]
 		public List<string> CommandSkin { get; set; } = ["ws"];
 
 		[JsonPropertyName("CommandSkinSelection")]
 		public List<string> CommandSkinSelection { get; set; } = ["skins"];
+
+		[JsonPropertyName("CommandSticker")]
+		public List<string> CommandSticker { get; set; } = ["stickers", "sticker"];
+
+		[JsonPropertyName("StickersVipOnly")]
+		public bool StickersVipOnly { get; set; } = false;
+
+		[JsonPropertyName("StickersVipPermission")]
+		public string StickersVipPermission { get; set; } = "@css/vip";
 
 		[JsonPropertyName("CommandRefresh")]
 		public List<string> CommandRefresh { get; set; } = ["wp"];
@@ -71,7 +86,7 @@ namespace WeaponPaints
 
 	public class WeaponPaintsConfig : BasePluginConfig
 	{
-        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 10;
+        [JsonPropertyName("ConfigVersion")] public override int Version { get; set; } = 12;
 
         [JsonPropertyName("SkinsLanguage")]
 		public string SkinsLanguage { get; set; } = "en";
@@ -96,6 +111,9 @@ namespace WeaponPaints
 
 		[JsonPropertyName("Website")]
 		public string Website { get; set; } = "example.com/skins";
+
+		[JsonPropertyName("SkinApiURL")]
+		public string SkinApiURL { get; set; } = "https://cdn.jsdelivr.net/gh/ByMykel/CSGO-API@main/public/api";
 
 		[JsonPropertyName("Additional")]
 		public Additional Additional { get; set; } = new();
