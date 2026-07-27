@@ -1,4 +1,4 @@
-﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Entities.Constants;
 using CounterStrikeSharp.API.Modules.Memory;
@@ -85,7 +85,7 @@ namespace WeaponPaints
 						w["paint"]?.ToObject<int>() == fallbackPaintKit)
 					.ToList();
 				
-				isLegacyModel = skinInfo.Count <= 0 || skinInfo[0].Value<bool>("legacy_model");
+				isLegacyModel = skinInfo.Count > 0 && skinInfo[0].Value<bool>("legacy_model");
 				UpdatePlayerWeaponMeshGroupMask(player, weapon, isLegacyModel);
 				return;
 			}
@@ -133,7 +133,7 @@ namespace WeaponPaints
 					w["paint"]?.ToObject<int>() == fallbackPaintKit)
 				.ToList();
 				
-			isLegacyModel = skinInfo.Count <= 0 || skinInfo[0].Value<bool>("legacy_model");
+			isLegacyModel = skinInfo.Count > 0 && skinInfo[0].Value<bool>("legacy_model");
 			UpdatePlayerWeaponMeshGroupMask(player, weapon, isLegacyModel);
 		}
 		
@@ -159,41 +159,101 @@ namespace WeaponPaints
 		}
 
 		private void SetStickers(CCSPlayerController? player, CBasePlayerWeapon weapon)
-		{
-			if (player == null || !player.IsValid) return;
+{
+    if (player == null || !player.IsValid) return;
 
-			int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
+    int weaponDefIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
 
-			if (!HasChangedPaint(player ,weaponDefIndex, out var weaponInfo) || weaponInfo == null)
-				return;
+    if (!HasChangedPaint(player, weaponDefIndex, out var weaponInfo) || weaponInfo == null)
+        return;
 
-			foreach (var sticker in weaponInfo.Stickers)
-			{
-				int stickerSlot = weaponInfo.Stickers.IndexOf(sticker);
+    for (int stickerSlot = 0; stickerSlot < weaponInfo.Stickers.Count && stickerSlot < 5; stickerSlot++)
+    {
+        var sticker = weaponInfo.Stickers[stickerSlot];
 
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} id", ViewAsFloat(sticker.Id));
-				if (sticker.OffsetX != 0 || sticker.OffsetY != 0)
-					CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-						$"sticker slot {stickerSlot} schema", 0);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} offset x", sticker.OffsetX);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} offset y", sticker.OffsetY);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} wear", sticker.Wear);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} scale", sticker.Scale);
-				CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-					$"sticker slot {stickerSlot} rotation", sticker.Rotation);
-			}
+        if (sticker == null || sticker.Id == 0)
+            continue;
 
-			if (_temporaryPlayerWeaponWear.TryGetValue(player.Slot, out var playerWear) &&
-				playerWear.TryGetValue(weaponDefIndex, out float storedWear))
-			{
-				weapon.FallbackWear = storedWear;
-			}
-		}
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+            $"sticker slot {stickerSlot} id",
+            ViewAsFloat(sticker.Id)
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+            $"sticker slot {stickerSlot} wear",
+            sticker.Wear
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+            $"sticker slot {stickerSlot} scale",
+            sticker.Scale
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+            $"sticker slot {stickerSlot} rotation",
+            sticker.Rotation
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+            $"sticker slot {stickerSlot} offset x",
+            sticker.OffsetX
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+            $"sticker slot {stickerSlot} offset y",
+            sticker.OffsetY
+        );
+
+        // Also add to AttributeList for stability
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.AttributeList.Handle,
+            $"sticker slot {stickerSlot} id",
+            ViewAsFloat(sticker.Id)
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.AttributeList.Handle,
+            $"sticker slot {stickerSlot} wear",
+            sticker.Wear
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.AttributeList.Handle,
+            $"sticker slot {stickerSlot} scale",
+            sticker.Scale
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.AttributeList.Handle,
+            $"sticker slot {stickerSlot} rotation",
+            sticker.Rotation
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.AttributeList.Handle,
+            $"sticker slot {stickerSlot} offset x",
+            sticker.OffsetX
+        );
+
+        CAttributeListSetOrAddAttributeValueByName.Invoke(
+            weapon.AttributeManager.Item.AttributeList.Handle,
+            $"sticker slot {stickerSlot} offset y",
+            sticker.OffsetY
+        );
+    }
+
+    if (_temporaryPlayerWeaponWear.TryGetValue(player.Slot, out var playerWear) &&
+        playerWear.TryGetValue(weaponDefIndex, out float storedWear))
+    {
+        weapon.FallbackWear = storedWear;
+    }
+}
 
 		private void SetKeychain(CCSPlayerController? player, CBasePlayerWeapon weapon)
 		{
@@ -203,19 +263,81 @@ namespace WeaponPaints
 
 			if (!HasChangedPaint(player, weaponDefIndex, out var value) || value?.KeyChain == null)
 				return;
-			
+
 			var keyChain = value.KeyChain;
 
-			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				"keychain slot 0 id", ViewAsFloat(keyChain.Id));
-			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				"keychain slot 0 offset x", keyChain.OffsetX);
-			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				"keychain slot 0 offset y", keyChain.OffsetY);
-			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				"keychain slot 0 offset z", keyChain.OffsetZ);
-			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
-				"keychain slot 0 seed", ViewAsFloat(keyChain.Seed));
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 id",
+				ViewAsFloat(keyChain.Id)
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 schema",
+				0
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 seed",
+				ViewAsFloat(keyChain.Seed)
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 offset x",
+				keyChain.OffsetX
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 offset y",
+				keyChain.OffsetY
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle,
+				"keychain slot 0 offset z",
+				keyChain.OffsetZ
+			);
+
+			// set thêm vào AttributeList để tăng độ ổn định
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.AttributeList.Handle,
+				"keychain slot 0 id",
+				ViewAsFloat(keyChain.Id)
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.AttributeList.Handle,
+				"keychain slot 0 schema",
+				0
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.AttributeList.Handle,
+				"keychain slot 0 seed",
+				ViewAsFloat(keyChain.Seed)
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.AttributeList.Handle,
+				"keychain slot 0 offset x",
+				keyChain.OffsetX
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.AttributeList.Handle,
+				"keychain slot 0 offset y",
+				keyChain.OffsetY
+			);
+
+			CAttributeListSetOrAddAttributeValueByName.Invoke(
+				weapon.AttributeManager.Item.AttributeList.Handle,
+				"keychain slot 0 offset z",
+				keyChain.OffsetZ
+			);
 		}
 
 		private static void GiveKnifeToPlayer(CCSPlayerController? player)

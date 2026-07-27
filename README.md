@@ -19,7 +19,32 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Added command **`!agents`** to show menu with agents
 - Added command **`!pins`** to show menu with pins
 - Added command **`!music`** to show menu with music
+- Added command **`i`** (developer console) to apply a skin directly from a CS2 inspect link (see below)
 - Translations support, submit a PR if you want to share your translation
+
+## Inspect Link Skin Command (`i`)
+
+Apply any weapon skin — including stickers, charms, StatTrak, knives, and gloves — directly from a CS2 inspect link. This command works in the **developer console only**.
+
+### Usage
+
+**In developer console:**
+```
+i csgo_econ_action_preview <hex>
+```
+You can also paste just the hex part:
+```
+i <hex>
+```
+
+### Supported weapon types
+- All **primary** weapons (rifles, SMGs, shotguns, LMGs)
+- All **secondary** weapons (pistols)
+- All **knives** (Karambit, Butterfly, M9 Bayonet, Kukri, etc.)
+- All **glove types** (Sport Gloves, Bloodhound, Broken Fang, etc.)
+
+### Notes
+- ⚠️ **Known issue:** The 5th sticker slot not render correctly on weapon skins.
 
 ## ⚙️ Requirements
 **Ensure all the following dependencies are installed before proceeding**

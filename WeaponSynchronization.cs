@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using MySqlConnector;
 using System.Collections.Concurrent;
 using CounterStrikeSharp.API.Modules.Utils;
@@ -232,6 +232,9 @@ internal class WeaponSynchronization
 					StatTrakCount = weaponStatTrakCount,
 				};
 
+				// Pre-fill 5 empty sticker slots so indices always match slot numbers
+				weaponInfo.Stickers.AddRange(new StickerInfo[5]);
+
 				// Retrieve and parse sticker data (up to 5 slots)
 				for (int i = 0; i <= 4; i++)
 				{
@@ -253,7 +256,8 @@ internal class WeaponSynchronization
 					    !float.TryParse(parts[5], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerScale) ||
 					    !float.TryParse(parts[6], NumberStyles.Float, CultureInfo.InvariantCulture, out float stickerRotation)) continue;
 						
-					StickerInfo stickerInfo = new StickerInfo
+					// Assign at index i (not Add) so slot numbers are preserved
+					weaponInfo.Stickers[i] = new StickerInfo
 					{
 						Id = stickerId,
 						Schema = stickerSchema,
@@ -263,8 +267,6 @@ internal class WeaponSynchronization
 						Scale = stickerScale,
 						Rotation = stickerRotation
 					};
-
-					weaponInfo.Stickers.Add(stickerInfo);
 				}
 					
 				if (weaponTeam == CsTeam.None)
@@ -461,6 +463,50 @@ internal class WeaponSynchronization
 		catch (Exception e)
 		{
 			Utility.Log($"Error syncing agents to database: {e.Message}");
+		}
+	}
+
+	internal async Task SyncStickersToDatabase(PlayerInfo player, int weaponDefIndex, List<StickerInfo> stickers)
+	{
+		if (string.IsNullOrEmpty(player.SteamId)) return;
+
+		// Always write all 5 sticker columns so old slots are cleared when the new link has fewer stickers
+		const string query = @"
+			UPDATE `wp_player_skins`
+			SET
+				`weapon_sticker_0` = @s0,
+				`weapon_sticker_1` = @s1,
+				`weapon_sticker_2` = @s2,
+				`weapon_sticker_3` = @s3,
+				`weapon_sticker_4` = @s4
+			WHERE `steamid` = @steamid AND `weapon_defindex` = @weaponDefIndex";
+
+		static string Fmt(StickerInfo s) =>
+			s.Id == 0
+				? "0;0;0;0;0;0;0"
+				: $"{s.Id};{s.Schema};{s.OffsetX.ToString(System.Globalization.CultureInfo.InvariantCulture)};{s.OffsetY.ToString(System.Globalization.CultureInfo.InvariantCulture)};{s.Wear.ToString(System.Globalization.CultureInfo.InvariantCulture)};{s.Scale.ToString(System.Globalization.CultureInfo.InvariantCulture)};{s.Rotation.ToString(System.Globalization.CultureInfo.InvariantCulture)}";
+
+		// Ensure list has exactly 5 elements
+		var padded = new List<StickerInfo>(stickers);
+		while (padded.Count < 5) padded.Add(new StickerInfo());
+
+		try
+		{
+			await using var connection = await _database.GetConnectionAsync();
+			await connection.ExecuteAsync(query, new
+			{
+				steamid    = player.SteamId,
+				weaponDefIndex,
+				s0 = Fmt(padded[0]),
+				s1 = Fmt(padded[1]),
+				s2 = Fmt(padded[2]),
+				s3 = Fmt(padded[3]),
+				s4 = Fmt(padded[4])
+			});
+		}
+		catch (Exception e)
+		{
+			Utility.Log($"Error syncing stickers to database: {e.Message}");
 		}
 	}
 

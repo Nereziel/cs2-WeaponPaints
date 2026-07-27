@@ -1,4 +1,4 @@
-﻿namespace WeaponPaints
+namespace WeaponPaints
 {
 	public class WeaponInfo
 	{
