@@ -144,18 +144,31 @@ namespace WeaponPaints
 			if (!HasChangedPaint(player, weaponDefIndex, out var weaponInfo) || weaponInfo == null ||
 			    weaponInfo.Stickers.Count <= 0) return;
 			
-			float wearIncrement = 0.001f;
-			float currentWear = weaponInfo.Wear;
+			// The engine re-renders sticker decals only when the weapon's wear CHANGES, but pushing
+			// the wear to 0 / below the real value makes the decals vanish (the old jitter bug at
+			// Factory New, where real-0.0005 clamped to 0). The upstream workaround incremented wear
+			// forever, which renders fine but drifts the float upward and never resyncs.
+			// Instead, oscillate inside a tiny band placed on the side of the real wear that has
+			// headroom: the value changes every refresh (forcing a re-render) yet stays within
+			// ~0.002 of the configured float, never hits 0/1, and is recomputed from the fresh DB
+			// wear each time so it never drifts and tracks website edits immediately.
+			const float lo = 0.001f;            // near offset from the real wear
+			const float hi = 0.002f;            // far offset from the real wear
+			float real = weaponInfo.Wear;
+			float dir = real > 0.5f ? -1f : 1f; // keep the band away from the 0 and 1 limits
+			float a = Math.Clamp(real + dir * lo, 0f, 1f);
+			float b = Math.Clamp(real + dir * hi, 0f, 1f);
 
 			var playerWear = _temporaryPlayerWeaponWear.GetOrAdd(player.Slot, _ => new ConcurrentDictionary<int, float>());
 
-			float incrementedWear = playerWear.AddOrUpdate(
+			// Toggle between a and b each refresh (whichever the cache is NOT currently near).
+			float newWear = playerWear.AddOrUpdate(
 				weaponDefIndex,
-				currentWear + wearIncrement,
-				(_, oldWear) => Math.Min(oldWear + wearIncrement, 1.0f)
+				b,
+				(_, oldWear) => (Math.Abs(oldWear - b) < Math.Abs(oldWear - a)) ? a : b
 			);
 
-			weapon.FallbackWear = incrementedWear;
+			weapon.FallbackWear = newWear;
 		}
 
 		private void SetStickers(CCSPlayerController? player, CBasePlayerWeapon weapon)
