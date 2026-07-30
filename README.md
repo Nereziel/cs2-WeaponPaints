@@ -92,6 +92,13 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Steam login/logout
 - Change knife, paint, seed and wear
 
+## Alternative web panels (community)
+The bundled PHP site under `website/` is the minimal reference UI. Community-maintained frontends that talk to the same database and add extra features:
+
+- **[cs2-weaponpaints-website (Node/Express)](https://github.com/GuxtavoLiu/cs2-weaponpaints-website)** - a maintained fork of [L1teD](https://github.com/L1teD/cs2-WeaponPaints-website) / [SwaggyMacro](https://github.com/SwaggyMacro/cs2-WeaponPaints-Website), adding stickers, offline inspect-link import, a loadout overview, float/pattern + StatTrak editing, and a multi-language UI (en / pt-BR / ru / zh-CN).
+
+> These are third-party projects, not maintained here. Use at your own discretion.
+
 ## Troubleshooting
 <details>
 **Skins are not changing:**
