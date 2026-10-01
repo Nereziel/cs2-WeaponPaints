@@ -105,8 +105,13 @@ namespace WeaponPaints
 			
 			weapon.FallbackSeed = weaponInfo is { Paint: 38, Seed: 0 } ? _fadeSeed++ : weaponInfo.Seed;
 			
-			weapon.FallbackWear = weaponInfo.Wear;
+			weapon.FallbackWear = ClampWear(weaponInfo.Wear);
 			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weapon.FallbackPaintKit);
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture seed", weapon.FallbackSeed);
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.NetworkedDynamicAttributes.Handle, "set item texture wear", weapon.FallbackWear);
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture prefab", weapon.FallbackPaintKit);
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture seed", weapon.FallbackSeed);
+			CAttributeListSetOrAddAttributeValueByName.Invoke(weapon.AttributeManager.Item.AttributeList.Handle, "set item texture wear", weapon.FallbackWear);
 
 			if (weaponInfo.StatTrak)
 			{			
@@ -413,21 +418,27 @@ namespace WeaponPaints
 					UpdatePlayerEconItemId(item);
 
 					item.NetworkedDynamicAttributes.Attributes.RemoveAll();
+					var wear = ClampWear(weaponInfo.Wear);
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture prefab", weaponInfo.Paint);
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture seed", weaponInfo.Seed);
-					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture wear", weaponInfo.Wear);
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.NetworkedDynamicAttributes.Handle, "set item texture wear", wear);
 
 					item.AttributeList.Attributes.RemoveAll();
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture prefab", weaponInfo.Paint);
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture seed", weaponInfo.Seed);
-					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture wear", weaponInfo.Wear);
+					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture wear", wear);
 
 					item.Initialized = true;
 				
 					//force gloves model refresh to prevent model overlap
 					player.ExecuteClientCommand("lastinv");
 					SetBodygroup(pawn, "first_or_third_person", 0);
-					AddTimer(0.2f, () => SetBodygroup(pawn, "first_or_third_person", 1), TimerFlags.STOP_ON_MAPCHANGE);
+					// lastinv can reset weapon bodygroups; re-apply after viewmodel settles (CS2 1.41.8.x)
+					AddTimer(0.2f, () =>
+					{
+						SetBodygroup(pawn, "first_or_third_person", 1);
+						ReApplyWeaponBodygroups(player);
+					}, TimerFlags.STOP_ON_MAPCHANGE);
 				}
 				catch (Exception) { }
 			}, TimerFlags.STOP_ON_MAPCHANGE);
@@ -474,6 +485,54 @@ namespace WeaponPaints
 		private void UpdatePlayerWeaponMeshGroupMask(CCSPlayerController player, CBasePlayerWeapon weapon, bool isLegacy)
 		{
 			UpdateWeaponMeshGroupMask(weapon, isLegacy);
+		}
+
+		/// <summary>
+		/// Wear 0 (Factory New stored as 0) can fail to render paint after CS2 1.41.8.x.
+		/// Match common server practice / WeaponPaints random path which already uses 0.01f.
+		/// </summary>
+		private static float ClampWear(float wear)
+			=> wear > 0f && wear <= 1f ? wear : 0.001f;
+
+		/// <summary>
+		/// After lastinv / viewmodel refresh, legacy weapon meshes can reset.
+		/// Re-run SetBodygroup for currently equipped guns using FallbackPaintKit + skins.json.
+		/// </summary>
+		private void ReApplyWeaponBodygroups(CCSPlayerController player)
+		{
+			try
+			{
+				if (!Utility.IsPlayerValid(player) || (LifeState_t)player.LifeState != LifeState_t.LIFE_ALIVE)
+					return;
+				if (player.PlayerPawn.Value?.WeaponServices?.MyWeapons == null)
+					return;
+
+				foreach (var handle in player.PlayerPawn.Value.WeaponServices.MyWeapons)
+				{
+					var weapon = handle.Value;
+					if (weapon is not { IsValid: true }) continue;
+					var name = weapon.DesignerName ?? "";
+					if (!name.Contains("weapon_") || name.Contains("knife") || name.Contains("bayonet"))
+						continue;
+
+					int defIndex = weapon.AttributeManager.Item.ItemDefinitionIndex;
+					int paint = weapon.FallbackPaintKit;
+					if (paint <= 0) continue;
+
+					var skinInfo = SkinsList
+						.Where(w =>
+							w["weapon_defindex"]?.ToObject<int>() == defIndex &&
+							w["paint"]?.ToObject<int>() == paint)
+						.ToList();
+
+					bool isLegacy = skinInfo.Count <= 0 || skinInfo[0].Value<bool>("legacy_model");
+					UpdatePlayerWeaponMeshGroupMask(player, weapon, isLegacy);
+				}
+			}
+			catch (Exception)
+			{
+				// best-effort refresh; ignore transient entity errors
+			}
 		}
 
 		private static void GivePlayerAgent(CCSPlayerController player)
