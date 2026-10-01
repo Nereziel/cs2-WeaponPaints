@@ -2,8 +2,8 @@
 	"CAttributeList_SetOrAddAttributeValueByName": {
 		"signatures": {
 			"library": "server",
-			"windows": "40 53 55 41 56 48 81 EC 90 00 00 00",
-			"linux": "55 48 89 E5 41 57 41 56 49 89 FE 41 55 41 54 53 48 89 F3 48 83 EC ? F3 0F 11 85"
+			"windows": "48 89 4C 24 ? 53 41 55 41 56",
+			"linux": "55 48 89 E5 41 57 41 56 41 55 49 89 FD 41 54 53 48 89 F3 48 83 EC ? F3 0F 11 85"
 		}
 	}
 }
