@@ -60,8 +60,13 @@ jobs:
           ${{ env.OUTPUT_PATH }}/Microsoft.Extensions.DependencyModel.dll \
     - name: Copy skins
       run: cp -R website/data ${{ env.OUTPUT_PATH }}
+    - name: Stage release layout
+      run: |
+        mkdir -p release/addons/counterstrikesharp/plugins release/addons/counterstrikesharp/gamedata
+        cp -R ${{ env.OUTPUT_PATH }} release/addons/counterstrikesharp/plugins/${{ env.PROJECT_NAME }}
+        cp gamedata/weaponpaints.json release/addons/counterstrikesharp/gamedata/
     - name: Zip
-      run: zip -r "${{ env.PROJECT_NAME }}.zip" "${{ env.OUTPUT_PATH }}" gamedata/
+      run: cd release && zip -r "../${{ env.PROJECT_NAME }}.zip" addons
     - name: Clean files Website
       run: |
         rm -rf website/img/
@@ -78,4 +83,4 @@ jobs:
         name: "Build ${{ env.BUILD_NUMBER }}"
         tag: "build-${{ env.BUILD_NUMBER }}"
         body: |
-          Place the plugin in game/csgo/addons/counterstrikesharp/plugins/WeaponPaints
+          Extract WeaponPaints.zip into game/csgo/ (contains addons/counterstrikesharp/plugins/WeaponPaints and addons/counterstrikesharp/gamedata/weaponpaints.json)

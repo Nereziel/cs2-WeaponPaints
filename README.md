@@ -31,11 +31,11 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 
 ## CS2 Server
 - Have working CounterStrikeSharp (**with RUNTIME!**)
-- Download from Release and copy plugin to plugins
+- Download `WeaponPaints.zip` from Release and extract it into `game/csgo/`
 - Run server with plugin, **it will generate config if installed correctly!**
 - Edit `addons/counterstrikesharp/configs/`**`plugins/WeaponPaints/WeaponPaints.json`** include database credentials
 - In `addons/counterstrikesharp/configs/`**`core.json`** set **FollowCS2ServerGuidelines** to **`false`**
-- Copy from plugins folder gamedata file **`weaponpaints.json`** to folder **`addons/counterstrikesharp/gamedata/`**
+- Release zip already places gamedata file **`weaponpaints.json`** in **`addons/counterstrikesharp/gamedata/`** (extract zip into **`game/csgo/`**)
 
 ## Plugin Configuration
 <details>

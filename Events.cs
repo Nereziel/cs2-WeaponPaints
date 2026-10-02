@@ -11,6 +11,7 @@ namespace WeaponPaints
 	public partial class WeaponPaints
 	{
 		private bool _mvpPlayed;
+		private bool _giveNamedItemHooked;
 		
 		[GameEventHandler]
 		public HookResult OnClientFullConnect(EventPlayerConnectFull @event, GameEventInfo info)
@@ -206,7 +207,8 @@ namespace WeaponPaints
 			{
 				var itemServices = hook.GetParam<CCSPlayer_ItemServices>(0);
 				var weapon = hook.GetReturn<CBasePlayerWeapon>();
-				if (!weapon.DesignerName.Contains("weapon"))
+				if (itemServices == null || weapon == null || !weapon.IsValid ||
+				    weapon.DesignerName?.Contains("weapon") != true)
 					return HookResult.Continue;
 
 				var player = GetPlayerFromItemServices(itemServices);
@@ -224,7 +226,7 @@ namespace WeaponPaints
 		{
 			var designerName = entity.DesignerName;
 
-			if (designerName.Contains("weapon"))
+			if (designerName != null && designerName.Contains("weapon"))
 			{
 				Server.NextWorldUpdate(() =>
 				{
@@ -249,8 +251,10 @@ namespace WeaponPaints
 						}
 						else
 						{
-							CCSWeaponBaseGun gun = weapon.As<CCSWeaponBaseGun>();
-							player = Utilities.GetPlayerFromIndex((int)weapon.OwnerEntity.Index) ?? Utilities.GetPlayerFromIndex((int)gun.OwnerEntity.Value!.Index);
+							var ownerPawn = weapon.OwnerEntity.Value?.As<CCSPlayerPawn>();
+							player = ownerPawn is { IsValid: true }
+								? ownerPawn.Controller.Value?.As<CCSPlayerController>()
+								: null;
 						}
 
 						if (string.IsNullOrEmpty(player?.PlayerName)) return;
@@ -347,6 +351,7 @@ namespace WeaponPaints
 				RegisterListener<Listeners.OnTick>(OnTick);
 
 			VirtualFunctions.GiveNamedItemFunc.Hook(OnGiveNamedItemPost, HookMode.Post);
+			_giveNamedItemHooked = true;
 		}
 	}
 }

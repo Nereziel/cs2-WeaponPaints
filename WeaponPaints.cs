@@ -1,10 +1,11 @@
-using System.Runtime.InteropServices;
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Entities.Constants;
+using CounterStrikeSharp.API.Modules.Memory;
+using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
 
@@ -24,12 +25,6 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 	public override void Load(bool hotReload)
 	{
-		// Hardcoded hotfix needs to be changed later (Not needed 17.09.2025)
-		//if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-		//	Patch.PerformPatch("0F 85 ? ? ? ? 31 C0 B9 ? ? ? ? BA ? ? ? ? 66 0F EF C0 31 F6 31 FF 48 C7 45 ? ? ? ? ? 48 C7 45 ? ? ? ? ? 48 C7 45 ? ? ? ? ? 48 C7 45 ? ? ? ? ? 0F 29 45 ? 48 C7 45 ? ? ? ? ? C7 45 ? ? ? ? ? 66 89 45 ? E8 ? ? ? ? 41 89 C5 85 C0 0F 8E", "90 90 90 90 90 90");
-		//else
-		//	Patch.PerformPatch("74 ? 48 8D 0D ? ? ? ? FF 15 ? ? ? ? EB ? BA", "EB");
-		
 		Instance = this;
 
 		if (hotReload)
@@ -75,6 +70,16 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		RegisterListeners();
 	}
 
+	public override void Unload(bool hotReload)
+	{
+		// Native hook outlives the plugin's AssemblyLoadContext; without this, css_plugins reload
+		// leaves the old OnGiveNamedItemPost delegate registered and the next GiveNamedItem crashes the server.
+		if (!_giveNamedItemHooked) return;
+
+		VirtualFunctions.GiveNamedItemFunc.Unhook(OnGiveNamedItemPost, HookMode.Post);
+		_giveNamedItemHooked = false;
+	}
+
 	public void OnConfigParsed(WeaponPaintsConfig config)
 	{
 		Config = config;
@@ -82,16 +87,12 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 
 		if (config.DatabaseHost.Length < 1 || config.DatabaseName.Length < 1 || config.DatabaseUser.Length < 1)
 		{
-			Logger.LogError("You need to setup Database credentials in \"configs/plugins/WeaponPaints/WeaponPaints.json\"!");
-			Unload(false);
-			return;
+			throw new InvalidOperationException("You need to setup Database credentials in \"configs/plugins/WeaponPaints/WeaponPaints.json\"!");
 		}
 
 		if (!File.Exists(Path.GetDirectoryName(Path.GetDirectoryName(ModuleDirectory)) + "/gamedata/weaponpaints.json"))
 		{
-			Logger.LogError("You need to upload \"weaponpaints.json\" to \"gamedata directory\"!");
-			Unload(false);
-			return;
+			throw new InvalidOperationException("You need to upload \"weaponpaints.json\" to \"gamedata directory\"!");
 		}
 		
 		var builder = new MySqlConnectionStringBuilder

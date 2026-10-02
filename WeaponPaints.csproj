@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CounterStrikeSharp.API" Version="1.0.367" />
+    <PackageReference Include="CounterStrikeSharp.API" Version="1.0.376" />
     <PackageReference Include="Dapper" Version="2.1.72" />
     <PackageReference Include="MySqlConnector" Version="2.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.5-beta1" />
@@ -17,10 +17,6 @@
 
   <ItemGroup>
     <None Update="lang\**\*.*" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="gamedata\*.*" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
