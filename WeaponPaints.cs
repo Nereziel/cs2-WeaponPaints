@@ -107,6 +107,9 @@ public partial class WeaponPaints : BasePlugin, IPluginConfig<WeaponPaintsConfig
 		};
 
 		Database = new Database(builder.ConnectionString);
+		// Created here instead of OnMapStart: on a cold boot the first map can start before the
+		// listener is registered, leaving WeaponSync null and every command silently ignored.
+		WeaponSync = new WeaponSynchronization(Database, config);
 
 		_ = Utility.CheckDatabaseTables();
 		_localizer = Localizer;
