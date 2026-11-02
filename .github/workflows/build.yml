@@ -26,11 +26,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 10.0.x
     - name: Restore
       run: dotnet restore
     - name: Build
@@ -42,11 +42,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 10.0.x
     - name: Restore
       run: dotnet restore
     - name: Build
@@ -71,13 +71,13 @@ jobs:
       run: |
         rm -rf website/img/
     - name: Zip
-      uses: thedoctor0/zip-release@0.7.5
+      uses: thedoctor0/zip-release@0.7.6
       with:
         type: 'zip'
         filename: '${{ env.PROJECT_NAME }}-Website.zip'
         path: website
     - name: WeaponPaints
-      uses: ncipollo/release-action@v1.12.0
+      uses: ncipollo/release-action@v1.21.0
       with:
         artifacts: "${{ env.PROJECT_NAME }}.zip,${{ env.PROJECT_NAME }}-Website.zip"
         name: "Build ${{ env.BUILD_NUMBER }}"
