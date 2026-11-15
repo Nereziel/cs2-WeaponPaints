@@ -78,6 +78,16 @@ public partial class WeaponPaints
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersMusic = new();
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ushort>> GPlayersPin = new();
 	internal static readonly ConcurrentDictionary<int, (string? CT, string? T)> GPlayersAgent = new();
+
+	// Model the pawn wore before the plugin first set an agent on it (inventory agent or map default),
+	// and the exact model the plugin set. The pawn keeps its model across respawns, so "Agent | Default"
+	// has to put the original back itself.
+	internal static readonly ConcurrentDictionary<int, string> OriginalPawnModel = new();
+	internal static readonly ConcurrentDictionary<int, string> PluginAppliedAgent = new();
+
+	internal static bool IsPluginAppliedAgent(int slot, string? modelPath) =>
+		modelPath != null && PluginAppliedAgent.TryGetValue(slot, out var applied) &&
+		string.Equals(applied, modelPath, StringComparison.OrdinalIgnoreCase);
 	internal static readonly ConcurrentDictionary<int, ConcurrentDictionary<CsTeam, ConcurrentDictionary<int, WeaponInfo>>> GPlayerWeaponsInfo = new();
 	internal static List<JObject> SkinsList = [];
 	internal static List<JObject> PinsList = [];
@@ -92,7 +102,34 @@ public partial class WeaponPaints
 	internal static Database? Database;
 
 	private static readonly MemoryFunctionVoid<nint, string, float> CAttributeListSetOrAddAttributeValueByName = new(GameData.GetSignature("CAttributeList_SetOrAddAttributeValueByName"));
-	
+
+	// CEconItemView::Update: makes the engine re-publish an econ item after its fields/attributes
+	// were changed, so a new glove renders for everyone right away instead of only after the
+	// player switches weapons. Optional: resolved on first use, and when the signature is missing
+	// or outdated GivePlayerGloves falls back to the old "lastinv" refresh instead of failing
+	// to load the whole plugin.
+	private static MemoryFunctionWithReturn<nint, nint, nint>? _updateItemView;
+	private static bool _updateItemViewResolved;
+
+	private static MemoryFunctionWithReturn<nint, nint, nint>? UpdateItemView
+	{
+		get
+		{
+			if (_updateItemViewResolved)
+				return _updateItemView;
+			_updateItemViewResolved = true;
+			try
+			{
+				_updateItemView = new(GameData.GetSignature("UpdateItemView"));
+			}
+			catch (Exception)
+			{
+				_updateItemView = null;
+			}
+			return _updateItemView;
+		}
+	}
+
 	//we dont need anymore because we use AcceptInput
 	//private static readonly MemoryFunctionWithReturn<nint, string, int, int> SetBodygroupFunc = new(
 	//	GameData.GetSignature("CBaseModelEntity_SetBodygroup"));

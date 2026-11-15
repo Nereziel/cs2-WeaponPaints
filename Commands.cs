@@ -597,12 +597,11 @@ public partial class WeaponPaints
 				{
 					await WeaponSync.SyncGloveToDatabase(playerInfo, (ushort)weaponDefindex, teamsToCheck);
         
-					// Check if the weapon info exists for the glove
-					if (!GPlayerWeaponsInfo[playerInfo.Slot][team].TryGetValue(weaponDefindex, out var value))
-					{
-						value = new WeaponInfo();
-						GPlayerWeaponsInfo[playerInfo.Slot][team][weaponDefindex] = value;
-					}
+					// Ensure weapon info exists for the glove (not initialized when "Default" is selected)
+					var teamWeapons = GPlayerWeaponsInfo
+						.GetOrAdd(playerInfo.Slot, _ => new ConcurrentDictionary<CsTeam, ConcurrentDictionary<int, WeaponInfo>>())
+						.GetOrAdd(team, _ => new ConcurrentDictionary<int, WeaponInfo>());
+					var value = teamWeapons.GetOrAdd(weaponDefindex, _ => new WeaponInfo());
 
 					// Update weapon info
 					value.Paint = paint;
@@ -700,6 +699,16 @@ public partial class WeaponPaints
 						key => (null, selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString()),
 						(key, oldValue) => (oldValue.CT, selectedAgent["model"]!.ToString().Equals("null") ? null : selectedAgent["model"]!.ToString())
 					);
+				}
+
+				// Apply right away instead of on the next respawn. GivePlayerAgent handles both a custom
+				// agent and "Agent | Default" (puts the original model back). The repeats cover the
+				// menu close / weapon refresh that can land in the same frames.
+				if (player.PawnIsAlive)
+				{
+					GivePlayerAgent(player);
+					AddTimer(0.1f, () => { if (Utility.IsPlayerValid(player) && player.PawnIsAlive) GivePlayerAgent(player); }, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+					AddTimer(0.25f, () => { if (Utility.IsPlayerValid(player) && player.PawnIsAlive) GivePlayerAgent(player); }, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 				}
 
 				if (WeaponSync != null)

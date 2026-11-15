@@ -391,11 +391,43 @@ namespace WeaponPaints
 
 			CEconItemView item = pawn.EconGloves;
 
+			var hasPluginGlove = GPlayersGlove.TryGetValue(player.Slot, out var selectedGloves) &&
+			                     selectedGloves.TryGetValue(player.Team, out var selectedGloveId) &&
+			                     selectedGloveId != 0;
+
+			if (!hasPluginGlove)
+			{
+				// "Gloves | Default" (or no glove chosen). Leave inventory gloves alone, but drop a glove
+				// the plugin applied earlier: the pawn keeps it across respawns.
+				if (IsPluginGlove(item.ItemDefinitionIndex, item.AccountID))
+				{
+					item.NetworkedDynamicAttributes.Attributes.RemoveAll();
+					item.AttributeList.Attributes.RemoveAll();
+					item.ItemDefinitionIndex = 0;
+					item.ItemID = 0;
+					item.ItemIDLow = 0;
+					item.ItemIDHigh = 0;
+					item.Initialized = false;
+
+					unchecked
+					{
+						pawn.EconGlovesChanged++;
+					}
+					Utilities.SetStateChanged(pawn, "CCSPlayerPawn", "m_nEconGlovesChanged");
+				}
+
+				if (item.ItemDefinitionIndex == 0)
+					ShowAgentDefaultHands(pawn);
+				return;
+			}
+
 			item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 			item.AttributeList.Attributes.RemoveAll();
 
-			//force gloves model refresh to prevent model overlap
-			player.ExecuteClientCommand("lastinv");
+			// Without UpdateItemView, fall back to forcing a weapon switch so the glove gets redrawn.
+			var canUpdateItemView = UpdateItemView != null;
+			if (!canUpdateItemView)
+				player.ExecuteClientCommand("lastinv");
 			Instance.AddTimer(0.08f, () =>
 			{	
 				try
@@ -427,17 +459,71 @@ namespace WeaponPaints
 					CAttributeListSetOrAddAttributeValueByName.Invoke(item.AttributeList.Handle, "set item texture wear", weaponInfo.Wear);
 
 					item.Initialized = true;
-				
-					//force gloves model refresh to prevent model overlap
-					player.ExecuteClientCommand("lastinv");
-					SetBodygroup(pawn, "first_or_third_person", 0);
-					AddTimer(0.2f, () =>
+
+					// Re-publish the glove so teammates see it at once (issue #548: they saw it wrong
+					// at round start until the player switched weapons). The old
+					// "first_or_third_person" bodygroup toggle was removed: current player models have
+					// no such group, so it did nothing.
+					if (canUpdateItemView && TryUpdateItemView(item))
 					{
-						if (pawn.IsValid) SetBodygroup(pawn, "first_or_third_person", 1);
-					}, TimerFlags.STOP_ON_MAPCHANGE);
+						Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
+					}
+					else
+					{
+						player.ExecuteClientCommand("lastinv");
+					}
 				}
 				catch (Exception) { }
 			}, TimerFlags.STOP_ON_MAPCHANGE);
+		}
+
+		private bool TryUpdateItemView(CEconItemView item)
+		{
+			try
+			{
+				UpdateItemView?.Invoke(item.Handle, nint.Zero);
+				return UpdateItemView != null;
+			}
+			catch (Exception ex)
+			{
+				Logger.LogWarning("UpdateItemView failed (def {DefinitionIndex}): {Message}", item.ItemDefinitionIndex, ex.Message);
+				return false;
+			}
+		}
+
+		// Inventory gloves carry the owner's AccountID; gloves the plugin writes never set it.
+		// A glove item with a def index but no account is therefore one the plugin applied.
+		private static bool IsPluginGlove(ushort itemDefinitionIndex, uint accountId) =>
+			itemDefinitionIndex != 0 && accountId == 0;
+
+		// Agent models hide their built-in hands through the "default_gloves" bodygroup while an
+		// econ glove is worn, and nothing shows them again when the glove is removed or the pawn
+		// respawns without one: empty sleeves. The "SetBodygroup" input does not change this group,
+		// so write the mesh group mask directly. Agent models list default_gloves first:
+		// bit 0 = visible, bit 1 = hidden.
+		private void ShowAgentDefaultHands(CCSPlayerPawn pawn)
+		{
+			ApplyDefaultHandsMask(pawn);
+			// A model refresh right after the glove change can re-publish the old mask; apply once more.
+			AddTimer(0.3f, () => ApplyDefaultHandsMask(pawn), TimerFlags.STOP_ON_MAPCHANGE);
+		}
+
+		private static void ApplyDefaultHandsMask(CCSPlayerPawn pawn)
+		{
+			if (!pawn.IsValid || pawn.EconGloves.ItemDefinitionIndex != 0)
+				return;
+
+			var state = pawn.CBodyComponent?.SceneNode?.GetSkeletonInstance()?.ModelState;
+			if (state == null)
+				return;
+
+			const ulong handsVisible = 0x1, handsHidden = 0x2;
+			var mask = state.MeshGroupMask;
+			if ((mask & handsHidden) == 0)
+				return;
+
+			state.MeshGroupMask = (mask & ~handsHidden) | handsVisible;
+			Utilities.SetStateChanged(pawn, "CBaseEntity", "m_CBodyComponent");
 		}
 
 		private static int GetRandomPaint(int defindex)
@@ -488,7 +574,6 @@ namespace WeaponPaints
 			if (!GPlayersAgent.TryGetValue(player.Slot, out var value)) return;
 
 			var model = player.TeamNum == 3 ? value.CT : value.T;
-			if (string.IsNullOrEmpty(model)) return;
 
 			if (player.PlayerPawn.Value == null)
 				return;
@@ -502,7 +587,31 @@ namespace WeaponPaints
 					var pawn = player.PlayerPawn.Value;
 					if (pawn == null || !pawn.IsValid) return;
 
-					pawn.SetModel($"agents/models/{model}.vmdl");
+					var currentModel = pawn.CBodyComponent?.SceneNode?.GetSkeletonInstance()?.ModelState.ModelName.ToString();
+
+					if (string.IsNullOrEmpty(model) || model == "null")
+					{
+						// "Agent | Default". The pawn keeps the plugin agent across respawns, so put
+						// back the model it wore before the plugin first changed it.
+						if (IsPluginAppliedAgent(player.Slot, currentModel) &&
+						    OriginalPawnModel.TryGetValue(player.Slot, out var defaultModel))
+						{
+							pawn.SetModel(defaultModel);
+							PluginAppliedAgent.TryRemove(player.Slot, out _);
+						}
+						return;
+					}
+
+					// Remember the model the game gave the pawn (inventory agent or map default) before
+					// the first override. CS2 serves every agent, the stock defaults included, from
+					// "agents/models/...", so only the exact model the plugin set is skipped.
+					if (!string.IsNullOrEmpty(currentModel) && currentModel.EndsWith(".vmdl") &&
+					    !IsPluginAppliedAgent(player.Slot, currentModel))
+						OriginalPawnModel[player.Slot] = currentModel;
+
+					var appliedModel = $"agents/models/{model}.vmdl";
+					pawn.SetModel(appliedModel);
+					PluginAppliedAgent[player.Slot] = appliedModel;
 				});
 			}
 			catch (Exception)
