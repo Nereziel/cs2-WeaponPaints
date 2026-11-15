@@ -37,13 +37,25 @@ public partial class WeaponPaints
 
 				if (WeaponSync != null)
 				{
-					_ = Task.Run(async () => await WeaponSync.GetPlayerData(playerInfo));
+					// Load the latest data from the database BEFORE refreshing the weapons.
+					// Previously GetPlayerData was fire-and-forget, so RefreshWeapons ran with
+					// the stale cache and the player had to type !wp twice. Await the load and
+					// marshal the refresh back to the main thread via Server.NextFrame.
+					_ = Task.Run(async () =>
+					{
+						await WeaponSync.GetPlayerData(playerInfo);
 
-					GivePlayerGloves(player);
-					RefreshWeapons(player);
-					GivePlayerAgent(player);
-					GivePlayerMusicKit(player);
-					AddTimer(0.15f, () => GivePlayerPin(player));
+						Server.NextFrame(() =>
+						{
+							if (player == null || !player.IsValid) return;
+
+							GivePlayerGloves(player);
+							RefreshWeapons(player);
+							GivePlayerAgent(player);
+							GivePlayerMusicKit(player);
+							AddTimer(0.15f, () => GivePlayerPin(player));
+						});
+					});
 				}
 
 				if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
@@ -218,20 +230,36 @@ public partial class WeaponPaints
 					IpAddress = targetPlayer.IpAddress?.Split(":")[0]
 				};
 
-				if (WeaponSync != null)
+				void RefreshTarget()
 				{
-					_ = Task.Run(async () => await WeaponSync.GetPlayerData(playerInfo));
+					if (targetPlayer == null || !targetPlayer.IsValid) return;
+
+					GivePlayerGloves(targetPlayer);
+					RefreshWeapons(targetPlayer);
+					GivePlayerAgent(targetPlayer);
+					GivePlayerMusicKit(targetPlayer);
+					AddTimer(0.15f, () => GivePlayerPin(targetPlayer));
+
+					if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
+					{
+						targetPlayer.Print(Localizer["wp_command_refresh_done"]);
+					}
 				}
 
-				GivePlayerGloves(targetPlayer);
-				RefreshWeapons(targetPlayer);
-				GivePlayerAgent(targetPlayer);
-				GivePlayerMusicKit(targetPlayer);
-				AddTimer(0.15f, () => GivePlayerPin(targetPlayer));
-
-				if (!string.IsNullOrEmpty(Localizer["wp_command_refresh_done"]))
+				if (WeaponSync != null)
 				{
-					targetPlayer.Print(Localizer["wp_command_refresh_done"]);
+					// Same fix as the !wp command: await the DB load before refreshing and
+					// marshal the refresh back to the main thread, so the first call already
+					// applies the latest data instead of the stale cache.
+					_ = Task.Run(async () =>
+					{
+						await WeaponSync.GetPlayerData(playerInfo);
+						Server.NextFrame(RefreshTarget);
+					});
+				}
+				else
+				{
+					RefreshTarget();
 				}
 
 				Console.WriteLine($"[WeaponPaints] Skins refreshed for {targetPlayer.PlayerName}");
