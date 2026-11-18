@@ -1397,7 +1397,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-413.png",
         "paint_name": "Bajonett (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1429,7 +1429,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-59.png",
         "paint_name": "Bajonett (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1437,7 +1437,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-409.png",
         "paint_name": "Bajonett (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1480.png",
+        "paint_name": "Bajonett (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1453,7 +1461,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-410.png",
         "paint_name": "Bajonett (★) | Damaszener Stahl",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1481.png",
+        "paint_name": "Bajonett (★) | Gefleckt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1462,6 +1478,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-43.png",
         "paint_name": "Bajonett (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1482.png",
+        "paint_name": "Bajonett (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1477,7 +1501,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-414.png",
         "paint_name": "Bajonett (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1506,10 +1530,26 @@
     {
         "weapon_defindex": 500,
         "weapon_name": "weapon_bayonet",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1478.png",
+        "paint_name": "Bajonett (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-5.png",
         "paint_name": "Bajonett (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1483.png",
+        "paint_name": "Bajonett (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1526,6 +1566,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-578.png",
         "paint_name": "Bajonett (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1479.png",
+        "paint_name": "Bajonett (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -5109,7 +5157,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-413.png",
         "paint_name": "Butterflymesser (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5141,7 +5189,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-59.png",
         "paint_name": "Butterflymesser (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5149,7 +5197,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-409.png",
         "paint_name": "Butterflymesser (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1480.png",
+        "paint_name": "Butterflymesser (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5170,10 +5226,26 @@
     {
         "weapon_defindex": 515,
         "weapon_name": "weapon_knife_butterfly",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1481.png",
+        "paint_name": "Butterflymesser (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-43.png",
         "paint_name": "Butterflymesser (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1482.png",
+        "paint_name": "Butterflymesser (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5189,7 +5261,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-414.png",
         "paint_name": "Butterflymesser (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5218,10 +5290,26 @@
     {
         "weapon_defindex": 515,
         "weapon_name": "weapon_knife_butterfly",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1478.png",
+        "paint_name": "Butterflymesser (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-5.png",
         "paint_name": "Butterflymesser (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1483.png",
+        "paint_name": "Butterflymesser (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5238,6 +5326,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-579.png",
         "paint_name": "Butterflymesser (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1479.png",
+        "paint_name": "Butterflymesser (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5349,7 +5445,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-413.png",
         "paint_name": "Survival-Messer (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5373,7 +5469,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-59.png",
         "paint_name": "Survival-Messer (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5381,7 +5477,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-409.png",
         "paint_name": "Survival-Messer (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1480.png",
+        "paint_name": "Survival-Messer (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5397,7 +5501,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-410.png",
         "paint_name": "Survival-Messer (★) | Damaszener Stahl",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1481.png",
+        "paint_name": "Survival-Messer (★) | Gefleckt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5406,6 +5518,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-43.png",
         "paint_name": "Survival-Messer (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1482.png",
+        "paint_name": "Survival-Messer (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5421,7 +5541,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-414.png",
         "paint_name": "Survival-Messer (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1478.png",
+        "paint_name": "Survival-Messer (★) | Wald-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5434,10 +5562,26 @@
     {
         "weapon_defindex": 518,
         "weapon_name": "weapon_knife_canis",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1483.png",
+        "paint_name": "Survival-Messer (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-77.png",
         "paint_name": "Survival-Messer (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1479.png",
+        "paint_name": "Survival-Messer (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5549,7 +5693,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-413.png",
         "paint_name": "Fallschirm-Messer (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5573,7 +5717,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-59.png",
         "paint_name": "Fallschirm-Messer (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5581,7 +5725,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-409.png",
         "paint_name": "Fallschirm-Messer (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1480.png",
+        "paint_name": "Fallschirm-Messer (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5597,7 +5749,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-410.png",
         "paint_name": "Fallschirm-Messer (★) | Damaszener Stahl",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1481.png",
+        "paint_name": "Fallschirm-Messer (★) | Gefleckt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5606,6 +5766,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-43.png",
         "paint_name": "Fallschirm-Messer (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1482.png",
+        "paint_name": "Fallschirm-Messer (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5621,7 +5789,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-414.png",
         "paint_name": "Fallschirm-Messer (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1478.png",
+        "paint_name": "Fallschirm-Messer (★) | Wald-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5634,10 +5810,26 @@
     {
         "weapon_defindex": 517,
         "weapon_name": "weapon_knife_cord",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1483.png",
+        "paint_name": "Fallschirm-Messer (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-77.png",
         "paint_name": "Fallschirm-Messer (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1479.png",
+        "paint_name": "Fallschirm-Messer (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5709,7 +5901,15 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-59.png",
         "paint_name": "Klassisches Messer (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1480.png",
+        "paint_name": "Klassisches Messer (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 503,
@@ -5722,10 +5922,26 @@
     {
         "weapon_defindex": 503,
         "weapon_name": "weapon_knife_css",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1481.png",
+        "paint_name": "Klassisches Messer (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-43.png",
         "paint_name": "Klassisches Messer (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1482.png",
+        "paint_name": "Klassisches Messer (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 503,
@@ -5738,6 +5954,14 @@
     {
         "weapon_defindex": 503,
         "weapon_name": "weapon_knife_css",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1478.png",
+        "paint_name": "Klassisches Messer (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-5.png",
         "paint_name": "Klassisches Messer (★) | Wald-DDPAT",
@@ -5746,10 +5970,26 @@
     {
         "weapon_defindex": 503,
         "weapon_name": "weapon_knife_css",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1483.png",
+        "paint_name": "Klassisches Messer (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-77.png",
         "paint_name": "Klassisches Messer (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1479.png",
+        "paint_name": "Klassisches Messer (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 503,
@@ -5893,7 +6133,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-413.png",
         "paint_name": "Falchion-Messer (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5925,7 +6165,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-59.png",
         "paint_name": "Falchion-Messer (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5933,7 +6173,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-409.png",
         "paint_name": "Falchion-Messer (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1480.png",
+        "paint_name": "Falchion-Messer (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5954,10 +6202,26 @@
     {
         "weapon_defindex": 512,
         "weapon_name": "weapon_knife_falchion",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1481.png",
+        "paint_name": "Falchion-Messer (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-43.png",
         "paint_name": "Falchion-Messer (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1482.png",
+        "paint_name": "Falchion-Messer (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5973,7 +6237,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-414.png",
         "paint_name": "Falchion-Messer (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -6002,10 +6266,26 @@
     {
         "weapon_defindex": 512,
         "weapon_name": "weapon_knife_falchion",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1478.png",
+        "paint_name": "Falchion-Messer (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-5.png",
         "paint_name": "Falchion-Messer (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1483.png",
+        "paint_name": "Falchion-Messer (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -6022,6 +6302,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-579.png",
         "paint_name": "Falchion-Messer (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1479.png",
+        "paint_name": "Falchion-Messer (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -6173,7 +6461,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-413.png",
         "paint_name": "Klappmesser (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6205,7 +6493,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-59.png",
         "paint_name": "Klappmesser (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6213,7 +6501,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-409.png",
         "paint_name": "Klappmesser (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1480.png",
+        "paint_name": "Klappmesser (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6229,7 +6525,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-410.png",
         "paint_name": "Klappmesser (★) | Damaszener Stahl",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1481.png",
+        "paint_name": "Klappmesser (★) | Gefleckt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6238,6 +6542,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-43.png",
         "paint_name": "Klappmesser (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1482.png",
+        "paint_name": "Klappmesser (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6253,7 +6565,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-414.png",
         "paint_name": "Klappmesser (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6282,10 +6594,26 @@
     {
         "weapon_defindex": 505,
         "weapon_name": "weapon_knife_flip",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1478.png",
+        "paint_name": "Klappmesser (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-5.png",
         "paint_name": "Klappmesser (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1483.png",
+        "paint_name": "Klappmesser (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6302,6 +6630,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-578.png",
         "paint_name": "Klappmesser (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1479.png",
+        "paint_name": "Klappmesser (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6453,7 +6789,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-413.png",
         "paint_name": "Aufbrechmesser (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6485,7 +6821,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-59.png",
         "paint_name": "Aufbrechmesser (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6493,7 +6829,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-409.png",
         "paint_name": "Aufbrechmesser (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1480.png",
+        "paint_name": "Aufbrechmesser (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6509,7 +6853,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-410.png",
         "paint_name": "Aufbrechmesser (★) | Damaszener Stahl",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1481.png",
+        "paint_name": "Aufbrechmesser (★) | Gefleckt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6518,6 +6870,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-43.png",
         "paint_name": "Aufbrechmesser (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1482.png",
+        "paint_name": "Aufbrechmesser (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6533,7 +6893,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-414.png",
         "paint_name": "Aufbrechmesser (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6562,10 +6922,26 @@
     {
         "weapon_defindex": 506,
         "weapon_name": "weapon_knife_gut",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1478.png",
+        "paint_name": "Aufbrechmesser (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-5.png",
         "paint_name": "Aufbrechmesser (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1483.png",
+        "paint_name": "Aufbrechmesser (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6582,6 +6958,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-578.png",
         "paint_name": "Aufbrechmesser (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1479.png",
+        "paint_name": "Aufbrechmesser (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6693,7 +7077,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-413.png",
         "paint_name": "Navaja-Messer (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6717,7 +7101,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-59.png",
         "paint_name": "Navaja-Messer (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6725,7 +7109,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-409.png",
         "paint_name": "Navaja-Messer (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1480.png",
+        "paint_name": "Navaja-Messer (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6746,10 +7138,26 @@
     {
         "weapon_defindex": 520,
         "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1481.png",
+        "paint_name": "Navaja-Messer (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-43.png",
         "paint_name": "Navaja-Messer (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1482.png",
+        "paint_name": "Navaja-Messer (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6765,7 +7173,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-414.png",
         "paint_name": "Navaja-Messer (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1478.png",
+        "paint_name": "Navaja-Messer (★) | Wald-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6778,10 +7194,26 @@
     {
         "weapon_defindex": 520,
         "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1483.png",
+        "paint_name": "Navaja-Messer (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-77.png",
         "paint_name": "Navaja-Messer (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1479.png",
+        "paint_name": "Navaja-Messer (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6933,7 +7365,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-413.png",
         "paint_name": "Karambit (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6965,7 +7397,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-59.png",
         "paint_name": "Karambit (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6973,7 +7405,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-409.png",
         "paint_name": "Karambit (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1480.png",
+        "paint_name": "Karambit (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6989,7 +7429,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-410.png",
         "paint_name": "Karambit (★) | Damaszener Stahl",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1481.png",
+        "paint_name": "Karambit (★) | Gefleckt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6998,6 +7446,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-43.png",
         "paint_name": "Karambit (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1482.png",
+        "paint_name": "Karambit (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7013,7 +7469,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-414.png",
         "paint_name": "Karambit (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7042,10 +7498,26 @@
     {
         "weapon_defindex": 507,
         "weapon_name": "weapon_knife_karambit",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1478.png",
+        "paint_name": "Karambit (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-5.png",
         "paint_name": "Karambit (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1483.png",
+        "paint_name": "Karambit (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7062,6 +7534,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-578.png",
         "paint_name": "Karambit (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1479.png",
+        "paint_name": "Karambit (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7133,7 +7613,15 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-59.png",
         "paint_name": "Kukri-Messer (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1480.png",
+        "paint_name": "Kukri-Messer (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 526,
@@ -7146,10 +7634,26 @@
     {
         "weapon_defindex": 526,
         "weapon_name": "weapon_knife_kukri",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1481.png",
+        "paint_name": "Kukri-Messer (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-43.png",
         "paint_name": "Kukri-Messer (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1482.png",
+        "paint_name": "Kukri-Messer (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 526,
@@ -7162,6 +7666,14 @@
     {
         "weapon_defindex": 526,
         "weapon_name": "weapon_knife_kukri",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1478.png",
+        "paint_name": "Kukri-Messer (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-5.png",
         "paint_name": "Kukri-Messer (★) | Wald-DDPAT",
@@ -7170,10 +7682,26 @@
     {
         "weapon_defindex": 526,
         "weapon_name": "weapon_knife_kukri",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1483.png",
+        "paint_name": "Kukri-Messer (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-77.png",
         "paint_name": "Kukri-Messer (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1479.png",
+        "paint_name": "Kukri-Messer (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 526,
@@ -7317,7 +7845,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-413.png",
         "paint_name": "M9-Bajonett (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7349,7 +7877,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-59.png",
         "paint_name": "M9-Bajonett (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7357,7 +7885,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-409.png",
         "paint_name": "M9-Bajonett (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1480.png",
+        "paint_name": "M9-Bajonett (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7378,10 +7914,26 @@
     {
         "weapon_defindex": 508,
         "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1481.png",
+        "paint_name": "M9-Bajonett (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-43.png",
         "paint_name": "M9-Bajonett (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1482.png",
+        "paint_name": "M9-Bajonett (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7397,7 +7949,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-414.png",
         "paint_name": "M9-Bajonett (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7426,10 +7978,26 @@
     {
         "weapon_defindex": 508,
         "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1478.png",
+        "paint_name": "M9-Bajonett (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-5.png",
         "paint_name": "M9-Bajonett (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1483.png",
+        "paint_name": "M9-Bajonett (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7446,6 +8014,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-579.png",
         "paint_name": "M9-Bajonett (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1479.png",
+        "paint_name": "M9-Bajonett (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7557,7 +8133,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-413.png",
         "paint_name": "Nomadenmesser (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7581,7 +8157,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-59.png",
         "paint_name": "Nomadenmesser (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7589,7 +8165,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-409.png",
         "paint_name": "Nomadenmesser (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1480.png",
+        "paint_name": "Nomadenmesser (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7605,7 +8189,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-410.png",
         "paint_name": "Nomadenmesser (★) | Damaszener Stahl",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1481.png",
+        "paint_name": "Nomadenmesser (★) | Gefleckt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7614,6 +8206,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-43.png",
         "paint_name": "Nomadenmesser (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1482.png",
+        "paint_name": "Nomadenmesser (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7629,7 +8229,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-414.png",
         "paint_name": "Nomadenmesser (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1478.png",
+        "paint_name": "Nomadenmesser (★) | Wald-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7642,10 +8250,26 @@
     {
         "weapon_defindex": 521,
         "weapon_name": "weapon_knife_outdoor",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1483.png",
+        "paint_name": "Nomadenmesser (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-77.png",
         "paint_name": "Nomadenmesser (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1479.png",
+        "paint_name": "Nomadenmesser (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7797,7 +8421,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-413.png",
         "paint_name": "Schattendolche (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7829,7 +8453,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-59.png",
         "paint_name": "Schattendolche (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7837,7 +8461,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-409.png",
         "paint_name": "Schattendolche (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1480.png",
+        "paint_name": "Schattendolche (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7858,10 +8490,26 @@
     {
         "weapon_defindex": 516,
         "weapon_name": "weapon_knife_push",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1481.png",
+        "paint_name": "Schattendolche (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-43.png",
         "paint_name": "Schattendolche (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1482.png",
+        "paint_name": "Schattendolche (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7877,7 +8525,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-414.png",
         "paint_name": "Schattendolche (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7906,10 +8554,26 @@
     {
         "weapon_defindex": 516,
         "weapon_name": "weapon_knife_push",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1478.png",
+        "paint_name": "Schattendolche (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-5.png",
         "paint_name": "Schattendolche (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1483.png",
+        "paint_name": "Schattendolche (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7926,6 +8590,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-579.png",
         "paint_name": "Schattendolche (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1479.png",
+        "paint_name": "Schattendolche (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -8037,7 +8709,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-413.png",
         "paint_name": "Skelettmesser (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8061,7 +8733,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-59.png",
         "paint_name": "Skelettmesser (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8069,7 +8741,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-409.png",
         "paint_name": "Skelettmesser (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1480.png",
+        "paint_name": "Skelettmesser (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8085,7 +8765,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-410.png",
         "paint_name": "Skelettmesser (★) | Damaszener Stahl",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1481.png",
+        "paint_name": "Skelettmesser (★) | Gefleckt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8094,6 +8782,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-43.png",
         "paint_name": "Skelettmesser (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1482.png",
+        "paint_name": "Skelettmesser (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8109,7 +8805,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-414.png",
         "paint_name": "Skelettmesser (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1478.png",
+        "paint_name": "Skelettmesser (★) | Wald-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8122,10 +8826,26 @@
     {
         "weapon_defindex": 525,
         "weapon_name": "weapon_knife_skeleton",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1483.png",
+        "paint_name": "Skelettmesser (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-77.png",
         "paint_name": "Skelettmesser (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1479.png",
+        "paint_name": "Skelettmesser (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8237,7 +8957,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-413.png",
         "paint_name": "Stilett (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8261,7 +8981,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-59.png",
         "paint_name": "Stilett (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8269,7 +8989,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-409.png",
         "paint_name": "Stilett (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1480.png",
+        "paint_name": "Stilett (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8290,10 +9018,26 @@
     {
         "weapon_defindex": 522,
         "weapon_name": "weapon_knife_stiletto",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1481.png",
+        "paint_name": "Stilett (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-43.png",
         "paint_name": "Stilett (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1482.png",
+        "paint_name": "Stilett (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8309,7 +9053,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-414.png",
         "paint_name": "Stilett (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1478.png",
+        "paint_name": "Stilett (★) | Wald-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8322,10 +9074,26 @@
     {
         "weapon_defindex": 522,
         "weapon_name": "weapon_knife_stiletto",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1483.png",
+        "paint_name": "Stilett (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-77.png",
         "paint_name": "Stilett (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1479.png",
+        "paint_name": "Stilett (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8477,7 +9245,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-413.png",
         "paint_name": "Bowiemesser (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8509,7 +9277,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-59.png",
         "paint_name": "Bowiemesser (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8517,7 +9285,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-409.png",
         "paint_name": "Bowiemesser (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1480.png",
+        "paint_name": "Bowiemesser (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8538,10 +9314,26 @@
     {
         "weapon_defindex": 514,
         "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1481.png",
+        "paint_name": "Bowiemesser (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-43.png",
         "paint_name": "Bowiemesser (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1482.png",
+        "paint_name": "Bowiemesser (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8557,7 +9349,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-414.png",
         "paint_name": "Bowiemesser (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8586,10 +9378,26 @@
     {
         "weapon_defindex": 514,
         "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1478.png",
+        "paint_name": "Bowiemesser (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-5.png",
         "paint_name": "Bowiemesser (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1483.png",
+        "paint_name": "Bowiemesser (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8606,6 +9414,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-579.png",
         "paint_name": "Bowiemesser (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1479.png",
+        "paint_name": "Bowiemesser (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8757,7 +9573,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-413.png",
         "paint_name": "Jagdmesser (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8789,7 +9605,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-59.png",
         "paint_name": "Jagdmesser (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8797,7 +9613,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-409.png",
         "paint_name": "Jagdmesser (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1480.png",
+        "paint_name": "Jagdmesser (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8818,10 +9642,26 @@
     {
         "weapon_defindex": 509,
         "weapon_name": "weapon_knife_tactical",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1481.png",
+        "paint_name": "Jagdmesser (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-43.png",
         "paint_name": "Jagdmesser (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1482.png",
+        "paint_name": "Jagdmesser (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8837,7 +9677,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-414.png",
         "paint_name": "Jagdmesser (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8853,7 +9693,7 @@
         "paint": "620",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-620.png",
         "paint_name": "Jagdmesser (★) | Ultraviolett",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8874,10 +9714,26 @@
     {
         "weapon_defindex": 509,
         "weapon_name": "weapon_knife_tactical",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1478.png",
+        "paint_name": "Jagdmesser (★) | Wald-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-5.png",
         "paint_name": "Jagdmesser (★) | Wald-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1483.png",
+        "paint_name": "Jagdmesser (★) | Borealer Nadelwald",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8894,6 +9750,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-579.png",
         "paint_name": "Jagdmesser (★) | Klares Wasser",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1479.png",
+        "paint_name": "Jagdmesser (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8997,7 +9861,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-413.png",
         "paint_name": "Ursus-Messer (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9021,7 +9885,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-59.png",
         "paint_name": "Ursus-Messer (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9029,7 +9893,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-409.png",
         "paint_name": "Ursus-Messer (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1480.png",
+        "paint_name": "Ursus-Messer (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9050,10 +9922,26 @@
     {
         "weapon_defindex": 519,
         "weapon_name": "weapon_knife_ursus",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1481.png",
+        "paint_name": "Ursus-Messer (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-43.png",
         "paint_name": "Ursus-Messer (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1482.png",
+        "paint_name": "Ursus-Messer (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9069,7 +9957,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-414.png",
         "paint_name": "Ursus-Messer (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1478.png",
+        "paint_name": "Ursus-Messer (★) | Wald-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9082,10 +9978,26 @@
     {
         "weapon_defindex": 519,
         "weapon_name": "weapon_knife_ursus",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1483.png",
+        "paint_name": "Ursus-Messer (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-77.png",
         "paint_name": "Ursus-Messer (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1479.png",
+        "paint_name": "Ursus-Messer (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9197,7 +10109,7 @@
         "paint": "856",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-856.png",
         "paint_name": "Talon-Messer (★) | Marmorfärbung",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9221,7 +10133,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-59.png",
         "paint_name": "Talon-Messer (★) | Metzelei",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9229,7 +10141,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-409.png",
         "paint_name": "Talon-Messer (★) | Tigerzahn",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1480.png",
+        "paint_name": "Talon-Messer (★) | Blauer Stahl",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9250,10 +10170,26 @@
     {
         "weapon_defindex": 523,
         "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1481.png",
+        "paint_name": "Talon-Messer (★) | Gefleckt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-43.png",
         "paint_name": "Talon-Messer (★) | Gefleckt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1482.png",
+        "paint_name": "Talon-Messer (★) | Einsatzgehärtet",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9269,7 +10205,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-414.png",
         "paint_name": "Talon-Messer (★) | Rostmantel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1478.png",
+        "paint_name": "Talon-Messer (★) | Wald-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9282,10 +10226,26 @@
     {
         "weapon_defindex": 523,
         "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1483.png",
+        "paint_name": "Talon-Messer (★) | Borealer Nadelwald",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-77.png",
         "paint_name": "Talon-Messer (★) | Borealer Nadelwald",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1479.png",
+        "paint_name": "Talon-Messer (★) | Purpurnes Netz",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,

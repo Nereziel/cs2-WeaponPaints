@@ -1397,7 +1397,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-413.png",
         "paint_name": "★ Pistin | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1429,7 +1429,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-59.png",
         "paint_name": "★ Pistin | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1437,7 +1437,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-409.png",
         "paint_name": "★ Pistin | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1480.png",
+        "paint_name": "★ Pistin | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1453,7 +1461,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-410.png",
         "paint_name": "★ Pistin | Damaskiteräs",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1481.png",
+        "paint_name": "★ Pistin | Värjäytynyt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1462,6 +1478,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-43.png",
         "paint_name": "★ Pistin | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1482.png",
+        "paint_name": "★ Pistin | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1477,7 +1501,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-414.png",
         "paint_name": "★ Pistin | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1506,10 +1530,26 @@
     {
         "weapon_defindex": 500,
         "weapon_name": "weapon_bayonet",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1478.png",
+        "paint_name": "★ Pistin | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-5.png",
         "paint_name": "★ Pistin | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1483.png",
+        "paint_name": "★ Pistin | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1526,6 +1566,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-578.png",
         "paint_name": "★ Pistin | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1479.png",
+        "paint_name": "★ Pistin | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -5109,7 +5157,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-413.png",
         "paint_name": "★ Perhosveitsi | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5141,7 +5189,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-59.png",
         "paint_name": "★ Perhosveitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5149,7 +5197,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-409.png",
         "paint_name": "★ Perhosveitsi | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1480.png",
+        "paint_name": "★ Perhosveitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5170,10 +5226,26 @@
     {
         "weapon_defindex": 515,
         "weapon_name": "weapon_knife_butterfly",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1481.png",
+        "paint_name": "★ Perhosveitsi | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-43.png",
         "paint_name": "★ Perhosveitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1482.png",
+        "paint_name": "★ Perhosveitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5189,7 +5261,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-414.png",
         "paint_name": "★ Perhosveitsi | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5218,10 +5290,26 @@
     {
         "weapon_defindex": 515,
         "weapon_name": "weapon_knife_butterfly",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1478.png",
+        "paint_name": "★ Perhosveitsi | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-5.png",
         "paint_name": "★ Perhosveitsi | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1483.png",
+        "paint_name": "★ Perhosveitsi | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5238,6 +5326,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-579.png",
         "paint_name": "★ Perhosveitsi | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1479.png",
+        "paint_name": "★ Perhosveitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5349,7 +5445,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-413.png",
         "paint_name": "★ Selviytymisveitsi | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5373,7 +5469,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-59.png",
         "paint_name": "★ Selviytymisveitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5381,7 +5477,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-409.png",
         "paint_name": "★ Selviytymisveitsi | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1480.png",
+        "paint_name": "★ Selviytymisveitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5397,7 +5501,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-410.png",
         "paint_name": "★ Selviytymisveitsi | Damaskiteräs",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1481.png",
+        "paint_name": "★ Selviytymisveitsi | Värjäytynyt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5406,6 +5518,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-43.png",
         "paint_name": "★ Selviytymisveitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1482.png",
+        "paint_name": "★ Selviytymisveitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5421,7 +5541,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-414.png",
         "paint_name": "★ Selviytymisveitsi | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1478.png",
+        "paint_name": "★ Selviytymisveitsi | Metsä-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5434,10 +5562,26 @@
     {
         "weapon_defindex": 518,
         "weapon_name": "weapon_knife_canis",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1483.png",
+        "paint_name": "★ Selviytymisveitsi | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-77.png",
         "paint_name": "★ Selviytymisveitsi | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1479.png",
+        "paint_name": "★ Selviytymisveitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5549,7 +5693,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-413.png",
         "paint_name": "★ Paracord-kahvainen kenttäpuukko | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5573,7 +5717,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-59.png",
         "paint_name": "★ Paracord-kahvainen kenttäpuukko | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5581,7 +5725,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-409.png",
         "paint_name": "★ Paracord-kahvainen kenttäpuukko | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1480.png",
+        "paint_name": "★ Paracord-kahvainen kenttäpuukko | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5597,7 +5749,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-410.png",
         "paint_name": "★ Paracord-kahvainen kenttäpuukko | Damaskiteräs",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1481.png",
+        "paint_name": "★ Paracord-kahvainen kenttäpuukko | Värjäytynyt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5606,6 +5766,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-43.png",
         "paint_name": "★ Paracord-kahvainen kenttäpuukko | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1482.png",
+        "paint_name": "★ Paracord-kahvainen kenttäpuukko | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5621,7 +5789,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-414.png",
         "paint_name": "★ Paracord-kahvainen kenttäpuukko | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1478.png",
+        "paint_name": "★ Paracord-kahvainen kenttäpuukko | Metsä-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5634,10 +5810,26 @@
     {
         "weapon_defindex": 517,
         "weapon_name": "weapon_knife_cord",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1483.png",
+        "paint_name": "★ Paracord-kahvainen kenttäpuukko | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-77.png",
         "paint_name": "★ Paracord-kahvainen kenttäpuukko | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1479.png",
+        "paint_name": "★ Paracord-kahvainen kenttäpuukko | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5709,7 +5901,15 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-59.png",
         "paint_name": "★ Klassinen veitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1480.png",
+        "paint_name": "★ Klassinen veitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 503,
@@ -5722,10 +5922,26 @@
     {
         "weapon_defindex": 503,
         "weapon_name": "weapon_knife_css",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1481.png",
+        "paint_name": "★ Klassinen veitsi | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-43.png",
         "paint_name": "★ Klassinen veitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1482.png",
+        "paint_name": "★ Klassinen veitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 503,
@@ -5738,6 +5954,14 @@
     {
         "weapon_defindex": 503,
         "weapon_name": "weapon_knife_css",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1478.png",
+        "paint_name": "★ Klassinen veitsi | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-5.png",
         "paint_name": "★ Klassinen veitsi | Metsä-DDPAT",
@@ -5746,10 +5970,26 @@
     {
         "weapon_defindex": 503,
         "weapon_name": "weapon_knife_css",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1483.png",
+        "paint_name": "★ Klassinen veitsi | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-77.png",
         "paint_name": "★ Klassinen veitsi | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1479.png",
+        "paint_name": "★ Klassinen veitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 503,
@@ -5893,7 +6133,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-413.png",
         "paint_name": "★ Falchion-veitsi | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5925,7 +6165,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-59.png",
         "paint_name": "★ Falchion-veitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5933,7 +6173,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-409.png",
         "paint_name": "★ Falchion-veitsi | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1480.png",
+        "paint_name": "★ Falchion-veitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5954,10 +6202,26 @@
     {
         "weapon_defindex": 512,
         "weapon_name": "weapon_knife_falchion",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1481.png",
+        "paint_name": "★ Falchion-veitsi | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-43.png",
         "paint_name": "★ Falchion-veitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1482.png",
+        "paint_name": "★ Falchion-veitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5973,7 +6237,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-414.png",
         "paint_name": "★ Falchion-veitsi | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -6002,10 +6266,26 @@
     {
         "weapon_defindex": 512,
         "weapon_name": "weapon_knife_falchion",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1478.png",
+        "paint_name": "★ Falchion-veitsi | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-5.png",
         "paint_name": "★ Falchion-veitsi | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1483.png",
+        "paint_name": "★ Falchion-veitsi | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -6022,6 +6302,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-579.png",
         "paint_name": "★ Falchion-veitsi | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1479.png",
+        "paint_name": "★ Falchion-veitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -6173,7 +6461,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-413.png",
         "paint_name": "★ Taittoveitsi | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6205,7 +6493,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-59.png",
         "paint_name": "★ Taittoveitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6213,7 +6501,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-409.png",
         "paint_name": "★ Taittoveitsi | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1480.png",
+        "paint_name": "★ Taittoveitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6229,7 +6525,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-410.png",
         "paint_name": "★ Taittoveitsi | Damaskiteräs",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1481.png",
+        "paint_name": "★ Taittoveitsi | Värjäytynyt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6238,6 +6542,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-43.png",
         "paint_name": "★ Taittoveitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1482.png",
+        "paint_name": "★ Taittoveitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6253,7 +6565,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-414.png",
         "paint_name": "★ Taittoveitsi | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6282,10 +6594,26 @@
     {
         "weapon_defindex": 505,
         "weapon_name": "weapon_knife_flip",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1478.png",
+        "paint_name": "★ Taittoveitsi | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-5.png",
         "paint_name": "★ Taittoveitsi | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1483.png",
+        "paint_name": "★ Taittoveitsi | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6302,6 +6630,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-578.png",
         "paint_name": "★ Taittoveitsi | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1479.png",
+        "paint_name": "★ Taittoveitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6453,7 +6789,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-413.png",
         "paint_name": "★ Metsästysveitsi | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6485,7 +6821,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-59.png",
         "paint_name": "★ Metsästysveitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6493,7 +6829,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-409.png",
         "paint_name": "★ Metsästysveitsi | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1480.png",
+        "paint_name": "★ Metsästysveitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6509,7 +6853,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-410.png",
         "paint_name": "★ Metsästysveitsi | Damaskiteräs",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1481.png",
+        "paint_name": "★ Metsästysveitsi | Värjäytynyt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6518,6 +6870,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-43.png",
         "paint_name": "★ Metsästysveitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1482.png",
+        "paint_name": "★ Metsästysveitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6533,7 +6893,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-414.png",
         "paint_name": "★ Metsästysveitsi | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6562,10 +6922,26 @@
     {
         "weapon_defindex": 506,
         "weapon_name": "weapon_knife_gut",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1478.png",
+        "paint_name": "★ Metsästysveitsi | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-5.png",
         "paint_name": "★ Metsästysveitsi | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1483.png",
+        "paint_name": "★ Metsästysveitsi | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6582,6 +6958,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-578.png",
         "paint_name": "★ Metsästysveitsi | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1479.png",
+        "paint_name": "★ Metsästysveitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6693,7 +7077,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-413.png",
         "paint_name": "★ Linkkuveitsi | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6717,7 +7101,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-59.png",
         "paint_name": "★ Linkkuveitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6725,7 +7109,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-409.png",
         "paint_name": "★ Linkkuveitsi | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1480.png",
+        "paint_name": "★ Linkkuveitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6746,10 +7138,26 @@
     {
         "weapon_defindex": 520,
         "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1481.png",
+        "paint_name": "★ Linkkuveitsi | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-43.png",
         "paint_name": "★ Linkkuveitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1482.png",
+        "paint_name": "★ Linkkuveitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6765,7 +7173,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-414.png",
         "paint_name": "★ Linkkuveitsi | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1478.png",
+        "paint_name": "★ Linkkuveitsi | Metsä-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6778,10 +7194,26 @@
     {
         "weapon_defindex": 520,
         "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1483.png",
+        "paint_name": "★ Linkkuveitsi | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-77.png",
         "paint_name": "★ Linkkuveitsi | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1479.png",
+        "paint_name": "★ Linkkuveitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6933,7 +7365,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-413.png",
         "paint_name": "★ Karambit | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6965,7 +7397,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-59.png",
         "paint_name": "★ Karambit | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6973,7 +7405,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-409.png",
         "paint_name": "★ Karambit | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1480.png",
+        "paint_name": "★ Karambit | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6989,7 +7429,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-410.png",
         "paint_name": "★ Karambit | Damaskiteräs",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1481.png",
+        "paint_name": "★ Karambit | Värjäytynyt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6998,6 +7446,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-43.png",
         "paint_name": "★ Karambit | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1482.png",
+        "paint_name": "★ Karambit | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7013,7 +7469,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-414.png",
         "paint_name": "★ Karambit | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7042,10 +7498,26 @@
     {
         "weapon_defindex": 507,
         "weapon_name": "weapon_knife_karambit",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1478.png",
+        "paint_name": "★ Karambit | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-5.png",
         "paint_name": "★ Karambit | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1483.png",
+        "paint_name": "★ Karambit | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7062,6 +7534,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-578.png",
         "paint_name": "★ Karambit | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1479.png",
+        "paint_name": "★ Karambit | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7133,7 +7613,15 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-59.png",
         "paint_name": "★ Kukri-veitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1480.png",
+        "paint_name": "★ Kukri-veitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 526,
@@ -7146,10 +7634,26 @@
     {
         "weapon_defindex": 526,
         "weapon_name": "weapon_knife_kukri",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1481.png",
+        "paint_name": "★ Kukri-veitsi | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-43.png",
         "paint_name": "★ Kukri-veitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1482.png",
+        "paint_name": "★ Kukri-veitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 526,
@@ -7162,6 +7666,14 @@
     {
         "weapon_defindex": 526,
         "weapon_name": "weapon_knife_kukri",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1478.png",
+        "paint_name": "★ Kukri-veitsi | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-5.png",
         "paint_name": "★ Kukri-veitsi | Metsä-DDPAT",
@@ -7170,10 +7682,26 @@
     {
         "weapon_defindex": 526,
         "weapon_name": "weapon_knife_kukri",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1483.png",
+        "paint_name": "★ Kukri-veitsi | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-77.png",
         "paint_name": "★ Kukri-veitsi | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1479.png",
+        "paint_name": "★ Kukri-veitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 526,
@@ -7317,7 +7845,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-413.png",
         "paint_name": "★ M9-pistin | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7349,7 +7877,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-59.png",
         "paint_name": "★ M9-pistin | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7357,7 +7885,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-409.png",
         "paint_name": "★ M9-pistin | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1480.png",
+        "paint_name": "★ M9-pistin | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7378,10 +7914,26 @@
     {
         "weapon_defindex": 508,
         "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1481.png",
+        "paint_name": "★ M9-pistin | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-43.png",
         "paint_name": "★ M9-pistin | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1482.png",
+        "paint_name": "★ M9-pistin | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7397,7 +7949,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-414.png",
         "paint_name": "★ M9-pistin | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7426,10 +7978,26 @@
     {
         "weapon_defindex": 508,
         "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1478.png",
+        "paint_name": "★ M9-pistin | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-5.png",
         "paint_name": "★ M9-pistin | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1483.png",
+        "paint_name": "★ M9-pistin | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7446,6 +8014,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-579.png",
         "paint_name": "★ M9-pistin | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1479.png",
+        "paint_name": "★ M9-pistin | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7557,7 +8133,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-413.png",
         "paint_name": "★ Nomad-puukko | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7581,7 +8157,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-59.png",
         "paint_name": "★ Nomad-puukko | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7589,7 +8165,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-409.png",
         "paint_name": "★ Nomad-puukko | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1480.png",
+        "paint_name": "★ Nomad-puukko | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7605,7 +8189,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-410.png",
         "paint_name": "★ Nomad-puukko | Damaskiteräs",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1481.png",
+        "paint_name": "★ Nomad-puukko | Värjäytynyt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7614,6 +8206,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-43.png",
         "paint_name": "★ Nomad-puukko | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1482.png",
+        "paint_name": "★ Nomad-puukko | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7629,7 +8229,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-414.png",
         "paint_name": "★ Nomad-puukko | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1478.png",
+        "paint_name": "★ Nomad-puukko | Metsä-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7642,10 +8250,26 @@
     {
         "weapon_defindex": 521,
         "weapon_name": "weapon_knife_outdoor",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1483.png",
+        "paint_name": "★ Nomad-puukko | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-77.png",
         "paint_name": "★ Nomad-puukko | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1479.png",
+        "paint_name": "★ Nomad-puukko | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7797,7 +8421,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-413.png",
         "paint_name": "★ Varjotikarit | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7829,7 +8453,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-59.png",
         "paint_name": "★ Varjotikarit | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7837,7 +8461,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-409.png",
         "paint_name": "★ Varjotikarit | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1480.png",
+        "paint_name": "★ Varjotikarit | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7858,10 +8490,26 @@
     {
         "weapon_defindex": 516,
         "weapon_name": "weapon_knife_push",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1481.png",
+        "paint_name": "★ Varjotikarit | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-43.png",
         "paint_name": "★ Varjotikarit | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1482.png",
+        "paint_name": "★ Varjotikarit | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7877,7 +8525,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-414.png",
         "paint_name": "★ Varjotikarit | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7906,10 +8554,26 @@
     {
         "weapon_defindex": 516,
         "weapon_name": "weapon_knife_push",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1478.png",
+        "paint_name": "★ Varjotikarit | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-5.png",
         "paint_name": "★ Varjotikarit | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1483.png",
+        "paint_name": "★ Varjotikarit | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7926,6 +8590,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-579.png",
         "paint_name": "★ Varjotikarit | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1479.png",
+        "paint_name": "★ Varjotikarit | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -8037,7 +8709,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-413.png",
         "paint_name": "★ Skeleton-puukko | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8061,7 +8733,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-59.png",
         "paint_name": "★ Skeleton-puukko | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8069,7 +8741,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-409.png",
         "paint_name": "★ Skeleton-puukko | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1480.png",
+        "paint_name": "★ Skeleton-puukko | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8085,7 +8765,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-410.png",
         "paint_name": "★ Skeleton-puukko | Damaskiteräs",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1481.png",
+        "paint_name": "★ Skeleton-puukko | Värjäytynyt",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8094,6 +8782,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-43.png",
         "paint_name": "★ Skeleton-puukko | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1482.png",
+        "paint_name": "★ Skeleton-puukko | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8109,7 +8805,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-414.png",
         "paint_name": "★ Skeleton-puukko | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1478.png",
+        "paint_name": "★ Skeleton-puukko | Metsä-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8122,10 +8826,26 @@
     {
         "weapon_defindex": 525,
         "weapon_name": "weapon_knife_skeleton",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1483.png",
+        "paint_name": "★ Skeleton-puukko | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-77.png",
         "paint_name": "★ Skeleton-puukko | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1479.png",
+        "paint_name": "★ Skeleton-puukko | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8237,7 +8957,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-413.png",
         "paint_name": "★ Stiletti | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8261,7 +8981,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-59.png",
         "paint_name": "★ Stiletti | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8269,7 +8989,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-409.png",
         "paint_name": "★ Stiletti | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1480.png",
+        "paint_name": "★ Stiletti | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8290,10 +9018,26 @@
     {
         "weapon_defindex": 522,
         "weapon_name": "weapon_knife_stiletto",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1481.png",
+        "paint_name": "★ Stiletti | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-43.png",
         "paint_name": "★ Stiletti | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1482.png",
+        "paint_name": "★ Stiletti | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8309,7 +9053,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-414.png",
         "paint_name": "★ Stiletti | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1478.png",
+        "paint_name": "★ Stiletti | Metsä-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8322,10 +9074,26 @@
     {
         "weapon_defindex": 522,
         "weapon_name": "weapon_knife_stiletto",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1483.png",
+        "paint_name": "★ Stiletti | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-77.png",
         "paint_name": "★ Stiletti | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1479.png",
+        "paint_name": "★ Stiletti | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8477,7 +9245,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-413.png",
         "paint_name": "★ Bowie-puukko | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8509,7 +9277,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-59.png",
         "paint_name": "★ Bowie-puukko | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8517,7 +9285,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-409.png",
         "paint_name": "★ Bowie-puukko | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1480.png",
+        "paint_name": "★ Bowie-puukko | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8538,10 +9314,26 @@
     {
         "weapon_defindex": 514,
         "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1481.png",
+        "paint_name": "★ Bowie-puukko | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-43.png",
         "paint_name": "★ Bowie-puukko | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1482.png",
+        "paint_name": "★ Bowie-puukko | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8557,7 +9349,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-414.png",
         "paint_name": "★ Bowie-puukko | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8586,10 +9378,26 @@
     {
         "weapon_defindex": 514,
         "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1478.png",
+        "paint_name": "★ Bowie-puukko | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-5.png",
         "paint_name": "★ Bowie-puukko | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1483.png",
+        "paint_name": "★ Bowie-puukko | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8606,6 +9414,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-579.png",
         "paint_name": "★ Bowie-puukko | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1479.png",
+        "paint_name": "★ Bowie-puukko | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8757,7 +9573,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-413.png",
         "paint_name": "★ Metsämiehen veitsi | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8789,7 +9605,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-59.png",
         "paint_name": "★ Metsämiehen veitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8797,7 +9613,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-409.png",
         "paint_name": "★ Metsämiehen veitsi | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1480.png",
+        "paint_name": "★ Metsämiehen veitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8818,10 +9642,26 @@
     {
         "weapon_defindex": 509,
         "weapon_name": "weapon_knife_tactical",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1481.png",
+        "paint_name": "★ Metsämiehen veitsi | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-43.png",
         "paint_name": "★ Metsämiehen veitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1482.png",
+        "paint_name": "★ Metsämiehen veitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8837,7 +9677,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-414.png",
         "paint_name": "★ Metsämiehen veitsi | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8853,7 +9693,7 @@
         "paint": "620",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-620.png",
         "paint_name": "★ Metsämiehen veitsi | Ultravioletti",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8874,10 +9714,26 @@
     {
         "weapon_defindex": 509,
         "weapon_name": "weapon_knife_tactical",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1478.png",
+        "paint_name": "★ Metsämiehen veitsi | Metsä-DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-5.png",
         "paint_name": "★ Metsämiehen veitsi | Metsä-DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1483.png",
+        "paint_name": "★ Metsämiehen veitsi | Pohjoismetsä",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8894,6 +9750,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-579.png",
         "paint_name": "★ Metsämiehen veitsi | Kirkas vesi",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1479.png",
+        "paint_name": "★ Metsämiehen veitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8997,7 +9861,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-413.png",
         "paint_name": "★ Karhuveitsi | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9021,7 +9885,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-59.png",
         "paint_name": "★ Karhuveitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9029,7 +9893,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-409.png",
         "paint_name": "★ Karhuveitsi | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1480.png",
+        "paint_name": "★ Karhuveitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9050,10 +9922,26 @@
     {
         "weapon_defindex": 519,
         "weapon_name": "weapon_knife_ursus",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1481.png",
+        "paint_name": "★ Karhuveitsi | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-43.png",
         "paint_name": "★ Karhuveitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1482.png",
+        "paint_name": "★ Karhuveitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9069,7 +9957,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-414.png",
         "paint_name": "★ Karhuveitsi | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1478.png",
+        "paint_name": "★ Karhuveitsi | Metsä-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9082,10 +9978,26 @@
     {
         "weapon_defindex": 519,
         "weapon_name": "weapon_knife_ursus",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1483.png",
+        "paint_name": "★ Karhuveitsi | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-77.png",
         "paint_name": "★ Karhuveitsi | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1479.png",
+        "paint_name": "★ Karhuveitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9197,7 +10109,7 @@
         "paint": "856",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-856.png",
         "paint_name": "★ Kynsiveitsi | Marmorihäivytys",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9221,7 +10133,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-59.png",
         "paint_name": "★ Kynsiveitsi | Teurastus",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9229,7 +10141,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-409.png",
         "paint_name": "★ Kynsiveitsi | Tiikerinhammas",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1480.png",
+        "paint_name": "★ Kynsiveitsi | Sininen teräs",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9250,10 +10170,26 @@
     {
         "weapon_defindex": 523,
         "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1481.png",
+        "paint_name": "★ Kynsiveitsi | Värjäytynyt",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-43.png",
         "paint_name": "★ Kynsiveitsi | Värjäytynyt",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1482.png",
+        "paint_name": "★ Kynsiveitsi | Hiiletyskarkaistu",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9269,7 +10205,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-414.png",
         "paint_name": "★ Kynsiveitsi | Ruostepinta",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1478.png",
+        "paint_name": "★ Kynsiveitsi | Metsä-DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9282,10 +10226,26 @@
     {
         "weapon_defindex": 523,
         "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1483.png",
+        "paint_name": "★ Kynsiveitsi | Pohjoismetsä",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-77.png",
         "paint_name": "★ Kynsiveitsi | Pohjoismetsä",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1479.png",
+        "paint_name": "★ Kynsiveitsi | Verenpunainen seitti",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,

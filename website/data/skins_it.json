@@ -1397,7 +1397,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-413.png",
         "paint_name": "Baionetta ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1429,7 +1429,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-59.png",
         "paint_name": "Baionetta ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1437,7 +1437,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-409.png",
         "paint_name": "Baionetta ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1480.png",
+        "paint_name": "Baionetta ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1453,7 +1461,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-410.png",
         "paint_name": "Baionetta ★ | Damascus Steel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1481.png",
+        "paint_name": "Baionetta ★ | Stained",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1462,6 +1478,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-43.png",
         "paint_name": "Baionetta ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1482.png",
+        "paint_name": "Baionetta ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1477,7 +1501,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-414.png",
         "paint_name": "Baionetta ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1506,10 +1530,26 @@
     {
         "weapon_defindex": 500,
         "weapon_name": "weapon_bayonet",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1478.png",
+        "paint_name": "Baionetta ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-5.png",
         "paint_name": "Baionetta ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1483.png",
+        "paint_name": "Baionetta ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -1526,6 +1566,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-578.png",
         "paint_name": "Baionetta ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 500,
+        "weapon_name": "weapon_bayonet",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet-1479.png",
+        "paint_name": "Baionetta ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 500,
@@ -5109,7 +5157,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-413.png",
         "paint_name": "Coltello a farfalla ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5141,7 +5189,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-59.png",
         "paint_name": "Coltello a farfalla ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5149,7 +5197,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-409.png",
         "paint_name": "Coltello a farfalla ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1480.png",
+        "paint_name": "Coltello a farfalla ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5170,10 +5226,26 @@
     {
         "weapon_defindex": 515,
         "weapon_name": "weapon_knife_butterfly",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1481.png",
+        "paint_name": "Coltello a farfalla ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-43.png",
         "paint_name": "Coltello a farfalla ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1482.png",
+        "paint_name": "Coltello a farfalla ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5189,7 +5261,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-414.png",
         "paint_name": "Coltello a farfalla ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5218,10 +5290,26 @@
     {
         "weapon_defindex": 515,
         "weapon_name": "weapon_knife_butterfly",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1478.png",
+        "paint_name": "Coltello a farfalla ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-5.png",
         "paint_name": "Coltello a farfalla ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1483.png",
+        "paint_name": "Coltello a farfalla ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5238,6 +5326,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-579.png",
         "paint_name": "Coltello a farfalla ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 515,
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly-1479.png",
+        "paint_name": "Coltello a farfalla ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 515,
@@ -5349,7 +5445,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-413.png",
         "paint_name": "Coltello da sopravvivenza ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5373,7 +5469,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-59.png",
         "paint_name": "Coltello da sopravvivenza ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5381,7 +5477,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-409.png",
         "paint_name": "Coltello da sopravvivenza ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1480.png",
+        "paint_name": "Coltello da sopravvivenza ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5397,7 +5501,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-410.png",
         "paint_name": "Coltello da sopravvivenza ★ | Damascus Steel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1481.png",
+        "paint_name": "Coltello da sopravvivenza ★ | Stained",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5406,6 +5518,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-43.png",
         "paint_name": "Coltello da sopravvivenza ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1482.png",
+        "paint_name": "Coltello da sopravvivenza ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5421,7 +5541,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-414.png",
         "paint_name": "Coltello da sopravvivenza ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1478.png",
+        "paint_name": "Coltello da sopravvivenza ★ | Forest DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5434,10 +5562,26 @@
     {
         "weapon_defindex": 518,
         "weapon_name": "weapon_knife_canis",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1483.png",
+        "paint_name": "Coltello da sopravvivenza ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-77.png",
         "paint_name": "Coltello da sopravvivenza ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 518,
+        "weapon_name": "weapon_knife_canis",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis-1479.png",
+        "paint_name": "Coltello da sopravvivenza ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 518,
@@ -5549,7 +5693,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-413.png",
         "paint_name": "Coltello Paracord ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5573,7 +5717,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-59.png",
         "paint_name": "Coltello Paracord ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5581,7 +5725,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-409.png",
         "paint_name": "Coltello Paracord ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1480.png",
+        "paint_name": "Coltello Paracord ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5597,7 +5749,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-410.png",
         "paint_name": "Coltello Paracord ★ | Damascus Steel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1481.png",
+        "paint_name": "Coltello Paracord ★ | Stained",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5606,6 +5766,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-43.png",
         "paint_name": "Coltello Paracord ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1482.png",
+        "paint_name": "Coltello Paracord ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5621,7 +5789,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-414.png",
         "paint_name": "Coltello Paracord ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1478.png",
+        "paint_name": "Coltello Paracord ★ | Forest DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5634,10 +5810,26 @@
     {
         "weapon_defindex": 517,
         "weapon_name": "weapon_knife_cord",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1483.png",
+        "paint_name": "Coltello Paracord ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-77.png",
         "paint_name": "Coltello Paracord ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 517,
+        "weapon_name": "weapon_knife_cord",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord-1479.png",
+        "paint_name": "Coltello Paracord ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 517,
@@ -5709,7 +5901,15 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-59.png",
         "paint_name": "Coltello classico ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1480.png",
+        "paint_name": "Coltello classico ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 503,
@@ -5722,10 +5922,26 @@
     {
         "weapon_defindex": 503,
         "weapon_name": "weapon_knife_css",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1481.png",
+        "paint_name": "Coltello classico ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-43.png",
         "paint_name": "Coltello classico ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1482.png",
+        "paint_name": "Coltello classico ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 503,
@@ -5738,6 +5954,14 @@
     {
         "weapon_defindex": 503,
         "weapon_name": "weapon_knife_css",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1478.png",
+        "paint_name": "Coltello classico ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-5.png",
         "paint_name": "Coltello classico ★ | Forest DDPAT",
@@ -5746,10 +5970,26 @@
     {
         "weapon_defindex": 503,
         "weapon_name": "weapon_knife_css",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1483.png",
+        "paint_name": "Coltello classico ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-77.png",
         "paint_name": "Coltello classico ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 503,
+        "weapon_name": "weapon_knife_css",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css-1479.png",
+        "paint_name": "Coltello classico ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 503,
@@ -5893,7 +6133,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-413.png",
         "paint_name": "Coltello falchion ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5925,7 +6165,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-59.png",
         "paint_name": "Coltello falchion ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5933,7 +6173,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-409.png",
         "paint_name": "Coltello falchion ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1480.png",
+        "paint_name": "Coltello falchion ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5954,10 +6202,26 @@
     {
         "weapon_defindex": 512,
         "weapon_name": "weapon_knife_falchion",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1481.png",
+        "paint_name": "Coltello falchion ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-43.png",
         "paint_name": "Coltello falchion ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1482.png",
+        "paint_name": "Coltello falchion ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -5973,7 +6237,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-414.png",
         "paint_name": "Coltello falchion ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -6002,10 +6266,26 @@
     {
         "weapon_defindex": 512,
         "weapon_name": "weapon_knife_falchion",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1478.png",
+        "paint_name": "Coltello falchion ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-5.png",
         "paint_name": "Coltello falchion ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1483.png",
+        "paint_name": "Coltello falchion ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -6022,6 +6302,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-579.png",
         "paint_name": "Coltello falchion ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 512,
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion-1479.png",
+        "paint_name": "Coltello falchion ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 512,
@@ -6173,7 +6461,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-413.png",
         "paint_name": "Coltello ricurvo ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6205,7 +6493,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-59.png",
         "paint_name": "Coltello ricurvo ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6213,7 +6501,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-409.png",
         "paint_name": "Coltello ricurvo ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1480.png",
+        "paint_name": "Coltello ricurvo ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6229,7 +6525,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-410.png",
         "paint_name": "Coltello ricurvo ★ | Damascus Steel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1481.png",
+        "paint_name": "Coltello ricurvo ★ | Stained",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6238,6 +6542,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-43.png",
         "paint_name": "Coltello ricurvo ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1482.png",
+        "paint_name": "Coltello ricurvo ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6253,7 +6565,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-414.png",
         "paint_name": "Coltello ricurvo ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6282,10 +6594,26 @@
     {
         "weapon_defindex": 505,
         "weapon_name": "weapon_knife_flip",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1478.png",
+        "paint_name": "Coltello ricurvo ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-5.png",
         "paint_name": "Coltello ricurvo ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1483.png",
+        "paint_name": "Coltello ricurvo ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6302,6 +6630,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-578.png",
         "paint_name": "Coltello ricurvo ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 505,
+        "weapon_name": "weapon_knife_flip",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip-1479.png",
+        "paint_name": "Coltello ricurvo ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 505,
@@ -6453,7 +6789,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-413.png",
         "paint_name": "Coltello da sventramento ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6485,7 +6821,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-59.png",
         "paint_name": "Coltello da sventramento ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6493,7 +6829,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-409.png",
         "paint_name": "Coltello da sventramento ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1480.png",
+        "paint_name": "Coltello da sventramento ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6509,7 +6853,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-410.png",
         "paint_name": "Coltello da sventramento ★ | Damascus Steel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1481.png",
+        "paint_name": "Coltello da sventramento ★ | Stained",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6518,6 +6870,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-43.png",
         "paint_name": "Coltello da sventramento ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1482.png",
+        "paint_name": "Coltello da sventramento ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6533,7 +6893,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-414.png",
         "paint_name": "Coltello da sventramento ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6562,10 +6922,26 @@
     {
         "weapon_defindex": 506,
         "weapon_name": "weapon_knife_gut",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1478.png",
+        "paint_name": "Coltello da sventramento ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-5.png",
         "paint_name": "Coltello da sventramento ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1483.png",
+        "paint_name": "Coltello da sventramento ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6582,6 +6958,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-578.png",
         "paint_name": "Coltello da sventramento ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 506,
+        "weapon_name": "weapon_knife_gut",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut-1479.png",
+        "paint_name": "Coltello da sventramento ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 506,
@@ -6693,7 +7077,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-413.png",
         "paint_name": "Coltello Navaja ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6717,7 +7101,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-59.png",
         "paint_name": "Coltello Navaja ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6725,7 +7109,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-409.png",
         "paint_name": "Coltello Navaja ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1480.png",
+        "paint_name": "Coltello Navaja ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6746,10 +7138,26 @@
     {
         "weapon_defindex": 520,
         "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1481.png",
+        "paint_name": "Coltello Navaja ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-43.png",
         "paint_name": "Coltello Navaja ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1482.png",
+        "paint_name": "Coltello Navaja ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6765,7 +7173,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-414.png",
         "paint_name": "Coltello Navaja ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1478.png",
+        "paint_name": "Coltello Navaja ★ | Forest DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6778,10 +7194,26 @@
     {
         "weapon_defindex": 520,
         "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1483.png",
+        "paint_name": "Coltello Navaja ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-77.png",
         "paint_name": "Coltello Navaja ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 520,
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife-1479.png",
+        "paint_name": "Coltello Navaja ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 520,
@@ -6933,7 +7365,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-413.png",
         "paint_name": "Karambit ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6965,7 +7397,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-59.png",
         "paint_name": "Karambit ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6973,7 +7405,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-409.png",
         "paint_name": "Karambit ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1480.png",
+        "paint_name": "Karambit ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6989,7 +7429,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-410.png",
         "paint_name": "Karambit ★ | Damascus Steel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1481.png",
+        "paint_name": "Karambit ★ | Stained",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -6998,6 +7446,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-43.png",
         "paint_name": "Karambit ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1482.png",
+        "paint_name": "Karambit ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7013,7 +7469,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-414.png",
         "paint_name": "Karambit ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7042,10 +7498,26 @@
     {
         "weapon_defindex": 507,
         "weapon_name": "weapon_knife_karambit",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1478.png",
+        "paint_name": "Karambit ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-5.png",
         "paint_name": "Karambit ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1483.png",
+        "paint_name": "Karambit ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7062,6 +7534,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-578.png",
         "paint_name": "Karambit ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 507,
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit-1479.png",
+        "paint_name": "Karambit ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 507,
@@ -7133,7 +7613,15 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-59.png",
         "paint_name": "Coltello Kukri ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1480.png",
+        "paint_name": "Coltello Kukri ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 526,
@@ -7146,10 +7634,26 @@
     {
         "weapon_defindex": 526,
         "weapon_name": "weapon_knife_kukri",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1481.png",
+        "paint_name": "Coltello Kukri ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-43.png",
         "paint_name": "Coltello Kukri ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1482.png",
+        "paint_name": "Coltello Kukri ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 526,
@@ -7162,6 +7666,14 @@
     {
         "weapon_defindex": 526,
         "weapon_name": "weapon_knife_kukri",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1478.png",
+        "paint_name": "Coltello Kukri ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-5.png",
         "paint_name": "Coltello Kukri ★ | Forest DDPAT",
@@ -7170,10 +7682,26 @@
     {
         "weapon_defindex": 526,
         "weapon_name": "weapon_knife_kukri",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1483.png",
+        "paint_name": "Coltello Kukri ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-77.png",
         "paint_name": "Coltello Kukri ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 526,
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_kukri-1479.png",
+        "paint_name": "Coltello Kukri ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 526,
@@ -7317,7 +7845,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-413.png",
         "paint_name": "Baionetta M9 ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7349,7 +7877,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-59.png",
         "paint_name": "Baionetta M9 ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7357,7 +7885,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-409.png",
         "paint_name": "Baionetta M9 ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1480.png",
+        "paint_name": "Baionetta M9 ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7378,10 +7914,26 @@
     {
         "weapon_defindex": 508,
         "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1481.png",
+        "paint_name": "Baionetta M9 ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-43.png",
         "paint_name": "Baionetta M9 ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1482.png",
+        "paint_name": "Baionetta M9 ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7397,7 +7949,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-414.png",
         "paint_name": "Baionetta M9 ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7426,10 +7978,26 @@
     {
         "weapon_defindex": 508,
         "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1478.png",
+        "paint_name": "Baionetta M9 ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-5.png",
         "paint_name": "Baionetta M9 ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1483.png",
+        "paint_name": "Baionetta M9 ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7446,6 +8014,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-579.png",
         "paint_name": "Baionetta M9 ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 508,
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet-1479.png",
+        "paint_name": "Baionetta M9 ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 508,
@@ -7557,7 +8133,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-413.png",
         "paint_name": "Coltello Nomade ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7581,7 +8157,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-59.png",
         "paint_name": "Coltello Nomade ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7589,7 +8165,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-409.png",
         "paint_name": "Coltello Nomade ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1480.png",
+        "paint_name": "Coltello Nomade ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7605,7 +8189,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-410.png",
         "paint_name": "Coltello Nomade ★ | Damascus Steel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1481.png",
+        "paint_name": "Coltello Nomade ★ | Stained",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7614,6 +8206,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-43.png",
         "paint_name": "Coltello Nomade ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1482.png",
+        "paint_name": "Coltello Nomade ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7629,7 +8229,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-414.png",
         "paint_name": "Coltello Nomade ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1478.png",
+        "paint_name": "Coltello Nomade ★ | Forest DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7642,10 +8250,26 @@
     {
         "weapon_defindex": 521,
         "weapon_name": "weapon_knife_outdoor",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1483.png",
+        "paint_name": "Coltello Nomade ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-77.png",
         "paint_name": "Coltello Nomade ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 521,
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor-1479.png",
+        "paint_name": "Coltello Nomade ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 521,
@@ -7797,7 +8421,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-413.png",
         "paint_name": "Fendi ombra ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7829,7 +8453,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-59.png",
         "paint_name": "Fendi ombra ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7837,7 +8461,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-409.png",
         "paint_name": "Fendi ombra ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1480.png",
+        "paint_name": "Fendi ombra ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7858,10 +8490,26 @@
     {
         "weapon_defindex": 516,
         "weapon_name": "weapon_knife_push",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1481.png",
+        "paint_name": "Fendi ombra ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-43.png",
         "paint_name": "Fendi ombra ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1482.png",
+        "paint_name": "Fendi ombra ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7877,7 +8525,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-414.png",
         "paint_name": "Fendi ombra ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7906,10 +8554,26 @@
     {
         "weapon_defindex": 516,
         "weapon_name": "weapon_knife_push",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1478.png",
+        "paint_name": "Fendi ombra ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-5.png",
         "paint_name": "Fendi ombra ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1483.png",
+        "paint_name": "Fendi ombra ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -7926,6 +8590,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-579.png",
         "paint_name": "Fendi ombra ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 516,
+        "weapon_name": "weapon_knife_push",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push-1479.png",
+        "paint_name": "Fendi ombra ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 516,
@@ -8037,7 +8709,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-413.png",
         "paint_name": "Coltello Scheletro ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8061,7 +8733,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-59.png",
         "paint_name": "Coltello Scheletro ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8069,7 +8741,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-409.png",
         "paint_name": "Coltello Scheletro ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1480.png",
+        "paint_name": "Coltello Scheletro ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8085,7 +8765,15 @@
         "paint": "410",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-410.png",
         "paint_name": "Coltello Scheletro ★ | Damascus Steel",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1481.png",
+        "paint_name": "Coltello Scheletro ★ | Stained",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8094,6 +8782,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-43.png",
         "paint_name": "Coltello Scheletro ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1482.png",
+        "paint_name": "Coltello Scheletro ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8109,7 +8805,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-414.png",
         "paint_name": "Coltello Scheletro ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1478.png",
+        "paint_name": "Coltello Scheletro ★ | Forest DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8122,10 +8826,26 @@
     {
         "weapon_defindex": 525,
         "weapon_name": "weapon_knife_skeleton",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1483.png",
+        "paint_name": "Coltello Scheletro ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-77.png",
         "paint_name": "Coltello Scheletro ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 525,
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton-1479.png",
+        "paint_name": "Coltello Scheletro ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 525,
@@ -8237,7 +8957,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-413.png",
         "paint_name": "Stiletto ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8261,7 +8981,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-59.png",
         "paint_name": "Stiletto ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8269,7 +8989,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-409.png",
         "paint_name": "Stiletto ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1480.png",
+        "paint_name": "Stiletto ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8290,10 +9018,26 @@
     {
         "weapon_defindex": 522,
         "weapon_name": "weapon_knife_stiletto",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1481.png",
+        "paint_name": "Stiletto ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-43.png",
         "paint_name": "Stiletto ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1482.png",
+        "paint_name": "Stiletto ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8309,7 +9053,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-414.png",
         "paint_name": "Stiletto ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1478.png",
+        "paint_name": "Stiletto ★ | Forest DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8322,10 +9074,26 @@
     {
         "weapon_defindex": 522,
         "weapon_name": "weapon_knife_stiletto",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1483.png",
+        "paint_name": "Stiletto ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-77.png",
         "paint_name": "Stiletto ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 522,
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto-1479.png",
+        "paint_name": "Stiletto ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 522,
@@ -8477,7 +9245,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-413.png",
         "paint_name": "Coltello Bowie ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8509,7 +9277,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-59.png",
         "paint_name": "Coltello Bowie ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8517,7 +9285,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-409.png",
         "paint_name": "Coltello Bowie ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1480.png",
+        "paint_name": "Coltello Bowie ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8538,10 +9314,26 @@
     {
         "weapon_defindex": 514,
         "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1481.png",
+        "paint_name": "Coltello Bowie ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-43.png",
         "paint_name": "Coltello Bowie ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1482.png",
+        "paint_name": "Coltello Bowie ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8557,7 +9349,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-414.png",
         "paint_name": "Coltello Bowie ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8586,10 +9378,26 @@
     {
         "weapon_defindex": 514,
         "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1478.png",
+        "paint_name": "Coltello Bowie ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-5.png",
         "paint_name": "Coltello Bowie ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1483.png",
+        "paint_name": "Coltello Bowie ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8606,6 +9414,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-579.png",
         "paint_name": "Coltello Bowie ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 514,
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie-1479.png",
+        "paint_name": "Coltello Bowie ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 514,
@@ -8757,7 +9573,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-413.png",
         "paint_name": "Coltello da cacciatore ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8789,7 +9605,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-59.png",
         "paint_name": "Coltello da cacciatore ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8797,7 +9613,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-409.png",
         "paint_name": "Coltello da cacciatore ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1480.png",
+        "paint_name": "Coltello da cacciatore ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8818,10 +9642,26 @@
     {
         "weapon_defindex": 509,
         "weapon_name": "weapon_knife_tactical",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1481.png",
+        "paint_name": "Coltello da cacciatore ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-43.png",
         "paint_name": "Coltello da cacciatore ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1482.png",
+        "paint_name": "Coltello da cacciatore ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8837,7 +9677,7 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-414.png",
         "paint_name": "Coltello da cacciatore ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8853,7 +9693,7 @@
         "paint": "620",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-620.png",
         "paint_name": "Coltello da cacciatore ★ | Ultraviolet",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8874,10 +9714,26 @@
     {
         "weapon_defindex": 509,
         "weapon_name": "weapon_knife_tactical",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1478.png",
+        "paint_name": "Coltello da cacciatore ★ | Forest DDPAT",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
         "paint": "5",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-5.png",
         "paint_name": "Coltello da cacciatore ★ | Forest DDPAT",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1483.png",
+        "paint_name": "Coltello da cacciatore ★ | Boreal Forest",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8894,6 +9750,14 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-579.png",
         "paint_name": "Coltello da cacciatore ★ | Bright Water",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 509,
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical-1479.png",
+        "paint_name": "Coltello da cacciatore ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 509,
@@ -8997,7 +9861,7 @@
         "paint": "413",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-413.png",
         "paint_name": "Coltello Ursus ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9021,7 +9885,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-59.png",
         "paint_name": "Coltello Ursus ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9029,7 +9893,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-409.png",
         "paint_name": "Coltello Ursus ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1480.png",
+        "paint_name": "Coltello Ursus ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9050,10 +9922,26 @@
     {
         "weapon_defindex": 519,
         "weapon_name": "weapon_knife_ursus",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1481.png",
+        "paint_name": "Coltello Ursus ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-43.png",
         "paint_name": "Coltello Ursus ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1482.png",
+        "paint_name": "Coltello Ursus ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9069,7 +9957,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-414.png",
         "paint_name": "Coltello Ursus ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1478.png",
+        "paint_name": "Coltello Ursus ★ | Forest DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9082,10 +9978,26 @@
     {
         "weapon_defindex": 519,
         "weapon_name": "weapon_knife_ursus",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1483.png",
+        "paint_name": "Coltello Ursus ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-77.png",
         "paint_name": "Coltello Ursus ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 519,
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus-1479.png",
+        "paint_name": "Coltello Ursus ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 519,
@@ -9197,7 +10109,7 @@
         "paint": "856",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-856.png",
         "paint_name": "Coltello Talon ★ | Marble Fade",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9221,7 +10133,7 @@
         "paint": "59",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-59.png",
         "paint_name": "Coltello Talon ★ | Slaughter",
-        "legacy_model": true
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9229,7 +10141,15 @@
         "paint": "409",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-409.png",
         "paint_name": "Coltello Talon ★ | Tiger Tooth",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1480",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1480.png",
+        "paint_name": "Coltello Talon ★ | Blue Steel",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9250,10 +10170,26 @@
     {
         "weapon_defindex": 523,
         "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1481",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1481.png",
+        "paint_name": "Coltello Talon ★ | Stained",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
         "paint": "43",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-43.png",
         "paint_name": "Coltello Talon ★ | Stained",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1482",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1482.png",
+        "paint_name": "Coltello Talon ★ | Case Hardened",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9269,7 +10205,15 @@
         "paint": "414",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-414.png",
         "paint_name": "Coltello Talon ★ | Rust Coat",
-        "legacy_model": true
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1478",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1478.png",
+        "paint_name": "Coltello Talon ★ | Forest DDPAT",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,
@@ -9282,10 +10226,26 @@
     {
         "weapon_defindex": 523,
         "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1483",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1483.png",
+        "paint_name": "Coltello Talon ★ | Boreal Forest",
+        "legacy_model": false
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
         "paint": "77",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-77.png",
         "paint_name": "Coltello Talon ★ | Boreal Forest",
         "legacy_model": true
+    },
+    {
+        "weapon_defindex": 523,
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "1479",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker-1479.png",
+        "paint_name": "Coltello Talon ★ | Crimson Web",
+        "legacy_model": false
     },
     {
         "weapon_defindex": 523,

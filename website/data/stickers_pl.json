@@ -8175,6 +8175,11 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-1695.png"
     },
     {
+        "id": "1696",
+        "name": "Naklejka | Cache (złota)",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-1696.png"
+    },
+    {
         "id": "1738",
         "name": "Naklejka | Astralis | Atlanta 2017",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-1738.png"
@@ -43886,12 +43891,12 @@
     },
     {
         "id": "9389",
-        "name": "Naklejka | Gwardia śmierci 1",
+        "name": "Naklejka | Gwardia Śmierci 1",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-9389.png"
     },
     {
         "id": "9390",
-        "name": "Naklejka | Gwardia śmierci 2",
+        "name": "Naklejka | Gwardia Śmierci 2",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-9390.png"
     },
     {
@@ -55668,5 +55673,3865 @@
         "id": "11813",
         "name": "Naklejka | nettik (złota, rankingowa) | Kolonia 2026",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11813.png"
+    },
+    {
+        "id": "11814",
+        "name": "Naklejka | MOUZ | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11814.png"
+    },
+    {
+        "id": "11815",
+        "name": "Naklejka | MOUZ (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11815.png"
+    },
+    {
+        "id": "11816",
+        "name": "Naklejka | MOUZ (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11816.png"
+    },
+    {
+        "id": "11817",
+        "name": "Naklejka | MOUZ (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11817.png"
+    },
+    {
+        "id": "11818",
+        "name": "Naklejka | Vitality | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11818.png"
+    },
+    {
+        "id": "11819",
+        "name": "Naklejka | Vitality (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11819.png"
+    },
+    {
+        "id": "11820",
+        "name": "Naklejka | Vitality (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11820.png"
+    },
+    {
+        "id": "11821",
+        "name": "Naklejka | Vitality (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11821.png"
+    },
+    {
+        "id": "11822",
+        "name": "Naklejka | FURIA | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11822.png"
+    },
+    {
+        "id": "11823",
+        "name": "Naklejka | FURIA (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11823.png"
+    },
+    {
+        "id": "11824",
+        "name": "Naklejka | FURIA (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11824.png"
+    },
+    {
+        "id": "11825",
+        "name": "Naklejka | FURIA (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11825.png"
+    },
+    {
+        "id": "11826",
+        "name": "Naklejka | Aurora | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11826.png"
+    },
+    {
+        "id": "11827",
+        "name": "Naklejka | Aurora (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11827.png"
+    },
+    {
+        "id": "11828",
+        "name": "Naklejka | Aurora (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11828.png"
+    },
+    {
+        "id": "11829",
+        "name": "Naklejka | Aurora (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11829.png"
+    },
+    {
+        "id": "11830",
+        "name": "Naklejka | Team Spirit | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11830.png"
+    },
+    {
+        "id": "11831",
+        "name": "Naklejka | Team Spirit (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11831.png"
+    },
+    {
+        "id": "11832",
+        "name": "Naklejka | Team Spirit (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11832.png"
+    },
+    {
+        "id": "11833",
+        "name": "Naklejka | Team Spirit (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11833.png"
+    },
+    {
+        "id": "11834",
+        "name": "Naklejka | BB Team | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11834.png"
+    },
+    {
+        "id": "11835",
+        "name": "Naklejka | BB Team (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11835.png"
+    },
+    {
+        "id": "11836",
+        "name": "Naklejka | BB Team (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11836.png"
+    },
+    {
+        "id": "11837",
+        "name": "Naklejka | BB Team (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11837.png"
+    },
+    {
+        "id": "11838",
+        "name": "Naklejka | Falcons | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11838.png"
+    },
+    {
+        "id": "11839",
+        "name": "Naklejka | Falcons (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11839.png"
+    },
+    {
+        "id": "11840",
+        "name": "Naklejka | Falcons (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11840.png"
+    },
+    {
+        "id": "11841",
+        "name": "Naklejka | Falcons (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11841.png"
+    },
+    {
+        "id": "11842",
+        "name": "Naklejka | FUT | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11842.png"
+    },
+    {
+        "id": "11843",
+        "name": "Naklejka | FUT (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11843.png"
+    },
+    {
+        "id": "11844",
+        "name": "Naklejka | FUT (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11844.png"
+    },
+    {
+        "id": "11845",
+        "name": "Naklejka | FUT (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11845.png"
+    },
+    {
+        "id": "11846",
+        "name": "Naklejka | Legacy | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11846.png"
+    },
+    {
+        "id": "11847",
+        "name": "Naklejka | Legacy (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11847.png"
+    },
+    {
+        "id": "11848",
+        "name": "Naklejka | Legacy (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11848.png"
+    },
+    {
+        "id": "11849",
+        "name": "Naklejka | Legacy (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11849.png"
+    },
+    {
+        "id": "11850",
+        "name": "Naklejka | Nemiga | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11850.png"
+    },
+    {
+        "id": "11851",
+        "name": "Naklejka | Nemiga (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11851.png"
+    },
+    {
+        "id": "11852",
+        "name": "Naklejka | Nemiga (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11852.png"
+    },
+    {
+        "id": "11853",
+        "name": "Naklejka | Nemiga (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11853.png"
+    },
+    {
+        "id": "11854",
+        "name": "Naklejka | G2 esports | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11854.png"
+    },
+    {
+        "id": "11855",
+        "name": "Naklejka | G2 esports (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11855.png"
+    },
+    {
+        "id": "11856",
+        "name": "Naklejka | G2 esports (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11856.png"
+    },
+    {
+        "id": "11857",
+        "name": "Naklejka | G2 esports (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11857.png"
+    },
+    {
+        "id": "11858",
+        "name": "Naklejka | The One | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11858.png"
+    },
+    {
+        "id": "11859",
+        "name": "Naklejka | The One (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11859.png"
+    },
+    {
+        "id": "11860",
+        "name": "Naklejka | The One (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11860.png"
+    },
+    {
+        "id": "11861",
+        "name": "Naklejka | The One (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11861.png"
+    },
+    {
+        "id": "11862",
+        "name": "Naklejka | Natus Vincere | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11862.png"
+    },
+    {
+        "id": "11863",
+        "name": "Naklejka | Natus Vincere (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11863.png"
+    },
+    {
+        "id": "11864",
+        "name": "Naklejka | Natus Vincere (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11864.png"
+    },
+    {
+        "id": "11865",
+        "name": "Naklejka | Natus Vincere (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11865.png"
+    },
+    {
+        "id": "11866",
+        "name": "Naklejka | Astralis | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11866.png"
+    },
+    {
+        "id": "11867",
+        "name": "Naklejka | Astralis (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11867.png"
+    },
+    {
+        "id": "11868",
+        "name": "Naklejka | Astralis (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11868.png"
+    },
+    {
+        "id": "11869",
+        "name": "Naklejka | Astralis (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11869.png"
+    },
+    {
+        "id": "11870",
+        "name": "Naklejka | Ninjas in Pyjamas | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11870.png"
+    },
+    {
+        "id": "11871",
+        "name": "Naklejka | Ninjas in Pyjamas (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11871.png"
+    },
+    {
+        "id": "11872",
+        "name": "Naklejka | Ninjas in Pyjamas (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11872.png"
+    },
+    {
+        "id": "11873",
+        "name": "Naklejka | Ninjas in Pyjamas (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11873.png"
+    },
+    {
+        "id": "11874",
+        "name": "Naklejka | The Mongolz | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11874.png"
+    },
+    {
+        "id": "11875",
+        "name": "Naklejka | The Mongolz (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11875.png"
+    },
+    {
+        "id": "11876",
+        "name": "Naklejka | The Mongolz (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11876.png"
+    },
+    {
+        "id": "11877",
+        "name": "Naklejka | The Mongolz (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11877.png"
+    },
+    {
+        "id": "11878",
+        "name": "Naklejka | PVISION | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11878.png"
+    },
+    {
+        "id": "11879",
+        "name": "Naklejka | PVISION (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11879.png"
+    },
+    {
+        "id": "11880",
+        "name": "Naklejka | PVISION (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11880.png"
+    },
+    {
+        "id": "11881",
+        "name": "Naklejka | PVISION (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11881.png"
+    },
+    {
+        "id": "11882",
+        "name": "Naklejka | HEROIC | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11882.png"
+    },
+    {
+        "id": "11883",
+        "name": "Naklejka | HEROIC (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11883.png"
+    },
+    {
+        "id": "11884",
+        "name": "Naklejka | HEROIC (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11884.png"
+    },
+    {
+        "id": "11885",
+        "name": "Naklejka | HEROIC (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11885.png"
+    },
+    {
+        "id": "11886",
+        "name": "Naklejka | MIBR | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11886.png"
+    },
+    {
+        "id": "11887",
+        "name": "Naklejka | MIBR (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11887.png"
+    },
+    {
+        "id": "11888",
+        "name": "Naklejka | MIBR (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11888.png"
+    },
+    {
+        "id": "11889",
+        "name": "Naklejka | MIBR (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11889.png"
+    },
+    {
+        "id": "11890",
+        "name": "Naklejka | FaZe Clan | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11890.png"
+    },
+    {
+        "id": "11891",
+        "name": "Naklejka | FaZe Clan (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11891.png"
+    },
+    {
+        "id": "11892",
+        "name": "Naklejka | FaZe Clan (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11892.png"
+    },
+    {
+        "id": "11893",
+        "name": "Naklejka | FaZe Clan (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11893.png"
+    },
+    {
+        "id": "11894",
+        "name": "Naklejka | Team Liquid | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11894.png"
+    },
+    {
+        "id": "11895",
+        "name": "Naklejka | Team Liquid (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11895.png"
+    },
+    {
+        "id": "11896",
+        "name": "Naklejka | Team Liquid (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11896.png"
+    },
+    {
+        "id": "11897",
+        "name": "Naklejka | Team Liquid (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11897.png"
+    },
+    {
+        "id": "11898",
+        "name": "Naklejka | Eternal Fire | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11898.png"
+    },
+    {
+        "id": "11899",
+        "name": "Naklejka | Eternal Fire (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11899.png"
+    },
+    {
+        "id": "11900",
+        "name": "Naklejka | Eternal Fire (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11900.png"
+    },
+    {
+        "id": "11901",
+        "name": "Naklejka | Eternal Fire (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11901.png"
+    },
+    {
+        "id": "11902",
+        "name": "Naklejka | 100 Thieves | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11902.png"
+    },
+    {
+        "id": "11903",
+        "name": "Naklejka | 100 Thieves (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11903.png"
+    },
+    {
+        "id": "11904",
+        "name": "Naklejka | 100 Thieves (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11904.png"
+    },
+    {
+        "id": "11905",
+        "name": "Naklejka | 100 Thieves (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11905.png"
+    },
+    {
+        "id": "11906",
+        "name": "Naklejka | 9z Team | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11906.png"
+    },
+    {
+        "id": "11907",
+        "name": "Naklejka | 9z Team (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11907.png"
+    },
+    {
+        "id": "11908",
+        "name": "Naklejka | 9z Team (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11908.png"
+    },
+    {
+        "id": "11909",
+        "name": "Naklejka | 9z Team (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11909.png"
+    },
+    {
+        "id": "11910",
+        "name": "Naklejka | M80 | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11910.png"
+    },
+    {
+        "id": "11911",
+        "name": "Naklejka | M80 (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11911.png"
+    },
+    {
+        "id": "11912",
+        "name": "Naklejka | M80 (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11912.png"
+    },
+    {
+        "id": "11913",
+        "name": "Naklejka | M80 (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11913.png"
+    },
+    {
+        "id": "11914",
+        "name": "Naklejka | DENDELE | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11914.png"
+    },
+    {
+        "id": "11915",
+        "name": "Naklejka | DENDELE (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11915.png"
+    },
+    {
+        "id": "11916",
+        "name": "Naklejka | DENDELE (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11916.png"
+    },
+    {
+        "id": "11917",
+        "name": "Naklejka | DENDELE (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11917.png"
+    },
+    {
+        "id": "11918",
+        "name": "Naklejka | Imperial Esports | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11918.png"
+    },
+    {
+        "id": "11919",
+        "name": "Naklejka | Imperial Esports (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11919.png"
+    },
+    {
+        "id": "11920",
+        "name": "Naklejka | Imperial Esports (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11920.png"
+    },
+    {
+        "id": "11921",
+        "name": "Naklejka | Imperial Esports (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11921.png"
+    },
+    {
+        "id": "11922",
+        "name": "Naklejka | Wildcard | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11922.png"
+    },
+    {
+        "id": "11923",
+        "name": "Naklejka | Wildcard (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11923.png"
+    },
+    {
+        "id": "11924",
+        "name": "Naklejka | Wildcard (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11924.png"
+    },
+    {
+        "id": "11925",
+        "name": "Naklejka | Wildcard (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11925.png"
+    },
+    {
+        "id": "11926",
+        "name": "Naklejka | GOSH | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11926.png"
+    },
+    {
+        "id": "11927",
+        "name": "Naklejka | GOSH (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11927.png"
+    },
+    {
+        "id": "11928",
+        "name": "Naklejka | GOSH (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11928.png"
+    },
+    {
+        "id": "11929",
+        "name": "Naklejka | GOSH (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11929.png"
+    },
+    {
+        "id": "11930",
+        "name": "Naklejka | FlyQuest | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11930.png"
+    },
+    {
+        "id": "11931",
+        "name": "Naklejka | FlyQuest (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11931.png"
+    },
+    {
+        "id": "11932",
+        "name": "Naklejka | FlyQuest (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11932.png"
+    },
+    {
+        "id": "11933",
+        "name": "Naklejka | FlyQuest (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11933.png"
+    },
+    {
+        "id": "11934",
+        "name": "Naklejka | Chinggis Warriors | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11934.png"
+    },
+    {
+        "id": "11935",
+        "name": "Naklejka | Chinggis Warriors (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11935.png"
+    },
+    {
+        "id": "11936",
+        "name": "Naklejka | Chinggis Warriors (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11936.png"
+    },
+    {
+        "id": "11937",
+        "name": "Naklejka | Chinggis Warriors (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11937.png"
+    },
+    {
+        "id": "11938",
+        "name": "Naklejka | Lynn Vision | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11938.png"
+    },
+    {
+        "id": "11939",
+        "name": "Naklejka | Lynn Vision (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11939.png"
+    },
+    {
+        "id": "11940",
+        "name": "Naklejka | Lynn Vision (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11940.png"
+    },
+    {
+        "id": "11941",
+        "name": "Naklejka | Lynn Vision (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11941.png"
+    },
+    {
+        "id": "11942",
+        "name": "Naklejka | PGL | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11942.png"
+    },
+    {
+        "id": "11943",
+        "name": "Naklejka | PGL (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11943.png"
+    },
+    {
+        "id": "11944",
+        "name": "Naklejka | PGL (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11944.png"
+    },
+    {
+        "id": "11945",
+        "name": "Naklejka | PGL (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11945.png"
+    },
+    {
+        "id": "11979",
+        "name": "Naklejka | PR | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11979.png"
+    },
+    {
+        "id": "11980",
+        "name": "Naklejka | PR (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11980.png"
+    },
+    {
+        "id": "11981",
+        "name": "Naklejka | PR (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11981.png"
+    },
+    {
+        "id": "11982",
+        "name": "Naklejka | PR (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11982.png"
+    },
+    {
+        "id": "11983",
+        "name": "Naklejka | Spinx | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11983.png"
+    },
+    {
+        "id": "11984",
+        "name": "Naklejka | Spinx (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11984.png"
+    },
+    {
+        "id": "11985",
+        "name": "Naklejka | Spinx (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11985.png"
+    },
+    {
+        "id": "11986",
+        "name": "Naklejka | Spinx (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11986.png"
+    },
+    {
+        "id": "11987",
+        "name": "Naklejka | torzsi | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11987.png"
+    },
+    {
+        "id": "11988",
+        "name": "Naklejka | torzsi (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11988.png"
+    },
+    {
+        "id": "11989",
+        "name": "Naklejka | torzsi (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11989.png"
+    },
+    {
+        "id": "11990",
+        "name": "Naklejka | torzsi (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11990.png"
+    },
+    {
+        "id": "11991",
+        "name": "Naklejka | xelex | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11991.png"
+    },
+    {
+        "id": "11992",
+        "name": "Naklejka | xelex (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11992.png"
+    },
+    {
+        "id": "11993",
+        "name": "Naklejka | xelex (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11993.png"
+    },
+    {
+        "id": "11994",
+        "name": "Naklejka | xelex (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11994.png"
+    },
+    {
+        "id": "11995",
+        "name": "Naklejka | xertioN | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11995.png"
+    },
+    {
+        "id": "11996",
+        "name": "Naklejka | xertioN (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11996.png"
+    },
+    {
+        "id": "11997",
+        "name": "Naklejka | xertioN (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11997.png"
+    },
+    {
+        "id": "11998",
+        "name": "Naklejka | xertioN (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11998.png"
+    },
+    {
+        "id": "11999",
+        "name": "Naklejka | FlameZ | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-11999.png"
+    },
+    {
+        "id": "12000",
+        "name": "Naklejka | FlameZ (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12000.png"
+    },
+    {
+        "id": "12001",
+        "name": "Naklejka | FlameZ (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12001.png"
+    },
+    {
+        "id": "12002",
+        "name": "Naklejka | FlameZ (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12002.png"
+    },
+    {
+        "id": "12003",
+        "name": "Naklejka | jL | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12003.png"
+    },
+    {
+        "id": "12004",
+        "name": "Naklejka | jL (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12004.png"
+    },
+    {
+        "id": "12005",
+        "name": "Naklejka | jL (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12005.png"
+    },
+    {
+        "id": "12006",
+        "name": "Naklejka | jL (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12006.png"
+    },
+    {
+        "id": "12007",
+        "name": "Naklejka | mezii | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12007.png"
+    },
+    {
+        "id": "12008",
+        "name": "Naklejka | mezii (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12008.png"
+    },
+    {
+        "id": "12009",
+        "name": "Naklejka | mezii (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12009.png"
+    },
+    {
+        "id": "12010",
+        "name": "Naklejka | mezii (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12010.png"
+    },
+    {
+        "id": "12011",
+        "name": "Naklejka | ropz | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12011.png"
+    },
+    {
+        "id": "12012",
+        "name": "Naklejka | ropz (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12012.png"
+    },
+    {
+        "id": "12013",
+        "name": "Naklejka | ropz (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12013.png"
+    },
+    {
+        "id": "12014",
+        "name": "Naklejka | ropz (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12014.png"
+    },
+    {
+        "id": "12015",
+        "name": "Naklejka | ZywOo | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12015.png"
+    },
+    {
+        "id": "12016",
+        "name": "Naklejka | ZywOo (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12016.png"
+    },
+    {
+        "id": "12017",
+        "name": "Naklejka | ZywOo (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12017.png"
+    },
+    {
+        "id": "12018",
+        "name": "Naklejka | ZywOo (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12018.png"
+    },
+    {
+        "id": "12019",
+        "name": "Naklejka | FalleN | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12019.png"
+    },
+    {
+        "id": "12020",
+        "name": "Naklejka | FalleN (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12020.png"
+    },
+    {
+        "id": "12021",
+        "name": "Naklejka | FalleN (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12021.png"
+    },
+    {
+        "id": "12022",
+        "name": "Naklejka | FalleN (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12022.png"
+    },
+    {
+        "id": "12023",
+        "name": "Naklejka | KSCERATO | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12023.png"
+    },
+    {
+        "id": "12024",
+        "name": "Naklejka | KSCERATO (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12024.png"
+    },
+    {
+        "id": "12025",
+        "name": "Naklejka | KSCERATO (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12025.png"
+    },
+    {
+        "id": "12026",
+        "name": "Naklejka | KSCERATO (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12026.png"
+    },
+    {
+        "id": "12027",
+        "name": "Naklejka | molodoy | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12027.png"
+    },
+    {
+        "id": "12028",
+        "name": "Naklejka | molodoy (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12028.png"
+    },
+    {
+        "id": "12029",
+        "name": "Naklejka | molodoy (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12029.png"
+    },
+    {
+        "id": "12030",
+        "name": "Naklejka | molodoy (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12030.png"
+    },
+    {
+        "id": "12031",
+        "name": "Naklejka | YEKINDAR | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12031.png"
+    },
+    {
+        "id": "12032",
+        "name": "Naklejka | YEKINDAR (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12032.png"
+    },
+    {
+        "id": "12033",
+        "name": "Naklejka | YEKINDAR (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12033.png"
+    },
+    {
+        "id": "12034",
+        "name": "Naklejka | YEKINDAR (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12034.png"
+    },
+    {
+        "id": "12035",
+        "name": "Naklejka | yuurih | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12035.png"
+    },
+    {
+        "id": "12036",
+        "name": "Naklejka | yuurih (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12036.png"
+    },
+    {
+        "id": "12037",
+        "name": "Naklejka | yuurih (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12037.png"
+    },
+    {
+        "id": "12038",
+        "name": "Naklejka | yuurih (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12038.png"
+    },
+    {
+        "id": "12039",
+        "name": "Naklejka | Jimpphat | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12039.png"
+    },
+    {
+        "id": "12040",
+        "name": "Naklejka | Jimpphat (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12040.png"
+    },
+    {
+        "id": "12041",
+        "name": "Naklejka | Jimpphat (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12041.png"
+    },
+    {
+        "id": "12042",
+        "name": "Naklejka | Jimpphat (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12042.png"
+    },
+    {
+        "id": "12043",
+        "name": "Naklejka | kyxsan | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12043.png"
+    },
+    {
+        "id": "12044",
+        "name": "Naklejka | kyxsan (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12044.png"
+    },
+    {
+        "id": "12045",
+        "name": "Naklejka | kyxsan (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12045.png"
+    },
+    {
+        "id": "12046",
+        "name": "Naklejka | kyxsan (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12046.png"
+    },
+    {
+        "id": "12047",
+        "name": "Naklejka | Wicadia | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12047.png"
+    },
+    {
+        "id": "12048",
+        "name": "Naklejka | Wicadia (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12048.png"
+    },
+    {
+        "id": "12049",
+        "name": "Naklejka | Wicadia (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12049.png"
+    },
+    {
+        "id": "12050",
+        "name": "Naklejka | Wicadia (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12050.png"
+    },
+    {
+        "id": "12051",
+        "name": "Naklejka | woxic | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12051.png"
+    },
+    {
+        "id": "12052",
+        "name": "Naklejka | woxic (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12052.png"
+    },
+    {
+        "id": "12053",
+        "name": "Naklejka | woxic (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12053.png"
+    },
+    {
+        "id": "12054",
+        "name": "Naklejka | woxic (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12054.png"
+    },
+    {
+        "id": "12055",
+        "name": "Naklejka | XANTARES | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12055.png"
+    },
+    {
+        "id": "12056",
+        "name": "Naklejka | XANTARES (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12056.png"
+    },
+    {
+        "id": "12057",
+        "name": "Naklejka | XANTARES (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12057.png"
+    },
+    {
+        "id": "12058",
+        "name": "Naklejka | XANTARES (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12058.png"
+    },
+    {
+        "id": "12059",
+        "name": "Naklejka | donk | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12059.png"
+    },
+    {
+        "id": "12060",
+        "name": "Naklejka | donk (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12060.png"
+    },
+    {
+        "id": "12061",
+        "name": "Naklejka | donk (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12061.png"
+    },
+    {
+        "id": "12062",
+        "name": "Naklejka | donk (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12062.png"
+    },
+    {
+        "id": "12063",
+        "name": "Naklejka | magixx | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12063.png"
+    },
+    {
+        "id": "12064",
+        "name": "Naklejka | magixx (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12064.png"
+    },
+    {
+        "id": "12065",
+        "name": "Naklejka | magixx (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12065.png"
+    },
+    {
+        "id": "12066",
+        "name": "Naklejka | magixx (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12066.png"
+    },
+    {
+        "id": "12067",
+        "name": "Naklejka | sh1ro | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12067.png"
+    },
+    {
+        "id": "12068",
+        "name": "Naklejka | sh1ro (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12068.png"
+    },
+    {
+        "id": "12069",
+        "name": "Naklejka | sh1ro (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12069.png"
+    },
+    {
+        "id": "12070",
+        "name": "Naklejka | sh1ro (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12070.png"
+    },
+    {
+        "id": "12071",
+        "name": "Naklejka | tN1R | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12071.png"
+    },
+    {
+        "id": "12072",
+        "name": "Naklejka | tN1R (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12072.png"
+    },
+    {
+        "id": "12073",
+        "name": "Naklejka | tN1R (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12073.png"
+    },
+    {
+        "id": "12074",
+        "name": "Naklejka | tN1R (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12074.png"
+    },
+    {
+        "id": "12075",
+        "name": "Naklejka | zont1x | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12075.png"
+    },
+    {
+        "id": "12076",
+        "name": "Naklejka | zont1x (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12076.png"
+    },
+    {
+        "id": "12077",
+        "name": "Naklejka | zont1x (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12077.png"
+    },
+    {
+        "id": "12078",
+        "name": "Naklejka | zont1x (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12078.png"
+    },
+    {
+        "id": "12079",
+        "name": "Naklejka | Boombl4 | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12079.png"
+    },
+    {
+        "id": "12080",
+        "name": "Naklejka | Boombl4 (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12080.png"
+    },
+    {
+        "id": "12081",
+        "name": "Naklejka | Boombl4 (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12081.png"
+    },
+    {
+        "id": "12082",
+        "name": "Naklejka | Boombl4 (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12082.png"
+    },
+    {
+        "id": "12083",
+        "name": "Naklejka | d1Ledez | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12083.png"
+    },
+    {
+        "id": "12084",
+        "name": "Naklejka | d1Ledez (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12084.png"
+    },
+    {
+        "id": "12085",
+        "name": "Naklejka | d1Ledez (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12085.png"
+    },
+    {
+        "id": "12086",
+        "name": "Naklejka | d1Ledez (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12086.png"
+    },
+    {
+        "id": "12087",
+        "name": "Naklejka | Magnojez | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12087.png"
+    },
+    {
+        "id": "12088",
+        "name": "Naklejka | Magnojez (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12088.png"
+    },
+    {
+        "id": "12089",
+        "name": "Naklejka | Magnojez (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12089.png"
+    },
+    {
+        "id": "12090",
+        "name": "Naklejka | Magnojez (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12090.png"
+    },
+    {
+        "id": "12091",
+        "name": "Naklejka | S1ren | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12091.png"
+    },
+    {
+        "id": "12092",
+        "name": "Naklejka | S1ren (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12092.png"
+    },
+    {
+        "id": "12093",
+        "name": "Naklejka | S1ren (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12093.png"
+    },
+    {
+        "id": "12094",
+        "name": "Naklejka | S1ren (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12094.png"
+    },
+    {
+        "id": "12095",
+        "name": "Naklejka | zorte | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12095.png"
+    },
+    {
+        "id": "12096",
+        "name": "Naklejka | zorte (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12096.png"
+    },
+    {
+        "id": "12097",
+        "name": "Naklejka | zorte (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12097.png"
+    },
+    {
+        "id": "12098",
+        "name": "Naklejka | zorte (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12098.png"
+    },
+    {
+        "id": "12099",
+        "name": "Naklejka | karrigan | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12099.png"
+    },
+    {
+        "id": "12100",
+        "name": "Naklejka | karrigan (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12100.png"
+    },
+    {
+        "id": "12101",
+        "name": "Naklejka | karrigan (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12101.png"
+    },
+    {
+        "id": "12102",
+        "name": "Naklejka | karrigan (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12102.png"
+    },
+    {
+        "id": "12103",
+        "name": "Naklejka | kyousuke | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12103.png"
+    },
+    {
+        "id": "12104",
+        "name": "Naklejka | kyousuke (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12104.png"
+    },
+    {
+        "id": "12105",
+        "name": "Naklejka | kyousuke (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12105.png"
+    },
+    {
+        "id": "12106",
+        "name": "Naklejka | kyousuke (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12106.png"
+    },
+    {
+        "id": "12107",
+        "name": "Naklejka | m0NESY | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12107.png"
+    },
+    {
+        "id": "12108",
+        "name": "Naklejka | m0NESY (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12108.png"
+    },
+    {
+        "id": "12109",
+        "name": "Naklejka | m0NESY (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12109.png"
+    },
+    {
+        "id": "12110",
+        "name": "Naklejka | m0NESY (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12110.png"
+    },
+    {
+        "id": "12111",
+        "name": "Naklejka | NiKo | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12111.png"
+    },
+    {
+        "id": "12112",
+        "name": "Naklejka | NiKo (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12112.png"
+    },
+    {
+        "id": "12113",
+        "name": "Naklejka | NiKo (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12113.png"
+    },
+    {
+        "id": "12114",
+        "name": "Naklejka | NiKo (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12114.png"
+    },
+    {
+        "id": "12115",
+        "name": "Naklejka | TeSeS | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12115.png"
+    },
+    {
+        "id": "12116",
+        "name": "Naklejka | TeSeS (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12116.png"
+    },
+    {
+        "id": "12117",
+        "name": "Naklejka | TeSeS (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12117.png"
+    },
+    {
+        "id": "12118",
+        "name": "Naklejka | TeSeS (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12118.png"
+    },
+    {
+        "id": "12119",
+        "name": "Naklejka | cmtry | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12119.png"
+    },
+    {
+        "id": "12120",
+        "name": "Naklejka | cmtry (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12120.png"
+    },
+    {
+        "id": "12121",
+        "name": "Naklejka | cmtry (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12121.png"
+    },
+    {
+        "id": "12122",
+        "name": "Naklejka | cmtry (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12122.png"
+    },
+    {
+        "id": "12123",
+        "name": "Naklejka | dem0n | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12123.png"
+    },
+    {
+        "id": "12124",
+        "name": "Naklejka | dem0n (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12124.png"
+    },
+    {
+        "id": "12125",
+        "name": "Naklejka | dem0n (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12125.png"
+    },
+    {
+        "id": "12126",
+        "name": "Naklejka | dem0n (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12126.png"
+    },
+    {
+        "id": "12127",
+        "name": "Naklejka | dziugss | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12127.png"
+    },
+    {
+        "id": "12128",
+        "name": "Naklejka | dziugss (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12128.png"
+    },
+    {
+        "id": "12129",
+        "name": "Naklejka | dziugss (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12129.png"
+    },
+    {
+        "id": "12130",
+        "name": "Naklejka | dziugss (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12130.png"
+    },
+    {
+        "id": "12131",
+        "name": "Naklejka | Krabeni | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12131.png"
+    },
+    {
+        "id": "12132",
+        "name": "Naklejka | Krabeni (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12132.png"
+    },
+    {
+        "id": "12133",
+        "name": "Naklejka | Krabeni (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12133.png"
+    },
+    {
+        "id": "12134",
+        "name": "Naklejka | Krabeni (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12134.png"
+    },
+    {
+        "id": "12135",
+        "name": "Naklejka | xfl0ud | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12135.png"
+    },
+    {
+        "id": "12136",
+        "name": "Naklejka | xfl0ud (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12136.png"
+    },
+    {
+        "id": "12137",
+        "name": "Naklejka | xfl0ud (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12137.png"
+    },
+    {
+        "id": "12138",
+        "name": "Naklejka | xfl0ud (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12138.png"
+    },
+    {
+        "id": "12139",
+        "name": "Naklejka | arT | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12139.png"
+    },
+    {
+        "id": "12140",
+        "name": "Naklejka | arT (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12140.png"
+    },
+    {
+        "id": "12141",
+        "name": "Naklejka | arT (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12141.png"
+    },
+    {
+        "id": "12142",
+        "name": "Naklejka | arT (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12142.png"
+    },
+    {
+        "id": "12143",
+        "name": "Naklejka | dumau | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12143.png"
+    },
+    {
+        "id": "12144",
+        "name": "Naklejka | dumau (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12144.png"
+    },
+    {
+        "id": "12145",
+        "name": "Naklejka | dumau (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12145.png"
+    },
+    {
+        "id": "12146",
+        "name": "Naklejka | dumau (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12146.png"
+    },
+    {
+        "id": "12147",
+        "name": "Naklejka | latto | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12147.png"
+    },
+    {
+        "id": "12148",
+        "name": "Naklejka | latto (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12148.png"
+    },
+    {
+        "id": "12149",
+        "name": "Naklejka | latto (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12149.png"
+    },
+    {
+        "id": "12150",
+        "name": "Naklejka | latto (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12150.png"
+    },
+    {
+        "id": "12151",
+        "name": "Naklejka | n1ssim | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12151.png"
+    },
+    {
+        "id": "12152",
+        "name": "Naklejka | n1ssim (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12152.png"
+    },
+    {
+        "id": "12153",
+        "name": "Naklejka | n1ssim (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12153.png"
+    },
+    {
+        "id": "12154",
+        "name": "Naklejka | n1ssim (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12154.png"
+    },
+    {
+        "id": "12155",
+        "name": "Naklejka | TRY | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12155.png"
+    },
+    {
+        "id": "12156",
+        "name": "Naklejka | TRY (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12156.png"
+    },
+    {
+        "id": "12157",
+        "name": "Naklejka | TRY (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12157.png"
+    },
+    {
+        "id": "12158",
+        "name": "Naklejka | TRY (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12158.png"
+    },
+    {
+        "id": "12159",
+        "name": "Naklejka | KaiR0N- | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12159.png"
+    },
+    {
+        "id": "12160",
+        "name": "Naklejka | KaiR0N- (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12160.png"
+    },
+    {
+        "id": "12161",
+        "name": "Naklejka | KaiR0N- (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12161.png"
+    },
+    {
+        "id": "12162",
+        "name": "Naklejka | KaiR0N- (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12162.png"
+    },
+    {
+        "id": "12163",
+        "name": "Naklejka | khaN | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12163.png"
+    },
+    {
+        "id": "12164",
+        "name": "Naklejka | khaN (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12164.png"
+    },
+    {
+        "id": "12165",
+        "name": "Naklejka | khaN (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12165.png"
+    },
+    {
+        "id": "12166",
+        "name": "Naklejka | khaN (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12166.png"
+    },
+    {
+        "id": "12167",
+        "name": "Naklejka | robo | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12167.png"
+    },
+    {
+        "id": "12168",
+        "name": "Naklejka | robo (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12168.png"
+    },
+    {
+        "id": "12169",
+        "name": "Naklejka | robo (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12169.png"
+    },
+    {
+        "id": "12170",
+        "name": "Naklejka | robo (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12170.png"
+    },
+    {
+        "id": "12171",
+        "name": "Naklejka | syph0 | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12171.png"
+    },
+    {
+        "id": "12172",
+        "name": "Naklejka | syph0 (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12172.png"
+    },
+    {
+        "id": "12173",
+        "name": "Naklejka | syph0 (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12173.png"
+    },
+    {
+        "id": "12174",
+        "name": "Naklejka | syph0 (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12174.png"
+    },
+    {
+        "id": "12175",
+        "name": "Naklejka | Xant3r | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12175.png"
+    },
+    {
+        "id": "12176",
+        "name": "Naklejka | Xant3r (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12176.png"
+    },
+    {
+        "id": "12177",
+        "name": "Naklejka | Xant3r (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12177.png"
+    },
+    {
+        "id": "12178",
+        "name": "Naklejka | Xant3r (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12178.png"
+    },
+    {
+        "id": "12179",
+        "name": "Naklejka | Heavygod | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12179.png"
+    },
+    {
+        "id": "12180",
+        "name": "Naklejka | Heavygod (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12180.png"
+    },
+    {
+        "id": "12181",
+        "name": "Naklejka | Heavygod (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12181.png"
+    },
+    {
+        "id": "12182",
+        "name": "Naklejka | Heavygod (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12182.png"
+    },
+    {
+        "id": "12183",
+        "name": "Naklejka | huNter- | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12183.png"
+    },
+    {
+        "id": "12184",
+        "name": "Naklejka | huNter- (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12184.png"
+    },
+    {
+        "id": "12185",
+        "name": "Naklejka | huNter- (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12185.png"
+    },
+    {
+        "id": "12186",
+        "name": "Naklejka | huNter- (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12186.png"
+    },
+    {
+        "id": "12187",
+        "name": "Naklejka | MATYS | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12187.png"
+    },
+    {
+        "id": "12188",
+        "name": "Naklejka | MATYS (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12188.png"
+    },
+    {
+        "id": "12189",
+        "name": "Naklejka | MATYS (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12189.png"
+    },
+    {
+        "id": "12190",
+        "name": "Naklejka | MATYS (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12190.png"
+    },
+    {
+        "id": "12191",
+        "name": "Naklejka | NertZ | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12191.png"
+    },
+    {
+        "id": "12192",
+        "name": "Naklejka | NertZ (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12192.png"
+    },
+    {
+        "id": "12193",
+        "name": "Naklejka | NertZ (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12193.png"
+    },
+    {
+        "id": "12194",
+        "name": "Naklejka | NertZ (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12194.png"
+    },
+    {
+        "id": "12195",
+        "name": "Naklejka | r1nkle | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12195.png"
+    },
+    {
+        "id": "12196",
+        "name": "Naklejka | r1nkle (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12196.png"
+    },
+    {
+        "id": "12197",
+        "name": "Naklejka | r1nkle (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12197.png"
+    },
+    {
+        "id": "12198",
+        "name": "Naklejka | r1nkle (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12198.png"
+    },
+    {
+        "id": "12199",
+        "name": "Naklejka | ArtFr0st | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12199.png"
+    },
+    {
+        "id": "12200",
+        "name": "Naklejka | ArtFr0st (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12200.png"
+    },
+    {
+        "id": "12201",
+        "name": "Naklejka | ArtFr0st (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12201.png"
+    },
+    {
+        "id": "12202",
+        "name": "Naklejka | ArtFr0st (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12202.png"
+    },
+    {
+        "id": "12203",
+        "name": "Naklejka | Ax1Le | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12203.png"
+    },
+    {
+        "id": "12204",
+        "name": "Naklejka | Ax1Le (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12204.png"
+    },
+    {
+        "id": "12205",
+        "name": "Naklejka | Ax1Le (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12205.png"
+    },
+    {
+        "id": "12206",
+        "name": "Naklejka | Ax1Le (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12206.png"
+    },
+    {
+        "id": "12207",
+        "name": "Naklejka | BELCHONOKK | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12207.png"
+    },
+    {
+        "id": "12208",
+        "name": "Naklejka | BELCHONOKK (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12208.png"
+    },
+    {
+        "id": "12209",
+        "name": "Naklejka | BELCHONOKK (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12209.png"
+    },
+    {
+        "id": "12210",
+        "name": "Naklejka | BELCHONOKK (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12210.png"
+    },
+    {
+        "id": "12211",
+        "name": "Naklejka | fame | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12211.png"
+    },
+    {
+        "id": "12212",
+        "name": "Naklejka | fame (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12212.png"
+    },
+    {
+        "id": "12213",
+        "name": "Naklejka | fame (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12213.png"
+    },
+    {
+        "id": "12214",
+        "name": "Naklejka | fame (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12214.png"
+    },
+    {
+        "id": "12215",
+        "name": "Naklejka | nafany | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12215.png"
+    },
+    {
+        "id": "12216",
+        "name": "Naklejka | nafany (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12216.png"
+    },
+    {
+        "id": "12217",
+        "name": "Naklejka | nafany (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12217.png"
+    },
+    {
+        "id": "12218",
+        "name": "Naklejka | nafany (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12218.png"
+    },
+    {
+        "id": "12219",
+        "name": "Naklejka | Aleksib | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12219.png"
+    },
+    {
+        "id": "12220",
+        "name": "Naklejka | Aleksib (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12220.png"
+    },
+    {
+        "id": "12221",
+        "name": "Naklejka | Aleksib (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12221.png"
+    },
+    {
+        "id": "12222",
+        "name": "Naklejka | Aleksib (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12222.png"
+    },
+    {
+        "id": "12223",
+        "name": "Naklejka | b1t | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12223.png"
+    },
+    {
+        "id": "12224",
+        "name": "Naklejka | b1t (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12224.png"
+    },
+    {
+        "id": "12225",
+        "name": "Naklejka | b1t (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12225.png"
+    },
+    {
+        "id": "12226",
+        "name": "Naklejka | b1t (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12226.png"
+    },
+    {
+        "id": "12227",
+        "name": "Naklejka | iM | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12227.png"
+    },
+    {
+        "id": "12228",
+        "name": "Naklejka | iM (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12228.png"
+    },
+    {
+        "id": "12229",
+        "name": "Naklejka | iM (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12229.png"
+    },
+    {
+        "id": "12230",
+        "name": "Naklejka | iM (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12230.png"
+    },
+    {
+        "id": "12231",
+        "name": "Naklejka | makazze | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12231.png"
+    },
+    {
+        "id": "12232",
+        "name": "Naklejka | makazze (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12232.png"
+    },
+    {
+        "id": "12233",
+        "name": "Naklejka | makazze (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12233.png"
+    },
+    {
+        "id": "12234",
+        "name": "Naklejka | makazze (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12234.png"
+    },
+    {
+        "id": "12235",
+        "name": "Naklejka | w0nderful | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12235.png"
+    },
+    {
+        "id": "12236",
+        "name": "Naklejka | w0nderful (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12236.png"
+    },
+    {
+        "id": "12237",
+        "name": "Naklejka | w0nderful (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12237.png"
+    },
+    {
+        "id": "12238",
+        "name": "Naklejka | w0nderful (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12238.png"
+    },
+    {
+        "id": "12239",
+        "name": "Naklejka | jabbi | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12239.png"
+    },
+    {
+        "id": "12240",
+        "name": "Naklejka | jabbi (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12240.png"
+    },
+    {
+        "id": "12241",
+        "name": "Naklejka | jabbi (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12241.png"
+    },
+    {
+        "id": "12242",
+        "name": "Naklejka | jabbi (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12242.png"
+    },
+    {
+        "id": "12243",
+        "name": "Naklejka | phzy | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12243.png"
+    },
+    {
+        "id": "12244",
+        "name": "Naklejka | phzy (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12244.png"
+    },
+    {
+        "id": "12245",
+        "name": "Naklejka | phzy (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12245.png"
+    },
+    {
+        "id": "12246",
+        "name": "Naklejka | phzy (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12246.png"
+    },
+    {
+        "id": "12247",
+        "name": "Naklejka | ryu | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12247.png"
+    },
+    {
+        "id": "12248",
+        "name": "Naklejka | ryu (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12248.png"
+    },
+    {
+        "id": "12249",
+        "name": "Naklejka | ryu (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12249.png"
+    },
+    {
+        "id": "12250",
+        "name": "Naklejka | ryu (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12250.png"
+    },
+    {
+        "id": "12251",
+        "name": "Naklejka | siuhy | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12251.png"
+    },
+    {
+        "id": "12252",
+        "name": "Naklejka | siuhy (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12252.png"
+    },
+    {
+        "id": "12253",
+        "name": "Naklejka | siuhy (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12253.png"
+    },
+    {
+        "id": "12254",
+        "name": "Naklejka | siuhy (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12254.png"
+    },
+    {
+        "id": "12255",
+        "name": "Naklejka | Staehr | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12255.png"
+    },
+    {
+        "id": "12256",
+        "name": "Naklejka | Staehr (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12256.png"
+    },
+    {
+        "id": "12257",
+        "name": "Naklejka | Staehr (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12257.png"
+    },
+    {
+        "id": "12258",
+        "name": "Naklejka | Staehr (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12258.png"
+    },
+    {
+        "id": "12259",
+        "name": "Naklejka | adamb | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12259.png"
+    },
+    {
+        "id": "12260",
+        "name": "Naklejka | adamb (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12260.png"
+    },
+    {
+        "id": "12261",
+        "name": "Naklejka | adamb (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12261.png"
+    },
+    {
+        "id": "12262",
+        "name": "Naklejka | adamb (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12262.png"
+    },
+    {
+        "id": "12263",
+        "name": "Naklejka | Krimbo | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12263.png"
+    },
+    {
+        "id": "12264",
+        "name": "Naklejka | Krimbo (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12264.png"
+    },
+    {
+        "id": "12265",
+        "name": "Naklejka | Krimbo (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12265.png"
+    },
+    {
+        "id": "12266",
+        "name": "Naklejka | Krimbo (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12266.png"
+    },
+    {
+        "id": "12267",
+        "name": "Naklejka | sjuush | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12267.png"
+    },
+    {
+        "id": "12268",
+        "name": "Naklejka | sjuush (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12268.png"
+    },
+    {
+        "id": "12269",
+        "name": "Naklejka | sjuush (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12269.png"
+    },
+    {
+        "id": "12270",
+        "name": "Naklejka | sjuush (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12270.png"
+    },
+    {
+        "id": "12271",
+        "name": "Naklejka | stavn | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12271.png"
+    },
+    {
+        "id": "12272",
+        "name": "Naklejka | stavn (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12272.png"
+    },
+    {
+        "id": "12273",
+        "name": "Naklejka | stavn (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12273.png"
+    },
+    {
+        "id": "12274",
+        "name": "Naklejka | stavn (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12274.png"
+    },
+    {
+        "id": "12275",
+        "name": "Naklejka | xKacpersky | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12275.png"
+    },
+    {
+        "id": "12276",
+        "name": "Naklejka | xKacpersky (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12276.png"
+    },
+    {
+        "id": "12277",
+        "name": "Naklejka | xKacpersky (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12277.png"
+    },
+    {
+        "id": "12278",
+        "name": "Naklejka | xKacpersky (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12278.png"
+    },
+    {
+        "id": "12279",
+        "name": "Naklejka | 910 | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12279.png"
+    },
+    {
+        "id": "12280",
+        "name": "Naklejka | 910 (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12280.png"
+    },
+    {
+        "id": "12281",
+        "name": "Naklejka | 910 (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12281.png"
+    },
+    {
+        "id": "12282",
+        "name": "Naklejka | 910 (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12282.png"
+    },
+    {
+        "id": "12283",
+        "name": "Naklejka | bLitz | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12283.png"
+    },
+    {
+        "id": "12284",
+        "name": "Naklejka | bLitz (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12284.png"
+    },
+    {
+        "id": "12285",
+        "name": "Naklejka | bLitz (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12285.png"
+    },
+    {
+        "id": "12286",
+        "name": "Naklejka | bLitz (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12286.png"
+    },
+    {
+        "id": "12287",
+        "name": "Naklejka | cobra | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12287.png"
+    },
+    {
+        "id": "12288",
+        "name": "Naklejka | cobra (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12288.png"
+    },
+    {
+        "id": "12289",
+        "name": "Naklejka | cobra (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12289.png"
+    },
+    {
+        "id": "12290",
+        "name": "Naklejka | cobra (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12290.png"
+    },
+    {
+        "id": "12291",
+        "name": "Naklejka | nin9 | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12291.png"
+    },
+    {
+        "id": "12292",
+        "name": "Naklejka | nin9 (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12292.png"
+    },
+    {
+        "id": "12293",
+        "name": "Naklejka | nin9 (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12293.png"
+    },
+    {
+        "id": "12294",
+        "name": "Naklejka | nin9 (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12294.png"
+    },
+    {
+        "id": "12295",
+        "name": "Naklejka | Techno4K | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12295.png"
+    },
+    {
+        "id": "12296",
+        "name": "Naklejka | Techno4K (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12296.png"
+    },
+    {
+        "id": "12297",
+        "name": "Naklejka | Techno4K (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12297.png"
+    },
+    {
+        "id": "12298",
+        "name": "Naklejka | Techno4K (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12298.png"
+    },
+    {
+        "id": "12299",
+        "name": "Naklejka | FL1T | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12299.png"
+    },
+    {
+        "id": "12300",
+        "name": "Naklejka | FL1T (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12300.png"
+    },
+    {
+        "id": "12301",
+        "name": "Naklejka | FL1T (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12301.png"
+    },
+    {
+        "id": "12302",
+        "name": "Naklejka | FL1T (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12302.png"
+    },
+    {
+        "id": "12303",
+        "name": "Naklejka | Hobbit | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12303.png"
+    },
+    {
+        "id": "12304",
+        "name": "Naklejka | Hobbit (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12304.png"
+    },
+    {
+        "id": "12305",
+        "name": "Naklejka | Hobbit (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12305.png"
+    },
+    {
+        "id": "12306",
+        "name": "Naklejka | Hobbit (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12306.png"
+    },
+    {
+        "id": "12307",
+        "name": "Naklejka | Jame | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12307.png"
+    },
+    {
+        "id": "12308",
+        "name": "Naklejka | Jame (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12308.png"
+    },
+    {
+        "id": "12309",
+        "name": "Naklejka | Jame (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12309.png"
+    },
+    {
+        "id": "12310",
+        "name": "Naklejka | Jame (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12310.png"
+    },
+    {
+        "id": "12311",
+        "name": "Naklejka | xiELO | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12311.png"
+    },
+    {
+        "id": "12312",
+        "name": "Naklejka | xiELO (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12312.png"
+    },
+    {
+        "id": "12313",
+        "name": "Naklejka | xiELO (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12313.png"
+    },
+    {
+        "id": "12314",
+        "name": "Naklejka | xiELO (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12314.png"
+    },
+    {
+        "id": "12315",
+        "name": "Naklejka | zweih | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12315.png"
+    },
+    {
+        "id": "12316",
+        "name": "Naklejka | zweih (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12316.png"
+    },
+    {
+        "id": "12317",
+        "name": "Naklejka | zweih (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12317.png"
+    },
+    {
+        "id": "12318",
+        "name": "Naklejka | zweih (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12318.png"
+    },
+    {
+        "id": "12319",
+        "name": "Naklejka | Brollan | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12319.png"
+    },
+    {
+        "id": "12320",
+        "name": "Naklejka | Brollan (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12320.png"
+    },
+    {
+        "id": "12321",
+        "name": "Naklejka | Brollan (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12321.png"
+    },
+    {
+        "id": "12322",
+        "name": "Naklejka | Brollan (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12322.png"
+    },
+    {
+        "id": "12323",
+        "name": "Naklejka | Chr1zN | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12323.png"
+    },
+    {
+        "id": "12324",
+        "name": "Naklejka | Chr1zN (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12324.png"
+    },
+    {
+        "id": "12325",
+        "name": "Naklejka | Chr1zN (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12325.png"
+    },
+    {
+        "id": "12326",
+        "name": "Naklejka | Chr1zN (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12326.png"
+    },
+    {
+        "id": "12327",
+        "name": "Naklejka | MartinezSa | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12327.png"
+    },
+    {
+        "id": "12328",
+        "name": "Naklejka | MartinezSa (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12328.png"
+    },
+    {
+        "id": "12329",
+        "name": "Naklejka | MartinezSa (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12329.png"
+    },
+    {
+        "id": "12330",
+        "name": "Naklejka | MartinezSa (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12330.png"
+    },
+    {
+        "id": "12331",
+        "name": "Naklejka | nilo | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12331.png"
+    },
+    {
+        "id": "12332",
+        "name": "Naklejka | nilo (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12332.png"
+    },
+    {
+        "id": "12333",
+        "name": "Naklejka | nilo (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12333.png"
+    },
+    {
+        "id": "12334",
+        "name": "Naklejka | nilo (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12334.png"
+    },
+    {
+        "id": "12335",
+        "name": "Naklejka | susp | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12335.png"
+    },
+    {
+        "id": "12336",
+        "name": "Naklejka | susp (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12336.png"
+    },
+    {
+        "id": "12337",
+        "name": "Naklejka | susp (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12337.png"
+    },
+    {
+        "id": "12338",
+        "name": "Naklejka | susp (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12338.png"
+    },
+    {
+        "id": "12339",
+        "name": "Naklejka | insani | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12339.png"
+    },
+    {
+        "id": "12340",
+        "name": "Naklejka | insani (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12340.png"
+    },
+    {
+        "id": "12341",
+        "name": "Naklejka | insani (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12341.png"
+    },
+    {
+        "id": "12342",
+        "name": "Naklejka | insani (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12342.png"
+    },
+    {
+        "id": "12343",
+        "name": "Naklejka | LNZ | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12343.png"
+    },
+    {
+        "id": "12344",
+        "name": "Naklejka | LNZ (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12344.png"
+    },
+    {
+        "id": "12345",
+        "name": "Naklejka | LNZ (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12345.png"
+    },
+    {
+        "id": "12346",
+        "name": "Naklejka | LNZ (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12346.png"
+    },
+    {
+        "id": "12347",
+        "name": "Naklejka | NQZ | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12347.png"
+    },
+    {
+        "id": "12348",
+        "name": "Naklejka | NQZ (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12348.png"
+    },
+    {
+        "id": "12349",
+        "name": "Naklejka | NQZ (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12349.png"
+    },
+    {
+        "id": "12350",
+        "name": "Naklejka | NQZ (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12350.png"
+    },
+    {
+        "id": "12351",
+        "name": "Naklejka | tomaszin | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12351.png"
+    },
+    {
+        "id": "12352",
+        "name": "Naklejka | tomaszin (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12352.png"
+    },
+    {
+        "id": "12353",
+        "name": "Naklejka | tomaszin (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12353.png"
+    },
+    {
+        "id": "12354",
+        "name": "Naklejka | tomaszin (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12354.png"
+    },
+    {
+        "id": "12355",
+        "name": "Naklejka | venomzera | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12355.png"
+    },
+    {
+        "id": "12356",
+        "name": "Naklejka | venomzera (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12356.png"
+    },
+    {
+        "id": "12357",
+        "name": "Naklejka | venomzera (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12357.png"
+    },
+    {
+        "id": "12358",
+        "name": "Naklejka | venomzera (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12358.png"
+    },
+    {
+        "id": "12359",
+        "name": "Naklejka | frozen | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12359.png"
+    },
+    {
+        "id": "12360",
+        "name": "Naklejka | frozen (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12360.png"
+    },
+    {
+        "id": "12361",
+        "name": "Naklejka | frozen (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12361.png"
+    },
+    {
+        "id": "12362",
+        "name": "Naklejka | frozen (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12362.png"
+    },
+    {
+        "id": "12363",
+        "name": "Naklejka | JBOEN | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12363.png"
+    },
+    {
+        "id": "12364",
+        "name": "Naklejka | JBOEN (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12364.png"
+    },
+    {
+        "id": "12365",
+        "name": "Naklejka | JBOEN (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12365.png"
+    },
+    {
+        "id": "12366",
+        "name": "Naklejka | JBOEN (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12366.png"
+    },
+    {
+        "id": "12367",
+        "name": "Naklejka | jcobbb | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12367.png"
+    },
+    {
+        "id": "12368",
+        "name": "Naklejka | jcobbb (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12368.png"
+    },
+    {
+        "id": "12369",
+        "name": "Naklejka | jcobbb (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12369.png"
+    },
+    {
+        "id": "12370",
+        "name": "Naklejka | jcobbb (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12370.png"
+    },
+    {
+        "id": "12371",
+        "name": "Naklejka | Neityu | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12371.png"
+    },
+    {
+        "id": "12372",
+        "name": "Naklejka | Neityu (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12372.png"
+    },
+    {
+        "id": "12373",
+        "name": "Naklejka | Neityu (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12373.png"
+    },
+    {
+        "id": "12374",
+        "name": "Naklejka | Neityu (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12374.png"
+    },
+    {
+        "id": "12375",
+        "name": "Naklejka | Twistzz | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12375.png"
+    },
+    {
+        "id": "12376",
+        "name": "Naklejka | Twistzz (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12376.png"
+    },
+    {
+        "id": "12377",
+        "name": "Naklejka | Twistzz (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12377.png"
+    },
+    {
+        "id": "12378",
+        "name": "Naklejka | Twistzz (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12378.png"
+    },
+    {
+        "id": "12379",
+        "name": "Naklejka | EliGE | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12379.png"
+    },
+    {
+        "id": "12380",
+        "name": "Naklejka | EliGE (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12380.png"
+    },
+    {
+        "id": "12381",
+        "name": "Naklejka | EliGE (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12381.png"
+    },
+    {
+        "id": "12382",
+        "name": "Naklejka | EliGE (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12382.png"
+    },
+    {
+        "id": "12383",
+        "name": "Naklejka | Jorko | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12383.png"
+    },
+    {
+        "id": "12384",
+        "name": "Naklejka | Jorko (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12384.png"
+    },
+    {
+        "id": "12385",
+        "name": "Naklejka | Jorko (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12385.png"
+    },
+    {
+        "id": "12386",
+        "name": "Naklejka | Jorko (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12386.png"
+    },
+    {
+        "id": "12387",
+        "name": "Naklejka | JT | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12387.png"
+    },
+    {
+        "id": "12388",
+        "name": "Naklejka | JT (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12388.png"
+    },
+    {
+        "id": "12389",
+        "name": "Naklejka | JT (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12389.png"
+    },
+    {
+        "id": "12390",
+        "name": "Naklejka | JT (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12390.png"
+    },
+    {
+        "id": "12391",
+        "name": "Naklejka | malbsMd | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12391.png"
+    },
+    {
+        "id": "12392",
+        "name": "Naklejka | malbsMd (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12392.png"
+    },
+    {
+        "id": "12393",
+        "name": "Naklejka | malbsMd (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12393.png"
+    },
+    {
+        "id": "12394",
+        "name": "Naklejka | malbsMd (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12394.png"
+    },
+    {
+        "id": "12395",
+        "name": "Naklejka | NAF | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12395.png"
+    },
+    {
+        "id": "12396",
+        "name": "Naklejka | NAF (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12396.png"
+    },
+    {
+        "id": "12397",
+        "name": "Naklejka | NAF (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12397.png"
+    },
+    {
+        "id": "12398",
+        "name": "Naklejka | NAF (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12398.png"
+    },
+    {
+        "id": "12399",
+        "name": "Naklejka | jottAAA | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12399.png"
+    },
+    {
+        "id": "12400",
+        "name": "Naklejka | jottAAA (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12400.png"
+    },
+    {
+        "id": "12401",
+        "name": "Naklejka | jottAAA (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12401.png"
+    },
+    {
+        "id": "12402",
+        "name": "Naklejka | jottAAA (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12402.png"
+    },
+    {
+        "id": "12403",
+        "name": "Naklejka | Kvem | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12403.png"
+    },
+    {
+        "id": "12404",
+        "name": "Naklejka | Kvem (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12404.png"
+    },
+    {
+        "id": "12405",
+        "name": "Naklejka | Kvem (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12405.png"
+    },
+    {
+        "id": "12406",
+        "name": "Naklejka | Kvem (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12406.png"
+    },
+    {
+        "id": "12407",
+        "name": "Naklejka | MisteM | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12407.png"
+    },
+    {
+        "id": "12408",
+        "name": "Naklejka | MisteM (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12408.png"
+    },
+    {
+        "id": "12409",
+        "name": "Naklejka | MisteM (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12409.png"
+    },
+    {
+        "id": "12410",
+        "name": "Naklejka | MisteM (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12410.png"
+    },
+    {
+        "id": "12411",
+        "name": "Naklejka | regali | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12411.png"
+    },
+    {
+        "id": "12412",
+        "name": "Naklejka | regali (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12412.png"
+    },
+    {
+        "id": "12413",
+        "name": "Naklejka | regali (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12413.png"
+    },
+    {
+        "id": "12414",
+        "name": "Naklejka | regali (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12414.png"
+    },
+    {
+        "id": "12415",
+        "name": "Naklejka | soulfly | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12415.png"
+    },
+    {
+        "id": "12416",
+        "name": "Naklejka | soulfly (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12416.png"
+    },
+    {
+        "id": "12417",
+        "name": "Naklejka | soulfly (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12417.png"
+    },
+    {
+        "id": "12418",
+        "name": "Naklejka | soulfly (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12418.png"
+    },
+    {
+        "id": "12419",
+        "name": "Naklejka | device | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12419.png"
+    },
+    {
+        "id": "12420",
+        "name": "Naklejka | device (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12420.png"
+    },
+    {
+        "id": "12421",
+        "name": "Naklejka | device (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12421.png"
+    },
+    {
+        "id": "12422",
+        "name": "Naklejka | device (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12422.png"
+    },
+    {
+        "id": "12423",
+        "name": "Naklejka | Gizmy | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12423.png"
+    },
+    {
+        "id": "12424",
+        "name": "Naklejka | Gizmy (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12424.png"
+    },
+    {
+        "id": "12425",
+        "name": "Naklejka | Gizmy (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12425.png"
+    },
+    {
+        "id": "12426",
+        "name": "Naklejka | Gizmy (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12426.png"
+    },
+    {
+        "id": "12427",
+        "name": "Naklejka | poiii | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12427.png"
+    },
+    {
+        "id": "12428",
+        "name": "Naklejka | poiii (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12428.png"
+    },
+    {
+        "id": "12429",
+        "name": "Naklejka | poiii (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12429.png"
+    },
+    {
+        "id": "12430",
+        "name": "Naklejka | poiii (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12430.png"
+    },
+    {
+        "id": "12431",
+        "name": "Naklejka | rain | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12431.png"
+    },
+    {
+        "id": "12432",
+        "name": "Naklejka | rain (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12432.png"
+    },
+    {
+        "id": "12433",
+        "name": "Naklejka | rain (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12433.png"
+    },
+    {
+        "id": "12434",
+        "name": "Naklejka | rain (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12434.png"
+    },
+    {
+        "id": "12435",
+        "name": "Naklejka | sirah | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12435.png"
+    },
+    {
+        "id": "12436",
+        "name": "Naklejka | sirah (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12436.png"
+    },
+    {
+        "id": "12437",
+        "name": "Naklejka | sirah (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12437.png"
+    },
+    {
+        "id": "12438",
+        "name": "Naklejka | sirah (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12438.png"
+    },
+    {
+        "id": "12439",
+        "name": "Naklejka | dgt | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12439.png"
+    },
+    {
+        "id": "12440",
+        "name": "Naklejka | dgt (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12440.png"
+    },
+    {
+        "id": "12441",
+        "name": "Naklejka | dgt (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12441.png"
+    },
+    {
+        "id": "12442",
+        "name": "Naklejka | dgt (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12442.png"
+    },
+    {
+        "id": "12443",
+        "name": "Naklejka | HUASOPEEK | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12443.png"
+    },
+    {
+        "id": "12444",
+        "name": "Naklejka | HUASOPEEK (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12444.png"
+    },
+    {
+        "id": "12445",
+        "name": "Naklejka | HUASOPEEK (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12445.png"
+    },
+    {
+        "id": "12446",
+        "name": "Naklejka | HUASOPEEK (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12446.png"
+    },
+    {
+        "id": "12447",
+        "name": "Naklejka | luchov | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12447.png"
+    },
+    {
+        "id": "12448",
+        "name": "Naklejka | luchov (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12448.png"
+    },
+    {
+        "id": "12449",
+        "name": "Naklejka | luchov (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12449.png"
+    },
+    {
+        "id": "12450",
+        "name": "Naklejka | luchov (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12450.png"
+    },
+    {
+        "id": "12451",
+        "name": "Naklejka | max | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12451.png"
+    },
+    {
+        "id": "12452",
+        "name": "Naklejka | max (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12452.png"
+    },
+    {
+        "id": "12453",
+        "name": "Naklejka | max (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12453.png"
+    },
+    {
+        "id": "12454",
+        "name": "Naklejka | max (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12454.png"
+    },
+    {
+        "id": "12455",
+        "name": "Naklejka | meyern | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12455.png"
+    },
+    {
+        "id": "12456",
+        "name": "Naklejka | meyern (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12456.png"
+    },
+    {
+        "id": "12457",
+        "name": "Naklejka | meyern (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12457.png"
+    },
+    {
+        "id": "12458",
+        "name": "Naklejka | meyern (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12458.png"
+    },
+    {
+        "id": "12459",
+        "name": "Naklejka | JBa | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12459.png"
+    },
+    {
+        "id": "12460",
+        "name": "Naklejka | JBa (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12460.png"
+    },
+    {
+        "id": "12461",
+        "name": "Naklejka | JBa (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12461.png"
+    },
+    {
+        "id": "12462",
+        "name": "Naklejka | JBa (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12462.png"
+    },
+    {
+        "id": "12463",
+        "name": "Naklejka | Lake | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12463.png"
+    },
+    {
+        "id": "12464",
+        "name": "Naklejka | Lake (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12464.png"
+    },
+    {
+        "id": "12465",
+        "name": "Naklejka | Lake (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12465.png"
+    },
+    {
+        "id": "12466",
+        "name": "Naklejka | Lake (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12466.png"
+    },
+    {
+        "id": "12467",
+        "name": "Naklejka | s1n | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12467.png"
+    },
+    {
+        "id": "12468",
+        "name": "Naklejka | s1n (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12468.png"
+    },
+    {
+        "id": "12469",
+        "name": "Naklejka | s1n (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12469.png"
+    },
+    {
+        "id": "12470",
+        "name": "Naklejka | s1n (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12470.png"
+    },
+    {
+        "id": "12471",
+        "name": "Naklejka | slaxz- | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12471.png"
+    },
+    {
+        "id": "12472",
+        "name": "Naklejka | slaxz- (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12472.png"
+    },
+    {
+        "id": "12473",
+        "name": "Naklejka | slaxz- (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12473.png"
+    },
+    {
+        "id": "12474",
+        "name": "Naklejka | slaxz- (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12474.png"
+    },
+    {
+        "id": "12475",
+        "name": "Naklejka | Swisher | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12475.png"
+    },
+    {
+        "id": "12476",
+        "name": "Naklejka | Swisher (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12476.png"
+    },
+    {
+        "id": "12477",
+        "name": "Naklejka | Swisher (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12477.png"
+    },
+    {
+        "id": "12478",
+        "name": "Naklejka | Swisher (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12478.png"
+    },
+    {
+        "id": "12479",
+        "name": "Naklejka | doc | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12479.png"
+    },
+    {
+        "id": "12480",
+        "name": "Naklejka | doc (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12480.png"
+    },
+    {
+        "id": "12481",
+        "name": "Naklejka | doc (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12481.png"
+    },
+    {
+        "id": "12482",
+        "name": "Naklejka | doc (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12482.png"
+    },
+    {
+        "id": "12483",
+        "name": "Naklejka | gafolo | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12483.png"
+    },
+    {
+        "id": "12484",
+        "name": "Naklejka | gafolo (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12484.png"
+    },
+    {
+        "id": "12485",
+        "name": "Naklejka | gafolo (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12485.png"
+    },
+    {
+        "id": "12486",
+        "name": "Naklejka | gafolo (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12486.png"
+    },
+    {
+        "id": "12487",
+        "name": "Naklejka | koala | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12487.png"
+    },
+    {
+        "id": "12488",
+        "name": "Naklejka | koala (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12488.png"
+    },
+    {
+        "id": "12489",
+        "name": "Naklejka | koala (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12489.png"
+    },
+    {
+        "id": "12490",
+        "name": "Naklejka | koala (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12490.png"
+    },
+    {
+        "id": "12491",
+        "name": "Naklejka | maxxkor | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12491.png"
+    },
+    {
+        "id": "12492",
+        "name": "Naklejka | maxxkor (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12492.png"
+    },
+    {
+        "id": "12493",
+        "name": "Naklejka | maxxkor (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12493.png"
+    },
+    {
+        "id": "12494",
+        "name": "Naklejka | maxxkor (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12494.png"
+    },
+    {
+        "id": "12495",
+        "name": "Naklejka | rdnzao | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12495.png"
+    },
+    {
+        "id": "12496",
+        "name": "Naklejka | rdnzao (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12496.png"
+    },
+    {
+        "id": "12497",
+        "name": "Naklejka | rdnzao (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12497.png"
+    },
+    {
+        "id": "12498",
+        "name": "Naklejka | rdnzao (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12498.png"
+    },
+    {
+        "id": "12499",
+        "name": "Naklejka | chelo | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12499.png"
+    },
+    {
+        "id": "12500",
+        "name": "Naklejka | chelo (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12500.png"
+    },
+    {
+        "id": "12501",
+        "name": "Naklejka | chelo (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12501.png"
+    },
+    {
+        "id": "12502",
+        "name": "Naklejka | chelo (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12502.png"
+    },
+    {
+        "id": "12503",
+        "name": "Naklejka | decenty | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12503.png"
+    },
+    {
+        "id": "12504",
+        "name": "Naklejka | decenty (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12504.png"
+    },
+    {
+        "id": "12505",
+        "name": "Naklejka | decenty (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12505.png"
+    },
+    {
+        "id": "12506",
+        "name": "Naklejka | decenty (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12506.png"
+    },
+    {
+        "id": "12507",
+        "name": "Naklejka | noway | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12507.png"
+    },
+    {
+        "id": "12508",
+        "name": "Naklejka | noway (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12508.png"
+    },
+    {
+        "id": "12509",
+        "name": "Naklejka | noway (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12509.png"
+    },
+    {
+        "id": "12510",
+        "name": "Naklejka | noway (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12510.png"
+    },
+    {
+        "id": "12511",
+        "name": "Naklejka | saadzin | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12511.png"
+    },
+    {
+        "id": "12512",
+        "name": "Naklejka | saadzin (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12512.png"
+    },
+    {
+        "id": "12513",
+        "name": "Naklejka | saadzin (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12513.png"
+    },
+    {
+        "id": "12514",
+        "name": "Naklejka | saadzin (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12514.png"
+    },
+    {
+        "id": "12515",
+        "name": "Naklejka | VINI | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12515.png"
+    },
+    {
+        "id": "12516",
+        "name": "Naklejka | VINI (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12516.png"
+    },
+    {
+        "id": "12517",
+        "name": "Naklejka | VINI (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12517.png"
+    },
+    {
+        "id": "12518",
+        "name": "Naklejka | VINI (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12518.png"
+    },
+    {
+        "id": "12519",
+        "name": "Naklejka | Cxzi | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12519.png"
+    },
+    {
+        "id": "12520",
+        "name": "Naklejka | Cxzi (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12520.png"
+    },
+    {
+        "id": "12521",
+        "name": "Naklejka | Cxzi (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12521.png"
+    },
+    {
+        "id": "12522",
+        "name": "Naklejka | Cxzi (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12522.png"
+    },
+    {
+        "id": "12523",
+        "name": "Naklejka | fr3nd | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12523.png"
+    },
+    {
+        "id": "12524",
+        "name": "Naklejka | fr3nd (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12524.png"
+    },
+    {
+        "id": "12525",
+        "name": "Naklejka | fr3nd (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12525.png"
+    },
+    {
+        "id": "12526",
+        "name": "Naklejka | fr3nd (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12526.png"
+    },
+    {
+        "id": "12527",
+        "name": "Naklejka | HexT | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12527.png"
+    },
+    {
+        "id": "12528",
+        "name": "Naklejka | HexT (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12528.png"
+    },
+    {
+        "id": "12529",
+        "name": "Naklejka | HexT (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12529.png"
+    },
+    {
+        "id": "12530",
+        "name": "Naklejka | HexT (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12530.png"
+    },
+    {
+        "id": "12531",
+        "name": "Naklejka | nEMANHA | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12531.png"
+    },
+    {
+        "id": "12532",
+        "name": "Naklejka | nEMANHA (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12532.png"
+    },
+    {
+        "id": "12533",
+        "name": "Naklejka | nEMANHA (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12533.png"
+    },
+    {
+        "id": "12534",
+        "name": "Naklejka | nEMANHA (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12534.png"
+    },
+    {
+        "id": "12535",
+        "name": "Naklejka | reck | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12535.png"
+    },
+    {
+        "id": "12536",
+        "name": "Naklejka | reck (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12536.png"
+    },
+    {
+        "id": "12537",
+        "name": "Naklejka | reck (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12537.png"
+    },
+    {
+        "id": "12538",
+        "name": "Naklejka | reck (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12538.png"
+    },
+    {
+        "id": "12539",
+        "name": "Naklejka | asap | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12539.png"
+    },
+    {
+        "id": "12540",
+        "name": "Naklejka | asap (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12540.png"
+    },
+    {
+        "id": "12541",
+        "name": "Naklejka | asap (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12541.png"
+    },
+    {
+        "id": "12542",
+        "name": "Naklejka | asap (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12542.png"
+    },
+    {
+        "id": "12543",
+        "name": "Naklejka | Magisk | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12543.png"
+    },
+    {
+        "id": "12544",
+        "name": "Naklejka | Magisk (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12544.png"
+    },
+    {
+        "id": "12545",
+        "name": "Naklejka | Magisk (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12545.png"
+    },
+    {
+        "id": "12546",
+        "name": "Naklejka | Magisk (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12546.png"
+    },
+    {
+        "id": "12547",
+        "name": "Naklejka | mzinho | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12547.png"
+    },
+    {
+        "id": "12548",
+        "name": "Naklejka | mzinho (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12548.png"
+    },
+    {
+        "id": "12549",
+        "name": "Naklejka | mzinho (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12549.png"
+    },
+    {
+        "id": "12550",
+        "name": "Naklejka | mzinho (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12550.png"
+    },
+    {
+        "id": "12551",
+        "name": "Naklejka | s1mple | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12551.png"
+    },
+    {
+        "id": "12552",
+        "name": "Naklejka | s1mple (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12552.png"
+    },
+    {
+        "id": "12553",
+        "name": "Naklejka | s1mple (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12553.png"
+    },
+    {
+        "id": "12554",
+        "name": "Naklejka | s1mple (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12554.png"
+    },
+    {
+        "id": "12555",
+        "name": "Naklejka | Senzu | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12555.png"
+    },
+    {
+        "id": "12556",
+        "name": "Naklejka | Senzu (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12556.png"
+    },
+    {
+        "id": "12557",
+        "name": "Naklejka | Senzu (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12557.png"
+    },
+    {
+        "id": "12558",
+        "name": "Naklejka | Senzu (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12558.png"
+    },
+    {
+        "id": "12559",
+        "name": "Naklejka | aliStair | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12559.png"
+    },
+    {
+        "id": "12560",
+        "name": "Naklejka | aliStair (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12560.png"
+    },
+    {
+        "id": "12561",
+        "name": "Naklejka | aliStair (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12561.png"
+    },
+    {
+        "id": "12562",
+        "name": "Naklejka | aliStair (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12562.png"
+    },
+    {
+        "id": "12563",
+        "name": "Naklejka | INS | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12563.png"
+    },
+    {
+        "id": "12564",
+        "name": "Naklejka | INS (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12564.png"
+    },
+    {
+        "id": "12565",
+        "name": "Naklejka | INS (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12565.png"
+    },
+    {
+        "id": "12566",
+        "name": "Naklejka | INS (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12566.png"
+    },
+    {
+        "id": "12567",
+        "name": "Naklejka | jks | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12567.png"
+    },
+    {
+        "id": "12568",
+        "name": "Naklejka | jks (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12568.png"
+    },
+    {
+        "id": "12569",
+        "name": "Naklejka | jks (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12569.png"
+    },
+    {
+        "id": "12570",
+        "name": "Naklejka | jks (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12570.png"
+    },
+    {
+        "id": "12571",
+        "name": "Naklejka | nettik | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12571.png"
+    },
+    {
+        "id": "12572",
+        "name": "Naklejka | nettik (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12572.png"
+    },
+    {
+        "id": "12573",
+        "name": "Naklejka | nettik (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12573.png"
+    },
+    {
+        "id": "12574",
+        "name": "Naklejka | nettik (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12574.png"
+    },
+    {
+        "id": "12575",
+        "name": "Naklejka | vexite | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12575.png"
+    },
+    {
+        "id": "12576",
+        "name": "Naklejka | vexite (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12576.png"
+    },
+    {
+        "id": "12577",
+        "name": "Naklejka | vexite (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12577.png"
+    },
+    {
+        "id": "12578",
+        "name": "Naklejka | vexite (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12578.png"
+    },
+    {
+        "id": "12579",
+        "name": "Naklejka | cool4st | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12579.png"
+    },
+    {
+        "id": "12580",
+        "name": "Naklejka | cool4st (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12580.png"
+    },
+    {
+        "id": "12581",
+        "name": "Naklejka | cool4st (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12581.png"
+    },
+    {
+        "id": "12582",
+        "name": "Naklejka | cool4st (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12582.png"
+    },
+    {
+        "id": "12583",
+        "name": "Naklejka | fury5k | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12583.png"
+    },
+    {
+        "id": "12584",
+        "name": "Naklejka | fury5k (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12584.png"
+    },
+    {
+        "id": "12585",
+        "name": "Naklejka | fury5k (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12585.png"
+    },
+    {
+        "id": "12586",
+        "name": "Naklejka | fury5k (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12586.png"
+    },
+    {
+        "id": "12587",
+        "name": "Naklejka | ROUX | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12587.png"
+    },
+    {
+        "id": "12588",
+        "name": "Naklejka | ROUX (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12588.png"
+    },
+    {
+        "id": "12589",
+        "name": "Naklejka | ROUX (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12589.png"
+    },
+    {
+        "id": "12590",
+        "name": "Naklejka | ROUX (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12590.png"
+    },
+    {
+        "id": "12591",
+        "name": "Naklejka | sk0R | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12591.png"
+    },
+    {
+        "id": "12592",
+        "name": "Naklejka | sk0R (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12592.png"
+    },
+    {
+        "id": "12593",
+        "name": "Naklejka | sk0R (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12593.png"
+    },
+    {
+        "id": "12594",
+        "name": "Naklejka | sk0R (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12594.png"
+    },
+    {
+        "id": "12595",
+        "name": "Naklejka | tikuak | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12595.png"
+    },
+    {
+        "id": "12596",
+        "name": "Naklejka | tikuak (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12596.png"
+    },
+    {
+        "id": "12597",
+        "name": "Naklejka | tikuak (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12597.png"
+    },
+    {
+        "id": "12598",
+        "name": "Naklejka | tikuak (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12598.png"
+    },
+    {
+        "id": "12599",
+        "name": "Naklejka | C4LLM3SU3 | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12599.png"
+    },
+    {
+        "id": "12600",
+        "name": "Naklejka | C4LLM3SU3 (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12600.png"
+    },
+    {
+        "id": "12601",
+        "name": "Naklejka | C4LLM3SU3 (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12601.png"
+    },
+    {
+        "id": "12602",
+        "name": "Naklejka | C4LLM3SU3 (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12602.png"
+    },
+    {
+        "id": "12603",
+        "name": "Naklejka | EmiliaQAQ | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12603.png"
+    },
+    {
+        "id": "12604",
+        "name": "Naklejka | EmiliaQAQ (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12604.png"
+    },
+    {
+        "id": "12605",
+        "name": "Naklejka | EmiliaQAQ (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12605.png"
+    },
+    {
+        "id": "12606",
+        "name": "Naklejka | EmiliaQAQ (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12606.png"
+    },
+    {
+        "id": "12607",
+        "name": "Naklejka | Starry | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12607.png"
+    },
+    {
+        "id": "12608",
+        "name": "Naklejka | Starry (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12608.png"
+    },
+    {
+        "id": "12609",
+        "name": "Naklejka | Starry (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12609.png"
+    },
+    {
+        "id": "12610",
+        "name": "Naklejka | Starry (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12610.png"
+    },
+    {
+        "id": "12611",
+        "name": "Naklejka | westmelon | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12611.png"
+    },
+    {
+        "id": "12612",
+        "name": "Naklejka | westmelon (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12612.png"
+    },
+    {
+        "id": "12613",
+        "name": "Naklejka | westmelon (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12613.png"
+    },
+    {
+        "id": "12614",
+        "name": "Naklejka | westmelon (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12614.png"
+    },
+    {
+        "id": "12615",
+        "name": "Naklejka | z4KR | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12615.png"
+    },
+    {
+        "id": "12616",
+        "name": "Naklejka | z4KR (Foil) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12616.png"
+    },
+    {
+        "id": "12617",
+        "name": "Naklejka | z4KR (Holo) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12617.png"
+    },
+    {
+        "id": "12618",
+        "name": "Naklejka | z4KR (Gold) | Singapore 2026",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/sticker-12618.png"
     }
 ]

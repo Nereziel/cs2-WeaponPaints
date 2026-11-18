@@ -508,5 +508,45 @@
         "id": "104",
         "name": "Tema musicale | Starjunk 95, Industrial Sunset Memories",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-104.png"
+    },
+    {
+        "id": "105",
+        "name": "Tema musicale | ALLEYCVT & LEVEL UP, BELIEVE",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-105.png"
+    },
+    {
+        "id": "106",
+        "name": "Tema musicale | Arcando & Pirapus, Ultrasound",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-106.png"
+    },
+    {
+        "id": "107",
+        "name": "Tema musicale | DJ DIESEL & Hairitage, BANG YOUR HEAD",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-107.png"
+    },
+    {
+        "id": "108",
+        "name": "Tema musicale | F.O.O.L, Criminals",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-108.png"
+    },
+    {
+        "id": "109",
+        "name": "Tema musicale | Noisestorm, Crab Rave",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-109.png"
+    },
+    {
+        "id": "110",
+        "name": "Tema musicale | Pegboard Nerds, Disconnected",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-110.png"
+    },
+    {
+        "id": "111",
+        "name": "Tema musicale | Tristam & Braken, Flight",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-111.png"
+    },
+    {
+        "id": "112",
+        "name": "Tema musicale | Vicetone & Cozi Zuehlsdorff, Nevada",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-112.png"
     }
 ]

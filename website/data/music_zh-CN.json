@@ -508,5 +508,45 @@
         "id": "104",
         "name": "音乐盒 | Starjunk 95，工业忆夕",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-104.png"
+    },
+    {
+        "id": "105",
+        "name": "音乐盒 | ALLEYCVT & LEVEL UP, 相信",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-105.png"
+    },
+    {
+        "id": "106",
+        "name": "音乐盒 | Arcando & Pirapus, 超声波",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-106.png"
+    },
+    {
+        "id": "107",
+        "name": "音乐盒 | DJ DIESEL & Hairitage, 甩起头来",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-107.png"
+    },
+    {
+        "id": "108",
+        "name": "音乐盒 | F.O.O.L, 狂徒",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-108.png"
+    },
+    {
+        "id": "109",
+        "name": "音乐盒 | Noisestorm, 横行无忌",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-109.png"
+    },
+    {
+        "id": "110",
+        "name": "音乐盒 | Pegboard Nerds, 断开连接",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-110.png"
+    },
+    {
+        "id": "111",
+        "name": "音乐盒 | Tristam & Braken, 翱翔",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-111.png"
+    },
+    {
+        "id": "112",
+        "name": "音乐盒 | Vicetone & Cozi Zuehlsdorff, 内华达",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/music_kit-112.png"
     }
 ]
