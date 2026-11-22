@@ -424,10 +424,8 @@ namespace WeaponPaints
 			item.NetworkedDynamicAttributes.Attributes.RemoveAll();
 			item.AttributeList.Attributes.RemoveAll();
 
-			// Without UpdateItemView, fall back to forcing a weapon switch so the glove gets redrawn.
-			var canUpdateItemView = UpdateItemView != null;
-			if (!canUpdateItemView)
-				player.ExecuteClientCommand("lastinv");
+			//force gloves model refresh to prevent model overlap
+			player.ExecuteClientCommand("lastinv");
 			Instance.AddTimer(0.08f, () =>
 			{	
 				try
@@ -460,35 +458,22 @@ namespace WeaponPaints
 
 					item.Initialized = true;
 
-					// Re-publish the glove so teammates see it at once (issue #548: they saw it wrong
-					// at round start until the player switched weapons). The old
-					// "first_or_third_person" bodygroup toggle was removed: current player models have
-					// no such group, so it did nothing.
-					if (canUpdateItemView && TryUpdateItemView(item))
+					//force gloves model refresh to prevent model overlap
+					player.ExecuteClientCommand("lastinv");
+
+					// Agent models carry the "first_or_third_person" bodygroup with the choices
+					// 0 thirdperson_default, 1 thirdperson_hide_default_gloves, 2 firstperson_default,
+					// 3 firstperson_hide_default_gloves. The built-in hands have to be hidden (choice 1)
+					// or the econ glove never shows (issue #551). The game does the same when it equips
+					// an inventory glove. Going through 0 first forces the change to be sent.
+					SetBodygroup(pawn, GloveBodygroup, 0);
+					AddTimer(0.2f, () =>
 					{
-						Utilities.SetStateChanged(player, "CCSPlayerController", "m_pInventoryServices");
-					}
-					else
-					{
-						player.ExecuteClientCommand("lastinv");
-					}
+						if (pawn.IsValid) SetBodygroup(pawn, GloveBodygroup, 1);
+					}, TimerFlags.STOP_ON_MAPCHANGE);
 				}
 				catch (Exception) { }
 			}, TimerFlags.STOP_ON_MAPCHANGE);
-		}
-
-		private bool TryUpdateItemView(CEconItemView item)
-		{
-			try
-			{
-				UpdateItemView?.Invoke(item.Handle, nint.Zero);
-				return UpdateItemView != null;
-			}
-			catch (Exception ex)
-			{
-				Logger.LogWarning("UpdateItemView failed (def {DefinitionIndex}): {Message}", item.ItemDefinitionIndex, ex.Message);
-				return false;
-			}
 		}
 
 		// Inventory gloves carry the owner's AccountID; gloves the plugin writes never set it.
@@ -496,34 +481,27 @@ namespace WeaponPaints
 		private static bool IsPluginGlove(ushort itemDefinitionIndex, uint accountId) =>
 			itemDefinitionIndex != 0 && accountId == 0;
 
-		// Agent models hide their built-in hands through the "default_gloves" bodygroup while an
-		// econ glove is worn, and nothing shows them again when the glove is removed or the pawn
-		// respawns without one: empty sleeves. The "SetBodygroup" input does not change this group,
-		// so write the mesh group mask directly. Agent models list default_gloves first:
-		// bit 0 = visible, bit 1 = hidden.
+		// Bodygroup on agent models that switches the built-in hands on and off. Choices:
+		// 0 thirdperson_default, 1 thirdperson_hide_default_gloves, 2 firstperson_default,
+		// 3 firstperson_hide_default_gloves. CT models list "defusekit" before it, so the mesh group
+		// mask bits differ per model; always go through the "SetBodygroup" input, never the raw mask.
+		private const string GloveBodygroup = "first_or_third_person";
+
+		// The built-in hands stay hidden after a plugin glove is removed or the pawn respawns without
+		// one (empty sleeves), so show them again.
 		private void ShowAgentDefaultHands(CCSPlayerPawn pawn)
 		{
-			ApplyDefaultHandsMask(pawn);
-			// A model refresh right after the glove change can re-publish the old mask; apply once more.
-			AddTimer(0.3f, () => ApplyDefaultHandsMask(pawn), TimerFlags.STOP_ON_MAPCHANGE);
+			ApplyDefaultHands(pawn);
+			// A model refresh right after the glove change can re-publish the old state; apply once more.
+			AddTimer(0.3f, () => ApplyDefaultHands(pawn), TimerFlags.STOP_ON_MAPCHANGE);
 		}
 
-		private static void ApplyDefaultHandsMask(CCSPlayerPawn pawn)
+		private static void ApplyDefaultHands(CCSPlayerPawn pawn)
 		{
 			if (!pawn.IsValid || pawn.EconGloves.ItemDefinitionIndex != 0)
 				return;
 
-			var state = pawn.CBodyComponent?.SceneNode?.GetSkeletonInstance()?.ModelState;
-			if (state == null)
-				return;
-
-			const ulong handsVisible = 0x1, handsHidden = 0x2;
-			var mask = state.MeshGroupMask;
-			if ((mask & handsHidden) == 0)
-				return;
-
-			state.MeshGroupMask = (mask & ~handsHidden) | handsVisible;
-			Utilities.SetStateChanged(pawn, "CBaseEntity", "m_CBodyComponent");
+			SetBodygroup(pawn, GloveBodygroup, 0);
 		}
 
 		private static int GetRandomPaint(int defindex)
