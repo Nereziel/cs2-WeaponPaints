@@ -709,6 +709,11 @@ public partial class WeaponPaints
 					GivePlayerAgent(player);
 					AddTimer(0.1f, () => { if (Utility.IsPlayerValid(player) && player.PawnIsAlive) GivePlayerAgent(player); }, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 					AddTimer(0.25f, () => { if (Utility.IsPlayerValid(player) && player.PawnIsAlive) GivePlayerAgent(player); }, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
+
+					// SetModel resets the bodygroups of the pawn, so the built-in hands come back and
+					// cover the plugin glove. Apply the gloves again once the last model change is done.
+					if (Config.Additional.GloveEnabled)
+						AddTimer(0.4f, () => { if (Utility.IsPlayerValid(player) && player.PawnIsAlive) GivePlayerGloves(player); }, CounterStrikeSharp.API.Modules.Timers.TimerFlags.STOP_ON_MAPCHANGE);
 				}
 
 				if (WeaponSync != null)
