@@ -255,6 +255,8 @@ namespace WeaponPaints
 			return false;
 		}
 
+		private const ushort TaserDefindex = 31;
+
 		private void RefreshWeapons(CCSPlayerController? player)
 		{
 			if (!_gBCommandsAllowed) return;
@@ -293,7 +295,11 @@ namespace WeaponPaints
 
 					if (weaponData == null) continue;
 
-					if (weaponData.GearSlot is gear_slot_t.GEAR_SLOT_RIFLE or gear_slot_t.GEAR_SLOT_PISTOL)
+					// The Zeus sits in the knife gear slot, but it has to be given back like a gun.
+					// Handled as a knife it was only killed, so picking a Zeus skin removed the Zeus.
+					var isTaser = weapon.Value.AttributeManager.Item.ItemDefinitionIndex == TaserDefindex;
+
+					if (isTaser || weaponData.GearSlot is gear_slot_t.GEAR_SLOT_RIFLE or gear_slot_t.GEAR_SLOT_PISTOL)
 					{
 						if (!WeaponDefindex.TryGetValue(weapon.Value.AttributeManager.Item.ItemDefinitionIndex, out var weaponByDefindex))
 							continue;
@@ -314,7 +320,7 @@ namespace WeaponPaints
 						weapon.Value?.AddEntityIOEvent("Kill", weapon.Value, null, "", 0.1f);
 					}
 
-					if (weaponData.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
+					if (!isTaser && weaponData.GearSlot == gear_slot_t.GEAR_SLOT_KNIFE)
 					{
 						weapon.Value?.AddEntityIOEvent("Kill", weapon.Value, null, "", 0.1f);
 						hasKnife = true;
