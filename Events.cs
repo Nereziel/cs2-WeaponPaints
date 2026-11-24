@@ -10,7 +10,6 @@ namespace WeaponPaints
 {
 	public partial class WeaponPaints
 	{
-		private bool _mvpPlayed;
 		private bool _giveNamedItemHooked;
 		
 		[GameEventHandler]
@@ -162,15 +161,13 @@ namespace WeaponPaints
 		private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
 		{
 			_gBCommandsAllowed = true;
-			_mvpPlayed = false;
 			return HookResult.Continue;
 		}
 		
+		// Runs as a Pre hook and edits the game's own event. A Post hook runs after the event has been
+		// sent, so DontBroadcast had no effect there and the re-fired copy reached clients as a second round_mvp.
 		private HookResult OnRoundMvp(EventRoundMvp @event, GameEventInfo info)
 		{
-			if (_mvpPlayed)
-				return HookResult.Continue;
-			
 			var player = @event.Userid;
 			
 			if (player == null || !player.IsValid || player.IsBot)
@@ -183,18 +180,6 @@ namespace WeaponPaints
 					
 			@event.Musickitid = musicId;
 			@event.Nomusic = 0;
-			info.DontBroadcast = true;
-			
-			var newEvent = new EventRoundMvp(true)
-			{
-				Userid = player,
-				Musickitid = musicId,
-				Nomusic = 0,
-			};
-
-			_mvpPlayed = true;
-			
-			newEvent.FireEvent(false);
 			return HookResult.Continue;
 		}
 
@@ -340,7 +325,7 @@ namespace WeaponPaints
 			RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
 			RegisterEventHandler<EventRoundStart>(OnRoundStart);
 			RegisterEventHandler<EventRoundEnd>(OnRoundEnd);
-			RegisterEventHandler<EventRoundMvp>(OnRoundMvp);
+			RegisterEventHandler<EventRoundMvp>(OnRoundMvp, HookMode.Pre);
 			RegisterListener<Listeners.OnEntitySpawned>(OnEntityCreated);
 			RegisterEventHandler<EventPlayerDeath>(OnPlayerDeath);
 
